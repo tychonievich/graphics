@@ -17,7 +17,7 @@ the Bitmap `Draw`* methods,
 etc.
 
 You are welcome to seek conceptual help from any source,
-but cite it if you get it from something other than a TA, the instructor, or class-assigned readings.
+but cite it in a comment if you get it from something other than a TA, the instructor, or class-assigned readings.
 You may only get coding help from the instructor or TAs.
 
 Half of the points are for completing the required portions.
