@@ -41,7 +41,15 @@ I want to make games                    CS 4730 is a better fit.
                                         We will talk about how game engines 
                                         draw things on the screen.
 
-I want to learn Maya, 3DS Max,            Not a topic of this class, sorry.
+I want to learn OpenGL, Direct3D,       We'll skim some of these, but not a
+Metal, Vulkan, ...                      deep dive
+
+I want to learn Allegro, Banshee,       We'll learn how they are built, but not
+C4, CryEngine, Intrinsic, OGRE, SDL,    how to use them
+Serious, Source, Torque, Unity, Unreal,
+UX3D, Xenko, XNA, ...
+
+I want to learn Maya, 3DS Max,          Not a topic of this class, sorry.
 Blender, Rhino, Wings, A:M, ZBrush,
 Nendo, XSI, SketchUp, ...
 
