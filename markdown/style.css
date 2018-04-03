@@ -81,3 +81,31 @@ pre code { border: none; }
 
 /* Images */
 img.face { height:14.2em; display:float; float:right; margin:1em; margin-right:0em; }
+
+.demo {
+	image-rendering: pixelated; 
+	image-rendering: -moz-crisp-edges; 
+	-ms-interpolation-mode: nearest-neighbor; 
+	border:thin solid black; 
+	background: repeating-linear-gradient(
+		137.51deg,
+		#eee,
+		#ddd 1ex,
+		#eee 2ex
+	);
+}
+.demo2 {
+	border:thin solid black; 
+	background: repeating-linear-gradient(
+		137.51deg,
+		#eee,
+		#ddd 1ex,
+		#eee 2ex
+	);
+}
+.floater {
+	float:right; margin-left:1em; text-align:center; z-index:250;
+}
+.zoom {
+	height:10em; float:right; margin-left:1em;
+}
