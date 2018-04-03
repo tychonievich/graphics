@@ -28,6 +28,10 @@ Details of second-half curriculum will be based in part on student input.
 # Is this the right class?
 
 ------------------------------------    ---------------------------------------
+I want to write code                    Yes! Lots of that here!
+
+I want to make special effects          Yes, we'll talk about lots of them!
+
 I want to make movies                   Movies are made mostly by artists, 
                                         actors, and technicians. We will talk
                                         about how to make the software CG 
@@ -36,10 +40,6 @@ I want to make movies                   Movies are made mostly by artists,
 I want to make games                    CS 4730 is a better fit.
                                         We will talk about how game engines 
                                         draw things on the screen.
-
-I want to write code                    Yes! Lots of that here!
-
-I want to make special effects          Yes, we'll talk about lots of them!
 
 I'm not very technical, this sounds     The technology of art is quite
 artsy                                   technical. Sorry.
