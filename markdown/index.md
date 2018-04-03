@@ -41,9 +41,9 @@ I want to make games                    CS 4730 is a better fit.
                                         We will talk about how game engines 
                                         draw things on the screen.
 
-I want to learn Maya, 3DS Max, Blender  Not a topic of this class, sorry.
-(or Rhino, Wings, A:M, ZBrush, Nendo, 
-XSI, SketchUp, ...)
+I want to learn Maya, 3DS Max,            Not a topic of this class, sorry.
+Blender, Rhino, Wings, A:M, ZBrush,
+Nendo, XSI, SketchUp, ...
 
 I'm not very technical, this sounds     The technology of art is quite
 artsy                                   technical. Sorry.
