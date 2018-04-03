@@ -27,7 +27,7 @@ Details of second-half curriculum will be based in part on student input.
 
 # Is this the right class?
 
-------------------------------------    ---------------------------------------
+--------------------------------------  ---------------------------------------
 I want to write code                    Yes! Lots of that here!
 
 I want to make special effects          Yes, we'll talk about lots of them!
@@ -41,7 +41,7 @@ I want to make games                    CS 4730 is a better fit.
                                         We will talk about how game engines 
                                         draw things on the screen.
 
-I want to learn Maya/3DS Max/Blender    Not a topic of this class, sorry.
+I want to learn Maya, 3DS Max, Blender  Not a topic of this class, sorry.
 (or Rhino, Wings, A:M, ZBrush, Nendo, 
 XSI, SketchUp, ...)
 
@@ -58,5 +58,5 @@ I don't know what calculus is           [Easily fixed](https://en.wikipedia.org/
 
 I'm not very good with vectors          Vectors are important. We'll help, but
                                         you'll want to brush up on your own.
-------------------------------------    ---------------------------------------
+--------------------------------------  ---------------------------------------
 
