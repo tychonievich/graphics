@@ -24,6 +24,12 @@ Half of the points are for completing the required portions.
 You may add as many points as you wish on optional portions.
 Points in excess of 100% will carry over to other homework assignments.
 
+## Example files
+
+All the example images in this writeup are hyperlinks to the input file that generated them.
+On some older browsers these hyperlinks might interact poorly with the mathematical formula rendering;
+if you have trouble accessing the files, please let the instructor know.
+
 ## Structure and File Format
 
 The same as [HW0](hw0.html): your program will read a file from the command line and create a PNG file.
