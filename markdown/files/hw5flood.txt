@@ -1,0 +1,6 @@
+input moon.png
+
+flood 400 150   0.2   1 0 0 0.5
+flood 400 495   0.1   0 1 0 1
+
+output hw5flood.png

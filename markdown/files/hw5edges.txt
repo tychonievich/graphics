@@ -1,0 +1,5 @@
+input earth.png
+
+edges 0.2 0.7
+
+output hw5edges.png

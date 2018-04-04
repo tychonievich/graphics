@@ -1,0 +1,6 @@
+input tj.png
+
+advect lightness -50
+advect lightness 50
+
+output hw5advect.png

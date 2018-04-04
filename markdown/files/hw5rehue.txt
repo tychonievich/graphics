@@ -1,0 +1,5 @@
+input earth.png
+
+rehue -0.3
+
+output hw5rehue.png

@@ -1,0 +1,3 @@
+input earth.png
+monochrome saturation
+output hw5monochromeS.png

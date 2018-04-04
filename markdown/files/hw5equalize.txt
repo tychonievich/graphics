@@ -1,0 +1,4 @@
+input tj.png
+equalize red
+equalize blue
+output hw5equalize.png

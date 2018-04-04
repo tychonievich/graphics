@@ -1,0 +1,6 @@
+input redchair1.png
+
+blur alpha 101
+blur red 23
+
+output hw5blur.png

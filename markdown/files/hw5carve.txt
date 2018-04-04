@@ -1,0 +1,46 @@
+input smallearth.png
+
+carve short
+carve short
+carve short
+carve short
+carve short
+carve short
+carve short
+carve short
+carve short
+carve short
+carve short
+carve short
+carve short
+carve short
+carve short
+
+carve narrow
+carve narrow
+carve narrow
+carve narrow
+carve narrow
+carve narrow
+carve narrow
+carve narrow
+carve narrow
+carve narrow
+carve narrow
+carve narrow
+carve narrow
+carve narrow
+carve narrow
+carve narrow
+carve narrow
+carve narrow
+carve narrow
+carve narrow
+carve narrow
+carve narrow
+carve narrow
+carve narrow
+carve narrow
+carve narrow
+
+output hw5carve.png

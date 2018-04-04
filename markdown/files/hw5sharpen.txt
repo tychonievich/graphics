@@ -1,0 +1,7 @@
+input tj.png
+
+sharpen red 0.5
+sharpen green 7.5
+sharpen blue 30
+
+output hw5sharpen.png
