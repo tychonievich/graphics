@@ -73,7 +73,7 @@ If you email, include "4810" in the subject line to prevent your email from skip
 > "When you read books your eyeballs wither away leaving the bare sockets"
 > <div>---Yang Wanli</div>
 
-Reading materials will be selected from various web pages, articles, and a the like. There is no course textbook.
+Reading materials will be selected from various web pages, articles, and the like. There is no course textbook.
 Readings may be roughly categorized into two kinds.
 
 -   Conceptual readings will provide background and understanding of course concepts, 
