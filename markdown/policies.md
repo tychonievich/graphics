@@ -27,7 +27,7 @@ this document is very much open to being adjusted as the semester progresses.
 > <div>---Charles Dickens</div>
 
 Lecture is optional but strongly encouraged.
-Tuesday and Thursday, 2:00–3:15, in Olsson 009.
+Tuesday and Thursday, 2:00–3:15, in Thorton E316.
 
 There is no lab or discussion session.
 I do not schedule review sessions or the like outside of usual class time.
@@ -63,9 +63,9 @@ Additionally, quizzes will be administered online frequently, and there will be 
 | Location | Rice 208 | TBA |
 | Office Hours | TBA | TBA |
 | Phone | 243-3789 | (none) |
-| Email | <a href="mailto:tychonievich@virginia.edu?subject=CS4810">tychonievich@virginia.edu</a> | use [Piazza]() |
+| Email | <a href="mailto:tychonievich@virginia.edu?subject=CS4810">tychonievich@virginia.edu</a> | use [Piazza](https://piazza.com/class/jg2a09h0hlr7d2) |
 
-For most communication, [Piazza]() is prefered to email.
+For most communication, [Piazza](https://piazza.com/class/jg2a09h0hlr7d2) is preferred to email.
 If you email, include "4810" in the subject line to prevent your email from skipping my inbox and never getting read.
 
 ## Readings
@@ -179,7 +179,7 @@ and may dock points if it appears you simply copied someone else's ideas (or jus
 
 ### No help on quizzes
 
-It would probably go without saying if we didn't say it, but no assistance may be given or received on any supervised evaluation unless specifically announced otherwise by the proctor of the evaluation.
+It would probably go without saying if we didn't say it, but no assistance may be given or received on any supervised evaluation or online quiz unless specifically announced otherwise by the professor (or another proctor of the evaluation).
 
 
 ## Disability
