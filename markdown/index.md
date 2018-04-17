@@ -28,7 +28,9 @@ Details of second-half curriculum will be based in part on student input.
 # Is this the right class?
 
 --------------------------------------  ---------------------------------------
-I want to write code                    Yes! Lots of that here!
+I want to write code                    Yes! Lots of that here! Most students will
+                                        submit code containing more than 2,500 
+                                        original statements (lines vary by language).
 
 I want to make special effects          Yes, we'll talk about lots of them!
 

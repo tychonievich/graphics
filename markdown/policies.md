@@ -95,7 +95,7 @@ Readings may be roughly categorized into two kinds.
 Most assignments will be supported in any language you chose to use.
 In the past I have supported C++, C#, Python, Java, and D.
 You may switch languages as often as you wish.
-Last time I taught this almost all students ended up using either Python and D by the last assignment.
+Last time I taught this almost all students ended up using either Python or D by the last assignment.
 If you want another language added, let me know.
 
 One assignment is (planned to be) in WebGL using Javascript and GLSL.
