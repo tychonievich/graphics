@@ -8,6 +8,5 @@ To subscribe to the above calendar, add <http://www.cs.virginia.edu/luther/4810/
 
 <hr/>
 
-The final exam schedule has not yet been released; the date above is based on the last day of finals and is probably not accurate.
-There will be a final in-person on-paper quiz will be administered at whatever time the university assigns this course.
+The <a href="http://www.virginia.edu/registrar/exams.html#1188">final exam schedule</a> puts our final Monday 17 December at 9:00 am. The final is an in-person on-paper quiz administered in the usual classroom.
 

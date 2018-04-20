@@ -80,11 +80,11 @@ def calendar(data):
  #               else: topic = deMd(topic)
                 if d not in exams: classnum += 1
 
-                ans.event('4810', sec001, m75, location='OLS 009', details=topic)
+                ans.event('4810', sec001, m75, location='THN E316', details=topic)
         d += oneday
     
     e3 = data['Special Dates']['Final Exam']
-    ans.event('Final Quiz', datetime.datetime(e3.year, e3.month, e3.day, 19, 00, 0, tzinfo=eastern), m180, location='OLS 009')
+    ans.event('Final Quiz', datetime.datetime(e3.year, e3.month, e3.day, 9, 0, 0, tzinfo=eastern), m180, location='THN E316')
     
     for a,v in data['assignments'].items():
         if a.lower().startswith('lab') or v.get('group','').lower() == 'lab': continue
