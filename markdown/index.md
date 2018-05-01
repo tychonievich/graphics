@@ -46,14 +46,14 @@ I want to make games                    [CS 4730](//cs4730.cs.virginia.edu/) is 
 I want to learn OpenGL, Direct3D,       We'll skim some of these, but not a
 Metal, Vulkan, ...                      deep dive.
 
-I want to learn Allegro, Banshee,       We'll learn how they are built, but not
+I want to learn Allegro, Banshee,       We'll may discuss how they are built, but not
 C4, CryEngine, Intrinsic, OGRE, SDL,    how to use them.
 Serious, Source, Torque, Unity, Unreal,
 UX3D, Xenko, XNA, ...
 
 I want to learn Maya, 3DS Max,          Not a topic of this class, sorry.
-Blender, Rhino, Wings, A:M, ZBrush,     Try [Arch 5422](//www.arch.virginia.edu/arch5422)
-Nendo, XSI, SketchUp, ...               or [Arch 5420](//www.arch.virginia.edu/arch5420).
+Blender, Rhino, Wings, A:M, ZBrush,     Try [Arch 5420](//www.arch.virginia.edu/arch5420)
+Nendo, XSI, SketchUp, ...               or [Arch 5422](//www.arch.virginia.edu/arch5422).
 
 I'm not very technical, this sounds     The technology of art is quite
 artsy                                   technical. Sorry.
