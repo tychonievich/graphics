@@ -68,5 +68,9 @@ I don't know what calculus is           [Easily fixed](https://en.wikipedia.org/
 
 I'm not very good with vectors          Vectors are important. We'll help, but
                                         you'll want to brush up on your own.
+
+I'm intrigued by numerical stability    We don't have proper courses on these
+and computational geometry              topics from the programmer's perspective,
+                                        but this class will whet your appetite.
 --------------------------------------  ---------------------------------------
 
