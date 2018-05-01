@@ -58,7 +58,7 @@ Nendo, XSI, SketchUp, ...               or [Arch 5422](//www.arch.virginia.edu/a
 I'm not very technical, this sounds     The technology of art is quite
 artsy                                   technical. Sorry.
 
-Self-driving cars and computer vision   Take a special-topics course from
+I'm interested in computer vision       Take a special-topics course from
                                         Vicente Ordonez-Roman instead.
 
 I didn't do well in calculus            That's fine; we need the ideas, but
