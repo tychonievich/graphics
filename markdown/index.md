@@ -39,32 +39,32 @@ I want to make movies                   Movies are made mostly by artists,
                                         about how to make the software CG 
                                         artists use...
 
-I want to make games                    CS 4730 is a better fit.
-                                        We will talk about how game engines 
+I want to make games                    [CS 4730](//cs4730.cs.virginia.edu/) is a better fit.
+                                        We will talk some about how game engines 
                                         draw things on the screen.
 
 I want to learn OpenGL, Direct3D,       We'll skim some of these, but not a
-Metal, Vulkan, ...                      deep dive
+Metal, Vulkan, ...                      deep dive.
 
 I want to learn Allegro, Banshee,       We'll learn how they are built, but not
-C4, CryEngine, Intrinsic, OGRE, SDL,    how to use them
+C4, CryEngine, Intrinsic, OGRE, SDL,    how to use them.
 Serious, Source, Torque, Unity, Unreal,
 UX3D, Xenko, XNA, ...
 
 I want to learn Maya, 3DS Max,          Not a topic of this class, sorry.
-Blender, Rhino, Wings, A:M, ZBrush,
-Nendo, XSI, SketchUp, ...
+Blender, Rhino, Wings, A:M, ZBrush,     Try [Arch 5422](//www.arch.virginia.edu/arch5422)
+Nendo, XSI, SketchUp, ...               or [Arch 5420](//www.arch.virginia.edu/arch5420).
 
 I'm not very technical, this sounds     The technology of art is quite
 artsy                                   technical. Sorry.
 
 Self-driving cars and computer vision   Take a special-topics course from
-                                        Vicente Ordonez-Roman instead
+                                        Vicente Ordonez-Roman instead.
 
 I didn't do well in calculus            That's fine; we need the ideas, but
-                                        not the techniques
+                                        not the techniques.
 
-I don't know what calculus is           [Easily fixed](https://en.wikipedia.org/wiki/Integral)
+I don't know what calculus is           [Easily fixed](https://en.wikipedia.org/wiki/Integral).
 
 I'm not very good with vectors          Vectors are important. We'll help, but
                                         you'll want to brush up on your own.
