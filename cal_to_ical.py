@@ -135,6 +135,7 @@ def calendar(data):
                     
     
     for a,v in data['assignments'].items():
+        if a.startswith('.'): continue
         if a.lower().startswith('lab') or v.get('group','').lower() == 'lab':
             for sname, sdat in data['sections'].items():
                 if sdat['type'] == 'lab':
@@ -143,13 +144,13 @@ def calendar(data):
                     d = datetime.datetime(d.year, d.month, d.day, sdat['start'] // 60, sdat['start'] % 60, 0, tzinfo=tz)
                     d -= datetime.timedelta(offby,0,0)
                     ans.event(sname, d, sdat['duration'], location=sdat['room'], details=a+": "+v['title'])
-                    # fix me: handle lab exams too
             continue
         if 'due' not in v: continue
+        print('------ handle', a, v)
         d = v['due']
         if not isinstance(d, datetime.datetime):
             d = datetime.datetime(d.year, d.month, d.day, 23 if v.get('group') == 'project' else 9, 55, 0, tzinfo=tz)
-            ans.event(a+' due', d, m5)
+        ans.event(a+' due', d, m5)
             
     
     return ans
