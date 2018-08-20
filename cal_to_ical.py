@@ -146,10 +146,11 @@ def calendar(data):
                     ans.event(sname, d, sdat['duration'], location=sdat['room'], details=a+": "+v['title'])
             continue
         if 'due' not in v: continue
-        print('------ handle', a, v)
         d = v['due']
         if not isinstance(d, datetime.datetime):
             d = datetime.datetime(d.year, d.month, d.day, 23 if v.get('group') == 'project' else 9, 55, 0, tzinfo=tz)
+        else:
+            d -= datetime.timedelta(0,60*5,0)
         ans.event(a+' due', d, m5)
             
     
@@ -163,5 +164,6 @@ if __name__ == '__main__':
     with open('markdown/cal.yaml') as stream:
         data = load(stream, Loader=Loader)
     cal = calendar(data)
-    with open('markdown/cal.ics', 'wb') as f:
-        f.write(cal.bytes())
+    #with open('markdown/cal.ics', 'wb') as f:
+        #f.write(cal.bytes())
+    print(cal.bytes().decode('utf-8'))
