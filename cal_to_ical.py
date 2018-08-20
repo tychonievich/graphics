@@ -166,4 +166,3 @@ if __name__ == '__main__':
     cal = calendar(data)
     with open('markdown/cal.ics', 'wb') as f:
         f.write(cal.bytes())
-    print(cal.bytes().decode('utf-8'))
