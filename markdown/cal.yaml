@@ -28,7 +28,6 @@ sections:
     start: 14:00
     duration: 75
 
-
 classes:
   - intro
   - raster graphics
