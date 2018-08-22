@@ -44,6 +44,7 @@ In this assignment input files might look like
 
     xyrgb 50 50   255 127 0
     ignore this line since "ignore" is not a keyword you know 
+    likewise, ignore this line, which also starts with an unknown keyword
     xyc     150   250 #ff00ee
 
 You do not need to have error checking code.
@@ -63,6 +64,9 @@ C/C++
     If you find another library you like, let me know and I'll see if I can easily get it on my compiling test server.
 
     Remember, if you use a C-language header (like libpng or miniz) but are writing C++, you'll need to put an `extern "C" { ... }`{.c} block around the `#include`{.c}
+    
+    > The testing server currently runs clang 6.0.
+    > gcc 8.2 is also installed and can be switched to if a version compatibility issue is identified.
 
 C#
 :   The relevant class is `System.Drawing.Bitmap`{.cs}, along with it's `setPixel`{.cs} and `save`{.cs} methods
@@ -73,6 +77,8 @@ C#
     img.SetPixel(x,y, Color.FromARGB(r,g,b,a));
     img.save("filename.png");
     ````
+
+    > The testing server currently runs mono 5.14.
 
 D
 :   There are several image libraries in the D community; 
@@ -102,6 +108,9 @@ D
     }
     ````
 
+    > The testing server currently runs rdmd 2.081.
+    > dub, dmd, and ldc are also installed and can be switched to if a version compatibility issue is identified. 
+
 Java
 :   The relevant libraries are `BufferedImage`{.java}, `WritableRaster`{.java}, and `ImageIO`{.java}, all in the `javax.imageio`{.java} package. Do not use `java.awt.Graphics`{.java}.
 
@@ -113,6 +122,8 @@ Java
     wr.setPixel(x, y, color);
     ImageIO.write(b, "png", new File("filename.png"));
     ````
+    
+    > The testing server currently runs javac 1.10.
 
 Python
 :   The relevant library is [pillow](http://python-pillow.org/).
@@ -134,6 +145,9 @@ Python
     
     img.save("filename.png")
     ````
+    
+    > The testing server currently runs python 3.7.0.
+    > pypy 3.5.3 is also installed and can be switched to if a version compatibility issue is identified. 
 
 Want another language added?  Let me know so I can build my grading harness for it.
 

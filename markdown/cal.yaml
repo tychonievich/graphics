@@ -116,7 +116,7 @@ reading:
     - 'optionally [Implementers Guide 2.5&ndash;2.7](files/implguide_2010.pdf)'
     - 'optionally [radiosity](https://web.archive.org/web/20160311085440/http://freespace.virgin.net/hugo.elias/radiosity/radiosity.htm)'
   glsl:
-    - '[GLSL data types](http://www.lighthouse3d.com/tutorials/glsl-12-tutorial/data-types-and-variables/)'
+    - '[GLSL data types](https://www.khronos.org/opengl/wiki/Data_Type_(GLSL))'
   webgl:
     - '[minimal example](https://gist.github.com/Kuranes/8aadb58f953f11e198ce)'
   webgl old:
