@@ -5,6 +5,10 @@ p + p { margin-top: 1ex; }
 a { color: #0088cc; text-decoration: none; }
 a:hover, a:focus { color: #005580; text-decoration: underline; }
 
+/* override the common "fixed with is smaller" defaults of browsers */
+body,code,pre,tt { font-size:12pt; }
+
+
 /* extras to help floats work properly */
 .container:after { clear:both; }
 .container:before, .container:after { display: table; content: ""; line-height: 0; }
@@ -29,7 +33,7 @@ footer { text-align: center; box-shadow: 0 0.0625ex 0.5ex rgba(0,0,0,.1); backgr
 .row > div:only-child { flex: 1 1 auto; margin: 1em; }
 
 /* TOC styles */
-.well { background: #f5f5f5; border: 0.125ex solid #e3e3e3; min-height: 1em; border-radius: 0.5ex; box-shadow: inset 0 0.0625ex 0.125ex rgba(0,0,0,0.25); }
+.well { background: rgba(0,0,0,0.04); border: 0.125ex solid #e3e3e3; min-height: 1em; border-radius: 0.5ex; box-shadow: inset 0 0.0625ex 0.125ex rgba(0,0,0,0.25); }
 .toc ul  { padding: 0em; margin: 0em; list-style: none; }
 .toc ul > li > a { padding: 0.25ex 1ex;  display:block; text-indent: -2em; padding-left: calc(2em + 1ex); line-height:125%; }
 .toc ul > li > a:hover, .toc ul > li > a:focus { background-color: #eeeeee; text-decoration: none; }
@@ -49,7 +53,7 @@ h6 { font-size: 100%; }
 
 /* Table styles */
 thead > th { font-weight: bold; }
-tr.odd { background-color: #f5f5f5; }
+tr.odd { background-color: rgba(0,0,0,0.04); }
 table { border: 0.0625ex solid rgba(0,0,0,0.125); border-collapse: collapse; max-width: 100%; }
 td,th { padding: 0ex 1ex; }
 
@@ -63,21 +67,23 @@ dt { font-weight: bold; }
 dd { margin-left: 1em; }
 dd + dt { margin-top: 1ex; }
 .floater { float:right; max-width: 50%; text-align: right; }
-pre { padding: 1ex; margin: 1ex 0ex; word-break: break-all; word-wrap: wrap-word; white-space: pre-wrap;  background: #f5f5f5; border: 0.125ex solid #e3e3e3; min-height: 1em; border-radius: 0.5ex; box-shadow: 0 0.0625ex 0.125ex rgba(0,0,0,0.25); }
+pre { padding: 1ex; margin: 1ex 0ex; word-break: break-all; word-wrap: wrap-word; white-space: pre-wrap;  background: rgba(0,0,0,0.04); border: 0.125ex solid #e3e3e3; min-height: 1em; border-radius: 0.5ex; box-shadow: 0 0.0625ex 0.125ex rgba(0,0,0,0.25); }
 
 /*blockquote { border-left: 0.5ex solid rgba(0,0,0,0.125); padding-left: 1.5ex; margin: 1ex 0ex; }*/
-blockquote { border:1px solid rgba(0,0,0,0.125); padding:1ex; border-radius:1ex; background-color:#f5f5f5; margin:1em 4em; }
+blockquote { border:1px solid rgba(0,0,0,0.125); padding:1ex; border-radius:1ex; background-color:rgba(0,0,0,0.04); margin:1em 4em; }
 blockquote q:before { font-size:200%; content:"“"; line-height:50%; vertical-align: -0.1em;}
 blockquote q:after { font-size:200%; content:"”"; line-height:50%; vertical-align: -0.1em; }
 blockquote div { text-align: right; }
 
 figure { max-width: 100%; display: table; margin: auto; padding: 1em; }
 figcaption { text-align: center; font-weight: bold; margin-top: 1ex; }
-pre,code { background: #f5f5f5; border: 0.125ex solid #e3e3e3; border-radius: 0.5ex; word-wrap: wrap-word; white-space: pre-wrap; word-break: break-all; }
-pre { padding: 1ex; margin: 1ex 0ex; min-height: 1em; box-shadow: 0 0.0625ex 0.125ex rgba(0,0,0,0.25); }
-code { padding: 0.125ex; }
-pre code { border: none; }
 .floater img, figure img { max-width: 100%; }
+
+pre,code { background: rgba(0,0,0,0.04); border: 0.125ex solid rgba(0,0,0,0.12); border-radius: 0.5ex; word-wrap: wrap-word; white-space: pre-wrap; word-break: break-all; hyphens:none; }
+pre > code { border: none; background:none; }
+pre { display:table; }
+
+
 
 /* Images */
 img.face { height:14.2em; display:float; float:right; margin:1em; margin-right:0em; }
@@ -110,3 +116,53 @@ img.face { height:14.2em; display:float; float:right; margin:1em; margin-right:0
 	height:10em; float:right; margin-left:1em;
 }
 dt,h2,h3,h4,h5,h6 { clear:both; }
+
+.nav.pull-right { margin-left: auto; }
+
+
+/* env.py inserted style */
+
+.example {
+    margin: 1em 0em 1em 0em;
+    background: #e9fbe9;
+    border-left: #99f solid 0.5ex;
+    padding: 0.5em 1em;
+}
+
+.example blockquote {
+    border: none;
+    padding: none;
+    background: inherit;
+}
+
+.example:not(.long):before, .example.long > :first-child:before {
+    content: "Example \2014  ";
+    font-style: italic;
+    color: #005A9C;
+}
+
+.exercise {
+    margin: 1em 0em 1em 0em;
+    background: rgba(255,127,0,0.13333333);
+    border-left: rgba(255,127,0,0.2666666) solid 0.5ex;
+    padding: 0.5em 1em;
+}
+
+.exercise:not(.long):before, .exercise.long > :first-child:before {
+    content: "Exercise \2014  ";
+    font-style: italic;
+    color: red;
+}
+
+
+.aside {
+    margin: 1em 0em 1em 0em;
+    background: rgba(0,0,0,0.0625);
+    border-left: rgba(0,0,0,0.1225) solid 0.5ex;
+    padding: 0.5em 1em;
+}
+
+.aside:not(.long):before, .aside.long > :first-child:before {
+    content: "Aside \2014  ";
+    font-style: italic;
+}

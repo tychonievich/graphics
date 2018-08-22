@@ -68,8 +68,6 @@ def calendar(data):
     calname = '{}.{}{}'.format(data['meta']['name'], ('S' if month < 5 else 'Su' if  month < 8 else 'F'), year)
     ans = RealCal(calname.lower())
     
-    print(data['sections'])
-    
     tz = pytz.timezone(data['meta'].get('timezone', 'America/New_York'))
 
     for sec in data['sections']:
