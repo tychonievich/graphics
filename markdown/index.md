@@ -64,7 +64,7 @@ I'm interested in computer vision       Take a special-topics course from
 I didn't do well in calculus            That's fine; we need the ideas, but
                                         not the techniques.
 
-I don't know what calculus is           [Easily fixed](https://en.wikipedia.org/wiki/Integral).
+I don't know what calculus is           [Fixable with a bit of reading](https://en.wikipedia.org/wiki/Integral).
 
 I'm not very good with vectors          Vectors are important. We'll help, but
                                         you'll want to brush up on your own.
