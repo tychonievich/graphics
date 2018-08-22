@@ -45,7 +45,7 @@ footer { text-align: center; box-shadow: 0 0.0625ex 0.5ex rgba(0,0,0,.1); backgr
 .header-section-number:after, .toc-section-number:after { content: ". "; }
 h1 { font-size: 135%; border-top: 0.125ex solid #999999; padding: 1ex 0ex; margin: 0ex;  }
 h1:nth-child(n+2) { margin-top: 1ex; }
-h2 { font-size: 120%; background:linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,0.06)); margin:1em -1em; padding: 0em 1em; }
+h2 { font-size: 120%; background:linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,0.06)); margin:1em 0em; padding: 0em 1em; }
 h3 { font-size: 112%; }
 h4 { font-size: 106%; }
 h5 { font-size: 100%; }
