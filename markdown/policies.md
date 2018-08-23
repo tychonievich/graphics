@@ -156,7 +156,9 @@ Let our TAs be students when they are not being TAs.
 
 ## Honesty
 
-If I believe you have cheated, I may apply an arbitrarily harsh grade penalty up to and including an F in the course. This penalty is independent of (and potentially in addition to) any findings of the University Honor System.
+I always hope everyone will behave honestly.
+I know we all are tempted to do what we ought not;
+if you do something you regret, the sooner you tell me the sooner (and more leniently) we can correct it.
 
 ### No plagiarism (nor anything like it)
 
@@ -181,11 +183,12 @@ and may dock points if it appears you simply copied someone else's ideas (or jus
 
 It would probably go without saying if we didn't say it, but no assistance may be given or received on any supervised evaluation or online quiz unless specifically announced otherwise by the professor (or another proctor of the evaluation).
 
+### Consequences of Dishonesty
 
-## Disability
+If I believe you have acted dishonestly, I will communicate this fact to you and propose a penalty.
+If you have information I lack, please share that with me; I may thereafter change my belief and/or proposed penalty.
 
-If you qualify for accommodations from the SDAC, please let me know, preferably in my office where we can discuss how your accommodations will interplay with the quiz- and assignment-based nature of this course.
-
+If we are not able to come to an agreement, or if the case is particularly egregious and beyond my comfort level handling in-course, we will instead refer the case to the University Honor System and abide by their findings.
 ## Timeliness
 
 I care very little when each student finishes each assignment.
@@ -196,11 +199,24 @@ I thus intend to deduct a few percent for late submissions and add a few for sig
 Quizzes, on the other hand, will have hard deadlines.
 If you miss them, you miss them.
 
-## Circumstance
+
+## Personal accommodations
+
+### Disability
+
+If you qualify for accommodations from [the SDAC](http://studenthealth.virginia.edu/sdac), please let me know, preferably in my office where we can discuss how your accommodations will interplay with the quiz- and assignment-based nature of this course.
+
+### Religious observances
+
+As a religious person myself, I fully support the university's [policy](https://eocr.virginia.edu/accommodations-religious-observance) on accommodating religious observances.
+If such observances or other religious beliefs impact or are likely to impact your work this semester,
+please let me know as soon as you are aware of this impact.
+
+### Life
 
 Bad things happen.
 People forget things and make mistakes.
 Bad days coincide with due dates.
 Etc.
 
-If you believe that circumstances warrant an change in deadline, a second chance, or some other accommodation in order to more accurately synchronize grade with knowledge, come talk to me and we'll make it happen.
+If you believe that circumstances warrant an change in deadline, a second chance, or some other accommodation in order to more accurately synchronize grade with knowledge, come talk to me and we'll resolve the situation as best we can.
