@@ -28,6 +28,9 @@ Details of second-half curriculum will be based in part on student input.
 # Is this the right class?
 
 --------------------------------------  ---------------------------------------
+I have not yet finished CS 2150         No. We'll need its coverage of data structures
+                                        and the experience if provides in self-guided development.
+
 I want to write code                    Yes! Lots of that here! Most students will
                                         submit code containing more than 2,500 
                                         original statements (lines vary by language).
