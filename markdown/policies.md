@@ -208,7 +208,7 @@ If you qualify for accommodations from [the SDAC](http://studenthealth.virginia.
 
 ### Religious observances
 
-As a religious person myself, I fully support the university's [policy](https://eocr.virginia.edu/accommodations-religious-observance) on accommodating religious observances.
+As a religious person myself, I fully support [the university's stance](https://eocr.virginia.edu/accommodations-religious-observance) on accommodating religious observances.
 If such observances or other religious beliefs impact or are likely to impact your work this semester,
 please let me know as soon as you are aware of this impact.
 
