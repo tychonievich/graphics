@@ -59,7 +59,7 @@ Additionally, quizzes will be administered online frequently, and there will be 
 
 |  | Instructor | TAs |
 |--------|------------|-----|
-| Name | Luther Tychonievich | TBA |
+| Name | Luther Tychonievich | Fengyang "Yan" Zhang |
 | Location | Rice 208 | TBA |
 | Office Hours | Mon 9--10am, Tue 10-11am, Wed 11-12pm, Thu 12-1pm | TBA |
 | Phone | 243-3789 | (none) |
