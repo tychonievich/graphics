@@ -136,11 +136,11 @@ def calendar(data, linkfile):
                 today['topic'] = (' <span class="and">and</span> '.join(d1) if d1 else 'TBD')
                 today['reading'] = ('<span class="reading">' + ', '.join(r)+'</span>' if r else '')
                 if d in linkfile:
-                    more = []
+                    links = []
                     for k,v in linkfile[d].items():
                         if k != 'files':
                             links.append('['+k+']('+v+')')
-                    links.extend('['+os.path.basename(_)+']('+_+')' for _ in links[d].get('files',[]))
+                    links.extend('['+os.path.basename(_)+']('+_+')' for _ in linkfile[d].get('files',[]))
                     today['links'] = ' <span class="links">'+', '.join(links)+'</span>'
                 classidx += 1
             if noclass:
