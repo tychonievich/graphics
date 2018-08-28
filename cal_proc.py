@@ -97,7 +97,7 @@ codeclass = re.compile(r'[{][.][^}]+[}]')
 
 weekdays = ('Mon','Tue','Wed','Thu','Fri','Sat','Sun')
 
-def calendar(data, links):
+def calendar(data, linkfile):
     oneday = timedelta(1)
     things = {}
     breaks = [
@@ -135,9 +135,9 @@ def calendar(data, links):
                     r.extend(data['reading'].get(_, [])[:])
                 today['topic'] = (' <span class="and">and</span> '.join(d1) if d1 else 'TBD')
                 today['reading'] = ('<span class="reading">' + ', '.join(r)+'</span>' if r else '')
-                if d in links:
+                if d in linkfile:
                     more = []
-                    for k,v in links[d].items():
+                    for k,v in linkfile[d].items():
                         if k != 'files':
                             links.append('['+k+']('+v+')')
                     links.extend('['+os.path.basename(_)+']('+_+')' for _ in links[d].get('files',[]))
@@ -210,7 +210,8 @@ if __name__ == '__main__':
         with open('links.yaml') as stream:
             links = load(stream, Loader=Loader)
         if links is None: links = {}
-    except: pass
+    except: 
+        pass
         
     #with open('assignments.json', 'w') as f:
         #f.write(prettyjson(assignments_json(data)))
