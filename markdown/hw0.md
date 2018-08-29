@@ -203,3 +203,10 @@ That's so small it's almost impossible to see, so let's zoom in and put a stripe
 
 <img style="width:5em" class="demo" src="files/hw0ex1.png"/>
 
+# Submission and Feedback
+
+The [submission site](https://kytos.cs.virginia.edu/graphics/) for this assignment (only)
+will run automated tests and add information about their outcomes to the submission file list.
+There may be a small delay before it is visible, as we queue each submission as it comes in.
+Feel free to re-submit until you get positive status results.
+Please refer questions to piazza or professor office hours.
