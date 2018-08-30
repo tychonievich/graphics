@@ -1,7 +1,9 @@
 ---
 title: The Student, the Fish, and Agassiz
 subtitle: by the Student
-author: Samuel H. Scudder
+author: 
+  - Samuel H. Scudder
+  - <br/> from *American Poems* (3rd ed.; Boston: Houghton, Osgood & Co., 1879): pp. 450-54.
 license: Public Domain
 ...
 
@@ -72,4 +74,4 @@ The whole group of *Haemulons* was thus brought into review; and whether engaged
 At the end of eight months, it was almost with reluctance that I left these friends and turned to insects; but what I gained by this outside experience has been of greater value than years of later investigation in my favorite groups.
 
 
--- from *American Poems* (3rd ed.; Boston: Houghton, Osgood & Co., 1879): pp. 450-54.
+
