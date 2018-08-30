@@ -4,7 +4,7 @@ subtitle: by the Student
 author: 
   - 'Samuel H. Scudder'
   - '<br/> from *American Poems* (3rd ed.; Boston: Houghton, Osgood & Co., 1879): pp. 450-54.'
-license: Public Domain
+license: copyright has expired; released into the public domain
 ...
 
 It was more than fifteen years ago that I entered the laboratory of Professor Agassiz, and told him I had enrolled my name in the scientific school as a student of natural history. He asked me a few questions about my object in coming, my antecedents generally, the mode in which I afterwards proposed to use the knowledge I might acquire, and finally, whether I wished to study any special branch. To the latter I replied that while I wished to be well grounded in all departments of zoology, I purposed to devote myself specially to insects.
