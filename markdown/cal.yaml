@@ -67,6 +67,7 @@ classes:
 reading:
   raster graphics:
     - '[Raster graphics](https://en.wikipedia.org/wiki/Raster_graphics)'
+    - '[Fish](fish.html)'
   color:
     - '[Color](https://en.wikipedia.org/wiki/Color)'
     - '[RGB](https://en.wikipedia.org/wiki/RGB_color_model)'
