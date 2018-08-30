@@ -8,7 +8,7 @@ license: Copyright has expired; released into the public domain.
 ...
 
 
-<div style="max-width:40em;">
+<div style="max-width:40em; display: table; margin: auto;">
 
 It was more than fifteen years ago that I entered the laboratory of Professor Agassiz, and told him I had enrolled my name in the scientific school as a student of natural history. He asked me a few questions about my object in coming, my antecedents generally, the mode in which I afterwards proposed to use the knowledge I might acquire, and finally, whether I wished to study any special branch. To the latter I replied that while I wished to be well grounded in all departments of zoology, I purposed to devote myself specially to insects.
 
