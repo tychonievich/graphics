@@ -38,9 +38,9 @@ $endfor$
       <div class="container">
         <span class="doc-title">CS 4810 &ndash; $title$</span>
         <ul class="nav pull-right doc-info">
-          $for(author)$
-          <li><p class="navbar-text">$author$</p></li>
-          $endfor$
+          $if(subtitle)$
+          <li><p class="navbar-text">$subtitle$</p></li>
+          $endif$
           $if(date)$
           <li><p class="navbar-text">$date$</p></li>
           $endif$
