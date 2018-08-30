@@ -36,11 +36,12 @@ $endfor$
   <div class="navbar navbar-static-top">
     <div class="navbar-inner">
       <div class="container">
-        <span class="doc-title">CS 4810 &ndash; $title$</span>
-        <ul class="nav pull-right doc-info">
-          $if(subtitle)$
-          <li><p class="navbar-text">$subtitle$</p></li>
+        <span class="doc-title">CS 4810 &ndash; $title$
+        $if(subtitle)$
+          <br/><span style="font-size:70%">$subtitle$</span>
           $endif$
+        </span>
+        <ul class="nav pull-right doc-info">
           $if(date)$
           <li><p class="navbar-text">$date$</p></li>
           $endif$
