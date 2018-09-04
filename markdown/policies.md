@@ -60,8 +60,8 @@ Additionally, quizzes will be administered online frequently, and there will be 
 |  | Instructor | TAs |
 |--------|------------|-----|
 | Name | Luther Tychonievich | Fengyang "Yan" Zhang |
-| Location | Rice 208 | TBA |
-| Office Hours | Mon 9--10am, Tue 10-11am, Wed 11-12pm, Thu 12-1pm | TBA |
+| Location | Rice 208 | Thornton Stacks |
+| Office Hours | Mon 9--10am, Tue 10-11am, Wed 11-12pm, Thu 12-1pm | Tue 4--5pm, Thu 4--5pm |
 | Phone | 243-3789 | (none) |
 | Email | <a href="mailto:tychonievich@virginia.edu?subject=CS4810">tychonievich@virginia.edu</a> | use [Piazza](https://piazza.com/class/jg2a09h0hlr7d2) |
 
