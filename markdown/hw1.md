@@ -50,12 +50,12 @@ xyc, xyrgb
     <a href="files/hw1demo.txt"><img class="demo floater zoom" src="files/hw1demo.png"/></a>
 
     <pre>png 20 30 hw1demo.png
-    <font color="#ff0000">xyc    2  3   #ff0000</font>
-    <font color="#007f00">xyrgb 10 29   0 127 0</font>
-    <font color="#0000ff">xyrgb 19  9   0 0 255</font>
-    trig <span><b><font color="#f00">1</font> <font color="#00f">-1</font> <font color="#070">2</font></b><br/></span>
-    <font color="#770099">xyc    0 29   #770099</font>
-    trig <b><font color="#f00">1</font> <font color="#00f">-2</font> <font color="#770099">-1</font></b>
+    <font color="#ff0000">xyc    2  3   #ff0000</font> 
+    <font color="#007f00">xyrgb 10 29   0 127 0</font> 
+    <font color="#0000ff">xyrgb 19  9   0 0 255</font> 
+    trig <b><font color="#f00">1</font> <font color="#00f">-1</font> <font color="#070">2</font></b> 
+    <font color="#770099">xyc    0 29   #770099</font> 
+    trig <b><font color="#f00">1</font> <font color="#00f">-2</font> <font color="#770099">-1</font></b> 
     </pre>
 
 
