@@ -58,8 +58,8 @@ xyc, xyrgb
         trig 1 -2 -1
 
 
-    the first `trig` is from the first `xyc` line to the second `xyrgb` line, ending with the first `xyrgb` line;
-    the second `trig` is from the first `xyc` line to the second `xyrgb` line, ending with the second `xyc` line.
+    the first `trig` has vertices (in order) of (2, 3), (19, 9), and (10, 29);
+    the second `trig` has (2, 3), (19, 9), and (0, 29).
 
     Vertex indices will always refer to vertices earlier in the file.
     Vertex coordinates ($x$ and $y$) may be decimal numbers. Colors will still be integers.
