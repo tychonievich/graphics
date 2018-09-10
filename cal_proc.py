@@ -126,6 +126,11 @@ def calendar(data, linkfile):
         noclass = any(a <= d <= b for a,b in breaks)
         if d in things or ((not noclass) and wd in ('Tue','Thu')):
             today = {'day':wd, 'date':d}
+            if d in [_.date() for _ in data['Quizzes']['dates']]:
+                today['quiz'] = '<a href="{}">Quiz due {}</a>'.format(
+                    data['Quizzes']['link'],
+                    [_.strftime('%R') for _ in data['Quizzes']['dates'] if _.date() == d][0],
+                )
             if (not noclass) and wd in ('Tue','Thu'): 
                 d1 = data['classes'][classidx] if classidx < len(data['classes']) else ''
                 if type(d1) is str: d1 = [d1]
