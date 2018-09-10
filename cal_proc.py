@@ -182,6 +182,8 @@ def divify(weeks):
             ans += '"><span class="date">' + d['date'].strftime('%d %b').lstrip('0') + '</span>'
             if 'other' in d:
                 ans += '<div class="other">' + '</div><div class="other">'.join(d['other'])+'</div>'
+            if 'quiz' in d:
+                ans += '<div class="due">' + d['quiz']+'</div>'
             if 'topic' in d: 
                 ans += '<div class="topic"><strong>'+mdinline(d['topic'])+'</strong>'
                 if 'reading' in d: ans += mdinline(d['reading'])
