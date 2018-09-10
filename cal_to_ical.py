@@ -151,7 +151,9 @@ def calendar(data):
             d = d.replace(tzinfo=tz)
             d -= datetime.timedelta(0,60*5,0)
         ans.event(a+' due', d, m5)
-            
+    
+    for d in data['Quizzes']['dates']:
+        pass
     
     return ans
 
