@@ -78,7 +78,7 @@ linec $i_1$ $i_2$ *hexcolorcode*
     The same logic applies to lines that extend farther in $y$ than in $x$ and their pixel's $x$ coordinates.
     
     In the case where you start or end with an integer endpoint, include the smaller value but not the larger.
-    For example, if stepping between 20 to 10, include 10 but not 20. 
+    For example, if stepping between 20 and 10, include 10 but not 20. 
 
 trig $i_1$ $i_2$ $i_3$
 :   <a href="files/hw1trig.txt"><img class="demo floater zoom" src="files/hw1trig.png"/></a>
