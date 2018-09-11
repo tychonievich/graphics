@@ -73,10 +73,12 @@ linec $i_1$ $i_2$ *hexcolorcode*
 
     If the line extends farther in $x$ than in $y$, DDA steps in $x$.
     At any given integer $x$, the line itself may have a non-integer $y$, but pixels have integer coordinates.
-    Draw the pixel at the integer $y_{pixel}$ of $⌊y_{line} + 0.5⌋$.
+    Draw the pixel at the integer $y$ of $⌊y + 0.5⌋$.
     
     The same logic applies to lines that extend farther in $y$ than in $x$ and their pixel's $x$ coordinates.
     
+    In the case where you start or end with an integer endpoint, include the smaller value but not the larger.
+    For example, if stepping between 20 to 10, include 10 but not 20. 
 
 trig $i_1$ $i_2$ $i_3$
 :   <a href="files/hw1trig.txt"><img class="demo floater zoom" src="files/hw1trig.png"/></a>
