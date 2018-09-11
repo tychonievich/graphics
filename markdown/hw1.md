@@ -73,7 +73,7 @@ linec $i_1$ $i_2$ *hexcolorcode*
 
     If the line extends farther in $x$ than in $y$, DDA steps in $x$.
     At any given integer $x$, the line itself may have a non-integer $y$, but pixels have integer coordinates.
-    Draw the pixel at the integer $y$ of $⌊liney + 0.5⌋$.
+    Draw the pixel at the integer $y_{pixel}$ of $⌊y_{line} + 0.5⌋$.
     
     The same logic applies to lines that extend farther in $y$ than in $x$ and their pixel's $x$ coordinates.
     
