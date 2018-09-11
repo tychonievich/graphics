@@ -71,12 +71,12 @@ linec $i_1$ $i_2$ *hexcolorcode*
     Draw an 8-connected line of the given color using the DDA algorithm between the two vertices given.
     Ignore the colors of the vertices.
 
-    If the line extends farther in $x$ than in $y$,
-    fill the pixel with $y$ of $⌊liney + 0.5⌋$ for each integer $x$ between the $x$ coordinates of the two vertices.
-    If it extends farther in $y$ than in $x$,
-    fill the pixel with $x$ of $⌊linex + 0.5⌋$ for each $y$ between the $y$ coordinates of the two vertices.
-    In the case where you start or end with an integer endpoint, include the smaller value but not the larger.
-    For example, if stepping between 20 to 10, include 10 but not 20. 
+    If the line extends farther in $x$ than in $y$, DDA steps in $x$.
+    At any given integer $x$, the line itself may have a non-integer $y$, but pixels have integer coordinates.
+    Draw the pixel at the integer $y$ of $⌊liney + 0.5⌋$.
+    
+    The same logic applies to lines that extend farther in $y$ than in $x$ and their pixel's $x$ coordinates.
+    
 
 trig $i_1$ $i_2$ $i_3$
 :   <a href="files/hw1trig.txt"><img class="demo floater zoom" src="files/hw1trig.png"/></a>
