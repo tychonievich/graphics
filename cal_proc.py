@@ -143,6 +143,7 @@ def calendar(data, linkfile):
                 if d in linkfile:
                     links = []
                     for k,v in linkfile[d].items():
+                        if k in ['mp3','webm']: continue
                         if k != 'files':
                             links.append('['+k+']('+v+')')
                     links.extend('['+os.path.basename(_)+']('+_+')' for _ in linkfile[d].get('files',[]))
