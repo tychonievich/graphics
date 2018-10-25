@@ -146,7 +146,7 @@ def calendar(data, linkfile):
                         if k in ['mp3','webm']: continue
                         if k != 'files':
                             links.append('['+k+']('+v+')')
-                    links.extend('['+os.path.basename(_)+']('+_+')' for _ in linkfile[d].get('files',[]))
+                    links.extend('['+re.sub(r'^\d{4}-?\d{2}-?\d{2}-','',os.path.basename(_))+']('+_+')' for _ in linkfile[d].get('files',[]))
                     today['links'] = ' <span class="links">'+', '.join(links)+'</span>'
                 classidx += 1
             if noclass:
