@@ -120,6 +120,8 @@ reading:
     - '[GLSL data types](https://www.khronos.org/opengl/wiki/Data_Type_(GLSL))'
   webgl:
     - '[minimal example](https://gist.github.com/Kuranes/8aadb58f953f11e198ce)'
+    - '[twgl](http://twgljs.org/)'
+    - '[twgl library](https://raw.githubusercontent.com/greggman/twgl.js/master/dist/twgl-full.js)'
   webgl old:
     - '[base example](files/webgl-base.html)'
     - '[twgl](http://twgljs.org/)'
