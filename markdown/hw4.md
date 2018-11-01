@@ -20,21 +20,9 @@ To assist you in your project, we provide the following code snippets that you a
 - A set of arrays representing [an icosahedron](files/icosa.txt) with normals and texture coordinates (see [d20.png](files/d20.png) and [ico.png](files/ico.png) for example texture maps)
 - A set of arrays representing [an cube](files/box.txt) with normals and texture coordinates (see [dice.png](files/dice.png) for example texture maps)
 
-To use these, copy-and-paste their contents into your javascript 
+To use these arrays, copy-and-paste their contents into your javascript and then use them with `twgl.createBufferInfoFromArrays(gl, the_array_you_choose)`.
 
-# Do both
-
-twomaterials.html
-:   <img class="demo floater zoom" src="files/hw4twomaterials.png"/>
-	Create a file based on [our in-class example](files/twgl-inclass.html) but have one of the triangles not use a texture at all while the other still does.
-    To do this, you'll need two copies of many parts of the program:
-     
-    - two different fragment shaders, one that uses textures and one that does not
-    - two copies of anything that refers to a fragment shader (two `programInfo`s, two drawing codes, etc)
-    - two sets of arrays, one for each triangle, since we only want to pass one to each shader
-    - two drawing sequences (from `gl.useProgram` through `gl.drawElements`) inside the `render` function
-     
-    Note that you can get the same visual effect with many other solutions; we will look at your code to verify that two fragment shaders are in use.
+# Required
 
 overview.html
 :   <img class="demo floater zoom" src="files/hw4overview.gif"/>
@@ -49,7 +37,7 @@ overview.html
     Lighting is as easy as multiplying color by the dot product of the normal (which you'll need to make an `attribute` in the vertex program and a `varying` in both the vertex and fragment programs)
     with some arbitrary fixed vector.
 
-# Do at least one
+# Optional
 
 Implement at least one of the following.
 
