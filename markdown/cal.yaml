@@ -50,13 +50,13 @@ classes:
   
   - webgl
   - animation
-  - TBD
+  - IK
   
-  - 
-  - 
-  - 
-  - 
-  - 
+  - fluids
+  - fluids
+  - non-fluid physics
+  - destruction
+  - real-time eye-candy
   - 
   - 
   - 
@@ -176,6 +176,8 @@ reading:
     - '[approximation](http://www.iro.umontreal.ca/~ostrom/publications/pdf/SIGGRAPH07_SamplingWithPolyominoes.pdf)'
     - '[approximation](http://bl.ocks.org/mbostock/1893974)'
     - '[approximation](http://www.cs.ubc.ca/~rbridson/docs/bridson-siggraph07-poissondisk.pdf)'
+  destruction:
+    - '[meshless](https://lgg.epfl.ch/publications/2005/pauly_2005_MAF.pdf)'
   TBD:
     - '[vote on topics](https://docs.google.com/forms/d/e/1FAIpQLSf8ydrsrnhFYNXOzVrepWynw3ftEIy1SHeAuYWNp8ad6nPy-A/viewform?usp=sf_link)'
 
