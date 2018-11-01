@@ -61,9 +61,6 @@ classes:
   - CG filmography
   - [trees, terrain]
   - [skin, leaves]
-  - visualizing 4D
-  - graphics and X
-  - Ask Me Anything
 
 reading:
   raster graphics:
@@ -188,6 +185,8 @@ reading:
     - '[wikipedia](https://en.wikipedia.org/wiki/Inverse_kinematics)'
     - '[survey paper](https://onlinelibrary.wiley.com/doi/full/10.1111/cgf.13310)'
     - '[and beyond](http://geometry.caltech.edu/pubs/SZTDBG07.pdf)'
+    - '[and even more beyond](http://geometry.caltech.edu/pubs/KCD09.pdf)'
+    - '[and beyond that](http://geometry.caltech.edu/pubs/LHDJ13.pdf)'
   TBD:
     - '[vote on topics](https://docs.google.com/forms/d/e/1FAIpQLSf8ydrsrnhFYNXOzVrepWynw3ftEIy1SHeAuYWNp8ad6nPy-A/viewform?usp=sf_link)'
 
