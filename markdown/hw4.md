@@ -20,12 +20,13 @@ To assist you in your project, we provide the following code snippets that you a
 - A set of arrays representing [an icosahedron](files/icosa.txt) with normals and texture coordinates (see [d20.png](files/d20.png) and [ico.png](files/ico.png) for example texture maps)
 - A set of arrays representing [an cube](files/box.txt) with normals and texture coordinates (see [dice.png](files/dice.png) for example texture maps)
 
+To use these, copy-and-paste their contents into your javascript 
 
 # Do both
 
 twomaterials.html
 :   <img class="demo floater zoom" src="files/hw4twomaterials.png"/>
-	Create a file based on [our in-class example](https://www.cs.virginia.edu/tychonievich/4810/F2016/lectures/20161018-example.html) but have one of the triangles not use a texture at all while the other still does.
+	Create a file based on [our in-class example](files/twgl-inclass.html) but have one of the triangles not use a texture at all while the other still does.
     To do this, you'll need two copies of many parts of the program:
      
     - two different fragment shaders, one that uses textures and one that does not
