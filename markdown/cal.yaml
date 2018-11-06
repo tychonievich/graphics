@@ -159,7 +159,7 @@ reading:
     - '[Delaunay deformable models](http://certis.enpc.fr/publications/papers/07cvpr_b.pdf)'
     - '[concave terrain](http://link.springer.com/article/10.1007%2Fs00371-010-0506-2)'
   fluids:
-    - 'Navier-Stokes equation'
+    - '[Navier-Stokes equation](https://en.wikipedia.org/wiki/Navier%E2%80%93Stokes_equations)'
     - '[paper on gas](http://www.dgp.toronto.edu/people/stam/reality/Research/pdf/GDC03.pdf)'
     - '[paper on shallow water](http://hpcg.purdue.edu/bbenes/papers/Benes07Vriphys.pdf)'
     - '[Lagrangain methods](https://en.wikipedia.org/wiki/Smoothed-particle_hydrodynamics)'
