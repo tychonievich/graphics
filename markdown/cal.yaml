@@ -163,7 +163,7 @@ reading:
     - '[paper on gas](http://www.dgp.toronto.edu/people/stam/reality/Research/pdf/GDC03.pdf)'
     - '[paper on shallow water](http://hpcg.purdue.edu/bbenes/papers/Benes07Vriphys.pdf)'
     - '[Lagrangain methods](https://en.wikipedia.org/wiki/Smoothed-particle_hydrodynamics)'
-    - 'elastoviscosity'
+    - '[elastoviscosity](https://en.wikipedia.org/wiki/Non-Newtonian_fluids)'
   crowds:
     - '[boids](http://www.red3d.com/cwr/boids/)'
     - '[example implementation](files/boids.html)'
