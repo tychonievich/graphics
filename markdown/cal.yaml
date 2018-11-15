@@ -187,6 +187,12 @@ reading:
     - '[and beyond](http://geometry.caltech.edu/pubs/SZTDBG07.pdf)'
     - '[and even more beyond](http://geometry.caltech.edu/pubs/KCD09.pdf)'
     - '[and beyond that](http://geometry.caltech.edu/pubs/LHDJ13.pdf)'
+  non-fluid physics:
+    - '[wikipedia](https://en.wikipedia.org/wiki/Rigid_body_dynamics)'
+    - '[cloth](https://graphics.stanford.edu/~mdfisher/cloth.html)'
+    - '[cloth 2](https://web.archive.org/web/20160309180817/http://freespace.virgin.net/hugo.elias/models/m_cloth.htm)'
+    - '[ODE user guide chapter 3](http://ode.org/ode-latest-userguide.html#sec_3_0_0)'
+    - '[slides from UNC](https://cs.unc.edu/~lin/COMP768-F07/LEC/rbd1.pdf)'
   TBD:
     - '[vote on topics](https://docs.google.com/forms/d/e/1FAIpQLSf8ydrsrnhFYNXOzVrepWynw3ftEIy1SHeAuYWNp8ad6nPy-A/viewform?usp=sf_link)'
 
