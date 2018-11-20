@@ -175,6 +175,7 @@ reading:
     - '[approximation](http://bl.ocks.org/mbostock/1893974)'
     - '[approximation](http://www.cs.ubc.ca/~rbridson/docs/bridson-siggraph07-poissondisk.pdf)'
   destruction:
+    - '[wikipedia](https://en.wikipedia.org/wiki/Fracture_mechanics)'
     - '[meshless](https://lgg.epfl.ch/publications/2005/pauly_2005_MAF.pdf)'
   volume representation:
     - '[Eulerian vs Lagrangian](https://www.researchgate.net/profile/Mostafa_Safdari_Shadloo/publication/303814951/figure/fig1/AS:369949299232768@1465214194259/Eulerian-and-Lagrangian-representation-of-fluid-flow-equations.png)'
