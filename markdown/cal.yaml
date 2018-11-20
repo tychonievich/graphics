@@ -196,7 +196,10 @@ reading:
     - '[slides from UNC](https://cs.unc.edu/~lin/COMP768-F07/LEC/rbd1.pdf)'
     - '[Baraff 1996](http://www.cs.cmu.edu/~baraff/papers/sig96.pdf)'
   real-time eye-candy:
+    - '[parallax scrolling](https://en.wikipedia.org/wiki/Parallax_scrolling)'
     - '[bloom](https://en.wikipedia.org/wiki/Bloom_%28shader_effect%29)'
+    - '[tone mapping](https://en.wikipedia.org/wiki/Tone_mapping)'
+    - '[parallax mapping](https://en.wikipedia.org/wiki/Parallax_mapping)'
   TBD:
     - '[vote on topics](https://docs.google.com/forms/d/e/1FAIpQLSf8ydrsrnhFYNXOzVrepWynw3ftEIy1SHeAuYWNp8ad6nPy-A/viewform?usp=sf_link)'
 
