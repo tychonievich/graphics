@@ -197,6 +197,7 @@ reading:
     - '[Baraff 1996](http://www.cs.cmu.edu/~baraff/papers/sig96.pdf)'
   real-time eye-candy:
     - '[parallax scrolling](https://en.wikipedia.org/wiki/Parallax_scrolling)'
+    - '[shadow mapping](https://en.wikipedia.org/wiki/Shadow_mapping)'
     - '[bloom](https://en.wikipedia.org/wiki/Bloom_%28shader_effect%29)'
     - '[tone mapping](https://en.wikipedia.org/wiki/Tone_mapping)'
     - '[parallax mapping](https://en.wikipedia.org/wiki/Parallax_mapping)'
