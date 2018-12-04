@@ -155,6 +155,7 @@ reading:
   terrain:
     - '[fractal dimension of landscape](https://en.wikipedia.org/wiki/Fractal_landscape)'
     - '[diamond-square](https://en.wikipedia.org/wiki/Diamond-square_algorithm)'
+    - '[simplex explained](http://staffwww.itn.liu.se/~stegu/simplexnoise/simplexnoise.pdf)'
     - '[Erosion](https://en.wikipedia.org/wiki/Erosion)'
     - '[Delaunay deformable models](http://certis.enpc.fr/publications/papers/07cvpr_b.pdf)'
     - '[concave terrain](http://link.springer.com/article/10.1007%2Fs00371-010-0506-2)'
