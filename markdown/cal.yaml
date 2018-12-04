@@ -153,9 +153,9 @@ reading:
   plants:
     - '[Figure 4 in this paper](http://algorithmicbotany.org/papers/topiary.sig94.pdf)'
   terrain:
+    - '[fractal dimension of landscape](https://en.wikipedia.org/wiki/Fractal_landscape)'
+    - '[diamond-square](https://en.wikipedia.org/wiki/Diamond-square_algorithm)'
     - '[Erosion](https://en.wikipedia.org/wiki/Erosion)'
-    - '[marching cubes](https://en.wikipedia.org/wiki/Marching_cubes)'
-    - '[Delaunay triangulations](https://en.wikipedia.org/wiki/Delaunay_triangulation)'
     - '[Delaunay deformable models](http://certis.enpc.fr/publications/papers/07cvpr_b.pdf)'
     - '[concave terrain](http://link.springer.com/article/10.1007%2Fs00371-010-0506-2)'
   fluids:
