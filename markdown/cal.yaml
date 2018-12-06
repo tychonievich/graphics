@@ -206,6 +206,10 @@ reading:
     - '[vote on topics](https://docs.google.com/forms/d/e/1FAIpQLSf8ydrsrnhFYNXOzVrepWynw3ftEIy1SHeAuYWNp8ad6nPy-A/viewform?usp=sf_link)'
   CG filmography:
     - '[article on steps](https://www.awn.com/animationworld/producing-animation-3d-cgi-production-process)'
+  skin:
+    - '[wikipedia](https://en.wikipedia.org/wiki/Subsurface_scattering)'
+    - '[paper: BSSRDF can be used](https://graphics.stanford.edu/papers/bssrdf/bssrdf.pdf)'
+    - '[paper: BSSRDF can be used with layers](https://dl.acm.org/citation.cfm?id=1073204.1073308)'
 
 assignments:
   warmup:
