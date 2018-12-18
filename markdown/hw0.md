@@ -56,10 +56,12 @@ You will create an 8-bit RGBA PNG image with a specified width and height.
 
 C/C++
 :   You could use [libpng](http://libpng.org/pub/png/libpng.html), but you don't want to.
-    I suggest the public-domain [miniz.c](https://code.google.com/archive/p/miniz/) header.
+    The public-domain [miniz.c](https://code.google.com/archive/p/miniz/) header is sufficient for writing files (but not reading them, so it won;t help with texture mapping or the default HW5 project).
     I've posted [a stripped-down version](files/minizpng.h) and [an example interface](files/writepng.c) to it.
 
     Alternatively, a previous TAs suggested [CImg](http://cimg.sourceforge.net/) and an example file [cimg_example.cpp](files/cimg_example.cpp). I have not used CImg myself.
+    
+    A more recent student suggestion was [LodePNG](https://lodev.org/lodepng/), which has decent documentation on its own site.
 
     If you find another library you like, let me know and I'll see if I can easily get it on my compiling test server.
 
