@@ -1,0 +1,273 @@
+Special Dates:
+  Courses begin: 2020-08-25
+  Courses end: 2020-11-24
+  Add deadline: 2020-01-27
+  Drop deadline: 2020-02-24
+  Withdraw deadline: 2020-03-16
+  Thanksgiving break:
+    start: 2020-11-25
+    end: 2020-11-29
+
+meta:
+  timezone: America/New_York
+  name: CS 4810
+  lecture exam: true
+  home: https://www.cs.virginia.edu/luther/4810/F2020/
+  final:
+    start: 2020-12-03 14:00:00
+    duration: 180
+    room: online
+
+sections:
+  CS4810-001:
+    type: lecture
+    room: online
+    days: [Monday, Wednesday]
+    start: 14:00:00
+    duration: 75
+
+office hours:
+  .begin: 2020-09-01
+  faculty:
+    Tychonievich:
+      where: TBD
+      when: []
+
+
+
+lectures:
+  - intro
+  - raster graphics
+  - color
+  - image files
+  - scan conversion
+  - subdivision
+  - [curves, alpha]
+  
+  - math
+  - homogeneous coordinates
+  - 3d pipeline
+  - fragment shaders
+  - [3d pipeline, fragment shaders]
+  - raytracing
+  - light
+  - raytracing
+
+  - [webgl, glsl]
+  
+  - webgl
+  - animation
+  - IK
+  
+  - TBD
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+
+reading:
+  raster graphics:
+    - '[Raster graphics](https://en.wikipedia.org/wiki/Raster_graphics)'
+    - '[Fish](fish.html)'
+  color:
+    - '[Color](https://en.wikipedia.org/wiki/Color)'
+    - '[RGB](https://en.wikipedia.org/wiki/RGB_color_model)'
+    - '[CMYK](https://en.wikipedia.org/wiki/CMYK_color_model)'
+    - '[Gamma](https://en.wikipedia.org/wiki/Gamma_correction)'
+    - '[Color Solids](http://upload.wikimedia.org/wikipedia/commons/1/13/Color_solid_comparison_hsl_hsv_rgb_cone_sphere_cube_cylinder.png)'
+  image files:
+    - '[Image Compression](https://en.wikipedia.org/wiki/Image_compression)'
+    - '[HDR](https://en.wikipedia.org/wiki/High-dynamic-range_imaging)'
+    - '[Exposure](https://web.archive.org/web/20160306070613/http://freespace.virgin.net/hugo.elias/graphics/x_posure.htm)'
+  scan conversion:
+    - '[DDA and Bresenham](http://www.cs.virginia.edu/tychonievich/blog/posts/492.html)'
+    - '[Polygons](https://web.archive.org/web/20160325025208/http://freespace.virgin.net/hugo.elias/graphics/x_polysc.htm)'
+    - 'optionally [Implementers Guide 1.3&ndash;1.5](files/implguide_2010.pdf)'
+  subdivision:
+    - '[Bézier](https://en.wikipedia.org/wiki/B%C3%A9zier_curve#Constructing_B.C3.A9zier_curves)'
+    - 'optionally [Implementers Guide 1.6.3](files/implguide_2010.pdf)'
+  curves:
+    - '[b-spline](https://en.wikipedia.org/wiki/B-spline)'
+    - '[blobbies](https://en.wikipedia.org/wiki/Metaballs)'
+  alpha:
+    - '[alpha](https://en.wikipedia.org/wiki/Alpha_compositing)'
+    - 'optionally [Implementers Guide 1.7](files/implguide_2010.pdf)'
+  math:
+    - '[Implementers Guide 1.3](files/implguide_2010.pdf)'
+  homogeneous coordinates:
+    - '[homogeneous coordinates](http://mathworld.wolfram.com/HomogeneousCoordinates.html)'
+    - '[transformation matrices](https://en.wikipedia.org/wiki/Transformation_matrix)'
+    - '[one person’s take on how they fit together](http://www.teamten.com/lawrence/graphics/homogeneous/)'
+  3d pipeline:
+    - '[visible surface determination](http://www.siggraph.org/education/materials/HyperGraph/scanline/visibility/vsible0.htm) and it’s linked sub-pages'
+    - '[the Z-Buffer Algorithm](http://www.siggraph.org/education/materials/HyperGraph/scanline/visibility/zbuffer.htm)'
+    - '[Z-fighting](https://en.wikipedia.org/wiki/Z-fighting)'
+  fragment shaders:
+    - '[Lighting](https://en.wikipedia.org/wiki/Blinn%E2%80%93Phong_shading_model)'
+    - '[textures](https://en.wikipedia.org/wiki/Texture_mapping)'
+    - '[bumps](https://en.wikipedia.org/wiki/Bump_mapping)'
+  raytracing:
+    - '[overview](http://en.wikipedia.org/wiki/Ray_tracing_%28graphics%29)'
+    - '[optimizations](http://en.wikipedia.org/wiki/Bounding_volume_hierarchy)'
+    - 'optionally [Implementers Guide 2&ndash;2.4](files/implguide_2010.pdf)'
+  light:
+    - '[BRDF](http://en.wikipedia.org/wiki/Bidirectional_reflectance_distribution_function)'
+    - '[BRDF take 2](http://math.nist.gov/~FHunt/appearance/brdf.html)'
+    - '[global illumination](https://en.wikipedia.org/wiki/Global_illumination)'
+    - '[ambient occlusion](https://en.wikipedia.org/wiki/Ambient_occlusion)'
+    - 'optionally [Implementers Guide 2.5&ndash;2.7](files/implguide_2010.pdf)'
+    - 'optionally [radiosity](https://web.archive.org/web/20160311085440/http://freespace.virgin.net/hugo.elias/radiosity/radiosity.htm)'
+  glsl:
+    - '[GLSL data types](https://www.khronos.org/opengl/wiki/Data_Type_(GLSL))'
+  webgl:
+    - '[minimal example](https://gist.github.com/Kuranes/8aadb58f953f11e198ce)'
+    - '[twgl](http://twgljs.org/)'
+    - '[twgl library](https://raw.githubusercontent.com/greggman/twgl.js/master/dist/twgl-full.js)'
+    - '[twgl example](files/twgl-simple.html)'
+  webgl later:
+      - '[twgl textures example](files/twgl-textures.html)'
+  webgl old:
+    - '[base example](files/webgl-base.html)'
+    - '[twgl](http://twgljs.org/)'
+    - '[twgl example](files/twgl-base.html)'
+    - '[twgl library](files/twgl-full.js)'
+  animation:
+    - '[easing](http://easings.net/)'
+    - '[squash and stretch](https://en.wikipedia.org/wiki/Squash_and_stretch)'
+    - '[tweening](https://en.wikipedia.org/wiki/Inbetweening)'
+    - '[skeletal animation](https://en.wikipedia.org/wiki/Skeletal_animation)'
+  physics-based animation:
+    - '[paper](http://www.cs.ubc.ca/~van/papers/2010-TOG-gbwc/paper.pdf)'
+    - '[video](https://www.youtube.com/watch?v=lOxeyyooDmw)'
+  humans:
+    - '[the uncanny valley](https://en.wikipedia.org/wiki/Uncanny_valley)'
+    - '[hair](http://web.cs.wpi.edu/~emmanuel/courses/cs563/write_ups/curtf/hair/rendering_hair.htm)'
+    - '[subsurface scattering](http://graphics.ucsd.edu/~henrik/images/subsurf.html)'
+  image manipulation:
+    - '[flood fill](https://en.wikipedia.org/wiki/Flood_fill)'
+    - '[convolution](https://en.wikipedia.org/wiki/Convolution#Visual_explanation)'
+    - '[Gaussian blur](https://en.wikipedia.org/wiki/Gaussian_blur#Implementation)'
+    - '[seam carving](https://en.wikipedia.org/wiki/Seam_carving)'
+    - '[patch match](https://en.wikipedia.org/wiki/PatchMatch)'
+    - '[segmentation](https://en.wikipedia.org/wiki/Image_segmentation)'
+  fractals:
+    - '[L-systems](https://en.wikipedia.org/wiki/L-system)'
+    - '[trees](https://web.archive.org/web/20151125041920/http://freespace.virgin.net/hugo.elias/models/m_p_tree.htm)'
+  plants:
+    - '[Figure 4 in this paper](http://algorithmicbotany.org/papers/topiary.sig94.pdf)'
+  terrain:
+    - '[fractal dimension of landscape](https://en.wikipedia.org/wiki/Fractal_landscape)'
+    - '[diamond-square](https://en.wikipedia.org/wiki/Diamond-square_algorithm)'
+    - '[simplex explained](http://staffwww.itn.liu.se/~stegu/simplexnoise/simplexnoise.pdf)'
+    - '[Erosion](https://en.wikipedia.org/wiki/Erosion)'
+    - '[Delaunay deformable models](http://certis.enpc.fr/publications/papers/07cvpr_b.pdf)'
+    - '[concave terrain](http://link.springer.com/article/10.1007%2Fs00371-010-0506-2)'
+  fluids:
+    - '[Navier-Stokes equation](https://en.wikipedia.org/wiki/Navier%E2%80%93Stokes_equations)'
+    - '[paper on gas](http://www.dgp.toronto.edu/people/stam/reality/Research/pdf/GDC03.pdf)'
+    - '[paper on shallow water](http://hpcg.purdue.edu/bbenes/papers/Benes07Vriphys.pdf)'
+    - '[Lagrangain methods](https://en.wikipedia.org/wiki/Smoothed-particle_hydrodynamics)'
+    - '[elastoviscosity](https://en.wikipedia.org/wiki/Non-Newtonian_fluids)'
+  crowds:
+    - '[boids](http://www.red3d.com/cwr/boids/)'
+    - '[example implementation](files/boids.html)'
+  forests:
+    - '[seeds](files/seeds.html)'
+    - '[Poisson disc](http://www.cs.virginia.edu/~gfx/pubs/antimony/antimony.pdf)'
+    - '[approximation](https://en.wikipedia.org/wiki/Lloyd%27s_algorithm)'
+    - '[approximation](http://www.iro.umontreal.ca/~ostrom/publications/pdf/SIGGRAPH07_SamplingWithPolyominoes.pdf)'
+    - '[approximation](http://bl.ocks.org/mbostock/1893974)'
+    - '[approximation](http://www.cs.ubc.ca/~rbridson/docs/bridson-siggraph07-poissondisk.pdf)'
+  destruction:
+    - '[wikipedia](https://en.wikipedia.org/wiki/Fracture_mechanics)'
+    - '[meshless](https://lgg.epfl.ch/publications/2005/pauly_2005_MAF.pdf)'
+  volume representation:
+    - '[Eulerian vs Lagrangian](https://www.researchgate.net/profile/Mostafa_Safdari_Shadloo/publication/303814951/figure/fig1/AS:369949299232768@1465214194259/Eulerian-and-Lagrangian-representation-of-fluid-flow-equations.png)'
+    - '[marching cubes](https://en.wikipedia.org/wiki/Marching_cubes)'
+    - '[Delaunay](https://en.wikipedia.org/wiki/Delaunay_triangulation)'
+    - '[Alpha shapes](https://en.wikipedia.org/wiki/Alpha_shape)'
+  IK:
+    - '[wikipedia](https://en.wikipedia.org/wiki/Inverse_kinematics)'
+    - '[survey paper](https://onlinelibrary.wiley.com/doi/full/10.1111/cgf.13310)'
+    - '[and beyond](http://geometry.caltech.edu/pubs/SZTDBG07.pdf)'
+    - '[and even more beyond](http://geometry.caltech.edu/pubs/KCD09.pdf)'
+    - '[and beyond that](http://geometry.caltech.edu/pubs/LHDJ13.pdf)'
+  non-fluid physics:
+    - '[wikipedia](https://en.wikipedia.org/wiki/Rigid_body_dynamics)'
+    - '[cloth](https://graphics.stanford.edu/~mdfisher/cloth.html)'
+    - '[cloth 2](https://web.archive.org/web/20160309180817/http://freespace.virgin.net/hugo.elias/models/m_cloth.htm)'
+    - '[ODE user guide chapter 3](http://ode.org/ode-latest-userguide.html#sec_3_0_0)'
+    - '[slides from UNC](https://cs.unc.edu/~lin/COMP768-F07/LEC/rbd1.pdf)'
+    - '[Baraff 1996](http://www.cs.cmu.edu/~baraff/papers/sig96.pdf)'
+  real-time eye-candy:
+    - '[parallax scrolling](https://en.wikipedia.org/wiki/Parallax_scrolling)'
+    - '[shadow mapping](https://en.wikipedia.org/wiki/Shadow_mapping)'
+    - '[bloom](https://en.wikipedia.org/wiki/Bloom_%28shader_effect%29)'
+    - '[tone mapping](https://en.wikipedia.org/wiki/Tone_mapping)'
+    - '[parallax mapping](https://en.wikipedia.org/wiki/Parallax_mapping)'
+  TBD:
+    - '[vote on topics](https://docs.google.com/forms/d/e/1FAIpQLSf8ydrsrnhFYNXOzVrepWynw3ftEIy1SHeAuYWNp8ad6nPy-A/viewform?usp=sf_link)'
+  CG filmography:
+    - '[article on steps](https://www.awn.com/animationworld/producing-animation-3d-cgi-production-process)'
+  skin:
+    - '[wikipedia](https://en.wikipedia.org/wiki/Subsurface_scattering)'
+    - '[paper: BSSRDF can be used](https://graphics.stanford.edu/papers/bssrdf/bssrdf.pdf)'
+    - '[paper: BSSRDF can be used with layers](https://dl.acm.org/citation.cfm?id=1073204.1073308)'
+
+assignments:
+  ".groups":
+    HW:
+      portion: "50"
+    Quiz:
+      portion: "25"
+    Final:
+      portion: "25"
+  HW0:
+    title: warmup
+    due: 2018-09-07 17:00:00
+    writeup: hw0.html
+  HW1:
+    title: 2D rasterizer
+    due: 2018-09-28 17:00:00
+    writeup: hw1.html
+  HW2:
+    title: 3D rasterizer
+    due: 2018-10-12 17:00:00
+    writeup: hw2.html
+  HW3:
+    title: raytracer
+    due: 2018-11-02 17:00:00
+    writeup: hw3.html
+  HW4:
+    title: webgl
+    due: 2018-11-16 17:00:00
+    writeup: hw4.html
+  HW5:
+    title: project
+    due: 2018-12-07 23:59:59
+    writeup: hw5.html
+
+    Quiz00:
+        due: 2020-01-22 08:30:00
+    Quiz01:
+        due: 2020-01-27 08:30:00
+    Quiz02:
+        due: 2020-02-03 08:30:00
+    Quiz03:
+        due: 2020-02-10 08:30:00
+    Quiz05:
+        due: 2020-02-24 08:30:00
+    Quiz06:
+        due: 2020-03-02 08:30:00
+    Quiz07:
+        due: 2020-03-20 08:30:00
+    Quiz08:
+        due: 2020-03-30 08:30:00
+    Quiz09:
+        due: 2020-04-06 08:30:00
+    Quiz10:
+        due: 2020-04-13 08:30:00
+        
+
