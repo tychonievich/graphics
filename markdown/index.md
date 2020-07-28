@@ -25,17 +25,32 @@ visual-quality physics simulation, high-dimensional visualization,
 or advanced topics in real-time or realistic 3D graphics.
 Details of second-half curriculum will be based in part on student input.
 
+# A note about getting help
+
+This course is taught too infrequently to have previous students as TAs.
+UVA CS has no current graphics research, so we do not expect to have graduate TAs either.
+I am teaching three different classes this semester as well as leading multiple departmental efforts, so I will not have time for more than a few office hours a week.
+The course involves a lot of coding and has a large enrollment.
+
+Ergo, you should expect to have little if any assistance debugging your code.
+I'll be able to help with graphics questions (e.g., "that horizontal banding on your image means your DDA implementation is rounding wrong") but likely that is all.
+
+If you are uncomfortable about the idea of working with minimal support, you should probably select a different course that has full TA staffing.
+
 # Is this the right class?
 
 --------------------------------------  ---------------------------------------
-I have not yet finished CS 2150         No. We'll need its coverage of data structures
+I have not yet finished CS 2150/DSA1    No. We'll need its coverage of data structures
                                         and the experience if provides in self-guided development.
+
+I have not yet finished CS 4102/DSA2    Maybe; the assignments won't use these much, 
+                                        but the concepts will be discussed often in class.
 
 I want to write code                    Yes! Lots of that here! Most students will
                                         submit code containing more than 2,500 
                                         original statements (lines vary by language).
 
-I want to make special effects          Yes, we'll talk about lots of them!
+I want to design special effects        Yes, we'll talk about lots of them!
 
 I want to make movies                   Movies are made mostly by artists, 
                                         actors, and technicians. We will talk

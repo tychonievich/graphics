@@ -1,9 +1,10 @@
 /* Overall look-and-feel */
 body { margin:0em; font-family: sans-serif; color: #333333; background: #ffffff; line-height: 150%; }
 p { margin: 0em; }
-p + p { margin-top: 1ex; }
+p + p, p + table, table + p, table + table { margin-top: 1ex; }
 a { color: #0088cc; text-decoration: none; }
 a:hover, a:focus { color: #005580; text-decoration: underline; }
+li > p:last-child { margin-bottom: 1ex; }
 
 /* override the common "fixed with is smaller" defaults of browsers */
 body,code,pre,tt { font-size:12pt; }
@@ -45,7 +46,8 @@ footer { text-align: center; box-shadow: 0 0.0625ex 0.5ex rgba(0,0,0,.1); backgr
 .header-section-number:after, .toc-section-number:after { content: ". "; }
 h1 { font-size: 135%; border-top: 0.125ex solid #999999; padding: 1ex 0ex; margin: 0ex;  }
 h1:nth-child(n+2) { margin-top: 1ex; }
-h2 { font-size: 120%; border-top: 0.0625ex solid #999999; }
+/* h2 { font-size: 120%; border-top: 0.0625ex solid #999999; } */
+h2 { font-size: 120%; border-image: linear-gradient(to right, #999999, rgba(0,0,0,0)) 100% 0 0 0; border-top: 0.0625ex solid; }
 h3 { font-size: 112%; }
 h4 { font-size: 106%; }
 h5 { font-size: 100%; }
@@ -119,6 +121,42 @@ dt,h2,h3,h4,h5,h6 { clear:both; }
 
 .nav.pull-right { margin-left: auto; }
 
+/* .math.display { display: inline-block; width:100%; text-align:center; } */
+
+.proof, .lemma, .definition, .corollary, .theorem, .snippet {
+    font-family: KaTeX_Main; 
+    hyphens: auto;
+    text-align: justify;
+    padding: 1ex 2ex;
+    margin: 1ex 0ex;
+    background: rgba(255,255,255,0.75);
+/*
+    max-width: 40em;
+    display: table; margin: 1ex auto;
+*/
+}
+
+body {
+	counter-set: lemma 0 theorem 0 definition 0 corollary 0; 
+}
+
+.proof:not(.cont) > *:first-child:before { content: "Proof.  "; font-style:italic; }
+.proof:not(.frag) > *:last-child:after { content: " ∎"; }
+.lemma > *:first-child:before { counter-increment:lemma; content: "Lemma " counter(lemma) ".  "; font-style:italic; }
+.definition > *:first-child:before { counter-increment:definition; content: "Definition " counter(definition) ".  "; font-style:italic; }
+.corollary > *:first-child:before { counter-increment:corollary; content: "Corollary " counter(corollary) ".  "; font-style:italic; }
+.theorem > *:first-child:before { counter-increment:theorem; content: "Theorem " counter(theorem) ".  "; font-style:italic; }
+
+.proof > *:first-child, .lemma > *:first-child, .definition > *:first-child, .corollary > *:first-child, .theorem > *:first-child { text-indent: -1ex; }
+
+table.TFL { border-collapse: collapse; border: thin solid black; }
+table.TFL td { padding: 0.25ex 1ex; }
+table.TFL table.TFL { margin: 1ex 0ex; }
+table.TFL tr > td:first-child { border-right: thin solid black; }
+table.TFL tr.then > td:nth-child(2) { border-top: thin solid black; }
+
+
+/* q > span.math.inline:only-child { border: thin solid rgba(0,0,0,0.25); padding: 0.25ex; } */
 
 /* env.py inserted style */
 
@@ -141,7 +179,7 @@ dt,h2,h3,h4,h5,h6 { clear:both; }
     color: #005A9C;
 }
 
-.exercise {
+.exercise, .ednote {
     margin: 1em 0em 1em 0em;
     background: rgba(255,127,0,0.13333333);
     border-left: rgba(255,127,0,0.2666666) solid 0.5ex;
@@ -155,7 +193,7 @@ dt,h2,h3,h4,h5,h6 { clear:both; }
 }
 
 
-.aside {
+.aside, .note {
     margin: 1em 0em 1em 0em;
     background: rgba(0,0,0,0.0625);
     border-left: rgba(0,0,0,0.1225) solid 0.5ex;
@@ -166,3 +204,6 @@ dt,h2,h3,h4,h5,h6 { clear:both; }
     content: "Aside \2014  ";
     font-style: italic;
 }
+
+
+.author + .author:before { content: " and " }

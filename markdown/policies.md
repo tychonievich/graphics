@@ -5,8 +5,6 @@ title: Policies
 > "A syllabus is just a list of words they don&rsquo;t know yet."
 > <div>---Seth Reichelson</div>
 
-
-
 # Course objectives
 
 At the end of this course you will be able to do two broad classes of things:
@@ -26,8 +24,14 @@ this document is very much open to being adjusted as the semester progresses.
 > "The pain of parting is nothing to the joy of meeting again." 
 > <div>---Charles Dickens</div>
 
-Lecture is optional but strongly encouraged.
-Tuesday and Thursday, 2:00–3:15, in Thorton E316.
+This course will be taught online.
+It will be delivered synchronously so that you can interact with me, asking questions and the like;
+it will also be recorded for later viewing.
+Grades will never be associated with synchronous presence.
+
+I've requested a classroom we can use to display visual phenomena that do not capture well via camera.
+I have not yet heard if such a classroom will be provided.
+If it is, use of it will be scheduled, limited to small numbers at a time, and optional.
 
 There is no lab or discussion session.
 I do not schedule review sessions or the like outside of usual class time.
@@ -49,24 +53,17 @@ You will be asked to write and turn in four or five programs:
 
 #. an additional program based on the latter part of the course
 
-Additionally, quizzes will be administered online frequently, and there will be a final quiz administered in-person.
+Additionally, quizzes will be administered online frequently.
+There will be a final quiz, which I traditionally administered in-person;
+I have not yet determined how to adjust that for remote delivery.
 
 ## Contact
 
 > "I heard a sound; I turned around; I turned around to face the thing that made the sound."
 > <div>---They Might Be Giants</div>
 
-
-|  | Instructor | TAs |
-|--------|------------|-----|
-| Name | Luther Tychonievich | Fengyang "Yan" Zhang |
-| Location | Rice 208 | Olsson 018 |
-| Office Hours | Mon 9--10am, Tue 10-11am, Wed 11-12pm, Thu 12-1pm | Tue 4--5pm, Thu 4--5pm |
-| Phone | 243-3789 | (none) |
-| Email | <a href="mailto:tychonievich@virginia.edu?subject=CS4810">tychonievich@virginia.edu</a> | use [Piazza](https://piazza.com/class/jg2a09h0hlr7d2) |
-
-For most communication, [Piazza](https://piazza.com/class/jg2a09h0hlr7d2) is preferred to email.
-If you email, include "4810" in the subject line to prevent your email from skipping my inbox and never getting read.
+We are likely to use Discord as the primary communication medium in this course.
+Details will appear here once determined.
 
 ## Readings
 
@@ -93,12 +90,13 @@ Readings may be roughly categorized into two kinds.
 > <div>---Douglas Adams</div>
 
 Most assignments will be supported in any language you chose to use.
-In the past I have supported C++, C#, Python, Java, and D.
+In the past I have supported C++, C#, D, Java, Kotlin, Python, and Rust.
 You may switch languages as often as you wish.
-Last time I taught this almost all students ended up using either Python or D by the last assignment.
 If you want another language added, let me know.
 
-One assignment is (planned to be) in WebGL using Javascript and GLSL.
+One assignment will explore low-level 3D graphics library use,
+probably either WebGL in Javascript
+or Vulkan in C++.
 Assuming that plan does not change, we'll have a tutorial on the necessary bits of those languages in class prior to the assignment.
 
 Estimating how long it will take someone to complete a coding assignment
@@ -116,7 +114,7 @@ Task | Weight | Comments
 -----|--------|-----------------------------------------------------------------
 Quizzes     | 25% | Acceptance of late submissions and/or dropping some scores will be implemented
 Assignments | 50% | Approximately 10% each, but you'll have some point flexibility between them.  Extra credit in assignments will not transfer over to quizzes or final.
-Final Quiz  | 25% | The intent is to make this a (slightly reworded) selection from mid-semester quizzes' questions
+Final Quiz  | 25% | The intent is to make this a second try on the mid-semester quizzes' questions
 
 Your final grade is computed based on the percentage of points you have earned and is designed to match the GPA value of each letter. For reasons I do not understand, that is not a linear scale: for example, `A-` &minus; `B+` = 0.4 grade points while `B+` &minus; `B` = 0.3 grade points. For reasons even farther from my ken, the most common grading scale I have seen is also not linear but differently spaced than the grade points. Following is a scale spaced like the grade point scale:
 
@@ -150,73 +148,67 @@ I do not curve grades: if you all fail, you all fail; if you all ace, you all ac
 Behave professionally.
 
 Never abuse anyone, including the emotional abuse of blaming others for your mistakes.
-Kindness trumps correctness.
+Kindness is more important than correctness.
 
-Let our TAs be students when they are not being TAs.
+If we have TAs, let them be students when they are not on the clock as TAs.
 
 ## Honesty
 
-I always hope everyone will behave honestly.
-I know we all are tempted to do what we ought not;
-if you do something you regret, the sooner you tell me the sooner (and more leniently) we can correct it.
+We always hope everyone will behave honestly.
+We know we all are tempted to do what we ought not;
+if you do something you regret, the sooner you tell us the sooner (and more leniently) we can correct it.
 
 ### No plagiarism (nor anything like it)
 
-You **must** site any and every source you consult, other than those explicitly provided by the course itself.
+If you consult resources other than course material in the performance of any course assessment (including quizzes and homeworks),
+you **must** cite any and every source you consult in the comments of the quiz question or program file.
 Talked to a friend, saw an interesting video, consulted a website, had a tutor?
 Tell us!
-Put it in a comment in your code.
 
-### Write your own code
+### Obey collaboration limitations
 
-You must write your own code.
-Not just type it (though you need to do that too): **compose it yourself**, as your own original work.
-Beware of looking at other students code or code you find online: it is hard to unsee and can spoil your ability to compose your own solutions!
+Quizzes may not be done in groups or in consultation with any resource that did not exist prior to the quiz being posted.
 
-### Understand what you submit
+Code must be written on your own.
+Do not show or read your code to anyone other than course staff.
+Do not seek out or view others' code, in or out of the class.
 
-Working together can help you learn. But make sure you learned!
-We may ask you to explain aspects of a solution you turn in,
-and may dock points if it appears you simply copied someone else's ideas (or just guessed a lot of things until one worked) without understanding them.
-
-### No help on quizzes
-
-It would probably go without saying if we didn't say it, but no assistance may be given or received on any supervised evaluation or online quiz unless specifically announced otherwise by the professor (or another proctor of the evaluation).
+Remember: we don't care about your code or quizzes in and of themselves;
+we know the answers and have reference implementations already.
+What we care about is the changes that occur in your mind as you work on them.
+Don't cheat yourself out of the gains these assessments are designed to provide.
 
 ### Consequences of Dishonesty
 
-If I believe you have acted dishonestly, I will communicate this fact to you and propose a penalty.
-If you have information I lack, please share that with me; I may thereafter change my belief and/or proposed penalty.
+If we believe you have acted dishonestly, we will communicate this fact to you and propose a penalty.
+If you have information we lack, please share that with us; we may thereafter change our belief and/or proposed penalty.
 
-If we are not able to come to an agreement, or if the case is particularly egregious and beyond my comfort level handling in-course, we will instead refer the case to the University Honor System and abide by their findings.
-## Timeliness
-
-I care very little when each student finishes each assignment.
-However, I find that a significant subset of students have difficulty prioritizing early work without a grade incentive.
-I also find that grading is easier when most students finish an assignment at the same time.
-I thus intend to deduct a few percent for late submissions and add a few for significantly early submissions.
-
-Quizzes, on the other hand, will have hard deadlines.
-If you miss them, you miss them.
+If we are not able to come to an agreement, or if the case is particularly egregious and beyond our comfort level handling in-course, we will instead refer the case to the University Honor System and abide by their findings.
 
 
 ## Personal accommodations
 
 ### Disability
 
-If you qualify for accommodations from [the SDAC](http://studenthealth.virginia.edu/sdac), please let me know, preferably in my office where we can discuss how your accommodations will interplay with the quiz- and assignment-based nature of this course.
+If you qualify for accommodations from [the SDAC](http://studenthealth.virginia.edu/sdac), please let your professor know, preferably [in their office]{style="color:red"} so we can discuss how your accommodations will interplay with the content delivery and assessment structure of this course.
 
 ### Religious observances
 
-As a religious person myself, I fully support [the university's stance](https://eocr.virginia.edu/accommodations-religious-observance) on accommodating religious observances.
+We fully support [the university's stance](https://eocr.virginia.edu/accommodations-religious-observance) on accommodating religious observances.
 If such observances or other religious beliefs impact or are likely to impact your work this semester,
-please let me know as soon as you are aware of this impact.
+please let us know as soon as you are aware of this impact.
+
+### Culture
+
+All communication relies on shared context and understanding.
+Because no member of our course staff has the same context and experience as you, it is likely we will inadvertently say and do things you find confusing or offensive. Please let us know if this happens! We will do our best to learn and adjust so we can become better and more welcoming communicators in the future, and to do what we can to fix any problems our mistakes caused.
 
 ### Life
 
 Bad things happen.
 People forget things and make mistakes.
 Bad days coincide with due dates.
+Students and their loved ones get sick.
 Etc.
 
-If you believe that circumstances warrant an change in deadline, a second chance, or some other accommodation in order to more accurately synchronize grade with knowledge, come talk to me and we'll resolve the situation as best we can.
+If you believe that circumstances warrant an change in deadline, a second chance, or some other accommodation in order to more accurately synchronize grade with knowledge, talk to your professor and we'll resolve the situation as best we can.

@@ -4,7 +4,7 @@ subtitle: by the Student
 author: 
   - 'Samuel H. Scudder'
   - '<br/> from *American Poems* (3rd ed.; Boston: Houghton, Osgood & Co., 1879): pp. 450-54.'
-license: Copyright has expired; released into the public domain.
+license: Copyright has expired
 ...
 
 
@@ -64,7 +64,7 @@ This was the best entomological lesson I ever had -- a lesson whose influence wa
 
 A year afterwards, some of us were amusing ourselves with chalking outlandish beasts upon the blackboard. We drew prancing star-fishes; frogs in mortal combat; hydro-headed worms; stately craw-fishes, standing on their tails, bearing aloft umbrellas; and grotesque fishes, with gaping mouths and staring eyes. The professor came in shortly after, and was as much amused as any at our experiments. He looked at the fishes.
 
-"*Haemulons*, every one of them," he said; "Mr. ____________ drew them."
+"*Haemulons*, every one of them," he said; "Mr. \_\_\_\_\_\_\_\_\_\_\_\_ drew them."
 
 True; and to this day, if I attempt a fish, I can draw nothing but *Haemulons*.
 
