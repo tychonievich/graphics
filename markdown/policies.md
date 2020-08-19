@@ -29,6 +29,14 @@ It will be delivered synchronously so that you can interact with me, asking ques
 it will also be recorded for later viewing.
 Grades will never be associated with synchronous presence.
 
+There are effectively three levels of participation:
+
+Level   How to engage               What you get
+------  ---------------             -----------------------
+Low     Read + watch asynchronously Content as best I can explain it
+Medium  On zoom live, camera off    as Low, plus you can ask questions
+High    On zoom live, camera on     as Medium, plus I can adjust my pacing based on your facial expressions and affect
+
 I've requested a classroom we can use to display visual phenomena that do not capture well via camera.
 I have not yet heard if such a classroom will be provided.
 If it is, use of it will be scheduled, limited to small numbers at a time, and optional.
@@ -49,7 +57,7 @@ You will be asked to write and turn in four or five programs:
 
 #. a basic raytracer
 
-#. (probably) a basic WebGL program
+#. (probably) a basic WebGL program; maybe a Vulkan app instead
 
 #. an additional program based on the latter part of the course
 
@@ -62,8 +70,11 @@ I have not yet determined how to adjust that for remote delivery.
 > "I heard a sound; I turned around; I turned around to face the thing that made the sound."
 > <div>---They Might Be Giants</div>
 
-We are likely to use Discord as the primary communication medium in this course.
-Details will appear here once determined.
+We'll use [Discord](https://discord.gg/yTVpp8b) to emulate offices, office hours, office hours queues, etc.
+We recommend downloading the desktop app, but the browser version should also work.
+
+
+
 
 ## Readings
 
@@ -117,8 +128,6 @@ Assignments | 50% | Approximately 10% each, but you'll have some point flexibili
 Final Quiz  | 25% | The intent is to make this a second try on the mid-semester quizzes' questions
 
 Your final grade is computed based on the percentage of points you have earned and is designed to match the GPA value of each letter. For reasons I do not understand, that is not a linear scale: for example, `A-` &minus; `B+` = 0.4 grade points while `B+` &minus; `B` = 0.3 grade points. For reasons even farther from my ken, the most common grading scale I have seen is also not linear but differently spaced than the grade points. Following is a scale spaced like the grade point scale:
-
-
 
 You get     if you score     Which is worth
 ----------  ------------    ----------------
