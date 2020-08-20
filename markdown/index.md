@@ -8,6 +8,14 @@ var icon = document.getElementById("icon");
 icon.setAttribute("src", "files/redchair"+Math.floor(Math.random()*6)+".png");
 </script>
 
+# Meetings
+
+Course meetings are Mondays and Wednesdays 2–3:15 (eastern time);
+see [the course Collab site](https://collab.its.virginia.edu/portal/site/6ed4717e-ca26-44bb-a311-2e18abcc488d/page/29ab466c-cd5c-4429-b11e-da4cd603e230) for the Zoom meeting join link.
+
+Office hours and instructor meetings are at [times TBA]{style="color:red"} or by appointment;
+see [the course Collab site](https://collab.its.virginia.edu/portal/site/87b0131b-78ba-4d1a-9eec-ed65343647a4/page-reset/9e0fb97c-90a4-40d6-8d1d-821bff0d0f02) for the Discord server join link.
+
 # Overview 
 
 This course explores the algorithms, data structures, 
