@@ -339,15 +339,15 @@ assignments:
   HW0:
     title: warmup
     due: 2020-09-04 17:00:00
-    writeup: hw0.html
+    link: hw0.html
   HW1:
     title: 2D rasterizer
     due: 2020-09-25 17:00:00
-    writeup: hw1.html
+    link: hw1.html
   HW2:
     title: 3D rasterizer
     due: 2020-10-09 17:00:00
-    writeup: hw2.html
+    link: hw2.html
   HW3:
     title: raytracer
     due: 2020-10-30 17:00:00
