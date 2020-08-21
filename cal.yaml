@@ -96,12 +96,12 @@ reading:
       lnk: 'http://www.cs.virginia.edu/tychonievich/blog/posts/492.html'
     - txt: 'Polygons'
       lnk: 'https://web.archive.org/web/20160325025208/http://freespace.virgin.net/hugo.elias/graphics/x_polysc.htm'
-    - txt: 'optionally Implementers Guide 1.3&ndash;1.5'
+    - txt: '(optionally) Implementers Guide 1.3&ndash;1.5'
       lnk: 'files/implguide_2010.pdf'
   subdivision:
     - txt: 'Bézier'
       lnk: 'https://en.wikipedia.org/wiki/B%C3%A9zier_curve#Constructing_B.C3.A9zier_curves'
-    - txt: 'optionally Implementers Guide 1.6.3'
+    - txt: '(optionally) Implementers Guide 1.6.3'
       lnk: 'files/implguide_2010.pdf'
   curves:
     - txt: 'b-spline'
@@ -111,7 +111,7 @@ reading:
   alpha:
     - txt: 'alpha'
       lnk: 'https://en.wikipedia.org/wiki/Alpha_compositing'
-    - txt: 'optionally Implementers Guide 1.7'
+    - txt: '(optionally) Implementers Guide 1.7'
       lnk: 'files/implguide_2010.pdf'
   math:
     - txt: 'Implementers Guide 1.3'
@@ -142,7 +142,7 @@ reading:
       lnk: 'http://en.wikipedia.org/wiki/Ray_tracing_%28graphics%29'
     - txt: 'optimizations'
       lnk: 'http://en.wikipedia.org/wiki/Bounding_volume_hierarchy'
-    - txt: 'optionally Implementers Guide 2&ndash;2.4'
+    - txt: '(optionally) Implementers Guide 2&ndash;2.4'
       lnk: 'files/implguide_2010.pdf'
   light:
     - txt: 'BRDF'
@@ -153,9 +153,9 @@ reading:
       lnk: 'https://en.wikipedia.org/wiki/Global_illumination'
     - txt: 'ambient occlusion'
       lnk: 'https://en.wikipedia.org/wiki/Ambient_occlusion'
-    - txt: 'optionally Implementers Guide 2.5&ndash;2.7'
+    - txt: '(optionally) Implementers Guide 2.5&ndash;2.7'
       lnk: 'files/implguide_2010.pdf'
-    - txt: 'optionally radiosity'
+    - txt: '(optionally) radiosity'
       lnk: 'https://web.archive.org/web/20160311085440/http://freespace.virgin.net/hugo.elias/radiosity/radiosity.htm'
   glsl:
     - txt: 'GLSL data types'
