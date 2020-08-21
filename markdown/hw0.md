@@ -16,7 +16,7 @@ Unlike other assignments
 - avoid plagarism, but feel free to grab code from any source as long as you cite it
 - you are encouraged to submit it in each language you think you might want to use
 
-This assignment is due the second week of class (i.e., 7 Sep or thereabouts) but earlier = better.
+This assignment is due the second week of class (i.e., 4 Sep or thereabouts) but earlier = better.
 
 ## Structure
 
