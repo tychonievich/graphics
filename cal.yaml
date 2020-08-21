@@ -170,7 +170,7 @@ reading:
     - txt: 'twgl example'
       lnk: 'files/twgl-simple.html'
   webgl later:
-      - txt: 'twgl textures example'
+    - txt: 'twgl textures example'
       lnk: 'files/twgl-textures.html'
   webgl old:
     - txt: 'base example'
