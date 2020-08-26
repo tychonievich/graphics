@@ -114,7 +114,7 @@ D
     > dub, dmd, and ldc are also installed and can be switched to if a version compatibility issue is identified. 
 
 Java
-:   The relevant libraries are `BufferedImage`{.java}, `WritableRaster`{.java}, and `ImageIO`{.java}, all in the `javax.imageio`{.java} package. Do not use `java.awt.Graphics`{.java}.
+:   The relevant libraries are `BufferedImage`{.java} and `WritableRaster`{.java} from `java.awt.image` and `ImageIO`{.java} from `javax.imageio`{.java} package. Do not use `java.awt.Graphics`{.java}.
 
     ````java
     // ... set width, height, etc.

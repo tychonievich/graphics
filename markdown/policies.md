@@ -73,8 +73,14 @@ I have not yet determined how to adjust that for remote delivery.
 We'll use [Discord](https://discord.gg/yTVpp8b) to emulate offices, office hours, office hours queues, etc.
 We recommend downloading the desktop app, but the browser version should also work.
 
+Person	| OH	| Contact
+------- | ----- | -------
+Luther Tychonievich	| Mo 10–11; TuTh 1–2:30 | tychonievich@virginia.edu<br/>+1 434 243 3789
+Jingyun Chou | TBA | Discord only
+Yinghan Wang | TBA | Discord only
 
-
+If you email, please include 4810 in the subject line.
+I get so many emails each day that those that are not obviously related to one of my classes may not be read very quickly.
 
 ## Readings
 
