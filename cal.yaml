@@ -80,7 +80,7 @@ reading:
     - txt: 'TFT'
       lnk: 'https://commons.wikimedia.org/wiki/File:LCD_TFT_Screen_Closeup.jpg'
     - txt: 'OLED'
-      link: 'https://commons.wikimedia.org/wiki/File:Nexus_one_screen_microscope.jpg'
+      lnk: 'https://commons.wikimedia.org/wiki/File:Nexus_one_screen_microscope.jpg'
   color:
     - txt: 'Color'
       lnk: 'https://en.wikipedia.org/wiki/Color'
