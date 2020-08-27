@@ -75,6 +75,12 @@ reading:
       lnk: 'fish.html'
     - txt: 'In-class activity'
       lnk: 'https://kytos.cs.virginia.edu/graphics/raster.php'
+    - txt: 'CRT'
+      lnk: 'https://commons.wikimedia.org/wiki/File:CRT_screen._closeup.jpg'
+    - txt: 'TFT'
+      lnk: 'https://commons.wikimedia.org/wiki/File:LCD_TFT_Screen_Closeup.jpg'
+    - txt: 'OLED'
+      link: 'https://commons.wikimedia.org/wiki/File:Nexus_one_screen_microscope.jpg'
   color:
     - txt: 'Color'
       lnk: 'https://en.wikipedia.org/wiki/Color'
