@@ -2,9 +2,9 @@
 title: The Student, the Fish, and Agassiz
 subtitle: by the Student
 author: 
-  - 'Samuel H. Scudder'
-  - '<br/> from *American Poems* (3rd ed.; Boston: Houghton, Osgood & Co., 1879): pp. 450-54.'
-license: Copyright has expired
+  - 'Samuel H. Scudder<br/> from *American Poems* (3rd ed.; Boston: Houghton, Osgood & Co., 1879): pp. 450-54.'
+license: '"Copyright has expired"'
+year: 1879
 ...
 
 
