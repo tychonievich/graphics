@@ -120,6 +120,7 @@ def raw2cal(data, links=None):
                     ent['sidx'] += 1
                 # handle separate links file
                 if links and d in links:
+                    print(links[d])
                     for f in links[d].get('files',[]):
                         n = os.path.basename(f)
                         n = n[n.find('-')+1:]
