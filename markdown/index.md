@@ -16,10 +16,10 @@ see [the course Collab site](https://collab.its.virginia.edu/portal/site/6ed4717
 Day         Time            Who
 -------     --------------- -------------
 Monday      10--11          Tychonievich
-Tuesday     14--15:30       Tychonievich
+Tuesday     12--14:30       Tychonievich
 Tuesday     16--17:30       Yinghan
 Wednesday   16:30-18        Jingyuan
-Thursday    14--15:30       Tychonievich
+Thursday    13--14:30       Tychonievich
 Thursday    16--17:30       Yinghan
 Friday      16:30-18        Jingyuan
 
