@@ -1,0 +1,17 @@
+2020-08-26:
+  audio: lectures/2020-08-26.mp3
+  files:
+  - lectures/2020-08-26-slides.pdf
+  - lectures/2020-08-26-qa.txt
+  video: lectures/2020-08-26.webm
+2020-08-31:
+  audio: lectures/2020-08-31.mp3
+  files:
+  - lectures/2020-08-31-2020-08-31-slides.pdf
+  video: lectures/2020-08-31.webm
+2020-09-02:
+  audio: lectures/2020-09-02.mp3
+  files:
+  - lectures/2020-09-02-2020-09-02-fish.txt
+  - lectures/2020-09-02-2020-09-02-slides.pdf
+  video: lectures/2020-09-02.webm
