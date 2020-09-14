@@ -70,7 +70,7 @@ what direction we came from last
 and how many of the four pixels are positive vs negative.
 The rule is simple: exit on the side with different signs that you didn't enter from.
 
-![pixel stepping rules](files/implicit2.svg){style="width:14em"}
+![pixel stepping rules](files/implicit2.svg){style="width:24em"}
 
 The third rule above is a problem case: it can only arise if the shape has a narrow region or cusp, and the grid walking algorithm itself cannot pick the right reaction to it.
 Heuristics can be used with reasonable consistency, however, by picking either "don't cross a positive diagonal" or "don't cross a negative diagonal": it doesn't matter which one is picked, but it needs to be consistent.
