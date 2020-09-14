@@ -25,3 +25,7 @@
   files:
   - lectures/2020-09-09-2020-09-09-slides.pdf
   video: lectures/2020-09-09.webm
+2020-09-14:
+  mkv: "/tmp/2020-09-14 14-00-01.mkv"
+  files:
+    - /tmp/2020-09-14-slides.pdf
