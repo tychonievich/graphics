@@ -72,8 +72,9 @@ The rule is simple: exit on the side with different signs that you didn't enter 
 
 ![pixel stepping rules](files/implicit2.svg){style="width:24em"}
 
-The third rule above is a problem case: it can only arise if the shape has a narrow region or cusp, and the grid walking algorithm itself cannot pick the right reaction to it.
-Heuristics can be used with reasonable consistency, however, by picking either "don't cross a positive diagonal" or "don't cross a negative diagonal": it doesn't matter which one is picked, but it needs to be consistent.
+The third rule above is a problem case: it can only arise if the shape has a narrow region or cusp,
+which grid walking cannot perfectly resolve.
+However, picking either "don't cross a positive diagonal" or "don't cross a negative diagonal" (it doesn't matter which one is picked, but it needs to be consistent) will result in sensible, if not perfect, behavior.
 
 This approach doesn't lend itself to drawing an 8-connect boundary line,
 but does let us draw the pixels on one side of the curve.
@@ -83,3 +84,54 @@ and it knows that the outlined pixels, although visited, where not adjacent to t
 
 ![grid walking results](files/implicit3.svg){style="width:18em"}
 
+# Polynomial grid walking
+
+If $f(x,y)$ is a polynomial function, then we can use Bresenham-like tricks to make the grid walking algorithm very computationally efficient
+using a grid-spaced analog of derivatives called **finite differences**.
+These might be best introduced by example:
+
+:::example
+Consider the polynomial $f(x) = 2 x^3 - 4 x^2 + x + 0$.
+Let's evaluate it at some regularly-spaced $x$s:
+
+$f(-1)$ $f(0)$  $f(1)$   $f(2)$  $f(3)$  $f(4)$  $f(5)$
+------- ------  -------  ------  ------  ------  ------
+$-7$    $0$     $-1$     $2$     $21$   $68$    $155$
+
+
+Now let's find the difference between adjacent entries above
+
+
+$f(-1)$         $f(0)$          $f(1)$          $f(2)$          $f(3)$          $f(4)$          $f(5)$
+------  ----    ------  ----    ------  ----    ------  ----    ------  ----    ------  ----    ------
+$-7$            $0$             $-1$            $2$             $21$            $68$            $155$
+        $7$             $-1$            $3$             $19$            $47$            $87$
+
+And let's keep going, adding the difference of entries in the last row
+
+
+$f(-1)$         $f(0)$          $f(1)$          $f(2)$          $f(3)$          $f(4)$          $f(5)$
+------  ----    ------  ----    ------  ----    ------  ----    ------  ----    ------  ----    ------
+$-7$            $0$             $-1$            $2$             $21$            $68$            $155$
+        $7$             $-1$            $3$             $19$            $47$            $87$
+                $-8$            $4$             $16$            $28$            $40$
+                        $12$            $12$            $12$            $12$
+                                $0$             $0$             $0$
+                                        $0$             $0$
+                                                $0$
+
+Notice that the 4^th^ row is all $12$ and the 5^th^ and subsequent rows are all $0$?
+That's not a fluke: for an $n$^th^ order polynomial, the $(n+1)$^th^ row will be constant
+and all subsequent rows 0.
+
+Now we can find $f(6)$ with only addition:
+we extend the 4^th^ row to have one more 12, then repeatedly add the last entry of the $i$^th^ row to the last entry of the ($i-1$)^th^ row to extend that row
+
+$f(-1)$         $f(0)$          $f(1)$          $f(2)$          $f(3)$          $f(4)$          $f(5)$                  $f(6)$
+------  ----    ------  ----    ------  ----    ------  ----    ------  ----    ------  ----    ------      -----       --------
+$-7$            $0$             $-1$            $2$             $21$            $68$            $155$                   $155+139=294$
+        $7$             $-1$            $3$             $19$            $47$            $87$                $87+52=139$
+                $-8$            $4$             $16$            $28$            $40$            $40+12=52$
+                        $12$            $12$            $12$            $12$            $12$
+
+:::
