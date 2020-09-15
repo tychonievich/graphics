@@ -175,3 +175,113 @@ We could easily go a few more steps too:
 $(20,-7,5)$, $(32,-12,5)$, etc.
 :::
 
+Finite differences are a more complicated idea than we'll use, with the ability to use any fixed step size and with forward and backward variants,
+but the simple approach works as follows:
+
+1. Pick the $x,y$ point to start at
+
+2. Evaluate $f(x-i, y-j)$ for all $0 \le i \le o_x+1$ and $0 \le j \le o_y$,
+    where $o_x$ is the order of the polynomial in the $x$
+    and $o_y$ the order in $y$.
+    
+    Example $f(x,y) = x^2y + y^3 + x$ has $o_x=2$ and $o_y=3$.
+    If we start at $(0,0)$ the grid would be
+    
+        -41 -31 -27
+        -18 -11  -8
+         -7  -3  -1
+         -2  -1   0
+
+3. Subtract adjacent values repeatedly to create the finite differences
+    
+    Continuing the previous example, the grid
+    
+        -41 -31 -27
+        -18 -11  -8
+         -7  -3  -1
+         -2  -1   0
+
+    after one subtraction in $x$
+    
+         10   4 -27
+          7   3  -8
+          4   2  -1
+          1   1   0
+
+    after two subtractions in $x$
+    
+          6   4 -27
+          4   3  -8
+          2   2  -1
+          0   1   0
+
+    after one subtractions in $y$
+    
+          2   1  19
+          2   1   7
+          2   1   1
+          0   1   0
+
+    after two subtractions in $y$
+    
+          0   0  12
+          0   0   6
+          2   1   1
+          0   1   0
+
+    after three subtractions in $y$
+    
+          0   0   6
+          0   0   6
+          2   1   1
+          0   1   0
+    
+    And that's the full difference grid.
+
+    As an optimization, we can throw away 0s in thetop-left corner, like so:
+
+                  6
+                  6
+          2   1   1
+          0   1   0
+    
+    ... though doing so is not necessary.
+    If done properly, the resulting shape should match the terms of the polynomial:
+    e.g. $x^2y$ should ne 3 wide in x and 2 wide in $y$;
+    $y^3$ should be 4 wide in $y$ and 1 wide in $x$; etc.
+
+4. To evaluate the function a $x+1$ we add each row, right to left
+
+                  6
+                  6
+          2   3   2
+          0   1   1
+    
+    meaning $f(1,0) = 1$
+    
+    To evaluate the function a $y+1$ we add each column, bottom to top
+
+                  6
+                 12
+          2   3   8
+          2   4   3
+
+    meaning $f(1,1) = 3$
+
+    To evaluate the function a $x-1$ we subtract each column, left to right
+
+                  6
+                 12
+          2   1   7
+          2   2   1
+
+    meaning $f(0,1) = 3$
+
+    To evaluate the function a $y-1$ we subtract each column, top to bottom
+
+                  6
+                  6
+          2   1   1
+          0   1   0
+
+    meaning $f(0,0) = 0$
