@@ -165,7 +165,7 @@ $(22,8,5)$, $(35,13,5)$, etc.
 
 You can also find $f(7)$ by subtracting from the first difference to the last:
 
-                                     $f(8)$
+                $f(7)$               $f(8)$
 ----  ----      ----         ----    ------
                 $11-(-2)=13$         $11$
       $-2-5=-7$              $-2$
