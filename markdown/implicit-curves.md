@@ -134,4 +134,24 @@ $-7$            $0$             $-1$            $2$             $21$            
                 $-8$            $4$             $16$            $28$            $40$            $40+12=52$
                         $12$            $12$            $12$            $12$            $12$
 
+Note that that was just 3 additions, rather than the 3 additions and 3 multiplications needed to evaluate a cubic polynomial in general.^[
+    How can we evaluate $ax^3+bx^2+cx+d$ with just 3 multiplications and 3 additions?
+    By using [Horner's method](https://en.wikipedia.org/wiki/Horner%27s_method):
+    $\Big(\big((a)x+b\big)x+c\Big)x+d$.
+]
 :::
+
+Finite differences have a lot of things they need to be fully described:
+
+- A function $f(x)$.
+- There is a 1^st^, 2^nd^, etc finite difference;
+    commonly denoted with repeated subscripts, like $f_{xxxx}$ for the 4^th^ finite difference.
+- A value at which they are being evaluated, $x=t$;
+    commonly denoted with parentheses, like $f_{xx}(3)$ for the 2^nd^ finite difference at $x=3$.
+- They are either forward or backward;
+    there's no common notation for this, but we'll use an arrow under the symbols, like  $\underrightarrow{f_{xxx}}(t)$ for a forward 3^rd^ difference
+    or $\underleftarrow{f_{x}}(t)$ for a backward 1^st^ difference.
+- they have a step size, $\Delta$;
+    there's no common notation for this, but we'll use a superscript,
+    like $\underrightarrow{f_{xx}\limits^2}(t)$ for a forward 2^nd^ difference with step-size $2$.
+
