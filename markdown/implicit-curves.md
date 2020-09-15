@@ -144,16 +144,16 @@ Note that that was just 3 additions, rather than the 3 additions and 3 multiplic
 :::example
 Suppose I tell you the last entry of each row of the table differences constructed using a process like that from the previous problem is $(11, -2, 5, 0, 0, \dots)$, with $11$ being $f(8)$:
 
-                $f(8)$
-----    ----    ------
+                $f(8)$
+----    ----   --------
                 $11$
         $-2$
 $5$
 
 Then you can find $f(9)$ by adding from the last different to the first:
 
-                $f(8)$              $f(9)$
-----    ----    ------  ---------   ---------
+                $f(8)$              $f(9)$
+----    ----   -------- ---------  ----------
                 $11$                $11+3=14$
         $-2$            $-2+5=3$
 $5$             $5$
@@ -164,8 +164,8 @@ $(22,8,5)$, $(35,13,5)$, etc.
 
 You can also find $f(7)$ by subtracting from the first difference to the last:
 
-                $f(7)$               $f(8)$
-----  ----      ----         ----    ------
+                $f(7)$               $f(8)$
+----  ----     --------     ----    --------
                 $11-(-2)=13$         $11$
       $-2-5=-7$              $-2$
 $5$             $5$
