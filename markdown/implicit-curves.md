@@ -142,7 +142,7 @@ Note that that was just 3 additions, rather than the 3 additions and 3 multiplic
 :::
 
 :::example
-Suppose I tell you the last diagonal row of the triangle of differences from the previous problem is $(11, -2, 5)$:
+Suppose I tell you the last entry of each row of the table differences constructed using a process like that from the previous problem is $(11, -2, 5, 0, 0, \dots)$, with $11$ being $f(8)$:
 
                 $f(8)$
 ----    ----    ------
@@ -150,7 +150,6 @@ Suppose I tell you the last diagonal row of the triangle of differences from the
         $-2$
 $5$
 
-and that all later rows were $0$.
 Then you can find $f(9)$ by adding from the last different to the first:
 
                 $f(8)$              $f(9)$
