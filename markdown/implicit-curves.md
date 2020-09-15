@@ -153,5 +153,5 @@ Finite differences have a lot of things they need to be fully described:
     or $\underleftarrow{f_{x}}(t)$ for a backward 1^st^ difference.
 - they have a step size, $\Delta$;
     there's no common notation for this, but we'll use a superscript,
-    like $\underrightarrow{f_{xx}\limits^2}(t)$ for a forward 2^nd^ difference with step-size $2$.
+    like $\underrightarrow{{f_{xx}}^2}(t)$ for a forward 2^nd^ difference with step-size $2$.
 
