@@ -96,7 +96,7 @@ Let's evaluate it at some regularly-spaced $x$s:
 
 $f(-1)$ $f(0)$  $f(1)$   $f(2)$  $f(3)$  $f(4)$  $f(5)$
 ------- ------  -------  ------  ------  ------  ------
-$-7$    $0$     $-1$     $2$     $21$   $68$    $155$
+$-7$    $0$     $-1$     $2$     $21$    $68$    $155$
 
 
 Now let's find the difference between adjacent entries above
