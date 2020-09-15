@@ -181,3 +181,22 @@ Then
     -
     \underrightarrow{{f_{\Gamma}}^{\Delta}}(t)$
 
+-   Given the full set of forward finite differences at $t$,
+    
+    -   the full set of forward finite differences at $t+\Delta$ is found by
+        
+        $\begin{aligned}
+        \vdots&=\vdots\\
+        \underrightarrow{{f_{xx}}^{\Delta}}(t+\Delta) &= \underrightarrow{{f_{xx}}^{\Delta}}(t) + \underrightarrow{{f_{xxx}}^{\Delta}}(t+\Delta)\\
+        \underrightarrow{{f_{x}}^{\Delta}}(t+\Delta) &= \underrightarrow{{f_{x}}^{\Delta}}(t) + \underrightarrow{{f_{xx}}^{\Delta}}(t+\Delta)\\
+        f(t+\Delta) &= f(t) + \underrightarrow{{f_{x}}^{\Delta}}(t+\Delta)\\
+        \end{aligned}$
+    
+    -   the full set of forward finite differences at $t-\Delta$ is found by
+    
+        $\begin{aligned}
+        f(t-\Delta) &= f(t) - \underrightarrow{{f_{x}}^{\Delta}}(t)\\
+        \underrightarrow{{f_{x}}^{\Delta}}(t-\Delta) &= \underrightarrow{{f_{x}}^{\Delta}}(t) - \underrightarrow{{f_{xx}}^{\Delta}}(t)\\
+        \underrightarrow{{f_{xx}}^{\Delta}}(t-\Delta) &= \underrightarrow{{f_{xx}}^{\Delta}}(t) - \underrightarrow{{f_{xxx}}^{\Delta}}(t)\\
+        \vdots&=\vdots\\
+        \end{aligned}$
