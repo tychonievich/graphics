@@ -155,3 +155,29 @@ Finite differences have a lot of things they need to be fully described:
     there's no common notation for this, but we'll use a superscript,
     like $\underrightarrow{{f_{xx}}^2}(t)$ for a forward 2^nd^ difference with step-size $2$.
 
+Then
+
+-   The 0^th^ finite difference is simply the function value.
+
+    $\underrightarrow{f^{\Delta}}(t) = \underleftarrow{f^{\Delta}}(t) = f(t)$
+
+-   The $k$^th^ forward difference at $t$
+    is the $(k-1)$^th^ forward difference at $t$
+    minus the $(k-1)$^th^ forward difference at $t-\Delta$.
+
+    $\underrightarrow{{f_{\Gamma x}}^{\Delta}}(t)
+    \triangleq
+    \underrightarrow{{f_{\Gamma}}^{\Delta}}(t)
+    -
+    \underrightarrow{{f_{\Gamma}}^{\Delta}}(t-\Delta)$
+
+-   The $k$^th^ backward difference at $t$
+    is the $(k-1)$^th^ backward difference at $t+\Delta$
+    minus the $(k-1)$^th^ backward difference at $t$.
+
+    $\underrightarrow{{f_{\Gamma x}}^{\Delta}}(t)
+    \triangleq
+    \underrightarrow{{f_{\Gamma}}^{\Delta}}(t+\Delta)
+    -
+    \underrightarrow{{f_{\Gamma}}^{\Delta}}(t)$
+
