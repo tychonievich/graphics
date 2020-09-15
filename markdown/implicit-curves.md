@@ -141,83 +141,38 @@ Note that that was just 3 additions, rather than the 3 additions and 3 multiplic
 ]
 :::
 
-Finite differences have a lot of things they need to be fully described:
+:::example
+Suppose I tell you the last diagonal row of the triangle of differences from the previous problem is $(11, -2, 5)$:
 
-- A function $f(x)$.
-- There is a 1^st^, 2^nd^, etc finite difference;
-    commonly denoted with repeated subscripts, like $f_{xxxx}$ for the 4^th^ finite difference.
-- A value at which they are being evaluated, $x=t$;
-    commonly denoted with parentheses, like $f_{xx}(3)$ for the 2^nd^ finite difference at $x=3$.
-- They are either forward or backward;
-    there's no common notation for this, but we'll use an arrow under the symbols, like  $\underrightarrow{f_{xxx}}(t)$ for a forward 3^rd^ difference
-    or $\underleftarrow{f_{x}}(t)$ for a backward 1^st^ difference.
-- they have a step size, $\Delta$;
-    there's no common notation for this, but we'll use a superscript,
-    like $\underrightarrow{{f_{xx}}^2}(t)$ for a forward 2^nd^ difference with step-size $2$.
+                $f(8)$
+----    ----    ------
+                $11$
+        $-2$
+$5$
 
-Then
+and that all later rows were $0$.
+Then you can find $f(9)$ by adding from the last different to the first:
 
--   The 0^th^ finite difference is simply the function value.
+                $f(8)$              $f(9)$
+----    ----    ------  ---------   ---------
+                $11$                $11+3=14$
+        $-2$            $-2+5=3$
+$5$             $5$
 
-    $\underrightarrow{f^{\Delta}}(t) = \underleftarrow{f^{\Delta}}(t) = f(t)$
+with the new last row of $(14, 3, 5)$.
+We could easily go a few more steps too:
+$(22,8,5)$, $(35,13,5)$, etc.
 
--   The $k$^th^ forward difference at $t$
-    is the $(k-1)$^th^ forward difference at $t$
-    minus the $(k-1)$^th^ forward difference at $t-\Delta$.
+You can also find $f(7)$ by subtracting from the first difference to the last:
 
-    $\underrightarrow{{f_{\Gamma x}}^{\Delta}}(t)
-    \triangleq
-    \underrightarrow{{f_{\Gamma}}^{\Delta}}(t)
-    -
-    \underrightarrow{{f_{\Gamma}}^{\Delta}}(t-\Delta)$
+                                     $f(8)$
+----  ----      ----         ----    ------
+                $11-(-2)=13$         $11$
+      $-2-5=-7$              $-2$
+$5$             $5$
 
--   The $k$^th^ backward difference at $t$
-    is the $(k-1)$^th^ backward difference at $t+\Delta$
-    minus the $(k-1)$^th^ backward difference at $t$.
+for a new last row of $(13, -2, 5)$.
+We could easily go a few more steps too:
+$(20,-7,5)$, $(32,-12,5)$, etc.
+:::
 
-    $\underrightarrow{{f_{\Gamma x}}^{\Delta}}(t)
-    \triangleq
-    \underrightarrow{{f_{\Gamma}}^{\Delta}}(t+\Delta)
-    -
-    \underrightarrow{{f_{\Gamma}}^{\Delta}}(t)$
-
--   Given the full set of forward finite differences at $t$,
-    
-    -   the full set of forward finite differences at $t+\Delta$ is found by adding in order from the last difference to the first
-        
-        $\begin{aligned}
-        &\vdots\\
-        \underrightarrow{{f_{xx}}^{\Delta}}(t+\Delta) &= \underrightarrow{{f_{xx}}^{\Delta}}(t) + \underrightarrow{{f_{xxx}}^{\Delta}}(t+\Delta)\\
-        \underrightarrow{{f_{x}}^{\Delta}}(t+\Delta) &= \underrightarrow{{f_{x}}^{\Delta}}(t) + \underrightarrow{{f_{xx}}^{\Delta}}(t+\Delta)\\
-        f(t+\Delta) &= f(t) + \underrightarrow{{f_{x}}^{\Delta}}(t+\Delta)\\
-        \end{aligned}$
-    
-    -   the full set of forward finite differences at $t-\Delta$ is found by substracting in order from the first difference to the last
-    
-        $\begin{aligned}
-        f(t-\Delta) &= f(t) - \underrightarrow{{f_{x}}^{\Delta}}(t)\\
-        \underrightarrow{{f_{x}}^{\Delta}}(t-\Delta) &= \underrightarrow{{f_{x}}^{\Delta}}(t) - \underrightarrow{{f_{xx}}^{\Delta}}(t)\\
-        \underrightarrow{{f_{xx}}^{\Delta}}(t-\Delta) &= \underrightarrow{{f_{xx}}^{\Delta}}(t) - \underrightarrow{{f_{xxx}}^{\Delta}}(t)\\
-        &\vdots\\
-        \end{aligned}$
-
--   Given the full set of backward finite differences at $t$,
-    
-    -   the full set of backward finite differences at $t+\Delta$ is found by adding in order from the first difference to the last
-        
-        $\begin{aligned}
-        f(t+\Delta) &= f(t) + \underleftarrow{{f_{x}}^{\Delta}}(t)\\
-        \underleftarrow{{f_{x}}^{\Delta}}(t+\Delta) &= \underleftarrow{{f_{x}}^{\Delta}}(t) + \underleftarrow{{f_{xx}}^{\Delta}}(t)\\
-        \underleftarrow{{f_{xx}}^{\Delta}}(t+\Delta) &= \underleftarrow{{f_{xx}}^{\Delta}}(t) = \underleftarrow{{f_{xxx}}^{\Delta}}(t)\\
-        &\vdots\\
-        \end{aligned}$
-    
-    -   the full set of backward finite differences at $t-\Delta$ is found by substracting in order from the last difference to the first
-    
-
-        $\begin{aligned}
-        &\vdots\\
-        \underleftarrow{{f_{xx}}^{\Delta}}(t-\Delta) &= \underleftarrow{{f_{xx}}^{\Delta}}(t) - \underleftarrow{{f_{xxx}}^{\Delta}}(t-\Delta)\\
-        \underleftarrow{{f_{x}}^{\Delta}}(t-\Delta) &= \underleftarrow{{f_{x}}^{\Delta}}(t) - \underleftarrow{{f_{xx}}^{\Delta}}(t-\Delta)\\
-        f(t-\Delta) &= f(t) - \underleftarrow{{f_{x}}^{\Delta}}(t-\Delta)\\
-        \end{aligned}$
