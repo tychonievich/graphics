@@ -183,7 +183,7 @@ Then
 
 -   Given the full set of forward finite differences at $t$,
     
-    -   the full set of forward finite differences at $t+\Delta$ is found by
+    -   the full set of forward finite differences at $t+\Delta$ is found by adding in order from the last difference to the first
         
         $\begin{aligned}
         &\vdots\\
@@ -192,11 +192,32 @@ Then
         f(t+\Delta) &= f(t) + \underrightarrow{{f_{x}}^{\Delta}}(t+\Delta)\\
         \end{aligned}$
     
-    -   the full set of forward finite differences at $t-\Delta$ is found by
+    -   the full set of forward finite differences at $t-\Delta$ is found by substracting in order from the first difference to the last
     
         $\begin{aligned}
         f(t-\Delta) &= f(t) - \underrightarrow{{f_{x}}^{\Delta}}(t)\\
         \underrightarrow{{f_{x}}^{\Delta}}(t-\Delta) &= \underrightarrow{{f_{x}}^{\Delta}}(t) - \underrightarrow{{f_{xx}}^{\Delta}}(t)\\
         \underrightarrow{{f_{xx}}^{\Delta}}(t-\Delta) &= \underrightarrow{{f_{xx}}^{\Delta}}(t) - \underrightarrow{{f_{xxx}}^{\Delta}}(t)\\
         &\vdots\\
+        \end{aligned}$
+
+-   Given the full set of backward finite differences at $t$,
+    
+    -   the full set of backward finite differences at $t+\Delta$ is found by adding in order from the first difference to the last
+        
+        $\begin{aligned}
+        f(t+\Delta) &= f(t) + \underleftarrow{{f_{x}}^{\Delta}}(t)\\
+        \underleftarrow{{f_{x}}^{\Delta}}(t+\Delta) &= \underleftarrow{{f_{x}}^{\Delta}}(t) + \underleftarrow{{f_{xx}}^{\Delta}}(t)\\
+        \underleftarrow{{f_{xx}}^{\Delta}}(t+\Delta) &= \underleftarrow{{f_{xx}}^{\Delta}}(t) = \underleftarrow{{f_{xxx}}^{\Delta}}(t)\\
+        &\vdots\\
+        \end{aligned}$
+    
+    -   the full set of backward finite differences at $t-\Delta$ is found by substracting in order from the last difference to the first
+    
+
+        $\begin{aligned}
+        &\vdots\\
+        \underleftarrow{{f_{xx}}^{\Delta}}(t-\Delta) &= \underleftarrow{{f_{xx}}^{\Delta}}(t) - \underleftarrow{{f_{xxx}}^{\Delta}}(t-\Delta)\\
+        \underleftarrow{{f_{x}}^{\Delta}}(t-\Delta) &= \underleftarrow{{f_{x}}^{\Delta}}(t) - \underleftarrow{{f_{xx}}^{\Delta}}(t-\Delta)\\
+        f(t-\Delta) &= f(t) - \underleftarrow{{f_{x}}^{\Delta}}(t-\Delta)\\
         \end{aligned}$
