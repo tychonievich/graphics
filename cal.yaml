@@ -137,9 +137,9 @@ reading:
       lnk: 'http://www.teamten.com/lawrence/graphics/homogeneous/'
   3d pipeline:
     - txt: 'visible surface determination (and sub-pages)'
-      lnk: 'http://www.siggraph.org/education/materials/HyperGraph/scanline/visibility/vsible0.htm'
+      lnk: 'https://education.siggraph.org/static/HyperGraph/scanline/visibility/vsible0.htm'
     - txt: 'the Z-Buffer Algorithm'
-      lnk: 'http://www.siggraph.org/education/materials/HyperGraph/scanline/visibility/zbuffer.htm'
+      lnk: 'https://education.siggraph.org/static/HyperGraph/scanline/visibility/zbuffer.htm'
     - txt: 'Z-fighting'
       lnk: 'https://en.wikipedia.org/wiki/Z-fighting'
   fragment shaders:
