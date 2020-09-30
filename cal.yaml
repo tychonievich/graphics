@@ -147,6 +147,8 @@ reading:
       lnk: 'https://en.wikipedia.org/wiki/Texture_mapping'
     - txt: 'bumps'
       lnk: 'https://en.wikipedia.org/wiki/Bump_mapping'
+    - txt: '(optionally) Implementers Guide 2.5'
+      lnk: 'files/implguide_2010.pdf'
   raytracing:
     - txt: 'overview'
       lnk: 'http://en.wikipedia.org/wiki/Ray_tracing_%28graphics%29'
