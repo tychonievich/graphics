@@ -238,7 +238,7 @@ but the simple approach works as follows:
     
     And that's the full difference grid.
 
-    As an optimization, we can throw away 0s in thetop-left corner, like so:
+    As an optimization, we can throw away 0s in the top-left corner, like so:
 
                   6
                   6
@@ -249,6 +249,7 @@ but the simple approach works as follows:
     If done properly, the resulting shape should match the terms of the polynomial:
     e.g. $x^2y$ should ne 3 wide in x and 2 wide in $y$;
     $y^3$ should be 4 wide in $y$ and 1 wide in $x$; etc.
+    We can initially sample less than the full grid based on this end shape if we wish.
 
 4. To evaluate the function a $x+1$ we add each row, right to left
 
@@ -266,22 +267,47 @@ but the simple approach works as follows:
           2   3   8
           2   4   3
 
-    meaning $f(1,1) = 3$
+    meaning $f(1,1) = 3$; one more step
+
+                  6
+                 18
+          2   3  20
+          4   7  11
+
+    meaning $f(1,2) = 11$
 
     To evaluate the function a $x-1$ we subtract each column, left to right
+
+                  6
+                 18
+          2   1  19
+          4   3   8
+
+    meaning $f(0,2) = 3$
+
+    To evaluate the function a $y-1$ we subtract each column, top to bottom
 
                   6
                  12
           2   1   7
           2   2   1
 
-    meaning $f(0,1) = 3$
+    meaning $f(0,1) = 1$
 
-    To evaluate the function a $y-1$ we subtract each column, top to bottom
+This technique, together with the grid walking approach, can find the border of a polynomial function with constant memory, a constant number of multiplications to start out, and a linear number of additions in the length of the curve.
 
-                  6
-                  6
-          2   1   1
-          0   1   0
+# Application: Circles
 
-    meaning $f(0,0) = 0$
+One of the most common curves to wish to draw is a circle. The implicit equation for a circle is
+$$(x-c_x)^2 + (y-c_y)^2 = r^2$$
+which is  second-order polynomial, so we can use the finite difference optimization of edge following.
+
+Circles have a high degree of symmetry, so if the center point $(c_x,c_y)$ has integer coordinates we can get away with only computing ⅛ of the overall border:
+for every pixel $(p_x,p_y)$ we decide to plot
+we'll plot 8 symmetric points
+$(c_x \pm (p_x-c_x), c_y \pm (p_y-c_y)$
+and 
+$(c_x \pm (p_y-c_y), c_y \pm (p_x-c_x)$.
+
+Because we only need to plot an eighth of the circle, we can pick a portion
+were the slope is strictly bounded, as e.g. going from the west to the north-west 
