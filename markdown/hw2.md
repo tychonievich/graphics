@@ -405,7 +405,7 @@ Textures (30 points)
 		draw a texture-mapped triangle.
 		Interpolate the $(s, t)$ texture coordinates to each fragment;
 		the color of each fragment is then the color from the texture
-		at the texel closest to $(s w, t h)$ where the texture is $t\times h$ texels in size.
+		at the texel closest to $(s w, t h)$ where the texture is $w \times h$ texels in size.
 		
 		Texture coordinates should wrap; that is, treat -1.3, -0.3, 0.7, 1.7,
 		etc, as all mapping to the same texel.
