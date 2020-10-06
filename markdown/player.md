@@ -11,7 +11,7 @@ Playback speed: <input type="text" id="speed" value="1.0" oninput="respeed()"/>
 <script type="text/javascript">
 function loadVid() {
     var vid = location.hash.replace('#','lectures/')
-    vat vtt = vid.replace(/[.][^.]*$/,'.vtt')
+    var vtt = vid.replace(/[.][^.]*$/,'.vtt')
     if (vid) {
         document.getElementById('playhere').innerHTML = `
 '<video controls repload="metadata" style="max-width:100%">
