@@ -16,7 +16,7 @@ function loadVid() {
         document.getElementById('playhere').innerHTML = `
 <video controls repload="metadata" style="max-width:100%">
 <source src="${vid}" type="video/webm">
-<track src="${vid}" kind="subtitles" srclang="en" default>
+<track label="English (AI generated)" src="${vid}" kind="subtitles" srclang="en" default>
 </video>
 `;
         document.getElementById('download').innerHTML = 'download '+vid.replace(/.*\//g, '')
