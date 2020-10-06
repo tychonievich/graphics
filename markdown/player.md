@@ -14,9 +14,9 @@ function loadVid() {
     var vtt = vid.replace(/[.][^.]*$/,'.vtt')
     if (vid) {
         document.getElementById('playhere').innerHTML = `
-'<video controls repload="metadata" style="max-width:100%">
-<source src="'+vid+'" type="video/webm">
-<track src="'+vid+'" kind="subtitles" srclang="en" default>
+<video controls repload="metadata" style="max-width:100%">
+<source src="${vid}" type="video/webm">
+<track src="${vid}" kind="subtitles" srclang="en" default>
 </video>
 `;
         document.getElementById('download').innerHTML = 'download '+vid.replace(/.*\//g, '')
