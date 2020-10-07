@@ -32,7 +32,7 @@ def dow(n):
 
 def raw2cal(data, links=None):
     """Given the data from a cal.yaml, return a list of weeks,
-    where each week is a list of seven data,
+    where each week is a list of seven days,
     where each day is either None or {"date":datetime.date, "events":[...]}
     """
     s = data['Special Dates']['Courses begin']
@@ -224,9 +224,9 @@ def cal2html(cal):
                     for media in ('video', 'audio'):
                         if media in e:
                             more.append('<a target="_blank" href="{}">{}{}</a>'.format(
-                                e[media],
+                                'player.html#'+e[media][e[media].rfind('/')+1:] if e[media].endswith('.webm') and e[media].startswith('lecture') else e[media],
                                 media,
-                                e[media][e[media].rfind('.'):]
+                                e[media][e[media].rfind('.',e[media].rfind('/')+1):] if e[media].rfind('.',e[media].rfind('/')+1) > 0 else ''
                             ))
                     for reading in e.get('reading',[]):
                         if type(reading) is str:

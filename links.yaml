@@ -66,3 +66,7 @@
   files:
   - lectures/2020-10-07-2020-10-07-slides.pdf
   video: lectures/2020-10-07.webm
+2020-10-07:
+  mkv: "/tmp/2020-10-07 16-49-24.mkv"
+  files:
+    - /tmp/2020-10-07-slides1.pdf
