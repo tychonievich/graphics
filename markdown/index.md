@@ -17,10 +17,10 @@ Day         Time            Who
 -------     --------------- -------------
 Monday      10--11          Tychonievich
 Tuesday     13--14:30       Tychonievich
-Tuesday     16--17:30       Yinghan
+Tuesday     14:45--16:15    Yinghan
 Wednesday   16:30-18        Jingyuan
 Thursday    13--14:30       Tychonievich
-Thursday    16--17:30       Yinghan
+Thursday    14:45--16:15    Yinghan
 Friday      16:30-18        Jingyuan
 
 : Office Hours
