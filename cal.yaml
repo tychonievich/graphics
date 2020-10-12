@@ -158,9 +158,11 @@ reading:
       lnk: 'files/implguide_2010.pdf'
   light:
     - txt: 'BRDF'
-      lnk: 'http://en.wikipedia.org/wiki/Bidirectional_reflectance_distribution_function'
+      lnk: 'https://en.wikipedia.org/wiki/Bidirectional_reflectance_distribution_function'
     - txt: 'BRDF take 2'
-      lnk: 'http://math.nist.gov/~FHunt/appearance/brdf.html'
+      lnk: 'https://math.nist.gov/~FHunt/appearance/brdf.html'
+    - txt: 'BSDF'
+      lnk: 'https://en.wikipedia.org/wiki/Bidirectional_scattering_distribution_function'
     - txt: 'global illumination'
       lnk: 'https://en.wikipedia.org/wiki/Global_illumination'
     - txt: 'ambient occlusion'
@@ -169,6 +171,8 @@ reading:
       lnk: 'files/implguide_2010.pdf'
     - txt: '(optionally) radiosity'
       lnk: 'https://web.archive.org/web/20160311085440/http://freespace.virgin.net/hugo.elias/radiosity/radiosity.htm'
+    - txt: '(optionally) multiple importance sampling'
+      lnk: 'https://graphics.stanford.edu/courses/cs348b-03/papers/veach-chapter9.pdf'
   glsl:
     - txt: 'GLSL data types'
       lnk: 'https://www.khronos.org/opengl/wiki/Data_Type_(GLSL)'
