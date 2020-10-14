@@ -67,3 +67,8 @@
   video: lectures/2020-10-07.webm
 2020-10-12:
   video: lectures/2020-10-12.webm
+2020-10-14:
+  audio: lectures/2020-10-14.mp3
+  files:
+  - lectures/2020-10-14-2020-10-14-slides.pdf
+  video: lectures/2020-10-14.webm
