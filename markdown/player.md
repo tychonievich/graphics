@@ -6,7 +6,7 @@ title: Video Player
 
 Playback speed: <input type="text" id="speed" value="1.0" oninput="respeed()"/>
 
-<a href="" id="download"></a>
+<a href="" id="download"></a> or <a href="" id="download2"></a>
 
 <script type="text/javascript">
 function loadVid() {
@@ -21,6 +21,8 @@ function loadVid() {
 `;
         document.getElementById('download').innerHTML = 'download '+vid.replace(/.*\//g, '')
         document.getElementById('download').href = vid
+        document.getElementById('download').innerHTML = 'download '+vtt.replace(/.*\//g, '')
+        document.getElementById('download').href = vtt
     }
 }
 loadVid();
