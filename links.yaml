@@ -72,3 +72,10 @@
   files:
   - lectures/2020-10-14-2020-10-14-slides.pdf
   video: lectures/2020-10-14.webm
+2020-10-19:
+  audio: lectures/2020-10-19.mp3
+  files:
+  - lectures/2020-10-19-2020-10-19-mygl.js
+  - lectures/2020-10-19-2020-10-19-ex1.html
+  - lectures/2020-10-19-2020-10-19-slides.pdf
+  video: lectures/2020-10-19.webm
