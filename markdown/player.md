@@ -21,8 +21,8 @@ function loadVid() {
 `;
         document.getElementById('download').innerHTML = 'download '+vid.replace(/.*\//g, '')
         document.getElementById('download').href = vid
-        document.getElementById('download').innerHTML = 'download '+vtt.replace(/.*\//g, '')
-        document.getElementById('download').href = vtt
+        document.getElementById('download2').innerHTML = 'download '+vtt.replace(/.*\//g, '')
+        document.getElementById('download2').href = vtt
     }
 }
 loadVid();
