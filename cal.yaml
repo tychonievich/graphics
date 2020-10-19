@@ -179,6 +179,8 @@ reading:
   webgl:
     - txt: 'minimal example'
       lnk: 'https://gist.github.com/Kuranes/8aadb58f953f11e198ce'
+    - txt: 'tutorial'
+      lnk: 'https://webglfundamentals.org/webgl/lessons/webgl-fundamentals.html'
   webgl later:
     - txt: 'twgl'
       lnk: 'http://twgljs.org/'
