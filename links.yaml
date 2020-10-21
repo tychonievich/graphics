@@ -79,3 +79,8 @@
   - lectures/2020-10-19-2020-10-19-ex1.html
   - lectures/2020-10-19-2020-10-19-slides.pdf
   video: lectures/2020-10-19.webm
+2020-10-21:
+  audio: lectures/2020-10-21.mp3
+  files:
+  - lectures/2020-10-21-2020-10-21-twgl-inclass.html
+  video: lectures/2020-10-21.webm
