@@ -7,6 +7,8 @@ title: 'HW4: WebGL'
 This assignment is unlike the ones before;
 in it you should create one or more HTML files that utilize WebGL and the TWGL library.
 
+When you submit, us the "other" language option.
+
 You may look for example code online; if you use any source other than [twgljs.org](http://twgljs.org), document those sources in `<!-- HTML comments -->` in your submitted files
 
 
