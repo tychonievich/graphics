@@ -84,3 +84,10 @@
   files:
   - lectures/2020-10-21-2020-10-21-twgl-inclass.html
   video: lectures/2020-10-21.webm
+2020-10-26:
+  audio: lectures/2020-10-26.mp3
+  files:
+  - lectures/2020-10-26-2020-10-26-twgl-textures.html
+  - lectures/2020-10-26-2020-10-26-slides.pdf
+  - lectures/2020-10-26-2020-10-26-redchair2.png
+  video: lectures/2020-10-26.webm
