@@ -56,7 +56,7 @@ lectures:
   - [webgl, glsl]
   
   - webgl
-  - animation
+  - [webgl textures, animation]
   - IK
   
   - TBD
@@ -187,24 +187,9 @@ reading:
       lnk: 'https://twgljs.org/'
     - txt: 'sample'
       lnk: 'files/twgl-simple.html'
-  webgl later:
-    - txt: 'twgl'
-      lnk: 'http://twgljs.org/'
-    - txt: 'twgl library'
-      lnk: 'https://raw.githubusercontent.com/greggman/twgl.js/master/dist/twgl-full.js'
-    - txt: 'twgl example'
-      lnk: 'files/twgl-simple.html'
-    - txt: 'twgl textures example'
+  webgl textures:
+    - txt: 'TWGL example'
       lnk: 'files/twgl-textures.html'
-  webgl old:
-    - txt: 'base example'
-      lnk: 'files/webgl-base.html'
-    - txt: 'twgl'
-      lnk: 'http://twgljs.org/'
-    - txt: 'twgl example'
-      lnk: 'files/twgl-base.html'
-    - txt: 'twgl library'
-      lnk: 'files/twgl-full.js'
   animation:
     - txt: 'easing'
       lnk: 'http://easings.net/'
