@@ -159,6 +159,15 @@ I do not curve grades: if you all fail, you all fail; if you all ace, you all ac
 The Final exam will be a chance to replace quiz scores.
 The quiz grade will be the maximum of the final exam grade and the previous quiz grades.
 
+Ergo, your final grade can be found as
+
+	average(
+		max(final, average(quizzes)),
+		required,
+		optional > 100% ? 100%+(optional - 100%)/10 : optional
+	)
+
+
 # Miscellanea
 
 ## Professionalism
