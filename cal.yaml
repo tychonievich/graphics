@@ -59,15 +59,18 @@ lectures:
   - [webgl textures, animation]
   - IK
   
-  - TBD
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - image manipulation
+  - brushes
+  - cloth
+  - fluids
+  - goop
+  - scale
+  - nature
 
 reading:
+  brushes:
+    - txt: 'Bristle, color smudge, hatching, pixel, and sketch brushes'
+      lnk: 'https://docs.krita.org/en/reference_manual/brushes/brush_engines.html'
   raster graphics:
     - txt: 'Raster graphics'
       lnk: 'https://en.wikipedia.org/wiki/Raster_graphics'
@@ -254,6 +257,7 @@ reading:
       lnk: 'http://hpcg.purdue.edu/bbenes/papers/Benes07Vriphys.pdf'
     - txt: 'Lagrangain methods'
       lnk: 'https://en.wikipedia.org/wiki/Smoothed-particle_hydrodynamics'
+  goop:
     - txt: 'elastoviscosity'
       lnk: 'https://en.wikipedia.org/wiki/Non-Newtonian_fluids'
   crowds:
@@ -299,6 +303,11 @@ reading:
       lnk: 'http://geometry.caltech.edu/pubs/KCD09.pdf'
     - txt: 'and beyond that'
       lnk: 'http://geometry.caltech.edu/pubs/LHDJ13.pdf'
+  cloth:
+    - txt: 'cloth'
+      lnk: 'https://graphics.stanford.edu/~mdfisher/cloth.html'
+    - txt: 'cloth 2'
+      lnk: 'https://web.archive.org/web/20160309180817/http://freespace.virgin.net/hugo.elias/models/m_cloth.htm'
   non-fluid physics:
     - txt: 'wikipedia'
       lnk: 'https://en.wikipedia.org/wiki/Rigid_body_dynamics'
@@ -367,9 +376,9 @@ assignments:
     due: 2020-11-13 17:00:00
     link: hw4.html
   HW5:
-    title: project
+    title: images
     due: 2020-11-24 23:59:59
-    writeup: hw5.html
+    link: hw5.html
 
   Quiz00:
       due: 2020-08-31 13:30:00
