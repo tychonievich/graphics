@@ -130,7 +130,8 @@ The target difficulty is 5–10 hours of focused effort each week.
 Task | Weight | Comments
 -----|--------|-----------------------------------------------------------------
 Quizzes     | ⅓ | The final exam will allow replacing these scores
-Assignments | ⅔ | Approximately 10% each, but you'll have some point flexibility between them.  Extra credit in assignments will not transfer over to quizzes or final.
+HW required | ⅓ | Distributed evenly between the assignments
+HW optional | ⅓ | May be collected from any mix of assignments. Excess points apply at ⅒ weight towards other parts of your grade.
 
 Your final grade is computed based on the percentage of points you have earned and is designed to match the GPA value of each letter. For reasons I do not understand, that is not a linear scale: for example, `A-` &minus; `B+` = 0.4 grade points while `B+` &minus; `B` = 0.3 grade points. For reasons even farther from my ken, the most common grading scale I have seen is also not linear but differently spaced than the grade points. Following is a scale spaced like the grade point scale:
 
