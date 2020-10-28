@@ -129,9 +129,8 @@ The target difficulty is 5–10 hours of focused effort each week.
 
 Task | Weight | Comments
 -----|--------|-----------------------------------------------------------------
-Quizzes     | 25% | Acceptance of late submissions and/or dropping some scores will be implemented
-Assignments | 50% | Approximately 10% each, but you'll have some point flexibility between them.  Extra credit in assignments will not transfer over to quizzes or final.
-Final Quiz  | 25% | The intent is to make this a second try on the mid-semester quizzes' questions
+Quizzes     | ⅓ | The final exam will allow replacing these scores
+Assignments | ⅔ | Approximately 10% each, but you'll have some point flexibility between them.  Extra credit in assignments will not transfer over to quizzes or final.
 
 Your final grade is computed based on the percentage of points you have earned and is designed to match the GPA value of each letter. For reasons I do not understand, that is not a linear scale: for example, `A-` &minus; `B+` = 0.4 grade points while `B+` &minus; `B` = 0.3 grade points. For reasons even farther from my ken, the most common grading scale I have seen is also not linear but differently spaced than the grade points. Following is a scale spaced like the grade point scale:
 
@@ -155,6 +154,9 @@ F           otherwise              0.0
 I do not round grades. 92.99999919% is not &ge; 93% and is thus an A&minus;, not an A.
 
 I do not curve grades: if you all fail, you all fail; if you all ace, you all ace. However, rubrics for assignments are not linear: instead, I determine how well I expect a passing student to perform and assign a per-assignment rubric to match.
+
+The Final exam will be a chance to replace quiz scores.
+The quiz grade will be the maximum of the final exam grade and the previosu quiz grades.
 
 # Miscellanea
 

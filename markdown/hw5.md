@@ -107,7 +107,7 @@ Use these channel definitions
 	
 	- To convert $(H,S,V) \rightarrow (R,G,B)$
 	
-		- Let $f(x) = \mbox{clamp}_{0,1}(2-|3-x|)$
+		- Let $f(x) = \text{clamp}_{0,1}(2-|3-x|)$
 		- $R = V ((1-S)+S f((6H+3) \mod 6))$
 		- $G = V ((1-S)+S f((6H+1) \mod 6))$
 		- $B = V ((1-S)+S f((6H+5) \mod 6))$
