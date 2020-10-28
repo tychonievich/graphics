@@ -156,7 +156,7 @@ I do not round grades. 92.99999919% is not &ge; 93% and is thus an A&minus;, not
 I do not curve grades: if you all fail, you all fail; if you all ace, you all ace. However, rubrics for assignments are not linear: instead, I determine how well I expect a passing student to perform and assign a per-assignment rubric to match.
 
 The Final exam will be a chance to replace quiz scores.
-The quiz grade will be the maximum of the final exam grade and the previosu quiz grades.
+The quiz grade will be the maximum of the final exam grade and the previous quiz grades.
 
 # Miscellanea
 
