@@ -161,9 +161,9 @@ equalize *channel*
 gradient
 :	<span class="floater"><a href="files/hw5gradient.png"><img class="demo2 zoom" src="files/hw5gradient.png"/></a><br/><a href="files/hw5gradient.txt">hw5gradient.txt</a></span>
 	The Scharr 3-by-3 convolution filter
-	$\frac{1}{16}\begin{bmatrix}+3&+10&+3\\0&0&0\\-3&-10&-3\end{bmatrix}$
+	$\displaystyle \frac{1}{16}\begin{bmatrix}+3&+10&+3\\0&0&0\\-3&-10&-3\end{bmatrix}$
 	will find the $y$-gradient of the image; its rotated version
-	$\frac{1}{16}\begin{bmatrix}-3&0&+3\\-10&0&+10\\-3&0&+3\end{bmatrix}$
+	$\displaystyle \frac{1}{16}\begin{bmatrix}-3&0&+3\\-10&0&+10\\-3&0&+3\end{bmatrix}$
 	will find the $x$-gradient.
 	You'll need those gradients for many of the optional parts.
 	
