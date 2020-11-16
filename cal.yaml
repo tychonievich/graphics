@@ -260,6 +260,14 @@ reading:
   goop:
     - txt: 'elastoviscosity'
       lnk: 'https://en.wikipedia.org/wiki/Non-Newtonian_fluids'
+    - txt: 'Eulerian'
+      lnk: 'http://graphics.berkeley.edu/papers/Goktekin-AMF-2004-08/Goktekin-AMF-2004-08.pdf'
+    - txt: 'Eulerian video'
+      lnk: 'http://graphics.berkeley.edu/papers/Goktekin-AMF-2004-08/goop-paper-web.avi'
+    - txt: 'Lagrangian'
+      lnk: 'http://users.encs.concordia.ca/~grogono/Graphics/fluid-1.pdf'
+    - txt: 'Lagrangian video'
+      lnk: 'https://www.youtube.com/watch?v=1Q_zb65SXt0'
   crowds:
     - txt: 'boids'
       lnk: 'http://www.red3d.com/cwr/boids/'
@@ -332,6 +340,13 @@ reading:
       lnk: 'https://en.wikipedia.org/wiki/Tone_mapping'
     - txt: 'parallax mapping'
       lnk: 'https://en.wikipedia.org/wiki/Parallax_mapping'
+  scale:
+    - txt: 'visibility graphs'
+      lnk: 'https://en.wikipedia.org/wiki/Visibility_graph'
+    - txt: 'adaptive subdivision'
+      lnk: 'https://developer.nvidia.com/gpugems/gpugems2/part-i-geometric-complexity/chapter-7-adaptive-tessellation-subdivision-surfaces'
+    - txt: 'occlusion culling'
+      lnk: 'https://developer.nvidia.com/gpugems/gpugems2/part-i-geometric-complexity/chapter-6-hardware-occlusion-queries-made-useful'
   TBD:
     - txt: 'vote on topics'
       lnk: 'https://docs.google.com/forms/d/e/1FAIpQLSeiUrG7k5boKve-jFWqeS2NOtZUr8Q0XkRaEM1TPQP1VIlvHA/viewform?usp=sf_link'
