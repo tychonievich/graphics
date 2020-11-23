@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html><head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Seeds</title>
+  <style>
+    svg {
+        display: block;
+        width: 100vw;
+        height: 100vh;
+        margin:0em; padding:0em;
+        background: repeating-linear-gradient(62deg, #000 0vw,#111 1vw,#000 4vw);
+    }
+    body { margin:0em; padding:0em; }
+  </style>
+</head>
+  <body>
+    <svg id="c" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="-50 -50 100 100" style="fill:#000000"></svg>
+  <script type="text/javascript">//<!--
+var s = document.getElementById("c");
+var angphi = Math.PI * (3-Math.sqrt(5)); // golden angle in radians
+function render(time) {
+  time *= 0.001; // because time given is in milliseconds
+  time *= time;
+  var it = Math.floor(time);
+  var ft = it - ft;
+  while (time > s.children.length) {
+    var circ = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+    circ.setAttribute('x', '0');
+    circ.setAttribute('y', '0');
+    circ.setAttribute('width', '1.414');
+    circ.setAttribute('height', '1.414');
+    color = (Math.floor(Math.random()*0xfff) | 0x222).toString(16);
+    while (color.length < 3) color = '0' + color;
+    circ.setAttribute('style', 'fill:#'+color+';');
+    s.appendChild(circ);
+  }
+  for(var i=0; i<s.children.length; i+=1) {
+    var y = Math.sin(angphi*i);
+    var x = Math.cos(angphi*i);
+    var r = Math.sqrt(time-i);
+    s.children[i].setAttribute('x', x*r);
+    s.children[i].setAttribute('y', y*r);
+  }
+  requestAnimationFrame(render);
+//  console.log(s.children);
+}
+requestAnimationFrame(render);
+//--></script>
+
+
+
+</body></html>
