@@ -281,7 +281,7 @@ reading:
     - txt: 'seeds'
       lnk: 'files/seeds.html'
     - txt: 'Poisson disc'
-      lnk: 'http://www.cs.virginia.edu/~gfx/pubs/antimony/antimony.pdf'
+      lnk: 'https://web.archive.org/web/20170610131109/http://www.cs.virginia.edu/~gfx/pubs/antimony/antimony.pdf'
     - txt: 'approximation'
       lnk: 'https://en.wikipedia.org/wiki/Lloyd%27s_algorithm'
     - txt: 'approximation'
