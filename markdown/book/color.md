@@ -30,7 +30,7 @@ The rods react to most visible spectrum wavelenghts and have high proability of 
 | Medium (M) | Medium (M) | Green | 535nm | 420–640nm |
 | Low (L) | Long (L) | Red | 575nm | 450–680nm |
 
-![Graph of reactivity of three cones; see [wikimedia](https://commons.wikimedia.org/wiki/File:Cones_SMJ2_E.svg) for image provenance](https://upload.wikimedia.org/wikipedia/commons/1/1e/Cones_SMJ2_E.svg)
+![Graph of reactivity of three cones (from [wikimedia](https://commons.wikimedia.org/wiki/File:Cones_SMJ2_E.svg))](https://upload.wikimedia.org/wikipedia/commons/1/1e/Cones_SMJ2_E.svg)
 
 Because of the overlap of cone sensitivity regions, there is no wavelength or combination of wavelengths of light that will cause the medium-sensitivity "green" cone to signal the brain without one of the other two cone types also signaling the brain.
 
