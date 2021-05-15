@@ -77,7 +77,7 @@ blockquote q:before { font-size:200%; content:"“"; line-height:50%; vertical-a
 blockquote q:after { font-size:200%; content:"”"; line-height:50%; vertical-align: -0.1em; }
 blockquote div { text-align: right; }
 
-figure { max-width: 100%; display: table; margin: auto; padding: 1em; }
+figure { max-width: 100%; display: table; margin: auto; padding: 1em; text-align: center; }
 figcaption { text-align: center; font-weight: bold; margin-top: 1ex; }
 .floater img, figure img { max-width: 100%; }
 

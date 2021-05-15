@@ -8,7 +8,7 @@ Color is more complicated than you think it is, and much of that complication wi
 
 # Physics
 
-Each photon has a wavelength and energy, which are inversely proportional such that high energy = long wavelength. Visible light has wavelengths between 380nm and 750nm
+Each photon has a wavelength and energy, which are different ways of measuring the same thing: high energy = short wavelength. Visible light has wavelengths between 380nm and 750nm.
 
 Most sources of light include photons of many different wavelengths. The main exceptions are lasers, light-emitting diodes, and some types of florescence and phosphorescence.
 
@@ -143,7 +143,7 @@ to which relative brightness can be added as a third axis.
 However, cone responsiveness overlaps so not all of this triangle of colors is achievable in practice.
 Plotting single-wavelength light within this triangle shows a curved-boundary subregion; all colors that can be perceived (without artificial stimulation of cones via some input other than light^[I have never encountered studies where cones are stimulated artificially via surgery or drugs, but know of no intrinsic reason why they could not be. In theory, this could cause a person to perceive colors that are literally impossible in the real world.]) lie within this subregion.
 
-![Single-wavelength lights within normalized cone response color triangle.^[Plotted based on data from Andrew Stockman, Donald MacLeod, Nancy Johnson (1993) "Spectral sensitivity of the human cones." *Journal of the Optical Society of America A*, 10(12) pp. 2491--2521]](color-curve.svg)
+![Single-wavelength lights within normalized cone response color triangle.^[Plotted based on data from Andrew Stockman, Donald MacLeod, Nancy Johnson (1993) "Spectral sensitivity of the human cones." *Journal of the Optical Society of America A*, 10(12) pp. 2491--2521]](color-curve.svg){style="max-width:24em"}
 
 The two extremes of this curve are worth note.
 
@@ -159,9 +159,9 @@ Our brain is far more sensitive to some colors than others. If you ask someone "
 The *Commission Internationale de l'éclairage* (CIE, known in English as the International Commission on Illumination) has performed human studies like this several times, starting in the 1920s, to produce various "chromaticity color spaces" by warping the light-possible part of the triangle so that distances in the color space are roughly equivalent to perceived differences of color.
 The best known of these are CIE-1931 and CIELUV.
 
-![A false-color picture of CIE-1931 from [wikimedia](https://commons.wikimedia.org/wiki/File:CIE-1931_diagram_in_LAB_space.svg)](https://upload.wikimedia.org/wikipedia/commons/5/5f/CIE-1931_diagram_in_LAB_space.svg)
+![A false-color picture of CIE-1931 (from [wikimedia](https://commons.wikimedia.org/wiki/File:CIE-1931_diagram_in_LAB_space.svg))](https://upload.wikimedia.org/wikipedia/commons/5/5f/CIE-1931_diagram_in_LAB_space.svg){style="max-width:30em"}
 
-![A false-color picture of CIELUV from [wikimedia](https://commons.wikimedia.org/wiki/File:CIE_1976_UCS.png)](https://upload.wikimedia.org/wikipedia/commons/8/83/CIE_1976_UCS.png)
+![A false-color picture of CIELUV (from [wikimedia](https://commons.wikimedia.org/wiki/File:CIE_1976_UCS.png))](https://upload.wikimedia.org/wikipedia/commons/8/83/CIE_1976_UCS.png){style="max-width:30em"}
 
 Note that the above images have colors, but the colors used are *not* the colors represented by the corresponding regions of the chromaticity diagram.
 You are viewing them on a screen or in print, neither of which are capable of representing all chromaticities.
@@ -189,15 +189,53 @@ ITU-R Recommendation BT.2020 defines the light emitters for a UHDTV to be single
 To the best of my knowledge, no current commodity hardware is capable of producing these wavelengths precisely.
 The earlier ITU-R Recommendation BT.709 defines the light emitters for an HDTV to be wavelength-band emitters that can be achieved in various ways, such as with color filters over a white backlight or color LEDs which often have a 20nm spread in their emitted spectra.
 
-![HDTV and UHDTV RGB coordinates in CIE-1931 (from [wikimedia](https://commons.wikimedia.org/wiki/File:CIExy1931_Rec_2020_and_Rec_709.svg)](https://upload.wikimedia.org/wikipedia/commons/2/27/CIExy1931_Rec_2020_and_Rec_709.svg)
+![HDTV and UHDTV RGB coordinates in CIE-1931 (from [wikimedia](https://commons.wikimedia.org/wiki/File:CIExy1931_Rec_2020_and_Rec_709.svg))](https://upload.wikimedia.org/wikipedia/commons/2/27/CIExy1931_Rec_2020_and_Rec_709.svg){style="max-width:30em"}
 
 Whatever the precise colors used, the hardware model for this is called RGB: the amount of illumination to be emitted by red, green, and blue emitters.
 
-:::note
-add gamma
+Display hardware needs to be given raw RGB data, but it is not space-efficient to store color data as raw RGB.
+The perceptual difference between 10% and 20% illumination is much greater than the perceptual difference between 80% and 90%, so it is desirable to use more of the bits to store lower levels of light than are used for higher levels of light.
+
+Early approaches to provide more storage for dimmer colors involved building nonlinearity into the dominant physical display device of the day, the cathode ray tube or CRT.
+Because these were analog systems, the available functions were limited; the one used was typically called "gamma" and characterized by the following function:
+$$V_{\text{display}} = {V_{\text{storage}}}^{\gamma}$$
+$$V_{\text{storage}} = {V_{\text{display}}}^{1 / \gamma}$$
+where we assume $V$ are in a normalized 0 (no light) to 1 (maximum light) range.
+Empirically, $\gamma = 2.2$ is considered a useful value, but it was not standardized and some monitors allowed the display gamma to be adjusted by a physical knob.
+
+This simple power-based gamma was not good for very dark colors, so the sRGB standard that dominates RGB-based file formats today defines the following piecewise function instead^[These formulae are given in the standard document IEC 61966-2-1, but are not quite inverses of one another because $0.0405/12.92 \ne 0.0031308$. I do not know why this discrepancy exists.]:
+$$V_{\text{display}} = \begin{cases}
+V_{\text{storage}}/12.92 &\text{if }V_{\text{storage}} \le 0.04045 \\
+\displaystyle \left(\frac{V_{\text{storage}}+0.055}{1.055}\right)^{2.4} &\text{if }V_{\text{storage}} > 0.04045
+\end{cases}$$
+$$V_{\text{storage}} = \begin{cases}
+12.92 V_{\text{display}} &\text{if }V_{\text{display}} \le 0.0031308 \\
+1.055{V_{\text{display}}}^{1/2.4}-0.055 &\text{if }V_{\text{display}} > 0.0031308
+\end{cases}$$
+
+Despite the fact that sRGB cannot be expressed as a simple gamma exponent, it is still common to call any nonlinear storage favoring darker values a "gamma correction".
+
+# Synthesis: what color is `#e3b021`?
+
+Consider the web color string `#e3b021`.
+
+This is an sRGB color value in hexadecimal:
+`0xe3` = 227/255 = 0.89020 of the available red light,
+`0xb0` = 176/255 = 0.69020 of the available green light, and
+`0x21` = 33/255 = 0.12941 of the available blue light.
+
+But that's in storage space; undoing the "gamma correction" we have
+0.76815 red, 0.4342 green, and 0.0152 blue.
+
+Depending on the specific colored light sources those might produce various photon wavelengths, but assuming we have a correctly calibrated HDTV display
+
+:::example
+finish this
 :::
 
+All of which produces this color:
+<span style="width:5em; height:5em; background: #e3b021; display: inline-block; vertical-align:middle;"></span>
 
 # Pigment
 
-![Multiple color models graphed in CIE-1931, including the SWOP CMYK standard for color printers (from [wikimedia](https://commons.wikimedia.org/wiki/File:CIE1931xy_gamut_comparison.svg))](https://upload.wikimedia.org/wikipedia/commons/1/1e/CIE1931xy_gamut_comparison.svg)
+![Multiple color models graphed in CIE-1931, including the SWOP CMYK standard for color printers (from [wikimedia](https://commons.wikimedia.org/wiki/File:CIE1931xy_gamut_comparison.svg))](https://upload.wikimedia.org/wikipedia/commons/1/1e/CIE1931xy_gamut_comparison.svg){style="max-width:30em"}
