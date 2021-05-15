@@ -190,6 +190,8 @@ ITU-R Recommendation BT.2020 defines the light emitters for a UHDTV to be single
 To the best of my knowledge, no current commodity hardware is capable of producing these wavelengths precisely.
 The earlier ITU-R Recommendation BT.709 defines the light emitters for an HDTV to be wavelength-band emitters that can be achieved in various ways, such as with color filters over a white backlight or color LEDs which often have a 20nm spread in their emitted spectra.
 
+![HDTV and UHDTV RGB coordinates in CIE-1931 (from [wikimedia](https://commons.wikimedia.org/wiki/File:CIExy1931_Rec_2020_and_Rec_709.svg)](https://upload.wikimedia.org/wikipedia/commons/2/27/CIExy1931_Rec_2020_and_Rec_709.svg)
+
 Whatever the precise colors used, the hardware model for this is called RGB: the amount of illumination to be emitted by red, green, and blue emitters.
 
 :::note
