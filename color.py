@@ -97,13 +97,13 @@ with open('markdown/book/color-curve.svg', 'w') as f:
         nm,sbl,sbm,sbs,ciel,ciem,cies = line.split()
         lr0, mr0, sr0 = float(sbl), float(sbm), float(sbs)
         lr, mr, sr = (10**_ for _ in (lr0,mr0,sr0))
-        bright = int(min(1,((lr+mr+sr)+0.1))*255)
+        bright = int(min(1,(max(lr,mr,sr)+1/256))*255)
         color = '#'+('0'+hex(bright)[2:])[-2:]*3
         norm = lr+mr+sr
         x = (l[0]*lr + m[0]*mr + s[0]*sr)/norm
         y = (l[1]*lr + m[1]*mr + s[1]*sr)/norm
         if lp is not None:
-            print('<line stroke-width="{}" stroke="{}" x1="{}" y1="{}" x2="{}" y2="{}" stroke-linecap="round" title="{}"/>'.format(dotsize,color,lp[0],lp[1],x,y, nm+'nm'), file=f)
+            print('<line title="{}" stroke="{}" x1="{}" y1="{}" x2="{}" y2="{}" stroke-width="{}" stroke-linecap="round"/>'.format(nm+'nm',color,lp[0],lp[1],x,y,dotsize), file=f)
         lp = (x,y)
     print('</svg>', file=f)
 

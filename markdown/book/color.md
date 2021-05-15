@@ -147,10 +147,11 @@ Plotting single-wavelength light within this triangle shows a curved-boundary su
 
 The two extremes of this curve are worth note.
 
-At the long-wavelength extreme, even the L cone is not very receptive; so while the eye can distinguish between 700nm from 730nm, it requires a very strong red-only light source with virtually no ambient photons of other wavelengths to achieve that color perception. That happens so rarely in nature that we generally have no experience distinguishing "very red" from simply "red".
+At the long-wavelength extreme, even the L cone is not very receptive; so while the eye can distinguish between 700nm from 730nm, it requires a very strong red-only light source with virtually no ambient photons of other wavelengths to achieve that color perception. That lighting condition happens so rarely in nature that most people have no experience distinguishing "very red" from simply "red".
 
 At the short-wavelength extreme, the curve hooks back toward red. Wavelengths shorter than about 430nm look similar to a mix of the 430nm "most blue" light and a little red light.
-The size and strength of that hook varies by person, and can cause some people to see a hint of violet (which is normally caused by a mix of blue and red light) beyond the blue end of a rainbow.
+The size and strength of that hook varies by person, and can cause some people to see a hint of violet beyond the blue end of a rainbow.
+Everyone can perceive that same violet if exposed to mix of a lot of blue and a little red light.
 
 # Perceived Chromaticity
 
@@ -173,3 +174,24 @@ Note that luminance is not simply the photonic energy of light nor the sum of co
 We perceive green light as being much brighter than red light, and red light as being much brighter than blue light.
 
 # Light-emissive display coordinates
+
+Light-emissive color displays include television, computer monitor, phone screen and other displays that are visible even in the dark.
+Although the details vary, all of them work via the same basic principle:
+a densely-packed space of very small components that each emit a narrow band of wavelengths.
+Because the chromaticity diagram is roughly triangular, almost all such displays pick three wavelengths to emit.
+
+Picking the exact wavelengths to emit is not as trivial as it may seem.
+
+- Creating materials and assemblages that emit a desired narrow band of photons is challenging, and the more narrow the wavelength band the more challenging the engineering.
+- There's an energy/quality trade-off: wavelengths that trigger the L cones much more strongly than the M cones require 10 to 100 times more power to produce because the L cones are not very sensitive in those wavelengths.
+- Although the curve in the diagram may not look large, it includes the most perceptually important colors: the yellows, greens, and tans which help mammals distinguish between lush vegetation, dead vegetation, and flesh.
+
+ITU-R Recommendation BT.2020 defines the light emitters for a UHDTV to be single-wavelength emitters of 467nm (blue), 532nm (green), and 630nm (red).
+To the best of my knowledge, no current commodity hardware is capable of producing these wavelengths precisely.
+The earlier ITU-R Recommendation BT.709 defines the light emitters for an HDTV to be wavelength-band emitters that can be achieved in various ways, such as with color filters over a white backlight or color LEDs which often have a 20nm spread in their emitted spectra.
+
+Whatever the precise colors used, the hardware model for this is called RGB: the amount of illumination to be emitted by red, green, and blue emitters.
+
+:::note
+add gamma
+:::
