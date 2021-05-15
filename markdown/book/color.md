@@ -183,8 +183,7 @@ Because the chromaticity diagram is roughly triangular, almost all such displays
 Picking the exact wavelengths to emit is not as trivial as it may seem.
 
 - Creating materials and assemblages that emit a desired narrow band of photons is challenging, and the more narrow the wavelength band the more challenging the engineering.
-- There's an energy/quality trade-off: wavelengths that trigger the L cones much more strongly than the M cones require 10 to 100 times more power to produce because the L cones are not very sensitive in those wavelengths.
-- Although the curve in the diagram may not look large, it includes the most perceptually important colors: the yellows, greens, and tans which help mammals distinguish between lush vegetation, dead vegetation, and flesh.
+- There's an energy/quality trade-off: wavelengths that trigger the L cones much more strongly than the M cones require 10 to 100 times more power to produce than other colors because the L cones are not very sensitive in those wavelengths.
 
 ITU-R Recommendation BT.2020 defines the light emitters for a UHDTV to be single-wavelength emitters of 467nm (blue), 532nm (green), and 630nm (red).
 To the best of my knowledge, no current commodity hardware is capable of producing these wavelengths precisely.
@@ -197,3 +196,8 @@ Whatever the precise colors used, the hardware model for this is called RGB: the
 :::note
 add gamma
 :::
+
+
+# Pigment
+
+![Multiple color models graphed in CIE-1931, including the SWOP CMYK standard for color printers (from [wikimedia](https://commons.wikimedia.org/wiki/File:CIE1931xy_gamut_comparison.svg)](https://upload.wikimedia.org/wikipedia/commons/1/1e/CIE1931xy_gamut_comparison.svg)
