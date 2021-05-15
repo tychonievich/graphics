@@ -146,7 +146,7 @@ Plotting single-wavelength light within this triangle shows a curved-boundary su
 <figure>
 <svg viewBox="-2 -2 204 177.20508075688772">
 <path d="M 0,0 100,173.20508075688772 200,0 Z" stroke-width="4" stroke="black" stroke-linejoin="round"/>
-<line stroke-width="2" stroke="#222222" x1="195.67669453447348" y1="7.488020173267583" x2="186.1707254861938" y2="7.650914313451111" stroke-linecap="round"/>
+<line stroke-width="2" stroke="#222222" x1="186.80336265730875" y1="7.148461656815835" x2="186.1707254861938" y2="7.650914313451111" stroke-linecap="round"/>
 <line stroke-width="2" stroke="#2a2a2a" x1="186.1707254861938" y1="7.650914313451111" x2="186.16781845384153" y2="7.509338195137789" stroke-linecap="round"/>
 <line stroke-width="2" stroke="#3e3e3e" x1="186.16781845384153" y1="7.509338195137789" x2="186.33161198071744" y2="7.640331255779599" stroke-linecap="round"/>
 <line stroke-width="2" stroke="#595959" x1="186.33161198071744" y1="7.640331255779599" x2="186.26693002180528" y2="7.895963678163971" stroke-linecap="round"/>
