@@ -144,7 +144,7 @@ However, cone responsiveness overlaps so not all of this triangle of colors is a
 Plotting single-wavelength light within this triangle shows a curved-boundary subregion; and at the extreme edges the cones are so dimly responsive that only very intense single-wavelength light courses can ever cause them to be perceived.
 
 <svg viewBox="0 0 200 174">
-<path d="M 200,0 100,173.20508075688772 200,0 Z"/>
+<path d="M 200,0 100,173.20508075688772 200,0 Z" fill="black"/>
 <circle r="2" fill="#0f0f0f" cx="195.67678953726664" cy="7.488020173267583"/>
 <circle r="2" fill="#151515" cx="195.58274256158222" cy="7.650914313451111"/>
 <circle r="2" fill="#1e1e1e" cx="195.66448157160127" cy="7.509338195137789"/>
