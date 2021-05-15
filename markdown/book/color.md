@@ -200,4 +200,4 @@ add gamma
 
 # Pigment
 
-![Multiple color models graphed in CIE-1931, including the SWOP CMYK standard for color printers (from [wikimedia](https://commons.wikimedia.org/wiki/File:CIE1931xy_gamut_comparison.svg)](https://upload.wikimedia.org/wikipedia/commons/1/1e/CIE1931xy_gamut_comparison.svg)
+![Multiple color models graphed in CIE-1931, including the SWOP CMYK standard for color printers (from [wikimedia](https://commons.wikimedia.org/wiki/File:CIE1931xy_gamut_comparison.svg))](https://upload.wikimedia.org/wikipedia/commons/1/1e/CIE1931xy_gamut_comparison.svg)
