@@ -8,9 +8,9 @@ Color is more complicated than you think it is, and much of that complication wi
 
 # Physics
 
-Each photon has a wavelength and energy, which are inversely proportional. For most graphics purposes, it is sufficient to know that high energy = low wavelength. Visible light has wavelengths between 380nm and 750nm
+Each photon has a wavelength and energy, which are inversely proportional such that high energy = long wavelength. Visible light has wavelengths between 380nm and 750nm
 
-Most sources of light include photons of many different wavelengths. The main exceptions are lasers, LEDs, and some types of florescence.
+Most sources of light include photons of many different wavelengths. The main exceptions are lasers, light-emitting diodes, and some types of florescence and phosphorescence.
 
 
 # Biology
@@ -41,7 +41,7 @@ Pupils will dilate or contract to try to keep the number of photons entering the
 The optic center of the brain further removes perception of intensity and, to some degree, color. A region appears to be darker if surrounded by brighter things and brighter if surrounded by darker things. Similarly, after some time wearing rose-colored glasses the world stops looking rose-colored and starts to look normal again. Both of these phenomenon are cognitive, not physiological, but also both hard-wired into the brain.
 
 
-# Modeling Perception
+# Modeling Cones
 
 A straightforward way of modeling the perception of color is with three numbers: the signaling rate (in Hertz) of each of the three cone types. Perhaps for one region each red cone is signaling six times a second, each green cone once every four seconds, and each blue cone twice a second, for a cone response vector of (6, ¼, 2). This can be seen as the color data that travels along the optic nerve from retina to brain.
 
@@ -141,6 +141,35 @@ However, a normalized volume is still not ideal because both the pupil and the o
 Conceptually, this gives us a triangle of possible colors,
 to which relative brightness can be added as a third axis.
 However, cone responsiveness overlaps so not all of this triangle of colors is achievable in practice.
-Plotting single-wavelength light within this triangle shows a curved-boundary subregion; and at the extreme edges the cones are so dimly responsive that only very intense single-wavelength light courses can ever cause them to be perceived.
+Plotting single-wavelength light within this triangle shows a curved-boundary subregion; all colors that can be perceived (without artificial stimulation of cones via some input other than light^[I have never encountered studies where cones are stimulated artificially via surgery or drugs, but know of no intrinsic reason why they could not be. In theory, this could cause a person to perceive colors that are literally impossible in the real world.]) lie within this subregion.
 
-![Single-wavelength lights within normalized cone response color triangle.](color-curve.svg)
+![Single-wavelength lights within normalized cone response color triangle.^[Plotted based on data from Andrew Stockman, Donald MacLeod, Nancy Johnson (1993) "Spectral sensitivity of the human cones." *Journal of the Optical Society of America A*, 10(12) pp. 2491--2521]](color-curve.svg)
+
+The two extremes of this curve are worth note.
+
+At the long-wavelength extreme, even the L cone is not very receptive; so while the eye can distinguish between 700nm from 730nm, it requires a very strong red-only light source with virtually no ambient photons of other wavelengths to achieve that color perception. That happens so rarely in nature that we generally have no experience distinguishing "very red" from simply "red".
+
+At the short-wavelength extreme, the curve hooks back toward red. Wavelengths shorter than about 430nm look similar to a mix of the 430nm "most blue" light and a little red light.
+The size and strength of that hook varies by person, and can cause some people to see a hint of violet (which is normally caused by a mix of blue and red light) beyond the blue end of a rainbow.
+
+# Perceived Chromaticity
+
+Our brain is far more sensitive to some colors than others. If you ask someone "which are more similar: this pair of colors or that pair of colors" their answers will not generally correlated to wavelength, number of distinct wavelengths needed, or any other simple function of light or cones.
+The *Commission Internationale de l'éclairage* (CIE, known in English as the International Commission on Illumination) has performed human studies like this several times, starting in the 1920s, to produce various "chromaticity color spaces" by warping the light-possible part of the triangle so that distances in the color space are roughly equivalent to perceived differences of color.
+The best known of these are CIE-1931 and CIELUV.
+
+![A false-color picture of CIE-1931 from [wikimedia](https://commons.wikimedia.org/wiki/File:CIE-1931_diagram_in_LAB_space.svg)](https://upload.wikimedia.org/wikipedia/commons/5/5f/CIE-1931_diagram_in_LAB_space.svg)
+
+![A false-color picture of CIELUV from [wikimedia](https://commons.wikimedia.org/wiki/File:CIE_1976_UCS.png)](https://upload.wikimedia.org/wikipedia/commons/8/83/CIE_1976_UCS.png)
+
+Note that the above images have colors, but the colors used are *not* the colors represented by the corresponding regions of the chromaticity diagram.
+You are viewing them on a screen or in print, neither of which are capable of representing all chromaticities.
+
+Both diagrams have two axes;
+$x$ and $y$ for CIE-1931 and $u'$ and $v'$ for CIELUV.
+When it is important to model colors based on perceptual distance between them, computer graphics commonly works in one of these coordinate systems, with a third axis for *luminance*, the perceived brightness of a color.
+
+Note that luminance is not simply the photonic energy of light nor the sum of cone responsiveness.
+We perceive green light as being much brighter than red light, and red light as being much brighter than blue light.
+
+# Light-emissive display coordinates
