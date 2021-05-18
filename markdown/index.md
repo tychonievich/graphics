@@ -8,13 +8,6 @@ var icon = document.getElementById("icon");
 icon.setAttribute("src", "files/redchair"+Math.floor(Math.random()*6)+".png");
 </script>
 
-# Meetings
-
-Course meetings are Mondays and Wednesdays 2–3:15 (eastern time).
-A room has not yet been assigned to this course.
-
-Office hours have not yet been selected for this course.
-
 # Overview 
 
 This course explores the algorithms, data structures, 
@@ -31,18 +24,6 @@ going into more detail on a topic such as model representation,
 visual-quality physics simulation, high-dimensional visualization,
 or advanced topics in real-time or realistic 3D graphics.
 Details of second-half curriculum will be based in part on student input.
-
-# A note about getting help
-
-This course is taught on a sporadic basis and generally lacks experienced TAs.
-It was taught a year ago, so we might have more TAs than usual this semester, but I cannot yet guarantee that.
-Additionally, we commonly have half a dozen different languages being used by students to write assignments.
-The course involves a lot of coding and often has a large enrollment.
-
-Ergo, you should expect to have little if any assistance debugging your code.
-I'll be able to help with graphics questions (e.g., "that horizontal banding on your image means your DDA implementation is rounding wrong") but likely that is all.
-
-If you are uncomfortable about the idea of working with minimal support, you should probably select a different course that uses a single programming language and has full TA staffing.
 
 # Is this the right class?
 
@@ -98,4 +79,16 @@ I'm intrigued by numerical stability    We don't have proper courses on these
 and computational geometry              topics from the programmer's perspective,
                                         but this class will whet your appetite.
 --------------------------------------  ---------------------------------------
+
+# A note about getting help
+
+This course is taught on a sporadic basis and generally lacks experienced TAs.
+It was taught a year ago, so we might have more TAs than usual this semester, but I cannot yet guarantee that.
+Additionally, we commonly have half a dozen different languages being used by students to write assignments.
+The course involves a lot of coding and often has a large enrollment.
+
+Ergo, you should expect to have little if any assistance debugging your code.
+I'll be able to help with graphics questions (e.g., "that horizontal banding on your image means your DDA implementation is rounding wrong") but likely that is all.
+
+If you are uncomfortable about the idea of working with minimal support, you should probably select a different course that uses a single programming language and has full TA staffing.
 
