@@ -79,6 +79,7 @@ data = '''
 '''
 
 s,m,l = (0,100*3**.5), (100,0), (200,100*3**.5)
+#s,m,l = (0,200), (-200,0), (100, 180)
 dotsize = 2
 
 with open('markdown/book/color-curve.svg', 'w') as f:
@@ -88,7 +89,7 @@ with open('markdown/book/color-curve.svg', 'w') as f:
             (max(l[0],m[0],s[0])-min(l[0],m[0],s[0]))+dotsize*2,
             (max(l[1],m[1],s[1])-min(l[1],m[1],s[1]))+dotsize*2,
         ), file=f)
-    print('<path d="M {} Z" stroke-width="{}" stroke="black" stroke-linejoin="round"/>'.format(' '.join(str(_)[1:-1].replace(' ','') for _ in (l,m,s)), 2*dotsize), file=f)
+    print('<path d="M {} Z" stroke-width="{}" stroke="black" stroke-linejoin="round" fill="black"/>'.format(' '.join(str(_)[1:-1].replace(' ','') for _ in (l,m,s)), 2*dotsize), file=f)
     print('<text x="{}" y="{}" fill="#ff8080" text-anchor="middle" font-family="arial" font-size="10px">L</text>'.format(l[0]-5,l[1]),file=f)
     print('<text x="{}" y="{}" fill="#00ff00" text-anchor="middle" font-family="arial" font-size="10px">M</text>'.format(m[0],m[1]+10),file=f)
     print('<text x="{}" y="{}" fill="#8080ff" text-anchor="middle" font-family="arial" font-size="10px">S</text>'.format(s[0]+5,s[1]),file=f)

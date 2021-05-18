@@ -5,6 +5,45 @@ title: Color
 
 Color is more complicated than you think it is, and much of that complication will matter in computer graphics.
 
+# Overview
+
+- Perceptual light is comprised of many photons, each with a single wavelength.
+- Three types of cones dominate our color vision. Rods are ineffective except in very dim situations.
+- Each cone responds to photons with a range of wavelengths
+    - The L cones respond to the longest wavelengths: roughly 470–655nm
+    - The M cones respond to the medium wavelengths: roughly 455–620nm
+    - The S cones respond to the shortest wavelengths: roughly 405–500nm
+- Perceptually, color is split between chromaticity and luminosity
+    - Luminosity is perceived overall brightness
+        - This is relative to other nearby illumination
+        - Some wavelengths look brighter than others: 560nm (yellowish-green) is the brightest-looking
+        - The eye is better at distinguishing shades of darker luminosity than brighter luminosity
+    - Chromaticity is perceived color
+        - Chromaticity is defined by relative responsiveness of L, M, and S cones,
+            which can be represented by a normalized vector like $\frac{(L,M,S)}{L+M+S}$
+        - The set of all normalized 3-vectors makes up a triangle.
+        - Because of responsiveness overlap, no light can cause the M cone to respond without also having L and/or S response. Thus, normalized vectors like $(0,1,0)$ cannot be created by any visual phenomenon.
+        - Plotting all pure-wavelength light within the triangle shows a curved line, something like a lopsided horseshoe. Any point inside that horseshoe can be created by some combination of light, and except at the edges by many different combinations of light.
+        - The perceived importance of color is not linear, so the most popular chromaticity diagrams (like CIE 1931s's $xy$ diagram) incorporate a nonlinear scaling factor
+- Light-emitting displays (including most current screens) present a subset of chromaticities by mixing three colors of light
+    - Single-wavelength lights are impractical to engineer at display scales, so the primary colors emit a narrow band of wavelengths instead, meaning their chromaticities are in the interior of the chromaticity diagram, not on its edges
+    - The eye is not very sensitive to the most-blue and most-red visible wavelengths, so using them is energy-inefficient
+    - The chromaticity diagram has a curved boundary, while three primary colors gives a triangle inside it. No finite number of primary colors can represent every chromaticity.
+    - We generally call the light-emissive primary colors Red, Green, and Blue or RGB. Red mostly stimulates L cones, Blue mostly stimulates S cones, and Green is a compromise point in the curved region of the diagram stimulating M strongly, L less strongly, and S only a little.
+- Light-absorbing displays (primarily color printers) present a subset of chromaticities by combining pigments that absorb different subsets of light.
+    - The most popular pigments are
+        - Cyan (C), which absorbs most wavelengths that primarily trigger the L cone 
+        - Magenta (M), which absorbs most wavelengths that primarily trigger the M cone 
+        - Yellow (Y), which absorbs most wavelengths that primarily trigger the S cone 
+        - Black (K), which absorbs all of the visible spectrum
+    - To be able to present bright colors, the absorbtion profiles should have minimal overlap. But because pigments do not have crisp wavelength boundaries, that means some wavelengths aren't fully absorbed even if CMY are applied at full strength. This is one reason that black is included (another reason is cost, as black is inexpensive to produce and popular in practice).
+    - Because black absorbs some light that the other primaries don't, it can be thought of as a fourth print primary color that expands the set of representable chromaticities. However, it can only be used for that purpose if the color is not bright, and its contributions are relatively small.
+    - $\displaystyle\begin{array}{l}R \approx 1-C-K\\G \approx 1-M-K\\B \approx 1-Y-K\end{array}$<br/> but these simulated RGB primaries each cover a much wider set of wavelengths than those used in light-emitting displays so the resulting representable chromaticities are a smaller subset of those possible in nature.
+    - Using more pigments both allows a better approximation of the curved chromaticity diagram and allows narrower wavelength specificity, moving the covered region close to the edges of the diagram.
+- Digital storage of color  ...
+    - ...
+- Digital presentation of color for artists  ...
+    - ...
 
 # Physics
 
@@ -173,6 +212,28 @@ When it is important to model colors based on perceptual distance between them, 
 Note that luminance is not simply the photonic energy of light nor the sum of cone responsiveness.
 We perceive green light as being much brighter than red light, and red light as being much brighter than blue light.
 
+:::aside
+**CIE 1931**
+
+Despite many issues having been identified and alternate chromaticity spaces being proposed since its creation, CIE 1931 remains the dominate way to defined chromaticity today. It can be derived from LMS responsiveness via the intermediate values XYZ (note: case maters, X and x are distinct).
+
+XYZ values were part of the CIE-1931 specification and predate our current understanding of cone responsiveness, but a conversion between XYZ and cone responsiveness was published as the Hunt-Pointer-Estevez matrix in 1980^[Schanda, Jnos, ed. (2007). *Colorimetry*. p. 305. [doi:10.1002/9780470175637](https://doi.org/10.1002%2F9780470175637).]:
+$$
+\begin{bmatrix}X\\Y\\Z\end{bmatrix} =
+\begin{bmatrix}1.9102&-1.11212&0.20191\\0.37095&0.62905&0\\0&0&1\end{bmatrix}
+\begin{bmatrix}L\\M\\S\end{bmatrix}
+$$
+
+Given XYZ values, the defining formulae for CIE xy are
+$$x = \frac{X}{X+Y+Z}$$
+$$y = \frac{Y}{X+Y+Z}$$
+
+Combing the matrix with the defining formulae we have
+$$x = \frac{1.9102 L - 1.11212 M + 0.20191 S}{-0.48307 M + 1.20191 S + 2.28115 L}$$
+$$y = \frac{0.37095 L + 0.62905 M}{-0.48307 M + 1.20191 S + 2.28115 L}$$
+:::
+
+
 # Light-emissive display coordinates
 
 Light-emissive color displays include television, computer monitor, phone screen and other displays that are visible even in the dark.
@@ -225,7 +286,7 @@ This is an sRGB color value in hexadecimal:
 `0x21` = 33/255 = 0.12941 of the available blue light.
 
 But that's in storage space; undoing the "gamma correction" we have
-0.76815 red, 0.4342 green, and 0.0152 blue.
+0.76815 red, 0.4342 green, and 0.0152 blue light ratios.
 
 Depending on the specific colored light sources those might produce various photon wavelengths, but assuming we have a correctly calibrated HDTV display
 
