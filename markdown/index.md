@@ -10,22 +10,10 @@ icon.setAttribute("src", "files/redchair"+Math.floor(Math.random()*6)+".png");
 
 # Meetings
 
-Course meetings are Mondays and Wednesdays 2–3:15 (eastern time);
-see [the course Collab site](https://collab.its.virginia.edu/portal/site/6ed4717e-ca26-44bb-a311-2e18abcc488d/page/29ab466c-cd5c-4429-b11e-da4cd603e230) for the Zoom meeting join link.
+Course meetings are Mondays and Wednesdays 2–3:15 (eastern time).
+A room has not yet been assigned to this course.
 
-Day         Time            Who
--------     --------------- -------------
-Monday      10--11          Tychonievich
-Tuesday     13--14:30       Tychonievich
-Tuesday     14:45--16:15    Yinghan
-Wednesday   16:30-18        Jingyuan
-Thursday    13--14:30       Tychonievich
-Thursday    14:45--16:15    Yinghan
-Friday      16:30-18        Jingyuan
-
-: Office Hours
-
-See [the course Collab site](https://collab.its.virginia.edu/portal/site/87b0131b-78ba-4d1a-9eec-ed65343647a4/page-reset/9e0fb97c-90a4-40d6-8d1d-821bff0d0f02) for the Discord server join link where office hours are held.
+Office hours have not yet been selected for this course.
 
 # Overview 
 
@@ -46,15 +34,15 @@ Details of second-half curriculum will be based in part on student input.
 
 # A note about getting help
 
-This course is taught too infrequently to have previous students as TAs.
-UVA CS has no current graphics research, so we do not expect to have graduate TAs either.
-I am teaching three different classes this semester as well as leading multiple departmental efforts, so I will not have time for more than a few office hours a week.
-The course involves a lot of coding and has a large enrollment.
+This course is taught on a sporadic basis and generally lacks experienced TAs.
+It was taught a year ago, so we might have more TAs than usual this semester, but I cannot yet guarantee that.
+Additionally, we commonly have half a dozen different languages being used by students to write assignments.
+The course involves a lot of coding and often has a large enrollment.
 
 Ergo, you should expect to have little if any assistance debugging your code.
 I'll be able to help with graphics questions (e.g., "that horizontal banding on your image means your DDA implementation is rounding wrong") but likely that is all.
 
-If you are uncomfortable about the idea of working with minimal support, you should probably select a different course that has full TA staffing.
+If you are uncomfortable about the idea of working with minimal support, you should probably select a different course that uses a single programming language and has full TA staffing.
 
 # Is this the right class?
 
@@ -83,7 +71,7 @@ I want to make games                    [CS 4730](//cs4730.cs.virginia.edu/) is 
 I want to learn OpenGL, Direct3D,       We'll skim some of these, but not a
 Metal, Vulkan, ...                      deep dive.
 
-I want to learn Allegro, Banshee,       We'll may discuss how they are built, but not
+I want to learn Allegro, Banshee,       We may discuss how they are built, but not
 C4, CryEngine, Intrinsic, OGRE, SDL,    how to use them.
 Serious, Source, Torque, Unity, Unreal,
 UX3D, Xenko, XNA, ...
@@ -95,8 +83,8 @@ Nendo, XSI, SketchUp, ...               or [Arch 5422](//www.arch.virginia.edu/a
 I'm not very technical, this sounds     The technology of art is quite
 artsy                                   technical. Sorry.
 
-I'm interested in computer vision       Take a special-topics course from
-                                        Vicente Ordonez-Roman instead.
+I'm interested in computer vision       Not part of this course.
+                                        Computer vision is sometimes offered as a CS 4501.
 
 I didn't do well in calculus            That's fine; we need the ideas, but
                                         not the techniques.

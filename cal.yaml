@@ -1,33 +1,36 @@
 Special Dates:
-  Courses begin: 2020-08-25
-  Courses end: 2020-11-24
-  Add deadline: 2020-01-27
-  Drop deadline: 2020-02-24
-  Withdraw deadline: 2020-03-16
-  Thanksgiving break:
-    start: 2020-11-25
-    end: 2020-11-29
+  Courses begin: 2021-08-24
+  Courses end: 2021-12-07
+  Add deadline: 2021-09-07
+  Drop deadline: 2021-10-14
+  Withdraw deadline: 2021-10-26
+  Reading days:
+    start: 2021-10-09
+    end:  2021-10-12
+  Thanksgiving recess:
+    start: 2021-11-24
+    end: 2021-11-28
 
 meta:
   timezone: America/New_York
   name: CS 4810
   lecture exam: true
-  home: https://www.cs.virginia.edu/luther/4810/F2020/
+  home: https://www.cs.virginia.edu/luther/4810/F2021/
   final:
-    start: 2020-12-03 14:00:00
+    start: 2021-12-17 14:00:00
     duration: 180
-    room: online
+    room: TBA
 
 sections:
   CS4810-001:
     type: lecture
-    room: online
+    room: TBA
     days: [Monday, Wednesday]
     start: 14:00:00
     duration: 75
 
 office hours:
-  .begin: 2020-09-01
+  .begin: 2021-09-01
   faculty:
     Tychonievich:
       where: TBD
@@ -57,15 +60,15 @@ lectures:
   
   - webgl
   - [webgl textures, animation]
-  - IK
+  - TBA
   
-  - image manipulation
-  - brushes
-  - cloth
-  - fluids
-  - goop
-  - scale
-  - [fractals, plants, forests, terrain]
+  - TBA
+  - TBA
+  - TBA
+  - TBA
+  - TBA
+  - TBA
+  - TBA
 
 reading:
   brushes:

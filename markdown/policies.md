@@ -9,7 +9,7 @@ title: Policies
 
 At the end of this course you will be able to do two broad classes of things:
 first, you will learn to write algorithms that create images from models;
-second, you will learn to effectively understand the capabilities, limitations and vocabulary that underly common graphical libraries.
+second, you will learn to effectively understand the capabilities, limitations and vocabulary that underlie common graphical libraries.
 In addition to these two core classes of learning objectives
 we will explore a few more specialized topics,
 some of which you will be able to select.
@@ -24,22 +24,10 @@ this document is very much open to being adjusted as the semester progresses.
 > "The pain of parting is nothing to the joy of meeting again." 
 > <div>---Charles Dickens</div>
 
-This course will be taught online.
-It will be delivered synchronously so that you can interact with me, asking questions and the like;
-it will also be recorded for later viewing.
-Grades will never be associated with synchronous presence.
-
-There are effectively three levels of participation:
-
-Level   How to engage               What you get
-------  ---------------             -----------------------
-Low     Read + watch asynchronously Content as best I can explain it
-Medium  On zoom live, camera off    as Low, plus you can ask questions
-High    On zoom live, camera on     as Medium, plus I can adjust my pacing based on your facial expressions and affect
-
-I've requested a classroom we can use to display visual phenomena that do not capture well via camera.
-I have not yet heard if such a classroom will be provided.
-If it is, use of it will be scheduled, limited to small numbers at a time, and optional.
+It is expected that this class will be in-person.
+Most lectures will be recorded, but some in-class demonstrations will not make it into those recordings.
+While I do not grade attendance or participation,
+experience suggests that presence and attention in class is strongly correlated with grade.
 
 There is no lab or discussion session.
 I do not schedule review sessions or the like outside of usual class time.
@@ -62,22 +50,16 @@ You will be asked to write and turn in four or five programs:
 #. an additional program based on the latter part of the course
 
 Additionally, quizzes will be administered online frequently.
-There will be a final quiz, which I traditionally administered in-person;
-I have not yet determined how to adjust that for remote delivery.
+There will be a final quiz, which will be administered in-person during the university-scheduled final exam period.
 
 ## Contact
 
 > "I heard a sound; I turned around; I turned around to face the thing that made the sound."
 > <div>---They Might Be Giants</div>
 
-We'll use [Discord](https://discord.gg/yTVpp8b) to emulate offices, office hours, office hours queues, etc.
-We recommend downloading the desktop app, but the browser version should also work.
+TBA.
 
-Person	| OH	| Contact
-------- | ----- | -------
-Luther Tychonievich	| Mo 10–11; TuTh 1–2:30 | tychonievich@virginia.edu<br/>+1 434 243 3789
-Jingyun Chou | TBA | Discord only
-Yinghan Wang | TBA | Discord only
+If you have special concerns prior to class starting, contact me at tychonievich@virginia.edu and I'll try to help.
 
 If you email, please include 4810 in the subject line.
 I get so many emails each day that those that are not obviously related to one of my classes may not be read very quickly.
@@ -107,7 +89,7 @@ Readings may be roughly categorized into two kinds.
 > <div>---Douglas Adams</div>
 
 Most assignments will be supported in any language you chose to use.
-In the past I have supported C++, C#, D, Java, Kotlin, Python, and Rust.
+In the past I have supported C, C++, C#, D, Dart, Java, Kotlin, Python, and Rust.
 You may switch languages as often as you wish.
 If you want another language added, let me know.
 
@@ -129,11 +111,11 @@ The target difficulty is 5–10 hours of focused effort each week.
 
 Task | Weight | Comments
 -----|--------|-----------------------------------------------------------------
-Quizzes     | ⅓ | The final exam will allow replacing these scores
-HW required | ⅓ | Distributed evenly between the assignments
-HW optional | ⅓ | May be collected from any mix of assignments. Excess points apply at ⅒ weight towards other parts of your grade.
+Quizzes     | 25% | Acceptance of late submissions and/or dropping some scores will be implemented
+Assignments | 50% | Approximately 10% each, but you'll have some point flexibility between them.  Extra credit in assignments will not transfer over to quizzes or final.
+Final Quiz  | 25% | The intent is to make this a (slightly reworded) selection from mid-semester quizzes' questions
 
-Your final grade is computed based on the percentage of points you have earned and is designed to match the GPA value of each letter. For reasons I do not understand, that is not a linear scale: for example, `A-` &minus; `B+` = 0.4 grade points while `B+` &minus; `B` = 0.3 grade points. For reasons even farther from my ken, the most common grading scale I have seen is also not linear but differently spaced than the grade points. Following is a scale spaced like the grade point scale:
+Your final grade is computed based on the percentage of points you have earned and is designed to match the GPA value of each letter. For reasons I do not understand, that is not a linear scale: for example, `A-` &minus; `B+` = 0.4 grade points while `B+` &minus; `B` = 0.3 grade points. For reasons even farther from my ken, the most common grading scale I have seen is also not linear but differently spaced than the grade points. Following is a scale spaced like the grade point scale:
 
 You get     if you score     Which is worth
 ----------  ------------    ----------------
@@ -155,18 +137,6 @@ F           otherwise              0.0
 I do not round grades. 92.99999919% is not &ge; 93% and is thus an A&minus;, not an A.
 
 I do not curve grades: if you all fail, you all fail; if you all ace, you all ace. However, rubrics for assignments are not linear: instead, I determine how well I expect a passing student to perform and assign a per-assignment rubric to match.
-
-The Final exam will be a chance to replace quiz scores.
-The quiz grade will be the maximum of the final exam grade and the previous quiz grades.
-
-Ergo, your final grade can be found as
-
-	average(
-		max(final, average(quizzes)),
-		required,
-		optional > 100% ? 100%+(optional - 100%)/10 : optional
-	)
-
 
 # Miscellanea
 
