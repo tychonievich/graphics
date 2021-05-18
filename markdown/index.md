@@ -64,7 +64,7 @@ I want to make movies                   Movies are made mostly by artists,
                                         about how to make the software CG 
                                         artists use...
 
-I want to make games                    [CS 4730](//cs4730.cs.virginia.edu/) is a better fit.
+I want to make games                    [CS 4730](https://cs4730.cs.virginia.edu/) is a better fit.
                                         We will talk some about how game engines 
                                         draw things on the screen.
 
