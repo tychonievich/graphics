@@ -1,10 +1,6 @@
 ---
-title: Fall 2020 Schedule
+title: Fall 2021 Schedule
 ...
-
-At the time this note was written, UVA had not stated the exact structure of the semester. They've stated we'll not return to grounds after Thanksgiving break, but not stated if that means we'll have finals before then, or after then, or have a post-Thanksgiving week of online courses before finals. As that information is released, the schedule is likely to be updated.
-
-<hr/>
 
 <style id="schedule-css">
 
