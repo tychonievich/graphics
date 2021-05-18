@@ -46,26 +46,26 @@ lectures:
   - scan conversion
   - subdivision
   - [curves, alpha]
-  
   - math
   - homogeneous coordinates
   - 3d pipeline
   - fragment shaders
   - [3d pipeline, fragment shaders]
   - raytracing
+
   - light
   - raytracing
-
   - [webgl, glsl]
-  
   - webgl
   - [webgl textures, animation]
   - TBA
-  
   - TBA
   - TBA
   - TBA
   - TBA
+  - TBA
+  - TBA
+
   - TBA
   - TBA
   - TBA
