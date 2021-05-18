@@ -109,4 +109,4 @@ To subscribe to the above calendar, add <http://www.cs.virginia.edu/luther/4810/
 
 <hr/>
 
-At the time this note was written, the exact structure and timing of final exams had not been released. The official information about finals can be found at <https://www2.virginia.edu/registrar/exams.html#1208>
+The final exam time is set by the registrar. The official information about finals can be found at <https://www2.virginia.edu/registrar/exams.html#1218>
