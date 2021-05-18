@@ -77,8 +77,8 @@ Serious, Source, Torque, Unity, Unreal,
 UX3D, Xenko, XNA, ...
 
 I want to learn Maya, 3DS Max,          Not a topic of this class, sorry.
-Blender, Rhino, Wings, A:M, ZBrush,     Try [Arch 5420](//www.arch.virginia.edu/arch5420)
-Nendo, XSI, SketchUp, ...               or [Arch 5422](//www.arch.virginia.edu/arch5422).
+Blender, Rhino, Wings, A:M, ZBrush,     Try [Arch 5420](https://www.arch.virginia.edu/arch5420)
+Nendo, XSI, SketchUp, ...               or [Arch 5422](https://www.arch.virginia.edu/arch5422).
 
 I'm not very technical, this sounds     The technology of art is quite
 artsy                                   technical. Sorry.
