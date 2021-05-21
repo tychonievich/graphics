@@ -88,9 +88,6 @@ Readings may be roughly categorized into two kinds.
 > "If you really want to understand something, the best way is to try and explain it to someone else. That forces you to sort it out in your own mind. And the more slow and dim-witted your pupil, the more you have to break things down into more and more simple ideas. And that’s really the essence of programming. By the time you’ve sorted out a complicated idea into little steps that even a stupid machine can deal with, you’ve certainly learned something about it yourself."
 > <div>---Douglas Adams</div>
 
-> "Everyone knows that computers are very big, powerful sadistic, and highly dangerous."
-> <div>---Harry Harrison</div>
-
 Most assignments will be supported in any language you chose to use.
 In the past I have supported C, C++, C#, D, Dart, Java, Kotlin, Python, and Rust.
 You may switch languages as often as you wish.
@@ -104,6 +101,9 @@ Assuming that plan does not change, we'll have a tutorial on the necessary bits 
 Estimating how long it will take someone to complete a coding assignment
 is always difficult.
 The target difficulty is 5–10 hours of focused effort each week.
+
+> "Everyone knows that computers are very big, powerful sadistic, and highly dangerous."
+> <div>---Harry Harrison</div>
 
 # Grading
 
