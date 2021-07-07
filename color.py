@@ -111,7 +111,7 @@ with open('markdown/book/color-curve.svg', 'w') as f, open('markdown/book/color-
         y = (l[1]*lr + m[1]*mr + s[1]*sr)/norm
         if lp is not None:
             print('<line title="{}" stroke="{}" x1="{}" y1="{}" x2="{}" y2="{}" stroke-width="{}" stroke-linecap="round"/>'.format(nm+'nm',color,lp[0],lp[1],x,y,dotsize), file=f)
-        print('<circle title="{}" fill="white" x1="{}" y1="{}" r="{}"/>'.format(nm+'nm',x,y,dotsize), file=f2)
+        print('<circle title="{}" fill="white" cx="{}" cy="{}" r="{}"/>'.format(nm+'nm',x,y,dotsize/2), file=f2)
         lp = (x,y)
     print('<path fill="none" stroke="blue" d="M{}"/>'.format(' '.join('{},{}'.format(*x) for x in sc)), file=f3)
     print('<path fill="none" stroke="green" d="M{}"/>'.format(' '.join('{},{}'.format(*x) for x in mc)), file=f3)
