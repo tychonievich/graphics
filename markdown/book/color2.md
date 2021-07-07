@@ -50,7 +50,11 @@ So, we want to make a display that can show a lot of colors. But creating arbitr
 
 ![Relative responsiveness of the S (blue), M (green), and R (red) cones to wavelengths from 390nm (on left) to 730nm (on right).](color-response.svg){style="max-width:24em"}
 
-![Responsiveness as brightness of line on the view triangle.](color-curve.svg){style="max-width:24em"}
+As a result, early color displays played with several different colors of light, but by 1993 had mostly settled on ITU-R Recommendation 709 which used colors made of several wavelengths, which can be plotted on our cone triangle as follows.
+
+![Relative responsiveness as brightness of line. Note that getting close to the L corner requires a lot of energy to get it bright because none of the cones are very responsive there. The three dots are the Red, Green, and Blue primary color used by ITU-R Rec.709, implemented by most televisions and computers designed between 1995 and 2020](color-curve.svg){style="max-width:24em"}
+
+In 2012 there was a recognition that almost-single-wavelength colors based on LED lasers might become commercially viable in the near future, leading to the publication of Rec.2020 (the UHDTV standard) and Rec.2100 (the HDR-TV standard) that use single-wavelength primary colors, but as of the time I am writing this (summer 2021) most displays I have access to use the Rec.2020 colors instead.
 
 <!--
 

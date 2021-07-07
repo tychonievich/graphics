@@ -97,22 +97,34 @@ with open('markdown/book/color-curve.svg', 'w') as f, open('markdown/book/color-
         print('<text x="{}" y="{}" fill="#8080ff" text-anchor="middle" font-family="arial" font-size="10px">S</text>'.format(s[0]+5,s[1]),file=fh)
         lp = None
     sc,mc,lc = [],[],[]
+    nmxy = {}
     for line in data.strip().split('\n'):
         nm,sbl,sbm,sbs,ciel,ciem,cies = line.split()
+        nm = int(nm)
         lr0, mr0, sr0 = float(sbl), float(sbm), float(sbs)
         lr, mr, sr = (10**_ for _ in (lr0,mr0,sr0))
-        sc.append((int(nm),100-sr*100))
-        mc.append((int(nm),100-mr*100))
-        lc.append((int(nm),100-lr*100))
+        sc.append((nm,100-sr*100))
+        mc.append((nm,100-mr*100))
+        lc.append((nm,100-lr*100))
         bright = int(min(1,(max(lr,mr,sr)+1/256))*255)
         color = '#'+('0'+hex(bright)[2:])[-2:]*3
         norm = lr+mr+sr
         x = (l[0]*lr + m[0]*mr + s[0]*sr)/norm
         y = (l[1]*lr + m[1]*mr + s[1]*sr)/norm
+        nmxy[nm] = x,y
         if lp is not None:
-            print('<line title="{}" stroke="{}" x1="{}" y1="{}" x2="{}" y2="{}" stroke-width="{}" stroke-linecap="round"/>'.format(nm+'nm',color,lp[0],lp[1],x,y,dotsize), file=f)
-        print('<circle title="{}" fill="white" cx="{}" cy="{}" r="{}"/>'.format(nm+'nm',x,y,dotsize/2), file=f2)
+            print('<line title="{}" stroke="{}" x1="{}" y1="{}" x2="{}" y2="{}" stroke-width="{}" stroke-linecap="round"/>'.format(str(nm)+'nm',color,lp[0],lp[1],x,y,dotsize), file=f)
+        print('<circle title="{}" fill="white" cx="{}" cy="{}" r="{}"/>'.format(str(nm)+'nm',x,y,dotsize/2), file=f2)
         lp = (x,y)
+    m93 = (3.1*nmxy[560][0] + 0.8*nmxy[500][0])/3.9, (3.1*nmxy[560][1] + 0.8*nmxy[500][1])/3.9
+    s93 = (4*nmxy[390][0] + 0.8*nmxy[495][0])/4.8, (4*nmxy[390][1] + 0.8*nmxy[495][1])/4.8
+    l93 = (7.6*nmxy[700][0] + 1.3*nmxy[515][0])/8.9, (7.6*nmxy[700][1] + 1.3*nmxy[515][1])/8.9
+    
+    print('<circle title="blue" fill="#0000FF" cx="{}" cy="{}" r="{}"/>'.format(s93[0],s93[1],dotsize), file=f)
+    print('<circle title="green" fill="#00FF00" cx="{}" cy="{}" r="{}"/>'.format(m93[0],m93[1],dotsize), file=f)
+    print('<circle title="red" fill="#FF0000" cx="{}" cy="{}" r="{}"/>'.format(l93[0],l93[1],dotsize), file=f)
+    
+    
     print('<path fill="none" stroke="blue" d="M{}"/>'.format(' '.join('{},{}'.format(*x) for x in sc)), file=f3)
     print('<path fill="none" stroke="green" d="M{}"/>'.format(' '.join('{},{}'.format(*x) for x in mc)), file=f3)
     print('<path fill="none" stroke="red" d="M{}"/>'.format(' '.join('{},{}'.format(*x) for x in lc)), file=f3)
