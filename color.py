@@ -82,22 +82,28 @@ s,m,l = (0,100*3**.5), (100,0), (200,100*3**.5)
 #s,m,l = (0,200), (-200,0), (100, 180)
 dotsize = 2
 
-with open('markdown/book/color-curve.svg', 'w') as f:
-    print('<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="{} {} {} {}">'.format(
-            min(l[0],m[0],s[0])-dotsize,
-            min(l[1],m[1],s[1])-dotsize,
-            (max(l[0],m[0],s[0])-min(l[0],m[0],s[0]))+dotsize*2,
-            (max(l[1],m[1],s[1])-min(l[1],m[1],s[1]))+dotsize*2,
-        ), file=f)
-    print('<path d="M {} Z" stroke-width="{}" stroke="black" stroke-linejoin="round" fill="black"/>'.format(' '.join(str(_)[1:-1].replace(' ','') for _ in (l,m,s)), 2*dotsize), file=f)
-    print('<text x="{}" y="{}" fill="#ff8080" text-anchor="middle" font-family="arial" font-size="10px">L</text>'.format(l[0]-5,l[1]),file=f)
-    print('<text x="{}" y="{}" fill="#00ff00" text-anchor="middle" font-family="arial" font-size="10px">M</text>'.format(m[0],m[1]+10),file=f)
-    print('<text x="{}" y="{}" fill="#8080ff" text-anchor="middle" font-family="arial" font-size="10px">S</text>'.format(s[0]+5,s[1]),file=f)
-    lp = None
+with open('markdown/book/color-curve.svg', 'w') as f, open('markdown/book/color-area.svg', 'w') as f2, open('markdown/book/color-response.svg', 'w') as f3:
+    print('<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="385 -10 360 120">'.format(), file=f3)
+    for fh in f,f2:
+        print('<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="{} {} {} {}">'.format(
+                min(l[0],m[0],s[0])-dotsize,
+                min(l[1],m[1],s[1])-dotsize,
+                (max(l[0],m[0],s[0])-min(l[0],m[0],s[0]))+dotsize*2,
+                (max(l[1],m[1],s[1])-min(l[1],m[1],s[1]))+dotsize*2,
+            ), file=fh)
+        print('<path d="M {} Z" stroke-width="{}" stroke="black" stroke-linejoin="round" fill="black"/>'.format(' '.join(str(_)[1:-1].replace(' ','') for _ in (l,m,s)), 2*dotsize), file=fh)
+        print('<text x="{}" y="{}" fill="#ff8080" text-anchor="middle" font-family="arial" font-size="10px">L</text>'.format(l[0]-5,l[1]),file=fh)
+        print('<text x="{}" y="{}" fill="#00ff00" text-anchor="middle" font-family="arial" font-size="10px">M</text>'.format(m[0],m[1]+10),file=fh)
+        print('<text x="{}" y="{}" fill="#8080ff" text-anchor="middle" font-family="arial" font-size="10px">S</text>'.format(s[0]+5,s[1]),file=fh)
+        lp = None
+    sc,mc,lc = [],[],[]
     for line in data.strip().split('\n'):
         nm,sbl,sbm,sbs,ciel,ciem,cies = line.split()
         lr0, mr0, sr0 = float(sbl), float(sbm), float(sbs)
         lr, mr, sr = (10**_ for _ in (lr0,mr0,sr0))
+        sc.append((int(nm),100-sr*100))
+        mc.append((int(nm),100-mr*100))
+        lc.append((int(nm),100-lr*100))
         bright = int(min(1,(max(lr,mr,sr)+1/256))*255)
         color = '#'+('0'+hex(bright)[2:])[-2:]*3
         norm = lr+mr+sr
@@ -105,6 +111,11 @@ with open('markdown/book/color-curve.svg', 'w') as f:
         y = (l[1]*lr + m[1]*mr + s[1]*sr)/norm
         if lp is not None:
             print('<line title="{}" stroke="{}" x1="{}" y1="{}" x2="{}" y2="{}" stroke-width="{}" stroke-linecap="round"/>'.format(nm+'nm',color,lp[0],lp[1],x,y,dotsize), file=f)
+        print('<circle title="{}" fill="white" x1="{}" y1="{}" r="{}"/>'.format(nm+'nm',x,y,dotsize), file=f2)
         lp = (x,y)
-    print('</svg>', file=f)
+    print('<path fill="none" stroke="blue" d="M{}"/>'.format(' '.join('{},{}'.format(*x) for x in sc)), file=f3)
+    print('<path fill="none" stroke="green" d="M{}"/>'.format(' '.join('{},{}'.format(*x) for x in mc)), file=f3)
+    print('<path fill="none" stroke="red" d="M{}"/>'.format(' '.join('{},{}'.format(*x) for x in lc)), file=f3)
+    for fh in f,f2,f3:
+        print('</svg>', file=fh)
 
