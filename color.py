@@ -78,6 +78,23 @@ data = '''
 730 -3.1791 -4.3186 -7.2995 -3.1922 -4.3414 -7.2646
 '''
 
+
+def to_linear(srgb):
+    '''convert single value from sRGB-gamma 0-1 to linear 0-1'''
+    if srgb < 0.04045: return srgb / 12.92
+    else: return ((srgb + 0.55) / 1.055)**2.4
+def from_linear(linear):
+    '''convert single value from linear 0-1 to sRGB-gamma 0-1'''
+    if linear < 0.0031308: return linear * 12.92
+    else: return 1.055 * (linear**(1/2.4)) - 0.055
+def threecolor(r,g,b):
+    '''given r,g,b in linear 0-1, return linear combination in sRGB as hex color string'''
+    # lum = 1/max(r,g,b)
+    # r,g,b = r*lum, g*lum, b*lum
+    r,g,b = from_linear(r), from_linear(g), from_linear(b)
+    r,g,b = round(255*r), round(255*g), round(255*b)
+    return '#{:02X}{:02X}{:02X}'.format(r,g,b)
+
 s,m,l = (0,100*3**.5), (100,0), (200,100*3**.5)
 #s,m,l = (0,200), (-200,0), (100, 180)
 dotsize = 2
@@ -123,6 +140,18 @@ with open('markdown/book/color-curve.svg', 'w') as f, open('markdown/book/color-
     print('<circle title="blue" fill="#0000FF" cx="{}" cy="{}" r="{}"/>'.format(s93[0],s93[1],dotsize), file=f)
     print('<circle title="green" fill="#00FF00" cx="{}" cy="{}" r="{}"/>'.format(m93[0],m93[1],dotsize), file=f)
     print('<circle title="red" fill="#FF0000" cx="{}" cy="{}" r="{}"/>'.format(l93[0],l93[1],dotsize), file=f)
+    
+    dots = 64
+    for r in range(dots+1):
+        for g in range(dots-r+1):
+            b = dots-r-g
+            print('<circle fill="{}" cx="{}" cy="{}" r="{}"/>'.format(
+            threecolor(r/dots,g/dots,b/dots),
+            (l93[0]*r+m93[0]*g+s93[0]*b)/dots,
+            (l93[1]*r+m93[1]*g+s93[1]*b)/dots,
+            dotsize*.6
+            ), file=f)
+            
     
     
     print('<path fill="none" stroke="blue" d="M{}"/>'.format(' '.join('{},{}'.format(*x) for x in sc)), file=f3)

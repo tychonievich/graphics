@@ -21,9 +21,9 @@ Seconds are awkward in this context in part because they are unbounded, approach
 
 Normalized cone signaling would form a cube, from (0,0,0) to (1,1,1).
 But we don't perceive a cube of color.
-There are various ways that (0.1, 0.2, 0.3) can change into (0.2, 0.4, 0.6) with no change in the outside world, including pupil dilation, clouds moving away from the sun, etc. We can perceive this overall intensity of light or "luminosity", but we our brain filters out overall luminosity and perceives only relative luminosity of adjacent colors. So a better model of color is as 2D color vector $(l,m,s)$ where $l+m+s = 1$, coupled with a separate luminosity level in the form of a scalar being multiplied by the whole vector.
+There are various ways that (0.1, 0.2, 0.3) can change into (0.2, 0.4, 0.6) with no change in the outside world, including pupil dilation, clouds moving away from the sun, etc. We can perceive this overall intensity of light or "luminosity", but we our brain filters out overall luminosity and perceives only relative luminance^[Several related terms are technically distinct but sometimes used interchangeably in computer graphics:<br/>Luminosity = Joules of light per second.<br/>Luminance = Joules of light per second per unit area.<br/>Brightness = perception of luminance, generally relative to it surroundings.<br/>Lightness = perception of "how light it is", a non-linear scale as the eye is better at distinguishing between dark shades than light shades.<br/>Value = "distance from black"; if a white light and a red light have the same value, they are emitting equivalent numbers of long-wavelength photons, but the white light is also emitting short-wavelength photons and thus has higher luminosity.] of adjacent colors. So a better model of color is as 2D color vector $(l,m,s)$ where $l+m+s = 1$, coupled with a separate luminance level in the form of a scalar being multiplied by the whole vector.
 
-Ignoring the luminosity component for the time being, our color space is now a triangle:
+Ignoring the luminance component for the time being, our color space is now a triangle:
 
 <figure>
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="-2 -2 204 177.20508075688772" style="max-width:24em">
@@ -52,9 +52,13 @@ So, we want to make a display that can show a lot of colors. But creating arbitr
 
 As a result, early color displays played with several different colors of light, but by 1993 had mostly settled on ITU-R Recommendation 709 which used colors made of several wavelengths, which can be plotted on our cone triangle as follows.
 
-![Relative responsiveness as brightness of line. Note that getting close to the L corner requires a lot of energy to get it bright because none of the cones are very responsive there. The three dots are the Red, Green, and Blue primary color used by ITU-R Rec.709, implemented by most televisions and computers designed between 1995 and 2020](color-curve.svg){style="max-width:24em"}
+![Rec.709 color triangle and relative eye responsiveness to various pure wavelengths. The triangle shows all colors (luminance aside) that are representable  three dots are the Red, Green, and Blue primary color used by most RGB displays (as of 2021). The triangle does not extend to the L corner because it requires a lot of energy to get those wavelengths bright because none of the cones are very responsive there. It does not touch the curve anywhere because single-wavelength light sources are challenging to manufacture.](color-curve.svg){style="max-width:24em"}
 
-In 2012 there was a recognition that almost-single-wavelength colors based on LED lasers might become commercially viable in the near future, leading to the publication of Rec.2020 (the UHDTV standard) and Rec.2100 (the HDR-TV standard) that use single-wavelength primary colors, but as of the time I am writing this (summer 2021) most displays I have access to use the Rec.2020 colors instead.
+You'll notice that there is space in the above image that is inside the visible-color curve but outside the colored-in triangle. Those colors exist in the real world, but cannot be replicated on this screen. Later ITU-R recommendations (Rec.2020 published in 2012 and Rec.2100 published in 2016) suggest single-wavelength lights to get a larger region, but while that makes the triangle bigger it still leaves out some colors. Most of the monitors I checked in 2021 still used Rec.709 colors instead, which is why I rendered the Rec.709 triangle above.
+
+Note that some colors can be represented on a monitor but are not shown in the diagram because they differ from the diagrams colors only in luminance.
+For example, yellow, is a higher-luminance version of the point halfway between the green and red corners
+and forest green is a lower-luminance version of a point near the green corner of the triangle.
 
 <!--
 
