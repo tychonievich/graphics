@@ -128,16 +128,16 @@ While not designed for digital display, both of CIE models (and several related 
 
 The above discussion applies to light-emitting displays: laptops, desktops, phones, etc. Print media has additional constraints.
 
-The basic operation of colored ink is to absorb some wavelengths and not others. Cyan ink, for example, absorbs most wavelengths that we'd see as being orange or red. Picking the best inks is tricky: if they absorb to wide a band than the overlap and some bright colors become unpresentable, while if they are too narrow then some wavelengths cannot be absorbed and some dark colors become unpresentable.
+The basic function of colored ink is to absorb some wavelengths and not others. Cyan ink, for example, absorbs most wavelengths that we'd see as being orange or red. Picking the best inks is tricky: if they absorb to many wavelengths then they overlap and some bright colors become unpresentable; if they absorb too few then some wavelengths cannot be absorbed and some dark colors become unpresentable.
 
-The most common compromize is to have a CMYK printer: <b>C</b>yan, <b>M</b>agenta, and <b>Y</b>ellow ink that each remove something under a third of the visible spectrum and blac<b>K</b> ink that absorbs the entire visible spectrum and can help approximate those darker colors that the gaps between the CMY absorptions make hard by themselves. Common CMYK inks together cover a smaller and somewhat different region of possible colors than RGB.
+The most common compromise is to have a CMYK printer: <b>C</b>yan, <b>M</b>agenta, and <b>Y</b>ellow ink that each remove a bit shy of a third of the visible spectrum and blac<b>K</b> ink that absorbs the entire visible spectrum and can help approximate those darker colors that the gaps between the CMY absorptions make hard by themselves. Common CMYK inks together cover a smaller and somewhat different region of possible colors than RGB.
 
 Higher-end printing systems use many more inks covering many narrow bands of photons to give a higher degree of color fidelity; The [Pantone system](https://en.wikipedia.org/wiki/Pantone#Pantone_Color_Matching_System) is probably the best known with 14 base pigments instead of CMYK's 4.
 
-Thus, as a rough over-simplification, in increasing order of representation we have
+Thus, as a rough over-simplification^[And by rough I mean rough enough that some people might disagree, in part because it's hard to agree on even how to compare the color gamut of an additive model like RGB and a subtractive model like CMYK; try [searching for “cmyk vs rgb”](https://duckduckgo.com/?q=cmyk+vs+rgb+color+spaces&iax=images&ia=images) if you want to see some example disagreements.], in increasing order of representation we have
 
-- CMYK, which represents less than
-- RGB, HSL, and YUV, which represent less than
-- High-end print media, which represent less than
-- Nature
+- CMYK, which can represent fewer (and different) colors than
+- RGB, HSL, and YUV, which can represent fewer colors than
+- High-end print media, which can represent fewer colors than
+- The natural world, which can be described by the CIE and LMS color spaces.
 
