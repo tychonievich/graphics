@@ -134,7 +134,7 @@ with open('markdown/book/color-curve.svg', 'w') as f, open('markdown/book/color-
         print('<circle title="{}" fill="white" cx="{}" cy="{}" r="{}"/>'.format(str(nm)+'nm',x,y,dotsize/2), file=f2)
         lp = (x,y)
     m93 = (3.1*nmxy[560][0] + 0.8*nmxy[500][0])/3.9, (3.1*nmxy[560][1] + 0.8*nmxy[500][1])/3.9
-    s93 = (4*nmxy[390][0] + 0.8*nmxy[495][0])/4.8, (4*nmxy[390][1] + 0.8*nmxy[495][1])/4.8
+    s93 = (4*nmxy[390][0] + 0.6*nmxy[495][0])/4.6, (4*nmxy[390][1] + 0.6*nmxy[495][1])/4.6
     l93 = (7.6*nmxy[700][0] + 1.3*nmxy[515][0])/8.9, (7.6*nmxy[700][1] + 1.3*nmxy[515][1])/8.9
     
     print('<circle title="blue" fill="#0000FF" cx="{}" cy="{}" r="{}"/>'.format(s93[0],s93[1],dotsize), file=f)

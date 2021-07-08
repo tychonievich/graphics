@@ -41,7 +41,7 @@ using the table from Stockman et al (1993)^[Andrew Stockman, Donald MacLeod, Nan
 
 ![Single-wavelength lights every 5nm from 390nm (on left) to 730nm (on right).](color-area.svg){style="max-width:24em"}
 
-By combining multiple wavelengths we can get any point inside that curve. Points outside the curve represent cone responses that cannot be triggered by any combination of light.^[Presumably pharmaceuticals or surgery could cause the optic nerve to signal impossible ratios like (0,1,0). While I am unaware of studies that have attempted that, I postulate that the result would be painful rather than interesting, similar to the experience of other abnormal sensations like having your pupils artificially dialed so all cones are firing very quickly or the pins-and-needles feeling of having some pressure neurons firing at maximum levels while adjacent ones are not firing at all.]
+By combining multiple wavelengths we can get any point inside that curve. Points outside the curve represent cone responses that cannot be triggered by any combination of light.^[Presumably pharmaceuticals or surgery could cause the optic nerve to signal impossible ratios like $(L,M,S)=(0,1,0)$. While I am unaware of studies that have attempted that, I postulate that the result would be painful rather than interesting, similar to the experience of other abnormal sensations like having your pupils artificially dialed so all cones are firing very quickly or the pins-and-needles feeling of having some pressure neurons firing at maximum levels while adjacent ones are not firing at all.]
 In other words, only a subset of theoretical cone responses actually represent colors. 
 
 It is worth noting that not every eye is the same. The exact ratios of pigments inside the cones vary by individual, meaning the exact same wavelengths of light might cause a response of (0.1, 0.4, 0.5) in one individual and (0.1, 0.45, 0.45) in another. The variations are typically fairly small, and when larger are called "color blindness" (a term that also refers to more extreme variations such as having only two types of working cones).
@@ -59,6 +59,41 @@ You'll notice that there is space in the above image that is inside the visible-
 Note that some colors can be represented on a monitor but are not shown in the diagram because they differ from the diagrams colors only in luminance.
 For example, yellow, is a higher-luminance version of the point halfway between the green and red corners
 and forest green is a lower-luminance version of a point near the green corner of the triangle.
+
+
+Let's review where we stand:
+
+- The eye has three color receptors, L, M, and S (named after the long, medium, and short-wavelength light they perceive).
+- Because their sensitivities overlap, some combinations of LMS response are impossible in the visual world. The achievable subregion is curved.
+- Because the curve is roughly triangular, mixing three light colors (called primary colors) can give a pretty good approximation of the visible light spectrum. More primary colors would do a better job, but is generally not seen to be worth the cost.
+- We call the three primaries "Red", "Green", and "Blue" as by themselves they (roughly) correspond to colors with those names.
+
+We've almost reached how color is actually stored in a computer; the missing component is "gamma".
+
+Let's assume we have two colors that differ only in luminance.
+The formal term for this is having the same "chromaticity".
+They eye roughly distinguishes the two by the relative luminance,
+so 1.0 and 0.9 are seen as much more similar than are 0.2 and 0.1.
+The formal term for this relative perception is "lightness".
+
+Given that we want to store a grid of millions of colors for every picture we store, we want the storage to be small, so we have an incentive to represent colors on a logarithmic scale instead of a linear scale to handle this relative comparison.
+But a pure logarithmic scale is not ideal, both because the eye is not great at distinguishing very dark colors
+and because most people look at screens in a lit environment where that background light influences.
+
+In exploring efficient ways of encoding lightness, early efforts stumbled on a simple-to-implement-in-analog-electronics system known as "gamma", from the generic equation $r = s^{\gamma}$ where $s$ is the stored lightness and $r$ is the real luminosity. A gamma of $\gamma = 2.2$ was found to be a good value, and many CRT displays were manufactured that applied that equation automatically in their circuitry. Some also featured an adjustable gamma nob so that, but moving physical wire coils and so on, the $\gamma$ in $r = s^{\gamma}$ could be adjusted.
+
+As digital display technologies became prevalent and a simple formula was no longer needed, the name gamma stuck, as did most of the implementation. However, because the eye is not good at very dim colors people found that a raw gamma scale resulting in 3--5% of all color signals being perceived as all indistinguishably "black". So modern "gamma correction" is generally a piecewise eqution, linear for dim colors and polynomial for brighter colors. The most common version is the sRGB gamma function^[These formulae are given in the standard document IEC 61966-2-1, but are not quite inverses of one another because $0.0405/12.92 \ne 0.0031308$. I do not know why this discrepancy exists.]:
+
+$$L_{\text{display}} = \begin{cases}
+L_{\text{storage}}/12.92 &\text{if }L_{\text{storage}} \le 0.04045 \\
+\displaystyle \left(\frac{L_{\text{storage}}+0.055}{1.055}\right)^{2.4} &\text{if }L_{\text{storage}} > 0.04045
+\end{cases}$$
+$$L_{\text{storage}} = \begin{cases}
+12.92 L_{\text{display}} &\text{if }L_{\text{display}} \le 0.0031308 \\
+1.055{L_{\text{display}}}^{1/2.4}-0.055 &\text{if }L_{\text{display}} > 0.0031308
+\end{cases}$$
+
+
 
 <!--
 
