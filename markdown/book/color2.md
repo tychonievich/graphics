@@ -111,12 +111,60 @@ Systems interested in optimal compression of information, ranging from the earli
 
 HSL has an angular coordinate (H) which makes it awkward for use in digital computation.
 As digital replaced analog in displays, [YCbCr](https://en.wikipedia.org/wiki/YCbCr) became more popular than HSL.
-In YCbCr, Y represented luminance (or Y' represents luma, a gamma-corrected version of luminance; both YCbCr and Y'CbCr are used),
+In YCbCr, Y represents luminance (or Y' represents luma, a gamma-corrected version of luminance; both YCbCr and Y'CbCr are used),
 Cb is how much of that luminosity comes from blue
 and Cr is how much of that luminosity comes from red.
 Along with a few variants like YUV and YcCbcCrc that replace Cb and Cr with similar numbers computed in slightly different ways, YCbCr is the dominant way color is stored for lossy compression of digital media, including JPEG, H264, HEVC, VP9, and so on.
 
-By design, all HSL and YCbCr colors are representable using RGB lights.
+YCbCr and its relatives are capable of expressing nonsensical colors: ones with negative or more-than-100% levels of some primary colors. Thus, YCbCr encodings never contain those particular color expressions.
+
+<figure>
+Y': <input type="range" id="y"
+    min="0" max="255" value="0" step="0"
+    aria-valuemin="0" aria-valuemax="255" aria-valuenow="0"
+    oninput="fillPlane(Number(value))">
+<output for="y" id="colors">
+    <br/>
+    Y'CbCr colors at Y' = <span id="y_val">0</span>:
+    <br/>
+    <canvas id="plane" width="256" height="256"></canvas>
+</output>
+<script type="text/javascript">
+function YCbCr_to_sRGB(y,cb,cr) {
+    let r = y + 1.402*(cr-128);
+    let g = y - 0.344136*(cb-128)-0.71436*(cr-128);
+    let b = y + 1.773*(cb-128);
+    return [r,g,b];
+}
+function fillPlane(y) {
+    document.getElementById('y_val').innerHTML = y
+    let ctx = document.getElementById('plane').getContext('2d');
+    var id = ctx.getImageData(0,0,256, 256)
+    function pixel(x,y,color) {
+        let [r,g,b] = color
+        id.data[4*(x+256*(y)) + 0] = (r+0.5)|0;
+        id.data[4*(x+256*(y)) + 1] = (g+0.5)|0;
+        id.data[4*(x+256*(y)) + 2] = (b+0.5)|0;
+        id.data[4*(x+256*(y)) + 3] = 255;
+    }
+    for(cb = 0; cb < 256; cb += 1) {
+        for (cr = 0; cr < 256; cr += 1) {
+            let color = YCbCr_to_sRGB(y,cr,cb)
+            if (color[0] < 0 || color[1] < 0 || color[2] < 0
+            || color[0] > 255 || color[1] > 255 || color[2] > 255)
+                color = [127,127,127]
+            pixel(cr,cb,color);
+        }
+    }
+    ctx.putImageData(id,0,0);
+    document.getElementById('plane').setAttribute('alt','YCbCr colors for Y = '+y)
+}
+fillPlane(Number(document.getElementById('y').value))
+</script>
+<figcaption>Interactive demonstration of the Y'CbCr color space. Use the slider to pick a Y' value; colors with that Y' value are shown with Cb=0 on the left and Cr=0 on the top. Gray background represents CrCb values that are not defined for the chosen Y'.</figcaption>
+</figure>
+
+By design, HSL and YCbCr represent the same chromaticities as RGB.
 Sometimes it is desirable to use a model that allows representing *all* chromaticities, not just those a computer can display.
 [CIE 1931](https://en.wikipedia.org/wiki/CIE_1931_color_space) and [CIELUV](https://en.wikipedia.org/wiki/CIELUV) were designed by international standards bodies and both roughly approximate a warped version of the LMS triangle discussed earlier so that the curve comes close to filling a square and is stretched to make distance in the warped space roughly approximate human perceived difference of colors.
 While not designed for digital display, both of CIE models (and several related variants) are commonly used to describe calibrations of display components and the interrelationship of different color models and different kinds of displays.
