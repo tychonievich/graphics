@@ -107,7 +107,7 @@ Web standards have popularized representing the result as thre hexadecimal bytes
 
 Systems interested in optimal compression of information, ranging from the earliest color television broadcast signals to the most recent compression/decompression algorithms (also know as "codecs"), have observed that the eye perceives chromaticity at a courser resolution than it perceives luminance. It is thus advantageous to decompose color using a different set of axes than RGB, using one axis for some form of brightness, lightness, luminance, or luminosity, so that we can easily transmit more bits of luminance than bit of chromaticity.
 
-[HSL](https://en.wikipedia.org/wiki/HSL_and_HSV) dates back to 1938 and was designed for color television, and thus the first separate-lightness model to be widely implemented in hardware. In it, <b>H</b>ue is an angle around the color wheel and <b>S</b>aturation is intensity of color (i.e., non-gray-ness).
+[HSL](https://en.wikipedia.org/wiki/HSL_and_HSV) dates back to 1938, was designed for color television, and was the first separate-lightness model to be widely implemented in hardware. In it, <b>H</b>ue is an angle around the color wheel and <b>S</b>aturation is intensity of color (i.e., non-gray-ness).
 
 HSL has an angular coordinate (H) which makes it awkward for use in digital computation.
 As digital replaced analog in displays, [YCbCr](https://en.wikipedia.org/wiki/YCbCr) became more popular than HSL.
@@ -116,7 +116,7 @@ Cb is how much of that luminosity comes from blue
 and Cr is how much of that luminosity comes from red.
 Along with a few variants like YUV and YcCbcCrc that replace Cb and Cr with similar numbers computed in slightly different ways, YCbCr is the dominant way color is stored for lossy compression of digital media, including JPEG, H264, HEVC, VP9, and so on.
 
-YCbCr and its relatives are capable of expressing nonsensical colors: ones with negative or more-than-100% levels of some primary colors. Thus, YCbCr encodings never contain those particular color expressions.
+YCbCr and its relatives are capable of expressing nonsensical colors: ones with negative or more-than-100% levels of some primary colors. Thus, YCbCr encodings never contain those particular color expressions^[Sometimes impossible YCbCr values are permitted for computational simplicity of encoding and are clamped to the nearest possible value during decoding.].
 
 <figure>
 Y': <input type="range" id="y"
