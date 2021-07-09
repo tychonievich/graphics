@@ -17,7 +17,7 @@ All four operate on the same principle:
 
 Rods react to most of the visible spectrum and react very easily, so except in very dim-light situations they effectively signal as soon as their reset time elapses, providing no useful information to the brain. They're important for night vision, but not for color.
 
-The simplest way to model color would thus be as three durations: the average time between two firings of an L-cone, of an M-cone, and of an S-cone. Thus, we might say the cone response is (0.1s, 2.4s, 0.4s) to mean the L-cone is firing almost immediately after reset, the M-cone is almost idle, and the S-cone is somewhere in between.
+The most direct way to model color perception would thus be as three durations: the average time between two firings of an L-cone, of an M-cone, and of an S-cone. Thus, we might say the cone response is (0.1s, 2.4s, 0.4s) to mean the L-cone is firing almost immediately after reset, the M-cone is almost idle, and the S-cone is somewhere in between.
 
 Seconds are awkward in this context in part because they are unbounded, approaching infinity in complete darkness; and because the difference in light intensity needed to go from 0.11s to 0.10s is much much larger than the difference needed to go from 11s to 10s. But it's smooth and monotonic so three is some normalizing function that would convert these seconds into a some kind of nicely-behaved range where 0 means "never firing" and 1 means "firing as often as possible". We'll skip the math and assume we have access to that normalized cone signaling numbers.
 
@@ -110,18 +110,15 @@ Systems interested in optimal compression of information, ranging from the earli
 [HSL](https://en.wikipedia.org/wiki/HSL_and_HSV) dates back to 1938 and was designed for color television, and thus the first separate-lightness model to be implemented in hardware. In it, <b>H</b>ue is an angle around the color wheel and <b>S</b>aturation is intensity of color (i.e., non-gray-ness).
 
 HSL has an angular coordinate (H) which makes it awkward for use in digital computation.
-As digital replaced analog in displays, [YUV](https://en.wikipedia.org/wiki/YUV) became more popular than HSL.
-In YUV, Y represented luminance (or Y' represents luma, a gamma-corrected version of luminance; both YUV and Y'UV are used),
-U is how much of that luminosity comes from blue
-and V is how much of that luminosity comes from red.
-Along with a few variants that replace U and V with similar numbers computed in slightly different ways, YUV is the dominant form for lossy compression of digital media, including JPEG, MPEG, WEBM, and so on.
+As digital replaced analog in displays, [YCbCr](https://en.wikipedia.org/wiki/YCbCr) became more popular than HSL.
+In YCbCr, Y represented luminance (or Y' represents luma, a gamma-corrected version of luminance; both YCbCr and Y'CbCr are used),
+Cb is how much of that luminosity comes from blue
+and Cr is how much of that luminosity comes from red.
+Along with a few variants like YUV and YcCbcCrc that replace Cb and Cr with similar numbers computed in slightly different ways, YCbCr is the dominant way color is stored for lossy compression of digital media, including JPEG, H264, HEVC, VP9, and so on.
 
-
-By design, all HSL and YUV colors are representable using RGB lights.
+By design, all HSL and YCbCr colors are representable using RGB lights.
 Sometimes it is desirable to use a model that allows representing *all* chromaticities, not just those a computer can display.
-
-Many image and video compression formats, including JPEG and MPEG, make use of [YUV](https://en.wikipedia.org/wiki/YUV), which is roughly a 
-[CIE 1931](https://en.wikipedia.org/wiki/CIE_1931_color_space) and [CIELUV](https://en.wikipedia.org/wiki/CIELUV) were designed my international standards bodies and both roughly approximate a warped version of the LMS triangle discussed earlier so that the curve comes close to filling a square and is stretched to make distance in the warped space roughly approximate human perceived difference of colors.
+[CIE 1931](https://en.wikipedia.org/wiki/CIE_1931_color_space) and [CIELUV](https://en.wikipedia.org/wiki/CIELUV) were designed by international standards bodies and both roughly approximate a warped version of the LMS triangle discussed earlier so that the curve comes close to filling a square and is stretched to make distance in the warped space roughly approximate human perceived difference of colors.
 While not designed for digital display, both of CIE models (and several related variants) are commonly used to describe calibrations of display components and the interrelationship of different color models and different kinds of displays.
 
 # Why print is more complicated
@@ -134,10 +131,4 @@ The most common compromise is to have a CMYK printer: <b>C</b>yan, <b>M</b>agent
 
 Higher-end printing systems use many more inks covering many narrow bands of photons to give a higher degree of color fidelity; The [Pantone system](https://en.wikipedia.org/wiki/Pantone#Pantone_Color_Matching_System) is probably the best known with 14 base pigments instead of CMYK's 4.
 
-Thus, as a rough over-simplification^[And by rough I mean rough enough that some people might disagree, in part because it's hard to agree on even how to compare the color gamut of an additive model like RGB and a subtractive model like CMYK; try [searching for “cmyk vs rgb”](https://duckduckgo.com/?q=cmyk+vs+rgb+color+spaces&iax=images&ia=images) if you want to see some example disagreements.], in increasing order of representation we have
-
-- CMYK, which can represent fewer (and different) colors than
-- RGB, HSL, and YUV, which can represent fewer colors than
-- High-end print media, which can represent fewer colors than
-- The natural world, which can be described by the CIE and LMS color spaces.
-
+Even with many pigments, print and light colors have different coverage than one another. In an RGB display, white is (1,1,1) meaning that roughly ⅓ of light energy is coming from wavelengths that look purely red. But on paper, white is a mix of all the visible spectrum, and to filter out all but the red light will result in a darker red (relative to white) than would result if we turned off the G and B components of an RGB display. With enough pigments the chromaticities could be made to match, but not the luminances.
