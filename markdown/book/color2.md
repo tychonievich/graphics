@@ -161,7 +161,7 @@ function fillPlane(y) {
 }
 fillPlane(Number(document.getElementById('y').value))
 </script>
-<figcaption>Interactive demonstration of the Y'CbCr color space. Use the slider to pick a Y' value; colors with that Y' value are shown with Cb=0 on the left and Cr=0 on the top. Gray background represents CrCb values that are not defined for the chosen Y'.</figcaption>
+<figcaption>Interactive demonstration of the 0--255 Y'CbCr color space defined in the JFIF standard for JPEG images. Use the slider to pick a Y' value; colors with that Y' value are shown with Cb=0 on the left and Cr=0 on the top. Gray background represents CrCb values that are not defined for the chosen Y'.</figcaption>
 </figure>
 
 By design, HSL and YCbCr represent the same chromaticities as RGB.
