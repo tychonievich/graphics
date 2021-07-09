@@ -85,7 +85,7 @@ The formal term for this relative perception is "lightness".
 
 Given that we want to store a grid of millions of colors for every picture we store, we want the storage to be small, so we have an incentive to represent colors on a logarithmic scale instead of a linear scale to handle this relative comparison.
 But a pure logarithmic scale is not ideal, both because the eye is not great at distinguishing very dark colors
-and because most people look at screens in a lit environment where that background light influences.
+and because most people look at screens in a lit environment where that background light influences our perception of lightness.
 
 In exploring efficient ways of encoding lightness, early efforts stumbled on a simple-to-implement-in-analog-electronics system known as "gamma", from the generic equation $r = s^{\gamma}$ where $s$ is the stored lightness and $r$ is the real luminosity. A gamma of $\gamma = 2.2$ was found to be a good value, and many CRT displays were manufactured that applied that equation automatically in their circuitry. Some also featured an adjustable gamma nob so that, but moving physical wire coils and so on, the $\gamma$ in $r = s^{\gamma}$ could be adjusted.
 
