@@ -7,7 +7,7 @@ title: Color
 Light is delivered in photons, each of which has a wavelength. Visible light wavelengths are roughly from 380nm to 750nm.
 
 Your eye has 4 types of color receptors:
-rods, L-cones, M-cones, and S-cones.^[Some women also have a fourth type of cone, but I have not yet seen studies showing women who have learned to articulate the extra color perception this gives them.]
+rods, L-cones, M-cones, and S-cones.^[Some women also have a fourth type of cone (see e.g. [wikipedia](https://en.wikipedia.org/wiki/Tetrachromacy#Humans)), but I have not yet seen studies convincingly showing women who have learned to articulate the extra color perception this gives them.]
 All four operate on the same principle:
 
 - When a photon hits the receptor, it has some chance of signaling the brain that it saw light.
