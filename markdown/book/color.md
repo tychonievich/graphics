@@ -167,16 +167,18 @@ fillPlane(Number(document.getElementById('y').value))
 By design, HSL and YCbCr represent the same chromaticities as RGB.
 Sometimes it is desirable to use a model that allows representing *all* chromaticities, not just those a computer can display.
 [CIE 1931](https://en.wikipedia.org/wiki/CIE_1931_color_space) and [CIELUV](https://en.wikipedia.org/wiki/CIELUV) were designed by international standards bodies and both roughly approximate a warped version of the LMS triangle discussed earlier so that the curve comes close to filling a square and is stretched to make distance in the warped space roughly approximate human perceived difference of colors.
-While not designed for digital display, both of CIE models (and several related variants) are commonly used to describe calibrations of display components and the interrelationship of different color models and different kinds of displays.
+While not designed for digital display, both of CIE models (and several related variants) are used to describe calibrations of display components and the interrelationship of different color models and different kinds of displays.
 
 # Why print is more complicated
 
 The above discussion applies to light-emitting displays: laptops, desktops, phones, etc. Print media has additional constraints.
 
-The basic function of colored ink is to absorb some wavelengths and not others. Cyan ink, for example, absorbs most wavelengths that we'd see as being orange or red. Picking the best inks is tricky: if they absorb to many wavelengths then they overlap and some bright colors become unpresentable; if they absorb too few then some wavelengths cannot be absorbed and some dark colors become unpresentable.
+The basic function of colored ink is to absorb some wavelengths and not others. Cyan ink, for example, absorbs most wavelengths that we'd see as being orange or red. Picking the best inks is tricky: if they absorb too many wavelengths then they overlap and some bright colors become unpresentable; if they absorb too few then some wavelengths cannot be absorbed and some dark colors become unpresentable.
 
 The most common compromise is to have a CMYK printer: <b>C</b>yan, <b>M</b>agenta, and <b>Y</b>ellow ink that each remove a bit shy of a third of the visible spectrum and blac<b>K</b> ink that absorbs the entire visible spectrum and can help approximate those darker colors that the gaps between the CMY absorptions make hard by themselves. Common CMYK inks together cover a smaller and somewhat different region of possible colors than RGB.
 
-Higher-end printing systems use many more inks covering many narrow bands of photons to give a higher degree of color fidelity; The [Pantone system](https://en.wikipedia.org/wiki/Pantone#Pantone_Color_Matching_System) is probably the best known with 14 base pigments instead of CMYK's 4.
+Higher-end printing systems use many more inks covering many narrow bands of photons to give a higher degree of color fidelity. The [Pantone system](https://en.wikipedia.org/wiki/Pantone#Pantone_Color_Matching_System) is probably the best known with 14 base pigments instead of CMYK's 4.
 
 Even with many pigments, print and light colors have different coverage than one another. In an RGB display, white is (1,1,1) meaning that roughly ⅓ of light energy is coming from wavelengths that look purely red. But on paper, white is a mix of all the visible spectrum, and to filter out all but the red light will result in a darker red (relative to white) than would result if we turned off the G and B components of an RGB display. With enough pigments the chromaticities could be made to match, but not the luminances. Unless, that is, you print with florescent pigments that absorb photons of one wavelength and release that energy as photons of a different wavelength, or are viewing the printed medium under RGB-based lights, which some florescent and LED lights are, or...
+
+Beyond noting that these complexities exist, we'll mostly ignore pigment-based color in this class.
