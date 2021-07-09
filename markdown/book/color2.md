@@ -120,8 +120,8 @@ YCbCr and its relatives are capable of expressing nonsensical colors: ones with 
 
 <figure>
 Y': <input type="range" id="y"
-    min="0" max="255" value="0" step="0"
-    aria-valuemin="0" aria-valuemax="255" aria-valuenow="0"
+    min="0" max="255" value="80" step="0"
+    aria-valuemin="0" aria-valuemax="255" aria-valuenow="80"
     oninput="fillPlane(Number(value))">
 <output for="y" id="colors">
     <br/>
