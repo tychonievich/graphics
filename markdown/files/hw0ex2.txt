@@ -1,0 +1,33 @@
+pngs 7 7 hw0ex2- 16
+frame 0
+xy 6 3
+frame 1
+xy 6 2
+frame 2
+xy 5 1
+frame 3
+xy 4 0
+frame 4
+xy 3 0
+frame 5
+xy 2 0
+frame 6
+xy 1 1
+frame 7
+xy 0 2
+frame 8
+xy 0 3
+frame 9
+xy 0 4
+frame 10
+xy 1 5
+frame 11
+xy 2 6
+frame 12
+xy 3 6
+frame 13
+xy 4 6
+frame 14
+xy 5 5
+frame 15
+xy 6 4
