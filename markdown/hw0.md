@@ -50,6 +50,8 @@ a. Otherwise if you submitted a tarball or zip archive, we extract that and
     i. Otherwise if extracting it created exactly one directory, we enter that and
         1. If there's a `Makefile` in that directory, we use that
         1. Otherwise, report an upload format error
+    i. Otherwise, report an upload format error
+a. Otherwise, report an upload format error
 
 The input files your code will read are ASCII text files;
 after processing an input file, your code will produce one or more RGBA PNG files.
