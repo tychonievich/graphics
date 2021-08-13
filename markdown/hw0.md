@@ -449,7 +449,60 @@ run:
 
 # Animations and Image Comparison
 
-*this section will appear soon*
+## Animation
+
+Some image viewers will let you scroll through a set of images quickly enough to see animation. But in case yours doesn't...
+
+Given a set of images created with `pngs 30 50 someprefix 80`,
+you can create an animation from it using the extremely versatile tool [ffmpeg](https://ffmpeg.org/download.html).
+Some example uses include
+
+```bash
+# make an animated PNG, good for small transparent animated images
+# -r 16 means 16 frames per second; any number (even fractions) work
+ffmpeg -r 16 -i someprefix%03d.png -f apng -plays 0 loop.png
+
+# make an mp4 using default compression
+ffmpeg -r 30 -i someprefix%03d.png loop.mp4
+
+# make an animated gif (an older inferior version of APNG)
+ffmpeg -r 12 -i someprefix%03d.png loop.gif
+```
+
+Ffmpeg can do a *lot* more than this; see [the docs](https://ffmpeg.org/documentation.html) if you are interested.
+
+## Comparison
+
+Think your output looks like the reference output?
+Maybe so, but "like" is a fuzzy idea and sometimes we'll hold you to a higher standard of similarity than your eye is trained to see.
+
+Enter [ImageMagick](https://imagemagick.org/script/download.php) (or its less popular but faster clone, [GraphicsMagick](http://www.graphicsmagick.org/download.html)).
+ImageMagick is a collection of versatile command-line tools for manipulating images, including many forms of image comparison.
+
+During grading, we use ImageMagick to create comparison images containing 
+
+- your image, `student.png`
+- the image we expect `ref.png`
+- an image that highlights any differences between them in red, `ae.png`
+- an image that shows all color differences, `rawdiff.png`
+- an image that magnifies color differences, `diff.png`
+
+We stick those together  do this using the following commands:
+
+```bash
+compare -fuzz 2% student.png ref.png ae.png
+composite student.png ref.png -compose difference rawdiff.png
+convert rawdiff.png -level 0%,8% diff.png
+convert +append ref.png student.png ae.png rawdiff.png diff.png look_at_this.png
+```
+
+... and use the result to grade your output.
+Note that some tasks permissive of some differences while others will be more strict.
+For example, this image:
+
+<img style="width:100%" class="demo" src="files/comparsion.png"/>
+
+is similar to its reference image, but the outline is not the same (a few missing pixels along the left edge) and there's visible horizontal banding in the color error.
 
 # Examples
 
@@ -515,7 +568,7 @@ To get credit for them, make sure you put their names in your `implemented.txt` 
         frame 15
         xy 6 4
 
-    and it should produce 16 images (`hw0ex2-000.png` through `hw0ex2-015.png`) that create this animation:
+    and it should produce 16 images (`hw0ex2-000.png` through `hw0ex2-015.png`) that create this animation (rendered at 16fps; if you don't see animation please upgrade to a browser that [supports APNG](https://caniuse.com/apng)):
 
     <img style="width:5em" class="demo" src="files/hw0ex2.png"/>
 
