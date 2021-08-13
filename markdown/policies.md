@@ -102,12 +102,12 @@ Estimating how long it will take someone to complete a coding assignment
 is always difficult.
 The target difficulty is 5–10 hours of focused effort each week.
 
-> "Everyone knows that computers are very big, powerful, sadistic, and highly dangerous."
+> "Everyone knows that computers are very big, powerful sadistic, and highly dangerous."
 > <div>---Harry Harrison</div>
 
 # Grading
 
-> "I find that I go up and down, and back and forth as well;<br/> I move so freely left and right, it seems quite dull to tell.<br/> I also can move later; I move hours every day;<br/> But moving former stumps me hard; I cannot find a way.<br/> Of eight directions on the test, I fear that I've missed one;<br/> And eighty-se'en percent is just a B‍‍, which is not fun.<br/> I think I'm good at motion; I'm a rather agile bloke;<br/> Perhaps the standard grading scale is just a nasty joke."
+> "I find that I go up and down, and back and forth as well;<br/> I move so freely left and right, it seems quite dull to tell.<br/> I also can move later; I move hours every day;<br/> But moving former stumps me hard; I cannot find a way.<br/> Of eight directions on the test, I fear that I've missed one;<br/> And eighty-se'en percent is just a B‍‍, which is not fun.<br/> I think I'm good at motion; I'm a farily agile bloke;<br/> Perhaps the standard grading scale is just a nasty joke."
 > <div>--Luther Tychonievich</div>
 
 [Grading](http://www.cs.virginia.edu/tychonievich/blog/posts/244.html) is one of the aspects of a course that instructors enjoy even less than students. Still, we are stuck with them, so here goes.
