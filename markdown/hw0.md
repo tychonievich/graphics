@@ -502,7 +502,8 @@ For example, this image:
 
 <img style="width:100%" class="demo" src="files/comparison.png"/>
 
-is similar to its reference image, but the outline is not the same (a few missing pixels along the left edge) and there's visible horizontal banding in the color error.
+is similar to its reference image, but the outline is not the same (a few missing pixels along the left edge) and there's visible horizontal banding in the color error,
+both of which would result in some point loss on this image.
 
 # Examples
 
