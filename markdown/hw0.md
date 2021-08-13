@@ -540,9 +540,13 @@ you can create an animation from it using the extremely versatile tool [ffmpeg](
 Some example uses include
 
 ```bash
-# make an animated PNG, good for small transparent animated images
-# -r 16 means 16 frames per second; any number (even fractions) work
+# make an APNG, good for small transparent animated images
 ffmpeg -r 16 -i someprefix%03d.png -f apng -plays 0 loop.png
+## -r 16                 16 fps; any number (even fractions) work
+## -i someprefix%03.png  gives the input images
+## -f apng               picks the output format
+## -plays 0              repeat forever
+## loop.png              output filename
 
 # make an mp4 using default compression
 ffmpeg -r 30 -i someprefix%03d.png loop.mp4
