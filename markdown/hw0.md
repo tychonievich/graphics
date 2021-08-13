@@ -517,7 +517,7 @@ To get credit for them, make sure you put their names in your `implemented.txt` 
 
     and it should produce 16 images (`hw0ex2-000.png` through `hw0ex2-015.png`) that create this animation:
 
-    <img style="width:5em" class="demo" src="files/hw0ex2.gif"/>
+    <img style="width:5em" class="demo" src="files/hw0ex2.png"/>
 
 
 # Submission and Feedback
