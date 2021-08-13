@@ -500,7 +500,7 @@ convert +append ref.png student.png ae.png rawdiff.png diff.png look_at_this.png
 Note that some tasks permissive of some differences while others will be more strict.
 For example, this image:
 
-<img style="width:100%" class="demo" src="files/comparsion.png"/>
+<img style="width:100%" class="demo" src="files/comparison.png"/>
 
 is similar to its reference image, but the outline is not the same (a few missing pixels along the left edge) and there's visible horizontal banding in the color error.
 
