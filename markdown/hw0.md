@@ -57,8 +57,9 @@ you will also want to be able to turn sets of PNG files into an video file
 and to compare pixel differences between two PNG files.
 This writeup describes how to set those up, but we will not directly test these functionality, neither in this nor in subsequent homeworks.
 
-# Reading Input
+# What to code
 
+## Reading Input
 
 Each file will have a number of lines; each line will have a keyword first, followed by zero or more extra pieces of information separated by whitespace (some mix of `' '` and `'\t'`).
 Lines should be read in order, first to last, because some lines refer to the lines above them.
@@ -79,7 +80,7 @@ In this assignment input files might look like
 You do not need to have error checking code.
 For example, if a `png` keyword is not followed by exactly two positive integers and one string ending ".png", your code is welcome to break in any way you wish.
 
-## Keywords
+### Keywords
 
 Each homework will define its own set of keywords.
 For HW0, these are:
@@ -141,8 +142,89 @@ xyc *x* *y* *hexColorString*
     You may assume *hexColorString* is always a seven-character string of the appropriate format.
     See the discussion of `xy` for comments on *x* and *y*.
 
+# Get two files working
 
-# Creating PNG files
+You should be able to pass both of the following.
+To get credit for them, make sure you put their names in your `implemented.txt` file, like
+
+    hw0ex1.txt
+    hw0ex2.txt
+
+[hw0ex1.txt](files/hw0ex1.txt)
+:   This file's contents are
+
+        png 5 8 hw0ex1.png
+        xy 0 1
+        xyrgb 1 2 127 255 255
+        xyc 2 3 #aaaaff
+        xy 3 4
+        xyrgb 4 5 200 120 3
+        xyrgb 3 3 0 0 0
+        xyrgb 2 4 0 0 0
+
+    and it should produces this image file: <img src="files/hw0ex1.png" style="height:1em;"/>.
+
+    That's so small it's almost impossible to see, so let's zoom in and put a striped background behind the image so you can tell the difference between transparent and white:
+
+    <img style="width:5em" class="demo" src="files/hw0ex1.png"/>
+
+
+[hw0ex2.txt](files/hw0ex2.txt)
+:   This file's contents are
+
+        pngs 7 7 hw0ex2- 16
+        frame 0
+        xy 6 3
+        frame 1
+        xy 6 2
+        frame 2
+        xy 5 1
+        frame 3
+        xy 4 0
+        frame 4
+        xy 3 0
+        frame 5
+        xy 2 0
+        frame 6
+        xy 1 1
+        frame 7
+        xy 0 2
+        frame 8
+        xy 0 3
+        frame 9
+        xy 0 4
+        frame 10
+        xy 1 5
+        frame 11
+        xy 2 6
+        frame 12
+        xy 3 6
+        frame 13
+        xy 4 6
+        frame 14
+        xy 5 5
+        frame 15
+        xy 6 4
+
+    and it should produce 16 images (`hw0ex2-000.png` through `hw0ex2-015.png`) that create this animation (rendered at 16fps; if you don't see animation please upgrade to a browser that [supports APNG](https://caniuse.com/apng)):
+
+    <img style="width:5em" class="demo" src="files/hw0ex2.png"/>
+
+
+# Submission and Feedback
+
+The [submission site](https://kytos.cs.virginia.edu/graphics/) for this assignment (only)
+will run automated tests and add information about their outcomes to the submission file list.
+There may be a small delay before it is visible, as we queue each submission as it comes in.
+Feel free to re-submit until you get positive status results.
+Please refer questions to piazza or professor office hours.
+
+
+
+
+# Tips
+
+## Creating PNG files
 
 You will create an 8-bit RGBA PNG image with a specified width and height.
 The way to do this will vary by language.
@@ -155,7 +237,7 @@ The following is example code to write PNGs taken from past semester's student s
 I don't claim they are optimal, but they did work.
 
 
-## C
+### C
 Students have used 
 [miniz.c](https://code.google.com/archive/p/miniz/)
 and [LodePNG](https://lodev.org/lodepng/).
@@ -208,7 +290,7 @@ int main(int argc, char *argv[]){
 
 
 
-## C++
+### C++
 All methods that work for C also work for C++, and most students used one of those.
 An OO interface is also available through [CImg](http://cimg.sourceforge.net/).
 
@@ -232,7 +314,7 @@ int main(int argc, char *argv[]){
 ```
 </details>
 
-## C\#
+### C\#
 
 :::note
 The testing server is Linux and runs mono, not Microsoft's C# implementation. If you chose to use C#, you are responsible for ensuring it runs on Linux with mono.
@@ -256,7 +338,7 @@ class ClassName {
 ```
 </details>
 
-## Dart
+### Dart
 
 The relevant package is `image/image.dart`{.dart}.
 
@@ -276,7 +358,7 @@ void main(List<String> args) {
 ```
 </details>
 
-## Java
+### Java
 
 The relevant libraries are `Color` from `java.awt`,
 `BufferedImage`{.java} and `WritableRaster`{.java} from `java.awt.image`
@@ -304,7 +386,7 @@ class ClassName {
 ```
 </details>
 
-## Python
+### Python
 
 The relevant library is [pillow](http://python-pillow.org/).
 To install, do `pip install pillow`{.bash} or `pip3 install pillow`{.bash} from the command line.
@@ -322,7 +404,7 @@ image.save(filename)
 ```
 </details>    
 
-## Rust
+### Rust
 
 The relevant library is `std::io::RgbaImage` and `sts::io:Rgba`.
 
@@ -340,13 +422,13 @@ fn main() {
 ```
 </details>    
 
-## Other
+### Other
 
 In earlier semesters we've had students use D, Go, Haskell, Kotlin, and Scala.
 In principle I am open to any language I can get to work on the testing server; just let me know what you'd like.
 
 
-# Makefile
+## Makefile
 
 You will submit your code and a `Makefile`.
 We will run your `Makefile` on a Linux server.
@@ -447,9 +529,9 @@ run:
 </details>
 
 
-# Animations and Image Comparison
+## Animations and Image Comparison
 
-## Animation
+### Animation
 
 Some image viewers will let you scroll through a set of images quickly enough to see animation. But in case yours doesn't...
 
@@ -471,7 +553,7 @@ ffmpeg -r 12 -i someprefix%03d.png loop.gif
 
 Ffmpeg can do a *lot* more than this; see [the docs](https://ffmpeg.org/documentation.html) if you are interested.
 
-## Comparison
+### Image Comparison
 
 Think your output looks like the reference output?
 Maybe so, but "like" is a fuzzy idea and sometimes we'll hold you to a higher standard of similarity than your eye is trained to see.
@@ -487,7 +569,7 @@ During grading, we use ImageMagick to create comparison images containing
 - an image that shows all color differences, `rawdiff.png`
 - an image that magnifies color differences, `diff.png`
 
-We stick those together  do this using the following commands:
+We create those images and stick them together into one large image to look at during grading using the following commands:
 
 ```bash
 compare -fuzz 2% student.png ref.png ae.png
@@ -496,7 +578,6 @@ convert rawdiff.png -level 0%,8% diff.png
 convert +append ref.png student.png ae.png rawdiff.png diff.png look_at_this.png
 ```
 
-... and use the result to grade your output.
 Note that some tasks permissive of some differences while others will be more strict.
 For example, this image:
 
@@ -505,79 +586,3 @@ For example, this image:
 is similar to its reference image, but the outline is not the same (a few missing pixels along the left edge) and there's visible horizontal banding in the color error,
 both of which would result in some point loss on this image.
 
-# Examples
-
-You should be able to pass both of the following.
-To get credit for them, make sure you put their names in your `implemented.txt` file, like
-
-    hw0ex1.txt
-    hw0ex2.txt
-
-[hw0ex1.txt](files/hw0ex1.txt)
-:   This file's contents are
-
-        png 5 8 hw0ex1.png
-        xy 0 1
-        xyrgb 1 2 127 255 255
-        xyc 2 3 #aaaaff
-        xy 3 4
-        xyrgb 4 5 200 120 3
-        xyrgb 3 3 0 0 0
-        xyrgb 2 4 0 0 0
-
-    and it should produces this image file: <img src="files/hw0ex1.png" style="height:1em;"/>.
-
-    That's so small it's almost impossible to see, so let's zoom in and put a striped background behind the image so you can tell the difference between transparent and white:
-
-    <img style="width:5em" class="demo" src="files/hw0ex1.png"/>
-
-
-[hw0ex2.txt](files/hw0ex2.txt)
-:   This file's contents are
-
-        pngs 7 7 hw0ex2- 16
-        frame 0
-        xy 6 3
-        frame 1
-        xy 6 2
-        frame 2
-        xy 5 1
-        frame 3
-        xy 4 0
-        frame 4
-        xy 3 0
-        frame 5
-        xy 2 0
-        frame 6
-        xy 1 1
-        frame 7
-        xy 0 2
-        frame 8
-        xy 0 3
-        frame 9
-        xy 0 4
-        frame 10
-        xy 1 5
-        frame 11
-        xy 2 6
-        frame 12
-        xy 3 6
-        frame 13
-        xy 4 6
-        frame 14
-        xy 5 5
-        frame 15
-        xy 6 4
-
-    and it should produce 16 images (`hw0ex2-000.png` through `hw0ex2-015.png`) that create this animation (rendered at 16fps; if you don't see animation please upgrade to a browser that [supports APNG](https://caniuse.com/apng)):
-
-    <img style="width:5em" class="demo" src="files/hw0ex2.png"/>
-
-
-# Submission and Feedback
-
-The [submission site](https://kytos.cs.virginia.edu/graphics/) for this assignment (only)
-will run automated tests and add information about their outcomes to the submission file list.
-There may be a small delay before it is visible, as we queue each submission as it comes in.
-Feel free to re-submit until you get positive status results.
-Please refer questions to piazza or professor office hours.
