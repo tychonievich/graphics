@@ -442,6 +442,7 @@ We recommend using make's more advanced operations (separate `.o` targets, patte
 
 Note that `Makefile` indentation must be in tabs, not spaces,
 but the syntax-highlighter I use changes tabs to spaces.
+You'll need to change them back if you copy-paste these examples.
 
 <details><summary>C Makefile</summary>
 ```makefile
