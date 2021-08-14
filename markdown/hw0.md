@@ -440,8 +440,8 @@ It is your responsibility to see that the `Makefile` and your code work in a Lin
 Following are *minimal* Makefiles you might use as a baseline.
 We recommend using make's more advanced operations (separate `.o` targets, pattern rules, variables, etc) if you understand them.
 
-Note that `Makefile` indentation must be in tabs, not spaces.
-Some browsers copy-paste in spaces even given tabs.
+Note that `Makefile` indentation must be in tabs, not spaces,
+but the syntax-highlighter I use changes tabs to spaces.
 
 <details><summary>C Makefile</summary>
 ```makefile
