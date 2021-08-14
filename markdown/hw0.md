@@ -440,6 +440,9 @@ It is your responsibility to see that the `Makefile` and your code work in a Lin
 Following are *minimal* Makefiles you might use as a baseline.
 We recommend using make's more advanced operations (separate `.o` targets, pattern rules, variables, etc) if you understand them.
 
+Note that `Makefile` indentation must be in tabs, not spaces.
+Some browsers copy-paste in spaces even given tabs.
+
 <details><summary>C Makefile</summary>
 ```makefile
 .PHONEY: build, run
@@ -447,10 +450,10 @@ We recommend using make's more advanced operations (separate `.o` targets, patte
 build: program
 
 run: program
-    ./program $(file)
+	./program $(file)
 
 program: main.c lodepng.c
-    clang -O3 -I. main.c lodepng.c -o program
+	clang -O3 -I. main.c lodepng.c -o program
 ```
 </details>
 
@@ -461,10 +464,10 @@ program: main.c lodepng.c
 build: program
 
 run: program
-    ./program $(file)
+	./program $(file)
 
 program: main.cpp
-    clang++ -O3 -I. main.cpp -o program
+	clang++ -O3 -I. main.cpp -o program
 ```
 </details>
 
@@ -475,10 +478,10 @@ program: main.cpp
 build: program.exe
 
 run: program.exe
-    mono program.exe $(file)
+	mono program.exe $(file)
 
 program.exe: program.cs
-    mcs -r:System.Drawing -pkg:gtk-sharp-2.0 program.cs
+	mcs -r:System.Drawing -pkg:gtk-sharp-2.0 program.cs
 ```
 </details>
 
@@ -487,10 +490,10 @@ program.exe: program.cs
 .PHONEY: build, run
 
 build:
-    pub get
+	pub get
 
 run:
-    dart program.dart $(file)
+	dart program.dart $(file)
 ```
 </details>
 
@@ -500,11 +503,11 @@ run:
 
 build: Program.class
 
-run:
-    java Program $(file)
+run: Program.class
+	java Program $(file)
 
 Program.class: Program.java
-    javac Program.java
+	javac Program.java
 ```
 </details>
 
@@ -516,7 +519,7 @@ Program.class: Program.java
 build:
 
 run:
-    python program.py $(file)
+	python program.py $(file)
 ```
 </details>
 
@@ -525,10 +528,10 @@ run:
 .PHONEY: build, run
 
 build:
-    cargo build
+	cargo build
 
 run:
-    cargo run $(file)
+	cargo run $(file)
 ```
 </details>
 
@@ -545,18 +548,18 @@ Some example uses include
 
 ```bash
 # make an APNG, good for small transparent animated images
-ffmpeg -r 16 -i someprefix%03d.png -f apng -plays 0 loop.png
+ffmpeg -r 16 -i someprefix%03d.png -f apng -plays 0 anim.png
 ## -r 16                 16 fps; any number (even fractions) work
 ## -i someprefix%03.png  gives the input images
 ## -f apng               picks the output format
 ## -plays 0              repeat forever
-## loop.png              output filename
+## anim.png              output filename
 
 # make an mp4 using default compression
-ffmpeg -r 30 -i someprefix%03d.png loop.mp4
+ffmpeg -r 30 -i someprefix%03d.png anim.mp4
 
-# make an animated gif (an older inferior version of APNG)
-ffmpeg -r 12 -i someprefix%03d.png loop.gif
+# make an animated gif (an older inferior alternative to APNG)
+ffmpeg -r 12 -i someprefix%03d.png anim.gif
 ```
 
 Ffmpeg can do a *lot* more than this; see [the docs](https://ffmpeg.org/documentation.html) if you are interested.
@@ -572,7 +575,7 @@ ImageMagick is a collection of versatile command-line tools for manipulating ima
 During grading, we use ImageMagick to create comparison images containing 
 
 - your image, `student.png`
-- the image we expect `ref.png`
+- the image we expect, `ref.png`
 - an image that highlights any differences between them in red, `ae.png`
 - an image that shows all color differences, `rawdiff.png`
 - an image that magnifies color differences, `diff.png`
@@ -587,10 +590,10 @@ convert +append ref.png student.png ae.png rawdiff.png diff.png look_at_this.png
 ```
 
 Note that some tasks permissive of some differences while others will be more strict.
-For example, this image:
+For example, consider this image:
 
 <img style="width:100%" class="demo" src="files/comparison.png"/>
 
-is similar to its reference image, but the outline is not the same (a few missing pixels along the left edge) and there's visible horizontal banding in the color error,
-both of which would result in some point loss on this image.
-
+It is similar to its reference image, but the outline is not the same (a few missing pixels along the left edge, touching in the middle) and there's visible horizontal banding in the color error.
+If this input was meant to test shading and overlap, those would result in lost points.
+It it were meant to measure positioning and perspective, they'd not be a concern.
