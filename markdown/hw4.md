@@ -98,9 +98,12 @@ We'll add animation by allowing various numbers, such as the coordinates of an o
 Every file will have access to two variables:
 `f`, which is equal to the current frame number,
 and `l`, which is the last frame number of the animation.
+
+:::example
 If the *frames* argument of the `pngs` command is `30`,
 `f` will range from 0 on the first frame to 29 on the last frame
 and `l` will be 29 for all frames.
+:::
 
 You'll implement several ways of defining additional variables.
 To avoid the complexities of a full programming language, we'll guarantee that regardless of which variable definition forms you define
