@@ -59,7 +59,7 @@ Other notations are also common.
 
 The conjugate of $\langle w,x,y,z \rangle$ is $\langle w;-x,-y,-z \rangle$.
 
-The product $(w_1;x_1,y_1,z_1) \odot (w_2;x_2,y_2,z_2)$
+The product $\langle w_1;x_1,y_1,z_1 \rangle \odot \langle w_2;x_2,y_2,z_2 \rangle$
 is $$\begin{matrix}
 \langle w_1w_2 - x_1x_2 - y_1y_2 - z_1z_2;\\
 w_1x_2 + x_1w_2 + y_1z_2 - z_1y_2,\\
