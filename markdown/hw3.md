@@ -1,7 +1,8 @@
 ﻿---
 title: 'HW3: Raytracer'
+new-2021:
+	- compute in linear, store in sRGB
 notes:
-    - make color linear, not sRGB
     - add exposure functions
     - add elective HDRI bloom
 ...
@@ -57,7 +58,7 @@ Make all objects two-sided.
 That is, if the normal points away from the eye, invert it before doing lighting.
 
 Illumination will be in *linear* space, not sRGB like the previous several assignments.
-You'll need to convert to sRGB yourself prior to saving the image, using the official sRGB gamma function:
+You'll need to convert RGB (but not alpha) to sRGB yourself prior to saving the image, using the official sRGB gamma function:
 $$L_{\text{sRGB}} = \begin{cases}
 12.92 L_{\text{linear}} &\text{if }L_{\text{linear}} \le 0.0031308 \\
 1.055{L_{\text{linear}}}^{1/2.4}-0.055 &\text{if }L_{\text{linear}} > 0.0031308
@@ -173,7 +174,7 @@ bulb $x$ $y$ $z$ (requires multiple suns) (10%)
 	Include fall-off to bulb light:
 	the intensity of the light that is $d$ units away from the illuminated point is $1 \over d^2$.
 
-negative light (requires `bulb`) (5%)
+Negative light (requires `bulb`) (5%)
 :	<a href="files/hw3neglight.txt"><img class="demo floater zoom" src="files/hw3neglight.png"/></a>
 	Allow light colors to be less than zero, emitting "darkness". 
 
@@ -186,6 +187,15 @@ Shadows (10–30%)
 	No new commands for this one: you get these points if objects always cast shadows, you don't if they don't.
 	
 	10 points for 1 sun, +5 if planes work, +5 if triangles work, +5 if multiple light sources work, +5 if bulbs work
+
+expose $v$ (10%)
+:	Render the scene with an exposure function, applied prior to gamma correction.
+	Use a simple exponential exposure function: $\ell_{\text{exposed}} = 1 - e^{-\ell_{\text{linear}} v}$.
+	
+
+HDR Bloom (required exposure) (15%)
+:	Add an exposure function
+	*details an example TBD*
 
 ## Materials (5–65%)
 
