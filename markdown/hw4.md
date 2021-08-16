@@ -110,6 +110,11 @@ Recall that:
 - The inverse of a translation by $(x,y,z)$ is a translation by $(-x,-y,-z)$
 - The inverse of a scaling by $(x,y,z)$ is a translation by $(1/x, 1/y, 1/z)$
 - The inverse of a rotation matrix $R$ is the transpose of that matrix $R^{-1} = R^{T}$
+- The inverse of a rotation quaterion $q$ is its conjugate $q^{*}$
+
+You can compute the inverse of a transformation matrix more accurately using the above rules than you can using a generic matrix inversion routine.
+
+ 
 
 All this organization may seem like more bother than its worth, but scene graphs make complicated and interesting animation much easier to create.
 
