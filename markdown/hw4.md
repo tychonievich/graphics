@@ -69,10 +69,14 @@ w_1z_2 + z_1w_2 + x_1y_2 - y_1x_2 \rangle
 Notice: the terms above are such that the $x$ coordinate multiplies $x$ and $w$ in both directions
 and multiplies the other two coordinates in both directions but puts a negative sign on the one that's out-of-order (xy, yz, and zx are in-order in a wrapping alphabet).
 
+The magnitude of a quaternion $q$ is $q^{*} q = w^2 - (x^2+y^2+z^2)$.
+The magnitude is always a scalar (zero $x,y,z$).
+A normalized quaternion is one with a magnitude of $1$.
+
 To multiply a point $(x,y,z)$ by a quaternion, treat the point as $\langle 0;x,y,z \rangle$
 and use the quaternion product.
-Note that this will give a quaternion (non-zero $w$), not a point.
-However, $q \odot x \odot q^{*}$ will be a point if $x$ is because of how conjugates work.
+Note that this will give a quaternion (non-zero $w$), not a point (zero $w$).
+However, $q \odot x \odot q^{*}$ will always be a point if $x$ is a point.
 
 The 3×3 rotation matrix of normalized quaternion $\langle w;x,y,z \rangle$
 is $$\begin{bmatrix}
@@ -85,6 +89,15 @@ the off-diagonal have a positive product of the coordinates of the row and colum
 and a sign-varying product of $w$ and the third coordinate
 where the above-diagonal signs are negative if the two-coordinate product is in-order
 and the off-diagonal is skew-symmetric.
+
+If we don't wish to normalize the quaternion, we can use the following three equations to get the same rotation matrix:
+$$n = w^2 + x^2 + y^2 + z^2$$
+$$s = \begin{cases}0 & \text{if} n=0\\\frac{2}{n} &\text{otherwise}\end{cases}$$
+$$\begin{bmatrix}
+1-s(y^2+z^2) & s(xy-zw) & s(xz+yw) \\
+s(xy+zw) & 1-s(x^2+z^2) & 2(yz-xw) \\
+s(xz-yw) & s(yz+xw) & 1-s(x^2+y^2) \\
+\end{bmatrix}$$
 :::
 
 The *camera* is a special object with no geometry.
@@ -188,10 +201,6 @@ quaternion *w* *x* *y* *z*
     
     Describes the orientation of this object relative to its parent, in a coordinate system modified by its parent's position, orientation, and scale
     but not modified by this objects position or scale.
-    
-    *Always* normalize the quaternion prior to using it in rotation.
-    A normalized quaternion is one where $w^2 - (x^2+y^2+z^2) = 1$.
-    
     
     Each object will have at most one orientation,
     which may be `quaternion` or one of the alternatives given in the optional features section.
