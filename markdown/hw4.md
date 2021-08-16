@@ -75,7 +75,6 @@ is $$\begin{bmatrix}
 z^2+x^2-y^2-z^2 & 2(xy-zw) & 2(xz+yw) \\
 2(xy+zw) & z^2-x^2+y^2-z^2 & 2(yz-xw) \\
 2(xz-yw) & 2(yz+xw) & z^2-x^2-y^2+z^2 \\
-0&0&0&1\\
 \end{bmatrix}$$
 :::
 
