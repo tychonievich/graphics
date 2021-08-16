@@ -56,6 +56,14 @@ over all lights to find the color of the pixel.
 Make all objects two-sided.
 That is, if the normal points away from the eye, invert it before doing lighting.
 
+Illumination will be in *linear* space, not sRGB like the previous several assignments.
+You'll need to convert to sRGB yourself prior to saving the image, using the official sRGB gamma function:
+$$L_{\text{sRGB}} = \begin{cases}
+12.92 L_{\text{linear}} &\text{if }L_{\text{linear}} \le 0.0031308 \\
+1.055{L_{\text{linear}}}^{1/2.4}-0.055 &\text{if }L_{\text{linear}} > 0.0031308
+\end{cases}$$
+
+
 
 # Required Features
 
@@ -95,6 +103,14 @@ color $r$ $g$ $b$
 Overlap
 :	<a href="files/hw3overlap.txt"><img class="demo floater zoom" src="files/hw3overlap.png"/></a>
 	Your rays should hit the closest object even if there are several overlaping.
+
+sRGB
+:	Your computations should be in a linear color space, converted to sRGB before saving the image.
+	This is reflected in the colors of every reference image on this page.
+
+Rays, not lines
+:	<a href="files/hw3behind.txt"><img class="demo floater zoom" src="files/hw3behind.png"/></a>
+	Don't find intersections behind the ray origin.
 
 <hr style="clear:both"/>
 
