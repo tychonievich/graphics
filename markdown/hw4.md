@@ -57,7 +57,7 @@ The quaternion $w + x \mathbf{i} + y \mathbf{j} + z \mathbf{k}$
 is written in graphics as just $\langle w;x,y,z \rangle$.
 Other notations are also common.
 
-The conjugate of $\langle w,x,y,z \rangle$ is $\langle w;-x,-y,-z \rangle$.
+The conjugate of $\langle w;x,y,z \rangle$ is $\langle w;-x,-y,-z \rangle$.
 
 The product $\langle w_1;x_1,y_1,z_1 \rangle \odot \langle w_2;x_2,y_2,z_2 \rangle$
 is $$\begin{matrix}
@@ -66,16 +66,25 @@ w_1x_2 + x_1w_2 + y_1z_2 - z_1y_2,\\
 w_1y_2 + y_1w_2 + z_1x_2 - x_1z_2,\\
 w_1z_2 + z_1w_2 + x_1y_2 - y_1x_2 \rangle
 \end{matrix}$$
+Notice: the terms above are such that the $x$ coordinate multiplies $x$ and $w$ in both directions
+and multiplies the other two coordinates in both directions but puts a negative sign on the one that's out-of-order (xy, yz, and zx are in-order in a wrapping alphabet).
 
 To multiply a point $(x,y,z)$ by a quaternion, treat the point as $\langle 0;x,y,z \rangle$
 and use the quaternion product.
+Note that this will give a quaternion (non-zero $w$), not a point.
+However, $q \odot x \odot q^{*}$ will be a point if $x$ is because of how conjugates work.
 
 The 3×3 rotation matrix of normalized quaternion $\langle w;x,y,z \rangle$
 is $$\begin{bmatrix}
-z^2+x^2-y^2-z^2 & 2(xy-zw) & 2(xz+yw) \\
-2(xy+zw) & z^2-x^2+y^2-z^2 & 2(yz-xw) \\
-2(xz-yw) & 2(yz+xw) & z^2-x^2-y^2+z^2 \\
+w^2+x^2-y^2-z^2 & 2(xy-zw) & 2(xz+yw) \\
+2(xy+zw) & w^2-x^2+y^2-z^2 & 2(yz-xw) \\
+2(xz-yw) & 2(yz+xw) & w^2-x^2-y^2+z^2 \\
 \end{bmatrix}$$
+Notice: the diagonal has positive $w$ and the coordinate of that row;
+the off-diagonal have a positive product of the coordinates of the row and column
+and a sign-varying product of $w$ and the third coordinate
+where the above-diagonal signs are negative if the two-coordinate product is in-order
+and the off-diagonal is skew-symmetric.
 :::
 
 The *camera* is a special object with no geometry.

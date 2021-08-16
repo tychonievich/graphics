@@ -1,7 +1,8 @@
 ﻿---
 title: 'HW2: 3D Rasterizer'
+new-2021:
+	- made loadp required
 notes:
-    - make loadp required
     - consider making efficient screen clipping required
 ...
 
@@ -66,9 +67,9 @@ The entire flow looks like this (required parts are in bold):
 	1. It it involves creating several triangles, do that and send the triangles through the next steps
 	2. **Apply Model/View transformations (rotations, scaling, translations, matrices, etc), if any, to each vertex.**
 	3. Clip planes happen here.
-	4. Apply the current projection matrix, if any, to each vertex.
+	4. **Apply the current projection matrix, if any, to each vertex.**
 	5. Frustum clipping happens here in OpenGl, but we won't add it.
-	6. Divide each $x$, $y$, and $z$ by $w$.
+	6. **Divide each $x$, $y$, and $z$ by $w$.**
 	7. **Apply a viewport transformation so that $(-1, -1)$ is placed in the top left corner and $(1, 1)$ in the bottom right corner of the image.**
 	8. **Rasterize the triangle into fragments, interpolating a $z$ value** (and other values as extras require) **for each pixel.
 		Only continue with those pixels that are on the screen (i.e., $0 ≤ x < w$ and $0 ≤ y < h$) and have $z$ between 0 and 1.**
@@ -127,6 +128,11 @@ loadmv $a_{1,1}$ $a_{1,2}$ $a_{1,3}$ $a_{1,4}$ $a_{2,1}$ $a_{2,2}$ ... $a_{4,4}$
 	Load the given model/view matrix (specified in row-major order).
 	This replaces any existing model/view matrix.
 
+loadp $a_{1,1}$ $a_{1,2}$ $a_{1,3}$ $a_{1,4}$ $a_{2,1}$ $a_{2,2}$ ... $a_{4,4}$
+:	<a href="files/hw2loadp.txt"><img class="demo floater zoom" src="files/hw2loadp.png"/></a>
+	Load the given projection matrix (specified in row-major order).
+	This replaces any existing projection matrix.
+
 Per-pixel clipping
 :	<a href="files/hw2pixelclip.txt"><img class="demo floater zoom" src="files/hw2pixelclip.png"/></a>
 	Only draw pixels that lie on the screen with a <var>z</var> between 0 and 1.
@@ -143,26 +149,15 @@ Depth buffer
 
 <hr style="clear:both;"/>
 
-## Perspective (30&ndash;55)
-
-### Core (30)
-
-You may get 30 points by implementing the following:
-
-xyzw $x$ $y$ $z$ $w$
-:	<a href="files/hw2xyzw.txt"><img class="demo floater zoom" src="files/hw2xyzw.png"/></a>
-	Add the point ($x$, $y$, $z$, $w$) to the vertex list.
-	Divide by $w$ after multiplying by all matrices but before scan converting.
-
-loadp $a_{1,1}$ $a_{1,2}$ $a_{1,3}$ $a_{1,4}$ $a_{2,1}$ $a_{2,2}$ ... $a_{4,4}$
-:	<a href="files/hw2loadp.txt"><img class="demo floater zoom" src="files/hw2loadp.png"/></a>
-	Load the given projection matrix (specified in row-major order).
-	This replaces any existing projection matrix.
-
-### Extra (0&ndash;25)
+## Perspective (0&ndash;25)
 
 If (and only if) you implement the core perspective features
 you may earn additional points as follows
+
+xyzw $x$ $y$ $z$ $w$ (5 points)
+:	<a href="files/hw2xyzw.txt"><img class="demo floater zoom" src="files/hw2xyzw.png"/></a>
+	Add the point ($x$, $y$, $z$, $w$) to the vertex list.
+	Divide by $w$ after multiplying by all matrices but before scan converting.
 
 frustum *l* *r* *b* *t* *n* *f* (5 points)
 :	<a href="files/hw2frustum.txt"><img class="demo floater zoom" src="files/hw2frustum.png"/></a>

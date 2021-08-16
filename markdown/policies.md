@@ -8,14 +8,10 @@ title: Policies
 # Course objectives
 
 At the end of this course you will be able to do two broad classes of things:
-first, you will learn to write algorithms that create images from models;
+first, you will learn to write algorithms that create images and animations from models;
 second, you will learn to effectively understand the capabilities, limitations and vocabulary that underlie common graphical libraries.
 In addition to these two core classes of learning objectives
-we will explore a few more specialized topics,
-some of which you will be able to select.
-
-In part because of the ability you will have to influence course topics,
-this document is very much open to being adjusted as the semester progresses.
+we will explore a few more specialized topics.
 
 # Logistics
 
@@ -37,7 +33,7 @@ I do not schedule review sessions or the like outside of usual class time.
 > "Some college cell, Where muzzing quizzes mutter monkish schemes."
 > <div>---William Roberts</div>
 
-You will be asked to write and turn in four or five programs:
+You will be asked to write and turn in five programs:
 
 #. a basic 2D rasterizer
 
@@ -45,11 +41,11 @@ You will be asked to write and turn in four or five programs:
 
 #. a basic raytracer
 
-#. (probably) a basic WebGL program; maybe a Vulkan app instead
+#. a animation extending 2 above
 
-#. an additional program based on the latter part of the course
+#. either an image manipulation tool or a simulation tool (which one TBD)
 
-Additionally, quizzes will be administered online frequently.
+Additionally, quizzes will be administered online weekly.
 There will be a final quiz, which will be administered in-person during the university-scheduled final exam period.
 
 ## Contact
@@ -57,12 +53,39 @@ There will be a final quiz, which will be administered in-person during the univ
 > "I heard a sound; I turned around; I turned around to face the thing that made the sound."
 > <div>---They Might Be Giants</div>
 
-TBA.
+Course forums
+:	Online forum: TBD\
+	In-person forum: TBD
+	
+	All course-material questions should be directed to the course forums.
+	Personal matters should be directed to the instructor directly.
 
-If you have special concerns prior to class starting, contact me at tychonievich@virginia.edu and I'll try to help.
+Instructor
+:	Luther Tychonievich\
+	Rice 208\
+	`tychonievich@virginia.edu`\
+	434-243-3789
+	
+	If you email, please include 4810 in the subject line.
+	I get so many emails each day that those that are not obviously related to one of my classes may not be read very quickly.
 
-If you email, please include 4810 in the subject line.
-I get so many emails each day that those that are not obviously related to one of my classes may not be read very quickly.
+TAs
+:	Clara, Gustavo, James, Josh, and Quinn
+
+	The TAs are also students with their own coursework, etc.
+	Please be respectful and only contact them about this course
+	in ways and at times that are listed on this site.
+
+## Kind of help provided
+
+> "Everyone knows that computers are very big, powerful, sadistic, and highly dangerous."
+> <div>---Harry Harrison</div>
+
+Because we allow many programming languages, and because this is a 4000-level elective course in CS,
+we assume you are able to handle your own coding and we do not plan to offer coding-level assistance.
+We will help you understand algorithms and might be able to advise matters of code organization,
+but you should be able to debug your own implementation errors.
+
 
 ## Readings
 
@@ -89,21 +112,20 @@ Readings may be roughly categorized into two kinds.
 > <div>---Douglas Adams</div>
 
 Most assignments will be supported in any language you chose to use.
-In the past I have supported C, C++, C#, D, Dart, Java, Kotlin, Python, and Rust.
+In the past I have supported C, C++, C#, D, Dart, Go, Haskell, Java, Kotlin, Python, Rust, and Scala.
 You may switch languages as often as you wish.
 If you want another language added, let me know.
 
-One assignment will explore low-level 3D graphics library use,
-probably either WebGL in Javascript
-or Vulkan in C++.
-Assuming that plan does not change, we'll have a tutorial on the necessary bits of those languages in class prior to the assignment.
-
 Estimating how long it will take someone to complete a coding assignment
 is always difficult.
-The target difficulty is 5–10 hours of focused effort each week.
+The target difficulty is 5--10 hours of focused effort each week,
+in addition to other course duties approximating 2.5 hours of class, 1 hour of reading, and 1 hour of quizzing per week.
+This is in keeping with [PROV-022](http://uvapolicy.virginia.edu/policy/PROV-022) suggests 3cr ≥ 135 hours of work and also notes
 
-> "Everyone knows that computers are very big, powerful sadistic, and highly dangerous."
-> <div>---Harry Harrison</div>
+> This policy establishes a minimum standard that does not restrict faculty from assigning a greater amount of academic work per credit.
+
+In the past, some students have suggested that they are accustomed to giving less than this minimum standard in other classes and that they had to adapt to this course meeting that standard.
+
 
 # Grading
 
@@ -142,6 +164,25 @@ I do not round grades. 92.99999919% is not &ge; 93% and is thus an A&minus;, not
 I do not curve grades: if you all fail, you all fail; if you all ace, you all ace. However, rubrics for assignments are not linear: instead, I determine how well I expect a passing student to perform and assign a per-assignment rubric to match.
 
 # Miscellanea
+
+## Late submissions
+
+Quiz deadlines are hard deadlines as I wish to release the key and discuss the answers in the subsequent class session.
+If you have a reason why you cannot take a quiz or expect not to be able to perform well on it, please let me know **before the quiz closes** and I'll excuse the quiz for you.
+
+Homework deadlines are adjustable on a case-by-case basis.
+The deadlines are in place primarily to keep you from falling behind
+and to help course staff focus on helping with one assignment at a time.
+If there is any reason why a published deadline is not good for you
+(including "I had another deadline that day" or "I did poorly when graded and want to re-submit a fixed version"),
+let me know why and we'll work together to find a new target deadline that will keep you on track.
+
+## Absence and Illness
+
+Class attendance is only required during the final quiz. If you have a reason not to be there then, please let me know as soon as you know and we'll seek alternative accommodations.
+
+Class attendance is encouraged for all healthy students.
+Please do not attend class if you are ill with anything contagious (COVID or otherwise).
 
 ## Professionalism
 
