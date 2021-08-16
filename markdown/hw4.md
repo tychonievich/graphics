@@ -70,7 +70,7 @@ w_1z_2 + z_1w_2 + x_1y_2 - y_1x_2 \rangle
 To multiply a point $(x,y,z)$ by a quaternion, treat the point as $\langle 0;x,y,z \rangle$
 and use the quaternion product.
 
-The 3×3 rotation matrix of normalized quaternion $(w,x,y,z)$
+The 3×3 rotation matrix of normalized quaternion $\langle w;x,y,z \rangle$
 is $$\begin{bmatrix}
 z^2+x^2-y^2-z^2 & 2(xy-zw) & 2(xz+yw) \\
 2(xy+zw) & z^2-x^2+y^2-z^2 & 2(yz-xw) \\
