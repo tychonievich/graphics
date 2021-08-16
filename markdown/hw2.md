@@ -1,5 +1,8 @@
 ﻿---
 title: 'HW2: 3D Rasterizer'
+notes:
+    - [ ] make loadp required
+    - [ ] consider making efficient screen clipping required
 ...
 
 # Assignment Metadata

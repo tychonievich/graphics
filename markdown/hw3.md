@@ -1,5 +1,9 @@
 ﻿---
 title: 'HW3: Raytracer'
+notes:
+    - [ ] make color linear, not sRGB
+    - [ ] add exposure functions
+    - [ ] add elective HDRI bloom
 ...
 
 # Overview
