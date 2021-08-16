@@ -257,6 +257,8 @@ Textures (10%)
 		load a texture map to be used for all future objects.
 		If `filename.png` does not exist, instead disable texture mapping for future objects.
 		
+		Assume the texture is stored in sRGB and convert it to a linear color space prior to using it in rendering.
+		
 		Example textures include <a href="files/earth.png">earth.png</a> and <a href="files/moon.png">moon.png</a>.
 	
 	The texture coordinate used for a sphere should use latitude-longitude style coordinates.
