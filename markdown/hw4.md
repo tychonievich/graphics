@@ -32,7 +32,7 @@ Each *object* will have
 - an *origin*, which is a 3-vector
 - a *position*, which is a 3-vector
 - an *orientation*, which will be given either in Euler or Quaternion form
-- a *scale*, which is a 3-vector
+- a *scale*, which is a 3-vector (not in the required part of the assignment)
 - geometry, meaning vertices and triangles like in HW2
 
 A matrix to position the vertices of an object can be created by multiplying several component matrices together:
@@ -45,12 +45,39 @@ and $[\cdots]$ is the matrix for the object's parent, or nothing if the parent i
 
 Matrices are not necessary in this case:
 you can also apply the operations directly as
-$q^{-1} \odot ((p - O) \otimes S) \odot q + P + O$
+$q \odot ((p - O) \otimes S) \odot q^{*} + P + O$
 where $\otimes$ is element-wise multiplication,
-$q$ is the orientation quaternion,
+$q$ is the normalized orientation quaternion,
+$q^{*}$ is the conjugate of $q$,
 and $\odot$ is the quaternion multiplication operator.
 If there are more than a few points, though, constructing the matrix first is more efficient.
 
+:::aside
+The quaternion $w + x \mathbf{i} + y \mathbf{j} + z \mathbf{k}$
+is written in graphics as just $\langle w;x,y,z \rangle$.
+Other notations are also common.
+
+The conjugate of $\langle w,x,y,z \rangle$ is $\langle w;-x,-y,-z \rangle$.
+
+The product $(w_1;x_1,y_1,z_1) \odot (w_2;x_2,y_2,z_2)$
+is $$\begin{split}(
+& w_1w_2 - x_1x_2 - y_1y_2 - z_1z_2,\\
+& w_1x_2 + x_1w_2 + y_1z_2 - z_1y_2,\\
+& w_1y_2 + y_1w_2 - x_1z_2 + z_1x_2,\\
+& w_1z_2 + z_1w_2 - x_1y_2 + y_1x_2)
+\end{split}$$
+
+To multiply a point $(x,y,z)$ by a quaternion, treat the point as $\langle 0;x,y,z \rangle$
+and use the quaternion product.
+
+The 3×3 rotation matrix of normalized quaternion $(w,x,y,z)$
+is $$\begin{bmatrix}
+z^2+x^2-y^2-z^2 & 2(xy-zw) & 2(xz+yw) \\
+2(xy+zw) & z^2-x^2+y^2-z^2 & 2(yz-xw) \\
+2(xz-yw) & 2(yz+xw) & z^2-x^2-y^2+z^2 \\
+0&0&0&1\\
+\end{bmatrix}$$
+:::
 
 The *camera* is a special object with no geometry.
 To position an object's points for rendering by the camera,
@@ -82,7 +109,7 @@ To avoid the complexities of a full programming language, we'll guarantee that r
 
 The above limitations will make *writing* the input files a bit tedious, but will keep *parsing* them straightforward.
 
-Some full animation systems will animate vectors separately from their coordiantes, for example using slurps (spherical linear interpolation) or hlerps (hyperbolic linear interpolation).
+Some full animation systems will animate vectors separately from their coordinates, for example using slurps (spherical linear interpolation) or hlerps (hyperbolic linear interpolation).
 Those can be decomposed into per-coordinate trigonometry and other more involved functions, and to keep the input files from getting out of hand we'll only deal with them in that form.
 
 ## Code organization
@@ -147,6 +174,10 @@ quaternion *w* *x* *y* *z*
     
     Describes the orientation of this object relative to its parent, in a coordinate system modified by its parent's position, orientation, and scale
     but not modified by this objects position or scale.
+    
+    *Always* normalize the quaternion prior to using it in rotation.
+    A normalized quaternion is one where $w^2 - (x^2+y^2+z^2) = 1$.
+    
     
     Each object will have at most one orientation,
     which may be `quaternion` or one of the alternatives given in the optional features section.
