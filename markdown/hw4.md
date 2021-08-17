@@ -256,6 +256,8 @@ Animate transforms
 
 # Optional Features
 
+## More Transformations (5--25 pt)
+
 origin $o_x$ $o_y$ $o_z$ (5 pt)
 :   An optional origin of the object; if missing defaults to `origin 0 0 0`.
     
@@ -282,6 +284,8 @@ anyscale $s_x$ $s_y$ $s_z$ $w$ $x$ $y$ $z$ (10 pt)
     Each object will have one `scale` or one `anyscale` or neither; if either is present, it will precede any geometry for that object.
 
 
+## More things animated (5--40 pt)
+
 Animate vertices (5 pt)
 :   Allow the coordinates of vertices to be variables or values.
     This may mean that the vertices of a triangle are sometimes all the same location in space.
@@ -294,12 +298,20 @@ Animate colors (10 pt)
     similar to HW3.
     Values will be in the 0--255 sRGB color space, as they were for HW2.
 
-Animate textures
+Animate textures (5 pt)
 :   Implement the `texture`, `texcoord`, and `trit` commands from HW2
     and allow `texcood` to be animated using variables.
 
-Animate projection
+Animate projection (5 pt)
 :   Allow `loadp` to have variables as well as values in its definition.
+
+iflt $x$ $y$ (15 pt)\
+else\
+fi
+:   If $x < y$, perform the commands between `iflt` and the next `else` but not between the `else` and the next `fi`.
+    Otherwise, perform the commands between `else` and `fi`, not between `iflt` and `else`.
+
+## Animations used in keyframes 
 
 lerp `dest` $t_1$ $v_1$ $t_2$ $v_2$ ... $t_n$ $v_n$
 :   Define a variable `dest` to be the a piecewise-linear interpolation of several values.
@@ -321,73 +333,13 @@ natspline `dest` $t_1$ $v_1$ $t_2$ $v_2$ ...
 piecewise `dest` $v_1$ $t_1$ $v_2$ $t_2$ \dots $t_n$ $v_{n+1}$
 :   
 
+## Camera support
+
 Camera
 :   ...
 
 Camera with parent
 :   ...
 
-iflt $x$ $y$\
-else\
-fi
-:   If $x < y$, perform the commands between `iflt` and the next `else` but not between the `else` and the next `fi`.
-    Otherwise, perform the commands between `else` and `fi`, not between `iflt` and `else`.
 
 
-
-<!--
-
-lerp var t val t val t val ...
-    (t,val) pairs
-    between pairs, linear interpolation
-    before first pair, first val
-    after last pair, last val
-
-pbez var t val val val t val val val t val val val ... val
-    (t1, v1, v2, v3, t2, v4) means a bezier function with CPs
-    - t1,v1
-    - (2*t1/3+t2/3),v2
-    - (t1/3+2*t2/3),v3
-    - t2,v4
-    
-autobez var t val t val t val ...
-    same format as lerp
-    interpolating cubic bezier spline
-    *slope* at point t = (net t's val - previous t's val) / (next t - prev t)
-     
-sum var s1 s2
-diff var pos neg
-prod var p1 p2
-ratio var num den
-sin var arg
-cos var arg
-pow var base exp
-
--->
-
-
-<!--
-null objects
-camera
-animated camera
-camera with objects as parents
-animated vertices
-animated color
-animated texture coordinates
-bangbang
-natural spline
-piecewise-equals
--->
-
-<!--
-object name parent 
-origin x y z
-position x y z
-quat x y z w      -- or eulxyz eulyzx eulzyx ...
-scale x y z
-xyz ...
-trig ...
-
-
-
--->
