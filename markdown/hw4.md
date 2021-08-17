@@ -52,9 +52,7 @@ $q^{*}$ is the conjugate of $q$,
 and $\odot$ is the quaternion multiplication operator.
 If there are more than a few points, though, constructing the matrix first is more efficient.
 
-:::aside
-We have a [quaternions summary](quaternions.html) that may be of help.
-:::
+<div class="aside">We have a [quaternions summary](quaternions.html) that may be of help.</div>
 
 The *camera* is a special object with no geometry.
 To position an object's points for rendering by the camera,
