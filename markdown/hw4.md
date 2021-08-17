@@ -282,20 +282,32 @@ anyscale $s_x$ $s_y$ $s_z$ $w$ $x$ $y$ $z$ (10 pt)
     Each object will have one `scale` or one `anyscale` or neither; if either is present, it will precede any geometry for that object.
 
 
-Animate vertices
-:   ...
+Animate vertices (5 pt)
+:   Allow the coordinates of vertices to be variables or values.
+    This may mean that the vertices of a triangle are sometimes all the same location in space.
 
-Animate colors
-:   ...
+Animate colors (10 pt)
+:   Allow the coordinates of colors to be variables or values.
+    Variables will be in the linear 0--1 color space and need to be both
+    clamp them to the nearest legal value if out of range
+    and converted to sRGB before display,
+    similar to HW3.
+    Values will be in the 0--255 sRGB color space, as they were for HW2.
 
 Animate textures
-:   ...
+:   Implement the `texture`, `texcoord`, and `trit` commands from HW2
+    and allow `texcood` to be animated using variables.
 
 Animate projection
-:   ...
+:   Allow `loadp` to have variables as well as values in its definition.
 
-lerp `dest` $t_1$ $v_1$ $t_2$ $v_2$ ...
-:   ...
+lerp `dest` $t_1$ $v_1$ $t_2$ $v_2$ ... $t_n$ $v_n$
+:   Define a variable `dest` to be the a piecewise-linear interpolation of several values.
+    Arguments are (frame, value) pairs (with fractional frames permitted)
+    and are given in increasing `frame` order.
+    Prior to $t_1$, `dest` is $v_1$.
+    After $t_n$, `dest` is $v_n$.
+    Between $t_i$ and $t_{i+1}$, `dest` changes smoothly from $v_i$ to $v_{i+1}$.
 
 bez `dest` $t_1$ $a_1$ $b_1$ $c_1$ $t_2$ $a_2$ $b_2$ $c_2$ ... $c_n$ $a_{n+1}$
 :   ...
