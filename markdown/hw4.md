@@ -256,7 +256,7 @@ Animate transforms
 
 # Optional Features
 
-## More Transformations (5--25 pt)
+## More Transformations (5--35 pt)
 
 origin $o_x$ $o_y$ $o_z$ (5 pt)
 :   An optional origin of the object; if missing defaults to `origin 0 0 0`.
@@ -282,6 +282,15 @@ anyscale $s_x$ $s_y$ $s_z$ $w$ $x$ $y$ $z$ (10 pt)
     and then rotating back.
     
     Each object will have one `scale` or one `anyscale` or neither; if either is present, it will precede any geometry for that object.
+
+euler `xyz` $r_1$ $r_2$ $r_3$ (10 pt)
+:   An alternative representation of the orientation of an object.
+    
+    Describes orientation as three consecutive principle-axis rotations.
+    The order of the rotations will be given by the `xyz` argument, which will contain three letters (`x`, `y`, and `z`) in an arbitrary order (e.g. `yxz` or `zxy` or ...).
+    First rotate the object $r_1$ degrees around the axis given by the first letter,
+    then $r_2$ degrees around the axis given by the second letter,
+    then $r_3$ degrees around the axis given by the third letter,
 
 
 ## More things animated (5--40 pt)
@@ -310,10 +319,23 @@ else\
 fi
 :   If $x < y$, perform the commands between `iflt` and the next `else` but not between the `else` and the next `fi`.
     Otherwise, perform the commands between `else` and `fi`, not between `iflt` and `else`.
+    
+    These commands may wrap arbitrary content, including geometry, variable definitions, objects, transforms, etc.
+    To simplify parsing, one `iflt` will never contain a nested `iflt`.
 
-## Animations used in keyframes 
+## Animations used in keyframes (10--60 pt)
 
-lerp `dest` $t_1$ $v_1$ $t_2$ $v_2$ ... $t_n$ $v_n$
+piecewise `dest` $v_1$ $t_1$ $v_2$ $t_2$ \dots $t_n$ $v_{n+1}$ (10 pt)
+:   Create a new variable called `dest` out of a set of old variables using the logic
+    
+    if $t \le t_1$: use $v_1$\
+    else if $t \le t_2$: use $v_24\
+    ...\
+    else if $t \le t_n$: use $v_n$\
+    else use $v_{n+1}$
+
+
+lerp `dest` $t_1$ $v_1$ $t_2$ $v_2$ ... $t_n$ $v_n$ (10 pt)
 :   Define a variable `dest` to be the a piecewise-linear interpolation of several values.
     Arguments are (frame, value) pairs (with fractional frames permitted)
     and are given in increasing `frame` order.
@@ -321,25 +343,61 @@ lerp `dest` $t_1$ $v_1$ $t_2$ $v_2$ ... $t_n$ $v_n$
     After $t_n$, `dest` is $v_n$.
     Between $t_i$ and $t_{i+1}$, `dest` changes smoothly from $v_i$ to $v_{i+1}$.
 
-bez `dest` $t_1$ $a_1$ $b_1$ $c_1$ $t_2$ $a_2$ $b_2$ $c_2$ ... $c_n$ $a_{n+1}$
-:   ...
+bez `dest` $t_1$ $a_1$ $b_1$ $c_1$ $t_2$ $a_2$ $b_2$ $c_2$ ... $c_n$ $a_{n+1}$ (15 pt)
+:   Similar to `lerp`, but using explicit cubic Bézier curves^[Explicit Bézier curves are also called nonparametric Bézier curves or polynomials in the Bernstein basis. They can be thought of as like the Bézier curves in HW2 but with scalar instad of vector control points, or as 2D Bézier curves where the $t$ axis control ponts are evenly spaced.] instead of linear interpolation between $t$ values.
+    
+    The control points between $t_i$ and $t_{i+1}$ are
+    $a_i$, $b_i$, $c_i$, and $a_{i+1}$.
+    
+    Some variant of this function is used by most keyframe animation systems
+    when viewed in the "expert mode" or "graph editor" or the like.
 
-autobez `dest` $t_1$ $v_1$ $t_2$ $v_2$ ...
-:   ...
+autobez `dest` $t_1$ $v_1$ $t_2$ $v_2$ ... (10 pt)
+:   A shorthand way of defining `bez`,
+    some variant of which is commonly used in keyframe animation systems as the initial guess at desired tweening.
+    
+    The input format matches `lerp`: a set of (frame, value) pairs.
+    Control points are determined by computing *slopes* at each keyframe:
+    the slope at $t_i$ is $\displaystyle\frac{v_{i+1}-v_{v-1}}{t_{i+1}-t_{i-1}}$
+    and the control points on either side of $v_i$
+    are computed by extending that slope out ⅓ of the way to the next keyframe.
+    
+    For the first and last keyframe, compute the slope with the keyframe and its one neighbor instead of its two neighbors.
+    
+    <div class="example">
+    The command `autobez x5   3 -2.0   9 7.0   27 1.0`
+    computes slopes $\frac{7-(-2)}{9-3} = \frac{3}{2}$, $\frac{1-(-2)}{27-3} = \frac{1}{8}$, and $\frac{1-7}{27-9} = \frac{-1}{3}$
+    and thus sets `x5` to
+    
+    - $-2.0$ for frames 0 through 3
+    - The Bézier with control points $-2.0, 1.0, 6.75, 7.0$ between frames 3 and 9
+    - The Bézier with control points $7.0, 7.75, 3.0, 1.0$ between frames 9 and 27
+    - $1.0$ for frames 27+
+    </div>
 
-natspline `dest` $t_1$ $v_1$ $t_2$ $v_2$ ...
-:   ...
+natspline `dest` $t_1$ $v_1$ $t_2$ $v_2$ ... (15 pt)
+:   `autobez` is nice in that it gives us a smooth Bézier that we can then let the artist edit like a bez`,
+    but it has discontinuties in its second derivative at each control point
+    which, in motion, corresponds to an infinite "jerk force" at those points.
+    
+    The interpolating cubic spline without these discontinuities
+    is called the "natural spline"
+    and can be created by solving a tridiagonal linear system of equations.
+    Many equivalent explanations of how to do this can be found online be searching for "spline interpolation"
+    or "interpolating cubic spline"
+    or "natural spline".
 
-piecewise `dest` $v_1$ $t_1$ $v_2$ $t_2$ \dots $t_n$ $v_{n+1}$
-:   
 
-## Camera support
+## Camera support (0--40 pt)
 
-Camera
-:   ...
+camera `world` (20 pt)
+:   A file may contain a single `camera` command, which is followed by the camera's parent.
+    The input treats the camera like an object (with `position`, `quaternion`, etc), except it may not have geometry.
+    See the overview for guidance on how to draw with a moving camera.
 
-Camera with parent
-:   ...
+Camera in scene graph (20 pt)
+:   Let the camera have a parent other than "`world`".
+    Let other objects use `camera` as their parent.
 
 
 
