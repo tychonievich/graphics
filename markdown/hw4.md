@@ -29,11 +29,11 @@ In this assignment we'll replicate a version of the scene graph used in many ani
 Each *object* will have
 
 - a *parent*, which is either another object or "the world"
-- an *origin*, which is a 3-vector
-- a *position*, which is a 3-vector
-- an *orientation*, which will be given either in Euler or Quaternion form
-- a *scale*, which is a 3-vector (not in the required part of the assignment)
-- geometry, meaning vertices and triangles like in HW2
+- an *origin*, which is a 3-vector defaulting to $(0,0,0)$ (not in the required part of the assignment)
+- a *scale*, which is a 3-vector defaulting to $(1,1,1)$  (not in the required part of the assignment)
+- a *position*, which is a 3-vector defaulting to $(0,0,0)$ 
+- an *orientation*, which will be given either in Euler or Quaternion form defaulting to $\langle 1;0,0,0 \rangle$ 
+- geometry, given as vertices and triangles similar to HW2
 
 A matrix to position the vertices of an object can be created by multiplying several component matrices together:
 $[\cdots] \quad T_O \; T_P \; R \; S \; T_O^{-1}$
@@ -227,13 +227,43 @@ color $r$ $g$ $b$
 
 ## Basic animation
 
-**Section to appear**
+add `dest` $a$ $b$
+:   Create a new variable called `dest` that is equal to $a + b$
+
+sub `dest` $a$ $b$
+:   Create a new variable called `dest` that is equal to $a - b$
+
+mul `dest` $a$ $b$
+:   Create a new variable called `dest` that is equal to $a \times b$
+
+div `dest` $a$ $b$
+:   Create a new variable called `dest` that is equal to $a \div b$
+
+pow `dest` $a$ $b$
+:   Create a new variable called `dest` that is equal to $a^b$
+
+sin `dest` $a$
+:   Create a new variable called `dest` that is equal to $sin(a)$
+
+cos `dest` $a$
+:   Create a new variable called `dest` that is equal to $cos(a)$
+
+Animate transforms
+:   <a href="files/.txt"><img class="demo floater zoom" src="files/.png"/></a>
+    Allow the arguments of `position` and `quaternion`, as well as the mathematics operators above, to be any mix of variables and numbers.
 
 <hr style="clear:both"/>
 
 # Optional Features
 
-scale *sx* *sy* *sz*
+origin $o_x$ $o_y$ $o_z$ (5 pt)
+:   An optional origin of the object; if missing defaults to `origin 0 0 0`.
+    
+    Describes the origin around which other transforms occur.
+
+    Each object will have at most one `origin`; if present, it will precede any geometry for that object.
+
+scale $s_x$ $s_y$ $s_z$ (10 pt)
 :   An optional transformation of the object; if missing defaults to `scale 1 1 1`.
     
     Describes the axis-aligned components of the scale of this object relative to its parent, in a coordinate system modified by its parent's position, orientation, and scale
@@ -241,6 +271,49 @@ scale *sx* *sy* *sz*
     
     Each object will have at most one `scale`; if present, it will precede any geometry for that object.
 
+anyscale $s_x$ $s_y$ $s_z$ $w$ $x$ $y$ $z$ (10 pt)
+:   An optional transformation of the object.
+    
+    Describes the scale of this object along arbitrary axes as given by a quaternion.
+    The application of `anyscale` is equivalent to rotating by the quaternion,
+    scaling along the principle axes by the given factors,
+    and then rotating back.
+    
+    Each object will have one `scale` or one `anyscale` or neither; if either is present, it will precede any geometry for that object.
+
+
+Animate vertices
+:   ...
+
+Animate colors
+:   ...
+
+Animate textures
+:   ...
+
+Animate projection
+:   ...
+
+lerp `dest` $t_1$ $v_1$ $t_2$ $v_2$ ...
+:   ...
+
+bez `dest` $t_1$ $a_1$ $b_1$ $c_1$ $t_2$ $a_2$ $b_2$ $c_2$ ... $c_n$ $a_{n+1}$
+:   ...
+
+autobez `dest` $t_1$ $v_1$ $t_2$ $v_2$ ...
+:   ...
+
+natspline `dest` $t_1$ $v_1$ $t_2$ $v_2$ ...
+:   ...
+
+piecewise `dest` $v_1$ $t_1$ $v_2$ $t_2$ \dots $t_n$ $v_{n+1}$
+:   
+
+Camera
+:   ...
+
+Camera with parent
+:   ...
 
 **Rest of section to appear**
 
