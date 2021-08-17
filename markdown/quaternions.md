@@ -36,7 +36,7 @@ This is just one of many notations used in graphics; none seem to have a majorit
 
 The conjugate of $\langle w;x,y,z \rangle$ is $\langle w;-x,-y,-z \rangle$.
 
-The product $\langle w_1;x_1,y_1,z_1 \rangle \odot \langle w_2;x_2,y_2,z_2 \rangle$
+The product $\langle w_1;x_1,y_1,z_1 \rangle \langle w_2;x_2,y_2,z_2 \rangle$
 is $$\begin{matrix}
 \langle w_1w_2 - x_1x_2 - y_1y_2 - z_1z_2;\\
 w_1x_2 + x_1w_2 + y_1z_2 - z_1y_2,\\
@@ -53,7 +53,7 @@ A normalized quaternion is one with a magnitude of $1$.
 To multiply a point $(x,y,z)$ by a quaternion, treat the point as $\langle 0;x,y,z \rangle$
 and use the quaternion product.
 Note that this will give a quaternion (non-zero $w$), not a point (zero $w$).
-However, $q \odot x \odot q^{*}$ will always be a point if $x$ is a point.
+However, $q x q^{*}$ will always be a point if $x$ is a point.
 
 # Rotation matrix
 
