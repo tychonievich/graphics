@@ -77,3 +77,6 @@ $$\begin{bmatrix}
 s(xy+zw) & 1-s(x^2+z^2) & s(yz-xw) \\
 s(xz-yw) & s(yz+xw) & 1-s(x^2+y^2) \\
 \end{bmatrix}$$
+
+There are many terms in the above formulae and thus many of chances for a typo.
+A quick sanity check is that the matrix of a random quaternion times its own transpose should be the identity matrix.
