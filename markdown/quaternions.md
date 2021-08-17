@@ -22,8 +22,8 @@ From this we can derive
 - $\mathbf{ik} = \mathbf{-j}$ (because $\mathbf{ik} = \mathbf{i}(\mathbf{ij}) = -\mathbf{j}$)
 
 Given a quaternion $w + x \mathbf{i} + y \mathbf{j} + z \mathbf{k}$,
-its multiplicative inverse is $\frac{w - x \mathbf{i} - y \mathbf{j} - z \mathbf{k}}{w^2 + x^2 + y^2 + z^2}$:
-that ism the product of those two quaternions is 1.
+its multiplicative inverse is $\displaystyle \frac{w - x \mathbf{i} - y \mathbf{j} - z \mathbf{k}}{w^2 + x^2 + y^2 + z^2}$:
+that is, the product of those two quaternions is 1.
 
 Thus the quaternion $w + x \mathbf{i} + y \mathbf{j} + z \mathbf{k}$
 are closed under addition, multiplication, and division.
