@@ -280,7 +280,7 @@ fi
 
 ## Animations used in keyframes (10--60 pt)
 
-piecewise `dest` $v_1$ $t_1$ $v_2$ $t_2$ \dots $t_n$ $v_{n+1}$ (10 pt)
+piecewise `dest` $v_1$ $t_1$ $v_2$ $t_2$ ... $t_n$ $v_{n+1}$ (10 pt)
 :   Create a new variable called `dest` out of a set of old variables using the logic
     
     if $t \le t_1$: use $v_1$\
