@@ -307,6 +307,8 @@ bez `dest` $t_1$ $a_1$ $b_1$ $c_1$ $t_2$ $a_2$ $b_2$ $c_2$ ... $c_n$ $a_{n+1}$ (
     
     Some variant of this function is used by most keyframe animation systems
     when viewed in the "expert mode" or "graph editor" or the like.
+    
+    <div class="aside">You might find our [Bézier reference](bezier.html) useful</div>
 
 autobez `dest` $t_1$ $v_1$ $t_2$ $v_2$ ... (10 pt)
 :   A shorthand way of defining `bez`,
