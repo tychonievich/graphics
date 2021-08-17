@@ -275,7 +275,6 @@ else\
 fi
 :   If $x < y$, perform the commands between `iflt` and the next `else` but not between the `else` and the next `fi`.
     Otherwise, perform the commands between `else` and `fi`, not between `iflt` and `else`.
-    
     These commands may wrap arbitrary content, including geometry, variable definitions, objects, transforms, etc.
     To simplify parsing, one `iflt` will never contain a nested `iflt`.
 
