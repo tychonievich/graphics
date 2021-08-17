@@ -2,9 +2,9 @@
 title: 'HW3: Raytracer'
 new-2021:
 	- compute in linear, store in sRGB
+    - added exposure functions
 notes:
-    - add exposure functions
-    - add elective HDRI bloom
+    - consider adding elective HDRI bloom
 ...
 
 # Overview
@@ -198,9 +198,11 @@ expose $v$ (10%)
 	such as FiLMiC's popular Log V2,
 	are based on large look-up tables instead of simple math but are conceptually similar to this function.</div>
 
+<!--
 HDR Bloom (required exposure) (15%)
 :	Add an exposure function
 	*details an example TBD*
+-->
 
 ## Materials (5–65%)
 
