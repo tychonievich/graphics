@@ -199,10 +199,10 @@ pow `dest` $a$ $b$
 :   Create a new variable called `dest` that is equal to $a^b$
 
 sin `dest` $a$
-:   Create a new variable called `dest` that is equal to $sin(a)$
+:   Create a new variable called `dest` that is equal to $\sin(a)$
 
 cos `dest` $a$
-:   Create a new variable called `dest` that is equal to $cos(a)$
+:   Create a new variable called `dest` that is equal to $\cos(a)$
 
 Animate transforms
 :   <a href="files/.txt"><img class="demo floater zoom" src="files/.png"/></a>
