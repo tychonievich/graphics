@@ -189,9 +189,14 @@ Shadows (10–30%)
 	10 points for 1 sun, +5 if planes work, +5 if triangles work, +5 if multiple light sources work, +5 if bulbs work
 
 expose $v$ (10%)
-:	Render the scene with an exposure function, applied prior to gamma correction.
-	Use a simple exponential exposure function: $\ell_{\text{exposed}} = 1 - e^{-\ell_{\text{linear}} v}$.
+:	<a href="files/hw3expose1.txt"><img class="demo floater zoom" src="files/hw3expose1.png"/></a>
+	<a href="files/hw3expose2.txt"><img class="demo floater zoom" src="files/hw3expose2.png"/></a>
+	Render the scene with an exposure function, applied prior to gamma correction.
+	Use a simple exponential exposure function: $\ell_{\text{exposed}} = 1 - e^{\displaystyle -\ell_{\text{linear}} v}$.
 	
+	<div class="aside">Fancier exposure functions used in industry graphics,
+	such as FiLMiC's popular Log V2,
+	are based on large look-up tables instead of simple math but are conceptually similar to this function.</div>
 
 HDR Bloom (required exposure) (15%)
 :	Add an exposure function
