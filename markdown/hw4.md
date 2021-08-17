@@ -315,8 +315,11 @@ Camera
 Camera with parent
 :   ...
 
-**Rest of section to appear**
-
+iflt $x$ $y$\
+else\
+fi
+:   If $x < y$, perform the commands between `iflt` and the next `else` but not between the `else` and the next `fi`.
+    Otherwise, perform the commands between `else` and `fi`, not between `iflt` and `else`.
 
 
 
