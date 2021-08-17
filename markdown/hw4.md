@@ -152,7 +152,7 @@ position $x$ $y$ $z$
 :   An optional transformation of the object; if missing, defaults of `position 0 0 0`.
     
     Describes the position of this object relative to its parent, in a coordinate system modified by its parent's position, orientation, and scale
-    but not modified by this objects orientation or scale.
+    but not modified by this object's orientation or scale.
     
     Each object will have at most one `position`.
     If present, it will precede any geometry for that object.
@@ -161,7 +161,7 @@ quaternion *w* *x* *y* *z*
 :   An optional orientation transformation of the object; if missing and no other orientation command is provided, defaults to `quaternion 1 0 0 0`.
     
     Describes the orientation of this object relative to its parent, in a coordinate system modified by its parent's position, orientation, and scale
-    but not modified by this objects position or scale.
+    but not modified by this object's position or scale.
     
     Each object will have at most one orientation,
     which may be `quaternion` or one of the alternatives given in the optional features section.
@@ -225,7 +225,7 @@ scale $s_x$ $s_y$ $s_z$ (10 pt)
 :   An optional transformation of the object; if missing defaults to `scale 1 1 1`.
     
     Describes the axis-aligned components of the scale of this object relative to its parent, in a coordinate system modified by its parent's position, orientation, and scale
-    but not modified by this objects position or orientation.
+    but not modified by this object's position or orientation.
     
     Each object will have at most one `scale`; if present, it will precede any geometry for that object.
 
