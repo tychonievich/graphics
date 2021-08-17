@@ -284,7 +284,7 @@ piecewise `dest` $v_1$ $t_1$ $v_2$ $t_2$ \dots $t_n$ $v_{n+1}$ (10 pt)
 :   Create a new variable called `dest` out of a set of old variables using the logic
     
     if $t \le t_1$: use $v_1$\
-    else if $t \le t_2$: use $v_24\
+    else if $t \le t_2$: use $v_2$\
     ...\
     else if $t \le t_n$: use $v_n$\
     else use $v_{n+1}$
