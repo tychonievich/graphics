@@ -16,7 +16,7 @@ From this we can derive
 
 - $\mathbf{ij} = \mathbf{k}$ (because $(\mathbf{ij})\mathbf{k} = -1 = \mathbf{kk}$)
 - $\mathbf{jk} = \mathbf{i}$ (because $\mathbf{i}(\mathbf{jk}) = -1 = \mathbf{ii}$)
-- $\mathbf{ki} = \mathbf{j}$ (because $\mathbf{ki} = (\mathbf{ij})(\mathbf{jk}) = \mathbf{i}-1\mathbf{k} = -\mathbf{ik} = -\mathbf{i}(\mathbf{ij}) = --\mathbf{j} = \mathbf{j}$)
+- $\mathbf{ki} = \mathbf{j}$ (because $\mathbf{ki} = (\mathbf{ij})(\mathbf{jk}) = \mathbf{i}(-1)\mathbf{k} = -\mathbf{ik} = -\mathbf{i}(\mathbf{ij}) = --\mathbf{j} = \mathbf{j}$)
 - $\mathbf{ji} = \mathbf{-k}$ (because $\mathbf{ji} = \mathbf{j}(\mathbf{jk}) = -\mathbf{k}$)
 - $\mathbf{kj} = \mathbf{-i}$ (because $\mathbf{kj} = \mathbf{k}(\mathbf{ki}) = -\mathbf{i}$)
 - $\mathbf{ik} = \mathbf{-j}$ (because $\mathbf{ik} = \mathbf{i}(\mathbf{ij}) = -\mathbf{j}$)
