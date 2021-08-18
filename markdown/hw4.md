@@ -345,13 +345,15 @@ natspline `dest` $t_1$ $v_1$ $t_2$ $v_2$ ... (15 pt)
 
 ## Camera support (0--40 pt)
 
-camera `world` (20 pt)
+camera `parent` (20 pt)
 :   A file may contain a single `camera` command, which is followed by the camera's parent.
     The input treats the camera like an object (with `position`, `quaternion`, etc), except it may not have geometry.
     See the overview for guidance on how to draw with a moving camera.
+    
+    For this set of optional points, you only need to support the specific `parent` value "`world`".
 
 Camera in scene graph (20 pt)
-:   Let the camera have a parent other than "`world`".
+:   Let the camera have a `parent` that is an object, not just the "`world`".
     Let other objects use `camera` as their parent.
 
 

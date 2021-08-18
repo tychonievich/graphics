@@ -379,28 +379,28 @@ assignments:
       portion: "25"
   HW0:
     title: warmup
-    due: 2020-09-04 17:00:00
+    due: 2021-09-03 17:00:00
     link: hw0.html
   HW1:
     title: 2D rasterizer
-    due: 2020-09-25 17:00:00
+    due: 2021-09-24 17:00:00
     link: hw1.html
   HW2:
     title: 3D rasterizer
-    due: 2020-10-09 17:00:00
+    due: 2021-10-08 17:00:00
     link: hw2.html
   HW3:
     title: raytracer
-    due: 2020-10-30 17:00:00
+    due: 2020-10-29 17:00:00
     link: hw3.html
   HW4:
-    title: webgl
-    due: 2020-11-13 17:00:00
+    title: animation
+    due: 2020-11-19 17:00:00
     link: hw4.html
   HW5:
-    title: images
-    due: 2020-11-24 23:59:59
-    link: hw5.html
+    title: TBD
+    due: 2020-12-07 23:59:59
+    old-link: hw5.html
 
   Quiz00:
       due: 2020-08-31 13:30:00
