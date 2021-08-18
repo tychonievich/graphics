@@ -41,12 +41,10 @@ office hours:
 lectures:
   - intro
   - raster graphics
-  - color
-  - image files
   - scan conversion
   - subdivision
   - [curves, alpha]
-  - math
+  - math review
   - homogeneous coordinates
   - 3d pipeline
   - fragment shaders
@@ -54,10 +52,8 @@ lectures:
   - raytracing
 
   - light
+  - [color, image files]
   - raytracing
-  - [webgl, glsl]
-  - webgl
-  - [webgl textures, animation]
   - TBA
   - TBA
   - TBA
@@ -65,7 +61,6 @@ lectures:
   - TBA
   - TBA
   - TBA
-
   - TBA
   - TBA
   - TBA
