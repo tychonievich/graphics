@@ -134,6 +134,13 @@ The required part is worth 50%
 pngs *width* *height* *filename* *frames*
 :	same syntax and semantics as HW0.
 
+loadp $a_{1,1}$ $a_{1,2}$ $a_{1,3}$ $a_{1,4}$ $a_{2,1}$ $a_{2,2}$ ... $a_{4,4}$
+:   As in HW2. Will appear only once, before any `object`s
+
+color $r$ $g$ $b$
+:	As in HW2.
+
+
 object *name* *parent*
 :	<a href="files/.txt"><img class="demo floater zoom" src="files/.png"/></a>
 	Begin a new object with the given *name*.
@@ -166,18 +173,12 @@ quaternion *w* *x* *y* *z*
     If present, it will precede any geometry for that object.
 
 xyz $x$ $y$ $z$
-:	As in HW2.
+:	As in HW2. Will only appear after an `object` and its transformations.
     Note that point indexing resets with each new object.
 
 trif $i_1$ $i_2$ $i_3$
-:	As in HW2.
+:	As in HW2. Will only appear after an `object` and its transformations.
     Note that point indexing resets with each new object.
-
-loadp $a_{1,1}$ $a_{1,2}$ $a_{1,3}$ $a_{1,4}$ $a_{2,1}$ $a_{2,2}$ ... $a_{4,4}$
-:   As in HW2.
-
-color $r$ $g$ $b$
-:	As in HW2.
 
 ## Basic animation
 
@@ -244,7 +245,8 @@ euler `xyz` $r_1$ $r_2$ $r_3$ (10 pt)
     The order of the rotations will be given by the `xyz` argument, which will contain three letters (`x`, `y`, and `z`) in an arbitrary order (e.g. `yxz` or `zxy` or ...).
     First rotate the object $r_1$ degrees around the axis given by the first letter,
     then $r_2$ degrees around the axis given by the second letter,
-    then $r_3$ degrees around the axis given by the third letter,
+    then $r_3$ degrees around the axis given by the third letter.
+    Note that "first" means "as the left-most matrix", so `euler xyz` is the product of three matrices $R_z R_y R_x$.
 
 
 ## More things animated (5--40 pt)
