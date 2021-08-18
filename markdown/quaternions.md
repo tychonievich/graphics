@@ -16,7 +16,7 @@ From this we can derive
 
 - $\mathbf{ij} = \mathbf{k}$ (because $(\mathbf{ij})\mathbf{k} = -1 = \mathbf{kk}$)
 - $\mathbf{jk} = \mathbf{i}$ (because $\mathbf{i}(\mathbf{jk}) = -1 = \mathbf{ii}$)
-- $\mathbf{ki} = \mathbf{j}$ ($\mathbf{ki} = (\mathbf{ij})(\mathbf{jk}) = \mathbf{i}-1\mathbf{k} = -\mathbf{ik} = -\mathbf{i}(\mathbf{ij}) = --\mathbf{j} = \mathbf{j}$)
+- $\mathbf{ki} = \mathbf{j}$ (because $\mathbf{ki} = (\mathbf{ij})(\mathbf{jk}) = \mathbf{i}(-1)\mathbf{k} = -\mathbf{ik} = -\mathbf{i}(\mathbf{ij}) = --\mathbf{j} = \mathbf{j}$)
 - $\mathbf{ji} = \mathbf{-k}$ (because $\mathbf{ji} = \mathbf{j}(\mathbf{jk}) = -\mathbf{k}$)
 - $\mathbf{kj} = \mathbf{-i}$ (because $\mathbf{kj} = \mathbf{k}(\mathbf{ki}) = -\mathbf{i}$)
 - $\mathbf{ik} = \mathbf{-j}$ (because $\mathbf{ik} = \mathbf{i}(\mathbf{ij}) = -\mathbf{j}$)
@@ -36,7 +36,7 @@ This is just one of many notations used in graphics; none seem to have a majorit
 
 The conjugate of $\langle w;x,y,z \rangle$ is $\langle w;-x,-y,-z \rangle$.
 
-The product $\langle w_1;x_1,y_1,z_1 \rangle \odot \langle w_2;x_2,y_2,z_2 \rangle$
+The product $\langle w_1;x_1,y_1,z_1 \rangle \langle w_2;x_2,y_2,z_2 \rangle$
 is $$\begin{matrix}
 \langle w_1w_2 - x_1x_2 - y_1y_2 - z_1z_2;\\
 w_1x_2 + x_1w_2 + y_1z_2 - z_1y_2,\\
@@ -53,7 +53,7 @@ A normalized quaternion is one with a magnitude of $1$.
 To multiply a point $(x,y,z)$ by a quaternion, treat the point as $\langle 0;x,y,z \rangle$
 and use the quaternion product.
 Note that this will give a quaternion (non-zero $w$), not a point (zero $w$).
-However, $q \odot x \odot q^{*}$ will always be a point if $x$ is a point.
+However, $q x q^{*}$ will always be a point if $x$ is a point.
 
 # Rotation matrix
 
@@ -71,9 +71,12 @@ and the off-diagonal is skew-symmetric.
 
 The 3×3 rotation matrix of an arbitrary (non-normalized) quaternion can be found without normalizing using the following three equations:
 $$n = w^2 + x^2 + y^2 + z^2$$
-$$s = \begin{cases}0 & \text{if} n=0\\\frac{2}{n} &\text{otherwise}\end{cases}$$
+$$s = \begin{cases}0 & \text{if } n=0\\\frac{2}{n} &\text{otherwise}\end{cases}$$
 $$\begin{bmatrix}
 1-s(y^2+z^2) & s(xy-zw) & s(xz+yw) \\
-s(xy+zw) & 1-s(x^2+z^2) & 2(yz-xw) \\
+s(xy+zw) & 1-s(x^2+z^2) & s(yz-xw) \\
 s(xz-yw) & s(yz+xw) & 1-s(x^2+y^2) \\
 \end{bmatrix}$$
+
+There are many terms in the above formulae and thus many of chances for a typo.
+A quick sanity check is that the matrix of a random quaternion times its own transpose should be the identity matrix.
