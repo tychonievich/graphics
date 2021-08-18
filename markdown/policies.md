@@ -70,7 +70,7 @@ Instructor
 	I get so many emails each day that those that are not obviously related to one of my classes may not be read very quickly.
 
 TAs
-:	Clara, Gustavo, James, Josh, and Quinn
+:	Clara, Gustavo, James, and Quinn
 
 	The TAs are also students with their own coursework, etc.
 	Please be respectful and only contact them about this course
