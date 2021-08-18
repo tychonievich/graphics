@@ -36,7 +36,7 @@ Each *object* will have
 - geometry, given as vertices and triangles similar to HW2
 
 A matrix to position the vertices of an object can be created by multiplying several component matrices together:
-$[\cdots] \quad T_O \; T_P \; R \; S \; T_O^{-1}$
+$$[\cdots] \quad T_O \; T_P \; R \; S \; T_O^{-1}$$
 where $T_O$ is a translation matrix moving (0,0,0) to the object's origin;
 $T_P$ is a translation matrix moving (0,0,0) to the object's position;
 $S$ is a scaling matrix, the diagonal of the object's scale;
