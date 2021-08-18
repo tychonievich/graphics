@@ -391,15 +391,15 @@ assignments:
     link: hw2.html
   HW3:
     title: raytracer
-    due: 2020-10-29 17:00:00
+    due: 2021-10-29 17:00:00
     link: hw3.html
   HW4:
     title: animation
-    due: 2020-11-19 17:00:00
+    due: 2021-11-19 17:00:00
     link: hw4.html
   HW5:
     title: TBD
-    due: 2020-12-07 23:59:59
+    due: 2021-12-07 23:59:59
     old-link: hw5.html
 
   Quiz00:
