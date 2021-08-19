@@ -96,7 +96,7 @@ To avoid the complexities of a full programming language, we'll guarantee that r
 The above limitations will make *writing* the input files a bit tedious, but will keep *parsing* them straightforward.
 
 Some full animation systems will animate vectors separately from their coordinates, for example using slurps (spherical linear interpolation) or hlerps (hyperbolic linear interpolation).
-Those can be decomposed into per-coordinate trigonometry and other more involved functions, and to keep the input files from getting out of hand we'll only deal with them in that form.
+Those can be decomposed into per-coordinate trigonometry and other more involved functions; to keep the input files from getting out of hand we'll only deal with them in that form.
 
 ## Code organization
 
@@ -198,10 +198,10 @@ pow `dest` $a$ $b$
 :   Create a new variable called `dest` that is equal to $a^b$
 
 sin `dest` $a$
-:   Create a new variable called `dest` that is equal to $\sin(a)$
+:   Create a new variable called `dest` that is equal to $\sin(a)$, where $a$ is specified in degrees.
 
 cos `dest` $a$
-:   Create a new variable called `dest` that is equal to $\cos(a)$
+:   Create a new variable called `dest` that is equal to $\cos(a)$, where $a$ is specified in degrees.
 
 Animate transforms
 :   <a href="files/.txt"><img class="demo floater zoom" src="files/.png"/></a>
@@ -291,21 +291,21 @@ piecewise `dest` $v_1$ $t_1$ $v_2$ $t_2$ ... $t_n$ $v_{n+1}$ (10 pt)
 
 
 lerp `dest` $t_1$ $v_1$ $t_2$ $v_2$ ... $t_n$ $v_n$ (10 pt)
-:   Define a variable `dest` to be the a piecewise-linear interpolation of several values.
+:   Define a variable `dest` to be the a piecewise-**l**inear int**erp**olation of several values.
     Arguments are (frame, value) pairs (with fractional frames permitted)
-    and are given in increasing `frame` order.
+    and are given in increasing order of $t$ (i.e., $t_i < t_{i+1}$).
     Prior to $t_1$, `dest` is $v_1$.
     After $t_n$, `dest` is $v_n$.
-    Between $t_i$ and $t_{i+1}$, `dest` changes smoothly from $v_i$ to $v_{i+1}$.
+    Between $t_i$ and $t_{i+1}$, `dest` changes linearly from $v_i$ to $v_{i+1}$.
 
-bez `dest` $t_1$ $a_1$ $b_1$ $c_1$ $t_2$ $a_2$ $b_2$ $c_2$ ... $c_n$ $a_{n+1}$ (15 pt)
+bez `dest` $t_1$ $a_1$ $b_1$ $c_1$ $t_2$ $a_2$ $b_2$ $c_2$ ... $c_{n-1}$ $t_n$ $a_{n}$ (15 pt)
 :   Similar to `lerp`, but using explicit cubic Bézier curves^[Explicit Bézier curves are also called nonparametric Bézier curves or polynomials in the Bernstein basis. They can be thought of as like the Bézier curves in HW2 but with scalar instad of vector control points, or as 2D Bézier curves where the $t$ axis control ponts are evenly spaced.] instead of linear interpolation between $t$ values.
     
     The control points between $t_i$ and $t_{i+1}$ are
     $a_i$, $b_i$, $c_i$, and $a_{i+1}$.
     
     Some variant of this function is used by most keyframe animation systems
-    when viewed in the "expert mode" or "graph editor" or the like.
+    and can be edited directly in the "expert mode" or "graph editor" or the like.
     
     <div class="aside">You might find our [Bézier reference](bezier.html) useful</div>
 
