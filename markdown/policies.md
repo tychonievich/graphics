@@ -136,9 +136,9 @@ In the past, some students have suggested that they are accustomed to giving les
 
 Task | Weight | Comments
 -----|--------|-----------------------------------------------------------------
-Quizzes     | 25% | Acceptance of late submissions and/or dropping some scores will be implemented
-Assignments | 50% | Approximately 10% each, but you'll have some point flexibility between them.  Extra credit in assignments will not transfer over to quizzes or final.
-Final Quiz  | 25% | The intent is to make this a (slightly reworded) selection from mid-semester quizzes' questions
+Quizzes     | 20% | Open book, administered online. Late submissions are not accepted, but we'll drop your lowest score.
+Assignments | 60% | Approximately 10% each, but you'll have some point flexibility between them.  Extra credit in assignments will not transfer over to quizzes or final.
+Final Quiz  | 20% | Closed, book, administered in-person, with questions selected from the quizzes given this semester.
 
 Your final grade is computed based on the percentage of points you have earned and is designed to match the GPA value of each letter. For reasons I do not understand, that is not a linear scale: for example, `A-` &minus; `B+` = 0.4 grade points while `B+` &minus; `B` = 0.3 grade points. For reasons even farther from my ken, the most common grading scale I have seen is also not linear but differently spaced than the grade points. Following is a scale spaced like the grade point scale:
 
