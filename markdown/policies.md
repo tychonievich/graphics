@@ -120,10 +120,7 @@ Estimating how long it will take someone to complete a coding assignment
 is always difficult.
 The target difficulty is 5--10 hours of focused effort each week,
 in addition to other course duties approximating 2.5 hours of class, 1 hour of reading, and 1 hour of quizzing per week.
-This is in keeping with [PROV-022](http://uvapolicy.virginia.edu/policy/PROV-022) suggests 3cr ≥ 135 hours of work and also notes
-
-> This policy establishes a minimum standard that does not restrict faculty from assigning a greater amount of academic work per credit.
-
+This is in keeping with [PROV-022](http://uvapolicy.virginia.edu/policy/PROV-022) which suggests 3cr ≥ 135 hours of work and also notes that "this policy establishes a minimum standard that does not restrict faculty from assigning a greater amount of academic work per credit."
 In the past, some students have suggested that they are accustomed to giving less than this minimum standard in other classes and that they had to adapt to this course meeting that standard.
 
 
