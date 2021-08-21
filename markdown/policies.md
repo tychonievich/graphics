@@ -188,7 +188,7 @@ Behave professionally.
 Never abuse anyone, including the emotional abuse of blaming others for your mistakes.
 Kindness is more important than correctness.
 
-If we have TAs, let them be students when they are not on the clock as TAs.
+Let our TAs be students when they are not on the clock as TAs.
 
 ## Honesty
 
