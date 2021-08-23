@@ -333,7 +333,7 @@ autobez `dest` $t_1$ $v_1$ $t_2$ $v_2$ ... (10 pt)
     </div>
 
 natspline `dest` $t_1$ $v_1$ $t_2$ $v_2$ ... (15 pt)
-:   `autobez` is nice in that it gives us a smooth Bézier that we can then let the artist edit like a bez`,
+:   `autobez` is nice in that it gives us a smooth Bézier that we can then let the artist edit like a `bez`,
     but it has discontinuties in its second derivative at each control point
     which, in motion, corresponds to an infinite "jerk force" at those points.
     
