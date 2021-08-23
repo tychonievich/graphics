@@ -124,10 +124,7 @@ Estimating how long it will take someone to complete a coding assignment
 is always difficult.
 The target difficulty is 5--10 hours of focused effort each week,
 in addition to other course duties approximating 2.5 hours of class, 1 hour of reading, and 1 hour of quizzing per week.
-This is in keeping with [PROV-022](http://uvapolicy.virginia.edu/policy/PROV-022) suggests 3cr ≥ 135 hours of work and also notes
-
-> This policy establishes a minimum standard that does not restrict faculty from assigning a greater amount of academic work per credit.
-
+This is in keeping with [PROV-022](http://uvapolicy.virginia.edu/policy/PROV-022) which suggests 3cr ≥ 135 hours of work and also notes that "this policy establishes a minimum standard that does not restrict faculty from assigning a greater amount of academic work per credit."
 In the past, some students have suggested that they are accustomed to giving less than this minimum standard in other classes and that they had to adapt to this course meeting that standard.
 
 
@@ -140,9 +137,9 @@ In the past, some students have suggested that they are accustomed to giving les
 
 Task | Weight | Comments
 -----|--------|-----------------------------------------------------------------
-Quizzes     | 25% | Acceptance of late submissions and/or dropping some scores will be implemented
-Assignments | 50% | Approximately 10% each, but you'll have some point flexibility between them.  Extra credit in assignments will not transfer over to quizzes or final.
-Final Quiz  | 25% | The intent is to make this a (slightly reworded) selection from mid-semester quizzes' questions
+Quizzes     | 20% | Open book, administered online. Late submissions are not accepted, but we'll drop your lowest score.
+Assignments | 60% | Approximately 10% each, but you'll have some point flexibility between them.  Extra credit in assignments will not transfer over to quizzes or final.
+Final Quiz  | 20% | Closed, book, administered in-person, with questions selected from the quizzes given this semester.
 
 Your final grade is computed based on the percentage of points you have earned and is designed to match the GPA value of each letter. For reasons I do not understand, that is not a linear scale: for example, `A-` &minus; `B+` = 0.4 grade points while `B+` &minus; `B` = 0.3 grade points. For reasons even farther from my ken, the most common grading scale I have seen is also not linear but differently spaced than the grade points. Following is a scale spaced like the grade point scale:
 
@@ -195,7 +192,7 @@ Behave professionally.
 Never abuse anyone, including the emotional abuse of blaming others for your mistakes.
 Kindness is more important than correctness.
 
-If we have TAs, let them be students when they are not on the clock as TAs.
+Let our TAs be students when they are not on the clock as TAs.
 
 ## Honesty
 
