@@ -83,8 +83,6 @@ reading:
       lnk: 'https://en.wikipedia.org/wiki/Raster_graphics'
     - txt: 'Fish'
       lnk: 'fish.html'
-    - txt: 'In-class activity'
-      lnk: 'https://kytos.cs.virginia.edu/graphics/raster.php'
     - txt: 'CRT'
       lnk: 'https://commons.wikimedia.org/wiki/File:CRT_screen._closeup.jpg'
     - txt: 'TFT'

@@ -261,11 +261,7 @@ Animate vertices (5 pt)
 
 Animate colors (10 pt)
 :   Allow the coordinates of colors to be variables or values.
-    Variables will be in the linear 0--1 color space and need to be both
-    clamp them to the nearest legal value if out of range
-    and converted to sRGB before display,
-    similar to HW3.
-    Values will be in the 0--255 sRGB color space, as they were for HW2.
+    Variables may go outside the 0--1 range and if so should be clamped to the nearest legal value before display,
 
 Animate textures (5 pt)
 :   Implement the `texture`, `texcoord`, and `trit` commands from HW2
