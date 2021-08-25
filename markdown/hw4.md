@@ -131,8 +131,8 @@ The required part is worth 50%
 
 ## Drawing objects
 
-<a href="files/hw4parent.txt"><img class="demo floater zoom" src="files/hw4parent-000.png"/></a>
-<a href="files/hw4drawing.txt"><img class="demo floater zoom" src="files/hw4drawing-000.png"/></a>
+<a href="files/hw4drawing.txt"><img class="demo zoom" src="files/hw4drawing-000.png"/></a>
+<a href="files/hw4parent.txt"><img class="demo zoom" src="files/hw4parent-000.png"/></a>
 
 pngs *width* *height* *filename* *frames*
 :	same syntax and semantics as HW0.
@@ -184,8 +184,8 @@ trif $i_1$ $i_2$ $i_3$
 
 ## Basic animation
 
-<a href="files/hw4paranim.txt"><img class="demo floater zoom" src="files/hw4paranim.png"/></a>
-<a href="files/hw4anim.txt"><img class="demo floater zoom" src="files/hw4anim.png"/></a>
+<a href="files/hw4paranim.txt"><img class="demo zoom" src="files/hw4paranim.png"/></a>
+<a href="files/hw4anim.txt"><img class="demo zoom" src="files/hw4anim.png"/></a>
 
 add `dest` $a$ $b$
 :   Create a new variable called `dest` that is equal to $a + b$
