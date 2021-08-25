@@ -209,8 +209,7 @@ cos `dest` $a$
 :   Create a new variable called `dest` that is equal to $\cos(a)$, where $a$ is specified in degrees.
 
 Animate transforms
-:   <a href="files/.txt"><img class="demo floater zoom" src="files/.png"/></a>
-    Allow the arguments of `position` and `quaternion`, as well as the mathematics operators above, to be any mix of variables and numbers.
+:   Allow the arguments of `position` and `quaternion`, as well as the mathematics operators above, to be any mix of variables and numbers.
 
 <hr style="clear:both"/>
 
