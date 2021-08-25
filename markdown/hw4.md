@@ -131,6 +131,9 @@ The required part is worth 50%
 
 ## Drawing objects
 
+<a href="files/hw4drawing.txt"><img class="demo floater zoom" src="files/hw4drawing-000.png"/></a>
+<a href="files/hw4parent.txt"><img class="demo floater zoom" src="files/hw4parent-000.png"/></a>
+
 pngs *width* *height* *filename* *frames*
 :	same syntax and semantics as HW0.
 
@@ -142,8 +145,7 @@ color $r$ $g$ $b$
 
 
 object *name* *parent*
-:	<a href="files/.txt"><img class="demo floater zoom" src="files/.png"/></a>
-	Begin a new object with the given *name*.
+:	Begin a new object with the given *name*.
     The *name* may be used to indicate this object as the *parent* of later objects.
     The special name "`world`" may appear in the *parent* field to indicate the object has no parent.
     
@@ -181,6 +183,9 @@ trif $i_1$ $i_2$ $i_3$
     Note that point indexing resets with each new object.
 
 ## Basic animation
+
+<a href="files/hw4anim.txt"><img class="demo floater zoom" src="files/hw4anim.png"/></a>
+<a href="files/hw4paranim.txt"><img class="demo floater zoom" src="files/hw4paranim.png"/></a>
 
 add `dest` $a$ $b$
 :   Create a new variable called `dest` that is equal to $a + b$
