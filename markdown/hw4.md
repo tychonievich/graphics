@@ -257,7 +257,7 @@ euler `xyz` $r_1$ $r_2$ $r_3$ (10 pt)
     Note that "first" means "as the left-most matrix", so `euler xyz` is the product of three matrices $R_z R_y R_x$.
 
 
-## More things animated (5--40 pt)
+## More things animated (5--35 pt)
 
 Animate vertices (5 pt)
 :   <a href="files/hw4verts.txt"><img class="demo zoom" src="files/hw4verts.png"/></a>
@@ -273,11 +273,9 @@ Animate textures (5 pt)
 :   Implement the `texture`, `texcoord`, and `trit` commands from HW2
     and allow `texcood` to be animated using variables.
 
-Animate projection (5 pt)
-:   Allow `loadp` to have variables as well as values in its definition.
-
 iflt $x$ $y$ (15 pt)<br/>else<br/>fi
-:   If $x < y$, perform the commands between `iflt` and the next `else` but not between the `else` and the next `fi`.
+:   <a href="files/hw4iflt.txt"><img class="demo zoom" src="files/hw4iflt.png"/></a>
+    If $x < y$, perform the commands between `iflt` and the next `else` but not between the `else` and the next `fi`.
     Otherwise, perform the commands between `else` and `fi`, not between `iflt` and `else`.
     
     These commands may wrap arbitrary content, including geometry, variable definitions, objects, transforms, etc.
