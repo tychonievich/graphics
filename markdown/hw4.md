@@ -131,8 +131,8 @@ The required part is worth 50%
 
 ## Drawing objects
 
-<a href="files/hw4drawing.txt"><img class="demo zoom" src="files/hw4drawing-000.png"/></a>
-<a href="files/hw4parent.txt"><img class="demo zoom" src="files/hw4parent-000.png"/></a>
+<a href="files/hw4drawing.txt"><img class="demo zoom" src="files/hw4drawing.png"/></a>
+<a href="files/hw4parent.txt"><img class="demo zoom" src="files/hw4parent.png"/></a>
 
 pngs *width* *height* *filename* *frames*
 :	same syntax and semantics as HW0.
@@ -218,14 +218,16 @@ Animate transforms
 ## More Transformations (5--35 pt)
 
 origin $o_x$ $o_y$ $o_z$ (5 pt)
-:   An optional origin of the object; if missing defaults to `origin 0 0 0`.
+:   <a href="files/hw4origin.txt"><img class="demo zoom" src="files/hw4origin.png"/></a>
+    An optional origin of the object; if missing defaults to `origin 0 0 0`.
     
     Describes the origin around which other transforms occur.
 
     Each object will have at most one `origin`; if present, it will precede any geometry for that object.
 
 scale $s_x$ $s_y$ $s_z$ (10 pt)
-:   An optional transformation of the object; if missing defaults to `scale 1 1 1`.
+:   <a href="files/hw4scale.txt"><img class="demo zoom" src="files/hw4scale.png"/></a>
+    An optional transformation of the object; if missing defaults to `scale 1 1 1`.
     
     Describes the axis-aligned components of the scale of this object relative to its parent, in a coordinate system modified by its parent's position, orientation, and scale
     but not modified by this object's position or orientation.
@@ -233,7 +235,8 @@ scale $s_x$ $s_y$ $s_z$ (10 pt)
     Each object will have at most one `scale`; if present, it will precede any geometry for that object.
 
 anyscale $s_x$ $s_y$ $s_z$ $w$ $x$ $y$ $z$ (10 pt)
-:   An optional transformation of the object.
+:   <a href="files/hw4anyscale.txt"><img class="demo zoom" src="files/hw4anyscale.png"/></a>
+    An optional transformation of the object.
     
     Describes the scale of this object along arbitrary axes as given by a quaternion.
     The application of `anyscale` is equivalent to rotating by the quaternion,
@@ -243,7 +246,8 @@ anyscale $s_x$ $s_y$ $s_z$ $w$ $x$ $y$ $z$ (10 pt)
     Each object will have one `scale` or one `anyscale` or neither; if either is present, it will precede any geometry for that object.
 
 euler `xyz` $r_1$ $r_2$ $r_3$ (10 pt)
-:   An alternative representation of the orientation of an object.
+:   <a href="files/hw4euler1.txt"><img class="demo zoom" src="files/hw4euler1.png"/></a>
+    An alternative representation of the orientation of an object.
     
     Describes orientation as three consecutive principle-axis rotations.
     The order of the rotations will be given by the `xyz` argument, which will contain three letters (`x`, `y`, and `z`) in an arbitrary order (e.g. `yxz` or `zxy` or ...).
