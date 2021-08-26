@@ -260,7 +260,8 @@ euler `xyz` $r_1$ $r_2$ $r_3$ (10 pt)
 ## More things animated (5--40 pt)
 
 Animate vertices (5 pt)
-:   Allow the coordinates of vertices to be variables or values.
+:   <a href="files/hw4verts.txt"><img class="demo zoom" src="files/hw4verts.png"/></a>
+    Allow the coordinates of vertices to be variables or values.
     This may mean that the vertices of a triangle are sometimes all the same location in space.
 
 Animate colors (10 pt)
