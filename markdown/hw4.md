@@ -284,12 +284,13 @@ iflt $x$ $y$ (15 pt)<br/>else<br/>fi
 ## Animations used in keyframes (10--60 pt)
 
 piecewise `dest` $v_1$ $t_1$ $v_2$ $t_2$ ... $t_n$ $v_{n+1}$ (10 pt)
-:   Create a new variable called `dest` out of a set of old variables using the logic
+:   <a href="files/hw4piecewise.txt"><img class="demo zoom" src="files/hw4piecewise.png"/></a>
+    Create a new variable called `dest` out of a set of old variables using the logic
     
-    if $t \le t_1$: use $v_1$\
-    else if $t \le t_2$: use $v_2$\
+    if `f` $\le t_1$: use $v_1$\
+    else if `f` $\le t_2$: use $v_2$\
     ...\
-    else if $t \le t_n$: use $v_n$\
+    else if `f` $\le t_n$: use $v_n$\
     else use $v_{n+1}$
 
 
