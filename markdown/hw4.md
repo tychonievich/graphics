@@ -265,7 +265,8 @@ Animate vertices (5 pt)
     This may mean that the vertices of a triangle are sometimes all the same location in space.
 
 Animate colors (10 pt)
-:   Allow the coordinates of colors to be variables or values.
+:   <a href="files/hw4color.txt"><img class="demo zoom" src="files/hw4color.png"/></a>
+    Allow the coordinates of colors to be variables or values.
     Variables may go outside the 0--1 range and if so should be clamped to the nearest legal value before display,
 
 Animate textures (5 pt)
