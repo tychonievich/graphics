@@ -259,7 +259,7 @@ euler `xyz` $r_1$ $r_2$ $r_3$ (10 pt)
     Note that "first" means "as the left-most matrix", so `euler xyz` is the product of three matrices $R_z R_y R_x$.
 
 
-## More things animated (5--35 pt)
+## More things animated (5--30 pt)
 
 Animate vertices (5 pt)
 :   <a href="files/hw4verts.txt"><img class="demo zoom" src="files/hw4verts.png"/></a>
@@ -271,10 +271,6 @@ Animate colors (10 pt)
     Allow the coordinates of colors to be variables or values.
     Variables may go outside the 0--1 range and if so should be clamped to the nearest legal value before display,
 
-Animate textures (5 pt)
-:   Implement the `texture`, `texcoord`, and `trit` commands from HW2
-    and allow `texcood` to be animated using variables.
-
 iflt $x$ $y$ (15 pt)<br/>else<br/>fi
 :   <a href="files/hw4iflt.txt"><img class="demo zoom" src="files/hw4iflt.png"/></a>
     If $x < y$, perform the commands between `iflt` and the next `else` but not between the `else` and the next `fi`.
@@ -283,7 +279,13 @@ iflt $x$ $y$ (15 pt)<br/>else<br/>fi
     These commands may wrap arbitrary content, including geometry, variable definitions, objects, transforms, etc.
     To simplify parsing, one `iflt` will never contain a nested `iflt`.
 
-## Animations used in keyframes (10--60 pt)
+<!--
+Animate textures (5 pt)
+:   Implement the `texture`, `texcoord`, and `trit` commands from HW2
+    and allow `texcood` to be animated using variables.
+-->
+
+## Animations used in keyframes (10--45 pt)
 
 piecewise `dest` $v_1$ $t_1$ $v_2$ $t_2$ ... $t_n$ $v_{n+1}$ (10 pt)
 :   <a href="files/hw4piecewise.txt"><img class="demo zoom" src="files/hw4piecewise.png"/></a>
@@ -356,7 +358,7 @@ natspline `dest` $t_1$ $v_1$ $t_2$ $v_2$ ... (15 pt)
     or "natural spline".
 -->
 
-## Camera support (0--40 pt)
+## Camera support (0--30 pt)
 
 camera `parent` (20 pt)
 :   <a href="files/hw4camera.txt"><img class="demo zoom" src="files/hw4camera.png"/></a>
@@ -366,7 +368,7 @@ camera `parent` (20 pt)
     
     For this set of optional points, you only need to support the specific `parent` value "`world`".
 
-Camera in scene graph (20 pt)
+Camera in scene graph (10 pt)
 :   <a href="files/hw4camera2.txt"><img class="demo zoom" src="files/hw4camera2.png"/></a>
     Let the camera have a `parent` that is an object, not just the "`world`".
     Let other objects use `camera` as their parent.
