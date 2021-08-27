@@ -1,5 +1,37 @@
 ﻿---
 title: 'HW5: Project or Images'
+notes:
+    - bones
+        - track to
+            - principle axis via cross product
+        - track point to
+            - (track pt) (track goal) (track pt)^-1
+        - track and scale to
+        - track and stretch to
+        - FABRIK
+        - FABRIK with starter pose
+    - fireworks
+        - bounce walls
+        - reburst
+        - time-lapse dynamics
+        - keyframe
+    - boids
+    - landscape
+        - square-square
+        - diamond-square
+        - erosion
+        - keyframe
+    - tree
+        - L-system
+        - stochastic
+        - pruned
+        - light and gravity
+    - rope
+        - mass-spring
+        - tri-diagonal
+    - fluid
+        - shallow water
+        - stam
 ...
 
 # Overview
