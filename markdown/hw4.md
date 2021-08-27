@@ -296,6 +296,7 @@ piecewise `dest` $v_1$ $t_1$ $v_2$ $t_2$ ... $t_n$ $v_{n+1}$ (10 pt)
 
 lerp `dest` $t_1$ $v_1$ $t_2$ $v_2$ ... $t_n$ $v_n$ (10 pt)
 :   <a href="files/hw4lerp.txt"><img class="demo zoom" src="files/hw4lerp.png"/></a>
+    <a href="files/hw4lerp2.txt"><img class="demo zoom" src="files/hw4lerp2.png"/></a>
     Define a variable `dest` to be the a piecewise-**l**inear int**erp**olation of several values.
     Arguments are (frame, value) pairs (with fractional frames permitted)
     and are given in increasing order of $t$ (i.e., $t_i < t_{i+1}$).
@@ -304,7 +305,8 @@ lerp `dest` $t_1$ $v_1$ $t_2$ $v_2$ ... $t_n$ $v_n$ (10 pt)
     Between $t_i$ and $t_{i+1}$, `dest` changes linearly from $v_i$ to $v_{i+1}$.
 
 bez `dest` $t_1$ $a_1$ $b_1$ $c_1$ $t_2$ $a_2$ $b_2$ $c_2$ ... $c_{n-1}$ $t_n$ $a_{n}$ (15 pt)
-:   Similar to `lerp`, but using explicit cubic Bézier curves^[Explicit Bézier curves are also called nonparametric Bézier curves or polynomials in the Bernstein basis. They can equivalently treated as either Bézier curves with scalar instead of vector control points or 2D Bézier curves where the $t$ axis control points are evenly spaced.] instead of linear interpolation between $t$ values.
+:   <a href="files/hw4bez.txt"><img class="demo zoom" src="files/hw4bez.png"/></a>
+    Similar to `lerp`, but using explicit cubic Bézier curves^[Explicit Bézier curves are also called nonparametric Bézier curves or polynomials in the Bernstein basis. They can equivalently treated as either Bézier curves with scalar instead of vector control points or 2D Bézier curves where the $t$ axis control points are evenly spaced.] instead of linear interpolation between $t$ values.
     
     The control points between $t_i$ and $t_{i+1}$ are
     $a_i$, $b_i$, $c_i$, and $a_{i+1}$.
