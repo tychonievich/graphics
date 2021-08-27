@@ -129,6 +129,8 @@ and may be necessary to implement some of the optional components.
 
 The required part is worth 50%
 
+I use two words for information you should ignore during rendering: `fps` for the frame per second used in my reference animated PNGs and `#` for comments. Because you've been ignoring unknown keywords since HW0, the fact these are in the files shouldn't cause you any problems.
+
 ## Drawing objects
 
 <a href="files/hw4drawing.txt"><img class="demo zoom" src="files/hw4drawing.png"/></a>
@@ -317,7 +319,8 @@ bez `dest` $t_1$ $a_1$ $b_1$ $c_1$ $t_2$ $a_2$ $b_2$ $c_2$ ... $c_{n-1}$ $t_n$ $
     <div class="aside">You might find our [Bézier reference](bezier.html) useful</div>
 
 autobez `dest` $t_1$ $v_1$ $t_2$ $v_2$ ... (10 pt)
-:   A shorthand way of defining `bez`,
+:   <a href="files/hw4autobez.txt"><img class="demo zoom" src="files/hw4autobez.png"/></a>
+    A shorthand way of defining `bez`,
     some variant of which is commonly used in keyframe animation systems as the initial guess at desired tweening.
     
     The input format matches `lerp`: a set of (frame, value) pairs.
