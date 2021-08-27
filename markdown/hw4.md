@@ -342,6 +342,7 @@ autobez `dest` $t_1$ $v_1$ $t_2$ $v_2$ ... (10 pt)
     - $1.0$ for frames 27+
     </div>
 
+<!--
 natspline `dest` $t_1$ $v_1$ $t_2$ $v_2$ ... (15 pt)
 :   `autobez` is nice in that it gives us a smooth Bézier that we can then let the artist edit like a `bez`,
     but it has discontinuties in its second derivative at each control point
@@ -353,19 +354,21 @@ natspline `dest` $t_1$ $v_1$ $t_2$ $v_2$ ... (15 pt)
     Many equivalent explanations of how to do this can be found online be searching for "spline interpolation"
     or "interpolating cubic spline"
     or "natural spline".
-
+-->
 
 ## Camera support (0--40 pt)
 
 camera `parent` (20 pt)
-:   A file may contain a single `camera` command, which is followed by the camera's parent.
+:   <a href="files/hw4camera.txt"><img class="demo zoom" src="files/hw4camera.png"/></a>
+    A file may contain a single `camera` command, which is followed by the camera's parent.
     The input treats the camera like an object (with `position`, `quaternion`, etc), except it may not have geometry.
     See the overview for guidance on how to draw with a moving camera.
     
     For this set of optional points, you only need to support the specific `parent` value "`world`".
 
 Camera in scene graph (20 pt)
-:   Let the camera have a `parent` that is an object, not just the "`world`".
+:   <a href="files/hw4camera2.txt"><img class="demo zoom" src="files/hw4camera2.png"/></a>
+    Let the camera have a `parent` that is an object, not just the "`world`".
     Let other objects use `camera` as their parent.
 
 
