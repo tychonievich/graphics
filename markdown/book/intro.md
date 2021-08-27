@@ -45,8 +45,7 @@ The simplest and most prevalent form a animation API is an event loop with callb
 
 Some animation APIs also provide a way to express changes over time as a mathematical or geometric function. Simple versions of these, such as blinking cursors, mouse-over color change, and easing curves are present in many UIs. More complicated versions include a few progamatic APIs like the SMIL animation layer for SVG, the `@keyframes` rule for CSS, but are more often part of an animation tool with a primarily-visual interface like Maya, Blender, and Houdini.
 
-HW4 will explore animation APIs.
-The current hope is to have you use a callback API to implement a few more involved operations, but I haven't yet scoped that to ensure it is doable in the allotted time so that might change.
+In this class, you'll implement an animated scene graph in HW4.
 
 # Simulation
 Generates portions of the content to be drawn using some approximation of real-world phenomena.

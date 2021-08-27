@@ -70,6 +70,11 @@ lectures:
   - review
 
 reading:
+  intro:
+    - txt: 'Policies'
+      lnk: 'http://www.cs.virginia.edu/luther/4810/F2021/policies.html'
+    - txt: 'Intro'
+      lnk: 'http://www.cs.virginia.edu/luther/4810/F2021/book/intro.html'
   brushes:
     - txt: 'Bristle, color smudge, hatching, pixel, and sketch brushes'
       lnk: 'https://docs.krita.org/en/reference_manual/brushes/brush_engines.html'
@@ -78,8 +83,6 @@ reading:
       lnk: 'https://en.wikipedia.org/wiki/Raster_graphics'
     - txt: 'Fish'
       lnk: 'fish.html'
-    - txt: 'In-class activity'
-      lnk: 'https://kytos.cs.virginia.edu/graphics/raster.php'
     - txt: 'CRT'
       lnk: 'https://commons.wikimedia.org/wiki/File:CRT_screen._closeup.jpg'
     - txt: 'TFT'

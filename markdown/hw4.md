@@ -131,6 +131,9 @@ The required part is worth 50%
 
 ## Drawing objects
 
+<a href="files/hw4drawing.txt"><img class="demo zoom" src="files/hw4drawing.png"/></a>
+<a href="files/hw4parent.txt"><img class="demo zoom" src="files/hw4parent.png"/></a>
+
 pngs *width* *height* *filename* *frames*
 :	same syntax and semantics as HW0.
 
@@ -142,8 +145,7 @@ color $r$ $g$ $b$
 
 
 object *name* *parent*
-:	<a href="files/.txt"><img class="demo floater zoom" src="files/.png"/></a>
-	Begin a new object with the given *name*.
+:	Begin a new object with the given *name*.
     The *name* may be used to indicate this object as the *parent* of later objects.
     The special name "`world`" may appear in the *parent* field to indicate the object has no parent.
     
@@ -182,6 +184,9 @@ trif $i_1$ $i_2$ $i_3$
 
 ## Basic animation
 
+<a href="files/hw4paranim.txt"><img class="demo zoom" src="files/hw4paranim.png"/></a>
+<a href="files/hw4anim.txt"><img class="demo zoom" src="files/hw4anim.png"/></a>
+
 add `dest` $a$ $b$
 :   Create a new variable called `dest` that is equal to $a + b$
 
@@ -204,8 +209,7 @@ cos `dest` $a$
 :   Create a new variable called `dest` that is equal to $\cos(a)$, where $a$ is specified in degrees.
 
 Animate transforms
-:   <a href="files/.txt"><img class="demo floater zoom" src="files/.png"/></a>
-    Allow the arguments of `position` and `quaternion`, as well as the mathematics operators above, to be any mix of variables and numbers.
+:   Allow the arguments of `position` and `quaternion`, as well as the mathematics operators above, to be any mix of variables and numbers.
 
 <hr style="clear:both"/>
 
@@ -214,14 +218,16 @@ Animate transforms
 ## More Transformations (5--35 pt)
 
 origin $o_x$ $o_y$ $o_z$ (5 pt)
-:   An optional origin of the object; if missing defaults to `origin 0 0 0`.
+:   <a href="files/hw4origin.txt"><img class="demo zoom" src="files/hw4origin.png"/></a>
+    An optional origin of the object; if missing defaults to `origin 0 0 0`.
     
     Describes the origin around which other transforms occur.
 
     Each object will have at most one `origin`; if present, it will precede any geometry for that object.
 
 scale $s_x$ $s_y$ $s_z$ (10 pt)
-:   An optional transformation of the object; if missing defaults to `scale 1 1 1`.
+:   <a href="files/hw4scale.txt"><img class="demo zoom" src="files/hw4scale.png"/></a>
+    An optional transformation of the object; if missing defaults to `scale 1 1 1`.
     
     Describes the axis-aligned components of the scale of this object relative to its parent, in a coordinate system modified by its parent's position, orientation, and scale
     but not modified by this object's position or orientation.
@@ -229,7 +235,8 @@ scale $s_x$ $s_y$ $s_z$ (10 pt)
     Each object will have at most one `scale`; if present, it will precede any geometry for that object.
 
 anyscale $s_x$ $s_y$ $s_z$ $w$ $x$ $y$ $z$ (10 pt)
-:   An optional transformation of the object.
+:   <a href="files/hw4anyscale.txt"><img class="demo zoom" src="files/hw4anyscale.png"/></a>
+    An optional transformation of the object.
     
     Describes the scale of this object along arbitrary axes as given by a quaternion.
     The application of `anyscale` is equivalent to rotating by the quaternion,
@@ -239,7 +246,8 @@ anyscale $s_x$ $s_y$ $s_z$ $w$ $x$ $y$ $z$ (10 pt)
     Each object will have one `scale` or one `anyscale` or neither; if either is present, it will precede any geometry for that object.
 
 euler `xyz` $r_1$ $r_2$ $r_3$ (10 pt)
-:   An alternative representation of the orientation of an object.
+:   <a href="files/hw4euler1.txt"><img class="demo zoom" src="files/hw4euler1.png"/></a>
+    An alternative representation of the orientation of an object.
     
     Describes orientation as three consecutive principle-axis rotations.
     The order of the rotations will be given by the `xyz` argument, which will contain three letters (`x`, `y`, and `z`) in an arbitrary order (e.g. `yxz` or `zxy` or ...).
@@ -249,49 +257,46 @@ euler `xyz` $r_1$ $r_2$ $r_3$ (10 pt)
     Note that "first" means "as the left-most matrix", so `euler xyz` is the product of three matrices $R_z R_y R_x$.
 
 
-## More things animated (5--40 pt)
+## More things animated (5--35 pt)
 
 Animate vertices (5 pt)
-:   Allow the coordinates of vertices to be variables or values.
+:   <a href="files/hw4verts.txt"><img class="demo zoom" src="files/hw4verts.png"/></a>
+    Allow the coordinates of vertices to be variables or values.
     This may mean that the vertices of a triangle are sometimes all the same location in space.
 
 Animate colors (10 pt)
-:   Allow the coordinates of colors to be variables or values.
-    Variables will be in the linear 0--1 color space and need to be both
-    clamp them to the nearest legal value if out of range
-    and converted to sRGB before display,
-    similar to HW3.
-    Values will be in the 0--255 sRGB color space, as they were for HW2.
+:   <a href="files/hw4color.txt"><img class="demo zoom" src="files/hw4color.png"/></a>
+    Allow the coordinates of colors to be variables or values.
+    Variables may go outside the 0--1 range and if so should be clamped to the nearest legal value before display,
 
 Animate textures (5 pt)
 :   Implement the `texture`, `texcoord`, and `trit` commands from HW2
     and allow `texcood` to be animated using variables.
 
-Animate projection (5 pt)
-:   Allow `loadp` to have variables as well as values in its definition.
-
-iflt $x$ $y$ (15 pt)\
-else\
-fi
-:   If $x < y$, perform the commands between `iflt` and the next `else` but not between the `else` and the next `fi`.
+iflt $x$ $y$ (15 pt)<br/>else<br/>fi
+:   <a href="files/hw4iflt.txt"><img class="demo zoom" src="files/hw4iflt.png"/></a>
+    If $x < y$, perform the commands between `iflt` and the next `else` but not between the `else` and the next `fi`.
     Otherwise, perform the commands between `else` and `fi`, not between `iflt` and `else`.
+    
     These commands may wrap arbitrary content, including geometry, variable definitions, objects, transforms, etc.
     To simplify parsing, one `iflt` will never contain a nested `iflt`.
 
 ## Animations used in keyframes (10--60 pt)
 
 piecewise `dest` $v_1$ $t_1$ $v_2$ $t_2$ ... $t_n$ $v_{n+1}$ (10 pt)
-:   Create a new variable called `dest` out of a set of old variables using the logic
+:   <a href="files/hw4piecewise.txt"><img class="demo zoom" src="files/hw4piecewise.png"/></a>
+    Create a new variable called `dest` out of a set of old variables using the logic
     
-    if $t \le t_1$: use $v_1$\
-    else if $t \le t_2$: use $v_2$\
+    if `f` $\le t_1$: use $v_1$\
+    else if `f` $\le t_2$: use $v_2$\
     ...\
-    else if $t \le t_n$: use $v_n$\
+    else if `f` $\le t_n$: use $v_n$\
     else use $v_{n+1}$
 
 
 lerp `dest` $t_1$ $v_1$ $t_2$ $v_2$ ... $t_n$ $v_n$ (10 pt)
-:   Define a variable `dest` to be the a piecewise-**l**inear int**erp**olation of several values.
+:   <a href="files/hw4lerp.txt"><img class="demo zoom" src="files/hw4lerp.png"/></a>
+    Define a variable `dest` to be the a piecewise-**l**inear int**erp**olation of several values.
     Arguments are (frame, value) pairs (with fractional frames permitted)
     and are given in increasing order of $t$ (i.e., $t_i < t_{i+1}$).
     Prior to $t_1$, `dest` is $v_1$.
@@ -299,7 +304,7 @@ lerp `dest` $t_1$ $v_1$ $t_2$ $v_2$ ... $t_n$ $v_n$ (10 pt)
     Between $t_i$ and $t_{i+1}$, `dest` changes linearly from $v_i$ to $v_{i+1}$.
 
 bez `dest` $t_1$ $a_1$ $b_1$ $c_1$ $t_2$ $a_2$ $b_2$ $c_2$ ... $c_{n-1}$ $t_n$ $a_{n}$ (15 pt)
-:   Similar to `lerp`, but using explicit cubic Bézier curves^[Explicit Bézier curves are also called nonparametric Bézier curves or polynomials in the Bernstein basis. They can be thought of as like the Bézier curves in HW2 but with scalar instad of vector control points, or as 2D Bézier curves where the $t$ axis control ponts are evenly spaced.] instead of linear interpolation between $t$ values.
+:   Similar to `lerp`, but using explicit cubic Bézier curves^[Explicit Bézier curves are also called nonparametric Bézier curves or polynomials in the Bernstein basis. They can equivalently treated as either Bézier curves with scalar instead of vector control points or 2D Bézier curves where the $t$ axis control points are evenly spaced.] instead of linear interpolation between $t$ values.
     
     The control points between $t_i$ and $t_{i+1}$ are
     $a_i$, $b_i$, $c_i$, and $a_{i+1}$.
@@ -333,7 +338,7 @@ autobez `dest` $t_1$ $v_1$ $t_2$ $v_2$ ... (10 pt)
     </div>
 
 natspline `dest` $t_1$ $v_1$ $t_2$ $v_2$ ... (15 pt)
-:   `autobez` is nice in that it gives us a smooth Bézier that we can then let the artist edit like a bez`,
+:   `autobez` is nice in that it gives us a smooth Bézier that we can then let the artist edit like a `bez`,
     but it has discontinuties in its second derivative at each control point
     which, in motion, corresponds to an infinite "jerk force" at those points.
     

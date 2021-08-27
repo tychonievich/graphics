@@ -20,8 +20,8 @@ we will explore a few more specialized topics.
 > "The pain of parting is nothing to the joy of meeting again." 
 > <div>---Charles Dickens</div>
 
-It is expected that this class will be in-person.
-Most lectures will be recorded, but some in-class demonstrations will not make it into those recordings.
+It is expected that this class will be in-person in **Olsson 011**.
+Lectures will be recorded, but some in-class demonstrations will not make it into those recordings.
 While I do not grade attendance or participation,
 experience suggests that presence and attention in class is strongly correlated with grade.
 
@@ -54,17 +54,21 @@ There will be a final quiz, which will be administered in-person during the univ
 > <div>---They Might Be Giants</div>
 
 Course forums
-:	Online forum: TBD\
+:	Online forum: Discord (see join link on Collab)\
 	In-person forum: TBD
 	
 	All course-material questions should be directed to the course forums.
 	Personal matters should be directed to the instructor directly.
+
+	Most announcements will be delivered in lecture and/or in the online forum. Only specially urgent notifications will be sent over email.
 
 Instructor
 :	Luther Tychonievich\
 	Rice 208\
 	`tychonievich@virginia.edu`\
 	434-243-3789
+
+	All course-material questions should be directed to the course forums, not email.
 	
 	If you email, please include 4810 in the subject line.
 	I get so many emails each day that those that are not obviously related to one of my classes may not be read very quickly.
