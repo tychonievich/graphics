@@ -131,10 +131,14 @@
   files:
   - lectures/2020-11-23-2020-11-23-slides.pdf
   video: lectures/2020-11-23.webm
-
 2021-08-25:
   audio: lectures/audio-2021-08-25.mp3
-  video: lectures/video-2021-08-25.webm
   files:
   - lectures/notes-2021-08-25.txt
   - lectures/slides-2021-08-25.pdf
+  video: lectures/video-2021-08-25.webm
+2021-08-30:
+  audio: lectures/audio-2021-08-30.mp3
+  files:
+  - lectures/slides-2021-08-30_2.pdf
+  video: lectures/video-2021-08-30.webm
