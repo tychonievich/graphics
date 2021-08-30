@@ -565,21 +565,24 @@ ffmpeg -r 30 -i someprefix%03d.png anim.mp4
 ffmpeg -r 12 -i someprefix%03d.png anim.gif
 ```
 
+Ffmpeg will not correctly handle the PNGs if they are compressed with a color index instead of RGBA format.
+Your PNG creation library may have a way to force RGBA format; if not, you 
+
 Ffmpeg can do a *lot* more than this; see [the docs](https://ffmpeg.org/documentation.html) if you are interested.
+
 </details>
 
 <details><summary>Using ImageMagick</summary>
-The newest versions of the image comparison and manipulation tools ImageMagick can create APNG files.
-As of August 2021, GraphicsMagick does not.
+Versions 7.0.10-31 and later of the image comparison and manipulation tools ImageMagick can create APNG files.
+As of August 2021, GraphicsMagick does not support APNG.
 
 
 ```bash
-convert -delay 1x16 -dispose Background -loop 0 someprefix*.png anim.apng
+convert -delay 1x16 -dispose Background -loop 0 someprefix*.png apng:anim.png
 ## -delay 1x16          pause for 1/16 of a second between each frame
 ## -dispose Background  draw each frame on a clean background
 ## -loop 0              repeat forever
-## anim.apng            requires the .apng suffix 
-mv anim.apng anim.png   # change suffix to .png so browsers will open it
+## apng:anim.png        save to `anim.png` in APNG format
 ```
 </details>
 
