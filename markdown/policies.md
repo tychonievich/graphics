@@ -67,7 +67,11 @@ Instructor
 	Rice 208\
 	`tychonievich@virginia.edu`\
 	434-243-3789
-
+	
+	Office hours:\
+	Monday 11--12 on Discord\
+	Tuesday 1--2 and Friday 2--4 in Rice 208
+	
 	All course-material questions should be directed to the course forums, not email.
 	
 	If you email, please include 4810 in the subject line.

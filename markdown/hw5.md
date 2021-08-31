@@ -139,8 +139,35 @@ reburst *type* *chance* $n$ $t$ $v$
 	For each such particle, there is a *chance* percent chance that it becomes the center of a new `burst` of the given *type*, $n$, and $v$
 	and a (100 − *chance*) percent chance that it instead simply vanishes.
 
+selfcollide *elasticity* $r$
+:	Treat each particle as a sphere with radius $r$
+	and resolve particle-particle collisions so that no to particles ever overlap.
+	When a collision occurs, use the given *elasticity* to resolve it:
+	*elasticity* 0 causes the two to stick together, *elasticity* 1 causes them to bounce off with full energy.
+	
+	Assume all particles have the same mass. All particle-particle collisions should preserve momentum.
+	
 	
 ## `simulation boids`
+
+Implement [Craig Reynold's Boids algorithm](https://www.red3d.com/cwr/boids/)
+
+distance $d$
+:	The sensing distance, as defined in the Boids algorithm page linked above.
+
+angle *degrees*
+:	The sensing angle, as defined in the Boids algorithm page linked above.
+
+maxturn *degrees*
+:	Limit each boid to turning at most the given number of degrees each frame
+
+speed *min* *max*
+:	Keep each boid moving between these two units-per-frame speed bounds
+
+steering $s$ $a$ $c$
+:	Defines the balance between the three steering behaviors.
+
+	Alignment 
 
 ## `simulation landscape`
 
