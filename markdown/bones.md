@@ -48,7 +48,7 @@ To point the +z axis toward point $(0,4,3)$ and roll the -y axis toward $(0,0,1)
 1. cross-product the secondary vector: $\vec z \times (0,0,1) = (0.8,0,0)$
 1. cross-product that with the primary vector: $(0.8,0,0) \times \vec z = (0,-0.48,0.64)$
 1. normalize the result and handle the axis sign: $\vec y = (0, 0.6, -0.8)$
-1. find the third axis: $\vec x = \vec y \cross \vec z = (1,0,0)$
+1. find the third axis: $\vec x = \vec y \times \vec z = (1,0,0)$
 1. for the rotation matrix $$\begin{bmatrix}1 & 0 & 0 \\ 0 & 0.6 & 0.8\\0 & -0.8 & 0.6\end{bmatrix}$$
 
 And yes, I did pick this example carefully so that the math would work out without any radicals or long decimals.
