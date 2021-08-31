@@ -94,15 +94,15 @@ To point the +y axis at $(3,12,4)$ we'd compute
 
 - $\displaystyle \vec a' = (0,1,0)$
 
-- $\displaystyle \vec p' = (\frac{3}{13},\frac{12}{13},\frac{4}{13})$
+- $\displaystyle \vec p' = \left(\frac{3}{13},\frac{12}{13},\frac{4}{13}\right)$
 
-- $\displaystyle \vec r' = (\frac{4}{13}, 0, \frac{-3}{13})$
+- $\displaystyle \vec r' = \left(\frac{4}{13}, 0, \frac{-3}{13}\right)$
 
 - $\displaystyle c = \frac{12}{13}$
 
 - $\displaystyle s = \frac{5}{13}$
 
-- $\displaystyle \vec r = (\frac{4}{5},0,\frac{-3}{5})$
+- $\displaystyle \vec r = \left(\frac{4}{5},0,\frac{-3}{5}\right)$
 
 and build the matrix
 
