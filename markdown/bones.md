@@ -93,10 +93,15 @@ which, combined with the matrix above, gives us the minimal rotation to point $\
 To point the +y axis at $(3,12,4)$ we'd compute
 
 - $\displaystyle \vec a' = (0,1,0)$
+
 - $\displaystyle \vec p' = (\frac{3}{13},\frac{12}{13},\frac{4}{13})$
+
 - $\displaystyle \vec r' = (\frac{4}{13}, 0, \frac{-3}{13})$
+
 - $\displaystyle c = \frac{12}{13}$
+
 - $\displaystyle s = \frac{5}{13}$
+
 - $\displaystyle \vec r = (\frac{4}{5},0,\frac{-3}{5})$
 
 and build the matrix
