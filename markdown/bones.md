@@ -76,7 +76,7 @@ The smallest rotation does not move points that are perpendicular to the old and
 That means that $\vec r$ is perpendicular to both the old axis $\vec a$ and the target point $\vec p$,
 meaning it can be found by a cross product.
 A cross product will also give us the sine of the angle ($s$),
-and a dot product can give us the cosine of the angle ($c),
+and a dot product can give us the cosine of the angle ($c$),
 which is all we need.
 Ergo, we have
 
