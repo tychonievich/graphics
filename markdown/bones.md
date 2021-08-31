@@ -104,6 +104,6 @@ and build the matrix
 $$\begin{bmatrix}
 \dfrac{316}{325} & \dfrac{3}{13} & \dfrac{-12}{325} \\ \\
 \dfrac{-3}{13} & \dfrac{12}{13}  & \dfrac{-4}{13} \\ \\ 
-\dfrac{-12}{325} & \dfrac{4}{13} & \dfrac{309}{325} \\ \\
+\dfrac{-12}{325} & \dfrac{4}{13} & \dfrac{309}{325} \\
 \end{bmatrix}$$
 :::
