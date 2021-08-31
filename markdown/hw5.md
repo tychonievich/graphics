@@ -94,13 +94,13 @@ burst *type* $n$ $x$ $y$ $z$ $t$ $v$
 :	At frame $t$, create a burst of $n$ moving particles of the given *type* centered at $(x,y,z)$ with burst velocity $v$.
 	The types are:
 	
-	normal
+	`normal`
 	:	Select velocities from a 3D normal distribution with standard deviation $v$
 	
-	sphere
+	`sphere`
 	:	Select velocities uniformly from a radius-$v$ sphere
 
-	shell
+	`shell`
 	:	Select velocities uniformly from the surface of a radius-$v$ sphere
 
 	Every `burst` command will be followed by a shape command
