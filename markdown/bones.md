@@ -67,10 +67,10 @@ One way of computing a rotation is by a rotation angle $\theta$ and unit-length 
 the matrix for that rotation is
 $$\begin{bmatrix}
 r_x^2(1-c)+c & r_x r_y (1-c) - r_z s & r_x r_z (1-c) + r_y s  \\
-r_x r_y (1-c) + r_z s & r_y^2(1-c)+c  & r_y r_z (1-c) - r_y s  \\
+r_x r_y (1-c) + r_z s & r_y^2(1-c)+c  & r_y r_z (1-c) - r_x s  \\
 r_x r_z (1-c) - r_y s & r_y r_z (1-c) + r_x s & r_z^2(1-c)+c \\
 \end{bmatrix}$$
-where $c = \cos(\theta)$ and $s = \sin(theta)$.
+where $c = \cos(\theta)$ and $s = \sin(\theta)$.
 
 The smallest rotation does not move points that are perpendicular to the old and new axis positions.
 That means that $\vec r$ is perpendicular to both the old axis $\vec a$ and the target point $\vec p$,
@@ -88,3 +88,22 @@ Ergo, we have
 - $\displaystyle \vec r = \frac{\vec r'}{s}$
 
 which, combined with the matrix above, gives us the minimal rotation to point $\vec a$ at $\vec p$.
+
+:::example
+To point the +y axis to $(3,12,4)$ we'd compute
+
+- $\displaystyle \vec a' = (0,1,0)$
+- $\displaystyle \vec p' = (\frac{3}{13},\frac{12}{13},\frac{4}{13})$
+- $\vec r' = $(\frac{4}{13}, 0, \frac{-3}{13})$
+- $c = \frac{12}{13}$
+- $s = \frac{5}{13}$
+- $\displaystyle \vec r = (\frac{4}{5},0,\frac{-3}{5})$
+
+and build the matrix
+
+$$\begin{bmatrix}
+\frac{316}{325} & \frac{3}{13} s & \frac{-12}{325} \\
+\frac{-3}{13} & \frac{12}{13}  & \frac{-4}{13} \\
+\frac{-12}{325} & \frac{4}{13} & \frac{309}{325} \\
+\end{bmatrix}$$
+:::
