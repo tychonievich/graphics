@@ -133,6 +133,12 @@ wall *bounciness* $A$ $B$ $C$ $D$
 	If *bounciness* is 1, reverse any velocity into the plane.
 	For intermediate *bounciness*, reverse velocity into the plane and reduce its magnitude.
 
+reburst *type* *chance* $n$ $t$ $v$
+:	$t$ frames after the start of the preceding `burst`,
+	each particle created by that `burst` is destroyed.
+	For each such particle, there is a *chance* percent chance that it becomes the center of a new `burst` of the given *type*, $n$, and $v$
+	and a (100 − *chance*) percent chance that it instead simply vanishes.
+
 	
 ## `simulation boids`
 
