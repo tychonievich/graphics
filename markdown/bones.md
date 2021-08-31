@@ -81,8 +81,8 @@ which is all we need.
 Ergo, we have
 
 - $\displaystyle \vec a' = \frac{\vec a}{\|\vec a\|}$
-- $\displaystyle \vec p' = \frac{\vec p}{\|\vec p\|}$
-- $\vec r' = \vec a' \times \vec p'$
+- $\displaystyle {\vec p}' = \frac{\vec p}{\|\vec p\|}$
+- $\vec r' = \vec a' \times \vec {p'}$
 - $c = \vec a' \cdot \vec p'$
 - $s = \|\vec r'\|$
 - $\displaystyle \vec r = \frac{\vec r'}{s}$
