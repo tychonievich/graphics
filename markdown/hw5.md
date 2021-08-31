@@ -52,6 +52,8 @@ There will always be one keyword after that, indicating which simulation type th
 
 ## `simulation bones`
 
+You may find our [bones writeup](bones.html) helpful.
+
 bone $d$
 :	This may appear at most once in any `object`.
 	If present, it means that this object is considered to be a bone,
@@ -62,26 +64,76 @@ bone $d$
 	
 	Unless explicitly stated otherwise, the remaining keywords in this section apply only to bones.
 
-trackto $x$ $y$ $z$ *axis* $x_2$ $y_2$ $z_2$
+track $x$ $y$ $z$
+:	Apply a rotation (after positioning) such the bone's tip points toward the point $(x,y,z)$.
+	This should be a minimal rotation to achieve that goal, staying as close to the previous orientation (e.g. as given by a preceding `quaternion`) as possible.
+
+trackroll $x$ $y$ $z$ *axis* $x_2$ $y_2$ $z_2$
 :	Apply a rotation (after positioning) such the bone's tip points toward the point $(x,y,z)$.
 	There are many such rotations; pick the one that cases *axis* to point as close to point $(x_2,y_2,z_2)$ as possible.
 	The *axis* will always be two characters: first either `+` or `-`, then either `x` or `y`.
 
-	You may assume that neither $(x,y,z)$ nor $(x_2,y_2,z_2)$ is not the object's `position`
-	and that the two are not colinear with the object's `position`.
+trackscale $x$ $y$ $z$
+:	Like `track`, but also scale along the object's z axis to that the tip of the bone exactly reaches the point $(x,y,z)$. Do not scale along the object's other two axes.
 
-trackscaleto $x$ $y$ $z$ *axis2* $x_2$ $y_2$ $z_2$
-:	Like `trackto`, but also scale along the object's z axis to that the tip of the bone exactly reaches the point $(x,y,z)$. Do not scale along the object's other two axes.
-
-trackstretchto *axis* $x$ $y$ $z$ *axis2* $x_2$ $y_2$ $z_2$ $d$
-:	Like `trackscaleto`, but also scale uniformly along the object's x and y axes such that the volume of the bone is conserved
+trackstretch $x$ $y$ $z$
+:	Like `trackscale`, but also scale uniformly along the object's x and y axes such that the volume of the bone is conserved.
 
 fabrik $x$ $y$ $z$ *iterations*
 :	Use FABRIK to perform inverse kinematics,
 	where the IK chain consists of this bone and all its bone parents.
+	Each frame should use the previous frame's results as its starting point.
+	
+	FABRIK produces the origins and tips of a chain of bones.
+	Use the same math as `position` and `track` to align the bones with these points.
+	Use the previous frame's results as each rotation's starting point.
 	
 ## `simulation fireworks`
 
+burst *type* $n$ $x$ $y$ $z$ $t$ $v$
+:	At frame $t$, create a burst of $n$ moving particles of the given *type* centered at $(x,y,z)$ with burst velocity $v$.
+	The types are:
+	
+	normal
+	:	Select velocities from a 3D normal distribution with standard deviation $v$
+	
+	sphere
+	:	Select velocities uniformly from a radius-$v$ sphere
+
+	shell
+	:	Select velocities uniformly from the surface of a radius-$v$ sphere
+
+	Every `burst` command will be followed by a shape command
+	
+billboard $w$
+:	A shape command: draw each particle from the preceding `burst` as a $w$-by-$w$ square
+	that is aligned to point to the camera.
+	And orientation other than that (side up, point up, etc) is up to you.
+
+dart $w$
+:	A shape command: draw each particle from the preceding `burst` as an equilateral triangle with edge length $w$
+	aligned with a face toward the camera
+	and a point in the direction of its motion.
+
+box $w$
+:	A shape command: draw each particle from the preceding `burst` as a global axis-aligned cube with $w$-length edges.
+
+gravity $x$ $y$ $z$
+:	Accelerate moving particles by $x$ units-per-frame in the x axis, $y$ units-per-frame in the y axis, and $z$ units-per-frame in the $z$ axis
+
+drag $d$
+:	Decelerate moving particles by $dv$ where $v$ is the participles current units-per-frame velocity.
+	You may assume $0 \le d \le 1$;
+	if $d = 1$ then particles will instantly stop; if $d = 0$ then there is no drag.
+
+wall *bounciness* $A$ $B$ $C$ $D$
+:	An infinite plane that particles cannot penetrate;
+	enforce that $Ax + By + Cz + D \ge 0$ for all particles.
+	If *bounciness* is 0, remove all velocity into the plane.
+	If *bounciness* is 1, reverse any velocity into the plane.
+	For intermediate *bounciness*, reverse velocity into the plane and reduce its magnitude.
+
+	
 ## `simulation boids`
 
 ## `simulation landscape`
@@ -92,7 +144,7 @@ fabrik $x$ $y$ $z$ *iterations*
 
 ## `simulation fluid`
 
-
+<!--
 
 # Required Features
 
@@ -260,3 +312,4 @@ advect *chan* $d$ (20%)
 	$(\lceil x\rceil, \lceil y\rceil)$.
 	
 <hr style="clear:both"/>
+-->
