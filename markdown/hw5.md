@@ -1,5 +1,5 @@
 ﻿---
-title: 'HW5: Project or Images'
+title: 'HW5: Simulation'
 notes:
     - bones
         - track to
@@ -34,131 +34,65 @@ notes:
         - stam
 ...
 
+<blockquote style="background-color:#fbb; font-size:150%">This page is a work-in-progress and may change at any time without notice.</blockquote>
+
+
 # Overview
 
-There are two options for this assignment.
+For this assignment you get to pick a few classes of simulation to complete.
+Unlike other assignments, you don't need to be able to mix-and-match commands:
+the `gravity` command only needs to be supported for the simulations that include gravity, for example.
 
-Option 1
-:	propose your own graphics task, agree with the prof how it will be graded, and than do it.
-	If you go this route, it is probably best to speak with the prof in person, though email is also acceptable.
+This assignment builds on the required parts of HW4.
+All of the required HW4 commands, including `loadp`, `object`, `position`, `quaternion`, `cos`, and so on are used in this assignment exactly as they were in HW4.
 
-Option 2
-:	An image manipulation assignment is listed below.
-
-
-# Loading `filename.png` in various languages
-
-C/C++
-:	[Cimg](http://cimg.sourceforge.net/) or [libpng](http://libpng.org/pub/png/libpng.html)
-	(I've never used either to read `png` files in C or C++ so I don't have details).
-
-C#
-:	Use `System.Drawing.Bitmap`:
-	`Bitmap img = Bitmap.fromFile("filename.png")`{.cs}
-
-D
-:	Use [imageformats](http://code.dlang.org/packages/imageformats):
-	`auto img = read_image("filename.png")`{.d}
-
-Java
-:	Use `javax.imageio.ImageIO`:
-	`BufferedImage img = ImageIO.read("filename.png")`{.java}
-
-Python
-:	Use [pillow](http://python-pillow.org/):
-	`img = Image.open("filename.png")`{.python}
+Every file will have the keyword `simulation` prior to any other HW5-specific keyword.
+There will always be one keyword after that, indicating which simulation type this file uses.
 
 
-The input examples use the following input files:
+## `simulation bones`
 
-- [earth.png](files/earth.png)
-- [smallearth.png](files/smallearth.png)
-- [moon.png](files/moon.png)
-- [redchair1.png](files/redchair1.png)
-- [tj.png](files/tj.png)
-- [uva.png](files/uva.png)
-
-
-# Advice
-
-The structure of this assignment will be somewhat similar to those before:
-you'll read an input `.txt` file and create an output `.png` file.
-The input `.txt` will generally begin with an instruction to read an RGBA `.png` file
-and generally end with an instruction to write an RGBA `.png` file
-of the same dimensions as the input.
-
-You can probably make some progress working directly on the image files,
-but you will almost certainly find it easier to do the following:
-
-Use 0--1 color space
-:	Convert all the 0--255 integers into 0--1 floating-point values as soon as you load an image.
-
-	*Do not* clamp pixel channel values to the 0--1 range during processing, but *do* do so before saving the image.
-
-Either use OO design or separate channels
-:	You'll want to be able to query and change R, G, B, H, S, L, V, and A channels on an image.
-	There are two basic ways to do this:
+bone $d$
+:	This may appear at most once in any `object`.
+	If present, it means that this object is considered to be a bone,
+	with object-space origin $(0,0,0)$ and object-space tip $(0,0,d)$.
 	
-	Separate channels
-	:	Store R, G, B, and A as separate 2D arrays of floating-point values.
-		Have functions that convert between color models (e.g., `hue(r, g, b)`, `red(h, s, l)`, etc.)
+	A bone may have geometry, but doesn't need to.
+	A bone may have the `world`, another bone, or a non-bone as its parent.
 	
-	Channel-emulating accessors and mutators
-	:	Store R, G, B, and A in an object, 
-		but provide functions like `getHue` and `setSaturation`.
+	Unless explicitly stated otherwise, the remaining keywords in this section apply only to bones.
 
-Clamp out-of-bound reads
-:	When you would read a color of a pixel outside of the image, use the color of the nearest pixel inside the image.
-	Formally, this is a type of Neumann boundary condition.
+trackto $x$ $y$ $z$ *axis* $x_2$ $y_2$ $z_2$
+:	Apply a rotation (after positioning) such the bone's tip points toward the point $(x,y,z)$.
+	There are many such rotations; pick the one that cases *axis* to point as close to point $(x_2,y_2,z_2)$ as possible.
+	The *axis* will always be two characters: first either `+` or `-`, then either `x` or `y`.
 
-Use these channel definitions
-:	- $V = \max(R,G,B)$
+	You may assume that neither $(x,y,z)$ nor $(x_2,y_2,z_2)$ is not the object's `position`
+	and that the two are not colinear with the object's `position`.
+
+trackscaleto $x$ $y$ $z$ *axis2* $x_2$ $y_2$ $z_2$
+:	Like `trackto`, but also scale along the object's z axis to that the tip of the bone exactly reaches the point $(x,y,z)$. Do not scale along the object's other two axes.
+
+trackstretchto *axis* $x$ $y$ $z$ *axis2* $x_2$ $y_2$ $z_2$ $d$
+:	Like `trackscaleto`, but also scale uniformly along the object's x and y axes such that the volume of the bone is conserved
+
+fabrik $x$ $y$ $z$ *iterations*
+:	Use FABRIK to perform inverse kinematics,
+	where the IK chain consists of this bone and all its bone parents.
 	
-	- $\Delta = V - \min(R,G,B)$ (note: $\Delta$ is not itself a channel, but is useful in computing several of the other channels).
-	
-	- $S = \frac{\Delta}{V}$ (or 0 if $V$ is 0)
-		
-		There are other formulae for saturation.
-		This version is typical for HSV color models; HSL often has a different form.
-	
-	- $L = 0.299 R + 0.587 G + 0.114 B$
-		
-		There are many other formulae for lightness.
-		This version is from [ITU BT.601](http://www.itu.int/rec/R-REC-BT.601).
-	
-	- $H =$ a piecewise-linear function:
-	
-		- if $\Delta = 0$ then $H = 0$
-		- if $V = R$ then $H = \frac{G-B}{6 \Delta}$ (this might be $< 0$; if so, add 1 to it)
-		- if $V = G$ then $H = \frac{B-R}{6 \Delta} + \frac{1}{3}$
-		- if $V = B$ then $H = \frac{R-G}{6 \Delta} + \frac{2}{3}$
-		
-		Recall that Hue is a circle, so 0 is closer to 0.9 than it is to 0.2.
-	
-	For some optional parts you'll need the reverse functions too.
-	
-	- To convert $(H,S,V) \rightarrow (R,G,B)$
-	
-		- Let $f(x) = \text{clamp}_{0,1}(2-|3-x|)$
-		- $R = V ((1-S)+S f((6H+3) \mod 6))$
-		- $G = V ((1-S)+S f((6H+1) \mod 6))$
-		- $B = V ((1-S)+S f((6H+5) \mod 6))$
-	
-	- To change $L$
-		
-		Given the way we've defined $H$, $S$, and $L$ we cannot always change $L$ without changing $S$
-		(this follows from picking HSV's version of $S$ instead of HSLs).
-		The following does the best we can do:
-		
-		- If old $L$ is 0, use set all of $R$, $G$, and $B$ to $L$.
-		- Otherwise, try multiplying each of $R$, $G$, and $B$ by ($\frac{L_{new}}{L_{old}}$), but only if all of the resulting values are &le; 1.
-		- Otherwise, 
-			
-			- Set $V$ to 1; this will typically change $L$ (among other values)
-			- Find the ratio $t = \frac{1 - L_{new}}{1 - L_{changed}}$
-			- Set $R = 1 - (1-R)t$ and similarly for $G$ and $B$.
-		
-	See [http://www.rapidtables.com/convert/color/](http://www.rapidtables.com/convert/color/) for another explanation (but note that their HSL uses different S and L than we have above).
+## `simulation fireworks`
+
+## `simulation boids`
+
+## `simulation landscape`
+
+## `simulation trees`
+
+## `simulation springs`
+
+## `simulation fluid`
+
+
 
 # Required Features
 
