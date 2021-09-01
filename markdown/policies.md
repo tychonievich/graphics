@@ -68,10 +68,6 @@ Instructor
 	`tychonievich@virginia.edu`\
 	434-243-3789
 	
-	Office hours:\
-	Monday 11--12 on Discord\
-	Tuesday 1--2 and Friday 2--4 in Rice 208
-	
 	All course-material questions should be directed to the course forums, not email.
 	
 	If you email, please include 4810 in the subject line.
@@ -83,6 +79,9 @@ TAs
 	The TAs are also students with their own coursework, etc.
 	Please be respectful and only contact them about this course
 	in ways and at times that are listed on this site.
+
+Office Hours
+:	<iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=America%2FNew_York&src=Y19waWxrMTEwYWdxNWlzMDZuZnMyZmg1aDlmZ0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23AD1457&mode=AGENDA&showCalendars=0&showTabs=1&showPrint=0&showTitle=0&showTz=1" style="border:solid 1px #777" width="600" height="600" frameborder="0" scrolling="no"></iframe>
 
 ## Kind of help provided
 
