@@ -118,6 +118,8 @@ reading:
       lnk: 'https://kytos.cs.virginia.edu/graphics/raster.php?size=10'
     - txt: 'in-class 2'
       lnk: 'https://kytos.cs.virginia.edu/graphics/raster.php?size=11'
+    - txt: 'aliasing'
+      lnk: 'aliasing.html'
   subdivision:
     - txt: 'Bézier'
       lnk: 'https://en.wikipedia.org/wiki/B%C3%A9zier_curve#Constructing_B.C3.A9zier_curves'
