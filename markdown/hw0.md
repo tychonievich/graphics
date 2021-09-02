@@ -421,7 +421,7 @@ To install, do `pip install pillow`{.bash} or `pip3 install pillow`{.bash} from 
 Do not use the `ImageDraw`{.python} module.
 
 <details><summary>An example</summary>
-```py
+```python
 from PIL import Image
 # ...
 image = Image.new("RGBA", (width, height), (0,0,0,0))
