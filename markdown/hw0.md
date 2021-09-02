@@ -301,7 +301,7 @@ An OO interface is also available through [CImg](http://cimg.sourceforge.net/).
 
 <details><summary>An example using CImg:</summary>
 
-```c
+```cpp
 #define cimg_use_png
 #include "CImg.h"
 
@@ -363,6 +363,29 @@ void main(List<String> args) {
 ```
 </details>
 
+### Go
+
+The relevant package is `image`{.go}.
+
+<details><summary>An example</summary>
+```go
+import (
+ "image/png"
+ "image/color"
+ "io"
+)
+func main() {
+    // ...
+    img := image.NewRGBA(image.Rect(0, 0, width, height))
+    // ...
+    img.Set(x, y, color.RGBA{red, green, blue, alpha})
+    // ...
+    w, err := os.Create(img.filename)
+    png.Encode(w, img)
+}
+```
+</details>
+
 ### Java
 
 The relevant libraries are `Color` from `java.awt`,
@@ -371,7 +394,7 @@ and `ImageIO`{.java} from `javax.imageio`{.java} package.
 Do not use `java.awt.Graphics`{.java}.
 
 <details><summary>An example</summary>
-```cs
+```java
 import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.awt.image.WriteableRaster;
@@ -398,7 +421,7 @@ To install, do `pip install pillow`{.bash} or `pip3 install pillow`{.bash} from 
 Do not use the `ImageDraw`{.python} module.
 
 <details><summary>An example</summary>
-```cs
+```py
 from PIL import Image
 # ...
 image = Image.new("RGBA", (width, height), (0,0,0,0))
@@ -414,7 +437,7 @@ image.save(filename)
 The relevant library is `std::io::RgbaImage` and `sts::io:Rgba`.
 
 <details><summary>An example</summary>
-```cs
+```rust
 use std::io::{BufRead, BufReader};
 fn main() {
     // ...
@@ -426,6 +449,32 @@ fn main() {
 }
 ```
 </details>    
+
+
+### Typescript
+
+The relevant library is `jimp` and `colord`.
+
+<details><summary>An example</summary>
+```typescript
+import fs from 'fs/promises';
+import type { Jimp as JimpType } from '@jimp/core';
+import { colord } from 'colord';
+
+import Jimp from 'jimp';
+
+const run = async () => {
+    const image = new Jimp(width, height);
+    // ...
+    // make rgba a 32-bit integer of the form 0xRRGGBBAA
+    image.setPixelColor(rgba, x, y);
+    // ...
+    await image.writeAsync(filename);
+};
+run().catch(console.error);
+```
+</details>    
+
 
 ### Other
 
@@ -499,6 +548,19 @@ run:
 ```
 </details>
 
+<details><summary>Go Makefile</summary>
+```makefile
+.PHONEY: build, run
+
+build:
+	go build -o bin/main main.go
+
+run:
+	./bin/main $(file)
+```
+</details>
+
+
 <details><summary>Java Makefile</summary>
 ```makefile
 .PHONEY: build, run
@@ -534,6 +596,18 @@ build:
 
 run:
 	cargo run $(file)
+```
+</details>
+
+<details><summary>Typescript Makefile</summary>
+```makefile
+.PHONEY: build, run
+
+build:
+	npm install && npm run build
+
+run:
+	npm start $(file)
 ```
 </details>
 
