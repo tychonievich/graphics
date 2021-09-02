@@ -453,16 +453,11 @@ fn main() {
 
 ### Typescript
 
-The relevant library is `jimp` and `colord`.
+The relevant library is `jimp`.
 
 <details><summary>An example</summary>
 ```typescript
-import fs from 'fs/promises';
-import type { Jimp as JimpType } from '@jimp/core';
-import { colord } from 'colord';
-
 import Jimp from 'jimp';
-
 const run = async () => {
     const image = new Jimp(width, height);
     // ...
