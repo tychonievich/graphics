@@ -473,7 +473,7 @@ run().catch(console.error);
 
 ### Other
 
-In earlier semesters we've had students use D, Go, Haskell, Kotlin, and Scala.
+In earlier semesters we've had students use D, Haskell, Kotlin, and Scala.
 In principle I am open to any language I can get to work on the testing server; just let me know what you'd like.
 
 
@@ -485,7 +485,7 @@ It is your responsibility to see that the `Makefile` and your code work in a Lin
 Following are *minimal* Makefiles you might use as a baseline.
 We recommend using make's more advanced operations (separate `.o` targets, pattern rules, variables, etc) if you understand them.
 
-Note that `Makefile` indentation must be in tabs, not spaces,
+Note that **`Makefile` indentation must be in tabs, not spaces**,
 but the syntax-highlighter I use changes tabs to spaces.
 You'll need to change them back if you copy-paste these examples.
 
