@@ -570,6 +570,7 @@ Program.class: Program.java
 ```
 </details>
 <details><summary>Java Makefile with packages</summary>
+
 If your code is in a package (as many IDEs will make it), you'll need a slightly more involved Makefile.
 
 If the `.java` files contain `package some.name;` then they will be in some path `path/prefix/some/name`. Put the `Makefile` (and `implemented.txt`) in `path/prefix/` as follows:
@@ -587,7 +588,8 @@ run: $(CLS)
 	java some.name.ClassWithMain $(file)
 ```
 
-the `SRC` uses [the `wildcard` function](https://www.gnu.org/software/make/manual/html_node/Wildcard-Function.html) to find all Java files in that one package; if you use several pacakges, you will need to add additional wildcards there.
+the `SRC` uses [the `wildcard` function](https://www.gnu.org/software/make/manual/html_node/Wildcard-Function.html) to find all Java files in that one package; if you use several packages, you will need to add additional wildcards there.
+
 </details>
 
 
