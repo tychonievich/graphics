@@ -584,7 +584,7 @@ build: $(CLS)
     javac $(SRC)
 
 run: $(CLS)
-	java some.name.FileWithMain $(file)
+	java some.name.ClassWithMain $(file)
 ```
 
 the `SRC` uses [the `wildcard` function](https://www.gnu.org/software/make/manual/html_node/Wildcard-Function.html) to find all Java files in that one package; if you use several pacakges, you will need to add additional wildcards there.
