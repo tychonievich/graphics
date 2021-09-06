@@ -120,7 +120,7 @@ reading:
       lnk: 'https://kytos.cs.virginia.edu/graphics/raster.php?size=11'
     - txt: 'aliasing'
       lnk: 'aliasing.html'
-  fill
+  fill:
     - txt: 'nonzero'
       lnk: 'https://en.wikipedia.org/wiki/Nonzero-rule'
     - txt: 'even–odd'
