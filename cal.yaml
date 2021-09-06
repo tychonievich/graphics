@@ -123,6 +123,8 @@ reading:
   subdivision:
     - txt: 'Bézier'
       lnk: 'https://en.wikipedia.org/wiki/B%C3%A9zier_curve#Constructing_B.C3.A9zier_curves'
+    - txt: 'De Casteljau'
+      lnk: 'bezier.html'
     - txt: '(optionally) Implementers Guide 1.6.3'
       lnk: 'files/implguide_2010.pdf'
   curves:
