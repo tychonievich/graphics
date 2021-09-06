@@ -65,7 +65,9 @@ This writeup describes how to set those up, but we will not directly test these 
 
 ## Reading Input
 
-Each file will have a number of lines; each line will have a keyword first, followed by zero or more extra pieces of information separated by whitespace (some mix of `' '` and `'\t'`).
+Each run, your program will be given one command-line argument, which is the path to an input file.
+
+Each input file will have a number of lines; each line will have a keyword first, followed by zero or more extra pieces of information separated by whitespace (some mix of `' '` and `'\t'`).
 Lines should be read in order, first to last, because some lines refer to the lines above them.
 
 Ignore blank lines and lines starting with anything other than a keyword you know.
@@ -569,6 +571,30 @@ Program.class: Program.java
 	javac Program.java
 ```
 </details>
+
+<details><summary>Java Makefile with packages</summary>
+
+If your code is in a package (as many IDEs will make it), you'll need a slightly more involved Makefile.
+
+If the `.java` files contain `package some.name;` then they will be in some path `path/prefix/some/name`. Put the `Makefile` (and `implemented.txt`) in `path/prefix/` as follows:
+
+```makefile
+SRC = $(wildcard some/name/*.java)
+CLS = $(SRC:.java=.class)
+
+.PHONEY: build, run
+
+build: $(CLS)
+    javac $(SRC)
+
+run: $(CLS)
+	java some.name.ClassWithMain $(file)
+```
+
+the `SRC` uses [the `wildcard` function](https://www.gnu.org/software/make/manual/html_node/Wildcard-Function.html) to find all Java files in that one package; if you use several packages, you will need to add additional wildcards there.
+
+</details>
+
 
 
 <details><summary>Python Makefile</summary>
