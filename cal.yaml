@@ -42,7 +42,7 @@ lectures:
   - intro
   - raster graphics
   - scan conversion
-  - subdivision
+  - [fill, subdivision]
   - [curves, alpha]
   - math review
   - homogeneous coordinates
@@ -120,11 +120,20 @@ reading:
       lnk: 'https://kytos.cs.virginia.edu/graphics/raster.php?size=11'
     - txt: 'aliasing'
       lnk: 'aliasing.html'
+  fill
+    - txt: 'nonzero'
+      lnk: 'https://en.wikipedia.org/wiki/Nonzero-rule'
+    - txt: 'even–odd'
+      lnk: 'https://en.wikipedia.org/wiki/Even%E2%80%93odd_rule'
+    - txt: 'flood'
+      lnk: 'https://en.wikipedia.org/wiki/Flood_fill'
   subdivision:
     - txt: 'Bézier'
       lnk: 'https://en.wikipedia.org/wiki/B%C3%A9zier_curve#Constructing_B.C3.A9zier_curves'
     - txt: 'De Casteljau'
       lnk: 'bezier.html'
+    - txt: 'circles'
+      lnk: 'implicit-curves.html'
     - txt: '(optionally) Implementers Guide 1.6.3'
       lnk: 'files/implguide_2010.pdf'
   curves:

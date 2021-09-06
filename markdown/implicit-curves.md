@@ -1,313 +1,214 @@
 ---
-title: Implicit curves
+title: Forward Differencing
 ...
 
-An implicit curve is defined using an equation of $x$ and $y$
-like $x^2 + y^2 = 1$ or ${\sin^2(x) \over \sqrt{y}} = \sqrt[3]{\tan\left({x \over y}\right)}$.
-Implicit curves are less common than parametric curves,
-such as Bézier curves and B-Splines,
-but are still useful for drawing some mathematically-defined shapes like circles.
 
-Implicit surfaces are also common when dealing with blobbies
-and rendering particle-based fluids.
-This write-up deals primarily with implicit curves in 2D, not implicit surfaces in 3D.
+# Horner's Method: Polynomial at a Point
 
-We'll assume the implicit equation is normalized into a form $f(x,y) = 0$.
+Multiplications are more expensive to compute than additions.
+Additionally, rounding error can accumulate when additions and multiplications are mixed incorrectly.
+To evaluate a polynomial $a_n x^n + a_{n-1} x^{n-1} + \cdots + a_2 x^2 + a_1 x + a_0$
+at some specific $x$,
+the most efficient and accurate solution is to use Horner's Method:
+re-write the polynomial as $((\cdots((a_n) x + a_{n-1}) x + \cdots + a_2) x + a_1) x + a_0$
+and evaluate left-to-right as $n$ multiplications and $n$ additions.
+On hardware with a fused-multiply-add instruction, this reduces further to just $n$ FMA operations.
 
-# Brute-force drawing
+# Finite Difference
 
-A simple brute force algorithm for drawing an implicit curve might look like the following:
+The **finite difference** of some function $f(x)$ at $x$ is defined to be $\dfrac{f(x+b)-f(x+a)}{b-a}$.
+For our purposes, we will always use $b=1$ and $a=0$ to get the simpler $f(x+b)-f(x)$,
+which is called the **forward difference** for $f$ at $x$
+and write it as $\Delta[f](x)$.
 
-    for each pixel (x,y)
-        if f(x+0.5,y) and f(x-0.5,y) have different signs
-            plot (x,y)
-        if f(x,y+0.5) and f(x,y-0.5) have different signs
-            plot (x,y)
+The forward difference of the polynomial $f(x) = 7 x^3 - 2 x^2 - 8x + 3$
+can be evaluated by expanding $f(x+1)-f(x)$ and combining like terms
+to get $21x^2 + 17x - 3$.
+Taking the forward difference of that, we get $42x+38$,
+and the forward difference of that is simply $42$.
+The forward difference of a constant like $42$ is always $0$.
 
-This will plot an 8-connect line of pixels the curve passes through:
+Just as in this example, the finite difference of any polynomial is a polynomial of one lesser degree.
 
-![brute-force results](files/implicit1.svg){style="width:18em"}
+# Difference addition
 
-But it means evaluating the function 4 tiles at each pixel.
-We can actually reduce that to once per pixel with some caching, but still, not very efficient.
-
-# Edge following
-
-We don't need to view every pixel.
-Instead, once we find the edge we can follow it.
-Basically, we just check the 8 neighboring pixels of each pixel that is plotted.
-
-This
-
-- requires us to keep track of which pixels we've checked (so we don't go around forever)
-- doesn't work if there are multiple distinct curve parts (like a hyperbola)
-- requires us to find a starting point on the curve
-
-but it can reduce the overall complexity from $O($pixels$)$ to $O($curve length $\times$ data structure complexity$)$, a significant saving in general.
-
-    let queue = [a pixel on edge]
-    let visited = [same pixel as queue]
-    while queue is not empty
-        let p = pop an element from queue
-        if f(x+0.5,y) and f(x-0.5,y) have different signs
-        or f(x,y+0.5) and f(x,y-0.5) have different signs
-            plot (x,y)
-            for each (i,j) in (x±1, y) and (x, y±1)
-                if (i,j) not in visited
-                    put (i,j) in both visited and queue
-
-We can optimize this a little if we assume the curve has no cusps by not checking pointer perpendicular to the direction of the curve, as determined by which "different signs" check was true; and more by picking good data structures for the visited cache (a splay tree is a good choice) and queue (a stack is a good choice),
-but it's not too bad as-is.
-
-# Grid walking
-
-If we assume that the curve is smooth and the area it encloses has no narrow bits,
-then we can do a more efficient edge following using only constant memory.
-
-To do this, we evaluate the sign of the function at a 2×2 grid of pixels
-and move this grid by 1 in either $x$ or $y$ at each step, picking a direction depending on two pieces of data:
-what direction we came from last
-and how many of the four pixels are positive vs negative.
-The rule is simple: exit on the side with different signs that you didn't enter from.
-
-![pixel stepping rules](files/implicit2.svg){style="width:24em"}
-
-The third rule above is a problem case: it can only arise if the shape has a narrow region or cusp,
-which grid walking cannot perfectly resolve.
-However, picking either "don't cross a positive diagonal" or "don't cross a negative diagonal" (it doesn't matter which one is picked, but it needs to be consistent) will result in sensible, if not perfect, behavior.
-
-This approach doesn't lend itself to drawing an 8-connect boundary line,
-but does let us draw the pixels on one side of the curve.
-For example, in the following image it will visit the marked pixels;
-it can distinguish the red from the blue;
-and it knows that the outlined pixels, although visited, where not adjacent to the curve because they were adjacent to two other pixels of the same sign.
-
-![grid walking results](files/implicit3.svg){style="width:18em"}
-
-# Polynomial grid walking
-
-If $f(x,y)$ is a polynomial function, then we can use Bresenham-like tricks to make the grid walking algorithm very computationally efficient
-using a grid-spaced analog of derivatives called **finite differences**.
-These might be best introduced by example:
+If we wish to evaluate a polynomial at a sequence of adjacent integer arguments,
+we can use forward differences to compute these points very efficiently.
+In particular, if we know $f(x)$ and $\Delta[f](x)$,
+then we can compute $f(x+1) = f(x) + \Delta[f](x)$.
+If $\Delta[f]$ is a constant we can keep adding that same value to get $f(x+2)$, $f(x+3), and so on.
+If it is not a constant than it is another polynomial we can use this same method on to find the sequence of $\Delta[f](x)$s we need.
 
 :::example
-Consider the polynomial $f(x) = 2 x^3 - 4 x^2 + x + 0$.
-Let's evaluate it at some regularly-spaced $x$s:
+Consider the 1st-order polynomial $f(x) = 42x + 38$.
+Use Horner's rule, we find $f(-5) = -172$
+and $f(-4) = -130$.
 
-$f(-1)$ $f(0)$  $f(1)$   $f(2)$  $f(3)$  $f(4)$  $f(5)$
-------- ------  -------  ------  ------  ------  ------
-$-7$    $0$     $-1$     $2$     $21$    $68$    $155$
+Subtracting these, we find $\Delta[f](-5) = 42$.
+Because $f$ is linear, $\Delta[f]$ is constant.
 
+We now find other values of $f$:
 
-Now let's find the difference between adjacent entries above
+- $f(-3) = f(-4) + \Delta[f] = -130+42 = -88$
+- $f(-2) = f(-3) + \Delta[f] = -88+42 = -46$
+- $f(-1) = f(-2) + \Delta[f] = -46+42 = -4$
+- $f(0) = f(-1) + \Delta[f] = -4+42 = 38$
 
+We can also move backwards:
 
-$f(-1)$         $f(0)$          $f(1)$          $f(2)$          $f(3)$          $f(4)$          $f(5)$
-------  ----    ------  ----    ------  ----    ------  ----    ------  ----    ------  ----    ------
-$-7$            $0$             $-1$            $2$             $21$            $68$            $155$
-        $7$             $-1$            $3$             $19$            $47$            $87$
-
-And let's keep going, adding the difference of entries in the last row
-
-
-$f(-1)$         $f(0)$          $f(1)$          $f(2)$          $f(3)$          $f(4)$          $f(5)$
-------  ----    ------  ----    ------  ----    ------  ----    ------  ----    ------  ----    ------
-$-7$            $0$             $-1$            $2$             $21$            $68$            $155$
-        $7$             $-1$            $3$             $19$            $47$            $87$
-                $-8$            $4$             $16$            $28$            $40$
-                        $12$            $12$            $12$            $12$
-                                $0$             $0$             $0$
-                                        $0$             $0$
-                                                $0$
-
-Notice that the 4^th^ row is all $12$ and the 5^th^ and subsequent rows are all $0$?
-That's not a fluke: for an $n$^th^ order polynomial, the $(n+1)$^th^ row will be constant
-and all subsequent rows 0.
-
-Now we can find $f(6)$ with only addition:
-we extend the 4^th^ row to have one more 12, then repeatedly add the last entry of the $i$^th^ row to the last entry of the ($i-1$)^th^ row to extend that row
-
-$f(-1)$         $f(0)$          $f(1)$          $f(2)$          $f(3)$          $f(4)$          $f(5)$                  $f(6)$
-------  ----    ------  ----    ------  ----    ------  ----    ------  ----    ------  ----    ------      -----       --------
-$-7$            $0$             $-1$            $2$             $21$            $68$            $155$                   $155+139=294$
-        $7$             $-1$            $3$             $19$            $47$            $87$                $87+52=139$
-                $-8$            $4$             $16$            $28$            $40$            $40+12=52$
-                        $12$            $12$            $12$            $12$            $12$
-
-Note that that was just 3 additions, rather than the 3 additions and 3 multiplications needed to evaluate a cubic polynomial in general.^[
-    How can we evaluate $ax^3+bx^2+cx+d$ with just 3 multiplications and 3 additions?
-    By using [Horner's method](https://en.wikipedia.org/wiki/Horner%27s_method):
-    $\Big(\big((a)x+b\big)x+c\Big)x+d$.
-]
+- $f(-6) = f(-5) - \Delta[f] = -172-42 = -214$
+- $f(-7) = f(-6) - \Delta[f] = -214-42 = -266$
 :::
 
 :::example
-Suppose I tell you the last entry of each row of the table differences constructed using a process like that from the previous problem is $(11, -2, 5, 0, 0, \dots)$, with $11$ being $f(8)$:
+Consider the 2nd-order polynomial $f(x) = 21x^2 + 17x - 3$.
+Use Horner's rule, we find 
 
-                $f(8)$
-----    ----   --------
-                $11$
-        $-2$
-$5$
+- $f(-5) = 437$
+- $f(-4) = 265$
+- $f(-3) = 135$
 
-Then you can find $f(9)$ by adding from the last different to the first:
+Subtracting these, we find
 
-                $f(8)$              $f(9)$
-----    ----   -------- ---------  ----------
-                $11$                $11+3=14$
-        $-2$            $-2+5=3$
-$5$             $5$
+- $\Delta[f](-5) = -172$
+- $\Delta[f](-4) = -130$
 
-with the new last row of $(14, 3, 5)$.
-We could easily go a few more steps too:
-$(22,8,5)$, $(35,13,5)$, etc.
+and subtracting those we get
 
-You can also find $f(7)$ by subtracting from the first difference to the last:
+- $\Delta\big[\Delta[f]\big](-5) = 42$.
 
-                $f(7)$               $f(8)$
-----  ----     --------     ----    --------
-                $11-(-2)=13$         $11$
-      $-2-5=-7$              $-2$
-$5$             $5$
+Because $f$ is quadratic, $\Delta[f]$ is linear and $\Delta\big[\Delta[f]\big]$ is constant.
 
-for a new last row of $(13, -2, 5)$.
-We could easily go a few more steps too:
-$(20,-7,5)$, $(32,-12,5)$, etc.
+Now, we know that $f(-2) = f(-3) + \Delta[f](-3)$, but we don't yet know $\Delta[f](-3)$.
+But we know $\Delta[f](-3) = \Delta[f](-4) + \Delta\big[\Delta[f]\big] = -130 + 42 = -88$,
+which means $f(-2) = f(-3) - 88 = 138 - 88 = 50$.
+And we got that with just two additions, no multiplications.
+Similarly
+
+ $x$     $\Delta\big[\Delta[f]\big](x)$     $\Delta[f](x)$     $f(x)$
+-----   --------------------------------   ----------------   --------
+$-5$    $42$                                $-172$              $437$
+$-4$    $42$                                $-130$              $265$
+$-3$    $42$                                $-88$               $135$
+$-2$    $42$                                $-46$               $47$
+$-1$    $42$                                $-4$                $1$
+$0$                                         $38$                $-3$
+$1$                                                             $35$
 :::
 
-Finite differences are a more complicated idea than we'll use, with the ability to use any fixed step size and with forward and backward variants,
-but the simple approach works as follows:
+As polynomials get bigger, the $\Delta[\cdots]$ notation becomes awkward.
+Sometimes primes like $f\prime$ and $f\prime\prime$,
+or dots like $\dot{f}$ and $\ddot{f}$,
+or subscripts like $f_x$ and $f_{xx}$, are used instead.
 
-1. Pick the $x,y$ point to start at
+:::example
+Let $f(x) = 7 x^3 - 2 x^2 - 8x + 3$.
+Evaluating using Horner's rule, we get
 
-2. Evaluate $f(x-i, y-j)$ for all $0 \le i \le o_x+1$ and $0 \le j \le o_y$,
-    where $o_x$ is the order of the polynomial in the $x$
-    and $o_y$ the order in $y$.
+- $f(0) = 3$
+- $f(1) = 0$ meaning $f'(0) = -3$
+- $f(2) = 35$ meaning $f'(1) = 35$ and $f''(0) = 38$
+- $f(3) = 150$ meaning $f'(1) = 115$ and $f''(0) = 80$ and $f'''(0) = 42$
+
+We can now find $f$ larger $x$ by adding forward differences:
+
+ $x$     $f'''(x)$   $f''(x)$    $f'(x)$     $f(x)$
+----    ----------- ----------  ---------   --------
+$0$     $42$        $38$        $-3$        $3$
+$1$     $42$        $80$        $35$        $0$
+$2$     $42$        $122$       $115$       $35$
+$3$     $42$        $164$       $237$       $150$
+$4$     $42$                    $401$       $387$
+$5$     $42$                                $788$
+
+And at smaller $x$ by subtracting forward differences
+
+ $x$     $f'''(x)$   $f''(x)$    $f'(x)$     $f(x)$
+----    ----------- ----------  ---------   --------
+$0$     $42$        $38$        $-3$        $3$
+$-1$    $42$        $-4$        $1$         $2$
+$-2$    $42$        $-46$       $47$        $-45$
+$-3$    $42$        $-88$       $135$       $-180$
+:::
+
+# Summary
+
+The method of forward differences lets us evaluate a single-variable polynomial efficiently at integer arguments.
+All we need to do is
+
+- Evaluate the $n$th-order polynomial at $n+1$ adjacent arguments.
+    In the last example above, these were $(3,0,35,150)$.
+    We'll discard these numbers shortly.
+- Subtract, then subtract again, and so on to get a list of forward differences.
+    In the last example above, these were $(3,-3,38,42)$.
+    These numbers we'll keep, and the first one is the function at the first evaluated $x$.
+- To increase $x$, we **add** values in the difference list **left-to-right**:
+    $(3-3,-3+38,38+42,42) = (0,35,80,42)$.
+- To decrease $x$, we **subtract** values in the difference list **right-to-left**:
+    $(?,?,38-42,42) \rightarrow (?,-3-(-4),-4,42) \rightarrow (3-1,1,-4,42) = (2,1,-4,42)$.
+
+# Multivariate forward differences
+
+This also generalizes naturally to multivariate polynomials.
+If we have $f(x,y)$ we can find both $f_x(x,y) = f(x+1,y) - f(x,y)$
+and $f_y(x,y) = f(x,y+1) - f(y)$.
+Conveniently, the order of differencing does not matter:
+
+$$\begin{split}
+f_{yx}(x,y) &= f_x(x,y+1) - f_x(x,y) \\
+            &= \big(f(x+1,y+1) - f(x,y+1)\big) - \(f(x+1,y)-f(x,y)\big)
+            &= f(x+1,y+1) - f(x,y+1) - f(x+1,y) + f(x,y)
+            &= \big(f(x+1,y+1) - f(x+1,y)\big) - \big(f(x,y+1) - f(x,y)\big)
+            &= f_y(x+1,y) - f_y(x,y) \\
+            &= f_{xy}(x,y)
+\end{split}$$
+
+:::example
+Consider the circle equation $f(x,y) = (x-c_x)^2 + (y-c_y)^2 - r^2$,
+so called because $f(x,y) = 0$ is a circle of radius $r$ centered at point $(c_x,c_y)$.
+Computing the finite differences, we have:
+
+- $f_x(x,y) = 1+2(x-c_x)$
+- $f_{xx}(x,y) = 2$
+- $f_y(x,y) = 1+2(y-c_y)$
+- $f_{yy}(x,y) = 2$
+- $f_{xy}(x,y) = 0$
+:::
+
+:::example
+Consider drawing a circle of radius 6 centered at (2,3).
+
+We know that $(-4,3)$ is on the circle, and that it is symmetric;
+if we can find the points between 0° and 45°, we can mirror them to get the rest of the points.
+
+We find our initial value and differences:
+
+- $f(-4,3) = 0$
+- $f_{x}(-4,3) = -11$
+- $f_{y}(-4,3) = 1$
+- $f_{xx} = f_{yy} = 2$.
+
+Let's abbreviate this as $(f,f_x,f_y)$ so our starting state at $(-4,3)$ is $(0,-11,1)$.
+
+Now we'll repeatedly move up in $y$ and decide if it's better to move right in $x$ or not.
+
+1.  up to $(-4,4)$ gives us $(1,-11,3)$\
+    right to $(-3,4)$ would give us $(-10,-9,3)$ but that's further from 0 so let's not\
+    plot $(-4,4)$ and its symmetric neighbors.
+1.  up to $(-4,5)$ gives us $(4,-11,5)$\
+    right to $(-3,5)$ would give us $(-7,-9,5)$ but that's further from 0 so let's not\
+    plot $(-4,5)$ and its symmetric neighbors.
+1.  up to $(-4,6)$ gives us $(9,-11,7)$\
+    right to $(-3,6)$ gives us $(-2,-9,7)$ which is closer to 0 so let's use that\
+    plot $(-3,6)$ and its symmetric neighbors.
+1.  up to $(-3,7)$ gives us $(5,-9,9)$\
+    right to $(-2,7)$ gives us $(-4,-7,9)$ which is closer to 0 so let's use that\
+    plot $(-2,7)$ and its symmetric neighbors.
     
-    Example $f(x,y) = x^2y + y^3 + x$ has $o_x=2$ and $o_y=3$.
-    If we start at $(0,0)$ the grid would be
-    
-        -41 -31 -27
-        -18 -11  -8
-         -7  -3  -1
-         -2  -1   0
+    $f_y$ now has larger magnitude than $f_x$, meaning we have reached the 45° point and are done.
 
-3. Subtract adjacent values repeatedly to create the finite differences
-    
-    Continuing the previous example, the grid
-    
-        -41 -31 -27
-        -18 -11  -8
-         -7  -3  -1
-         -2  -1   0
-
-    after one subtraction in $x$
-    
-         10   4 -27
-          7   3  -8
-          4   2  -1
-          1   1   0
-
-    after two subtractions in $x$
-    
-          6   4 -27
-          4   3  -8
-          2   2  -1
-          0   1   0
-
-    after one subtractions in $y$
-    
-          2   1  19
-          2   1   7
-          2   1   1
-          0   1   0
-
-    after two subtractions in $y$
-    
-          0   0  12
-          0   0   6
-          2   1   1
-          0   1   0
-
-    after three subtractions in $y$
-    
-          0   0   6
-          0   0   6
-          2   1   1
-          0   1   0
-    
-    And that's the full difference grid.
-
-    As an optimization, we can throw away 0s in the top-left corner, like so:
-
-                  6
-                  6
-          2   1   1
-          0   1   0
-    
-    ... though doing so is not necessary.
-    If done properly, the resulting shape should match the terms of the polynomial:
-    e.g. $x^2y$ should ne 3 wide in x and 2 wide in $y$;
-    $y^3$ should be 4 wide in $y$ and 1 wide in $x$; etc.
-    We can initially sample less than the full grid based on this end shape if we wish.
-
-4. To evaluate the function a $x+1$ we add each row, right to left
-
-                  6
-                  6
-          2   3   2
-          0   1   1
-    
-    meaning $f(1,0) = 1$
-    
-    To evaluate the function a $y+1$ we add each column, bottom to top
-
-                  6
-                 12
-          2   3   8
-          2   4   3
-
-    meaning $f(1,1) = 3$; one more step
-
-                  6
-                 18
-          2   3  20
-          4   7  11
-
-    meaning $f(1,2) = 11$
-
-    To evaluate the function a $x-1$ we subtract each column, left to right
-
-                  6
-                 18
-          2   1  19
-          4   3   8
-
-    meaning $f(0,2) = 3$
-
-    To evaluate the function a $y-1$ we subtract each column, top to bottom
-
-                  6
-                 12
-          2   1   7
-          2   2   1
-
-    meaning $f(0,1) = 1$
-
-This technique, together with the grid walking approach, can find the border of a polynomial function with constant memory, a constant number of multiplications to start out, and a linear number of additions in the length of the curve.
-
-# Application: Circles
-
-One of the most common curves to wish to draw is a circle. The implicit equation for a circle is
-$$(x-c_x)^2 + (y-c_y)^2 = r^2$$
-which is  second-order polynomial, so we can use the finite difference optimization of edge following.
-
-Circles have a high degree of symmetry, so if the center point $(c_x,c_y)$ has integer coordinates we can get away with only computing ⅛ of the overall border:
-for every pixel $(p_x,p_y)$ we decide to plot
-we'll plot 8 symmetric points
-$(c_x \pm (p_x-c_x), c_y \pm (p_y-c_y)$
-and 
-$(c_x \pm (p_y-c_y), c_y \pm (p_x-c_x)$.
-
-Because we only need to plot an eighth of the circle, we can pick a portion
-were the slope is strictly bounded, as e.g. going from the west to the north-west 
+The exact details of how we decide to pick between moving in $x$ and not moving depends on if we want to plot points inside, near, or outside the circle.
+For inside points, always keep $f(x,y) \le 0$; this is what we'd do to fill it in.
+For outside points, always keep $f(x,y) > 0$; this is what we'd do to mask the circle, coloring things outside it.
+For nearest points, keep the $f(x,y)$ with the smaller magnitude; this is what we'd do to draw the circle as a single-pixel-width ring.
+:::
