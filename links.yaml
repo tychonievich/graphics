@@ -147,8 +147,8 @@
   files:
   - lectures/slides-2021-09-01.pdf
   video: lectures/video-2021-09-01.webm
-'2021-09-06':
+2021-09-06:
+  video: lectures/video-2021-09-06.webm
+  audio: lectures/audio-2021-09-06.mp3
   files:
-  - lectures/audio-2021-09-06.mp3
   - lectures/slides-2021-09-06.pdf
-  - lectures/video-2021-09-06.webm
