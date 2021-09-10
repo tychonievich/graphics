@@ -339,5 +339,7 @@ It makes use of multiple suns, shadows, `aa`, `dof`, `shininess`, `roughness`, a
 If I disable all of those, it runs in 0.2 seconds (desktop) or 0.8 seconds (laptop).
 This scene also is suitable for an even faster implementation (maybe a 10× speedup) because its objects are all about the same size, have little overlap, and are roughly evenly distributed across the scene.
 
-<a href="files/hw3spiral.txt" style="clear:both"><img style="height:30em" class="demo floater zoom" src="files/hw3spiral.png"/></a>
+<p style="clear:both"></p>
+
+<a href="files/hw3spiral.txt"><img style="height:30em" class="demo floater zoom" src="files/hw3spiral.png"/></a>
 This image has half as many spheres and half the anti-aliasing of the previous image, but takes almost as long (50 seconds on my desktop) because the spheres vary a lot in size and overlap a lot, which makes acceleration more difficult.
