@@ -159,7 +159,7 @@ In general, a real object might be pointed to from several bounding objects.
 Rather than try to inspect your bounding hierarchy code, we'll say you've achieved acceleration if you can render the scene shown here (which contains 1001 spheres, two suns, and shadows) in less than a second.  And yes, this is arbitrary wall-clock time on our test server, and yes this does disadvantage people writing in Python (which is tens to hundreds of times slower than the other languages people are using in this class).
 
 
-## Lighting (5–50%)
+## Lighting (5–70%)
 
 Multiple `sun`s (5%)
 :	<a href="files/hw3suns.txt"><img class="demo floater zoom" src="files/hw3suns.png"/></a>
@@ -197,6 +197,19 @@ expose $v$ (10%)
 	<div class="aside">Fancier exposure functions used in industry graphics,
 	such as FiLMiC's popular Log V2,
 	are based on large look-up tables instead of simple math but are conceptually similar to this function.</div>
+
+gi $d$ (requires `aa`, shadows, and `trif`) (20%)
+:	<a href="files/hw3gi.txt"><img class="demo floater zoom" src="files/hw3gi.png"/></a>
+	Render the scene with global illumination with depth $d$.
+	When lighting any point, include as an additional light the illuminated color of a random ray shot from that point.
+	
+	These secondary "global illumination" rays should use all of your usual illumination logic to pick their color,
+	including shininess, transparency, roughness, and so on if you've implemented them.
+	However, a global illumination ray should only spawn another global illumination ray if $d > 1$,
+	with the total number of global illumination rays generated capped by $d$.
+	
+	Distribute the random rays to reflect Lambert's law.
+	A simple way to do this is to have the ray direction be selected uniformly from inside a sphere centered at the tip of the normal vector with a radius equal to the normal vector's length.
 
 <!--
 HDR Bloom (required exposure) (15%)
@@ -343,3 +356,8 @@ This scene also is suitable for an even faster implementation (maybe a 10× spee
 
 <a href="files/hw3spiral.txt"><img style="height:30em" class="demo floater zoom" src="files/hw3spiral.png"/></a>
 This image has half as many spheres and half the anti-aliasing of the previous image, but takes almost as long (50 seconds on my desktop) because the spheres vary a lot in size and overlap a lot, which makes acceleration more difficult.
+
+<p style="clear:both"></p>
+
+<a href="files/hw3redchair.txt"><img style="height:30em" class="demo floater zoom" src="files/hw3redchair.png"/></a>
+This image has 1715 triangles, 1 plane, and 2 spheres. It uses shadows, transparency, shininess, anti-aliasing, and global illumination. On my desktop my reference implementation renders it in 80 seconds.
