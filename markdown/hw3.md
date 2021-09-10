@@ -326,3 +326,18 @@ dof $focus$ $lens$ (requires aa) (10%)
 	
 	If you do `dof` and `fisheye` or `panorama`, you do not need to (but may) implement `dof` for those alternative projections.
 
+## Speed
+
+For real raytracers, speed is all-important:
+the amount of fancy things an artist can afford to do is based on how quickly the basics can be handled.
+These scenes are not for credit, but will give you some examples to play with if you want to try to get your code fast.
+
+<a href="files/hw3tenthousand.txt"><img class="demo floater zoom" src="files/hw3tenthousand.png"/></a>
+My reference implementation can render this image in just under 1 minute on my desktop computer
+or just under 4 minutes on my laptop.
+It makes use of multiple suns, shadows, `aa`, `dof`, `shininess`, `roughness`, and `plane`.
+If I disable all of those, it runs in 0.2 seconds (desktop) or 0.8 seconds (laptop).
+This scene also is suitable for an even faster implementation (maybe a 10× speedup) because its objects are all about the same size, have little overlap, and are roughly evenly distributed across the scene.
+
+<a href="files/hw3spiral.txt"><img class="demo floater zoom" src="files/hw3spiral.png"/></a>
+This image has half as many spheres and half the anti-aliasing of the previous image, but takes almost as long (50 seconds on my desktop) because the spheres vary a lot in size and overlap a lot, which makes acceleration more difficult.
