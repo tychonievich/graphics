@@ -360,4 +360,4 @@ This image has half as many spheres and half the anti-aliasing of the previous i
 <p style="clear:both"></p>
 
 <a href="files/hw3redchair.txt"><img style="height:30em" class="demo floater zoom" src="files/hw3redchair.png"/></a>
-This image has 1715 triangles, 1 plane, and 2 spheres. It uses shadows, transparency, shininess, anti-aliasing, and global illumination. On my desktop my reference implementation renders it in 80 seconds.
+This image has 1715 triangles, 1 plane, and 2 spheres. It uses shadows, transparency, shininess, anti-aliasing, exposure, fisheye, and global illumination. On my desktop my reference implementation renders it in 55 seconds.
