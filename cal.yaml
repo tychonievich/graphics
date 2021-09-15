@@ -149,6 +149,9 @@ reading:
   math:
     - txt: 'Implementers Guide 1.3'
       lnk: 'files/implguide_2010.pdf'
+  math review:
+    - txt: 'Summary'
+      lnk: 'math1.html'
   homogeneous coordinates:
     - txt: 'homogeneous coordinates'
       lnk: 'http://mathworld.wolfram.com/HomogeneousCoordinates.html'
@@ -156,6 +159,8 @@ reading:
       lnk: 'https://en.wikipedia.org/wiki/Transformation_matrix'
     - txt: 'one person’s take on how they fit together'
       lnk: 'http://www.teamten.com/lawrence/graphics/homogeneous/'
+    - txt: 'Summary'
+      lnk: 'math2.html'
   3d pipeline:
     - txt: 'visible surface determination (and sub-pages)'
       lnk: 'https://education.siggraph.org/static/HyperGraph/scanline/visibility/vsible0.htm'
