@@ -46,7 +46,7 @@ To move by $\Delta x$ along the $x$ axis,
 $\Delta y$ along the $y$ axis, and
 $\Delta z$ along the $z$ axis,
 we use
-$\begin{bmatrix}1&0&\Delta x \\ 0&1&0&\Delta y \\ 0&0&1&\Delta z \\ 0&0&0&1\end{bmatrix}$
+$\begin{bmatrix}1&0&0&\Delta x \\ 0&1&0&\Delta y \\ 0&0&1&\Delta z \\ 0&0&0&1\end{bmatrix}$
 
 This matrix has the same effect as adding $(\Delta x, \Delta y, \Delta z, 0)$ to every point and doing nothing to the surface normals.
 However, because it is a matrix we can combine it with other transformations.
