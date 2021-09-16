@@ -77,7 +77,7 @@ linec $i_1$ $i_2$ *hexcolorcode*
     
     The same logic applies to lines that extend farther in $y$ than in $x$ and their pixel's $x$ coordinates.
     
-    In the case where you start or end with an integer endpoint, include the smaller value but not the larger.
+    In the case where you start or end with an integer endpoint, include the smaller value but not the larger.^[The smaller-but-not-larger rule is the correct rule for triangles, but not always sufficient for lines. However, the correct rule for lines depends on what other lines you want to connect it to, which our input format does not provide, so we'll use the smaller-but-not-larger rule for lines as well as triangles in this assignment]
     For example, if stepping between 20 and 10, include 10 but not 20.
     This rule prevents adjacent lines with a shared endpoint from both drawing that endpoint;
     for example, if one line goes from 5 to 10 and another from 10 to 15, only the second will draw pixel 10.
@@ -86,7 +86,7 @@ trig $i_1$ $i_2$ $i_3$
 :   <a href="files/hw1trig.txt"><img class="demo floater zoom" src="files/hw1trig.png"/></a>
     
     Fill a triangle between the given vertices, linearly interpolating the vertex colors as you go.
-    Use a DDA-based scanline algorithm: DDA step in $y$ along the edges, then loop in $x$ between these points.
+    Use a DDA-based scanline algorithm: DDA step in $y$ along the edges, then DDA step in $x$ between these points.^[If done properly, the $(x,y)$ along the edges will have integer $y$ but non-integer $x$; the $(x,y)$ of each pixel will both be integers; and you won't round any $x$ or $y$ coordinates.]
 
     Fill a vertex if its coordinates are inside the triangle, (e.g., pixel $(3, 4)$ is inside $(2.9, 4)$, $(3.1, 4.1)$, $(3.1, 3.9)$) on the left (small $x$) edge of the triangle, or on a perfectly horizontal top (small $y$) edge. Do not fill it otherwise.
     
