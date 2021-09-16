@@ -154,7 +154,7 @@ reading:
       lnk: 'math1.html'
   homogeneous coordinates:
     - txt: "last year's lecture recording"
-      lnk: '/luther/4810/F2020/player.html#2020-09-23.webm'
+      lnk: '../F2020/player.html#2020-09-23.webm'
     - txt: 'homogeneous coordinates'
       lnk: 'http://mathworld.wolfram.com/HomogeneousCoordinates.html'
     - txt: 'transformation matrices'
