@@ -86,7 +86,7 @@ trig $i_1$ $i_2$ $i_3$
 :   <a href="files/hw1trig.txt"><img class="demo floater zoom" src="files/hw1trig.png"/></a>
     
     Fill a triangle between the given vertices, linearly interpolating the vertex colors as you go.
-    Use a DDA-based scanline algorithm: DDA step in $y$ along the edges, then DDA step in $x$ between these points.^[If done properly, the $(x,y)$ along the edges will have integer $y$ but non-integer $x$; the $(x,y)$ of each pixel will both be integers; and you won't round any $x$ or $y$ coordinates.]
+    Use a DDA-based scanline algorithm^[Bresenham is fine too, being a mixed-number version of DDA]: DDA step in $y$ along the edges, then DDA step in $x$ between these points.^[If done properly, the $(x,y)$ along the edges will have integer $y$ but non-integer $x$; the $(x,y)$ of each pixel will both be integers; and you won't round any $x$ or $y$ coordinates.]
 
     Fill a vertex if its coordinates are inside the triangle, (e.g., pixel $(3, 4)$ is inside $(2.9, 4)$, $(3.1, 4.1)$, $(3.1, 3.9)$) on the left (small $x$) edge of the triangle, or on a perfectly horizontal top (small $y$) edge. Do not fill it otherwise.
     
