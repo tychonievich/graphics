@@ -39,15 +39,17 @@ notes:
 
 # Overview
 
-For this assignment you get to pick a few classes of simulation to complete.
-Unlike other assignments, you don't need to be able to mix-and-match commands:
-the `gravity` command only needs to be supported for the simulations that include gravity, for example.
+This assignment does not produce images or animations.
+Instead, it produces input files for your other renderers.
+We will grade the results using our reference renderer, with all optional features included.
 
-This assignment builds on the required parts of HW4.
-All of the required HW4 commands, including `loadp`, `object`, `position`, `quaternion`, `cos`, and so on are used in this assignment exactly as they were in HW4.
+This assignment is divided into several different types of simulation.
+The simulation type is given on the first line as follows:
 
-Every file will have the keyword `simulation` prior to any other HW5-specific keyword.
-There will always be one keyword after that, indicating which simulation type this file uses.
+simulation *type*
+:	Indicates that the rest of the file is the given simulation type.
+	This appears once and only once per file, and is always the first line.
+	We will never include keywords from the wrong simulation type in an input file.
 
 
 ## `simulation bones`
@@ -167,9 +169,21 @@ speed *min* *max*
 steering $s$ $a$ $c$
 :	Defines the balance between the three steering behaviors.
 
-	Alignment 
+	Separation $s$ turns away from neighbors, with weight proportional to inverse squared distance.
+	
+	Alignment $a$ turns the boid to face in the average direction of all other boids at speed ½(*min* + *max*)
+	
+	Cohesion $c$ turns toward the mean position of neighbors.
+	
+	Compute the desired turn and speed for each of these three forces independently,
+	then average them using the weights given.
+	We will only provide $s+a+c = 1$.
+	
+	
 
 ## `simulation landscape`
+
+
 
 ## `simulation trees`
 
