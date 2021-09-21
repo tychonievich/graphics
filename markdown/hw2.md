@@ -55,6 +55,10 @@ Thus, in the file snippet
 
 the triangle's points are first translated, then rotated, then the frustum is applied.
 
+Note, however, that order of operations can be seen in two ways.
+Rotating the camera 45° clockwise and then moving it 2 units to the right is the same operation as moving the world 2 units to the left and then rotating it 45° counterclockwise.
+Depending on how you think of the transformations, they can appear to be happening first-to-last or last-to-first.
+
 Some Model/View commands replace the current Model/View; this means later drawing commands ignore any Model/View commands that came before the replacing command.
 
 The entire flow looks like this (required parts are in bold):
