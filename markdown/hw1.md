@@ -104,7 +104,7 @@ tric $i_1$ $i_2$ $i_3$ *hexcolorcode* (5%) <a href="files/hw1tric.txt"><img clas
 :   Fills a triangle as `trig` but uses the specified flat color, not linearly-iterpolated color
 
 xyrgba *or* lineca/trica (10%) <a href="files/hw1rgba.txt"><img class="demo floater" src="files/hw1rgba.png"/></a> <a href="files/hw1trica.txt"><img class="demo floater" src="files/hw1trica.png" style="clear:both"/></a>
-:   Accept points `xycrgba` with a 4th color being an alpha (opacity) channel,
+:   Accept points `xyrgba` with a 4th color being an alpha (opacity) channel,
     and use that alpha in Gouraud shading (lineg and trig).
 
     And/or, add `lineca` and `trica` that act like `linec` and `tric` but take an extra 2 hex digits in the color code,
