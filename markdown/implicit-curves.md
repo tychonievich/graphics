@@ -156,7 +156,7 @@ Conveniently, the order of differencing does not matter:
 
 $$\begin{array}{rcl}
 f_{yx}(x,y) &=& f_x(x,y+1) - f_x(x,y) \\
-            &=& \big(f(x+1,y+1) - f(x,y+1)\big) - \(f(x+1,y)-f(x,y)\big) \\
+            &=& \big(f(x+1,y+1) - f(x,y+1)\big) - \big(f(x+1,y)-f(x,y)\big) \\
             &=& f(x+1,y+1) - f(x,y+1) - f(x+1,y) + f(x,y) \\
             &=& \big(f(x+1,y+1) - f(x+1,y)\big) - \big(f(x,y+1) - f(x,y)\big) \\
             &=& f_y(x+1,y) - f_y(x,y) \\
