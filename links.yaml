@@ -168,9 +168,7 @@
   - lectures/slides-2021-09-20.pdf
   video: lectures/video-2021-09-20.webm
 2021-09-22:
-  audio:
-  - lectures/audio-2021-09-22.mp3
-  - lectures/audio-2021-09-22.srt
+  audio: lectures/audio-2021-09-22.mp3
   files:
   - lectures/slides-2021-09-22.pdf
   video: lectures/video-2021-09-22.webm
