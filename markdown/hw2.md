@@ -155,9 +155,6 @@ Depth buffer
 
 ## Perspective (0&ndash;25)
 
-If (and only if) you implement the core perspective features
-you may earn additional points as follows
-
 xyzw $x$ $y$ $z$ $w$ (5 points)
 :	<a href="files/hw2xyzw.txt"><img class="demo floater zoom" src="files/hw2xyzw.png"/></a>
 	Add the point ($x$, $y$, $z$, $w$) to the vertex list.
