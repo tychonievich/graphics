@@ -90,7 +90,9 @@ reading:
     - txt: 'OLED'
       lnk: 'https://commons.wikimedia.org/wiki/File:Nexus_one_screen_microscope.jpg'
   color:
-    - txt: 'Color'
+    - txt: 'Writeup'
+      lnk: 'color.html'
+    - txt: 'Wikipedia'
       lnk: 'https://en.wikipedia.org/wiki/Color'
     - txt: 'RGB'
       lnk: 'https://en.wikipedia.org/wiki/RGB_color_model'
