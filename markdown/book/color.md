@@ -62,7 +62,7 @@ As a result, early color displays played with several different colors of light,
 
 You'll notice that there is space in the above image that is inside the visible-color curve but outside the colored-in triangle. Those colors exist in the real world, but cannot be replicated on this screen. Later ITU-R recommendations (Rec.2020 published in 2012 and Rec.2100 published in 2016) suggest single-wavelength lights to get a larger region, but while that makes the triangle bigger it still leaves out some colors. Most of the monitors I checked in 2021 still used Rec.709 colors instead, which is why I rendered the Rec.709 triangle above.
 
-Note that some colors can be represented on a monitor but are not shown in the diagram because they differ from the diagrams colors only in luminance.
+Note that some colors can be represented on a monitor but are not shown in the diagram because they differ from the diagram's colors only in luminance.
 For example, yellow, is a higher-luminance version of the point halfway between the green and red corners
 and forest green is a lower-luminance version of a point near the green corner of the triangle.
 
@@ -79,7 +79,7 @@ We've almost reached how color is actually stored in a computer; the missing com
 
 Let's assume we have two colors that differ only in luminance.
 The formal term for this is having the same "chromaticity".
-They eye roughly distinguishes the two by the relative luminance,
+The eye roughly distinguishes the two by the relative luminance,
 so 1.0 and 0.9 are seen as much more similar than are 0.2 and 0.1.
 The formal term for this relative perception is "lightness".
 
