@@ -92,6 +92,8 @@ reading:
   color:
     - txt: 'Writeup'
       lnk: 'color.html'
+    - txt: 'retna'
+      lnk: 'http://retinalmicroscopy.com/awards/'
     - txt: 'Wikipedia'
       lnk: 'https://en.wikipedia.org/wiki/Color'
     - txt: 'RGB'
