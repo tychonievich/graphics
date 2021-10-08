@@ -134,3 +134,24 @@ together with the fact that multiplying a quaternion by a scalar does not change
 - $c = \vec {a'} \cdot \vec {p'}$
 - $w = \sqrt{\dfrac{1+c}{1-c}}$
 - quaternion is $\langle w ; r_x, r_y, r_z \rangle$
+
+
+:::example
+To point the +y axis at $(3,12,4)$ we'd compute
+
+- $\vec a' = (0,1,0)$
+
+- $\vec p' = \left(\dfrac{3}{13},\dfrac{12}{13},\dfrac{4}{13}\right)$
+
+- $\vec r' = \left(\dfrac{4}{13}, 0, \dfrac{-3}{13}\right)$
+
+- $\vec r = \left(\dfrac{4}{5},0,\dfrac{-3}{5}\right)$
+
+- $c = \dfrac{12}{13}$
+
+- $w = \sqrt{\dfrac{1+\frac{12}{13}}{1-\frac{12}{13}}}  = \sqrt{\dfrac{\frac{25}{13}}{\frac{1}{13}}} = \sqrt{25} = 5$
+
+- quaternion = $\left\langle 5 ; \dfrac{4}{5}, 0, \dfrac{-3}{5}\right\rangle$
+
+Using the [non-normalized quaternion to matrix conversion](quaternions.html) on this gives in the same matrix given in the previous example.
+:::
