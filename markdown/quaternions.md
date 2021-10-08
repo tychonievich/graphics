@@ -142,37 +142,13 @@ we can multiply all terms by the denominator of three of them,
 reducing both computation and numerical error.
 
 
--   - $w = a_{0,0} + a_{1,1} + a_{2,2} + 1$
-    
-    - $x = a_{2,1} - a_{1,2}$
-    
-    - $y = a_{0,2} - a_{2,0}$
-    
-    - $z = a_{1,0} - a_{0,1}$
+- $\langle a_{0,0} + a_{1,1} + a_{2,2} + 1; a_{2,1} - a_{1,2}, a_{0,2} - a_{2,0}, a_{1,0} - a_{0,1}\rangle$
 
--   - $x = a_{0,0} - a_{1,1} - a_{2,2} + 1$
-    
-    - $y = a_{0,1} + a_{1,0}$
-    
-    - $z = a_{0,2} + a_{2,0}$
-    
-    - $w = a_{2,1} - a_{1,2}$
-    
--   - $y = a_{1,1} - a_{0,0} - a_{2,2} + 1$
+- $\lrangle a_{2,1} - a_{1,2}; a_{0,0} - a_{1,1} - a_{2,2} + 1, a_{0,1} + a_{1,0}, a_{0,2} + a_{2,0}\rangle$
 
-    - $x = a_{1,0} + a_{0,1}$
+- $\langle a_{0,2} - a_{2,0}; a_{1,0} + a_{0,1}, a_{1,1} - a_{0,0} - a_{2,2} + 1, a_{1,2} + a_{2,1}\rangle$
 
-    - $z = a_{1,2} + a_{2,1}$
-        
-    - $w = a_{0,2} - a_{2,0}$
-
--   - $z = a_{2,2} - a_{0,0} - a_{1,1} + 1$
-    
-    - $x = a_{0,2} + a_{2,0}$
-    
-    - $y = a_{1,2} + a_{2,1}$
-    
-    - $w = a_{1,0} - a_{0,1}$
+- $\langle a_{1,0} - a_{0,1}; a_{0,2} + a_{2,0}, a_{1,2} + a_{2,1}, a_{2,2} - a_{0,0} - a_{1,1} + 1\rangle$
 
 
 Note that this process only works if the matrix given was in fact a rotation, as only rotation matrices can be represented as a quaternion.
