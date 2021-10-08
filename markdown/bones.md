@@ -81,10 +81,15 @@ which is all we need.
 Ergo, we have
 
 - $\displaystyle \vec {a'} = \frac{\vec a}{\|\vec a\|}$
+
 - $\displaystyle \vec {p'} = \frac{\vec p}{\|\vec p\|}$
+
 - $\vec {r'} = \vec {a'} \times \vec {p'}$
+
 - $c = \vec {a'} \cdot \vec {p'}$
+
 - $s = \|\vec {r'}\|$
+
 - $\displaystyle \vec r = \frac{\vec {r'}}{s}$
 
 which, combined with the matrix above, gives us the minimal rotation to point $\vec a$ at $\vec p$.
@@ -128,11 +133,17 @@ $\sin\left(\dfrac{\theta}{2}\right) = \sqrt{\dfrac{1 - \cos(\theta)}{2}}$,
 together with the fact that multiplying a quaternion by a scalar does not change the represented rotation, we have
 
 - $\vec {a'} = \dfrac{\vec a}{\|\vec a\|}$
+
 - $\vec {p'} = \dfrac{\vec p}{\|\vec p\|}$
+
 - $\vec {r'} = \vec {a'} \times \vec {p'}$
+
 - $\vec r = \dfrac{\vec {r'}}{\|\vec {r'}\|}$
+
 - $c = \vec {a'} \cdot \vec {p'}$
+
 - $w = \sqrt{\dfrac{1+c}{1-c}}$
+
 - quaternion is $\langle w ; r_x, r_y, r_z \rangle$
 
 
