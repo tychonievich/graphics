@@ -164,5 +164,5 @@ To point the +y axis at $(3,12,4)$ we'd compute
 
 - quaternion = $\left\langle 5 ; \dfrac{4}{5}, 0, \dfrac{-3}{5}\right\rangle$
 
-Using the [non-normalized quaternion to matrix conversion](quaternions.html) on this gives in the same matrix given in the previous example.
+Using the [quaternion to matrix conversion](quaternions.html) on this gives in the same matrix given in the previous example.
 :::
