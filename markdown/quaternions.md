@@ -148,13 +148,13 @@ The four quaternion equations give us
 
 Two of these are useless while the other two are useful.
 But there's nothing special about those two; a different rotation
-$$\begin{bmatrix}0&-1&0\\1&0&0\\0&0&1\end{bmatrix}$$
+$$\begin{bmatrix}0&1&0\\-1&0&0\\0&0&1\end{bmatrix}$$
 results in
 
-- $\langle 2;0,0,2 \rangle$
+- $\langle 2;0,0,-2 \rangle$
 - $\langle 0;0,0,0 \rangle$
 - $\langle 0;0,0,0 \rangle$
-- $\langle 2;0,0,2 \rangle$
+- $\langle -2;0,0,2 \rangle$
 
 Thus, we must check at least that we are not generating all zeros,
 and ideally that we are far from zero.
