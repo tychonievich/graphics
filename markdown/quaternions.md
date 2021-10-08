@@ -160,6 +160,7 @@ results in
 - $\langle 2;0,0,2 \rangle$
 
 Thus, we must check at least that we are not generating all zeros,
+and ideally that we are far from zero.
 Because of the way we constructed these equations,
 it is sufficient to check the four-term sum alone.
 :::
