@@ -136,4 +136,43 @@ Using the normalized quaternion form, we have four ways we can do this:
 
 All four will work in principle, but to maximize numerical accuracy we want the discriminant (the value inside the square root) to be as large as possible.
 
+We can also remove the root extractions:
+because multiplying a quaternion by a scalar does not change its represented rotation,
+we can multiply all terms by the denominator of three of them,
+reducing both computation and numerical error.
+
+
+-   - $w = a_{0,0} + a_{1,1} + a_{2,2} + 1$
+    
+    - $x = a_{2,1} - a_{1,2}$
+    
+    - $y = a_{0,2} - a_{2,0}$
+    
+    - $z = a_{1,0} - a_{0,1}$
+
+-   - $x = a_{0,0} - a_{1,1} - a_{2,2} + 1$
+    
+    - $y = a_{0,1} + a_{1,0}$
+    
+    - $z = a_{0,2} + a_{2,0}$
+    
+    - $w = a_{2,1} - a_{1,2}$
+    
+-   - $y = a_{1,1} - a_{0,0} - a_{2,2} + 1$
+
+    - $x = a_{1,0} + a_{0,1}$
+
+    - $z = a_{1,2} + a_{2,1}$
+        
+    - $w = a_{0,2} - a_{2,0}$
+
+-   - $z = a_{2,2} - a_{0,0} - a_{1,1} + 1$
+    
+    - $x = a_{0,2} + a_{2,0}$
+    
+    - $y = a_{1,2} + a_{2,1}$
+    
+    - $w = a_{1,0} - a_{0,1}$
+
+
 Note that this process only works if the matrix given was in fact a rotation, as only rotation matrices can be represented as a quaternion.
