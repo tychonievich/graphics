@@ -57,19 +57,10 @@ However, $q x q^{*}$ will always be a point if $x$ is a point.
 
 # Rotation matrix
 
-The 3×3 rotation matrix of a *normalized* quaternion $\langle w;x,y,z \rangle$
-is $$\begin{bmatrix}
-w^2+x^2-y^2-z^2 & 2(xy-zw) & 2(xz+yw) \\
-2(xy+zw) & w^2-x^2+y^2-z^2 & 2(yz-xw) \\
-2(xz-yw) & 2(yz+xw) & w^2-x^2-y^2+z^2 \\
-\end{bmatrix}$$
-Notice: the diagonal has positive $w$ and the coordinate of that row;
-the off-diagonal have a positive product of the coordinates of the row and column
-and a sign-varying product of $w$ and the third coordinate
-where the above-diagonal signs are negative if the two-coordinate product is in-order
-and the off-diagonal is skew-symmetric.
+To rotate point $x$ by unit-length quaternion $q$ we use $q x q^{*}$.
+But we generally will want to convert the quaternion to a matrix intead.
 
-The 3×3 rotation matrix of an arbitrary (non-normalized) quaternion can be found without normalizing using the following three equations:
+The 3×3 rotation matrix of an arbitrary (non-normalized) quaternion can be found using the following three equations:
 $$n = w^2 + x^2 + y^2 + z^2$$
 $$s = \begin{cases}0 & \text{if } n=0\\\frac{2}{n} &\text{otherwise}\end{cases}$$
 $$\begin{bmatrix}
@@ -77,17 +68,23 @@ $$\begin{bmatrix}
 s(xy+zw) & 1-s(x^2+z^2) & s(yz-xw) \\
 s(xz-yw) & s(yz+xw) & 1-s(x^2+y^2) \\
 \end{bmatrix}$$
+In the special case of a normalized quaternion, $n = 1$, $s=2$, and we have
+$$\begin{bmatrix}
+w^2+x^2-y^2-z^2 & 2(xy-zw) & 2(xz+yw) \\
+2(xy+zw) & w^2-x^2+y^2-z^2 & 2(yz-xw) \\
+2(xz-yw) & 2(yz+xw) & w^2-x^2-y^2+z^2 \\
+\end{bmatrix}$$
+Note we did a bit of conversion: direct substitution would have given us diagonal terms like $1-2(y^2+z^2)$ but $n = 1$ means we can re-write that as $w^2 + x^2 + y^2 + z^2 - 2(y^2+z^2)$, which simplifies to the matrix given.
 
 There are many terms in the above formulae and thus many of chances for a typo.
-A quick sanity check is that the matrix of a random quaternion times its own transpose should be the identity matrix.
-
+A quick sanity check is that multiplying any rotation matrix (including the rotation matrix from a random quaternion) by its transpose should result in the identity matrix.
 
 ## Inverse
 
 Given a rotation matrix, we can also derive a quaternion that represents it.
 Note that there are many such quaternions, as multiplying a quaternion by a scalar does not change the rotation it represents.
 
-The basic approach here is to add cells of the matrix together to cancel some terms.
+The basic approach here is to add cells of the simpler unit-quaternion matrix together to cancel some terms.
 
 - Add the main diagonal to get $3w^2 - x^2 - y^2 - z^2$; 
     because $w^2 + x^2 + y^2 + z^2 = 1$, this is equivalent to $4w^2 - 1$,
