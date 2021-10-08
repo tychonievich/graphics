@@ -141,7 +141,7 @@ To optimize numerical precision, we should pick the one with the largest four-te
 
 :::example
 Consider the rotation matrix
-$$\begin{bmatrix}0&1&0&1&0&0\\0&0&-1\end{bmatrix}$$
+$$\begin{bmatrix}0&1&0\\1&0&0\\0&0&-1\end{bmatrix}$$
 The four quaternion equations give us
 
 - $\langle 0;0,0,0 \rangle$
@@ -151,7 +151,7 @@ The four quaternion equations give us
 
 Two of these are useless while the other two are useful.
 But there's nothing special about those two; a different rotation
-$$\begin{bmatrix}0&-1&0&1&0&0\\0&0&1\end{bmatrix}$$
+$$\begin{bmatrix}0&-1&0\\1&0&0\\0&0&1\end{bmatrix}$$
 results in
 
 - $\langle 2;0,0,2 \rangle$
