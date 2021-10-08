@@ -154,7 +154,7 @@ results in
 - $\langle 0;0,0,0 \rangle$
 - $\langle 0;0,0,0 \rangle$
 - $\langle 0;0,0,0 \rangle$
-- $\langle 0;0,0,2 \rangle$
+- $\langle 0;0,0,4 \rangle$
 
 In general we must check all four options as any three of them may give zero quaternions.
 Because of the way we constructed these equations,
