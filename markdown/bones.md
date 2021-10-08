@@ -112,3 +112,25 @@ $$\begin{bmatrix}
 \dfrac{-12}{325} & \dfrac{4}{13} & \dfrac{309}{325} \\
 \end{bmatrix}$$
 :::
+
+We can also make a point-at quaternion.
+The axis-angle rotation $(\vec r, \theta)$ represents the same rotation as the quaternion
+$\left\langle
+\cos\left(\dfrac{\theta}{2}\right) ;
+\sin\left(\dfrac{\theta}{2}\right) r_x,
+\sin\left(\dfrac{\theta}{2}\right) r_y,
+\sin\left(\dfrac{\theta}{2}\right) r_z
+\right\rangle$.
+Using the half-angle identities
+$\cos\left(\dfrac{\theta}{2}\right) = \sqrt{\dfrac{1 + \cos(\theta)}{2}}$
+and 
+$\sin\left(\dfrac{\theta}{2}\right) = \sqrt{\dfrac{1 - \cos(\theta)}{2}}$,
+together with the fact that multiplying a quaternion by a scalar does not change the represented rotation, we have
+
+- $\vec {a'} = \dfrac{\vec a}{\|\vec a\|}$
+- $\vec {p'} = \dfrac{\vec p}{\|\vec p\|}$
+- $\vec {r'} = \vec {a'} \times \vec {p'}$
+- $\vec r = \dfrac{\vec {r'}}{\|\vec {r'}\|}$
+- $c = \vec {a'} \cdot \vec {p'}$
+- $w = \sqrt{\dfrac{1+c}{1-c}}$
+- quaternion is $\langle w ; r_x, r_y, r_z \rangle$
