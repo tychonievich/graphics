@@ -117,10 +117,10 @@ Using the normalized quaternion form, we have four ways we can do this:
 
 - Subtract two main diagonals from the third to find $z$:
     
-    - $y = \frac{1}{2} \sqrt{a_{2,2} - a_{0,0} - a_{1,1} + 1}$
-    - $x = \dfrac{a_{0,2} + a_{2,0}}{4y}$
-    - $z = \dfrac{a_{1,2} + a_{2,1}}{4y}$
-    - $w = \dfrac{a_{1,0} - a_{0,1}}{4y}$
+    - $z = \frac{1}{2} \sqrt{a_{2,2} - a_{0,0} - a_{1,1} + 1}$
+    - $x = \dfrac{a_{0,2} + a_{2,0}}{4z}$
+    - $y = \dfrac{a_{1,2} + a_{2,1}}{4z}$
+    - $w = \dfrac{a_{1,0} - a_{0,1}}{4z}$
 
 All four will work in principle, but to maximize numerical accuracy we want the discriminant (the value inside the square root) to be as large as possible.
 
