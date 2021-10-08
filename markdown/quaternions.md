@@ -96,31 +96,31 @@ Using the normalized quaternion form, we have four ways we can do this:
     Then we can subtract antidiagonal pairs (like $2(yz-xw) - 2(yz+xw) = -4xw$) and divide by $w$ to get the other terms.
     
     - $w = \frac{1}{2} \sqrt{a_{0,0} + a_{1,1} + a_{2,2} + 1}$
-    - $x = \dfrac{$a_{2,1} - a_{1,2}}{4w}$
-    - $y = \dfrac{$a_{0,2} - a_{2,0}}{4w}$
-    - $z = \dfrac{$a_{1,0} - a_{0,1}}{4w}$
+    - $x = \dfrac{a_{2,1} - a_{1,2}}{4w}$
+    - $y = \dfrac{a_{0,2} - a_{2,0}}{4w}$
+    - $z = \dfrac{a_{1,0} - a_{0,1}}{4w}$
 
 - Subtract two main diagonals from the third to get $3x^2 - w^2 - y^2 - z^2$, which again is equivalent to $4x^2-1$ to find $x$;
     then add antidiagonal pairs (like $2(xy-zw) + 2(xy+zw) = 4xy$) and divide by $x$ to get the other terms.
 
     - $x = \frac{1}{2} \sqrt{a_{0,0} - a_{1,1} - a_{2,2} + 1}$
-    - $y = \dfrac{$a_{0,1} + a_{1,0}}{4x}$
-    - $z = \dfrac{$a_{0,2} + a_{2,0}}{4x}$
-    - $w = \dfrac{$a_{2,1} - a_{1,2}}{4x}$
+    - $y = \dfrac{a_{0,1} + a_{1,0}}{4x}$
+    - $z = \dfrac{a_{0,2} + a_{2,0}}{4x}$
+    - $w = \dfrac{a_{2,1} - a_{1,2}}{4x}$
     
 - Subtract two main diagonals from the third to find $y$:
     
     - $y = \frac{1}{2} \sqrt{a_{1,1} - a_{0,0} - a_{2,2} + 1}$
-    - $x = \dfrac{$a_{1,0} + a_{0,1}}{4y}$
-    - $z = \dfrac{$a_{1,2} + a_{2,1}}{4y}$
-    - $w = \dfrac{$a_{0,2} - a_{2,0}}{4y}$
+    - $x = \dfrac{a_{1,0} + a_{0,1}}{4y}$
+    - $z = \dfrac{a_{1,2} + a_{2,1}}{4y}$
+    - $w = \dfrac{a_{0,2} - a_{2,0}}{4y}$
 
 - Subtract two main diagonals from the third to find $z$:
     
     - $y = \frac{1}{2} \sqrt{a_{2,2} - a_{0,0} - a_{1,1} + 1}$
-    - $x = \dfrac{$a_{0,2} + a_{2,0}}{4y}$
-    - $z = \dfrac{$a_{1,2} + a_{2,1}}{4y}$
-    - $w = \dfrac{$a_{1,0} - a_{0,1}}{4y}$
+    - $x = \dfrac{a_{0,2} + a_{2,0}}{4y}$
+    - $z = \dfrac{a_{1,2} + a_{2,1}}{4y}$
+    - $w = \dfrac{a_{1,0} - a_{0,1}}{4y}$
 
 All four will work in principle, but to maximize numerical accuracy we want the discriminant (the value inside the square root) to be as large as possible.
 
