@@ -23,7 +23,7 @@ $$\begin{bmatrix}\vec x & ? & ?\end{bmatrix}$$
 Now we pick the second-most important; for this example, let's say that's $\vec y_0$.
 We use a pair of cross-products to find a vector orthogonal to $\vec x$ that is as close to $\vec y_0$ as possible:
 $\vec y_1 = (\vec x \times \vec y) \times \vec x$
-and then divide that my its length to get $\vec y$, the next column:
+and then divide that by its length to get $\vec y$, the next column:
 $$\begin{bmatrix}\vec x & \vec y & ?\end{bmatrix}$$
 The third column is then just the cross-product of the other two, in an order to preserve the right-handed coordinate system: $\vec z = \vec x \times y$ or $\vec x = \vec y \times \vec z$ or $\vec y = \vec z \times \vec x$.
 No need to divide this one by its length: it will come out unit-length by construction.
