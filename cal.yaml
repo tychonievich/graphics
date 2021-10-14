@@ -333,6 +333,9 @@ reading:
       lnk: 'https://en.wikipedia.org/wiki/Delaunay_triangulation'
     - txt: 'Alpha shapes'
       lnk: 'https://en.wikipedia.org/wiki/Alpha_shape'
+  quaternions:
+    - txt: 'quaternion rotation'
+      lnk: 'quaternions.html'
   IK:
     - txt: 'wikipedia'
       lnk: 'https://en.wikipedia.org/wiki/Inverse_kinematics'
