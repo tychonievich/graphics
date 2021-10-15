@@ -151,7 +151,7 @@ object *name* *parent*
     The *name* may be used to indicate this object as the *parent* of later objects.
     The special name "`world`" may appear in the *parent* field to indicate the object has no parent.
     
-    You may assume that the *name* is unique in the file, ASCII, and not "`world`";
+    You may assume that the *name* is unique in the file, an ASCII identifier (i.e. no spaces or fancy characters), and not "`world`";
     and that *parent* is either "`world`" or the name of an object that appeared previously in this file.
     
     Every `object` line will be followed by its transformations (if any)

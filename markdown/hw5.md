@@ -39,22 +39,14 @@ notes:
 
 # Overview
 
-This assignment does not produce images or animations.
-Instead, it produces input files for your other renderers.
-We will grade the results using our reference renderer, with all optional features included.
+This assignment may result in several different programs.
+Instead of `make run` we will use several different make targets, one for each broad simulation type.
 
-This assignment is divided into several different types of simulation.
-The simulation type is given on the first line as follows:
+## `make bones` *filename*
 
-simulation *type*
-:	Indicates that the rest of the file is the given simulation type.
-	This appears once and only once per file, and is always the first line.
-	We will never include keywords from the wrong simulation type in an input file.
+This is an extension of HW4: everything that was required in HW4 is required in this program too.
 
-
-## `simulation bones`
-
-You may find our [bones writeup](bones.html) helpful.
+You may find our [bones writeup](bones.html) to be helpful.
 
 bone $d$
 :	This may appear at most once in any `object`.
@@ -64,31 +56,37 @@ bone $d$
 	A bone may have geometry, but doesn't need to.
 	A bone may have the `world`, another bone, or a non-bone as its parent.
 	
-	Unless explicitly stated otherwise, the remaining keywords in this section apply only to bones.
+	The remaining keywords in this section apply only to bones and will follow the `bone` command in the input.
 
-track $x$ $y$ $z$
-:	Apply a rotation (after positioning) such the bone's tip points toward the point $(x,y,z)$.
-	This should be a minimal rotation to achieve that goal, staying as close to the previous orientation (e.g. as given by a preceding `quaternion`) as possible.
+track *object*
+:	<a href="files/hw5bones-track.txt"><img class="demo zoom" src="files/hw5track.png"/></a>
+	After applying other transformations (including positioning and rotation),
+	rotate the object to the bone's tip points toward the named *object*.
+	This should be a minimal rotation to achieve that goal, staying as close to the previous orientation as possible.
 
-trackroll $x$ $y$ $z$ *axis* $x_2$ $y_2$ $z_2$
-:	Apply a rotation (after positioning) such the bone's tip points toward the point $(x,y,z)$.
-	There are many such rotations; pick the one that cases *axis* to point as close to point $(x_2,y_2,z_2)$ as possible.
-	The *axis* will always be two characters: first either `+` or `-`, then either `x` or `y`.
+trackroll *primary* *axis* *secondary*
+:	After applying other transformations (including positioning and rotation),
+	rotate the object to the bone's tip points toward the named *primary* object.
+	There are many such rotations; pick the one that points the bone's *axis* points toward the named *secondary* object as much as possible.
+	*Axis* will always be one of `+x`, `-x`, `+y`, or `-y`.
 
-trackscale $x$ $y$ $z$
-:	Like `track`, but also scale along the object's z axis to that the tip of the bone exactly reaches the point $(x,y,z)$. Do not scale along the object's other two axes.
+trackscale *object*
+:	<a href="files/hw5bones-trackscale.txt"><img class="demo zoom" src="files/hw5trackscale.png"/></a>
+	Like `track`, but also scale along the object's $z$ axis to that the tip of the bone exactly reaches the given object. Do not scale along the object's other two axes.
 
 trackstretch $x$ $y$ $z$
-:	Like `trackscale`, but also scale uniformly along the object's x and y axes such that the volume of the bone is conserved.
+:	<a href="files/hw5bones-trackstretch.txt"><img class="demo zoom" src="files/hw5trackstretch.png"/></a>
+	Like `trackscale`, but also scale uniformly along the object's $x$ and $y$ axes such that the volume of the bone is conserved.
 
-fabrik $x$ $y$ $z$ *iterations*
+fabrik *object* *iterations*
 :	Use FABRIK to perform inverse kinematics,
 	where the IK chain consists of this bone and all its bone parents.
-	Each frame should use the previous frame's results as its starting point.
 	
+	Each frame should begin the iteration from the positions provided by any `position`, `quaternion`, and `track` commands.
+		
 	FABRIK produces the origins and tips of a chain of bones.
 	Use the same math as `position` and `track` to align the bones with these points.
-	Use the previous frame's results as each rotation's starting point.
+
 	
 ## `simulation fireworks`
 

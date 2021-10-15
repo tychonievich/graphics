@@ -169,5 +169,31 @@
   video: lectures/video-2021-09-20.webm
 2021-09-22:
   audio: lectures/audio-2021-09-22.mp3
-  files: [lectures/slides-2021-09-22.pdf]
+  files:
+  - lectures/slides-2021-09-22.pdf
   video: lectures/video-2021-09-22.webm
+2021-09-27:
+  audio: lectures/audio-2021-09-27.mp3
+  files:
+  - lectures/slides-2021-09-27.pdf
+  video: lectures/video-2021-09-27.webm
+2021-09-29:
+  audio: lectures/audio-2021-09-29.mp3
+  files:
+  - lectures/slides-2021-09-29.pdf
+  video: lectures/video-2021-09-29.webm
+2021-10-04:
+  audio: lectures/audio-2021-10-04.mp3
+  files:
+  - lectures/slides-2021-10-04_2.pdf
+  video: lectures/video-2021-10-04.webm
+2021-10-06:
+  audio: lectures/audio-2021-10-06.mp3
+  files:
+  - lectures/slides-2021-10-06.pdf
+  video: lectures/video-2021-10-06.webm
+2021-10-13:
+  audio: lectures/audio-2021-10-13.mp3
+  files:
+  - lectures/slides-2021-10-13.pdf
+  video: lectures/video-2021-10-13.webm

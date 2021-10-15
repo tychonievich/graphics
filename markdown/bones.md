@@ -23,7 +23,7 @@ $$\begin{bmatrix}\vec x & ? & ?\end{bmatrix}$$
 Now we pick the second-most important; for this example, let's say that's $\vec y_0$.
 We use a pair of cross-products to find a vector orthogonal to $\vec x$ that is as close to $\vec y_0$ as possible:
 $\vec y_1 = (\vec x \times \vec y) \times \vec x$
-and then divide that my its length to get $\vec y$, the next column:
+and then divide that by its length to get $\vec y$, the next column:
 $$\begin{bmatrix}\vec x & \vec y & ?\end{bmatrix}$$
 The third column is then just the cross-product of the other two, in an order to preserve the right-handed coordinate system: $\vec z = \vec x \times y$ or $\vec x = \vec y \times \vec z$ or $\vec y = \vec z \times \vec x$.
 No need to divide this one by its length: it will come out unit-length by construction.
@@ -81,10 +81,15 @@ which is all we need.
 Ergo, we have
 
 - $\displaystyle \vec {a'} = \frac{\vec a}{\|\vec a\|}$
+
 - $\displaystyle \vec {p'} = \frac{\vec p}{\|\vec p\|}$
+
 - $\vec {r'} = \vec {a'} \times \vec {p'}$
+
 - $c = \vec {a'} \cdot \vec {p'}$
+
 - $s = \|\vec {r'}\|$
+
 - $\displaystyle \vec r = \frac{\vec {r'}}{s}$
 
 which, combined with the matrix above, gives us the minimal rotation to point $\vec a$ at $\vec p$.
@@ -111,4 +116,53 @@ $$\begin{bmatrix}
 \dfrac{-3}{13} & \dfrac{12}{13}  & \dfrac{-4}{13} \\ \\ 
 \dfrac{-12}{325} & \dfrac{4}{13} & \dfrac{309}{325} \\
 \end{bmatrix}$$
+:::
+
+We can also make a point-at quaternion.
+The axis-angle rotation $(\vec r, \theta)$ represents the same rotation as the quaternion
+$\left\langle
+\cos\left(\dfrac{\theta}{2}\right) ;
+\sin\left(\dfrac{\theta}{2}\right) r_x,
+\sin\left(\dfrac{\theta}{2}\right) r_y,
+\sin\left(\dfrac{\theta}{2}\right) r_z
+\right\rangle$.
+Using the half-angle identities
+$\cos\left(\dfrac{\theta}{2}\right) = \sqrt{\dfrac{1 + \cos(\theta)}{2}}$
+and 
+$\sin\left(\dfrac{\theta}{2}\right) = \sqrt{\dfrac{1 - \cos(\theta)}{2}}$,
+together with the fact that multiplying a quaternion by a scalar does not change the represented rotation, we have
+
+- $\vec {a'} = \dfrac{\vec a}{\|\vec a\|}$
+
+- $\vec {p'} = \dfrac{\vec p}{\|\vec p\|}$
+
+- $\vec {r'} = \vec {a'} \times \vec {p'}$
+
+- $\vec r = \dfrac{\vec {r'}}{\|\vec {r'}\|}$
+
+- $c = \vec {a'} \cdot \vec {p'}$
+
+- $w = \sqrt{\dfrac{1+c}{1-c}}$
+
+- quaternion is $\langle w ; r_x, r_y, r_z \rangle$
+
+
+:::example
+To point the +y axis at $(3,12,4)$ we'd compute
+
+- $\vec a' = (0,1,0)$
+
+- $\vec p' = \left(\dfrac{3}{13},\dfrac{12}{13},\dfrac{4}{13}\right)$
+
+- $\vec r' = \left(\dfrac{4}{13}, 0, \dfrac{-3}{13}\right)$
+
+- $\vec r = \left(\dfrac{4}{5},0,\dfrac{-3}{5}\right)$
+
+- $c = \dfrac{12}{13}$
+
+- $w = \sqrt{\dfrac{1+\frac{12}{13}}{1-\frac{12}{13}}}  = \sqrt{\dfrac{\frac{25}{13}}{\frac{1}{13}}} = \sqrt{25} = 5$
+
+- quaternion = $\left\langle 5 ; \dfrac{4}{5}, 0, \dfrac{-3}{5}\right\rangle$
+
+Using the [quaternion to matrix conversion](quaternions.html) on this gives in the same matrix given in the previous example.
 :::

@@ -155,9 +155,6 @@ Depth buffer
 
 ## Perspective (0&ndash;25)
 
-If (and only if) you implement the core perspective features
-you may earn additional points as follows
-
 xyzw $x$ $y$ $z$ $w$ (5 points)
 :	<a href="files/hw2xyzw.txt"><img class="demo floater zoom" src="files/hw2xyzw.png"/></a>
 	Add the point ($x$, $y$, $z$, $w$) to the vertex list.
@@ -232,7 +229,7 @@ multmv $a_{1,1}$ $a_{1,2}$ $a_{1,3}$ $a_{1,4}$ $a_{2,1}$ $a_{2,2}$ ... $a_{4,4}$
 Normal Transformation (0&ndash;10 points; requires lighting and transformation matrices)
 :	<a href="files/hw2ball.txt"><img class="demo floater zoom" src="files/hw2ball.png"/></a>
 	Vectors (sunlight, normal, clipplane) ought to be multiplied by a variant of the model/view matrix.
-	If point p is modified by multiplication $M \vec{p}$ then vector $\vec{v}$ is modified by multiplication $\vec{v} M${-1}$.
+	If point p is modified by multiplication $M \vec{p}$ then vector $\vec{v}$ is modified by multiplication $\vec{v} M^{-1}$.
 	However, you do not need to compute the inverse:
 	this is the same as saying that 
 	

@@ -154,14 +154,14 @@ If we have $f(x,y)$ we can find both $f_x(x,y) = f(x+1,y) - f(x,y)$
 and $f_y(x,y) = f(x,y+1) - f(y)$.
 Conveniently, the order of differencing does not matter:
 
-$$\begin{split}
-f_{yx}(x,y) &= f_x(x,y+1) - f_x(x,y) \\
-            &= \big(f(x+1,y+1) - f(x,y+1)\big) - \(f(x+1,y)-f(x,y)\big)
-            &= f(x+1,y+1) - f(x,y+1) - f(x+1,y) + f(x,y)
-            &= \big(f(x+1,y+1) - f(x+1,y)\big) - \big(f(x,y+1) - f(x,y)\big)
-            &= f_y(x+1,y) - f_y(x,y) \\
-            &= f_{xy}(x,y)
-\end{split}$$
+$$\begin{array}{rcl}
+f_{yx}(x,y) &=& f_x(x,y+1) - f_x(x,y) \\
+            &=& \big(f(x+1,y+1) - f(x,y+1)\big) - \big(f(x+1,y)-f(x,y)\big) \\
+            &=& f(x+1,y+1) - f(x,y+1) - f(x+1,y) + f(x,y) \\
+            &=& \big(f(x+1,y+1) - f(x+1,y)\big) - \big(f(x,y+1) - f(x,y)\big) \\
+            &=& f_y(x+1,y) - f_y(x,y) \\
+            &=& f_{xy}(x,y)
+\end{array}$$
 
 :::example
 Consider the circle equation $f(x,y) = (x-c_x)^2 + (y-c_y)^2 - r^2$,

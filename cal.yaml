@@ -3,7 +3,7 @@ Special Dates:
   Courses end: 2021-12-07
   Add deadline: 2021-09-07
   Drop deadline: 2021-10-14
-  Withdraw deadline: 2021-10-26
+  Withdraw deadline: 2021-10-19
   Reading days:
     start: 2021-10-09
     end:  2021-10-12
@@ -90,7 +90,11 @@ reading:
     - txt: 'OLED'
       lnk: 'https://commons.wikimedia.org/wiki/File:Nexus_one_screen_microscope.jpg'
   color:
-    - txt: 'Color'
+    - txt: 'Writeup'
+      lnk: 'color.html'
+    - txt: 'retna'
+      lnk: 'http://retinalmicroscopy.com/awards/'
+    - txt: 'Wikipedia'
       lnk: 'https://en.wikipedia.org/wiki/Color'
     - txt: 'RGB'
       lnk: 'https://en.wikipedia.org/wiki/RGB_color_model'
@@ -329,6 +333,9 @@ reading:
       lnk: 'https://en.wikipedia.org/wiki/Delaunay_triangulation'
     - txt: 'Alpha shapes'
       lnk: 'https://en.wikipedia.org/wiki/Alpha_shape'
+  quaternions:
+    - txt: 'quaternion rotation'
+      lnk: 'quaternions.html'
   IK:
     - txt: 'wikipedia'
       lnk: 'https://en.wikipedia.org/wiki/Inverse_kinematics'
@@ -437,22 +444,18 @@ assignments:
   Quiz05:
       due: 2021-10-04 13:30:00
   Quiz06:
-      due: 2021-10-13 13:30:00
-  Quiz07:
       due: 2021-10-18 13:30:00
-  Quiz08:
+  Quiz07:
       due: 2021-10-25 13:30:00
-  Quiz09:
+  Quiz08:
       due: 2021-11-01 13:30:00
-  Quiz10:
+  Quiz09:
       due: 2021-11-08 13:30:00
-  Quiz11:
+  Quiz10:
       due: 2021-11-15 13:30:00
-  Quiz12:
+  Quiz11:
       due: 2021-11-22 13:30:00
-  Quiz13:
-      due: 2021-11-29 13:30:00
-  Quiz14:
+  Quiz12:
       due: 2021-12-06 13:30:00
       
 
