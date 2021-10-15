@@ -59,7 +59,8 @@ bone $d$
 	The remaining keywords in this section apply only to bones and will follow the `bone` command in the input.
 
 track *object*
-:	After applying other transformations (including positioning and rotation),
+:	<a href="files/hw5bones-track.txt"><img class="demo zoom" src="files/hw5track.png"/></a>
+	After applying other transformations (including positioning and rotation),
 	rotate the object to the bone's tip points toward the named *object*.
 	This should be a minimal rotation to achieve that goal, staying as close to the previous orientation as possible.
 
