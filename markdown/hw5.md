@@ -71,10 +71,12 @@ trackroll *primary* *axis* *secondary*
 	*Axis* will always be one of `+x`, `-x`, `+y`, or `-y`.
 
 trackscale *object*
-:	Like `track`, but also scale along the object's $z$ axis to that the tip of the bone exactly reaches the given object. Do not scale along the object's other two axes.
+:	<a href="files/hw5bones-trackscale.txt"><img class="demo zoom" src="files/hw5trackscale.png"/></a>
+	Like `track`, but also scale along the object's $z$ axis to that the tip of the bone exactly reaches the given object. Do not scale along the object's other two axes.
 
 trackstretch $x$ $y$ $z$
-:	Like `trackscale`, but also scale uniformly along the object's $x$ and $y$ axes such that the volume of the bone is conserved.
+:	<a href="files/hw5bones-trackstretch.txt"><img class="demo zoom" src="files/hw5trackstretch.png"/></a>
+	Like `trackscale`, but also scale uniformly along the object's $x$ and $y$ axes such that the volume of the bone is conserved.
 
 fabrik *object* *iterations*
 :	Use FABRIK to perform inverse kinematics,
