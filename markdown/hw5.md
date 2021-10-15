@@ -82,7 +82,8 @@ fabrik *object* *iterations*
 :	Use FABRIK to perform inverse kinematics,
 	where the IK chain consists of this bone and all its bone parents.
 	
-	Each frame should begin the iteration from the positions provided by any `position`, `quaternion`, and `track` commands.
+	Each frame should begin the iteration from the positions provided by any `position` and `quaternion` commands.
+	None of the bones in an IK chain will have a track or related command.
 		
 	FABRIK produces the origins and tips of a chain of bones.
 	Use the same math as `position` and `track` to align the bones with these points.
