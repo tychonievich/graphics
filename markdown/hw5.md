@@ -48,6 +48,21 @@ This is an extension of HW4: everything that was required in HW4 is required in 
 
 You may find our [bones writeup](bones.html) to be helpful.
 
+:::aside
+As written, these pieces are quite large. I'm considering breaking them up as follows:
+
+- require `track` with no parent and no `qauternion`
+    - optionally, with `quaternion`
+        - optionally, with non-tracking parent
+            - optionally, with tracking parent
+            - optionally, with trackscale
+            - optionally, with trackstretch
+    - optionally, trackroll with non-tracking parent
+        - optionally, with tracking parent
+- require? FABRIK with world root
+    - optionally, with other root
+:::
+
 bone $d$
 :	This may appear at most once in any `object`.
 	If present, it means that this object is considered to be a bone,
