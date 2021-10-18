@@ -79,8 +79,13 @@ trackstretch $x$ $y$ $z$
 	Like `trackscale`, but also scale uniformly along the object's $x$ and $y$ axes such that the volume of the bone is conserved.
 
 fabrik *object* *iterations*
-:	Use FABRIK to perform inverse kinematics,
+:	<a href="files/hw5bones-fabrik.txt"><img class="demo zoom" src="files/hw5fabrik.png"/></a>
+	Use FABRIK to perform inverse kinematics,
 	where the IK chain consists of this bone and all its bone parents.
+
+	Recall that one iteration of FABRIK moves the bone tip to *object*,
+	then moves the chain root back to its starting location.
+	Compute *iterations* iterations in total.
 	
 	Each frame should begin the iteration from the positions provided by any `position` and `quaternion` commands.
 	None of the bones in an IK chain will have a track or related command.
