@@ -84,6 +84,12 @@ trackroll *primary* *axis* *secondary*
 	rotate the object to the bone's tip points toward the named *primary* object.
 	There are many such rotations; pick the one that points the bone's *axis* points toward the named *secondary* object as much as possible.
 	*Axis* will always be one of `+x`, `-x`, `+y`, or `-y`.
+	
+	With non-tracking parent
+	:	<a href="files/hw5bones-trackroll.txt"><img class="demo zoom" src="files/hw5trackroll.png"/></a>
+	
+	With tracking parent
+	:	<a href="files/hw5bones-trackroll2.txt"><img class="demo zoom" src="files/hw5trackroll2.png"/></a>
 
 trackscale *object*
 :	<a href="files/hw5bones-trackscale.txt"><img class="demo zoom" src="files/hw5trackscale.png"/></a>
