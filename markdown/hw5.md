@@ -48,21 +48,6 @@ This is an extension of HW4: everything that was required in HW4 is required in 
 
 You may find our [bones writeup](bones.html) to be helpful.
 
-:::aside
-As written, these pieces are quite large. I'm considering breaking them up as follows:
-
-- require `track` with no parent and no `qauternion`
-    - optionally, with `quaternion`
-        - optionally, with non-tracking parent
-            - optionally, with tracking parent
-            - optionally, with trackscale
-            - optionally, with trackstretch
-    - optionally, trackroll with non-tracking parent
-        - optionally, with tracking parent
-- require? FABRIK with world root
-    - optionally, with other root
-:::
-
 bone $d$
 :	This may appear at most once in any `object`.
 	If present, it means that this object is considered to be a bone,
@@ -73,35 +58,43 @@ bone $d$
 	
 	The remaining keywords in this section apply only to bones and will follow the `bone` command in the input.
 
-track *object*
+track *object* (requires `bone`; 15–30 points)
 :	<a href="files/hw5bones-track.txt"><img class="demo zoom" src="files/hw5track.png"/></a>
 	After applying other transformations (including positioning and rotation),
 	rotate the object to the bone's tip points toward the named *object*.
 	This should be a minimal rotation to achieve that goal, staying as close to the previous orientation as possible.
 
-trackroll *primary* *axis* *secondary*
+	Basic (15 points)
+	:	<a href="files/hw5bones-track1.txt"><img class="demo zoom" src="files/hw5track1.png"/></a>
+
+	Rotation and negative length (5 points)
+	:	<a href="files/hw5bones-track2.txt"><img class="demo zoom" src="files/hw5track2.png"/></a>
+
+	Tracking parent and target (10 points)
+	:	<a href="files/hw5bones-track3.txt"><img class="demo zoom" src="files/hw5track3.png"/></a>
+
+trackroll *primary* *axis* *secondary* (requires `track`; 10–20 points)
 :	After applying other transformations (including positioning and rotation),
 	rotate the object to the bone's tip points toward the named *primary* object.
 	There are many such rotations; pick the one that points the bone's *axis* points toward the named *secondary* object as much as possible.
 	*Axis* will always be one of `+x`, `-x`, `+y`, or `-y`.
 	
-	With non-tracking parent
+	Basic (10 points)
 	:	<a href="files/hw5bones-trackroll.txt"><img class="demo zoom" src="files/hw5trackroll.png"/></a>
 	
-	With tracking parent
+	Tracking parent and target (10 points)
 	:	<a href="files/hw5bones-trackroll2.txt"><img class="demo zoom" src="files/hw5trackroll2.png"/></a>
 
-trackscale *object*
+trackscale *object* (requires `track`; 10 points)
 :	<a href="files/hw5bones-trackscale.txt"><img class="demo zoom" src="files/hw5trackscale.png"/></a>
 	Like `track`, but also scale along the object's $z$ axis to that the tip of the bone exactly reaches the given object. Do not scale along the object's other two axes.
 
-trackstretch $x$ $y$ $z$
+trackstretch $x$ $y$ $z$  (requires `trackscale`; 5 points)
 :	<a href="files/hw5bones-trackstretch.txt"><img class="demo zoom" src="files/hw5trackstretch.png"/></a>
 	Like `trackscale`, but also scale uniformly along the object's $x$ and $y$ axes such that the volume of the bone is conserved.
 
-fabrik *object* *iterations*
-:	<a href="files/hw5bones-fabrik.txt"><img class="demo zoom" src="files/hw5fabrik.png"/></a>
-	Use FABRIK to perform inverse kinematics,
+fabrik *object* *iterations* (20–35 points)
+:	Use FABRIK to perform inverse kinematics,
 	where the IK chain consists of this bone and all its bone parents.
 
 	Recall that one iteration of FABRIK moves the bone tip to *object*,
@@ -113,6 +106,12 @@ fabrik *object* *iterations*
 		
 	FABRIK produces the origins and tips of a chain of bones.
 	Use the same math as `position` and `track` to align the bones with these points.
+
+	Basic (20 points)
+	:	<a href="files/hw5bones-fabrik.txt"><img class="demo zoom" src="files/hw5fabrik.png"/></a>
+		
+	With moving root (15 points)
+	:	<a href="files/hw5bones-fabrik2.txt"><img class="demo zoom" src="files/hw5fabrik2.png"/></a>
 
 	
 ## `simulation fireworks`
