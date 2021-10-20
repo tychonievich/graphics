@@ -1,7 +1,7 @@
 pngs 180 120 hw5trackroll2- 30
 
 fps 8
-div t f 30
+div t f l
 
 # angle from 0 to 360, with cos and sin of it
 mul angle t 360

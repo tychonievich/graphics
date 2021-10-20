@@ -1,6 +1,6 @@
 pngs 180 120 hw4verts- 24
 fps 8
-div t f 24
+div t f l
 
 # tetrahedron can be a cube with half the vertices at 2/3,2/3,2/3 instead of 2,2,2
 # we let x vary from -1 to 1, x2 from 0 to 1, x3 from 0 to 4/3, and x4 from 2/3 to 2

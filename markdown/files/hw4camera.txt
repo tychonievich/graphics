@@ -1,5 +1,5 @@
 pngs 180 120 hw4camera- 50
-div t f 50
+div t f l
 sub s 1 t
 mul ang t 180
 sin x1 ang

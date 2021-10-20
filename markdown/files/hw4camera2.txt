@@ -2,7 +2,7 @@ pngs 180 120 hw4camera2- 30
 
 fps 8
 
-div t f 30
+div t f l
 
 mul angle t 360
 cos x angle

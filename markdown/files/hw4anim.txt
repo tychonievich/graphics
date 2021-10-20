@@ -4,7 +4,7 @@ pngs 180 120 hw4anim- 50
 fps 8
 
 # sets t to be in [0,1)
-div t f 50
+div t f l
 
 # angle from 0 to 360, with cos and sin of it
 mul angle t 360

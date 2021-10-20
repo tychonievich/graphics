@@ -42,7 +42,10 @@ notes:
 This assignment may result in several different programs.
 Instead of `make run` we will use several different make targets, one for each broad simulation type.
 
-## `make bones` *filename*
+The required part of this assignment is "earn 50 points on this assignment".
+The optional part is any points in excess of 50 that you earn.
+
+## `make bones` *filename* (15–100 points)
 
 This is an extension of HW4: everything that was required in HW4 is required in this program too.
 

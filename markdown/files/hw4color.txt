@@ -1,6 +1,6 @@
 pngs 120 120 hw4color- 36
 fps 18
-div t f 36
+div t f l
 
 mul a1 t 360
 add a2 a1 120

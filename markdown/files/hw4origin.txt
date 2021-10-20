@@ -1,6 +1,6 @@
 pngs 180 120 hw4origin- 8
 fps 2
-div t f 8
+div t f l
 sub s 1 t
 
 # Set a 3-by-2 aspect ratio, 90° field-of-view in Y, near plane at 0.1, far plane at 10
