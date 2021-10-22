@@ -151,11 +151,11 @@ heat *h* *bouyancy*
 
 diffuse *rate*
 :   Diffuse heat at the given *rate* each frame using a [discrete Gaussian filter](diffusion.html) with *rate* as $t$.
-    Use clamping boundaries unless `wrapx` has been specified.
+    Use clamping boundaries (unless `wrapx` has been specified).
 
 viscosity *rate*
 :   Diffuse velocity at the given *rate* each frame using a [discrete Gaussian filter](diffusion.html) with *rate* as $t$.
-    Use clamping boundaries unless `wrapx` has been specified.
+    Use clamping boundaries unless (`wrapx` has been specified).
 
 subsample *n*
 :   Render one image every *n* frames, where *n* is a positive integer.

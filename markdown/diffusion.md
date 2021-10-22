@@ -66,16 +66,16 @@ It has a single parameter, $t \ge 0$, which indicates how much smoothing is taki
 
 Let $n$ be the number of cells away from the center of the filter, so the center has $n=0$, both its neighbors $n=1$, and so on.
 The filter value in any cell is then
-$$\sum_{m=0}^{\infty} \dfrac{(t/2)^{2m+n}}{m!(m+n)!}$$
+$$e^{-t} \sum_{m=0}^{\infty} \dfrac{(t/2)^{2m+n}}{m!(m+n)!}$$
 This is an infinite sum, but you don't need to compute infinitely many terms:
 each subsequent $m$ gives a smaller additional term until eventually they stop mattering (the factorials in the denominator eventually overtake the polynomial in the numerator).
 You can compute it with something like
 
 ```c
 /**
- * Returns the `n`th element of the discrete Gauassian filter
- * with strength `t`. That is, computes the modified Bessel
- * function of the first kind I_n(t).
+ * Returns the `n`th element of the discrete Gaussian filter
+ * with strength `t`. That is, computes an exponential e^{-t}
+ * times the the modified Bessel function of the first kind I_n(t).
  *
  * Written by Luther Tychonievich based on the definition of
  * the Bessel function and released into the public domain.
@@ -92,7 +92,7 @@ double filterElement(unsigned int n, double t) {
         m += 1;
         denominator *= m * (m+n);
     }
-    return answer;
+    return exp(-t) * answer;
 }
 ```
 
