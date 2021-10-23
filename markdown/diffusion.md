@@ -82,24 +82,27 @@ You can compute it with something like
  */
 double filterElement(unsigned int n, double t) {
     double answer = 0;
+    double term = 1;
+    double scale = exp(-t);
+    t /= 2;
+    for(int i=1; i<=n; i+=1) term *= t/i;
+    t *= t;
     int m = 0;
-    double denominator = 1;
-    for(int i=1; i<=n; i+=1) denominator *= i;
-    while(true) {
-        double term = pow(t/2, 2*m+n) / denominator;
-        if ((answer + term) == answer) break;
+    while((answer + term) != answer) {
         answer += term;
         m += 1;
-        denominator *= m * (m+n);
+        term *= t / (m * (m+n));
     }
-    return exp(-t) * answer;
+    return scale * answer;
 }
 ```
 
 This filter has infinite support: that is, it will give a filter with an infinite number of entries.
-However, again, the values fall quite quickly.
+However, the values fall quickly with `n`.
 Typically stopping once the elements get to $10^{-6}$ will result in no perceptible impact in the filtered data,
 and sometimes $10^{-3}$ is a sufficient cut-off.
+If using a cut-off, it is wise to use an explicit normalizing scale by dividing the entries by their sum
+instead of using the $e^{-t}$ normalization in the infinite-support definition.
 
 :::example
 The discrete Gaussian filter with $t=1.5$ is (to 3 digits of precision)
