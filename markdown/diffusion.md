@@ -74,8 +74,8 @@ You can compute it with something like
 ```c
 /**
  * Returns the `n`th element of the discrete Gaussian filter
- * with strength `t`. That is, computes an exponential e^{-t}
- * times the the modified Bessel function of the first kind I_n(t).
+ * with strength `t`. That is, computes an exponential $e^{-t}$
+ * times the the modified Bessel function of the first kind $I_n(t)$.
  *
  * Written by Luther Tychonievich based on the definition of
  * the Bessel function and released into the public domain.
