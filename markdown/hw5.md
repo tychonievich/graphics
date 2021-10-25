@@ -179,7 +179,7 @@ Other examples
     <div style="clear:both"></div>
     
     A 40s 720p simulation [input file](files/hw5fluid-720p.txt)
-    and [result](layer.html#hw5fluid720p.webm)
+    and [result (in video player)](player.html#hw5fluid720p.webm)
 
 
 ## `simulation fireworks`
