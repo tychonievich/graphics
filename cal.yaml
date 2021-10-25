@@ -56,13 +56,13 @@ lectures:
   - raytracing
   - animation
   - [quaternions, transformations]
-  - [interpolation, what artists want]
+  - interpolation
   - IK
   - fluids
   - fluids
-  - HW5 topic
-  - HW5 topic
-  - HW5 topic
+  - volume representations
+  - cloth
+  - terrain
   - HW5 topic
   - shader languages
   - shader languages
