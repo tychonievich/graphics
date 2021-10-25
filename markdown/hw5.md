@@ -174,6 +174,23 @@ subsample *n* (10 points)
 
 Other examples
 :   <a href="files/hw5fluid-diffvisc.txt"><img class="demo zoom" src="files/hw5fluiddiffvisc.png"/></a>
+    
+    A 40s 720p simulation [input file](files/hw5fluid-720p.txt)
+    and result
+    
+    <video controls repload="metadata" style="max-width:100%">
+    <source src="files/hw5fluid720.webm" type="video/webm">
+    </video>
+    Playback speed: <input type="text" id="speed0" value="1.0" oninput="respeed(0)"/>
+
+
+<script type="text/javascript">
+function respeed(idx) {
+let vid = document.querySelectorAll('video')[idx]
+if (vid) vid.playbackRate = document.querySelector('#speed'+idx).value
+}
+</script>
+
 
 ## `simulation fireworks`
 
