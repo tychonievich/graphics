@@ -123,6 +123,21 @@ You'll output 2D fluids directly to the pixels of an image file (I guess we coul
 Use back-advection to provide unconditionally stable simulations.
 When back-advecting off the grid, assume velocity is 0 and temperature is equal to the nearest on-grid temperature.
 
+:::aside
+Fluid simulations tend to be somewhat all-or-nothing: either you have fluid, or you don't.
+Thus, you should plan to test each components prior to integrating them.
+In particular, you'll need
+
+- A sparse (3–5 nonzero entries per row) positive definite [matrix solver](math1.html#implementing-a-sparse-matrix-solver).
+- Linear-weighted sampling of a grid at non-integer indices
+- Sampling a grid with two out-of-bounds rules: either always 0 or nearest in-bounds value
+- Back advection of both cell contents and velocity
+    (which means you'll need two copies of each grid)
+- A means of turning a grid of divergences into a single long vector
+
+We recommend using a staggered grid, with velocities on cell boundaries and temperature in cell centers, as this simplifies divergence computation and boundary conditions and makes for nicer results at no additional computational cost.
+:::
+
 pngs *width* *height* *filename* *frames*
 :   same syntax and semantics as HW0.
     
@@ -178,7 +193,7 @@ Other examples
     
     <div style="clear:both"></div>
 
-    Strogn starting temperatures with no heating:
+    Intense starting temperatures with no heating:
     <a href="files/hw5fluid-slosh.txt"><img class="demo zoom" src="files/hw5fluidslosh.png"/></a>
     
     <div style="clear:both"></div>
