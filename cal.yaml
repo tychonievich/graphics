@@ -56,12 +56,12 @@ lectures:
   - raytracing
   - animation
   - [quaternions, transformations]
-  - interpolation
-  - what artists want
-  - IK
+  - [interpolation, what artists want]
   - IK
   - fluids
   - fluids
+  - HW5 topic
+  - HW5 topic
   - HW5 topic
   - HW5 topic
   - shader languages
