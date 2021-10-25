@@ -115,7 +115,7 @@ fabrik *object* *iterations* (20–35 points)
     With moving root (15 points)
     :   <a href="files/hw5bones-fabrik2.txt"><img class="demo zoom" src="files/hw5fabrik2.png"/></a>
 
-## `simulation fluid` (70–100 points)
+## `simulation fluid` (70–120 points)
 
 This is not an extension of any other assignment.
 You'll output 2D fluids directly to the pixels of an image file (I guess we could say it's an extension of HW0?).
@@ -187,6 +187,27 @@ subsample *n* (10 points)
     for example, if the *frames* in the `pngs` is 100 and the *n* in `subsample` is 4
     then you'll simulate 400 frames but render only 100 images.
 
+confine (requires viscosity; 10 points)
+:   <a href="files/hw5fluid-confine.txt"><img class="demo zoom" src="files/hw5fluidconfine.png"/></a>
+    <a href="files/hw5fluid-confine2.txt"><img class="demo zoom" src="files/hw5fluidconfine2.png"/></a>
+    The linear weights involved in advection
+    and the linear approximation of incomprehensibility created by using a matrix
+    both tend to add unwanted "numerical viscosity".
+    
+    As a work-around, if the word `confine` appears in the input file
+    then measure the kinetic energy of the fluid before each of these steps
+    and artificially scale all velocities afterward to restore the previously-measured kinetic energy.
+
+tconfine (requires diffuse; 10 points)
+:   <a href="files/hw5fluid-tconfine.txt"><img class="demo zoom" src="files/hw5fluidtconfine.png"/></a>
+    <a href="files/hw5fluid-tconfine2.txt"><img class="demo zoom" src="files/hw5fluidtconfine2.png"/></a>
+    The linear weights involved in advection
+    tends to add unwanted "numerical diffusion".
+    
+    As a work-around, if the word `tconfine` appears in the input file
+    then measure mean and variance of the temperatures fluid before each advection step
+    and artificially shift and scale all temperatures afterward to restore the previously-measured mean and variance.
+
 Other examples
 :   Combined viscosity and diffusion:
     <a href="files/hw5fluid-diffvisc.txt"><img class="demo zoom" src="files/hw5fluiddiffvisc.png"/></a>
@@ -195,6 +216,11 @@ Other examples
 
     Intense starting temperatures with no heating:
     <a href="files/hw5fluid-slosh.txt"><img class="demo zoom" src="files/hw5fluidslosh.png"/></a>
+    
+    <div style="clear:both"></div>
+    
+    Combined confinement:
+    <a href="files/hw5fluid-confineboth.txt"><img class="demo zoom" src="files/hw5fluidconfineboth.png"/></a>
     
     <div style="clear:both"></div>
     
