@@ -177,6 +177,11 @@ Other examples
     <a href="files/hw5fluid-diffvisc.txt"><img class="demo zoom" src="files/hw5fluiddiffvisc.png"/></a>
     
     <div style="clear:both"></div>
+
+    Strogn starting temperatures with no heating:
+    <a href="files/hw5fluid-slosh.txt"><img class="demo zoom" src="files/hw5fluidslosh.png"/></a>
+    
+    <div style="clear:both"></div>
     
     A 40s 720p simulation [input file](files/hw5fluid-720p.txt)
     and [result (in video player)](player.html#hw5fluid720p.webm)
