@@ -115,10 +115,13 @@ fabrik *object* *iterations* (20–35 points)
     With moving root (15 points)
     :   <a href="files/hw5bones-fabrik2.txt"><img class="demo zoom" src="files/hw5fabrik2.png"/></a>
 
-## `simulation fluid`
+## `simulation fluid` (70–100 points)
 
 This is not an extension of any other assignment.
 You'll output 2D fluids directly to the pixels of an image file (I guess we could say it's an extension of HW0?).
+
+Use back-advection to provide unconditionally stable simulations.
+When back-advecting off the grid, assume velocity is 0 and temperature is equal to the nearest on-grid temperature.
 
 pngs *width* *height* *filename* *frames*
 :   same syntax and semantics as HW0.
@@ -127,8 +130,10 @@ pngs *width* *height* *filename* *frames*
     Bigger images = higher-resolution fluids.
     Every cell will be full of fluid.
 
-heat *h* *bouyancy*
-:   To create motion in the fluid, track something we'll call the "temperature" of each pixel.
+heat *h* *bouyancy* *mag* (70 points)
+:   <a href="files/hw5fluid-basic.txt"><img class="demo zoom" src="files/hw5fluidbasic.png"/></a>
+    <a href="files/hw5fluid-basic2.txt"><img class="demo zoom" src="files/hw5fluidbasic2.png"/></a>
+    To create motion in the fluid, track something we'll call the "temperature" of each pixel.
     We won't simulate temperature-based expansion, but will approximate temperature-based buoyancy.
     
     We'll let temperature range from $-1$ to $1$.
@@ -143,31 +148,33 @@ heat *h* *bouyancy*
     
     | Temperature |  Color  |
     |:-----------:|:-------:|
-    | $1$         |`#FFFF00`|
-    | $0.5$       |`#FF0000`|
+    | $1$         |`#ff0000`|
     | $0$         |`#000000`|
-    | $-0.5$      |`#0077FF`|
-    | $-1$        |`#0000FF`|
+    | $-1$        |`#00B2FF`|
+    
+    If temperatures are outside this range, you may color them in an implementation-defined manner.
+    
+    For the first frame, set each cell to have a random temperature between −*mag* and +*mag*. This randomization breaks symmetry and gets the simulation started.
+    Because of randomization, each run of a given file will produce a different result (but with the same overall dynamics).
 
-diffuse *rate*
-:   Diffuse heat at the given *rate* each frame using a [discrete Gaussian filter](diffusion.html) with *rate* as $t$.
-    Use clamping boundaries (unless `wrapx` has been specified).
+diffuse *rate* (10 points)
+:   <a href="files/hw5fluid-diffuse.txt"><img class="demo zoom" src="files/hw5fluiddiffuse.png"/></a>
+    Diffuse heat at the given *rate* each frame using a [discrete Gaussian filter](diffusion.html) with *rate* as $t$.
 
-viscosity *rate*
-:   Diffuse velocity at the given *rate* each frame using a [discrete Gaussian filter](diffusion.html) with *rate* as $t$.
-    Use clamping boundaries unless (`wrapx` has been specified).
+viscosity *rate* (10 points)
+:   <a href="files/hw5fluid-viscosity.txt"><img class="demo zoom" src="files/hw5fluidviscosity.png"/></a>
+    Diffuse velocity at the given *rate* each frame using a [discrete Gaussian filter](diffusion.html) with *rate* as $t$.
 
-subsample *n*
-:   Render one image every *n* frames, where *n* is a positive integer.
+subsample *n* (10 points)
+:   <a href="files/hw5fluid-subsample.txt"><img class="demo zoom" src="files/hw5fluidsubsample.png"/></a>
+    Render one image every *n* frames, where *n* is a positive integer.
 
     for example, if the *frames* in the `pngs` is 100 and the *n* in `subsample` is 4
     then you'll simulate 400 frames but render only 100 images.
 
-wrapx
-:   If present, have the left and right boundaries wrap onto one another
-    (but keep the top and bottom boundaries impenetrable).
-    If not present, all four boundaries should be impenetrable.
-    
+Other examples
+:   <a href="files/hw5fluid-diffvisc.txt"><img class="demo zoom" src="files/hw5fluiddiffvisc.png"/></a>
+
 ## `simulation fireworks`
 
 burst *type* $n$ $x$ $y$ $z$ $t$ $v$

@@ -1,0 +1,6 @@
+pngs 200 50 hw5fluidsubsample- 150
+fps 15
+heat 1 0.25 0.1
+viscosity 0.25
+diffuse 0.25
+subsample 8
