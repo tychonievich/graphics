@@ -333,9 +333,9 @@ panorama (10%)
 
 dof $focus$ $lens$ (requires aa) (10%)
 :	<a href="files/hw3dof.txt"><img class="demo floater zoom" src="files/hw3dof.png"/></a>
-	simulate depth-of-field with the given focal depth and lens size.
+	simulate depth-of-field with the given focal depth and lens radius.
 	Instead of the ray you would normally shoot from a given pixel, shoot a different ray
-	that intersects with the standard ray at distance $focus$ but has its origin moved randomly to a different location within $lens \over 2$ of the standard ray origin. Keep the ray origin within the camera plane (that is, add multiples of the `right` and `up` vectors but not `forward`.
+	that intersects with the standard ray at distance $focus$ but has its origin moved randomly to a different location within $lens$ of the standard ray origin. Keep the ray origin within the camera plane (that is, add multiples of the `right` and `up` vectors but not `forward`.
 	
 	If you do `dof` and `fisheye` or `panorama`, you do not need to (but may) implement `dof` for those alternative projections.
 
