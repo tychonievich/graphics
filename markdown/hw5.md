@@ -230,7 +230,7 @@ Other examples
     and [result (in video player)](player.html#hw5fluid720p.webm)
 
 
-## `simulation springs`
+## `simulation springs` (50–120 points)
 
 This is not an extension of any other assignment.
 Rather, it outputs input files for HW3.
@@ -298,7 +298,8 @@ wall *A* *B* *C* *D*
     This barrier is invisible. HW3's visible variant was `plane` *A* *B* *C* *D*, but visible planes and interacting walls should be handled separately.
 
 ball $p_x$ $p_y$ $p_z$   $v_x$ $v_y$ $v_z$
-:   Create an animated ball at location $(p_x, p_y, p_z)$
+:   <a href="files/hw5spring-ball.txt"><img class="demo zoom" src="files/hw5spring-ball.png"/></a>
+    Create an animated ball at location $(p_x, p_y, p_z)$
     with velocity $(v_x, v_y, v_z)$.
     Use the currently active `radius` and `mass` for the ball.
     
@@ -308,26 +309,31 @@ ball $p_x$ $p_y$ $p_z$   $v_x$ $v_y$ $v_z$
     and $r$ is the spheres radius.
 
 ball property specification
-:   Each of the following sets a value that will be applied to balls created after it.
+:   <a href="files/hw5spring-elasticmass.txt"><img class="demo zoom" src="files/hw5spring-elasticmass.png"/></a>
+    Each of the following sets a value that will be applied to balls created after it.
     Each may be overridden by appearing multiple times in the input.
     Each is used only internally and does not appear in any form in the resulting output files.
     
     radius *r*
-    :   The radius of subsequent `ball`s.
+    :   <a href="files/hw5spring-radius.txt"><img class="demo zoom" src="files/hw5spring-radius.png"/></a>
+        The radius of subsequent `ball`s.
         At least one `radius` command will always precede the first `ball` command.
 
-    mass *m*
-    :   The mass of subsequent `ball`s.
+    mass *m* (10 points)
+    :   <a href="files/hw5spring-mass.txt"><img class="demo zoom" src="files/hw5spring-mass.png"/></a>
+        The mass of subsequent `ball`s.
         If no `mass` has been encountered, use `mass 1`.
 
-    elasticity *k*
-    :   The elasticity of subsequent `ball`s.
+    elasticity *k* (10 points)
+    :   <a href="files/hw5spring-elasticity.txt"><img class="demo zoom" src="files/hw5spring-elasticity.png"/></a>
+        <a href="files/hw5spring-elastic.txt"><img class="demo zoom" src="files/hw5spring-elastic.png"/></a>
+        The elasticity of subsequent `ball`s.
         If no `elasticity` has been encountered, use `elasticity 1`.
         
         In a ball-wall or ball-anchor collision, the coefficient of restitution used should be the ball's elasticity.
         In a ball-ball collision, use the mean of the two elasticities.
 
-gravity *x* *y* *z*
+gravity *x* *y* *z* (requires `ball`, `radius`, `wall`, and `txt`; 30 pts)
 :   Accelerate all balls by $\vec g = (x,y,z)$ / frame<sup>2</sup>.
     
     Recall that motion under acceleration works as follows:
@@ -335,11 +341,29 @@ gravity *x* *y* *z*
     - new $\vec v$ = old $\vec v + \Delta t \vec g$
     - new $\vec p$ = old $\vec p + \Delta t$ old $\vec v + \frac{1}{2}\Delta t^2 \vec g$
 
-springconst $k$
+anchor $p_x$ $p_y$ $p_z$   $v_x$ $v_y$ $v_z$ (15 pts)
+:	<a href="files/hw5spring-anchor.txt"><img class="demo zoom" src="files/hw5spring-anchor.png"/></a>
+    Like `ball`, except an anchor ignores physics; instead it moves at a constant velocity, passing through walls and other anchors.
+	Balls hitting anchors should act like they hit a wall (i.e., use only their own elasticity, not that of the anchor)
+	but should correctly handle velocity added by hitting a moving anchor.
+
+subsample *n* (10 pts)
+:   <a href="files/hw5spring-subsample.txt"><img class="demo zoom" src="files/hw5spring-subsample.png"/></a>
+    <a href="files/hw5spring-ball.txt"><img class="demo zoom" src="files/hw5spring-ball.png"/></a>
+    For each frame, perform *n* distinct updates.
+    For example, if $n=10$ then instead of one update of 1 time unit per frame
+    you'd do 10 updates of 0.1 time unit each per frame.
+    
+    The math should be such that this makes spring and collision computations more precise
+    but does not change the result of freely-moving balls at all.
+
+springconst $k$ (requires `subsample`, `mass`, and `elasticity`)
 :   The spring constant of subsequent springs.
     If no `springconst` has been encountered, use `springconst 0` -- i.e., ignore the springs.
 
-tri $n$   $a_x$ $a_y$ $a_z$   $b_x$ $b_y$ $b_z$   $c_x$ $c_y$ $c_z$
+	For stability of simulation, it is recommended that input files keep $\dfrac{\text{springconst}}{\text{subsample}} < 1$.
+
+tri $n$   $a_x$ $a_y$ $a_z$   $b_x$ $b_y$ $b_z$   $c_x$ $c_y$ $c_z$ (requires `springconst` and `anchor`; 35 pts)
 :   Create a triangle of balls by interpolating between the three given corner ball positions
     with $n+1$ balls per side of the triangle.
     Attach springs in a triangular grid.
@@ -359,7 +383,7 @@ tri $n$   $a_x$ $a_y$ $a_z$   $b_x$ $b_y$ $b_z$   $c_x$ $c_y$ $c_z$
         a - * - * - b
     :::
 
-tet $n$   $a_x$ $a_y$ $a_z$   $b_x$ $b_y$ $b_z$   $c_x$ $c_y$ $c_z$   $d_x$ $d_y$ $d_z$
+tet $n$   $a_x$ $a_y$ $a_z$   $b_x$ $b_y$ $b_z$   $c_x$ $c_y$ $c_z$   $d_x$ $d_y$ $d_z$ (requires `tri`; 10 pts)
 :   Create a tetrahedreon of balls by interpolating between the four given corner ball positions
     with $n+1$ balls per edge of the tetrahedron.
     Attach springs in a tetrahedral grid.
@@ -367,13 +391,6 @@ tet $n$   $a_x$ $a_y$ $a_z$   $b_x$ $b_y$ $b_z$   $c_x$ $c_y$ $c_z$   $d_x$ 
     Set all balls to initial velocity 0
     and all springs to rest length = their initial length.
     
-subsample *n*
-:   For each frame, perform *n* distinct updates.
-    For example, if $n=10$ then instead of one update of 1 time unit per frame
-    you'd do 10 updates of 0.1 time unit each per frame.
-    
-    The math should be such that this makes spring and collision computations more precise
-    but does not change the result of freely-moving balls at all.
 
 
 <!--
