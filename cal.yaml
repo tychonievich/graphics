@@ -60,7 +60,7 @@ lectures:
   - IK
   - fluids
   - fluids
-  - volume representations
+  - cloth
   - cloth
   - terrain
   - flex day
@@ -352,6 +352,10 @@ reading:
       lnk: 'https://graphics.stanford.edu/~mdfisher/cloth.html'
     - txt: 'cloth 2'
       lnk: 'https://web.archive.org/web/20160309180817/http://freespace.virgin.net/hugo.elias/models/m_cloth.htm'
+    - txt: 'material-point method'
+      lnk: 'https://dl.acm.org/doi/10.1145/3072959.3073623'
+    - txt: 'MPM video'
+      lnk: 'https://www.youtube.com/watch?v=eGtB0VXJsuI'
   non-fluid physics:
     - txt: 'wikipedia'
       lnk: 'https://en.wikipedia.org/wiki/Rigid_body_dynamics'

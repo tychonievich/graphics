@@ -34,7 +34,9 @@ notes:
         - stam
 ...
 
+<!--
 <blockquote style="background-color:#fbb; font-size:150%">This page is a work-in-progress and may change at any time without notice.</blockquote>
+-->
 
 
 # Overview
