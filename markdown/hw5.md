@@ -239,11 +239,13 @@ This is a mass-spring simulation with moving spheres, fixed planes, and springs.
 We discussed several approaches to this in class.
 To replicate my results, each iteration 
 
-1. update ball positions and velocities based on momentum and gravity
-2. update ball positions and velocities based on springs
-3. move balls to not overlap each other and update velocities if the bounce off of each other
-4. move balls to not overlap with anchors (non-dynamic balls) and update velocities if the bounce off of them
-5. move balls to not overlap with walls and update velocities if the bounce off the wall
+1. draw a frame
+1. move balls based on gravity and accumulated spring forces
+1. move anchors
+1. accumulate spring forces on each ball (without moving them)
+1. resolve ball-ball collisions from first ball in file to last, moving them to not overlap and updating their velocity
+1. resolve ball-anchor collisions, moving them to not overlap and updating their velocity
+1. resolve ball-wall collisions, moving them to not overlap and updating their velocity
 
 I did this in a single pass per frame, acting on the balls in the order I created them.
 Ball-ball collisions are resolved in order of the first ball in the pair,
