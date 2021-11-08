@@ -247,7 +247,7 @@ To replicate my results, each iteration
 1. resolve ball-anchor collisions, moving them to not overlap and updating their velocity
 1. resolve ball-wall collisions, moving them to not overlap and updating their velocity
 
-I did this in a single pass per frame, acting on the balls in the order I created them.
+I did this in a single pass per time step, acting on the balls in the order I created them.
 Ball-ball collisions are resolved in order of the first ball in the pair,
 so the collision of the first and last ball is resolved before the collision of the second and third ball.
 
@@ -372,7 +372,6 @@ springconst $k$ (requires `subsample`, `mass`, and `elasticity`)
 
 tri $n$   $a_x$ $a_y$ $a_z$   $b_x$ $b_y$ $b_z$   $c_x$ $c_y$ $c_z$ (requires `springconst` and `anchor`; 35 pts)
 :   <a href="files/hw5spring-tri.txt"><img class="demo zoom" src="files/hw5springtri.png"/></a>
-    <a href="files/hw5spring-tri2.txt"><img class="demo zoom" src="files/hw5springtri2.png"/></a>
     Create a triangle of balls by interpolating between the three given corner ball positions
     with $n+1$ balls per side of the triangle.
     Attach springs in a triangular grid.
@@ -393,7 +392,8 @@ tri $n$   $a_x$ $a_y$ $a_z$   $b_x$ $b_y$ $b_z$   $c_x$ $c_y$ $c_z$ (requires
     :::
 
 tet $n$   $a_x$ $a_y$ $a_z$   $b_x$ $b_y$ $b_z$   $c_x$ $c_y$ $c_z$   $d_x$ $d_y$ $d_z$ (requires `tri`; 10 pts)
-:   Create a tetrahedreon of balls by interpolating between the four given corner ball positions
+:   <a href="files/hw5spring-tet.txt"><img class="demo zoom" src="files/hw5springtet.png"/></a>
+    Create a tetrahedreon of balls by interpolating between the four given corner ball positions
     with $n+1$ balls per edge of the tetrahedron.
     Attach springs in a tetrahedral grid.
     
