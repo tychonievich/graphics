@@ -295,7 +295,7 @@ wall *A* *B* *C* *D*
     
     This line is used only internally and does not appear in any form in the resulting output files.
     
-    This barrier is invisible. HW3's visible variant was `plane` *A* *B* *C* *D*, but planes and walls should be handled separately.
+    This barrier is invisible. HW3's visible variant was `plane` *A* *B* *C* *D*, but visible planes and interacting walls should be handled separately.
 
 ball $p_x$ $p_y$ $p_z$   $v_x$ $v_y$ $v_z$
 :   Create an animated ball at location $(p_x, p_y, p_z)$
@@ -327,13 +327,13 @@ ball property specification
         In a ball-wall or ball-anchor collision, the coefficient of restitution used should be the ball's elasticity.
         In a ball-ball collision, use the mean of the two elasticities.
 
-gravity $g_x g_y g_z$
-:   Each frame, accelerate all balls by $\vec g$ per frame.
+gravity *x* *y* *z*
+:   Accelerate all balls by $\vec g = (x,y,z)$ / frame<sup>2</sup>.
     
     Recall that motion under acceleration works as follows:
     
     - new $\vec v$ = old $\vec v + \Delta t \vec g$
-    - new $\vec p$ = old $\vec p + \Delta t$ \old $\vec v + \frac{1}{2}\Delta t^2 \vec g$
+    - new $\vec p$ = old $\vec p + \Delta t$ old $\vec v + \frac{1}{2}\Delta t^2 \vec g$
 
 springconst $k$
 :   The spring constant of subsequent springs.
