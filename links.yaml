@@ -223,7 +223,14 @@
   - lectures/slides-2021-11-01.pdf
   video: lectures/video-2021-11-01.webm
 2021-11-03:
-  audio: lectures/audio-2021-11-03.mp3
+  audio:
+  - lectures/audio-2021-11-03.mp3
+  - lectures/audio-2021-11-03.srt
   files:
   - lectures/slides-2021-11-03.pdf
   - lectures/video-2021-11-03.vtt
+2021-11-08:
+  audio: lectures/audio-2021-11-08.mp3
+  files:
+  - lectures/slides-2021-11-08.pdf
+  video: lectures/video-2021-11-08.webm
