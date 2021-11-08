@@ -298,7 +298,7 @@ wall *A* *B* *C* *D*
     This barrier is invisible. HW3's visible variant was `plane` *A* *B* *C* *D*, but visible planes and interacting walls should be handled separately.
 
 ball $p_x$ $p_y$ $p_z$   $v_x$ $v_y$ $v_z$
-:   <a href="files/hw5spring-ball.txt"><img class="demo zoom" src="files/hw5spring-ball.png"/></a>
+:   <a href="files/hw5spring-ball.txt"><img class="demo zoom" src="files/hw5springball.png"/></a>
     Create an animated ball at location $(p_x, p_y, p_z)$
     with velocity $(v_x, v_y, v_z)$.
     Use the currently active `radius` and `mass` for the ball.
@@ -309,24 +309,24 @@ ball $p_x$ $p_y$ $p_z$   $v_x$ $v_y$ $v_z$
     and $r$ is the spheres radius.
 
 ball property specification
-:   <a href="files/hw5spring-elasticmass.txt"><img class="demo zoom" src="files/hw5spring-elasticmass.png"/></a>
+:   <a href="files/hw5spring-elasticmass.txt"><img class="demo zoom" src="files/hw5springelasticmass.png"/></a>
     Each of the following sets a value that will be applied to balls created after it.
     Each may be overridden by appearing multiple times in the input.
     Each is used only internally and does not appear in any form in the resulting output files.
     
     radius *r*
-    :   <a href="files/hw5spring-radius.txt"><img class="demo zoom" src="files/hw5spring-radius.png"/></a>
+    :   <a href="files/hw5spring-radius.txt"><img class="demo zoom" src="files/hw5springradius.png"/></a>
         The radius of subsequent `ball`s.
         At least one `radius` command will always precede the first `ball` command.
 
     mass *m* (10 points)
-    :   <a href="files/hw5spring-mass.txt"><img class="demo zoom" src="files/hw5spring-mass.png"/></a>
+    :   <a href="files/hw5spring-mass.txt"><img class="demo zoom" src="files/hw5springmass.png"/></a>
         The mass of subsequent `ball`s.
         If no `mass` has been encountered, use `mass 1`.
 
     elasticity *k* (10 points)
-    :   <a href="files/hw5spring-elasticity.txt"><img class="demo zoom" src="files/hw5spring-elasticity.png"/></a>
-        <a href="files/hw5spring-elastic.txt"><img class="demo zoom" src="files/hw5spring-elastic.png"/></a>
+    :   <a href="files/hw5spring-elasticity.txt"><img class="demo zoom" src="files/hw5springelasticity.png"/></a>
+        <a href="files/hw5spring-elastic.txt"><img class="demo zoom" src="files/hw5springelastic.png"/></a>
         The elasticity of subsequent `ball`s.
         If no `elasticity` has been encountered, use `elasticity 1`.
         
@@ -342,13 +342,13 @@ gravity *x* *y* *z* (requires `ball`, `radius`, `wall`, and `txt`; 30 pts)
     - new $\vec p$ = old $\vec p + \Delta t$ old $\vec v + \frac{1}{2}\Delta t^2 \vec g$
 
 anchor $p_x$ $p_y$ $p_z$   $v_x$ $v_y$ $v_z$ (15 pts)
-:	<a href="files/hw5spring-anchor.txt"><img class="demo zoom" src="files/hw5spring-anchor.png"/></a>
+:	<a href="files/hw5spring-anchor.txt"><img class="demo zoom" src="files/hw5springanchor.png"/></a>
     Like `ball`, except an anchor ignores physics; instead it moves at a constant velocity, passing through walls and other anchors.
 	Balls hitting anchors should act like they hit a wall (i.e., use only their own elasticity, not that of the anchor)
 	but should correctly handle velocity added by hitting a moving anchor.
 
 subsample *n* (10 pts)
-:   <a href="files/hw5spring-subsample.txt"><img class="demo zoom" src="files/hw5spring-subsample.png"/></a>
+:   <a href="files/hw5spring-subsample.txt"><img class="demo zoom" src="files/hw5springsubsample.png"/></a>
     <a href="files/hw5spring-ball.txt"><img class="demo zoom" src="files/hw5spring-ball.png"/></a>
     For each frame, perform *n* distinct updates.
     For example, if $n=10$ then instead of one update of 1 time unit per frame
@@ -372,7 +372,7 @@ tri $n$   $a_x$ $a_y$ $a_z$   $b_x$ $b_y$ $b_z$   $c_x$ $c_y$ $c_z$ (requires
     and all springs to rest length = their initial length.
     
     :::example
-    `tri 3` ... would produce an array like the following ASCII art:
+    `tri 3` ... would produce 10 balls 18 springs arranged as illustrated in the following ASCII art:
     
               c
              / \
