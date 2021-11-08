@@ -295,7 +295,7 @@ wall *A* *B* *C* *D*
     
     This line is used only internally and does not appear in any form in the resulting output files.
     
-    This barrier is invisible. To draw it, add a `plane` *A* *B* *C* *D* to the input file as well, which will be passed through to HW3.
+    This barrier is invisible. HW3's visible variant was `plane` *A* *B* *C* *D*, but planes and walls should be handled separately.
 
 ball $p_x$ $p_y$ $p_z$   $v_x$ $v_y$ $v_z$
 :   Create an animated ball at location $(p_x, p_y, p_z)$
