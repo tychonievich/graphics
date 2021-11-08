@@ -230,7 +230,151 @@ Other examples
 
 ## `simulation springs`
 
+This is not an extension of any other assignment.
+Rather, it outputs input files for HW3.
 
+This is a mass-spring simulation with moving spheres, fixed planes, and springs.
+We discussed several approaches to this in class.
+To replicate my results, each iteration 
+
+1. update ball positions and velocities based on momentum and gravity
+2. update ball positions and velocities based on springs
+3. move balls to not overlap each other and update velocities if the bounce off of each other
+4. move balls to not overlap with anchors (non-dynamic balls) and update velocities if the bounce off of them
+5. move balls to not overlap with walls and update velocities if the bounce off the wall
+
+I did this in a single pass per frame, acting on the balls in the order I created them.
+This can mean that a later action cases an earlier fix to be partially undone.
+
+txts *w* *h* *base* *frames*
+:   Create *frames* different input files for HW3.
+    Each should begin with `png` *w* *h* *base*`-`*frame*`.png`
+    where *frame* is a 3-digit zero-padded number between 0 and *frames* − 1.
+    Each should be named *base*`-`*frame*`.txt`.
+    
+    <div class="example">
+    If the input file opens with
+    
+        txts 30 40 example- 12
+    
+    when it should make 12 new text files, named `example-000.txt` through `example-011.txt`.
+    The last of these would start with the line
+    
+        png 30 40 example-011.png
+
+    </div>
+
+pass through
+:   Any line that is not a command you've implemented for this assignment should be passed through as-is in every generated file.
+    
+    <div class="example">
+    If the input file contains
+    
+        txts 30 40 example- 1
+
+        sphere 1 -0.8 -1 0.5
+        sphere 0 0 -1 0.3
+
+        sun 1 1 1
+    
+    then, because the only line that starts with a HW5 keyword is `txts`, the output file will be
+    
+        png 30 40 example-000.png
+
+        sphere 1 -0.8 -1 0.5
+        sphere 0 0 -1 0.3
+
+        sun 1 1 1
+
+    </div>
+
+wall *A* *B* *C* *D*
+:   Create a barrier ensuring that all balls will remain entirely in the region of space where $Ax+By+Cz+D \ge 0$.
+    
+    This line is used only internally and does not appear in any form in the resulting output files.
+    
+    This barrier is invisible. To draw it, add a `plane` *A* *B* *C* *D* to the input file as well, which will be passed through to HW3.
+
+ball $p_x$ $p_y$ $p_z$   $v_x$ $v_y$ $v_z$
+:   Create an animated ball at location $(p_x, p_y, p_z)$
+    with velocity $(v_x, v_y, v_z)$.
+    Use the currently active `radius` and `mass` for the ball.
+    
+    Each `ball` line in the input file becomes a `sphere` line in the output file;
+    in particular, `sphere` $c_x$, $c_y$, $c_z$, $r$
+    where $(c_x,c_y,c_z)$ is the sphere's center location on that frame
+    and $r$ is the spheres radius.
+
+ball property specification
+:   Each of the following sets a value that will be applied to balls created after it.
+    Each may be overridden by appearing multiple times in the input.
+    Each is used only internally and does not appear in any form in the resulting output files.
+    
+    radius *r*
+    :   The radius of subsequent `ball`s.
+        At least one `radius` command will always precede the first `ball` command.
+
+    mass *m*
+    :   The mass of subsequent `ball`s.
+        If no `mass` has been encountered, use `mass 1`.
+
+    elasticity *k*
+    :   The elasticity of subsequent `ball`s.
+        If no `elasticity` has been encountered, use `elasticity 1`.
+        
+        In a ball-wall or ball-anchor collision, the coefficient of restitution used should be the ball's elasticity.
+        In a ball-ball collision, use the mean of the two elasticities.
+
+gravity $g_x g_y g_z$
+:   Each frame, accelerate all balls by $\vec g$ per frame.
+    
+    Recall that motion under acceleration works as follows:
+    
+    - new $\vec v$ = old $\vec v + \Delta t \vec g$
+    - new $\vec p$ = old $\vec p + \Delta t$ \old $\vec v + \frac{1}{2}\Delta t^2 \vec g$
+
+springconst $k$
+:   The spring constant of subsequent springs.
+    If no `springconst` has been encountered, use `springconst 0` -- i.e., ignore the springs.
+
+tri $n$   $a_x$ $a_y$ $a_z$   $b_x$ $b_y$ $b_z$   $c_x$ $c_y$ $c_z$
+:   Create a triangle of balls by interpolating between the three given corner ball positions
+    with $n+1$ balls per side of the triangle.
+    Attach springs in a triangular grid.
+    
+    Set all balls to initial velocity 0
+    and all springs to rest length = their initial length.
+    
+    :::example
+    `tri 3` ... would produce an array like the following ASCII art:
+    
+              c
+             / \
+            * - * 
+           / \ / \
+          * - * - * 
+         / \ / \ / \
+        a - * - * - b
+    :::
+
+tet $n$   $a_x$ $a_y$ $a_z$   $b_x$ $b_y$ $b_z$   $c_x$ $c_y$ $c_z$   $d_x$ $d_y$ $d_z$
+:   Create a tetrahedreon of balls by interpolating between the four given corner ball positions
+    with $n+1$ balls per edge of the tetrahedron.
+    Attach springs in a tetrahedral grid.
+    
+    Set all balls to initial velocity 0
+    and all springs to rest length = their initial length.
+    
+subsample *n*
+:   For each frame, perform *n* distinct updates.
+    For example, if $n=10$ then instead of one update of 1 time unit per frame
+    you'd do 10 updates of 0.1 time unit each per frame.
+    
+    The math should be such that this makes spring and collision computations more precise
+    but does not change the result of freely-moving balls at all.
+
+
+<!--
 ## `simulation landscape`
 
 
@@ -267,7 +411,6 @@ steering $s$ $a$ $c$
 ## `simulation trees`
 
 
-<!--
 ## `simulation fireworks`
 
 burst *type* $n$ $x$ $y$ $z$ $t$ $v$
