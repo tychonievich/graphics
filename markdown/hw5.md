@@ -246,7 +246,12 @@ To replicate my results, each iteration
 5. move balls to not overlap with walls and update velocities if the bounce off the wall
 
 I did this in a single pass per frame, acting on the balls in the order I created them.
-This can mean that a later action cases an earlier fix to be partially undone.
+Ball-ball collisions are resolved in order of the first ball in the pair,
+so the collision of the first and last ball is resolved before the collision of the second and third ball.
+
+This order does mean that a later action cases an earlier fix to be partially undone,
+but I wanted something easy to describe to increase the chances everyone's code would make the same animation.
+
 
 txts *w* *h* *base* *frames*
 :   Create *frames* different input files for HW3.
@@ -308,7 +313,7 @@ ball $p_x$ $p_y$ $p_z$   $v_x$ $v_y$ $v_z$
     where $(c_x,c_y,c_z)$ is the sphere's center location on that frame
     and $r$ is the spheres radius.
 
-ball property specification
+ball property specification (extra 5 if do both mass and elasticity)
 :   <a href="files/hw5spring-elasticmass.txt"><img class="demo zoom" src="files/hw5springelasticmass.png"/></a>
     Each of the following sets a value that will be applied to balls created after it.
     Each may be overridden by appearing multiple times in the input.
@@ -319,7 +324,7 @@ ball property specification
         The radius of subsequent `ball`s.
         At least one `radius` command will always precede the first `ball` command.
 
-    mass *m* (10 points)
+    mass *m* (5 points)
     :   <a href="files/hw5spring-mass.txt"><img class="demo zoom" src="files/hw5springmass.png"/></a>
         The mass of subsequent `ball`s.
         If no `mass` has been encountered, use `mass 1`.
@@ -349,7 +354,7 @@ anchor $p_x$ $p_y$ $p_z$   $v_x$ $v_y$ $v_z$ (15 pts)
 
 subsample *n* (10 pts)
 :   <a href="files/hw5spring-subsample.txt"><img class="demo zoom" src="files/hw5springsubsample.png"/></a>
-    <a href="files/hw5spring-ball.txt"><img class="demo zoom" src="files/hw5spring-ball.png"/></a>
+    <a href="files/hw5spring-ball.txt"><img class="demo zoom" src="files/hw5springball.png"/></a>
     For each frame, perform *n* distinct updates.
     For example, if $n=10$ then instead of one update of 1 time unit per frame
     you'd do 10 updates of 0.1 time unit each per frame.
