@@ -369,7 +369,9 @@ springconst $k$ (requires `subsample`, `mass`, and `elasticity`)
 	For stability of simulation, it is recommended that input files keep $\dfrac{\text{springconst}}{\text{subsample}} < 1$.
 
 tri $n$   $a_x$ $a_y$ $a_z$   $b_x$ $b_y$ $b_z$   $c_x$ $c_y$ $c_z$ (requires `springconst` and `anchor`; 35 pts)
-:   Create a triangle of balls by interpolating between the three given corner ball positions
+:   <a href="files/hw5spring-tri.txt"><img class="demo zoom" src="files/hw5springtri.png"/></a>
+    <a href="files/hw5spring-tri2.txt"><img class="demo zoom" src="files/hw5springtri2.png"/></a>
+    Create a triangle of balls by interpolating between the three given corner ball positions
     with $n+1$ balls per side of the triangle.
     Attach springs in a triangular grid.
     
