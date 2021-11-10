@@ -369,7 +369,7 @@ reading:
       lnk: 'https://cs.unc.edu/~lin/COMP768-F07/LEC/rbd1.pdf'
     - txt: 'Baraff 1996'
       lnk: 'http://www.cs.cmu.edu/~baraff/papers/sig96.pdf'
-  multi-dynamics:
+  multi-dynamic:
     - txt: 'Nucleus'
       lnk: 'https://www.josstam.com/publications#comp-jpohiiw79'
   real-time eye-candy:
