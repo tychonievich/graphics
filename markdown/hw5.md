@@ -253,6 +253,7 @@ so the collision of the first and last ball is resolved before the collision of 
 
 This order does mean that a later action cases an earlier fix to be partially undone,
 but I wanted something easy to describe to increase the chances everyone's code would make the same animation.
+That said, I'm not looking for exact similarity: rather, I'm looking for the overall right kind of dynamics.
 
 
 txts *w* *h* *base* *frames*
