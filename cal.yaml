@@ -63,7 +63,7 @@ lectures:
   - cloth
   - [cloth, multi-dynamic]
   - terrain
-  - flex day
+  - [terrain, scale]
   - shader languages
   - shader languages
   - shader languages
