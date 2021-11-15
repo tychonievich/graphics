@@ -277,6 +277,13 @@ reading:
       lnk: 'http://certis.enpc.fr/publications/papers/07cvpr_b.pdf'
     - txt: 'concave terrain'
       lnk: 'http://link.springer.com/article/10.1007%2Fs00371-010-0506-2'
+  noise:
+    - txt: 'Perlin'
+      lnk: 'https://en.wikipedia.org/wiki/Perlin_noise'
+    - txt: 'simplex'
+      lnk: 'http://staffwww.itn.liu.se/~stegu/simplexnoise/simplexnoise.pdf'
+    - txt: 'fractal'
+      lnk: 'https://buckslice.github.io/archive/explaining-noise'
   fluids:
     - txt: 'Navier-Stokes equation'
       lnk: 'https://en.wikipedia.org/wiki/Navier%E2%80%93Stokes_equations'
