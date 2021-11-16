@@ -284,6 +284,8 @@ reading:
       lnk: 'http://staffwww.itn.liu.se/~stegu/simplexnoise/simplexnoise.pdf'
     - txt: 'fractal'
       lnk: 'https://buckslice.github.io/archive/explaining-noise'
+    - txt: 'fBm shaders'
+      lnk: 'https://thebookofshaders.com/13/'
   fluids:
     - txt: 'Navier-Stokes equation'
       lnk: 'https://en.wikipedia.org/wiki/Navier%E2%80%93Stokes_equations'
