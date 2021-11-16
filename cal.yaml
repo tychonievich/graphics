@@ -63,7 +63,7 @@ lectures:
   - cloth
   - [cloth, multi-dynamic]
   - terrain
-  - [terrain, scale]
+  - [noise, scale]
   - shader languages
   - shader languages
   - shader languages
