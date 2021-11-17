@@ -111,6 +111,11 @@ To subscribe to the above calendar, add <http://www.cs.virginia.edu/luther/4810/
 
 The final exam time is set by the registrar. The official information about finals can be found at <https://www2.virginia.edu/registrar/exams.html#1218>
 
+We have received approval to have two final exam times. Each student may attend either one, but only one of the two:
+
+- Thu Dec 09 2021 7:00 pm - 10:00 pm in MEC 341
+- Fri Dec 17 2021 2:00 pm - 5:00 pm in OLS 011
+
 <hr/>
 
 Office Hours:
