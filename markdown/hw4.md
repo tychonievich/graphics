@@ -241,8 +241,10 @@ anyscale $s_x$ $s_y$ $s_z$ $w$ $x$ $y$ $z$ (10 pt)
     An optional transformation of the object.
     
     Describes the scale of this object along arbitrary axes as given by a quaternion.
-    The application of `anyscale` is equivalent to rotating by the quaternion,
-    scaling along the principle axes by the given factors,
+    The axes of the scale should be rotated by the given quaternion,
+    but the object itself should not.
+    The simplest way to achieve that is to rotate by the inverse of the quaternion,
+    scale along the principle axes by the given factors,
     and then rotating back.
     
     Each object will have one `scale` or one `anyscale` or neither; if either is present, it will precede any geometry for that object.
@@ -327,7 +329,7 @@ autobez `dest` $t_1$ $v_1$ $t_2$ $v_2$ ... (10 pt)
     
     The input format matches `lerp`: a set of (frame, value) pairs.
     Control points are determined by computing *slopes* at each keyframe:
-    the slope at $t_i$ is $\displaystyle\frac{v_{i+1}-v_{v-1}}{t_{i+1}-t_{i-1}}$
+    the slope at $t_i$ is $\displaystyle\frac{v_{i+1}-v_{i-1}}{t_{i+1}-t_{i-1}}$
     and the control points on either side of $v_i$
     are computed by extending that slope out ⅓ of the way to the next keyframe.
     
