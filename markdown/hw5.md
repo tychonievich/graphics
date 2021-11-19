@@ -47,7 +47,7 @@ Instead of `make run` we will use several different make targets, one for each b
 The required part of this assignment is "earn 50 points on this assignment".
 The optional part is any points in excess of 50 that you earn.
 
-## `make bones` *filename* (15–100 points)
+## `make bones file=`*filename* (15–100 points)
 
 This is an extension of HW4: everything that was required in HW4 is required in this program too.
 
@@ -117,7 +117,7 @@ fabrik *object* *iterations* (20–35 points)
     With moving root (15 points)
     :   <a href="files/hw5bones-fabrik2.txt"><img class="demo zoom" src="files/hw5fabrik2.png"/></a>
 
-## `simulation fluid` (70–120 points)
+## `make fluid file=`*filename* (70–120 points)
 
 This is not an extension of any other assignment.
 You'll output 2D fluids directly to the pixels of an image file (I guess we could say it's an extension of HW0?).
@@ -230,7 +230,7 @@ Other examples
     and [result (in video player)](player.html#hw5fluid720p.webm)
 
 
-## `simulation springs` (50–120 points)
+## `make springs file=`*filename* (50–120 points)
 
 This is not an extension of any other assignment.
 Rather, it outputs input files for HW3.
