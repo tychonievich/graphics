@@ -251,4 +251,6 @@
   audio: lectures/audio-2021-11-22.mp3
   files:
   - lectures/slides-2021-11-22.pdf
+  - lectures/20211122-qa.txt
+  - lectures/20211122-webgl.html
   video: lectures/video-2021-11-22.webm
