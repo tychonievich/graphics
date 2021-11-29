@@ -66,10 +66,13 @@ lectures:
   - [noise, scale]
   - shader languages
   - shader languages
-  - shader languages
+  - ask me anything
   - review
 
 reading:
+  ask me anything:
+    - txt: 'submit and vote on questions'
+      lnk: 'http://www.tricider.com/brainstorming/33bbV30NmN3'
   intro:
     - txt: 'Policies'
       lnk: 'http://www.cs.virginia.edu/luther/4810/F2021/policies.html'
