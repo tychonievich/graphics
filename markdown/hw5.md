@@ -230,7 +230,7 @@ Other examples
     and [result (in video player)](player.html#hw5fluid720p.webm)
 
 
-## `make springs file=`*filename* (50–115 points)
+## `make springs file=`*filename* (50–120 points)
 
 This is not an extension of any other assignment.
 Rather, it outputs input files for HW3.
@@ -316,7 +316,7 @@ ball $p_x$ $p_y$ $p_z$   $v_x$ $v_y$ $v_z$
     where $(c_x,c_y,c_z)$ is the sphere's center location on that frame
     and $r$ is the spheres radius.
 
-ball property specification (0–15 points)
+ball property specification (extra 5 if do both mass and elasticity)
 :   <a href="files/hw5spring-elasticmass.txt"><img class="demo zoom" src="files/hw5springelasticmass.png"/></a>
     Each of the following sets a value that will be applied to balls created after it.
     Each may be overridden by appearing multiple times in the input.
