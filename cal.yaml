@@ -70,6 +70,9 @@ lectures:
   - review
 
 reading:
+  ask me anything:
+    - txt: 'lecture recording not posted'
+      lnk: '#'
   intro:
     - txt: 'Policies'
       lnk: 'http://www.cs.virginia.edu/luther/4810/F2021/policies.html'
