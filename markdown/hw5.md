@@ -93,7 +93,7 @@ trackscale *object* (requires `track`; 10 points)
 :   <a href="files/hw5bones-trackscale.txt"><img class="demo zoom" src="files/hw5trackscale.png"/></a>
     Like `track`, but also scale along the object's $z$ axis to that the tip of the bone exactly reaches the given object. Do not scale along the object's other two axes.
 
-trackstretch $x$ $y$ $z$  (requires `trackscale`; 5 points)
+trackstretch *object*  (requires `trackscale`; 5 points)
 :   <a href="files/hw5bones-trackstretch.txt"><img class="demo zoom" src="files/hw5trackstretch.png"/></a>
     Like `trackscale`, but also scale uniformly along the object's $x$ and $y$ axes such that the volume of the bone is conserved.
 
