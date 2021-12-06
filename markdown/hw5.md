@@ -51,7 +51,7 @@ The optional part is any points in excess of 50 that you earn.
 
 This is an extension of HW4: everything that was required in HW4 is required in this program too.
 
-You may find our [bones writeup](bones.html) to be helpful.
+You may find our [bones writeup](bones.html) and [change of basis writeup](bases.html) to be helpful.
 
 bone $d$
 :   This may appear at most once in any `object`.
