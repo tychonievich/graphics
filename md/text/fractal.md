@@ -270,7 +270,7 @@ function show_cover(id) {
 }
 </script>
 
-Counting up either circles or squares needed to cover this curve, we get:
+Counting up either circles or squares needed^[If we pushed the circles a little more to reduce overlap, or move the squares down a little, we could reduce these counts by a noisy small constant, but the overall pattern would remain.] to cover this curve, we get:
 
 | scale ($1/n$) | circles needed ($n^d$) | squares needed ($n^d$) ||
 |:-----:|:--------------:|:--------------:|
