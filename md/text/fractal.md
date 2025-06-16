@@ -36,19 +36,17 @@ in particular, shrinking the cubes by a factor of 3 requires 4 times as many to 
 That's easier to see at this low resolution if we use circles instead of squares:
 
 <figure>
-<div>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="-61 -1 122 122" style="max-width:min(30em, 45%)" fill="none" stroke="#000" stroke-linejoin="round">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-61 -1 252 122" style="max-width:65em" fill="none" stroke="#000" stroke-linejoin="round">
 <path d="M 0,0 40,0 60,34.64101615137754 80,0 120,0 "/>
 <circle cx="60" cy="0" r="60"/>
-</svg>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -1 120 36.641" style="max-width:min(30em, 45%)" fill="none" stroke="#000" stroke-linejoin="round">
+<g transform="translate(130,0)">
 <path d="M 0,0 40,0 60,34.64101615137754 80,0 120,0 "/>
 <circle cx="20" cy="0" r="20"/>
 <circle cx="50" cy="17.3205" radius="20"/>
 <circle cx="70" cy="17.3205" rr20"/>
 <circle cx="100" cy="0" r="20"/>
+</g>
 </svg>
-</div>
 <figcaption>The same path as the previous image, twice. On the left, a single circle of radius 1.5 covers the entire path. On the right, four circles of radius 0.5 jointly cover the path, one covering each straight path segment.</figcaption>
 </figure>
 
