@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Change this title</title>
+
+<!-- Matrix, shader setup, VAO setup -->
+<script src="cs418helpers.js"></script>
+
+<!-- The source code of a vertex shader directly in the HTML. The 'type=' command can have any value except "javascript" and just tells the browser not to try to run the code as javascript. -->
+<script id="vert" type="glsl">
+#version 300 es
+in vec4 position;
+uniform mat4 p;
+uniform mat4 v;
+uniform mat4 m;
+void main() {
+    gl_Position = p * v * m * position;
+}
+</script>
+
+
+<!-- The source code of a fragment shader. -->
+<script id="frag" type="glsl">
+#version 300 es
+precision highp float;
+uniform vec4 uColor;
+out vec4 fragColor;
+void main() {
+    fragColor = uColor;
+}
+</script>
+
+
+<!-- All the other code in one big script element. -->
+<script>
+
+/**
+ * Draw one frame
+ */
+function draw() {
+    gl.clearColor(...IlliniBlue)
+    gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT)
+    gl.useProgram(program)
+
+    gl.bindVertexArray(geom.vao)
+
+    gl.uniform4fv(gl.getUniformLocation(program, 'uColor'), IlliniOrange)
+    gl.uniformMatrix4fv(gl.getUniformLocation(program, 'p'), false, p)
+    gl.uniformMatrix4fv(gl.getUniformLocation(program, 'v'), false, v)
+    gl.uniformMatrix4fv(gl.getUniformLocation(program, 'm'), false, m)
+
+    gl.drawElements(geom.mode, geom.count, geom.type, 0)
+}
+
+/**
+ * Compute any time-varying or animated aspects of the scene
+ */
+function timeStep(milliseconds) {
+    let seconds = milliseconds / 1000;
+    
+    window.v = m4view([2.5*Math.cos(seconds/3),2.5*Math.sin(seconds/3),1], [0,0,0], [0,0,1])
+    window.m = m4ident()
+
+    draw()
+    requestAnimationFrame(timeStep)
+}
+
+/**
+ * Compile, link, set up geometry
+ */
+async function setup(event) {
+    window.gl = document.querySelector('canvas').getContext('webgl2',
+        // optional configuration object: see https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/getContext
+        {antialias: false, depth:true, preserveDrawingBuffer:true}
+    )
+    let vs = document.querySelector('#vert').textContent.trim()
+    let fs = document.querySelector('#frag').textContent.trim()
+    window.program = compileAndLinkGLSL(vs,fs)
+    gl.enable(gl.DEPTH_TEST)
+    
+    let data = {
+        "triangles":[0,1,2],
+        "attributes":{
+            "position":[
+                [-Math.sqrt(3)*2/3,0],
+                [Math.sqrt(3)*1/3,-1],
+                [Math.sqrt(3)*1/3,1],
+            ],
+        }
+    }
+    window.geom = setupGeomery(data, program)
+
+    window.addEventListener('resize', event => {
+        fillScreen((w,h) => {
+            window.p = m4perspNegZ(1,9, 0.7, w, h)
+            gl.viewport(0,0, w, h)
+            requestAnimationFrame(timeStep)
+        })
+    })
+    window.dispatchEvent(new Event('resize'))
+}
+
+window.addEventListener('load',setup)
+</script>
+<style>
+    html,body,canvas { margin: 0; padding: 0; border: none; }
+</style>
+</head>
+<body><canvas width="500" height="500"></canvas></body>
+</html>

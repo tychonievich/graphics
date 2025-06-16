@@ -1,6 +1,0 @@
-input tj.png
-
-path 440 100  400 404   1 0 0
-path 0 550  200 300   0 1 0
-
-output hw5path.png

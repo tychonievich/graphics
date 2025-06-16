@@ -1,3 +1,0 @@
-input uva.png
-equalize hue
-output hw5equalizeH.png

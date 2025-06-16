@@ -1,3 +1,0 @@
-input earth.png
-monochrome lightness
-output hw5monochromeL.png

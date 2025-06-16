@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" viewBox="0 0 980 150" xmlns="http://www.w3.org/2000/svg">
+ <path d="m20 50h60v60h100v-60h460v60h100v-60h220v80h-940z" fill="#00f" fill-opacity=".1" stroke="#00f"/>
+ <path d="m90 100h80v-60h480v60h80v-80h-640z" fill="#7d0000" fill-opacity=".1" stroke="#7f0000"/>
+ <g text-anchor="middle" text-align="center" font-family="sans-serif" font-size="12">
+  <text x="50" y="70"><tspan x="50" y="70">Buffer</tspan><tspan x="50" y="85">Access</tspan></text>
+  <text x="130" y="70"><tspan x="130" y="70">Vertex</tspan><tspan x="130" y="85">Shader</tspan></text>
+  <text x="230" y="70"><tspan x="230" y="70">Primitive</tspan><tspan x="230" y="85">Assembly</tspan></text>
+  <text x="310" y="70"><tspan x="310" y="70">Frustum</tspan><tspan x="310" y="85">Clipping</tspan></text>
+  <text x="365" y="70"><tspan x="365" y="70">÷ w</tspan></text>
+  <text x="420" y="70"><tspan x="430" y="70">Viewport</tspan><tspan x="430" y="85">&amp; Culling</tspan></text>
+  <text x="530" y="70"><tspan x="530" y="70">Rasterization</tspan><tspan x="530" y="85">&amp; Interpolation</tspan></text>
+  <text x="610" y="70"><tspan x="610" y="70">÷ 1/w</tspan></text>
+  <text x="690" y="70"><tspan x="690" y="70">Fragment</tspan><tspan x="690" y="85">Shader</tspan></text>
+  <text x="780" y="70"><tspan x="780" y="70">Depth</tspan><tspan x="780" y="85">&amp; Stencil</tspan></text>
+  <text x="850" y="70"><tspan x="850" y="70">Alpha</tspan><tspan x="850" y="85">Blending</tspan></text>
+  <text x="920" y="70"><tspan x="920" y="70">Gamma</tspan><tspan x="920" y="85">&amp; Dither</tspan></text>
+  <text x="390" y="36" fill="#7d0000"><tspan x="390" y="36">Shader Program</tspan></text>
+  <text x="390" y="120" fill="#0000ff"><tspan x="490" y="120">Fixed Functionality</tspan></text>
+ </g>
+</svg>

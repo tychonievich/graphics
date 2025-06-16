@@ -1,0 +1,65 @@
+:root {
+  --main: var(--mainnotes);
+  --wide: var(--widenotes);
+}
+
+.sidenote {
+  float: right;
+  clear: right;
+  width: calc(0.5 * var(--mainnotes));
+  margin-right: calc(-0.5 * var(--mainnotes) - var(--outer));
+  font-size: smaller;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 130%;
+  text-indent: 0;
+  text-align: left;
+}
+
+@media (max-width: 45rem) {
+  .sidenote { display: none; }
+  input.margin-toggle:checked + .sidenote {
+    display: block;
+    float: left;
+    clear: both;
+    width: calc(100% - 2ex - 2px);
+    padding: 0.5ex;
+    margin: 0.5ex;
+    border: 1px solid rgba(0,0,0,0.25);
+    border-radius: 0.7ex;
+    background: rgba(0,0,0,0.01);
+  }
+}
+@media (min-width: 45rem) {
+  body {
+    margin-left: var(--leftnotes);
+    width: var(--mainnotes);
+  }
+}
+
+.notemarker {
+  user-select: none;
+  opacity: 0.5;
+  text-indent: 0;
+}
+:not(.sidenote) > .notemarker > sup:first-child {
+  vertical-align: top;
+  position: relative;
+  top: -0.75em;
+  display: inline-block;
+  height: 0;
+  font-size: 0.5em;
+}
+
+:not(td) > div.sourceCode, .wide {
+  width: var(--widenotes);
+  clear: right;
+}
+
+
+/* new mobile-friendly sidenotes */
+input.margin-toggle { display: none; }
+main { counter-reset: sidenote 0; } 
+
+
+

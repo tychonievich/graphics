@@ -1,6 +1,0 @@
-input earth.png
-
-posterize red 2
-posterize green 3
-
-output hw5posterize.png

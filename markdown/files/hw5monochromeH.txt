@@ -1,3 +1,0 @@
-input earth.png
-monochrome hue
-output hw5monochromeH.png

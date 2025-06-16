@@ -1,0 +1,304 @@
+:root {
+  --outer: min(5vw, 1rem);
+  --content: calc(100vw - 2 * var(--outer));
+  --ideal: 50rem;
+  
+  --fontsize: 1rem;
+
+  --left1: calc((var(--content) - var(--ideal)) * 0.5 + var(--outer));
+  --left2: calc(var(--content) - 1.5 * var(--ideal));
+  --left3: var(--outer);
+  --leftnotes: max(var(--left3), min(var(--left1), var(--left2)));
+  --leftplain: max(var(--left3), var(--left1));
+
+  --mainplain: min(var(--ideal), var(--content));
+  --mainnotes: min(var(--ideal), max(0.6451 * var(--content), min(16em, var(--content))));
+  --widenotes: calc(var(--mainnotes) * 1.5 + var(--outer));
+  --wideplain: var(--mainplain);
+
+  --main: var(--mainplain);
+  --wide: var(--wideplain);
+  
+  --fontfamily: Palatino, Palladio URW, P052, TeX Gyre Pagella, Palatino Linotype, Book Antiqua, serif;
+}
+
+body {
+  margin-left: var(--leftplain);
+  width: var(--mainplain);
+  line-height: 130%;
+}
+
+
+
+body {
+  font-family: var(--fontfamily);
+  counter-reset: algorithm 0 lemma 0 theorem 0 definition 0 corollary 0 fig 0;
+  position: relative;
+  font-size: var(--fontsize);
+}
+@media screen {
+  html { margin: 2em 0; }
+  body {
+    padding-bottom:3rem;
+    background: #fffef8;
+    color: #201000;
+  }
+  nav[role="doc-toc"] { background: #fdfcf6; }
+}
+@media print {
+  div.up { display: none; }
+  nav[role="doc-toc"] { display: none; }
+}
+
+body > header { text-align: center; }
+body > footer { text-align: center; margin-top: 2em; padding: 1em; border-top: 1px solid rgba(0,0,0,0.5); }
+p {
+  margin: 0em; 
+  text-align: justify;
+  hyphens: auto;
+}
+p + p:not(.noindent) { text-indent: 1em; }
+.katex { user-select: all; }
+
+h1 { font-size: 120%; border-top: 0.15ex solid black; padding-top: 1ex; }
+h2 { font-size: 120%; border-image: linear-gradient(to right,rgba(0,0,0,1), rgba(0,0,0,0)) 100% 0 0 0;
+  border-top: 0.075ex solid; padding-top: 0.5ex; }
+h3 { font-size: 100%; border-image: linear-gradient(to right,rgba(0,0,0,0.25), rgba(0,0,0,0)) 100% 0 0 0;
+  border-top: 0.075ex solid; padding-top: 0.5ex; }
+div.title { font-size: 160%; margin: 1em 0; }
+div.subtitle { font-size: 140%; margin: -0.5em 0 1em 0; }
+div.up { margin: 1em 0; }
+
+.header-section-number, .toc-section-number {
+  user-select: none;
+  opacity: 0.5;
+}
+.header-section-number:after , .toc-section-number:after { content: ". "; }
+
+h1.unnumbered:before, h2.unnumbered:before, h3.unnumbered:before { content: ""; }
+
+section.level1 + section.level1 { margin-top: 3em; }
+
+.anditem + .anditem:before { content: " and "; opacity: 0.5; font-size: smaller; }
+
+a, a:visited { color: inherit; }
+
+code {
+  font-size: smaller;
+}
+
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+
+pre,code { background: rgba(0,0,0,0.04); border: 0.125ex solid rgba(0,0,0,0.12); border-radius: 0.5ex; white-space: pre-wrap; hyphens:none; }
+pre > code { border: none; background:none; }
+pre { display:table; }
+
+
+pre.verse, pre.verse > code, div.line-block {
+  background: inherit;
+  overflow: visible;
+  font-family: inherit;
+  font-style: italic;
+}
+pre.verse, pre.verse > code {
+  white-space: pre;
+}
+div.line-block { margin: .65em 0; }
+
+blockquote {
+  margin: 1em 0 1em 0.4em;
+  padding-left: 0.4em;
+  border-left: 0.2em solid rgba(0,0,0,0.25);
+}
+dd { margin-left: 1em; }
+dt { font-weight: bold; }
+dd+dt { margin-top: 1ex; }
+
+div.tag {
+  display: inline-block;
+  margin: 0 1em;
+}
+div.summary { padding-bottom: 1em; border-bottom: thin solid rgba(0,0,0,0.5); margin-bottom: 1em; }
+
+
+nav[role="doc-toc"] {
+  float: right;
+  border: 1px solid rgba(0,0,0,0.25);
+  border-radius: 0.7ex;
+  padding: 1ex;
+  margin-left: 1em;
+}
+nav[role="doc-toc"] ul { padding: 0; margin: 0; list-style: none; }
+
+ol,ul { margin-top: 0.5ex; margin-bottom: 0.5ex; }
+ol,ul { padding-left: 1.5em; }
+li + li { margin-top: 0.5ex; }
+
+/* Images */
+.demo {
+	image-rendering: pixelated; 
+	image-rendering: -moz-crisp-edges; 
+	-ms-interpolation-mode: nearest-neighbor; 
+	border:thin solid black; 
+	background: repeating-linear-gradient(
+		137.51deg,
+		#eee,
+		#ddd 1ex,
+		#eee 2ex
+	);
+}
+.floater {
+	float:right; margin-left:1em; text-align:center; z-index:250;
+}
+
+svg.pikchr > * { font-size: 12pt; }
+
+nav.breadcrumb {
+  padding: 1ex;
+  border: 1px solid rgba(0,0,0,0.25);
+  border-radius: 0.7ex;
+  background: rgba(0,0,0,0.01);
+  margin-bottom: 1em;
+}
+nav.breadcrumb ol { padding: 0; list-style: none; display: table; margin: 0 auto; }
+nav.breadcrumb li { display: inline; }
+nav.breadcrumb li + li:before { content: " / "; }
+
+
+
+table {
+  border-collapse: collapse;
+  margin: .5em auto;
+  border-top: medium solid black;
+  border-bottom: medium solid black;
+}
+td,th { padding: 0.5ex 1ex; }
+thead th { border-bottom: thin solid black; }
+tbody tr:nth-child(2n+1) { background: rgba(0,0,0,0.0625); }
+
+
+figure { counter-increment: fig; margin: 1ex; padding: 1ex; }
+figure > *:not(script) { display: table; margin: auto; }
+figure > * + * { margin-top: 1em; }
+figcaption:before { content: "Figure " counter(fig) ". "; font-weight: bold; }
+figcaption { text-align: left; font-style: italic; }
+
+
+details > summary > p:first-child { display: inline; }
+
+.algorithm {
+    margin: 1em;
+    border-top: 4px solid black;
+    border-bottom: 4px solid black;
+    counter-increment: algorithm;
+}
+.algorithm > :first-child:before {
+    content: "Algorithm " counter(algorithm) ". ";
+    font-weight: bold;
+    font-style: normal;
+}
+.algorithm > :first-child {
+  display: block;
+  border-bottom: 1px solid black;
+  font-style: italic;
+}
+.algorithm ol { padding-left: 20px; }
+
+
+.proof:not(.cont) > *:first-child:before { content: "Proof.  "; font-style:italic; }
+.proof:not(.frag) > *:last-child:after { content: " ∎"; }
+.lemma > *:first-child:before { counter-increment:lemma; content: "Lemma " counter(lemma) ".  "; font-style:italic; }
+.definition > *:first-child:before { counter-increment:definition; content: "Definition " counter(definition) ".  "; font-style:italic; }
+.corollary > *:first-child:before { counter-increment:corollary; content: "Corollary " counter(corollary) ".  "; font-style:italic; }
+.theorem > *:first-child:before { counter-increment:theorem; content: "Theorem " counter(theorem) ".  "; font-style:italic; }
+.proof > *:first-child, .lemma > *:first-child, .definition > *:first-child, .corollary > *:first-child, .theorem > *:first-child { text-indent: -1ex; }
+
+
+.example {
+    margin: 1em;
+    background: #e9fbe9;
+    border-left: #99f solid 0.5ex;
+    padding: 0.5em 1em;
+}
+.example blockquote {
+    border: none;
+    padding: 0;
+    background: inherit;
+}
+.example > :first-child:before {
+    content: "Example \2014\00A0 ";
+    font-style: italic;
+    color: #005A9C;
+}
+
+.exercise,.extra {
+    margin: 1em;
+    background: rgba(255,127,0,0.13333333);
+    border-left: rgba(255,127,0,0.2666666) solid 0.5ex;
+    padding: 0.5em 1em;
+}
+.exercise > :first-child:before {
+    content: "Exercise \2014\00A0 ";
+    font-style: italic;
+    color: red;
+}
+.extra > :first-child:before {
+    content: "Extra credit \2014\00A0 ";
+    font-style: italic;
+    color: red;
+}
+
+
+.aside, .note, .tldr {
+    margin: 1em;
+    background: rgba(0,0,0,0.0625);
+    border-left: rgba(0,0,0,0.1225) solid 0.5ex;
+    padding: 0.5em 1em;
+}
+.aside:not(details) > :first-child:before, details.aside summary:before {
+    content: "Aside \2014\00A0 ";
+    font-style: italic;
+}
+.note > :first-child:before {
+    content: "Note \2014\00A0 ";
+    font-style: italic;
+}
+
+.algorithm {
+    margin: 1em;
+    background: #f7f7f7;
+    border-left: #ddd solid 4px;
+    padding: 0em 0.5em;
+}
+.algorithm > :first-child:before {
+    content: "Algorithm \2014\00A0 ";
+    font-style: italic;
+}
+
+
+.warning {
+    margin: 1em;
+    background: rgba(255,0,0,0.1);
+    border-left: rgba(255,0,0,0.2) solid 0.5ex;
+    padding: 0.5em 1em;
+}
+.warning > :first-child:before {
+    content: "WARNING! \2014\00A0 ";
+    font-style: italic;
+    color: red;
+    font-size: 150%;
+}
+
+
+.important {
+    display: table;
+    margin: 1em auto;
+    background: rgba(255,255,0,0.25);
+    border-left: rgba(191,191,0,0.2) solid 0.5ex;
+    padding: 0.5em 1em;
+    font-size: 150%;
+}
+
+

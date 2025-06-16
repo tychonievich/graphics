@@ -1,0 +1,17 @@
+<svg font-size="12" style="max-width:40em" text-anchor="middle" viewBox="-10 -10 320 220" xmlns="http://www.w3.org/2000/svg">
+<path d="M 0,0 v 200 M 100,0 v 200 M 200,0 v 200 M 300,0 v 200 M 0,0 h 300 M 0,100 h 300 M 0,200 h 300" fill="none" stroke="gray"></path>
+<path d="m 81,60 30,0 0,5 15,-15 -15,-15 0,5 -30,0 " fill="white" stroke="black"></path>
+<text x="100" y="55">p₁−p₂</text>
+<path d="m 181,60 30,0 0,5 15,-15 -15,-15 0,5 -30,0 " fill="white" stroke="black"></path>
+<text x="200" y="55">p₂−p₃</text>
+<path d="m 81,160 30,0 0,5 15,-15 -15,-15 0,5 -30,0 " fill="white" stroke="black"></path>
+<text x="100" y="155">p₄−p₅</text>
+<path d="m 181,160 30,0 0,5 15,-15 -15,-15 0,5 -30,0 " fill="white" stroke="black"></path>
+<text x="200" y="155">p₅−p₆</text>
+<path d="m 25,90 0,15 -5,0 30,15 30,-15 -5,0 0,-15 " fill="white" stroke="black"></path>
+<text x="50" y="105">p₁−p₄</text>
+<path d="m 125,90 0,15 -5,0 30,15 30,-15 -5,0 0,-15 " fill="white" stroke="black"></path>
+<text x="150" y="105">p₂−p₅</text>
+<path d="m 225,90 0,15 -5,0 30,15 30,-15 -5,0 0,-15 " fill="white" stroke="black"></path>
+<text x="250" y="105">p₃−p₆</text>
+</svg>

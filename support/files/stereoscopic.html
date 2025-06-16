@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><title>Stereoscopic emulator</title>
+<script>
+function readInput() {
+    document.querySelectorAll('input[id]').forEach(e=>{
+        window[e.id] = Number(e.value)
+        document.getElementById(e.id+'v').innerHTML = e.value
+    })
+    window.ct = Math.tan(cf*Math.PI/360)
+    window.st = Math.tan(sf*Math.PI/360)
+    window.vt = Math.tan(va*Math.PI/180)
+    window.ley = vt*sd-pd/2
+    window.rey = vt*sd+pd/2
+
+    moveEyeCamera()
+    reproject()
+}
+function moveEyeCamera() {
+    let e = null;
+    
+    window.ct = Math.tan(cf*Math.PI/360)
+    let chs = ct*2000
+    e = document.getElementById('lc')
+    e.setAttribute('d',['m', [0,-cs/2], [2000,-chs], [0,-1000], [-3000,0], [0, 2000+2*chs], [3000,0], [0,-1000], 'Z'].join(' '))
+    e = document.getElementById('rc')
+    e.setAttribute('d',['m', [0,+cs/2], [2000,-chs], [0,-1000], [-3000,0], [0, 2000+2*chs], [3000,0], [0,-1000], 'Z'].join(' '))
+    
+    e = document.getElementById('le')
+    e.setAttribute('cy', ley)
+    e = document.getElementById('re')
+    e.setAttribute('cy', rey)
+    
+    e = document.getElementById('rec')
+    e.setAttribute('d',[
+        'M', [0,rey], 'l', [2000,(rg/2-st*sd-rey)*2000/sd], 
+        'M', [0,rey], 'l', [2000,(rg/2+st*sd-rey)*2000/sd]
+    ].join(' '))
+    e = document.getElementById('lec')
+    e.setAttribute('d',[
+        'M', [0,ley], 'l', [2000,(-rg/2-st*sd-ley)*2000/sd], 
+        'M', [0,ley], 'l', [2000,(-rg/2+st*sd-ley)*2000/sd]
+    ].join(' '))
+    
+    
+    e = document.getElementById('ls')
+    e.setAttribute('y1', -rg/2-st*sd)
+    e.setAttribute('y2', -rg/2+st*sd)
+    e.setAttribute('x1', sd)
+    e.setAttribute('x2', sd)
+    e = document.getElementById('rs')
+    e.setAttribute('y1', rg/2-st*sd)
+    e.setAttribute('y2', rg/2+st*sd)
+    e.setAttribute('x1', sd)
+    e.setAttribute('x2', sd)
+
+    let i = document.getElementById('inf') // world depth where rs=pd
+    let h = document.getElementById('hrz') // seen depth where world depth = infinity
+    if (rg > pd) { // inf visible
+        // new points are infinite if (cs*st*sd + x*ct*pd - x*rg*ct) == 0
+        let infx = cs*st*sd / (rg*ct - ct*pd)
+        i.setAttribute('x1',infx)
+        i.setAttribute('x2',infx)
+    } else {
+        i.setAttribute('x1','3000')
+        i.setAttribute('x2','3000')
+    }
+    if (rg < pd) { // hrz visible
+        // if x = infinity, newx = sd*ct*pd / (ct*pd - rg*ct)
+        let infx = sd*ct*pd / (ct*pd - rg*ct)
+        h.setAttribute('x1',infx)
+        h.setAttribute('x2',infx)
+    } else {
+        h.setAttribute('x1','3000')
+        h.setAttribute('x2','3000')
+    }
+}
+
+function project(x,y) {
+    let denom = (cs*st*sd + x*ct*(pd - rg));
+    if (denom <= 1e-6) {
+        let inf = 10000
+        return [inf*x*ct, inf*(st*y - x*vt*ct)]
+    } else {
+        return [
+            sd*(x*ct*pd) / denom,
+            sd*(st*y*pd + cs*vt*st*sd - x*vt*rg*ct) / denom
+        ]
+    }
+}
+
+function reproject() {
+    let pts = document.getElementById('truth').getAttribute('d').split(/\s+/)
+    pts = pts.map(t => {
+        if (!t.includes(',')) return t;
+        let [x,y] = t.split(',').map(Number)
+        return project(x,y)
+    })
+    document.getElementById('perceived').setAttribute('d', pts.join(' '))
+}
+window.addEventListener('load', (event) => {
+    let t = document.getElementById('truth')
+    let lines = t.getAttribute('d').split('\n')
+    let last = lines[lines.length-1]
+    for(let i=1; i<10; i+=1) {
+        lines.push(last.replace(/ ([0-9])/g, ' '+i*4+'$1'))
+    }
+    t.setAttribute('d', lines.join('\n'))
+    document.querySelectorAll('input[id]').forEach(e=>e.addEventListener('input', readInput))
+    readInput()
+})
+</script>
+<style>input[type="range"] { width:30em; }</style>
+</head>
+<body style="background:#eee">
+<div style="position:absolute; right:0; width:42em; ">
+<br/><label><input type="range" min="53" max="73" id="pd"> Pupillary distance (<span id="pdv">63</span> mm)</label>
+<br/><label><input type="range" min="53" max="73" id="rg"> Render separation (<span id="rgv">63</span> mm)</label>
+<br/><label><input type="range" min="6" max="600" value="63" id="cs"> Camera separation (<span id="csv">63</span> mm)</label>
+<br/><label><input type="range" min="60" max="2000" value="60" id="sd"> Screen distance (<span id="sdv">60</span> mm)</label>
+<br/><label><input type="range" min="5" max="120" value="45" id="sf"> Screen field of view (<span id="sfv">45</span>°)</label>
+<br/><label><input type="range" min="5" max="120" value="45" id="cf"> Camera field of view (<span id="cfv">45</span>°)</label>
+<br/><label><input type="range" min="-60" max="60" id="va"> View angle (<span id="vav">0</span>°)</label>
+</div>
+<svg viewbox="-40 -570 2040 1140" style="background:#fff" stroke-width="2">
+<g id="camera" fill="none" stroke="#7d7" stroke-width="4">
+<path id="lc" d="m 0,-32 l 20,10 0,-20 z" stroke="none" fill="#7d73"/>
+<path id="rc" d="m 0,32 l 20,10 0,-20 z" stroke="none" fill="#7d73"/>
+<line id="inf" x1="1000000" x2="1000000" y1="-1000" y2="1000"/>
+<path id="truth" d="M 500,200 900,200 900,-200, 500,-200 Z
+M 600,100 800,100 800,-100 600,-100 Z
+M 500,200 600,100 700,0 800,-100 900,-200 M 500,-200, 600,-100, 700,0, 800,100, 900,200
+M 2328,-105 2328,-78 2241,-78 2241,-16 2325,-16 2325,10 2241,10 2241,74 2331,74 2331,100 2212,100 2212,-105 Z M 1071,-82 1101,-74 1120,-60 1119,-94 1087,-107 1052,-105 1026,-90 1011,-57 1027,-16 1094,29 1100,59 1084,73 1053,76 1014,49 1013,84 1044,100 1083,102 1115,85 1130,39 1106,0 1046,-38 1041,-69 Z M 1334,-91 1334,-60 1278,-81 1226,-73 1195,-47 1181,-2 1197,48 1236,72 1284,75 1336,54 1336,86 1286,102 1235,100 1193,83 1154,30 1157,-36 1178,-72 1212,-97 1274,-108 Z M 1402,-78 1488,-78 1488,-105 1372,-105 1372,100 1491,100 1491,74 1402,74 1402,10 1485,10 1485,-16 1402,-16 Z M 1870,-16 1786,-16 1786,-78 1873,-78 1873,-105 1757,-105 1757,100 1875,100 1875,74 1786,74 1786,10 1870,10 Z M 1712,-105 1712,100 1686,100 1550,-58 1550,100 1522,100 1522,-105 1545,-105 1684,54 1684,-105 Z M 2959,-105 2959,-78 2873,-78 2873,-16 2956,-16 2956,10 2873,10 2873,74 2962,74 2962,100 2843,100 2843,-105 Z M 2125,100 2169,87 2169,-1 2101,-1 2101,26 2140,26 2140,68 2107,75 2067,72 2032,51 2015,20 2014,-18 2032,-55 2074,-81 2122,-77 2165,-61 2165,-91 2096,-109 2029,-91 1989,-44 1983,6 1993,47 2029,86 2079,103 Z M 2417,63 2386,25 2387,-29 2409,-62 2446,-80 2485,-78 2517,-62 2539,-29 2540,25 2509,63 2463,77 Z M 2354,18 2359,-43 2393,-86 2439,-106 2487,-105 2528,-90 2560,-55 2575,-3 2557,56 2516,92 2454,104 2398,85 2370,55 Z M 2799,-105 2799,100 2770,100 2769,-59 2704,21 2638,-59 2638,100 2608,100 2608,-105 2636,-105 2704,-21 2772,-105 Z M 3147,-105 3147,-78 3076,-78 3076,100 3047,100 3047,-78 2976,-78 2976,-105 Z M 3204,-79 3204,-15 3236,-16 3256,-25 3265,-52 3247,-77 Z M 3175,-105 3244,-104 3277,-90 3295,-55 3288,-21 3262,3 3285,28 3332,99 3298,100 3248,25 3226,12 3204,11 3204,100 3175,100 Z M 3514,-105 3479,-105 3423,-34 3368,-105 3333,-105 3409,-8 3409,100 3438,100 3438,-8 Z
+M 500,0 C 500,111 589,200 700,200 811,200 900,111 900,0 900,-111 811,-200 700,-200 589,-200 500,-111 500,0" />
+</g>
+<g id="viewer" fill="none" stroke="#700">
+<circle id="le" cx="-15" cy="-32" r="15"/>
+<circle id="re" cx="-15" cy="32" r="15"/>
+<path id="lec" d="m 0,-32 l 20,10 0,-20 z" stroke-width="0.5"/>
+<path id="rec" d="m 0,32 l 20,10 0,-20 z" stroke-width="0.5"/>
+<line id="ls" x1="60" x2="60" y1="-52" y2="-12" opacity="0.5"/>
+<line id="rs" x1="60" x2="60" y1="52" y2="12" opacity="0.5"/>
+<line id="hrz" x1="1000000" x2="1000000" y1="-1000" y2="1000"/>
+<path id="perceived" d="M 500,200 900,200 900,-200, 500,-200 Z M 600,100 800,100 800,-100 600,-100 Z M 500,200 600,100 700,0 800,-100 900,-200 M 500,-200, 600,-100, 700,0, 800,100, 900,200" />
+</g>
+</svg>
+</body>
+</html>
+

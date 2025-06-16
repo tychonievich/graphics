@@ -1,0 +1,9 @@
+<svg font-size="12" style="max-width:40em" text-anchor="middle" viewBox="-10 -10 320 220" xmlns="http://www.w3.org/2000/svg">
+<path d="M 0,0 v 200 M 100,0 v 200 M 200,0 v 200 M 300,0 v 200 M 0,0 h 300 M 0,100 h 300 M 0,200 h 300" fill="none" stroke="gray"></path>
+<text x="50" y="50">2p₁−p₂−p₄</text>
+<text x="150" y="50">3p₂−p₁−p₃−p₅</text>
+<text x="250" y="50">2p₃−p₂−p₆</text>
+<text x="50" y="150">2p₄−p₁−p₅</text>
+<text x="150" y="150">3p₅−p₂−p₄−p₆</text>
+<text x="250" y="150">2p₆−p₃−p₅</text>
+</svg>

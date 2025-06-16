@@ -1,0 +1,23 @@
+<svg style="max-width:30em" text-anchor="middle" viewBox="-10 -10 320 220" xmlns="http://www.w3.org/2000/svg">
+<path d="M 0,0 v 200 M 100,0 v 200 M 200,0 v 200 M 300,0 v 200 M 0,0 h 300 M 0,100 h 300 M 0,200 h 300" fill="none" stroke="gray"></path>
+<text x="50" y="50">c₁</text>
+<text x="150" y="50">c₂</text>
+<text x="250" y="50">c₃</text>
+<text x="50" y="150">c₄</text>
+<text x="150" y="150">c₅</text>
+<text x="250" y="150">c₆</text>
+<path d="m 86,60 20,0 0,5 15,-15 -15,-15 0,5 -20,0 " fill="white" stroke="black"></path>
+<text x="100" y="55">x₁</text>
+<path d="m 186,60 20,0 0,5 15,-15 -15,-15 0,5 -20,0 " fill="white" stroke="black"></path>
+<text x="200" y="55">x₂</text>
+<path d="m 86,160 20,0 0,5 15,-15 -15,-15 0,5 -20,0 " fill="white" stroke="black"></path>
+<text x="100" y="155">x₃</text>
+<path d="m 186,160 20,0 0,5 15,-15 -15,-15 0,5 -20,0 " fill="white" stroke="black"></path>
+<text x="200" y="155">x₄</text>
+<path d="m 35,90 0,15 -5,0 20,15 20,-15 -5,0 0,-15 " fill="white" stroke="black"></path>
+<text x="50" y="105">y₁</text>
+<path d="m 135,90 0,15 -5,0 20,15 20,-15 -5,0 0,-15 " fill="white" stroke="black"></path>
+<text x="150" y="105">y₂</text>
+<path d="m 235,90 0,15 -5,0 20,15 20,-15 -5,0 0,-15 " fill="white" stroke="black"></path>
+<text x="250" y="105">y₃</text>
+</svg>

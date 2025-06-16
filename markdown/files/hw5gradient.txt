@@ -1,8 +1,0 @@
-input tj.png
-
-gradient
-equalize red
-equalize green
-equalize blue
-
-output hw5gradient.png

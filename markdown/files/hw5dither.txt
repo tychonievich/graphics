@@ -1,7 +1,0 @@
-input earth.png
-
-dither green 2
-dither red 3
-dither blue 4
-
-output hw5dither.png

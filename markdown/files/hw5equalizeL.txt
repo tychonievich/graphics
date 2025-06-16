@@ -1,3 +1,0 @@
-input uva.png
-equalize lightness
-output hw5equalizeL.png

@@ -1,6 +1,0 @@
-pngs 1280 720 hw5fluid720p- 1000
-fps 30
-heat 1 0.25 0.1
-viscosity 0.125
-diffuse 0.125
-subsample 4

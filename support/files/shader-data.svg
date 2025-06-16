@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="1200" height="340" version="1.1" viewBox="0 0 317.5 89.958" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <marker id="Arrow1Mend" overflow="visible" orient="auto">
+   <path transform="matrix(-.4 0 0 -.4 -4 0)" d="m0 0 5-5-17.5 5 17.5 5z" fill="context-stroke" fill-rule="evenodd" stroke="context-stroke" stroke-width="1pt"/>
+  </marker>
+ </defs>
+ <g font-family="sans-serif" stroke-width=".26458">
+  <g font-size="5.6444px">
+   <g text-anchor="end">
+    <text x="42.333328" y="21.166668" text-align="end" style="line-height:1.25" xml:space="preserve"><tspan x="42.333328" y="21.166668" font-size="5.6444px" stroke-width=".26458">gl_VertexID</tspan></text>
+    <text x="42.333302" y="37.041664" text-align="end" style="line-height:1.25" xml:space="preserve"><tspan x="42.333302" y="37.041664" font-size="5.6444px" stroke-width=".26458" text-align="end" text-anchor="end">gl_InstanceID</tspan></text>
+    <text x="232.83333" y="21.166666" text-align="end" style="line-height:1.25" xml:space="preserve"><tspan x="232.83333" y="21.166666" font-size="5.6444px" stroke-width=".26458">gl_FragCoord</tspan></text>
+    <text x="232.83333" y="37.041664" text-align="end" style="line-height:1.25" xml:space="preserve"><tspan x="232.83333" y="37.041664" font-size="5.6444px" stroke-width=".26458">gl_FrontFacing</tspan></text>
+    <text x="232.83333" y="52.916664" text-align="end" style="line-height:1.25" xml:space="preserve"><tspan x="232.83333" y="52.916664" font-size="5.6444px" stroke-width=".26458">gl_PointCoord</tspan></text>
+   </g>
+   <text x="84.666664" y="21.16667" style="line-height:1.25" xml:space="preserve"><tspan x="84.666664" y="21.16667" stroke-width=".26458">gl_Position</tspan></text>
+   <text x="84.666664" y="37.041664" style="line-height:1.25" xml:space="preserve"><tspan x="84.666664" y="37.041664" stroke-width=".26458">gl_PointSize</tspan></text>
+   <text x="275.16672" y="21.166666" style="line-height:1.25" xml:space="preserve"><tspan x="275.16672" y="21.166666" stroke-width=".26458">gl_FragDepth</tspan></text>
+   <text x="275.16672" y="37.041664" style="line-height:1.25" xml:space="preserve"><tspan x="275.16672" y="37.041664" font-style="italic" stroke-width=".26458">(a color)</tspan></text>
+  </g>
+  <g font-size="8.4667px" text-anchor="middle">
+   <text x="63.5" y="21.166666" text-align="center" style="line-height:1.25" xml:space="preserve"><tspan x="63.5" y="21.166666" stroke-width=".26458">VS</tspan></text>
+   <text x="254.00005" y="21.16667" text-align="center" style="line-height:1.25" xml:space="preserve"><tspan x="254.00005" y="21.16667" stroke-width=".26458">FS</tspan></text>
+   <text x="158.74998" y="26.458332" text-align="center" style="line-height:1.25" xml:space="preserve"><tspan x="158.74998" y="26.458332">assemble</tspan><tspan x="158.74998" y="37.041668">clip</tspan><tspan x="158.74998" y="47.625008">project</tspan><tspan x="158.74998" y="58.208344">rasterize</tspan><tspan x="158.74998" y="68.791679">interpolate</tspan></text>
+  </g>
+ </g>
+ <g fill="none" stroke-width=".5">
+  <g stroke="#000">
+   <rect x="52.917" y="10.583" width="21.167" height="68.792"/>
+   <rect x="243.42" y="10.583" width="21.167" height="68.792"/>
+   <path d="m44.979 18.521h7.9375" marker-end="url(#Arrow1Mend)"/>
+   <path d="m74.083 18.521h7.9375" marker-end="url(#Arrow1Mend)"/>
+   <path d="m44.979 34.396h7.9375" marker-end="url(#Arrow1Mend)"/>
+   <path d="m74.083 35.719h7.9375" marker-end="url(#Arrow1Mend)"/>
+  </g>
+  <g stroke="#00f">
+   <path d="m74.083 67.469h7.9375" marker-end="url(#Arrow1Mend)"/>
+   <path d="m111.12 66.146h19.844" marker-end="url(#Arrow1Mend)"/>
+   <path d="m186.53 66.146h19.844" marker-end="url(#Arrow1Mend)"/>
+   <path d="m74.083 62.177h7.9375" marker-end="url(#Arrow1Mend)"/>
+   <path d="m74.083 72.76h7.9375" marker-end="url(#Arrow1Mend)"/>
+  </g>
+  <path d="m142.88 85.99h-79.375v-6.6146" marker-end="url(#Arrow1Mend)" stroke="#ff0001"/>
+  <path d="m174.62 85.99h79.375v-6.6146" marker-end="url(#Arrow1Mend)" stroke="#ff0001"/>
+  <g stroke="#007f00">
+   <path d="m43.656 70.115h7.9375" marker-end="url(#Arrow1Mend)"/>
+   <path d="m43.656 64.823h7.9375" marker-end="url(#Arrow1Mend)"/>
+   <path d="m43.656 59.531h7.9375" marker-end="url(#Arrow1Mend)"/>
+   <path d="m158.75 9.2604v7.9375" marker-end="url(#Arrow1Mend)"/>
+   <path d="m43.656 75.406h7.9375" marker-end="url(#Arrow1Mend)"/>
+  </g>
+  <g stroke="#00f">
+   <path d="m235.48 67.469h7.9375" marker-end="url(#Arrow1Mend)"/>
+   <path d="m235.48 62.177h7.9375" marker-end="url(#Arrow1Mend)"/>
+   <path d="m235.48 72.76h7.9375" marker-end="url(#Arrow1Mend)"/>
+  </g>
+  <g stroke="#000">
+   <path d="m264.58 18.521h7.9375" marker-end="url(#Arrow1Mend)"/>
+   <path d="m264.58 34.396h7.9375" marker-end="url(#Arrow1Mend)"/>
+   <path d="m235.48 18.521h7.9375" marker-end="url(#Arrow1Mend)"/>
+   <path d="m235.48 34.396h7.9375" marker-end="url(#Arrow1Mend)"/>
+   <path d="m235.48 50.271h7.9375" marker-end="url(#Arrow1Mend)"/>
+  </g>
+ </g>
+ <g font-family="sans-serif" font-size="5.6444px" stroke-width=".26458">
+  <text x="84.666664" y="68.791672" fill="#0000ff" style="line-height:1.25" xml:space="preserve"><tspan x="84.666664" y="68.791672" fill="#0000ff" font-style="italic" stroke-width=".26458">Varyings</tspan></text>
+  <text x="42.333332" y="68.791679" fill="#007f00" text-align="end" text-anchor="end" style="line-height:1.25" xml:space="preserve"><tspan x="42.333332" y="68.791679" fill="#007f00" font-style="italic" stroke-width=".26458">Attributes</tspan></text>
+  <text x="232.83331" y="68.791672" fill="#0000ff" text-align="end" text-anchor="end" style="line-height:1.25" xml:space="preserve"><tspan x="232.83331" y="68.791672" fill="#0000ff" font-style="italic" stroke-width=".26458">Varyings</tspan></text>
+ </g>
+ <rect x="133.61" y="17.198" width="50.271" height="55.562" fill="none" stroke="#000" stroke-dasharray="0.499999, 1.5" stroke-width=".5"/>
+ <text x="158.75" y="87.3125" fill="#ff0000" font-family="sans-serif" font-size="5.6444px" stroke-width=".26458" text-align="center" text-anchor="middle" style="line-height:1.25" xml:space="preserve"><tspan x="158.75" y="87.3125" fill="#ff0000" font-style="italic">Uniforms</tspan></text>
+ <text x="158.75" y="7.9375043" fill="#007f00" font-family="sans-serif" font-size="5.6444px" stroke-width=".26458" text-align="center" text-anchor="middle" style="line-height:1.25" xml:space="preserve"><tspan x="158.75" y="7.9375043" fill="#007f00" font-style="italic">Primitives</tspan></text>
+</svg>

@@ -1,3 +1,0 @@
-input uva.png
-equalize saturation
-output hw5equalizeS.png
