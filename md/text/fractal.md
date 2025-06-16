@@ -269,7 +269,6 @@ function show_cover(id) {
   document.getElementById(id).style.display = '';
 }
 </script>
-:::
 
 Counting up either circles or squares needed to cover this curve, we get:
 
@@ -283,6 +282,7 @@ Counting up either circles or squares needed to cover this curve, we get:
 Note that multiplying $n$ by 3 (for example to go from 1/9 to 1/27 scale)
 multiplies $n^d$ by 4 (for example, to go from 16 to 64 shapes needed to cover the curve).
 That means that $(3n)^d = 4(n^d)$; solving for $d$ we get $d = \frac{\log 4}{\log 3} \approx 1.26185$.
+:::
 
 # Fractals in Graphics
 
