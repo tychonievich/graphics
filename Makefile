@@ -58,6 +58,7 @@ html/%.html: md/%.md sskatex.js sidenotes.lua html5.template pikchr breadcrumber
 		--lua-filter=sidenotes.lua \
 		--lua-filter=pikchr.lua \
 		--lua-filter=licenses.lua \
+		--lua-filter=nocolgroup.lua \
 		$(shell grep -q '^date: ' $< || echo --metadata date="$(shell date -Idate --date="$(shell stat -c'%y' $<)")") \
 		--metadata datetime="$(shell date -Iseconds --date="$(shell stat -c'%y' $<)")" \
 		$(shell grep -q '^author:' $< || echo "--metadata author='Luther Tychonievich'") \
