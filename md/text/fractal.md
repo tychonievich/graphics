@@ -36,7 +36,7 @@ in particular, shrinking the cubes by a factor of 3 requires 4 times as many to 
 That's easier to see at this low resolution if we use circles instead of squares:
 
 <figure>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="-61 -1 252 122" style="max-width:65em" fill="none" stroke="#000" stroke-linejoin="round">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -61 252 122" style="max-width:65em" fill="none" stroke="#000" stroke-linejoin="round">
 <path d="M 0,0 40,0 60,34.64101615137754 80,0 120,0 "/>
 <circle cx="60" cy="0" r="60"/>
 <g transform="translate(130,0)">
