@@ -7,4 +7,4 @@ Some versions of the course were not initially shared publicly; if you desire th
 Rendered versions of this course can be found at
 
 - <https://cs418.cs.illinois.edu/website>
-- <https://courses.grainger.illinois.edu/cs418>
+- <https://courses.grainger.illinois.edu/cs418/fa2025>
