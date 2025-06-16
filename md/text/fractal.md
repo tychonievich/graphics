@@ -38,13 +38,13 @@ That's easier to see at this low resolution if we use circles instead of squares
 <figure>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -61 252 122" style="max-width:65em" fill="none" stroke="#000" stroke-linejoin="round">
 <path d="M 0,0 40,0 60,34.64101615137754 80,0 120,0 "/>
-<circle cx="60" cy="0" r="60"/>
+<circle cx="60" cy="0" r="60" stroke-width="0.5"/>
 <g transform="translate(130,0)">
 <path d="M 0,0 40,0 60,34.64101615137754 80,0 120,0 "/>
-<circle cx="20" cy="0" r="20"/>
-<circle cx="50" cy="17.3205" r="20"/>
-<circle cx="70" cy="17.3205" r="20"/>
-<circle cx="100" cy="0" r="20"/>
+<circle cx="20" cy="0" r="20" stroke-width="0.5"/>
+<circle cx="50" cy="17.3205" r="20" stroke-width="0.5"/>
+<circle cx="70" cy="17.3205" r="20" stroke-width="0.5"/>
+<circle cx="100" cy="0" r="20" stroke-width="0.5"/>
 </g>
 </svg>
 <figcaption>The same path as the previous image, twice. On the left, a single circle of radius 1.5 covers the entire path. On the right, four circles of radius 0.5 jointly cover the path, one covering each straight path segment.</figcaption>
