@@ -42,8 +42,8 @@ That's easier to see at this low resolution if we use circles instead of squares
 <g transform="translate(130,0)">
 <path d="M 0,0 40,0 60,34.64101615137754 80,0 120,0 "/>
 <circle cx="20" cy="0" r="20"/>
-<circle cx="50" cy="17.3205" radius="20"/>
-<circle cx="70" cy="17.3205" rr20"/>
+<circle cx="50" cy="17.3205" r="20"/>
+<circle cx="70" cy="17.3205" r="20"/>
 <circle cx="100" cy="0" r="20"/>
 </g>
 </svg>
