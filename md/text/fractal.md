@@ -331,10 +331,10 @@ But as we add more samples, the bumpiness increases
 </svg>
 <script>
 window.addEventListener('load',e => {
-  document.getElementById('path2').setAttribute('d', 'M'+Array(50).fill(0).map((v,i) => [i*120/49, Math.random()*40-20]))
+  document.getElementById('path2').setAttribute('d', 'M'+Array(100).fill(0).map((v,i) => [i*120/99, Math.random()*40-20]))
 })
 </script>
-<figcaption>White noise rendered with 50 samples looks like a very bumpy line.</figcaption>
+<figcaption>White noise rendered with 100 samples looks like a very bumpy line.</figcaption>
 </figure>
 
 <figure>
@@ -343,10 +343,10 @@ window.addEventListener('load',e => {
 </svg>
 <script>
 window.addEventListener('load',e => {
-  document.getElementById('path3').setAttribute('d', 'M'+Array(250).fill(0).map((v,i) => [i*120/249, Math.random()*40-20]))
+  document.getElementById('path3').setAttribute('d', 'M'+Array(1000).fill(0).map((v,i) => [i*120/999, Math.random()*40-20]))
 })
 </script>
-<figcaption>White noise rendered with 250 samples looks like a jagged-edged rectangle.</figcaption>
+<figcaption>White noise rendered with 1000 samples looks like a jagged-edged rectangle.</figcaption>
 </figure>
 
 
@@ -356,10 +356,10 @@ window.addEventListener('load',e => {
 </svg>
 <script>
 window.addEventListener('load',e => {
-  document.getElementById('path4').setAttribute('d', 'M'+Array(1250).fill(0).map((v,i) => [i*120/1249, Math.random()*40-20]))
+  document.getElementById('path4').setAttribute('d', 'M'+Array(10000).fill(0).map((v,i) => [i*120/9999, Math.random()*40-20]))
 })
 </script>
-<figcaption>White noise rendered with 1250 samples looks like a solid rectangle.</figcaption>
+<figcaption>White noise rendered with 10,000 samples looks like a solid rectangle.</figcaption>
 </figure>
 
 until eventually it's true dimensional appears: 2, the same dimension as the solid rectangle that it fills.
