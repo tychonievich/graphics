@@ -317,7 +317,7 @@ If we graph this with time on one axis on value on the other, at low sampling ra
 </svg>
 <script>
 window.addEventListener('load',e => {
-  document.getElementById('path1').setAttribute('d', Array(10).fill(0).map((v,i) => [i*120/9, Math.random()*40-20])
+  document.getElementById('path1').setAttribute('d', 'M'+Array(10).fill(0).map((v,i) => [i*120/9, Math.random()*40-20]))
 })
 </script>
 <figcaption>White noise rendered with just 10 samples looks like a bumpy line, and possibly the low-res version of a fractal.</figcaption>
@@ -331,7 +331,7 @@ But as we add more samples, the bumpiness increases
 </svg>
 <script>
 window.addEventListener('load',e => {
-  document.getElementById('path2').setAttribute('d', Array(50).fill(0).map((v,i) => [i*120/49, Math.random()*40-20])
+  document.getElementById('path2').setAttribute('d', 'M'+Array(50).fill(0).map((v,i) => [i*120/49, Math.random()*40-20]))
 })
 </script>
 <figcaption>White noise rendered with 50 samples looks like a very bumpy line.</figcaption>
@@ -343,7 +343,7 @@ window.addEventListener('load',e => {
 </svg>
 <script>
 window.addEventListener('load',e => {
-  document.getElementById('path3').setAttribute('d', Array(250).fill(0).map((v,i) => [i*120/249, Math.random()*40-20])
+  document.getElementById('path3').setAttribute('d', 'M'+Array(250).fill(0).map((v,i) => [i*120/249, Math.random()*40-20]))
 })
 </script>
 <figcaption>White noise rendered with 250 samples looks like a jagged-edged rectangle.</figcaption>
@@ -356,7 +356,7 @@ window.addEventListener('load',e => {
 </svg>
 <script>
 window.addEventListener('load',e => {
-  document.getElementById('path4').setAttribute('d', Array(1250).fill(0).map((v,i) => [i*120/1249, Math.random()*40-20])
+  document.getElementById('path4').setAttribute('d', 'M'+Array(1250).fill(0).map((v,i) => [i*120/1249, Math.random()*40-20]))
 })
 </script>
 <figcaption>White noise rendered with 1250 samples looks like a solid rectangle.</figcaption>
