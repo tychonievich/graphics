@@ -305,13 +305,76 @@ There are *many* fractals used in graphics, but four are common enough to be wor
 All of these are forms of fractal noise:
 that is, they use pseudorandom parameters to create a fractal that looks random instead of looking mechanical or mathematical.
 
+## An important non-fractal
+
+White noise is commonly defined as a time-varying value,
+where the value at any give point in time is purely random (within some bounds) with no correlation to the value it had a moment earlier.
+If we graph this with time on one axis on value on the other, at low sampling rates we get something that looks like it might have fractal dimension:
+
+<figure>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -21 122 42" style="max-width:30em" fill="none" stroke="#000" stroke-linejoin="round">
+<path d="M " id="path1"/>
+</svg>
+<script>
+window.addEventListener('load',e => {
+  document.getElementById('path1').setAttribute('d', Array(10).fill(0).map((v,i) => [i*120/9, Math.random()*40-20])
+})
+</script>
+<figcaption>White noise rendered with just 10 samples looks like a bumpy line, and possibly the low-res version of a fractal.</figcaption>
+</figure>
+
+But as we add more samples, the bumpiness increases
+
+<figure>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -21 122 42" style="max-width:30em" fill="none" stroke="#000" stroke-linejoin="round">
+<path d="M " id="path2"/>
+</svg>
+<script>
+window.addEventListener('load',e => {
+  document.getElementById('path2').setAttribute('d', Array(50).fill(0).map((v,i) => [i*120/49, Math.random()*40-20])
+})
+</script>
+<figcaption>White noise rendered with 50 samples looks like a very bumpy line.</figcaption>
+</figure>
+
+<figure>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -21 122 42" style="max-width:30em" fill="none" stroke="#000" stroke-linejoin="round">
+<path d="M " id="path3"/>
+</svg>
+<script>
+window.addEventListener('load',e => {
+  document.getElementById('path3').setAttribute('d', Array(250).fill(0).map((v,i) => [i*120/249, Math.random()*40-20])
+})
+</script>
+<figcaption>White noise rendered with 250 samples looks like a jagged-edged rectangle.</figcaption>
+</figure>
+
+
+<figure>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -21 122 42" style="max-width:30em" fill="none" stroke="#000" stroke-linejoin="round">
+<path d="M " id="path4"/>
+</svg>
+<script>
+window.addEventListener('load',e => {
+  document.getElementById('path4').setAttribute('d', Array(1250).fill(0).map((v,i) => [i*120/1249, Math.random()*40-20])
+})
+</script>
+<figcaption>White noise rendered with 1250 samples looks like a solid rectangle.</figcaption>
+</figure>
+
+until eventually it's true dimensional appears: 2, the same dimension as the solid rectangle that it fills.
+
+Because 2 is an integer, white noise is not a fractal.
+However, it is a kind of noise that is easy for computers to generate,
+and is sometimes used as a basis for fractals.
+
 ## fBm Noise
 
 Brownian motion refers to the trajectory followed by a particle that randomly changes direction.
-The most common formulation of Fractal Brownian motion (abbreviated fBm) is a 1.x-dimensional fractal created by the position of a 1D Brownian motion on one axis and time on the other.
+The most common formulation of **fractal Brownian motion** (abbreviated fBm) is a 1.x-dimensional fractal created by the position of a 1D Brownian motion on one axis and time on the other.
 Many other fBm formulations also exist.
 
-In graphics, "fBm noise" is used to describe any purely stochastic fractal, even if there is no way to characterize it as the motion of a particle.
+In graphics, the term "fBm noise" is sometimes used to describe any purely stochastic fractal, even if there is no way to characterize it as the motion of a particle.
 
 ## Subdivision methods
 
