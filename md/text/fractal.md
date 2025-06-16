@@ -30,7 +30,7 @@ The Koch curve starts with the following shape
 
 With $n=1$ this fits in one cube, but with $n=3$ it needs four cubes, not three, suggesting maybe more than $n^1$. But if we zoom in more we find just lines. Let's fix that by replacing each segment with another copy of the same shape
 
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 36.641" style="max-width:30em">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -1 120 37.641" style="max-width:30em">
 <path fill="none" stroke="black" d="M 0,35.641 40.0,35.641 60.0,1.0 80.0,35.641 120,35.641"/>
 </svg>
 
