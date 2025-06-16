@@ -261,8 +261,8 @@ A representation of the complete Koch curve, made by repeating the segment-repla
 
 <script>
 function show_cover(id) {
-  document.getElementById('kochbuckets').children.forEach(e => e.style.display = 'none')
-  document.getElementById(id).style.display = ''
+  for (let g of document.getElementById('kochbuckets').children) g.style.display = 'none';
+  document.getElementById(id).style.display = '';
 }
 </script>
 
