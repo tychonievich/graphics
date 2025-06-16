@@ -376,11 +376,11 @@ Many other fBm formulations also exist; for example, fBm noise is the integral o
 
 <figure>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -21 122 42" style="max-width:30em" fill="none" stroke="#000" stroke-linejoin="round">
-<path d="M " id="path4"/>
+<path d="M " id="path5"/>
 </svg>
 <script>
 window.addEventListener('load',e => {
-  document.getElementById('path4').setAttribute('d', 'm'+Array(10000).fill(0).map((v,i) => [1/9999, Math.random()*.04-.02]))
+  document.getElementById('path5').setAttribute('d', 'm'+Array(10000).fill(0).map((v,i) => [1/9999, Math.random()*.04-.02]))
 })
 </script>
 <figcaption>Brown noise with 10,000 samples generated as the integral of white noise.</figcaption>
