@@ -24,9 +24,32 @@ One way to construct such a shape is to find a shape that exhibits that ratio at
 :::example
 The Koch curve starts with the following shape
 
+<figure>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -1 120 36.641" style="max-width:30em" fill="none" stroke="#000" stroke-linejoin="round">
 <path d="M 0,0 40,0 60,34.64101615137754 80,0 120,0 "/>
 </svg>
+<figcaption>The starting point of the Koch curve, which you could make by moving forward, turning to the right 60°, moving forward, turning to the left 120°, moving forward, turning to the right 60°, and moving forward again, drawing a line n the ground as you go. The ending point is the same you'd get by moving forward 3 times without turning.</figcaption>
+</figure>
+
+This shape is chosen to make the number of cubes not scale linearly;
+in particular, shrinking the cubes by a factor of 3 requires 4 times as many to cover it.
+That's easier to see at this low resolution if we use circles instead of squares:
+
+<figure>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -1 120 36.641" style="max-width:min(30em, 45%)" fill="none" stroke="#000" stroke-linejoin="round">
+<path d="M 0,0 40,0 60,34.64101615137754 80,0 120,0 "/>
+<circle cx="60" cy="0" radius="60"/>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -1 120 36.641" style="max-width:min(30em, 45%)" fill="none" stroke="#000" stroke-linejoin="round">
+<path d="M 0,0 40,0 60,34.64101615137754 80,0 120,0 "/>
+<circle cx="20" cy="0" radius="20"/>
+<circle cx="50" cy="17.3205" radius="20"/>
+<circle cx="70" cy="17.3205" radius="20"/>
+<circle cx="100" cy="0" radius="20"/>
+</svg>
+<figcaption>The same path as the previous image, twice. On the left, a single circle of radius 1.5 covers the entire path. On the right, four circles of radius 0.5 jointly cover the path, one covering each straight path segment.</figcaption>
+</figure>
+
 
 With $n=1$ this fits in one cube, but with $n=3$ it needs four cubes, not three, suggesting maybe more than $n^1$. But if we zoom in more we find just lines. Let's fix that by replacing each segment with another copy of the same shape
 
