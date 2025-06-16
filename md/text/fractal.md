@@ -380,10 +380,10 @@ Many other fBm formulations also exist; for example, fBm noise is the integral o
 </svg>
 <script>
 window.addEventListener('load',e => {
-  document.getElementById('path5').setAttribute('d', 'm'+Array(10000).fill(0).map((v,i) => [1/9999, Math.random()*.04-.02]))
+  document.getElementById('path5').setAttribute('d', 'm'+Array(1001).fill(0).map((v,i) => [1/1000, Math.random()*.04-.02]))
 })
 </script>
-<figcaption>Brown noise with 10,000 samples generated as the integral of white noise.</figcaption>
+<figcaption>Brown noise with 1000 samples generated as the integral of white noise.</figcaption>
 </figure>
 
 
