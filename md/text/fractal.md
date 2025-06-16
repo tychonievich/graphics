@@ -11,7 +11,7 @@ Consider a chunk of some shape that passes though a cube.
 Subdivide that cube evenly into $n$ divisions along each axis to make a grid of $n^3$ smaller cubes.
 How many of those smaller cubes does the shape pass through?
 
-The exact answer to this question is overly dependent on the specifics of the case. For example, an axis-aligned straight line passes through $n$ cubes while a straight line between opposite cube corners may passe through as many as $3n$.
+The exact answer to this question is overly dependent on the specifics of the case^[Some definitions of fractal dimension use spheres instead of cubes, which removes some of these challenges but adds others because [sphere packing](https://en.wikipedia.org/wiki/Sphere_packing) is a nontrivial topic in its own right.]. For example, an axis-aligned straight line passes through $n$ cubes while a straight line between opposite cube corners may passe through as many as $3n$.
 In computing we know how to handle such constants: big-O.
 Any straight line passes through $\Theta(n^1)$ cubes.
 Any flat plane passes through $\Theta(n^2)$ cubes.
@@ -25,7 +25,7 @@ One way to construct such a shape is to find a shape that exhibits that ratio at
 The Koch curve starts with the following shape
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 36.641" style="max-width:30em">
-<path fill="none" stroke="black" d="M 0,35.641 120,35.641"/>
+<path d="M 0,0 40,0 60,34.64101615137754 80,0 120,0 "/>
 </svg>
 
 With $n=1$ this fits in one cube, but with $n=3$ it needs four cubes, not three, suggesting maybe more than $n^1$. But if we zoom in more we find just lines. Let's fix that by replacing each segment with another copy of the same shape
