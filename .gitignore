@@ -1,0 +1,8 @@
+package-lock.json
+html
+pikchr
+pikchr.c
+node_modules
+.zip
+support/hidden/feedback
+support/hidden/*.csv

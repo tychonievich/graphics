@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "katex": "^0.16.7",
+    "pandoc-filter": "^2.1.0"
+  }
+}

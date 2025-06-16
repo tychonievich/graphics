@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="$if(lang)$$lang$$else$en-US$endif$"$if(dir)$ dir="$dir$"$endif$>
+<head>
+<meta charset="utf-8" />
+<link rel="icon" href="./$basedir$/favicon.ico">
+$for(author-meta)$<meta name="author" content="$author-meta$" />$endfor$
+$if(date-meta)$<meta name="dcterms.date" content="$date-meta$" />$endif$
+$if(keywords)$<meta name="keywords" content="$for(keywords)$$keywords$$sep$, $endfor$" />$endif$
+<title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title>
+$if(inlinstyle)$<style>$styles.html()$$inlinestyle$</style>$else$<link rel="stylesheet" href="$basedir$codeformat.css" />$endif$
+$for(css)$<link rel="stylesheet" href="$css$" />$endfor$
+<script src="$basedir$customize.js"></script>
+<script src="$basedir$manlink.js"></script>
+$for(header-includes)$$header-includes$$endfor$
+</head>
+<body>
+$for(include-before)$$include-before$$endfor$
+
+<header>
+<BREADCRUMB></BREADCRUMB>
+<div class="title">$if(title)$$title$$else$Untitled$endif$</div>
+$if(subtitle)$<div class="subtitle">$subtitle$</div>$endif$
+
+$if(toc)$
+<input type="checkbox" class="margin-toggle" checked>
+<nav class="sidenote" id="$idprefix$TOC" role="doc-toc">
+<details open=""><summary class="nav-header">Contents</summary>
+$table-of-contents$
+</details>
+</nav>
+$endif$
+
+</header>
+
+
+$if(summary)$<div class="summary">$summary$</div>$endif$
+$if(abstract)$<div class="abstract">$abstract$</div>$endif$
+
+$body$
+
+<footer>
+<a id="restyle-button" href="#" style="text-decoration: none; border: thin dotted; display: inline-block; padding: 0.5ex; border-radius: 0.5ex; margin-bottom: 1ex;">restyle</a>
+<dialog id="restyle-dialog"><form method="dialog">
+<label>Preferred width: <input id="in-width" type="number" value="45" oninput="setIdealWidth(this)" style="width:3.5em">em</label><br>
+<label>Preferred font size: <input id="in-size" type="number" value="1" oninput="setFontSize(this)" min="0.2" max="10" step="0.1" style="width:3.5em">×</label><br>
+<label>Preferred font: <input id="in-font" type="text" value="Palatino, Palladio URW, P052, TeX Gyre Pagella, Palatino Linotype, Book Antiqua, serif" oninput="setFontFamily(this)"></label>
+</form></dialog>
+<div class="author">© $date$ $for(author)$<span class="anditem">$author$</span>$endfor$</div>
+<div class="license">$if(license)$$license$$else$<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License" title="This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a>$endif$</div>
+
+</footer>
+
+$for(include-after)$$include-after$$endfor$
+</body>
+</html>
