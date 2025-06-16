@@ -9,7 +9,7 @@ summary: |
   
   <center>
   [Content](content.html)  
-  [Quizzes](https://us.prairielearn.com/pl/course_instance/182443)
+  [Quizzes](https://us.prairielearn.com/pl/course_instance/182443)  
   [MPs](mp/)  
   [Submit](https://cs418.cs.illinois.edu/sudmit/)  
   [Text](text/)  
