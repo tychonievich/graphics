@@ -372,7 +372,20 @@ and is sometimes used as a basis for fractals.
 
 Brownian motion refers to the trajectory followed by a particle that randomly changes direction.
 The most common formulation of **fractal Brownian motion** (abbreviated fBm) is a 1.x-dimensional fractal created by the position of a 1D Brownian motion on one axis and time on the other.
-Many other fBm formulations also exist.
+Many other fBm formulations also exist; for example, fBm noise is the integral of white noise.
+
+<figure>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -21 122 42" style="max-width:30em" fill="none" stroke="#000" stroke-linejoin="round">
+<path d="M " id="path4"/>
+</svg>
+<script>
+window.addEventListener('load',e => {
+  document.getElementById('path4').setAttribute('d', 'm'+Array(10000).fill(0).map((v,i) => [1/9999, Math.random()*.04-.02]))
+})
+</script>
+<figcaption>Brown noise with 10,000 samples generated as the integral of white noise.</figcaption>
+</figure>
+
 
 In graphics, the term "fBm noise" is sometimes used to describe any purely stochastic fractal, even if there is no way to characterize it as the motion of a particle.
 
