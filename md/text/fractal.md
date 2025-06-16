@@ -24,7 +24,7 @@ One way to construct such a shape is to find a shape that exhibits that ratio at
 :::example
 The Koch curve starts with the following shape
 
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 36.641" style="max-width:30em" fill="none" stroke="#000" stroke-linejoin="round">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -1 120 36.641" style="max-width:30em" fill="none" stroke="#000" stroke-linejoin="round">
 <path d="M 0,0 40,0 60,34.64101615137754 80,0 120,0 "/>
 </svg>
 
