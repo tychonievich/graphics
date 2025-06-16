@@ -372,6 +372,7 @@ and is sometimes used as a basis for fractals.
 
 Brownian motion refers to the trajectory followed by a particle that randomly changes direction.
 The most common formulation of **fractal Brownian motion** (abbreviated fBm) is a 1.x-dimensional fractal created by the position of a 1D Brownian motion on one axis and time on the other.
+
 Many other fBm formulations also exist; for example, fBm noise is the integral of white noise.
 
 <figure>
@@ -380,14 +381,19 @@ Many other fBm formulations also exist; for example, fBm noise is the integral o
 </svg>
 <script>
 window.addEventListener('load',e => {
-  document.getElementById('path5').setAttribute('d', 'm'+Array(10001).fill(0).map((v,i) => [120/10000, Math.random()*.04-.02]))
+  document.getElementById('path5').setAttribute('d', 'm'+Array(10001).fill(0).map((v,i) => [120/10000, Math.random()*.4-.2]))
 })
 </script>
 <figcaption>Brown noise with 10,000 samples generated as the integral of white noise.</figcaption>
 </figure>
 
+The integral formulation is useful because it helps us characterize the visual effect of fractal dimension.
+The higher the magnitude of the underlying white noise,
+the steeper the "slopes" of the resulting integral will be,
+meaning the more squares will be needed in any given column of a grid covering the curve
+and thus the higher the fractal dimension will be.
 
-In graphics, the term "fBm noise" is sometimes used to describe any purely stochastic fractal, even if there is no way to characterize it as the motion of a particle.
+In graphics, the term "fBm noise" is sometimes used^[This technically-incorrect but common-in-practice use of words is common in many fields and can make learning a new field more challenging than you might prefer.] to describe any purely stochastic fractal, even if there is no way to characterize it as the motion of a particle.
 
 ## Subdivision methods
 
