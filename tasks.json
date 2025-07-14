@@ -1,0 +1,259 @@
+{ "warmup-webgl2":  {"due":"2025-08-31","type":"warmup"}
+, "warmup-anylang": {"due":"2025-09-07","type":"warmup"
+  , "parts":
+    {"core":{"files":[]}
+    ,"simple":{"files":["simple"]}
+    ,"messy":{"files":["messy1","messy2"]}
+    }
+  , "^":"warmup-"
+  }
+
+, "rasterizer":     {"due":"2025-09-21","type":"anylang","pt":8,"after":"warmup-anylang"
+  , "parts":
+    {"core":{"files":["gray","smallgap","smoothcolor","checkers"]}
+    ,"elements":{"files":["elements"],"pt":1}
+    ,"depth":{"files":["depth"],"pt":2}
+    ,"gamma":{"files":["sRGB","gammabox"],"pt":1}
+    ,"hyperbolic":{"files":["perspective"],"pt":2}
+    ,"frustum":{"files":["frustum","manyclip"],"pt":2}
+    ,"cull":{"files":["cull"],"pt":0.5}
+    ,"anti-alias":{"files":["fsaa2","fsaa8"],"pt":1}
+    ,"alpha":{"files":["alpha"],"pt":2}
+    ,"matrix":{"files":["matrix"],"pt":2}
+    ,"position23":{"files":["2d3d"],"pt":0.5}
+    ,"textures":{"files":["textures"],"pt":3}
+    ,"points":{"files":["points1","points2"],"pt":2}
+    ,"decal":{"files":["decals"],"pt":1}
+    }
+  , "^":"rast-"
+  }
+, "logo":           {"due":"2025-10-05","type":"core",   "pt":2,"after":"warmup-webgl2"
+  , "rubric":
+    { "Code style and dialect": 0.5
+    , "animated UIUC logo": 0.5
+    , "matrix-based 2D, two of translate, rotate, scale": 1
+    }
+  }
+, "orbits":         {"due":"2025-10-12","type":"core",   "pt":4,"after":"logo"
+  , "rubric":
+    { "geometry specified once": 2
+    , "planets around sun": 1
+    , "moons around planets": 0.5
+    , "distances and speeds": 0.5
+    }
+  }
+, "terrain":        {"due":"2025-10-19","type":"core",   "pt":8,"after":"logo"
+  , "rubric":
+    { "UI": 
+      { "grid size": 0.5
+      , "faults": 0.5
+      , "fits in view": 0.25
+      }
+    , "geometry":
+      { "grid": 0.5
+      , "vertex count": 0.5
+      , "triangle count": 0.5
+      , "faults": 1
+      , "fault distribution": 0.5
+      , "height": 0.5
+      , "normals": 1
+      }
+    , "render":
+      { "moving view": 0.5
+      , "diffuse": 0.5
+      , "specular": 0.5
+      , "specular and diffuse match": 0.25
+      , "light fixed relative to terrain": 0.5
+      }
+    }
+  }
+, "flight":         {"due":"2025-10-26","type":"core",   "pt":4,"after":"terrain"
+  , "rubric":
+    { "terrain": 
+      { "present and visible": 0.5
+      , "no inputs": 0.25
+      , "no early clipping or other motion-triggered visual artifacts": 0.25
+      }
+    , "keys":
+      { "WASD connected": 0.25
+      , "WASD directions": 0.25
+      , "Arrows connected": 0.25
+      , "Arrow directions": 0.25
+      , "Relative to current view": 1
+      , "Smooth motion when held": 1
+      }
+    }
+  }
+, "textures":       {"due":"2025-11-02","type":"core",   "pt":4,"after":"terrain"
+  , "rubric":
+    { "terrain MP": 0.5
+    , "no image": 0.5
+    , "hex color":
+      { "RGB": 0.5
+      , "specularity": 0.5
+      }
+    , "image":
+      { "loads": 0.5
+      , "fills terrain": 0.5
+      , "diffuse light": 0.5
+      }
+    , "two shaders": 0.5
+    }
+  }
+, "raytracer":      {"due":"2025-11-16","type":"anylang","pt":8,"after":"warmup-anylang"
+  , "parts":
+    {"core":{"files":["sphere","sun","overlap","behind","shadow-basic"]}
+    ,"exposure":{"pt":0.5,"files":["expose1","expose2"]}
+    ,"suns":{"pt":0.5,"files":["suns","shadow-suns"]}
+    ,"camera":{"pt":1,"files":["view"]}
+    ,"lenses":{"pt":1,"files":["fisheye","panorama"]}
+    ,"plane":{"pt":1,"files":["plane","shadow-plane"]}
+    ,"triangle":{"pt":2,"files":["tri","shadow-triangle"]}
+    ,"map":{"pt":1,"files":["tex"]}
+    ,"barycentric":{"pt":2,"files":["trit"]}
+    ,"bulb":{"pt":2,"files":["bulb","shadow-bulb","neglight"]}
+    ,"reflect":{"pt":2,"files":["shine1","shine3","bounces"]}
+    ,"refract":{"pt":2,"files":["trans1","trans3","ior"]}
+    ,"rough":{"pt":2,"files":["rough"]}
+    ,"antialias":{"pt":2,"files":["aa"]}
+    ,"focus":{"pt":1,"files":["dof"]}
+    ,"global":{"pt":3,"files":["gi"]}
+    ,"BVH":{"pt":3,"files":["many"]}
+    }
+  , "^":"ray-"
+  }
+, "spheres":        {"due":"2025-11-21","type":"core",   "pt":4,"after":"terrain"
+  , "rubric":
+    { "appearance":
+      { "lit spheres": 0.25
+      , "multicolored": 0.25
+      , "sent to GPU just once": 0.25
+      , "15 second reset": 0.25
+      }
+    , "dynamics":
+      { "momentum": 0.5
+      , "gravity": 0.5
+      , "walls and elasticity": 0.5
+      , "sphere-sphere collisions": 1
+      , "no other strange behaviors": 0.5
+      }
+    }
+  }
+
+, "psychedelic":    {"due":"2025-10-05","type":"elective","pt":2,"after":"warmup-webgl2"
+  , "rubric":
+    { "only modify GLSL": 0.5
+    , "full-screen scaling": 0.5
+    , "smooth curved non-polygonal pattern": 0.5
+    , "colorful time-varying pattern": 0.5
+    }
+  }
+, "gpu-jitter":     {"due":"2025-10-12","type":"elective","pt":2,"after":"logo"
+  , "rubric":
+    { "non-affine per-vertex movement": 1
+    , "vertex shader uses gl_VertexID": 1
+    }
+  }
+, "cpu-jitter":     {"due":"2025-10-12","type":"elective","pt":3,"after":"logo"
+  , "rubric":
+    { "non-affine per-vertex movement": 1
+    , "bufferData re-specified each frame": 1
+    , "only bufferData repeated, not rest of geometry": 1
+    }
+  }
+, "lineograph":     {"due":"2025-10-19","type":"elective","pt":2,"after":"orbits"
+  , "rubric":
+    { "non-erasing with depth included": 1
+    , "smooth response to QWEASD keys": 1
+    }
+  }
+, "parametric":     {"due":"2025-10-26","type":"elective","pt":4,"after":"terrain"
+  , "rubric":
+    { "inputs": 0.5
+    , "generates sphere": 0.5
+    , "corrent sphere normals": 0.5
+    , "correct vertex and triangle count": 0.5
+    , "torus":
+      { "correct positoons": 0.5
+      , "correct vertex and triangle count": 0.5
+      , "correct normals": 1
+      }
+    }
+  }
+, "cliffs":         {"due":"2025-10-26","type":"elective","pt":1,"after":"terrain"
+  , "rubric":
+    { "slope-determined materials": 0.5
+    , "differing color and specularity": 0.5
+    }
+  }
+, "heightmap":      {"due":"2025-10-26","type":"elective","pt":3,"after":"terrain"
+  , "rubric":
+    { "smoothly varying color": 0.5
+    , "more than just two colors interpolated": 1.5
+    , "in fragment shader, works with 1 fault or more": 1
+    }
+  }
+, "weathering":     {"due":"2025-10-26","type":"elective","pt":2,"after":"terrain"
+  , "rubric":
+    { "rounds corners": 0.5
+    , "scales correctly with grid size and iteration count": 0.5
+    , "handles edges correctly": 0.5
+    , "normals updated correctly": 0.5
+    }
+  }
+, "drive":          {"due":"2025-11-09","type":"elective","pt":4,"after":"flight"
+  , "rubric":
+    { "driving dynamics": 1
+    , "handles all camera orientations correctly": 1
+    , "height smoothly interpolated between grid points": 1
+    , "up-close specular highlights": 1
+    }
+  }
+, "fog":            {"due":"2025-11-09","type":"elective","pt":1,"after":"flight"
+  , "rubric":
+    { "fog appearance and fall-off": 0.5
+    , "fog controls FGH": 0.25
+    , "fog controls are per-keypress not as-held-down": 0.25
+    }
+  }
+, "obj-loading":    {"due":"2025-11-16","type":"elective","pt":4,"after":"textures"
+  , "rubric":
+    { "read OBJ files": 
+      { "vertex coordinates": 0.5
+      , "centered, scaled, and moving": 0.5
+      , "vertex colors if provided": 0.5
+      , "auto-generated normals and lighting": 0.5
+      }
+    , "OBJ files with normals and textures":
+      { "use provided normals": 0.5
+      , "use provided texture coordinates and image": 1
+      , "texture image also colors other models": 0.5
+      }
+    }
+  }
+, "subdivision":    {"due":"2025-11-16","type":"elective","pt":4,"after":"obj-loading"
+  , "rubric":
+    { "flat shading": 1
+    , "visibly-correct subdivision topology": 1
+    , "Catmull-Clark smoothing": 1
+    , "correctly handles all polygon side counts": 1
+    }
+  }
+, "many-spheres":   {"due":"2025-12-07","type":"elective","pt":4,"after":"spheres"
+  , "rubric":
+    { "gl.POINTS not polygons": 1
+    , "scales linearly with particle count": 1
+    , "good performance overall (no unexpected slowdowns)": 1
+    , "variable radii and mass": 1
+    }
+  }
+, "goop":           {"due":"2025-12-07","type":"elective","pt":4,"after":"many-spheres"
+  , "rubric":
+    { "2D points": 1
+    , "viscosity/coherent motion": 0.5
+    , "incomprehensibility/uniform density": 0.5
+    , "expected dam-break dynamics": 1
+    , "runtime efficiency": 1
+    }
+  }
+}
