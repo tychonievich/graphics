@@ -63,13 +63,6 @@ there should be no warnings or errors displayed in the console (except perhaps a
     <link rel="icon" href="data:,">
     ````
 
-Use readable coding style. In particular,
-
-- Break work into reasonable chunks, either as functions with meaningful names (preferred) or using whitespace and comments to separate parts of computation.
-
-- Comments should follow the [Google JS commenting style](https://google.github.io/styleguide/jsguide.html#formatting-comments).
-    At a minimum, have a comment preceding each function, preferably in [JSDoc style](https://google.github.io/styleguide/jsguide.html#jsdoc);
-    additional comments are also encouraged.
 
 ## Graphics
 

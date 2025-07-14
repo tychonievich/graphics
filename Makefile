@@ -37,6 +37,10 @@ post: all
 	rsync -rltvu \
 		html/ \
 		luthert@cs418.cs.illinois.edu:/var/www/html/website
+	rsync -rltvu \
+		tasks.json \
+		luthert@cs418.cs.illinois.edu:/var/www/html/submit
+	
 	git push
 
 html/%.html: md/%.md sskatex.js sidenotes.lua html5.template pikchr breadcrumber.py node_modules/katex/dist/katex.css
