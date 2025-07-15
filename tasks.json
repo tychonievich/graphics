@@ -1,9 +1,7 @@
-{ "warmup-webgl2":  {"due":"2025-08-31","type":"warmup"}
-, "warmup-anylang": {"due":"2025-09-07","type":"warmup"
+{ "warmup-webgl2":  {"due":"2025-08-31","type":"core","pt":0}
+, "warmup-anylang": {"due":"2025-09-07","type":"anylang","pt":0
   , "parts":
-    {"core":{"files":[]}
-    ,"simple":{"files":["simple"]}
-    ,"messy":{"files":["messy1","messy2"]}
+    {"core":{"files":["simple","messy1","messy2"]}
     }
   , "^":"warmup-"
   }
