@@ -37,9 +37,8 @@ post: all
 	rsync -rltvu \
 		html/ \
 		luthert@cs418.cs.illinois.edu:/var/www/html/website
-	rsync -rltvu \
-		tasks.json \
-		luthert@cs418.cs.illinois.edu:/var/www/html/submit
+	scp tasks.json luthert@cs418.cs.illinois.edu:/var/www/html/submit/tasks.json
+	scp tasks.json luthert@cs418-adm.cs.illinois.edu:tasks.json
 	
 	git push
 
