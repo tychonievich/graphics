@@ -78,6 +78,8 @@ However, there are a few exceptions where additional prereqs are needed:
 | 2| [`pointsize`](#pointsize) and [`drawArraysPoints`](#drawArraysPoints) | `texture` | rast-points1.txt and rast-points2.txt |
 | 1| [`decal`](#decal) | `texture` and `texcoord` | rast-decals.txt |
 
+It is tedious to grade output files for inputs you haven't implemented.
+When you upload, you will be asked to select which electives (if any) you've implemented and we should grade.
 
 # What you submit
 
@@ -93,27 +95,6 @@ make run file=rast-points2.txt
 ```
 
 See the associated warm-up for more on how to set up a Makefile and generate PNG images.
-
-It is tedious to grade output files for inputs you haven't implemented.
-Because of that you'll be asked to submit a file named `implemented.txt` which lists the optional parts you implemented; in particular, it should be a subset of the following
-
-```
-elements
-depth
-gamma
-hyperbolic
-frustum
-cull
-anti-alias
-alpha
-matrix
-position23
-textures
-points
-decal
-```
-
-Submitting a file that says you implemented something you didn't may result in a small professionalism penalty for wasting grader time.
 
 
 # Test Files

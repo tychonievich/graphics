@@ -70,6 +70,8 @@ and getting 0 electives here is fine if you do extra electives elsewhere.
 |3 | global			|antialias, triangle|`gi` | ray-gi.txt |
 |3 | BVH				|	suns    | |render ray-many.txt in under 1 second on our testing server (a 7GHz AMD processor) by using a [bounding volume hierarchy](../text/bvh.html), a fast-to-run programming language, and general code optimization |
 
+It is tedious to grade output files for inputs you haven't implemented.
+When you upload, you will be asked to select which electives (if any) you've implemented and we should grade.
 
 # What you submit
 
@@ -85,31 +87,6 @@ make run file=rast-points2.txt
 ```
 
 See the associated warm-up for more on how to set up a Makefile and generate PNG images.
-
-It is tedious to grade output files for inputs you haven't implemented.
-Because of that you'll be asked to submit a file named `implemented.txt` which lists the optional parts you implemented; in particular, it should be a subset of the following
-
-```
-exposure  
-suns      
-camera			
-lenses			
-plane      
-triangle   
-barycentric
-map        
-bulb       
-reflect 		
-refract 		
-rough			
-antialias	
-focus			
-global			
-BVH				
-```
-
-Submitting a file that says you implemented something you didn't may result in a small professionalism penalty for wasting grader time.
-
 
 
 # Test Files

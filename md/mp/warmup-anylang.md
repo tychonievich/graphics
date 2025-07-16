@@ -31,16 +31,14 @@ You will submit at least three files:
 
 -  Code, in whatever language you prefer, including any necessary support libraries that `make build` cannot obtain.
 
--  A file named `implemented.txt` that contains the test cases you expect to pass, one per line.
-
-You do *not* need to submit the example input or output files: just your code, the `Makefile`, and `implemented.txt`.
+You do *not* need to submit the example input or output files: just your code and the `Makefile`.
 
 If all of your files are in the same directory, you can submit them as-is (but must submit all of them in one go; piecemeal uploads will not work).
 
-If you need a specific directory structure, upload a `.zip` or `.tar` that contains those files.
+If you need a specific directory structure, upload a `.zip` that contains those files.
 The logic for handling submissions is
 
-a. If you submitted a `Makefile` directly, we use that
+a. If you submitted a `Makefile` (and other files) directly, we use that
 a. Otherwise if you submitted a tarball or zip archive, we extract that and
     i. If extracting it provides a `Makefile`, we use that
     i. Otherwise if extracting it created exactly one directory, we enter that and
@@ -114,12 +112,7 @@ drawPixels *n*
 
 # Get three files working
 
-You should be able to pass both of the following.
-To get credit for them, also submit a file names `implemented.txt` with the following in it:
-
-    simple
-    messy
-
+You should be able to pass all of the following.
 All test input files, with their reference output files, can be downloaded [as a zip](files/warmup-anylang-files.zip)
 
 
@@ -551,7 +544,7 @@ Program.class: Program.java
 
 If your code is in a package (as many IDEs will make it), you'll need a slightly more involved Makefile.
 
-If the `.java` files contain `package some.name;` then they will be in some path `path/prefix/some/name`. Put the `Makefile` (and `implemented.txt`) in `path/prefix/` as follows:
+If the `.java` files contain `package some.name;` then they will be in some path `path/prefix/some/name`. Put the `Makefile` in `path/prefix/` as follows:
 
 ```makefile
 SRC = $(wildcard some/name/*.java)
