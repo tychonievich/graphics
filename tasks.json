@@ -6,7 +6,7 @@
   , "^":"warmup-"
   }
 
-, "rasterizer":     {"due":"2025-09-21","type":"anylang","pt":8,"after":"warmup-anylang"
+, "rasterizer":     {"due":"2025-09-21","type":"anylang","pt":8,"after":"anylang"
   , "parts":
     {"core":{"files":["gray","smallgap","smoothcolor","checkers"]}
     ,"elements":{"files":["elements"],"pt":1}
@@ -25,7 +25,7 @@
     }
   , "^":"rast-"
   }
-, "logo":           {"due":"2025-10-05","type":"core",   "pt":2,"after":"warmup-webgl2"
+, "logo":           {"due":"2025-10-05","type":"core",   "pt":2,"after":"webgl2"
   , "rubric":
     { "Code style and dialect": 0.5
     , "animated UIUC logo": 0.5
@@ -98,7 +98,7 @@
     , "two shaders": 0.5
     }
   }
-, "raytracer":      {"due":"2025-11-16","type":"anylang","pt":8,"after":"warmup-anylang"
+, "raytracer":      {"due":"2025-11-16","type":"anylang","pt":8,"after":"anylang"
   , "parts":
     {"core":{"files":["sphere","sun","overlap","behind","shadow-basic"]}
     ,"exposure":{"pt":0.5,"files":["expose1","expose2"]}
@@ -138,7 +138,7 @@
     }
   }
 
-, "psychedelic":    {"due":"2025-10-05","type":"elective","pt":2,"after":"warmup-webgl2"
+, "psychedelic":    {"due":"2025-10-05","type":"elective","pt":2,"after":"webgl2"
   , "rubric":
     { "only modify GLSL": 0.5
     , "full-screen scaling": 0.5
@@ -245,7 +245,7 @@
     , "variable radii and mass": 1
     }
   }
-, "goop":           {"due":"2025-12-07","type":"elective","pt":4,"after":"many"
+, "goop":           {"due":"2025-12-07","type":"elective","pt":4,"after":"manyspheres"
   , "rubric":
     { "2D points": 1
     , "viscosity/coherent motion": 0.5
