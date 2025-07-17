@@ -1,5 +1,5 @@
-{ "warmup-webgl2":  {"due":"2025-08-31","type":"core","pt":0}
-, "warmup-anylang": {"due":"2025-09-07","type":"anylang","pt":0
+{ "webgl2":  {"due":"2025-08-31","type":"core","pt":0}
+, "anylang": {"due":"2025-09-07","type":"anylang","pt":0
   , "parts":
     {"core":{"files":["simple","messy1","messy2"]}
     }
@@ -214,7 +214,7 @@
     , "fog controls are per-keypress not as-held-down": 0.25
     }
   }
-, "obj-loading":    {"due":"2025-11-16","type":"elective","pt":4,"after":"textures"
+, "obj":    {"due":"2025-11-16","type":"elective","pt":4,"after":"textures"
   , "rubric":
     { "read OBJ files": 
       { "vertex coordinates": 0.5
@@ -229,7 +229,7 @@
       }
     }
   }
-, "subdivision":    {"due":"2025-11-16","type":"elective","pt":4,"after":"obj-loading"
+, "subdivision":    {"due":"2025-11-16","type":"elective","pt":4,"after":"obj"
   , "rubric":
     { "flat shading": 1
     , "visibly-correct subdivision topology": 1
@@ -237,7 +237,7 @@
     , "correctly handles all polygon side counts": 1
     }
   }
-, "many-spheres":   {"due":"2025-12-07","type":"elective","pt":4,"after":"spheres"
+, "manyspheres":   {"due":"2025-12-07","type":"elective","pt":4,"after":"spheres"
   , "rubric":
     { "gl.POINTS not polygons": 1
     , "scales linearly with particle count": 1
@@ -245,7 +245,7 @@
     , "variable radii and mass": 1
     }
   }
-, "goop":           {"due":"2025-12-07","type":"elective","pt":4,"after":"many-spheres"
+, "goop":           {"due":"2025-12-07","type":"elective","pt":4,"after":"many"
   , "rubric":
     { "2D points": 1
     , "viscosity/coherent motion": 0.5

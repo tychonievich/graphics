@@ -30,15 +30,12 @@ that leaves about 20 hours per credit of programming time,
 or 10 hours per credit of core MP and 10 hours per credit of elective MP.
 :::
 
-There are two 0-point warm-up assignments. These walk you through code you'll need in other MPs and ensure that your code works on the grading server; although we don't grade them, students in past semesters asserted that they were very helpful and that submitting them before the MPs reduced their overall work.
-
-- [Warm-up for the any-language assignments](warmup-anylang.html)
-- [Warm-up for the WebGL2 assignments](warmup-webgl2.html)
-
 There are 42 core points available.
 
 Core|MP        |Lang  |Notes
 :--:|----------|------|---------------
+  0 |[Any-language Warmup](warmup-anylang.html)|any|Prepares you to work on Rasterizer and Raytracer
+  0 |[WebGL2 Warmup](warmup-webgl2.html)|WebGL2|Prepares you to work on other assignments
   8 |[Rasterizer](rasterizer.html)|any   |You code a partial implementation of what WebGL does
   2 |[Logo](logo.html)            |WebGL2|Basic motion
   4 |[Orbits](orbits.html)        |WebGL2|Scene graph
@@ -48,7 +45,8 @@ Core|MP        |Lang  |Notes
   8 |[Raytracer](raytracer.html)  |any   |Implement a basic raytracer
   4 |[Spheres](spheres.html)      |WebGL2|Simulate motion using simple physics
 
-The Rasterizer will help you understand WebGL2 and should be completed first,
+The Warmups help ensure that your code and our grading system understand one another.
+After the warmups, the Rasterizer will help you understand WebGL2 and should be completed first,
 followed by Logo.
 Terrain is a prereq to both Flight and Textures.
 Otherwise the order is not important, but we recommend the order listed here.

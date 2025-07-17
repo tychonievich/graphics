@@ -113,7 +113,7 @@ drawPixels *n*
 # Get three files working
 
 You should be able to pass all of the following.
-All test input files, with their reference output files, can be downloaded [as a zip](files/warmup-anylang-files.zip)
+All test input files, with their reference output files, can be downloaded [as a zip](files/anylang-files.zip)
 
 
 [warmup-simple.txt](files/warmup-simple.txt)
@@ -632,7 +632,7 @@ run:
 Think your output looks like the reference output?
 Maybe so, but "like" is a fuzzy idea and sometimes we'll hold you to a higher standard of similarity than your eye is trained to see.
 
-Enter [ImageMagick](https://imagemagick.org/script/download.php) (or its less popular but faster clone, [GraphicsMagick](http://www.graphicsmagick.org/download.html)).
+Enter [ImageMagick](https://imagemagick.org/script/download.php).
 ImageMagick is a collection of versatile command-line tools for manipulating images, including many forms of image comparison.
 
 During grading, we use ImageMagick to create comparison images containing 
