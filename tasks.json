@@ -120,7 +120,7 @@
     }
   , "^":"ray-"
   }
-, "spheres":        {"due":"2025-11-21","type":"core",   "pt":4,"after":"terrain"
+, "spheres":        {"due":"2025-11-21","type":"core",   "pt":4,"after":"logo"
   , "rubric":
     { "appearance":
       { "lit spheres": 0.25
