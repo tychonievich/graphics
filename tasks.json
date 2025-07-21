@@ -27,75 +27,45 @@
   }
 , "logo":           {"due":"2025-10-05","type":"core",   "pt":2,"after":"webgl2"
   , "rubric":
-    { "Code style and dialect": 0.5
+    { "code style and dialect": 0.5
     , "animated UIUC logo": 0.5
-    , "matrix-based 2D, two of translate, rotate, scale": 1
+    , "matrix-based two of 2D {translate, rotate, scale}": 1
     }
   }
 , "orbits":         {"due":"2025-10-12","type":"core",   "pt":4,"after":"logo"
   , "rubric":
-    { "geometry specified once": 2
+    { "geometry specified once": 1
     , "planets around sun": 1
-    , "moons around planets": 0.5
-    , "distances and speeds": 0.5
+    , "moons around planets": 1
+    , "distances and speeds": 1
     }
   }
 , "terrain":        {"due":"2025-10-19","type":"core",   "pt":8,"after":"logo"
   , "rubric":
-    { "UI": 
-      { "grid size": 0.5
-      , "faults": 0.5
-      , "fits in view": 0.25
-      }
-    , "geometry":
-      { "grid": 0.5
-      , "vertex count": 0.5
-      , "triangle count": 0.5
-      , "faults": 1
-      , "fault distribution": 0.5
-      , "height": 0.5
-      , "normals": 1
-      }
-    , "render":
-      { "moving view": 0.5
-      , "diffuse": 0.5
-      , "specular": 0.5
-      , "specular and diffuse match": 0.25
-      , "light fixed relative to terrain": 0.5
-      }
+    { "terrain and controls clearly visible with moving camera": 1
+    , "grid of size^2 vertices and 2(size-1)^2 triangles": 1
+    , "fault count and distribution": 1
+    , "normalize height": 1
+    , "correct normals revealed through lighting": 1
+    , "diffuse lighting does not depend on view direction": 1
+    , "specular lighting does depend on view direction": 1
+    , "specular and diffuse lighting match": 1
     }
   }
 , "flight":         {"due":"2025-10-26","type":"core",   "pt":4,"after":"terrain"
   , "rubric":
-    { "terrain": 
-      { "present and visible": 0.5
-      , "no inputs": 0.25
-      , "no early clipping or other motion-triggered visual artifacts": 0.25
-      }
-    , "keys":
-      { "WASD connected": 0.25
-      , "WASD directions": 0.25
-      , "Arrows connected": 0.25
-      , "Arrow directions": 0.25
-      , "Relative to current view": 1
-      , "Smooth motion when held": 1
-      }
+    { "terrain present and visible with no inputs": 1
+    , "keys perform correct smooth camera motions": 1
+    , "motion relative to current view": 1
+    , "rotation relative to current view": 1
     }
   }
 , "textures":       {"due":"2025-11-02","type":"core",   "pt":4,"after":"terrain"
   , "rubric":
-    { "terrain MP": 0.5
-    , "no image": 0.5
-    , "hex color":
-      { "RGB": 0.5
-      , "specularity": 0.5
-      }
-    , "image":
-      { "loads": 0.5
-      , "fills terrain": 0.5
-      , "diffuse light": 0.5
-      }
-    , "two shaders": 0.5
+    { "two shaders (not 1 or 3+)": 1
+    , "color with specularity shader": 1
+    , "texture shader": 1
+    , "texture fills terrain of any gridsize": 1
     }
   }
 , "raytracer":      {"due":"2025-11-16","type":"anylang","pt":8,"after":"anylang"
@@ -122,19 +92,10 @@
   }
 , "spheres":        {"due":"2025-11-21","type":"core",   "pt":4,"after":"logo"
   , "rubric":
-    { "appearance":
-      { "lit spheres": 0.25
-      , "multicolored": 0.25
-      , "sent to GPU just once": 0.25
-      , "15 second reset": 0.25
-      }
-    , "dynamics":
-      { "momentum": 0.5
-      , "gravity": 0.5
-      , "walls and elasticity": 0.5
-      , "sphere-sphere collisions": 1
-      , "no other strange behaviors": 0.5
-      }
+    { "lit multicolored spheres sent to GPU just once": 1
+    , "momentum and gravity": 1
+    , "walls and elasticity": 1
+    , "sphere-sphere collisions": 1
     }
   }
 
@@ -167,15 +128,10 @@
   }
 , "parametric":     {"due":"2025-10-26","type":"elective","pt":4,"after":"terrain"
   , "rubric":
-    { "inputs": 0.5
-    , "generates sphere": 0.5
-    , "corrent sphere normals": 0.5
-    , "correct vertex and triangle count": 0.5
-    , "torus":
-      { "correct positoons": 0.5
-      , "correct vertex and triangle count": 0.5
-      , "correct normals": 1
-      }
+    { "sphere positions, normals, and lighting": 1
+    , "sphere vertex (2+rs) and triangle (2rs) count": 1
+    , "torus positions, normals, and lighting": 1
+    , "torus vertex (rs) and triangle (2rs) count": 1
     }
   }
 , "cliffs":         {"due":"2025-10-26","type":"elective","pt":1,"after":"terrain"
@@ -216,17 +172,10 @@
   }
 , "obj":    {"due":"2025-11-16","type":"elective","pt":4,"after":"textures"
   , "rubric":
-    { "read OBJ files": 
-      { "vertex coordinates": 0.5
-      , "centered, scaled, and moving": 0.5
-      , "vertex colors if provided": 0.5
-      , "auto-generated normals and lighting": 0.5
-      }
-    , "OBJ files with normals and textures":
-      { "use provided normals": 0.5
-      , "use provided texture coordinates and image": 1
-      , "texture image also colors other models": 0.5
-      }
+    { "vertex positions and connectivity": 1
+    , "colors, normals, and lighting": 1
+    , "file-supplied normals and texture coordinates": 1
+    , "texture images": 1
     }
   }
 , "subdivision":    {"due":"2025-11-16","type":"elective","pt":4,"after":"obj"
