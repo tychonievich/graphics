@@ -43,7 +43,7 @@
 , "terrain":        {"due":"2025-10-19","type":"core",   "pt":8,"after":"logo"
   , "rubric":
     { "terrain and controls clearly visible with moving camera": 1
-    , "grid of size^2 vertices and 2(size-1)^2 triangles": 1
+    , "grid of size² vertices and 2(size-1)² triangles": 1
     , "fault count and distribution": 1
     , "normalize height": 1
     , "correct normals revealed through lighting": 1

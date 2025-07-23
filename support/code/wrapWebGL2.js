@@ -45,6 +45,7 @@ HTMLCanvasElement.prototype.getContext = function(...args) {
                 if (e.length === _gl_live_call_trace.length && e.every((v,i) => v === _gl_live_call_trace[i])) idx = j
               }
               if (idx == -1) {
+                if (_gl_call_traces.length >= 16) _gl_call_traces.splice(4,2,['...']) // keep compile-in-loop from creating memory leak
                 idx = _gl_call_traces.length
                 _gl_call_traces.push(_gl_live_call_trace)
               }
