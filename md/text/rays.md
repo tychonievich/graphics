@@ -340,11 +340,21 @@ otherwise, the cosine of the outgoing ray is $\sqrt{1-(\frac{n_1}{n_2})^2(1-(\ve
 :::algorithm
 Snell's Law
 
-1. let $a = \vec e \cdot \vec n$ 
-2. let $b = \frac{n_1}{n_2}\sqrt{1-(\vec e \cdot \vec n)}$
-3. if $b \ge 1$, return $2(\vec n \cdot \vec e)\vec n - \vec e)$
-4. let $c = \sqrt{1-\frac{n_1^2}{n_2^2}(1-(\vec e \cdot \vec n))}$
-5. return $\frac{n_1}{n_2}(-\vec e -(\vec e \cdot \vec n)\vec n) - c \vec n$
+Input
+:   - Vector to eye $\vec e$ (equivalently, the inverse of the entering ray direction)
+    - Surface normal vector $\vec n$
+    - Index of refraction on near side of surface $n_1$
+    - Index of refraction on far side of surface $n_2$
+
+Output
+:   - Transmitted ray direction
+
+Process
+:   1. let $a = \vec e \cdot \vec n$ 
+    2. let $b = \frac{n_1}{n_2}\sqrt{1-a}$
+    3. if $b \ge 1$, return $2a\vec n - \vec e$
+    4. let $c = \sqrt{1-\frac{n_1^2}{n_2^2}(1-a)}$
+    5. return $\frac{n_1}{n_2}(-\vec e - a\vec n) - c \vec n$
 :::
 
 ## Global Illumination
