@@ -338,6 +338,8 @@ if that is greater than 1, we have total internal refraction and use the reflect
 otherwise, the cosine of the outgoing ray is $\sqrt{1-(\frac{n_1}{n_2})^2(1-(\vec e \cdot \vec n))}$.  Putting this all together, we have
 
 :::algorithm
+Snell's Law
+
 1. let $a = \vec e \cdot \vec n$ 
 2. let $b = \frac{n_1}{n_2}\sqrt{1-(\vec e \cdot \vec n)}$
 3. if $b \ge 1$, return $2(\vec n \cdot \vec e)\vec n - \vec e)$
