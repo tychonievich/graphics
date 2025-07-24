@@ -29,7 +29,7 @@
   , "rubric":
     { "code style and dialect": 0.5
     , "animated UIUC logo": 0.5
-    , "matrix-based two of 2D {translate, rotate, scale}": 1
+    , "matrix-based two of 2D {translate, rotate, uniform scale}": 1
     }
   }
 , "orbits":         {"due":"2025-10-12","type":"core",   "pt":4,"after":"logo"
