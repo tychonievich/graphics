@@ -1,0 +1,12 @@
+<?xml version="1.0" standalone="yes"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -60 120 120" stroke-linejoin="round">
+<g stroke-width="1">
+<g fill="#fdb" stroke="#888">
+<rect x="-0.10000000000000142" y="-60.1" width="120.2" height="120.2"/>
+</g>
+<text stroke="none" fill="#700" x="60" y="-6.01" text-anchor="middle" font-size="6.01">n=1, filled=1</text>
+</g>
+<g fill="none" stroke="#000" stroke-width="1">
+<path d="M 0,0 120,0 "/>
+</g>
+</svg>

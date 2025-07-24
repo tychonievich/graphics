@@ -320,7 +320,7 @@ window.addEventListener('load',e => {
   document.getElementById('path1').setAttribute('d', 'M'+Array(10).fill(0).map((v,i) => [i*120/9, Math.random()*40-20]))
 })
 </script>
-<figcaption>White noise rendered with just 10 samples looks like a bumpy line, and possibly the low-res version of a fractal.</figcaption>
+<figcaption>White noise rendered with just 10 samples looks like a bumpy line, and possibly the low-res version of a fractal. This image is regenerated with a different noise example each time the page is loaded.</figcaption>
 </figure>
 
 But as we add more samples, the bumpiness increases
@@ -334,7 +334,7 @@ window.addEventListener('load',e => {
   document.getElementById('path2').setAttribute('d', 'M'+Array(100).fill(0).map((v,i) => [i*120/99, Math.random()*40-20]))
 })
 </script>
-<figcaption>White noise rendered with 100 samples looks like a very bumpy line.</figcaption>
+<figcaption>White noise rendered with 100 samples looks like a very bumpy line. This image is regenerated with a different noise example each time the page is loaded.</figcaption>
 </figure>
 
 <figure>
@@ -346,7 +346,7 @@ window.addEventListener('load',e => {
   document.getElementById('path3').setAttribute('d', 'M'+Array(1000).fill(0).map((v,i) => [i*120/999, Math.random()*40-20]))
 })
 </script>
-<figcaption>White noise rendered with 1000 samples looks like a jagged-edged rectangle.</figcaption>
+<figcaption>White noise rendered with 1000 samples looks like a jagged-edged rectangle. This image is regenerated with a different noise example each time the page is loaded.</figcaption>
 </figure>
 
 
@@ -359,10 +359,10 @@ window.addEventListener('load',e => {
   document.getElementById('path4').setAttribute('d', 'M'+Array(10000).fill(0).map((v,i) => [i*120/9999, Math.random()*40-20]))
 })
 </script>
-<figcaption>White noise rendered with 10,000 samples looks like a solid rectangle.</figcaption>
+<figcaption>White noise rendered with 10,000 samples looks like a solid rectangle. This image is regenerated with a different noise example each time the page is loaded.</figcaption>
 </figure>
 
-until eventually it's true dimensional appears: 2, the same dimension as the solid rectangle that it fills.
+until eventually it's true dimension appears: 2, the same dimension as the solid rectangle that it fills.
 
 Because 2 is an integer, white noise is not a fractal.
 However, it is a kind of noise that is easy for computers to generate,
@@ -384,7 +384,7 @@ window.addEventListener('load',e => {
   document.getElementById('path5').setAttribute('d', 'm'+Array(10001).fill(0).map((v,i) => [120/10000, Math.random()*.4-.2]))
 })
 </script>
-<figcaption>Brown noise with 10,000 samples generated as the integral of white noise.</figcaption>
+<figcaption>Brown noise with 10,000 samples generated as the integral of white noise. This image is regenerated with a different noise example each time the page is loaded.</figcaption>
 </figure>
 
 The integral formulation is useful because it helps us characterize the visual effect of fractal dimension.
