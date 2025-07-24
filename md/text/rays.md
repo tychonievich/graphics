@@ -256,11 +256,11 @@ This distance can be found directly by using a dot product with a vector perpend
 <text x="1.8" y="0.6" text-anchor="left" font-size="2%" font-family="KaTeX_Main" font-style="italic">e⃗<tspan dy="1%" font-size="70%">1</tspan></text>
 <text x="-1" y="2.3" text-anchor="middle" font-size="2%" font-family="KaTeX_Main" font-style="italic">e⃗<tspan dy="1%" font-size="70%">2</tspan></text>
 </svg>
-<figcaption>Finding Barycentric coordinates.  If $\vec{e_2} \cdot (\mathbf{p_2}-\mathbf{p_0}) = 1$, then $b_2 = \vec e_2 \cdot (\mathbf{p}-\mathbf{p_0})$, and similarly for $b_1$. Since $b_0+b_1+b_2 = 1$, $b_0$ is simply $1 - b_1 - b_2$.  Thus, assuming that correctly-scaled $\vec e_1$ and $\vec e_2$ are precomputed, we can compute the barycentric coordinates using just six multiplies and nine adds.</figcaption>
+<figcaption>Finding barycentric coordinates.  If $\vec{e_2} \cdot (\mathbf{p_2}-\mathbf{p_0}) = 1$, then $b_2 = \vec e_2 \cdot (\mathbf{p}-\mathbf{p_0})$, and similarly for $b_1$. Since $b_0+b_1+b_2 = 1$, $b_0$ is simply $1 - b_1 - b_2$.  Thus, assuming that correctly-scaled $\vec e_1$ and $\vec e_2$ are precomputed, we can compute the barycentric coordinates using just six multiplies and nine adds.</figcaption>
 </figure>
 
-in that image, $b_1 = \vec e_1 \cdot (\mathbf{p}-\mathbf{p_0})$ 
-because $\vec e_1$ points directly away from the edge between $\mathbf{p_{i\ne1}}$.
+We compute $b_1 = \vec e_1 \cdot (\mathbf{p}-\mathbf{p_0})$ 
+if $\vec e_1$ has the right length, lies inside the plane of the triangle, and is perpendicular to the edge between $\mathbf{p_{i\ne1}}$.
 Similarly, $b_2 = \vec e_2 \cdot (\mathbf{p}-\mathbf{p_0})$ and $b_0 = 1-b_1 - b_2$.
 It thus suffices to find $\vec e_1$ and $\vec e_2$ in order to find the barycentric coordinates.
 This may be done as
