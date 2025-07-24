@@ -170,9 +170,7 @@ As such, you may collaborate on MPs but must obey the following limitations on y
 
 - Quizzes have unlimited retakes. Please still think about each question rather than just randomly guessing.
 
-- Type all code yourself; no copy-paste or AI-typed code from others.
-
-- Design and understand all your code.
+- Design and understand all your own code.
 
 - If you use any source, pre-existing or dynamic, that was not provided by this course in writing code, cite that source in a comment in your code.
 
