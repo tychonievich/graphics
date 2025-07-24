@@ -11,7 +11,7 @@ summary: |
   [Content](content.html)  
   [Quizzes](https://us.prairielearn.com/pl/course_instance/182443)  
   [MPs](mp/)  
-  [Submit](https://cs418.cs.illinois.edu/sudmit/)  
+  [Submit](https://cs418.cs.illinois.edu/submit/)  
   [Text](text/)  
   [Video](https://classtranscribe.illinois.edu/offering/c7e741f2-d482-496e-ba57-0285d39ccedb) 
   </center>
