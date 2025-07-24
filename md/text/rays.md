@@ -350,10 +350,14 @@ Output
 :   - Transmitted ray direction
 
 Process
-:   1. let $a = \vec e \cdot \vec n$ 
+:   1. let $a = \vec e \cdot \vec n$
+
     2. let $b = \frac{n_1}{n_2}\sqrt{1-a}$
+    
     3. if $b \ge 1$, return $2a\vec n - \vec e$   (total internal reflection)
+    
     4. let $c = \sqrt{1-\frac{n_1^2}{n_2^2}(1-a)}$
+    
     5. return $\frac{n_1}{n_2}(-\vec e - a\vec n) - c \vec n$   (transmission)
 :::
 
