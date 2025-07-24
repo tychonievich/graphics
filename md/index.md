@@ -62,12 +62,12 @@ Machine problems (MPs)
     You will have a menu of MP options,
     with some "core" that you'll need to complete most of
     and more "elective" that you'll need to complete a selection from.
-    There are also two low-weight warm-ups intended primarily to smooth the way for subsequent MPs.
+    There are also two warm-ups intended primarily to smooth the way for subsequent MPs.
     
     Machine problems are submitted on a custom course submission site that provides some limited automated feedback (mostly of the form "did it run on our server"); they are graded primarily by hand.
 
-    I expect each MP to take the average student between 10 and 20 hours to complete.
-    Points for MPs are roughly aligned with expected time.
+    Different MPs have different difficulty, with points allocated accordingly.
+    See the [MP page](mp) for more.
 
 No Final
 :   This class has no final exam/quiz/project/assessment.
