@@ -172,7 +172,7 @@ As such, you may collaborate on MPs (with humans or AIs) but must obey the follo
 
 - Design and understand all your own code.
 
-- If you use any source, pre-existing or dynamic, that was not provided by this course in writing code, cite that source in a comment in your code.
+- If you use any source (preexisting or dynamic) that was not provided by this course to write your code, cite that source in a comment in your code.
 
 
 # Prerequisites
