@@ -164,7 +164,7 @@ Collaboration includes
 - Receiving information from others, such as from AI systems, websites, tutors, or other students.
 
 My goal in this course is not to have you create working solutions (I already have working solutions, I wrote them before the course began) but rather to have you *learn* enough to be able to create your own working solutions.
-As such, you may collaborate on MPs but must obey the following limitations on your collaboration:
+As such, you may collaborate on MPs (with humans or AIs) but must obey the following limitations on your collaboration:
 
 - Do not collaborate on quizzes; limit your sources to course material, other pre-made content, and your own work.
 
