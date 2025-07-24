@@ -92,7 +92,7 @@ ray-plane, ray-AABB, and ray-sphere intersections.
     <text x="-0.6" y="0.5" text-anchor="middle" font-size="2%" font-family="KaTeX_Main" font-weight="700">c<tspan  font-weight="100"> − </tspan>r<tspan dy="1%" font-size="70%">o</tspan></text>
     <text x="-5.1" y="1" text-anchor="right" font-size="2%" font-family="KaTeX_Main" font-weight="700">p<tspan  font-weight="100"> − </tspan>r<tspan dy="1%" font-size="70%">o</tspan></text>
 </svg>
-<figcaption>Some of the geometry used in the ray-plane and ray-sphere intersection routines.</figcaption>
+<figcaption>Some of the geometry used in the ray-plane and ray-sphere intersection routines, all also defined in the surrounding text.</figcaption>
 </figure>
 
 ## Ray-Plane Intersection
