@@ -35,6 +35,8 @@ Electives vary significantly in complexity and time required, as noted by their 
 You only need to do some electives, and if 3cr only some core.
 See the [MPs page](mp/) for more.
 
+:::wide
+
 | Week | Content | Core MPs | Elective MPs | Quiz |
 |:-----|:--------|:---------|--------------|------|
 | Aug 25–31     | [Preliminaries](#prelim)                         | [WebGL2 warmup](mp/warmup-webgl2.html)   | | [Q01](https://us.prairielearn.com/pl/course_instance/182443/assessment/2546495) |
@@ -53,6 +55,8 @@ See the [MPs page](mp/) for more.
 | | Fall Break | | | |
 | Dec 01–07     | [Better rasterization](#pretty)                  | |                                        | [Q14](https://us.prairielearn.com/pl/course_instance/182443/assessment/2565241) |
 | Dec 08–10     | Review and finish coding                         | | | |
+
+:::
 
 Experience has taught me that getting behind on lecture material or MPs is usually a sign that additional instructor/student interaction is needed. If you are more than a week behind the schedule given here, please contact me.
 
