@@ -78,16 +78,12 @@ Experience has taught me that getting behind on lecture material, MPs, or quizze
 | Dithering | [CT](https://classtranscribe.illinois.edu/video?id=5c4811a5-d6b6-4165-ae3d-a64c9a42944f) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_zy0k8pgn/1_obkwnsra) | [Dithering](text/dither.html){title="Dithering: fooling the eye into thinking we have more colors displayed than we do"} |
 | What is “interactive” computer graphics? | [CT](https://classtranscribe.illinois.edu/video?id=8395bdb8-5642-4bef-a5a3-72353f13857e) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_zy0k8pgn/1_9qklpqdw) | [&quot;Interactive&quot; Graphics](text/interactive.html){title="&quot;Interactive&quot; Graphics: contrasting rasterization and raytracing, with a nod to other approaches"} |
 | The GPU graphics pipeline | [CT](https://classtranscribe.illinois.edu/video?id=46cfa514-ec05-4179-9b32-7b57791c9807) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_zy0k8pgn/1_1bbe15sr) | [WebGL's Graphics Pipeline](text/pipeline.html){title="WebGL's Graphics Pipeline: a collapsible top-down view of how 3D graphics with WebGL2 works"} |
+| Q&A “Where is white in LMS?” | [CT](https://classtranscribe.illinois.edu/video?id=3eb33fbe-96a8-4f9c-8f8e-1f40531a26b6) | |
+| Q&A “Why dither and gamma?” | [CT](https://classtranscribe.illinois.edu/video?id=7ff135c6-7db9-49c3-9b4d-17dd4b721cfe) | |
 
 :::
 
 How things appear: Mirages and total internal reflection [CT](https://classtranscribe.illinois.edu/video?id=9debac49-d1a3-4a22-bc49-b288c59c351f) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_zy0k8pgn/1_rvyfle5g)
-
-We also have recordings of a couple of in-class Q&A sessions from an older version of the course that might be of interest:
-
-- [Q&A “Where is white in LMS?”](https://classtranscribe.illinois.edu/video?id=3eb33fbe-96a8-4f9c-8f8e-1f40531a26b6)
-- [Q&A “Why dither and gamma?”](https://classtranscribe.illinois.edu/video?id=7ff135c6-7db9-49c3-9b4d-17dd4b721cfe)
-
 
 
 # Rasterization
@@ -155,7 +151,7 @@ How things appear: Diffraction rainbows [CT](https://classtranscribe.illinois.ed
 | JavaScript values and types | [CT](https://classtranscribe.illinois.edu/video?id=ec2e91f4-25d2-4e1b-a9cf-9f9b05bf64b8) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_sld426fk/1_a6nw3id7) | [Parts of JavaScript We'll Use](text/javascript.html){title="Parts of JavaScript We'll Use: assuming you know Java or C++ and are comfortable learning a language from examples on your own"} |
 | JavaScript functions | [CT](https://classtranscribe.illinois.edu/video?id=1ce5563f-ff44-4dd6-8fcb-7cbf583d49ff) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_sld426fk/1_xeqopxxo) | [Parts of JavaScript We'll Use](text/javascript.html){title="Parts of JavaScript We'll Use: assuming you know Java or C++ and are comfortable learning a language from examples on your own"} |
 | HTML | [CT](https://classtranscribe.illinois.edu/video?id=bc0f940c-6133-44bb-96c4-622fceecd68c) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_sld426fk/1_exhk8gcl) | [Parts of JavaScript We'll Use](text/javascript.html){title="Parts of JavaScript We'll Use: assuming you know Java or C++ and are comfortable learning a language from examples on your own"} |
-| In-class Q&A | [CT](https://classtranscribe.illinois.edu/video?id=18c48fcc-1918-4c2d-8a5a-9537b6d78a44) |  |
+| Q&A on promises, fetch, and CORS | [CT](https://classtranscribe.illinois.edu/video?id=18c48fcc-1918-4c2d-8a5a-9537b6d78a44) |  |
 
 :::
 
@@ -173,7 +169,7 @@ How things appear: Dispersion rainbow [CT](https://classtranscribe.illinois.edu/
 | Data paths on GPU | [CT](https://classtranscribe.illinois.edu/video?id=bc1ee9fc-bbb9-4e0c-adbd-91a8fbccaf81) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_b71wxg8u/1_z32gev7a) | [WebGL Geometry](text/webgl-goemetry.html){title="WebGL Geometry: several ways to tell WebGL what shapes we want to display"} |
 | Loading a model | [CT](https://classtranscribe.illinois.edu/video?id=014ca247-33b5-4372-8a98-8352d9cfa1eb) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_b71wxg8u/1_br0axygs) | [ex03-fragment.glsl](code/2d-webgl/ex03-fragment.glsl)<br/>[ex03-geometry.json](code/2d-webgl/ex03-geometry.json)<br/>[ex03-model.html](code/2d-webgl/ex03-model.html)<br/>[ex03-vertex.glsl](code/2d-webgl/ex03-vertex.glsl)<br/>[ex03.js](code/2d-webgl/ex03.js) |
 | Motion with uniforms | [CT](https://classtranscribe.illinois.edu/video?id=00bf3f38-6047-4c5b-a577-26cedfd2613a) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_b71wxg8u/1_wpe5ysoc) | [ex04-fragment.glsl](code/2d-webgl/ex04-fragment.glsl)<br/>[ex04-geometry.json](code/2d-webgl/ex04-geometry.json)<br/>[ex04-motion.html](code/2d-webgl/ex04-motion.html)<br/>[ex04-vertex.glsl](code/2d-webgl/ex04-vertex.glsl)<br/>[ex04.js](code/2d-webgl/ex04.js) |
-| In-class Q&A | [CT](https://classtranscribe.illinois.edu/video?id=a929b4b7-52bf-4e46-8e0e-5e48d79e1b0a) |  |
+| Q&A on shaders and uniforms | [CT](https://classtranscribe.illinois.edu/video?id=a929b4b7-52bf-4e46-8e0e-5e48d79e1b0a) |  |
 
 :::
 
@@ -196,45 +192,44 @@ How things appear: Exposure noise [CT](https://classtranscribe.illinois.edu/vide
 | Visualizing order of matrics | [CT](https://classtranscribe.illinois.edu/video?id=c9572ae5-0ec9-4732-9d98-20becba656aa) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_m2wysuqj/1_z0dcg4fc) | [matrixdemo.php](files/matrixdemo.php) |
 | Visualizing 3D matrices | [CT](https://classtranscribe.illinois.edu/video?id=48f6dcfc-4916-4a86-a2cf-b7d8bcbae513) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_m2wysuqj/1_g9a6rveb) | [matrixdemo2.php](files/matrixdemo2.php) |
 | Standard matrix hierarchies | [CT](https://classtranscribe.illinois.edu/video?id=00586cf6-1e0d-4fb1-a39f-0766c772824d) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_m2wysuqj/1_p3tm1vfj)  |  |
+| Q&A on matices | [CT](https://classtranscribe.illinois.edu/video?id=8bed82c1-d426-4d66-814b-ccf3bc097759) | |
 
 :::
 
 How things appear: Lens bloom [CT](https://classtranscribe.illinois.edu/video?id=96aae7ab-9e5b-41de-8fac-81d0fb4d1a4e) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_m2wysuqj/1_sf367jd5)
-
-We also have a recording of a previous semester's Q&A on matices: [CT](https://classtranscribe.illinois.edu/video?id=8bed82c1-d426-4d66-814b-ccf3bc097759)
 
 
 ## Multi-part coding example {#glcode}
 
 | Topic | Video | Notes |
 | ----- | ----- | ----- |
-| 3D WebGL2 code | [CT](https://classtranscribe.illinois.edu/video?id=d4106446-3a1a-4111-8a70-4f1fa68b9482) | [1-the-code.html](code/3d-webgl/1-the-code.html)<br/>[math.js](code/3d-webgl/math.js)<br/>[wrapWebGL2.js](code/3d-webgl/wrapWebGL2.js) |
-| Adding perspective | [CT](https://classtranscribe.illinois.edu/video?id=7e151346-58cf-434b-b60f-6bf0a881a9cc) | [2-viewing.html](code/3d-webgl/2-viewing.html) |
-| Coloring vertices and faces | [CT](https://classtranscribe.illinois.edu/video?id=b1dcc83d-3edd-4011-a723-edf0078ad52c) | [3-color.html](code/3d-webgl/3-color.html) |
-| Multi-object scene | [CT](https://classtranscribe.illinois.edu/video?id=a854f636-e2d4-4353-be99-bbe88277821b) | [4-several.html](code/3d-webgl/4-several.html) |
-| Choosing motion | [CT](https://classtranscribe.illinois.edu/video?id=e682edd1-0467-4462-bea1-256bd1448bde) | [5-scripted.html](code/3d-webgl/5-scripted.html) |
-| Random procedural geometry | [CT](https://classtranscribe.illinois.edu/video?id=b2877f5e-7f06-401a-b625-efd9fdcd748d) | [6-makegeom.html](code/3d-webgl/6-makegeom.html) |
-| Designing procedural geometry | [CT](https://classtranscribe.illinois.edu/video?id=dcad54b4-5cbf-45c4-8e81-e0d2fa31994a) | [7-starburst.html](code/3d-webgl/7-starburst.html) |
+| 3D WebGL2 code | [CT](https://classtranscribe.illinois.edu/video?id=d4106446-3a1a-4111-8a70-4f1fa68b9482) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_bzstvuej/1_9y9lpnyc) | [1-the-code.html](code/3d-webgl/1-the-code.html)<br/>[math.js](code/3d-webgl/math.js)<br/>[wrapWebGL2.js](code/3d-webgl/wrapWebGL2.js) |
+| Adding perspective | [CT](https://classtranscribe.illinois.edu/video?id=7e151346-58cf-434b-b60f-6bf0a881a9cc) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_bzstvuej/1_9wf6ilot) | [2-viewing.html](code/3d-webgl/2-viewing.html) |
+| Coloring vertices and faces | [CT](https://classtranscribe.illinois.edu/video?id=b1dcc83d-3edd-4011-a723-edf0078ad52c) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_bzstvuej/1_7elpdgrq) | [3-color.html](code/3d-webgl/3-color.html) |
+| Multi-object scene | [CT](https://classtranscribe.illinois.edu/video?id=a854f636-e2d4-4353-be99-bbe88277821b) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_bzstvuej/1_mm0e1r8n) | [4-several.html](code/3d-webgl/4-several.html) |
+| Choosing motion | [CT](https://classtranscribe.illinois.edu/video?id=e682edd1-0467-4462-bea1-256bd1448bde) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_bzstvuej/1_u2d9iejq) | [5-scripted.html](code/3d-webgl/5-scripted.html) |
+| Random procedural geometry | [CT](https://classtranscribe.illinois.edu/video?id=b2877f5e-7f06-401a-b625-efd9fdcd748d) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_bzstvuej/1_btdplqzu) | [6-makegeom.html](code/3d-webgl/6-makegeom.html) |
+| Designing procedural geometry | [CT](https://classtranscribe.illinois.edu/video?id=dcad54b4-5cbf-45c4-8e81-e0d2fa31994a) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_bzstvuej/1_ftxefe9j) | [7-starburst.html](code/3d-webgl/7-starburst.html) |
 
 
-How things appear: [Subsurface scattering](https://classtranscribe.illinois.edu/video?id=de19c41f-3a59-4b8e-a090-c634ad566dda)
+How things appear: Subsurface scattering [CT](https://classtranscribe.illinois.edu/video?id=de19c41f-3a59-4b8e-a090-c634ad566dda) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_bzstvuej/1_18kmc7la)
 
 ## Lighting on the GPU {#light}
 
 | Topic | Video | Notes |
 | ----- | ----- | ----- |
-| Phong’s simple model of lighting | [CT](https://classtranscribe.illinois.edu/video?id=c34c4218-877e-4994-9f6b-412972416cfd) | [Lighting models](text/lighting.html){title="Lighting models: common BRDFs from trivial heuristics to intricate physically-based model"} |
-| In-class Q&A re Halfway vector | [CT](https://classtranscribe.illinois.edu/video?id=a52c7a03-04b5-432a-9c5e-4ede0a2c214a) |  |
-| Loading a monkey | [CT](https://classtranscribe.illinois.edu/video?id=3c8d73cd-821e-460d-8ce2-b09a4158123b) | [0-initial.html](code/simple-lighting/0-initial.html)<br/>[1-monkey.html](code/simple-lighting/1-monkey.html)<br/>[math.js](code/simple-lighting/math.js)<br/>[monkey.json](code/simple-lighting/monkey.json) |
-| Computing surface normals | [CT](https://classtranscribe.illinois.edu/video?id=41023236-b36c-4742-80a3-4a8d73ab553b) | [2-normals.html](code/simple-lighting/2-normals.html) |
-| Adding diffuse light | [CT](https://classtranscribe.illinois.edu/video?id=03494762-f902-4d4f-ae0b-640dcba674a8) | [3-lambert.html](code/simple-lighting/3-lambert.html) |
-| Adding multiple light sources | [CT](https://classtranscribe.illinois.edu/video?id=61aec09a-7c3e-4c3f-a9d7-7bf9333c3cc8) | [4-two-lights.html](code/simple-lighting/4-two-lights.html) |
-| Adding specular light | [CT](https://classtranscribe.illinois.edu/video?id=e294728c-49f6-4dec-b812-b65ca55ede9d) | [5-blinn-phong.html](code/simple-lighting/5-blinn-phong.html) |
-| Physically-based lighting | [CT](https://classtranscribe.illinois.edu/video?id=0738d675-17fb-4929-a495-7d5592d1c7f9) | [the-pbr-guide-part-1](https://substance3d.adobe.com/tutorials/courses/the-pbr-guide-part-1) |
-| In-class Q&A re PBR | [CT](https://classtranscribe.illinois.edu/video?id=e603c410-9329-4bb2-a017-8cdaeb25a7ab) |  |
+| Phong’s simple model of lighting | [CT](https://classtranscribe.illinois.edu/video?id=c34c4218-877e-4994-9f6b-412972416cfd) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_su9rgzdj/1_bd85m8h8) | [Lighting models](text/lighting.html){title="Lighting models: common BRDFs from trivial heuristics to intricate physically-based model"} |
+|  Q&A on halfway vectors | [CT](https://classtranscribe.illinois.edu/video?id=a52c7a03-04b5-432a-9c5e-4ede0a2c214a) |  |
+| Loading a monkey | [CT](https://classtranscribe.illinois.edu/video?id=3c8d73cd-821e-460d-8ce2-b09a4158123b) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_su9rgzdj/1_81b33jno) | [0-initial.html](code/simple-lighting/0-initial.html)<br/>[1-monkey.html](code/simple-lighting/1-monkey.html)<br/>[math.js](code/simple-lighting/math.js)<br/>[monkey.json](code/simple-lighting/monkey.json) |
+| Computing surface normals | [CT](https://classtranscribe.illinois.edu/video?id=41023236-b36c-4742-80a3-4a8d73ab553b) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_su9rgzdj/1_ypua35ut) | [2-normals.html](code/simple-lighting/2-normals.html) |
+| Adding diffuse light | [CT](https://classtranscribe.illinois.edu/video?id=03494762-f902-4d4f-ae0b-640dcba674a8) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_su9rgzdj/1_0nk7bgjt) | [3-lambert.html](code/simple-lighting/3-lambert.html) |
+| Adding multiple light sources | [CT](https://classtranscribe.illinois.edu/video?id=61aec09a-7c3e-4c3f-a9d7-7bf9333c3cc8) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_su9rgzdj/1_npm6zyxz) | [4-two-lights.html](code/simple-lighting/4-two-lights.html) |
+| Adding specular light | [CT](https://classtranscribe.illinois.edu/video?id=e294728c-49f6-4dec-b812-b65ca55ede9d) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_su9rgzdj/1_poow1yjq) | [5-blinn-phong.html](code/simple-lighting/5-blinn-phong.html) |
+| Physically-based lighting | [CT](https://classtranscribe.illinois.edu/video?id=0738d675-17fb-4929-a495-7d5592d1c7f9) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_su9rgzdj/1_x5gojayo) | [the-pbr-guide-part-1](https://substance3d.adobe.com/tutorials/courses/the-pbr-guide-part-1) |
+| Q&A on PBR | [CT](https://classtranscribe.illinois.edu/video?id=e603c410-9329-4bb2-a017-8cdaeb25a7ab) |  |
 
 
-How things appear: [Rayleigh scattering](https://classtranscribe.illinois.edu/video?id=f44fdec8-983e-4357-b432-51704bf43cb2)
+How things appear: Rayleigh scattering [CT](https://classtranscribe.illinois.edu/video?id=f44fdec8-983e-4357-b432-51704bf43cb2) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_su9rgzdj/1_3zz159d5)
 
 # Creating and animating geometry
 
