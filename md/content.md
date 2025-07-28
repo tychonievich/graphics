@@ -2,7 +2,6 @@
 title: Content Outline
 header-includes:
   - "<style>.container .row { max-width: 100%; } .container .row p { max-width: 60em; }</style>"
-  - "<script>window.addEventListener('load', evt=>document.querySelectorAll('table').forEach(e=>e.classList.add('wide')))</script>"
 ...
 
 # Overview {-}
@@ -68,6 +67,8 @@ Experience has taught me that getting behind on lecture material, MPs, or quizze
 
 # Graphics Preliminaries {#prelim}
 
+:::wide
+
 | Topic | Video | Notes |
 | ----- | ----- | ----- |
 | Rasters and pixels | [CT](https://classtranscribe.illinois.edu/video?id=66a4222b-ce30-426b-a2f7-393aeb9218e3) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_zy0k8pgn/1_3dqc46vq) | [Aliasing](text/aliasing.html){title="Aliasing: two interpretations of rasters and the problems with both"} |
@@ -77,6 +78,8 @@ Experience has taught me that getting behind on lecture material, MPs, or quizze
 | Dithering | [CT](https://classtranscribe.illinois.edu/video?id=5c4811a5-d6b6-4165-ae3d-a64c9a42944f) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_zy0k8pgn/1_obkwnsra) | [Dithering](text/dither.html){title="Dithering: fooling the eye into thinking we have more colors displayed than we do"} |
 | What is “interactive” computer graphics? | [CT](https://classtranscribe.illinois.edu/video?id=8395bdb8-5642-4bef-a5a3-72353f13857e) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_zy0k8pgn/1_9qklpqdw) | [&quot;Interactive&quot; Graphics](text/interactive.html){title="&quot;Interactive&quot; Graphics: contrasting rasterization and raytracing, with a nod to other approaches"} |
 | The GPU graphics pipeline | [CT](https://classtranscribe.illinois.edu/video?id=46cfa514-ec05-4179-9b32-7b57791c9807) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_zy0k8pgn/1_1bbe15sr) | [WebGL's Graphics Pipeline](text/pipeline.html){title="WebGL's Graphics Pipeline: a collapsible top-down view of how 3D graphics with WebGL2 works"} |
+
+:::
 
 How things appear: Mirages and total internal reflection [CT](https://classtranscribe.illinois.edu/video?id=9debac49-d1a3-4a22-bc49-b288c59c351f) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_zy0k8pgn/1_rvyfle5g)
 
@@ -91,6 +94,8 @@ We also have recordings of a couple of in-class Q&A sessions from an older versi
 
 ## DDA and related algorithms {#dda}
 
+:::wide
+
 | Topic | Video | Notes |
 | ----- | ----- | ----- |
 | DDA | [CT](https://classtranscribe.illinois.edu/video?id=2a7870c5-536e-4aee-be27-0a0d08cdeed4) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_caoo75kh/1_o8hamcmq) | [DDA (and Bresenham)](text/dda.html){title="DDA (and Bresenham): implementing the rasterization of lines and triangles"} |
@@ -99,10 +104,14 @@ We also have recordings of a couple of in-class Q&A sessions from an older versi
 | Interpolation | [CT](https://classtranscribe.illinois.edu/video?id=3f617daa-d28c-444d-91db-2ff4ae4f1f60) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_caoo75kh/1_62ehysuj) | [DDA (and Bresenham)](text/dda.html){title="DDA (and Bresenham): implementing the rasterization of lines and triangles"} |
 | Rendering curves | [CT](https://classtranscribe.illinois.edu/video?id=b6b2ec58-81a4-43e6-8a1e-c29b9933331c) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_caoo75kh/1_0es7noxz) | [Bézier curves](text/bezier.html){title="Bézier curves: a brief introduction to how to evaluate them using de Casteljau's algorithm"} |
 
+:::
+
 How things appear: Refraction [CT](https://classtranscribe.illinois.edu/video?id=a442b831-d7eb-485f-b759-b30183ffb86c) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_caoo75kh/1_2k4gh77g)
 
 
 ## Emulating 3D with depth {#depth}
+
+:::wide
 
 | Topic | Video | Notes |
 | ----- | ----- | ----- |
@@ -111,11 +120,14 @@ How things appear: Refraction [CT](https://classtranscribe.illinois.edu/video?id
 | Hidden surface removal | [CT](https://classtranscribe.illinois.edu/video?id=77a8c192-3fd5-46cf-b4ac-da264971c764) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_tq1v0k0s/1_7gtzfs5b) |  |
 | Z buffer | [CT](https://classtranscribe.illinois.edu/video?id=adf4ab97-d3ea-49b0-81fd-89f19b13a6d3) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_tq1v0k0s/1_w3780x4t) |  |
 
+:::
 
 How things appear: Fresnel effect [CT](https://classtranscribe.illinois.edu/video?id=5b300c5a-2534-4115-b475-8ef2b10acc36) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_tq1v0k0s/1_w2dhqcxz)
 
 
 ## Related concepts {#rastetc}
+
+:::wide
 
 | Topic | Video | Notes |
 | ----- | ----- | ----- |
@@ -125,6 +137,7 @@ How things appear: Fresnel effect [CT](https://classtranscribe.illinois.edu/vide
 | Full-scene anti-aliasing | [CT](https://classtranscribe.illinois.edu/video?id=27c24876-bdb9-4a44-b551-a62f6a5efe8c) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_7vst7d9z/1_fvjkaw40) | [Other parts of the rasterization process](text/other-rasterization.html){title="Other parts of the rasterization process: viewprts, blending, culling, and multisampling"} |
 | What we covered on rasterization | [CT](https://classtranscribe.illinois.edu/video?id=efc2df45-1c35-4f10-9a92-e9a67a097d32) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_7vst7d9z/1_8ciqxksb) |  |
 
+:::
 
 How things appear: Diffraction rainbows [CT](https://classtranscribe.illinois.edu/video?id=aedb1137-5a4f-4b4e-bd28-669fdbf5a06d) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_7vst7d9z/1_3f2r71e1)
 
@@ -132,6 +145,8 @@ How things appear: Diffraction rainbows [CT](https://classtranscribe.illinois.ed
 # Using the GPU with WebGL2
 
 ## Enough JavaScript to get by {#js}
+
+:::wide
 
 | Topic | Video | Notes |
 | ----- | ----- | ----- |
@@ -142,11 +157,14 @@ How things appear: Diffraction rainbows [CT](https://classtranscribe.illinois.ed
 | HTML | [CT](https://classtranscribe.illinois.edu/video?id=bc0f940c-6133-44bb-96c4-622fceecd68c) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_sld426fk/1_exhk8gcl) | [Parts of JavaScript We'll Use](text/javascript.html){title="Parts of JavaScript We'll Use: assuming you know Java or C++ and are comfortable learning a language from examples on your own"} |
 | In-class Q&A | [CT](https://classtranscribe.illinois.edu/video?id=18c48fcc-1918-4c2d-8a5a-9537b6d78a44) |  |
 
+:::
 
 How things appear: Dispersion rainbow [CT](https://classtranscribe.illinois.edu/video?id=4d66e25a-62b0-46fb-9979-4de6a071693e) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_sld426fk/1_8fasrarm)
 
 
 ## Starting with WebGL2 coding {#webgl}
+
+:::wide
 
 | Topic | Video | Notes |
 | ----- | ----- | ----- |
@@ -157,11 +175,14 @@ How things appear: Dispersion rainbow [CT](https://classtranscribe.illinois.edu/
 | Motion with uniforms | [CT](https://classtranscribe.illinois.edu/video?id=00bf3f38-6047-4c5b-a577-26cedfd2613a) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_b71wxg8u/1_wpe5ysoc) | [ex04-fragment.glsl](code/2d-webgl/ex04-fragment.glsl)<br/>[ex04-geometry.json](code/2d-webgl/ex04-geometry.json)<br/>[ex04-motion.html](code/2d-webgl/ex04-motion.html)<br/>[ex04-vertex.glsl](code/2d-webgl/ex04-vertex.glsl)<br/>[ex04.js](code/2d-webgl/ex04.js) |
 | In-class Q&A | [CT](https://classtranscribe.illinois.edu/video?id=a929b4b7-52bf-4e46-8e0e-5e48d79e1b0a) |  |
 
+:::
 
 How things appear: Exposure noise [CT](https://classtranscribe.illinois.edu/video?id=826f7d82-fc46-4cb0-8fde-6e4149015404) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_b71wxg8u/1_ocv927pj)
 
 
 ## Mathematics of interactive 3D graphics {#math}
+
+:::wide
 
 | Topic | Video | Notes |
 | ----- | ----- | ----- |
@@ -176,6 +197,7 @@ How things appear: Exposure noise [CT](https://classtranscribe.illinois.edu/vide
 | Visualizing 3D matrices | [CT](https://classtranscribe.illinois.edu/video?id=48f6dcfc-4916-4a86-a2cf-b7d8bcbae513) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_m2wysuqj/1_g9a6rveb) | [matrixdemo2.php](files/matrixdemo2.php) |
 | Standard matrix hierarchies | [CT](https://classtranscribe.illinois.edu/video?id=00586cf6-1e0d-4fb1-a39f-0766c772824d) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_m2wysuqj/1_p3tm1vfj)  |  |
 
+:::
 
 How things appear: Lens bloom [CT](https://classtranscribe.illinois.edu/video?id=96aae7ab-9e5b-41de-8fac-81d0fb4d1a4e) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_m2wysuqj/1_sf367jd5)
 
