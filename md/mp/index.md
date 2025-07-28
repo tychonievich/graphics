@@ -3,7 +3,7 @@ title: MPs
 summary: |
 
   <center>
-  [Submit](https://cs418.cs.illinois.edu/submit/)     
+  [Submit](https://cs418.cs.illinois.edu/submit/)    
   [WebGL2 Dialect](../text/dialect.html)
   </center>
 
