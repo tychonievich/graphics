@@ -49,8 +49,8 @@ See the [MPs page](mp/) for more.
 | Oct 13–19     | [Fractals](#fract)                               | [Terrain](mp/terrain.html) | Cliffs, Weathering, Height map, Parametric | [Q08](https://us.prairielearn.com/pl/course_instance/182443/assessment/2564526) |
 | Oct 20–26     | [Animation](#anim) and [Code example](#geomcode) | [Flight](mp/flight.html) |               | [Q09](https://us.prairielearn.com/pl/course_instance/182443/assessment/2564527) |
 | Oct 27–Nov 02 | [Textures](#texture)                             | [Textures](mp/textures.html) | Drive, Fog, OBJ, Subdivision | [Q10](https://us.prairielearn.com/pl/course_instance/182443/assessment/2564546) |
-| Nov 03–09     | [Raytracing](#ray)                               | [Raytracer](mp/raytracer.html) |         | [Q11](https://us.prairielearn.com/pl/course_instance/182443/assessment/2564612) |
-| Nov 10–16     | [Raytracing](#ray)                               | | Raytracer electives                    | [Q12](https://us.prairielearn.com/pl/course_instance/182443/assessment/2565206) |
+| Nov 03–09     | [Basic Raytracing](#ray-basic)                   | [Raytracer](mp/raytracer.html) |         | [Q11](https://us.prairielearn.com/pl/course_instance/182443/assessment/2564612) |
+| Nov 10–16     | [Intermediate Raytracing](#ray-intermediate)     | | Raytracer electives                    | [Q12](https://us.prairielearn.com/pl/course_instance/182443/assessment/2565206) |
 | Nov 17–21     | [Dynamics](#dynamics)                            | [Spheres](mp/spheres.html) | Many Spheres, Goop | [Q13](https://us.prairielearn.com/pl/course_instance/182443/assessment/2565239) |
 | | Fall Break | | | |
 | Dec 01–07     | [Better rasterization](#pretty)                  | |                                        | [Q14](https://us.prairielearn.com/pl/course_instance/182443/assessment/2565241) |

@@ -8,7 +8,7 @@ summary: |
   </center>
   
   <center>
-  [Content](content.html)  
+  [Content](content.html#recommended-schedule)  
   [Quizzes](https://us.prairielearn.com/pl/course_instance/182443)  
   [MPs](mp/)  
   [Submit](https://cs418.cs.illinois.edu/submit/)  
