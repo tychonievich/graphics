@@ -40,16 +40,16 @@ See [this guide](https://ws.engr.illinois.edu/sitemanager/getfile.asp?id=3552) f
 
 The course consists of the following components:
 
-Pre-recorded lecture material
+Recorded lecture material
 :   Available on the [course content site](content.html), these are mostly fairly dense videos; I regularly distilled 3 hours of class into 1 hour of video by removing the Q&A and other interactive content. Please make notes of questions as you watch them and post those questions on CampusWire. I may answer them there or record videos explaining the answers and post them as supplementary content.
     
-Pre-written lecture notes
+Written lecture notes
 :   Available on the [course content site](content.html), these have roughly the same content as the videos, but often differ in level of detail.
     Some video content (such as coding demonstrations) have no corresponding notes.
     
     Please make notes of questions as you read them and post those questions on CampusWire. I may answer them there or write up longer explanations and post them as supplementary content.
 
-Per-module retakable quizzes
+Retakable quizzes
 :   Lecture material is split into modules, each with a quiz.
     These quizzes are intended primarily as a self-assessment of learning and may be retaken as often as desired.
     
