@@ -4,6 +4,8 @@ header-includes:
   - "<style>.container .row { max-width: 100%; } .container .row p { max-width: 60em; }</style>"
 ...
 
+# Overview {-}
+
 This page provides a list of videos and notes with the intent that following them in the order presented here will result in a cohesive approach to the subject of interactive computer graphics.
 
 In general, the intent is that for a given topic the video and notes will provide equivalent explanations of the material; however, that intent is not always completely achieved.
@@ -15,8 +17,17 @@ When the video is using an interactive example or discussing or developing code 
 I include them because computer graphics is the process of trying to simulate how the world looks, so I assume you'll be interested in understanding how the world looks.
 Feel free to message me with additional appearances you'd like me to describe, either general phenomena or specific images; there are more interesting visual phenomena than I have any hope of fully enumerating.
 
-Videos are hosted on [ClassTranscribe](https://classtranscribe.illinois.edu/offering/c7e741f2-d482-496e-ba57-0285d39ccedb), a tool that allows variable-speed video playback, transcription search, and collaborative editing of subtitles and transcripts.
-With a few exceptions, notes are written by Luther Tychonievich and hosted directly on this website.
+Videos are hosted in two places, in part so that if one site is down the other can be used:
+
+- [ClassTranscribe](https://classtranscribe.illinois.edu/offering/c7e741f2-d482-496e-ba57-0285d39ccedb) allows collaborative editing of subtitles and transcripts.
+- [MediaSpace](https://mediaspace.illinois.edu/channel/CS+418+online+2023-2025/379538012) has subtitles provided by DRES.
+
+With a few exceptions, notes are written by Luther Tychonievich and hosted directly on this website, which is also hosted in two places:
+
+- <https://cs418.cs.illinois.edu/website> also hosts the submission page
+- <https://courses.grainger.illinois.edu/cs418/fa2025> also hosts many other courses
+
+# Recommended Schedule {-}
 
 A recommended weekly schedule follows.
 MPs are listed in the week where the relevant content has been presented; it is expected most students will start them then and complete them a week or two later; that delay is why there are not MPs listed for the last two weeks.
