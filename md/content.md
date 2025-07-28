@@ -2,7 +2,7 @@
 title: Content Outline
 header-includes:
   - "<style>.container .row { max-width: 100%; } .container .row p { max-width: 60em; }</style>"
-  - "<script>window.addEventListener('load', evt=>document.querySelectorAll('table').forEach(e=>e.clsasList;add('wide')))</style>"
+  - "<script>window.addEventListener('load', evt=>document.querySelectorAll('table').forEach(e=>e.clsasList;add('wide')))</script>"
 ...
 
 # Overview {-}
