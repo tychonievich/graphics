@@ -35,24 +35,24 @@ Electives vary significantly in complexity and time required, as noted by their 
 You only need to do some electives, and if 3cr only some core.
 See the [MPs page](mp/) for more.
 
-| Week | Content | Core MPs | Elective MPs |
-|:-----|:--------|:---------|--------------|
-| Aug 25–31     | [Preliminaries](#prelim)                         | [WebGL2 warmup](mp/warmup-webgl2.html) |
-| Sep 01–07     | [DDA](#dda)                                      | [AnyLang warmup](mp/warmup-anylang.html) |
-| Sep 08–14     | [Depth](#depth) and [related concepts](#rastetc) | [Rasterizer](mp/rasterizer.html) |
-| Sep 15–21     | [Javascript](#js)                                | | Rasterizer electives |
-| Sep 22–28     | [WebGL2](#webgl)                                 | | Psychedelic |
-| Sep 29–Oct 05 | [3D Math](#math)                                 | [Logo](mp/logo.html) | GPU jitter, CPU jitter |
-| Oct 06–12     | [GL example](#glcode) and [Lighting](#light)     | [Orbits](mp/orbits.html) | Lineograph |
-| Oct 13–19     | [Fractals](#fract)                               | [Terrain](mp/terrain.html) | Cliffs, Weathering, Height map, Parametric |
-| Oct 20–26     | [Animation](#anim) and [Code example](#geomcode) | [Flight](mp/flight.html) | |
-| Oct 27–Nov 02 | [Textures](#texture)                             | [Textures](mp/textures.html) | Drive, Fog, OBJ, Subdivision |
-| Nov 03–09     | [Raytracing](#ray)                               | [Raytracer](mp/raytracer.html) | |
-| Nov 10–16     | [Raytracing](#ray)                               | | Raytracer electives |
-| Nov 17–21     | [Dynamics](#dynamics)                            | [Spheres](mp/spheres.html) | Many Spheres, Goop |
-| | Fall Break | | |
-| Dec 01–07     | [Better rasterization](#pretty)                  | | |
-| Dec 08–10     | Review and finish coding                         | | |
+| Week | Content | Core MPs | Elective MPs | Quiz |
+|:-----|:--------|:---------|--------------|------|
+| Aug 25–31     | [Preliminaries](#prelim)                         | [WebGL2 warmup](mp/warmup-webgl2.html)   | [Q01](https://us.prairielearn.com/pl/course_instance/182443/assessment/2546495) |
+| Sep 01–07     | [DDA](#dda)                                      | [AnyLang warmup](mp/warmup-anylang.html) | [Q02](https://us.prairielearn.com/pl/course_instance/182443/assessment/2546833) |
+| Sep 08–14     | [Depth](#depth) and [related concepts](#rastetc) | [Rasterizer](mp/rasterizer.html)         | [Q03](https://us.prairielearn.com/pl/course_instance/182443/assessment/2547951) |
+| Sep 15–21     | [Javascript](#js)                                | | Rasterizer electives                   | [Q04](https://us.prairielearn.com/pl/course_instance/182443/assessment/2553128) |
+| Sep 22–28     | [WebGL2](#webgl)                                 | | Psychedelic                            | [Q05](https://us.prairielearn.com/pl/course_instance/182443/assessment/2553689) |
+| Sep 29–Oct 05 | [3D Math](#math)                                 | [Logo](mp/logo.html) | GPU jitter, CPU jitter | [Q06](https://us.prairielearn.com/pl/course_instance/182443/assessment/2554349) |
+| Oct 06–12     | [GL example](#glcode) and [Lighting](#light)     | [Orbits](mp/orbits.html) | Lineograph    | [Q07](https://us.prairielearn.com/pl/course_instance/182443/assessment/2555471) |
+| Oct 13–19     | [Fractals](#fract)                               | [Terrain](mp/terrain.html) | Cliffs, Weathering, Height map, Parametric | [Q08](https://us.prairielearn.com/pl/course_instance/182443/assessment/2564526) |
+| Oct 20–26     | [Animation](#anim) and [Code example](#geomcode) | [Flight](mp/flight.html) |               | [Q09](https://us.prairielearn.com/pl/course_instance/182443/assessment/2564527) |
+| Oct 27–Nov 02 | [Textures](#texture)                             | [Textures](mp/textures.html) | Drive, Fog, OBJ, Subdivision | [Q10](https://us.prairielearn.com/pl/course_instance/182443/assessment/2564546) |
+| Nov 03–09     | [Raytracing](#ray)                               | [Raytracer](mp/raytracer.html) |         | [Q12](https://us.prairielearn.com/pl/course_instance/182443/assessment/2564612) |
+| Nov 10–16     | [Raytracing](#ray)                               | | Raytracer electives                    | [Q13](https://us.prairielearn.com/pl/course_instance/182443/assessment/2565206) |
+| Nov 17–21     | [Dynamics](#dynamics)                            | [Spheres](mp/spheres.html) | Many Spheres, Goop | [Quiz](https://us.prairielearn.com/pl/course_instance/182443/assessment/2565239) |
+| | Fall Break | | | |
+| Dec 01–07     | [Better rasterization](#pretty)                  | |                                        | [Q14](https://us.prairielearn.com/pl/course_instance/182443/assessment/2565241) |
+| Dec 08–10     | Review and finish coding                         | | | |
 
 Experience has taught me that getting behind on lecture material or MPs is usually a sign that additional instructor/student interaction is needed. If you are more than a week behind the schedule given here, please contact me.
 
@@ -73,9 +73,7 @@ Experience has taught me that getting behind on lecture material or MPs is usual
 | What is “interactive” computer graphics? | [CT](https://classtranscribe.illinois.edu/video?id=8395bdb8-5642-4bef-a5a3-72353f13857e) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_zy0k8pgn/1_9qklpqdw) | [&quot;Interactive&quot; Graphics](text/interactive.html){title="&quot;Interactive&quot; Graphics: contrasting rasterization and raytracing, with a nod to other approaches"} |
 | The GPU graphics pipeline | [CT](https://classtranscribe.illinois.edu/video?id=46cfa514-ec05-4179-9b32-7b57791c9807) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_zy0k8pgn/1_1bbe15sr) | [WebGL's Graphics Pipeline](text/pipeline.html){title="WebGL's Graphics Pipeline: a collapsible top-down view of how 3D graphics with WebGL2 works"} |
 
-How things appear: [*The Student, the Fish, and Agassiz* by The Student](text/fish.html) <small>and</small> Mirages and total internal reflection [CT](https://classtranscribe.illinois.edu/video?id=9debac49-d1a3-4a22-bc49-b288c59c351f) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_zy0k8pgn/1_rvyfle5g)
-
-[Quiz](https://us.prairielearn.com/pl/course_instance/182443/assessment/2546495)
+How things appear: Mirages and total internal reflection [CT](https://classtranscribe.illinois.edu/video?id=9debac49-d1a3-4a22-bc49-b288c59c351f) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_zy0k8pgn/1_rvyfle5g)
 
 We also have recordings of a couple of in-class Q&A sessions from an older version of the course that might be of interest:
 
@@ -98,7 +96,6 @@ We also have recordings of a couple of in-class Q&A sessions from an older versi
 
 How things appear: Refraction [CT](https://classtranscribe.illinois.edu/video?id=a442b831-d7eb-485f-b759-b30183ffb86c) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_caoo75kh/1_2k4gh77g)
 
-[Quiz](https://us.prairielearn.com/pl/course_instance/182443/assessment/2546833)
 
 ## Emulating 3D with depth {#depth}
 
@@ -111,8 +108,6 @@ How things appear: Refraction [CT](https://classtranscribe.illinois.edu/video?id
 
 
 How things appear: Fresnel effect [CT](https://classtranscribe.illinois.edu/video?id=5b300c5a-2534-4115-b475-8ef2b10acc36) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_tq1v0k0s/1_w2dhqcxz)
-
-(Quiz shared with [next section](#rastetc))
 
 
 ## Related concepts {#rastetc}
@@ -127,8 +122,6 @@ How things appear: Fresnel effect [CT](https://classtranscribe.illinois.edu/vide
 
 
 How things appear: Diffraction rainbows [CT](https://classtranscribe.illinois.edu/video?id=aedb1137-5a4f-4b4e-bd28-669fdbf5a06d) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_7vst7d9z/1_3f2r71e1)
-
-[Quiz](https://us.prairielearn.com/pl/course_instance/182443/assessment/2547951)
 
 
 # Using the GPU with WebGL2
@@ -147,8 +140,6 @@ How things appear: Diffraction rainbows [CT](https://classtranscribe.illinois.ed
 
 How things appear: Dispersion rainbow [CT](https://classtranscribe.illinois.edu/video?id=4d66e25a-62b0-46fb-9979-4de6a071693e) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_sld426fk/1_8fasrarm)
 
-[Quiz](https://us.prairielearn.com/pl/course_instance/182443/assessment/2553128)
-
 
 ## Starting with WebGL2 coding {#webgl}
 
@@ -163,8 +154,6 @@ How things appear: Dispersion rainbow [CT](https://classtranscribe.illinois.edu/
 
 
 How things appear: Exposure noise [CT](https://classtranscribe.illinois.edu/video?id=826f7d82-fc46-4cb0-8fde-6e4149015404) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_b71wxg8u/1_ocv927pj)
-
-[Quiz](https://us.prairielearn.com/pl/course_instance/182443/assessment/2553689)
 
 
 ## Mathematics of interactive 3D graphics {#math}
@@ -184,8 +173,6 @@ How things appear: Exposure noise [CT](https://classtranscribe.illinois.edu/vide
 
 
 How things appear: Lens bloom [CT](https://classtranscribe.illinois.edu/video?id=96aae7ab-9e5b-41de-8fac-81d0fb4d1a4e) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_m2wysuqj/1_sf367jd5)
-
-[Quiz](https://us.prairielearn.com/pl/course_instance/182443/assessment/2554349)
 
 We also have a recording of a previous semester's Q&A on matices: [CT](https://classtranscribe.illinois.edu/video?id=8bed82c1-d426-4d66-814b-ccf3bc097759)
 
