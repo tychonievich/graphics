@@ -2,6 +2,7 @@
 title: Content Outline
 header-includes:
   - "<style>.container .row { max-width: 100%; } .container .row p { max-width: 60em; }</style>"
+  - "<script>window.addEventListener('load', evt=>document.querySelectorAll('table').forEach(e=>e.clsasList;add('wide')))</style>"
 ...
 
 # Overview {-}
@@ -58,7 +59,7 @@ See the [MPs page](mp/) for more.
 
 :::
 
-Experience has taught me that getting behind on lecture material or MPs is usually a sign that additional instructor/student interaction is needed. If you are more than a week behind the schedule given here, please contact me.
+Experience has taught me that getting behind on lecture material, MPs, or quizzes is usually a sign that additional instructor/student interaction is needed. If you are more than a week behind the schedule given here, please contact me.
 
 
 
