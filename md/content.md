@@ -201,6 +201,8 @@ How things appear: Lens bloom [CT](https://classtranscribe.illinois.edu/video?id
 
 ## Multi-part coding example {#glcode}
 
+:::wide 
+
 | Topic | Video | Notes |
 | ----- | ----- | ----- |
 | 3D WebGL2 code | [CT](https://classtranscribe.illinois.edu/video?id=d4106446-3a1a-4111-8a70-4f1fa68b9482) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_bzstvuej/1_9y9lpnyc) | [1-the-code.html](code/3d-webgl/1-the-code.html)<br/>[math.js](code/3d-webgl/math.js)<br/>[wrapWebGL2.js](code/3d-webgl/wrapWebGL2.js) |
@@ -211,10 +213,13 @@ How things appear: Lens bloom [CT](https://classtranscribe.illinois.edu/video?id
 | Random procedural geometry | [CT](https://classtranscribe.illinois.edu/video?id=b2877f5e-7f06-401a-b625-efd9fdcd748d) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_bzstvuej/1_btdplqzu) | [6-makegeom.html](code/3d-webgl/6-makegeom.html) |
 | Designing procedural geometry | [CT](https://classtranscribe.illinois.edu/video?id=dcad54b4-5cbf-45c4-8e81-e0d2fa31994a) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_bzstvuej/1_ftxefe9j) | [7-starburst.html](code/3d-webgl/7-starburst.html) |
 
+:::
 
 How things appear: Subsurface scattering [CT](https://classtranscribe.illinois.edu/video?id=de19c41f-3a59-4b8e-a090-c634ad566dda) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_bzstvuej/1_18kmc7la)
 
 ## Lighting on the GPU {#light}
+
+:::wide 
 
 | Topic | Video | Notes |
 | ----- | ----- | ----- |
@@ -228,6 +233,7 @@ How things appear: Subsurface scattering [CT](https://classtranscribe.illinois.e
 | Physically-based lighting | [CT](https://classtranscribe.illinois.edu/video?id=0738d675-17fb-4929-a495-7d5592d1c7f9) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_su9rgzdj/1_x5gojayo) | [the-pbr-guide-part-1](https://substance3d.adobe.com/tutorials/courses/the-pbr-guide-part-1) |
 | Q&A on PBR | [CT](https://classtranscribe.illinois.edu/video?id=e603c410-9329-4bb2-a017-8cdaeb25a7ab) |  |
 
+:::
 
 How things appear: Rayleigh scattering [CT](https://classtranscribe.illinois.edu/video?id=f44fdec8-983e-4357-b432-51704bf43cb2) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_su9rgzdj/1_3zz159d5)
 
@@ -235,136 +241,172 @@ How things appear: Rayleigh scattering [CT](https://classtranscribe.illinois.edu
 
 ## Fractals {#fract}
 
+:::wide
+
 | Topic | Video | Notes |
 | ----- | ----- | ----- |
-| Fractional dimension | [CT](https://classtranscribe.illinois.edu/video?id=08892d01-184e-4e1d-aced-1e9d64772d94) | [Fractals](text/fractal.html){title="Fractals: a class of mathematically-defined geometries that look more &quot;natural&quot; than most others"} |
+| Fractional dimension | [CT](https://classtranscribe.illinois.edu/video?id=08892d01-184e-4e1d-aced-1e9d64772d94) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_r31tg8ny/1_ambjpfwk) | [Fractals](text/fractal.html){title="Fractals: a class of mathematically-defined geometries that look more &quot;natural&quot; than most others"} |
 | In-class Q&A fractal overview | [CT](https://classtranscribe.illinois.edu/video?id=c77f8196-6cfc-464d-9d67-5f50cfb977db) |  |
-| fBm noise | [CT](https://classtranscribe.illinois.edu/video?id=d84d8e39-1aea-4719-96af-aab626facf50) | [Fractals](text/fractal.html){title="Fractals: a class of mathematically-defined geometries that look more &quot;natural&quot; than most others"} |
-| Subdivision noise | [CT](https://classtranscribe.illinois.edu/video?id=a89543f8-7312-48c5-b53f-ba72054e5a67) | [Fractals](text/fractal.html){title="Fractals: a class of mathematically-defined geometries that look more &quot;natural&quot; than most others"} |
-| Fractal terrain via random faulting | [CT](https://classtranscribe.illinois.edu/video?id=59fac26e-c0c9-44cd-b1b3-3f80b8e89161) | [Terrain via the faulting method](text/faulting.html){title="Terrain via the faulting method: fault computation for simple fractals"} |
-| Perlin noise | [CT](https://classtranscribe.illinois.edu/video?id=e009416c-19d5-4861-af16-39a73c407076) | [Fractals](text/fractal.html){title="Fractals: a class of mathematically-defined geometries that look more &quot;natural&quot; than most others"} |
-| Weathering and erosion of terrain | [CT](https://classtranscribe.illinois.edu/video?id=c2c833f2-1de4-4706-ae1f-2c1002298a41) | [Hydraulic Erosion](text/erosion.html){title="Hydraulic Erosion: two methods for making weathered terrain"} |
-| In-class Q&A re MP3 | [CT](https://classtranscribe.illinois.edu/video?id=ba7a3bfe-d7e3-42ce-ad42-85c12229dec1) |  |
+| fBm noise | [CT](https://classtranscribe.illinois.edu/video?id=d84d8e39-1aea-4719-96af-aab626facf50) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_r31tg8ny/1_n9ummqla) | [Fractals](text/fractal.html){title="Fractals: a class of mathematically-defined geometries that look more &quot;natural&quot; than most others"} |
+| Subdivision noise | [CT](https://classtranscribe.illinois.edu/video?id=a89543f8-7312-48c5-b53f-ba72054e5a67) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_r31tg8ny/1_i95us4gq) | [Fractals](text/fractal.html){title="Fractals: a class of mathematically-defined geometries that look more &quot;natural&quot; than most others"} |
+| Fractal terrain via random faulting | [CT](https://classtranscribe.illinois.edu/video?id=59fac26e-c0c9-44cd-b1b3-3f80b8e89161) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_r31tg8ny/1_e5hssqsh) | [Terrain via the faulting method](text/faulting.html){title="Terrain via the faulting method: fault computation for simple fractals"} |
+| Perlin noise | [CT](https://classtranscribe.illinois.edu/video?id=e009416c-19d5-4861-af16-39a73c407076) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_r31tg8ny/1_4rdw35xl) | [Fractals](text/fractal.html){title="Fractals: a class of mathematically-defined geometries that look more &quot;natural&quot; than most others"} |
+| Weathering and erosion of terrain | [CT](https://classtranscribe.illinois.edu/video?id=c2c833f2-1de4-4706-ae1f-2c1002298a41) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_r31tg8ny/1_3m2wp7rw) | [Hydraulic Erosion](text/erosion.html){title="Hydraulic Erosion: two methods for making weathered terrain"} |
 
+:::
 
-How things appear: [Shiny hair](https://classtranscribe.illinois.edu/video?id=1447ec19-e169-4305-829f-5c7b0919df05)
+How things appear: Shiny hair [CT](https://classtranscribe.illinois.edu/video?id=1447ec19-e169-4305-829f-5c7b0919df05) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_r31tg8ny/1_9qa5ex43)
 
 ## Animation {#anim}
 
+:::wide
+
 | Topic | Video | Notes |
 | ----- | ----- | ----- |
-| In-class Q&A on many topics | [CT](https://classtranscribe.illinois.edu/video?id=ec18b8b8-c1b6-47ff-90f7-c487cc07b2cb) |  |
-| Key frames and tweening | [CT](https://classtranscribe.illinois.edu/video?id=6593af32-a355-4a58-9393-bc5ebd6d56f2) | [Keyframes, Bones, and Skinning](text/keyframe.html){title="Keyframes, Bones, and Skinning: an overview of how we animate articulated characters"} |
-| Interpolating with lerps and Bezier curves | [CT](https://classtranscribe.illinois.edu/video?id=de78a9ac-1f58-47f0-a5e4-78612fe31dee) |  |
-| Coding lerps of keyframes | [CT](https://classtranscribe.illinois.edu/video?id=77d59fbe-567b-494d-9a6c-0d7cdc238c44) | [3-lerp-code-1.html](code/simple-animation/3-lerp-code-1.html)<br/>[3-lerp-code-2.html](code/simple-animation/3-lerp-code-2.html)<br/>[math.js](code/simple-animation/math.js) |
-| Lerping rotation matrices doesn’t work | [CT](https://classtranscribe.illinois.edu/video?id=dbbcef3c-70ec-4a75-a3b6-4d9b6c1bb876) | [4-rotation-problems-1.html](code/simple-animation/4-rotation-problems-1.html)<br/>[4-rotation-problems-2.html](code/simple-animation/4-rotation-problems-2.html) |
-| Quaternions | [CT](https://classtranscribe.illinois.edu/video?id=5d40c672-2ecd-4340-b5d7-920eb5436893) | [Quaternions](text/quaternions.html){title="Quaternions: their definition and use in defining rotations in graphics"} |
-| Interpolating quaternions | [CT](https://classtranscribe.illinois.edu/video?id=b2ba946e-07e8-4472-8b04-25eee03613b9) | [6-quaternion-interpolation.html](code/simple-animation/6-quaternion-interpolation.html) |
-| In-class Q&A re Quaternions | [CT](https://classtranscribe.illinois.edu/video?id=0e94782b-f161-4179-a55f-343ae89ac549) |  |
-| Skeletal animation with skinning | [CT](https://classtranscribe.illinois.edu/video?id=9e831deb-f0ee-41ed-af90-26fc7f054fa2) | [Keyframes, Bones, and Skinning](text/keyframe.html){title="Keyframes, Bones, and Skinning: an overview of how we animate articulated characters"} |
+| Key frames and tweening | [CT](https://classtranscribe.illinois.edu/video?id=6593af32-a355-4a58-9393-bc5ebd6d56f2) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_womg6ejj/1_empqb988) | [Keyframes, Bones, and Skinning](text/keyframe.html){title="Keyframes, Bones, and Skinning: an overview of how we animate articulated characters"} |
+| Interpolating with lerps and Bezier curves | [CT](https://classtranscribe.illinois.edu/video?id=de78a9ac-1f58-47f0-a5e4-78612fe31dee) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_womg6ejj/1_8no2sgs1) |  |
+| Coding lerps of keyframes | [CT](https://classtranscribe.illinois.edu/video?id=77d59fbe-567b-494d-9a6c-0d7cdc238c44) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_womg6ejj/1_g01dh3zj) | [3-lerp-code-1.html](code/simple-animation/3-lerp-code-1.html)<br/>[3-lerp-code-2.html](code/simple-animation/3-lerp-code-2.html)<br/>[math.js](code/simple-animation/math.js) |
+| Lerping rotation matrices doesn’t work | [CT](https://classtranscribe.illinois.edu/video?id=dbbcef3c-70ec-4a75-a3b6-4d9b6c1bb876) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_womg6ejj/1_ckxmp7jj) | [4-rotation-problems-1.html](code/simple-animation/4-rotation-problems-1.html)<br/>[4-rotation-problems-2.html](code/simple-animation/4-rotation-problems-2.html) |
+| Quaternions | [CT](https://classtranscribe.illinois.edu/video?id=5d40c672-2ecd-4340-b5d7-920eb5436893) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_womg6ejj/1_096ofty9) | [Quaternions](text/quaternions.html){title="Quaternions: their definition and use in defining rotations in graphics"} |
+| Interpolating quaternions | [CT](https://classtranscribe.illinois.edu/video?id=b2ba946e-07e8-4472-8b04-25eee03613b9) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_womg6ejj/1_gncfqpxs) | [6-quaternion-interpolation.html](code/simple-animation/6-quaternion-interpolation.html) |
+| Q&A on Quaternions | [CT](https://classtranscribe.illinois.edu/video?id=0e94782b-f161-4179-a55f-343ae89ac549) |  |
+| Skeletal animation with skinning | [CT](https://classtranscribe.illinois.edu/video?id=9e831deb-f0ee-41ed-af90-26fc7f054fa2) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_womg6ejj/1_mh8u175b) | [Keyframes, Bones, and Skinning](text/keyframe.html){title="Keyframes, Bones, and Skinning: an overview of how we animate articulated characters"} |
 
+:::
 
-How things appear: [Brushed metal](https://classtranscribe.illinois.edu/video?id=cdb402bf-b4e2-4f55-8695-30554f1a5f85)
+How things appear: Brushed metal [CT](https://classtranscribe.illinois.edu/video?id=cdb402bf-b4e2-4f55-8695-30554f1a5f85) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_womg6ejj/1_1ra3yvrm)
 
 ## Multi-part coding example {#geomcode}
 
+:::wide
+
 | Topic | Video | Notes |
 | ----- | ----- | ----- |
-| Generating a leg | [CT](https://classtranscribe.illinois.edu/video?id=79b3b2e6-8a9d-490b-85f1-4bca383515e5) | [1-modeling.html](code/skeletal-animation/1-modeling.html)<br/>[math.js](code/skeletal-animation/math.js) |
-| Coloring a leg | [CT](https://classtranscribe.illinois.edu/video?id=059286fc-a5ba-4089-96be-04945689bb74) | [2-colors.html](code/skeletal-animation/2-colors.html) |
-| Joint locations | [CT](https://classtranscribe.illinois.edu/video?id=75cc999e-2455-4865-96b2-2036636763af) | [3-joints.html](code/skeletal-animation/3-joints.html) |
-| Skeletal Animation | [CT](https://classtranscribe.illinois.edu/video?id=fe428697-f175-4868-bbe2-6b2078e218f7) | [4-rig-1.html](code/skeletal-animation/4-rig-1.html)<br/>[4-rig-2.html](code/skeletal-animation/4-rig-2.html) |
-| Skinning | [CT](https://classtranscribe.illinois.edu/video?id=4bd4b0a4-2fb0-4a9a-a65b-5c4c3b41e7e9) | [5-skin.html](code/skeletal-animation/5-skin.html) |
+| Generating a leg | [CT](https://classtranscribe.illinois.edu/video?id=79b3b2e6-8a9d-490b-85f1-4bca383515e5) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_2ts10e78/1_vr1sq4mq) | [1-modeling.html](code/skeletal-animation/1-modeling.html)<br/>[math.js](code/skeletal-animation/math.js) |
+| Coloring a leg | [CT](https://classtranscribe.illinois.edu/video?id=059286fc-a5ba-4089-96be-04945689bb74) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_2ts10e78/1_qpbrtkem)| [2-colors.html](code/skeletal-animation/2-colors.html) |
+| Joint locations | [CT](https://classtranscribe.illinois.edu/video?id=75cc999e-2455-4865-96b2-2036636763af) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_2ts10e78/1_ceedtk1e) | [3-joints.html](code/skeletal-animation/3-joints.html) |
+| Skeletal Animation | [CT](https://classtranscribe.illinois.edu/video?id=fe428697-f175-4868-bbe2-6b2078e218f7) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_2ts10e78/1_mrdflme8) | [4-rig-1.html](code/skeletal-animation/4-rig-1.html)<br/>[4-rig-2.html](code/skeletal-animation/4-rig-2.html) |
+| Skinning | [CT](https://classtranscribe.illinois.edu/video?id=4bd4b0a4-2fb0-4a9a-a65b-5c4c3b41e7e9) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_2ts10e78/1_m2fniz7o) | [5-skin.html](code/skeletal-animation/5-skin.html) |
 
+:::
 
-How things appear: [Mirrors and one-way mirrors](https://classtranscribe.illinois.edu/video?id=098c186d-1a48-4ea3-80fc-936546f97339)
+How things appear: Mirrors and one-way mirrors [CT](https://classtranscribe.illinois.edu/video?id=098c186d-1a48-4ea3-80fc-936546f97339) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_2ts10e78/1_6atcgqtq)
 
 ## Optional deep-dive content
 
+:::wide
+
 | Topic | Video | Notes |
 | ----- | ----- | ----- |
-| Stereoscopic 1 Concepts | [CT](https://classtranscribe.illinois.edu/video?id=749220a3-3d44-4115-aea3-c6fcca0c7ab5) |  |
-| Stereoscopic 2 Calibration | [CT](https://classtranscribe.illinois.edu/video?id=c6eb2a3b-c6ba-4190-b530-53e120ad2eeb) | [stereoscopic.html](files/stereoscopic.html) |
-| Stereoscopic 3 Implementation | [CT](https://classtranscribe.illinois.edu/video?id=958eee0d-62c2-4d08-8810-993ea068e130) |  |
+| Stereoscopic 1 Concepts | [CT](https://classtranscribe.illinois.edu/video?id=749220a3-3d44-4115-aea3-c6fcca0c7ab5) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_9onr5ybr/1_0k3hxfg1) |  |
+| Stereoscopic 2 Calibration | [CT](https://classtranscribe.illinois.edu/video?id=c6eb2a3b-c6ba-4190-b530-53e120ad2eeb) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_9onr5ybr/1_hmdu1tup) | [stereoscopic.html](files/stereoscopic.html) |
+| Stereoscopic 3 Implementation | [CT](https://classtranscribe.illinois.edu/video?id=958eee0d-62c2-4d08-8810-993ea068e130) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_9onr5ybr/1_utpy9sq2) |  |
+
+:::
 
 
 # Texture mapping {#texture}
 
+:::wide
+
 | Topic | Video | Notes |
 | ----- | ----- | ----- |
-| In-class preview of texture content | [CT](https://classtranscribe.illinois.edu/video?id=72ae8911-6d83-47ab-82a4-87c4a7b699ce) |  |
-| Texture concepts | [CT](https://classtranscribe.illinois.edu/video?id=48c9380f-d7d4-4ab5-9aaf-becb42db736f) | [Textures in WebGL](text/textures.html){title="Textures in WebGL: the mechanics of getting them set up and rendering"} |
-| Texture code elements | [CT](https://classtranscribe.illinois.edu/video?id=5b80136e-895b-4580-8fc1-5e1b93b736e1) | [Textures in WebGL](text/textures.html){title="Textures in WebGL: the mechanics of getting them set up and rendering"} |
-| Texture maps for all visual details | [CT](https://classtranscribe.illinois.edu/video?id=a2367b99-d91c-4bee-aa37-856c9e58fcee) | [Using Textures](text/textures2.html){title="Using Textures: classes of texture use common in rasterized 3D graphics"} |
-| Parallax texture mapping | [CT](https://classtranscribe.illinois.edu/video?id=aceb5ebf-1032-45e9-8b83-6ad0e8af00f3) | [Using Textures](text/textures2.html){title="Using Textures: classes of texture use common in rasterized 3D graphics"} |
-| In-class Q&A on camera movement in the MP | [CT](https://classtranscribe.illinois.edu/video?id=0e128e71-121e-485f-b9af-fc2dfee610ca) |  |
-| In-class Q&A on textures beyond the MP | [CT](https://classtranscribe.illinois.edu/video?id=c5fe0756-ea25-4667-9f57-5509ae1cc3c4) |  |
-| In-class Q&A on OBJ files in MP | [CT](https://classtranscribe.illinois.edu/video?id=4dd4f78d-83bc-4465-92a8-78a8892fea8e) |  |
+| Texture concepts | [CT](https://classtranscribe.illinois.edu/video?id=48c9380f-d7d4-4ab5-9aaf-becb42db736f) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_siwu66io/1_bmj4jn84) | [Textures in WebGL](text/textures.html){title="Textures in WebGL: the mechanics of getting them set up and rendering"} |
+| Texture code elements | [CT](https://classtranscribe.illinois.edu/video?id=5b80136e-895b-4580-8fc1-5e1b93b736e1) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_siwu66io/1_gj66lzf9) | [Textures in WebGL](text/textures.html){title="Textures in WebGL: the mechanics of getting them set up and rendering"} |
+| Texture maps for all visual details | [CT](https://classtranscribe.illinois.edu/video?id=a2367b99-d91c-4bee-aa37-856c9e58fcee) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_siwu66io/1_1lh113lm) | [Using Textures](text/textures2.html){title="Using Textures: classes of texture use common in rasterized 3D graphics"} |
+| Parallax texture mapping | [CT](https://classtranscribe.illinois.edu/video?id=aceb5ebf-1032-45e9-8b83-6ad0e8af00f3) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_siwu66io/1_p4cmvmti) | [Using Textures](text/textures2.html){title="Using Textures: classes of texture use common in rasterized 3D graphics"} |
 
+:::
 
-How things appear: [Retroreflectors](https://classtranscribe.illinois.edu/video?id=886b37ba-4f1a-450b-837a-407ed9dc0348)
+How things appear: Retroreflectors [CT](https://classtranscribe.illinois.edu/video?id=886b37ba-4f1a-450b-837a-407ed9dc0348) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_siwu66io/1_6ast3mjl)
 
 # Raytracing {#ray}
 
+## Basic Raytracing {#ray-basic}
+
+:::wide
+
 | Topic | Video | Notes |
 | ----- | ----- | ----- |
-| In-class Q&A introducing raytracing | [CT](https://classtranscribe.illinois.edu/video?id=18dfdd86-2f6a-4d1d-9a4c-3e8e559cc600) |  |
-| Why raytracing? | [CT](https://classtranscribe.illinois.edu/video?id=93e0449e-75d3-4640-a270-c04b9ab64e84) |  |
-| Ray-plane intersection | [CT](https://classtranscribe.illinois.edu/video?id=7d99b7e2-badc-450f-8fd2-34f6022b6ca7) | [Raytracing](text/rays.html){title="Raytracing: basic theory and algorithms of ray intersections  and discussion of generating secondary rays"} |
-| Barycentric coordinates and ray-triangle intersection | [CT](https://classtranscribe.illinois.edu/video?id=090462b2-7915-47c5-8e78-c6d758976066) | [Raytracing](text/rays.html){title="Raytracing: basic theory and algorithms of ray intersections  and discussion of generating secondary rays"} |
-| Raytracer design | [CT](https://classtranscribe.illinois.edu/video?id=9376d7a0-609e-4cd2-9bfd-3f8cb58727a4) | [Raytracing](text/rays.html){title="Raytracing: basic theory and algorithms of ray intersections  and discussion of generating secondary rays"} |
-| In-class Q&A raytracing code design | [CT](https://classtranscribe.illinois.edu/video?id=27ad91a1-f950-4a2e-b34f-92f6cddaaa2f) |  |
-| Bounding volume hierachies | [CT](https://classtranscribe.illinois.edu/video?id=e25a1539-99ee-420a-b4a0-a8a4c1840f84) | [Bounding Volume Hierarchies](text/bvh.html) |
-| Raytracing as integration | [CT](https://classtranscribe.illinois.edu/video?id=3ebc224f-c810-4a96-a880-6e28817b06c7) | [Integrating incident light](text/integration.html){title="Integrating incident light: including physically-based rendering, secondary ray generation as numerical integration, and importance sampling"} |
-| In-class Q&A importance sampling | [CT](https://classtranscribe.illinois.edu/video?id=46922639-dcfa-4b38-84fd-3d29ba070c2a) |  |
-| Raytracing many bounces | [CT](https://classtranscribe.illinois.edu/video?id=a0ebd5bc-611d-4230-9df0-36cb541ee4ba) | [Integrating incident light](text/integration.html){title="Integrating incident light: including physically-based rendering, secondary ray generation as numerical integration, and importance sampling"} |
-| Raytracing acceleration | [CT](https://classtranscribe.illinois.edu/video?id=e9eb17aa-b625-47c3-b91d-c61a068e4b39) |  |
-| In-class Q&A raytracing on GPU | [CT](https://classtranscribe.illinois.edu/video?id=f0422136-cff4-4496-bebf-fc4623c1637e) |  |
-| In-class Q&A raytracing in context | [CT](https://classtranscribe.illinois.edu/video?id=8861de00-f283-43bc-bd78-10a00ffe5b30) |  |
+| Q&A introducing raytracing | [CT](https://classtranscribe.illinois.edu/video?id=18dfdd86-2f6a-4d1d-9a4c-3e8e559cc600) |  |
+| Why raytracing? | [CT](https://classtranscribe.illinois.edu/video?id=93e0449e-75d3-4640-a270-c04b9ab64e84) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_5vq6mthg/1_4157qpql) |  |
+| Ray-plane intersection | [CT](https://classtranscribe.illinois.edu/video?id=7d99b7e2-badc-450f-8fd2-34f6022b6ca7) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_5vq6mthg/1_zko4omw9) | [Raytracing](text/rays.html){title="Raytracing: basic theory and algorithms of ray intersections  and discussion of generating secondary rays"} |
+| Barycentric coordinates and ray-triangle intersection | [CT](https://classtranscribe.illinois.edu/video?id=090462b2-7915-47c5-8e78-c6d758976066) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_5vq6mthg/1_y87paews) | [Raytracing](text/rays.html){title="Raytracing: basic theory and algorithms of ray intersections  and discussion of generating secondary rays"} |
+| Raytracer design | [CT](https://classtranscribe.illinois.edu/video?id=9376d7a0-609e-4cd2-9bfd-3f8cb58727a4) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_5vq6mthg/1_mm7mxu31) | [Raytracing](text/rays.html){title="Raytracing: basic theory and algorithms of ray intersections  and discussion of generating secondary rays"} |
+| Q&A on raytracing code design | [CT](https://classtranscribe.illinois.edu/video?id=27ad91a1-f950-4a2e-b34f-92f6cddaaa2f) |  |
+
+:::
+
+How things appear: Scale and depth of field [CT](https://classtranscribe.illinois.edu/video?id=ec027823-5297-4760-b56e-af9df5abda7d) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_5vq6mthg/1_1p3s0a0y)
 
 
-How things appear: [Scale and depth of field](https://classtranscribe.illinois.edu/video?id=ec027823-5297-4760-b56e-af9df5abda7d) <small>and</small> [Peach fuzz](https://classtranscribe.illinois.edu/video?id=2af31613-9e57-46fd-b55d-d0b0e5e0bd4b)
+## Intermediate Raytracing {#ray-intermediate}
+
+:::wide
+
+| Topic | Video | Notes |
+| ----- | ----- | ----- |
+| Bounding volume hierachies | [CT](https://classtranscribe.illinois.edu/video?id=e25a1539-99ee-420a-b4a0-a8a4c1840f84) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_8x8vvy6q/1_8wdfoggc) | [Bounding Volume Hierarchies](text/bvh.html) |
+| Raytracing as integration | [CT](https://classtranscribe.illinois.edu/video?id=3ebc224f-c810-4a96-a880-6e28817b06c7) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_8x8vvy6q/1_26uszma6) | [Integrating incident light](text/integration.html){title="Integrating incident light: including physically-based rendering, secondary ray generation as numerical integration, and importance sampling"} |
+| Q&A on importance sampling | [CT](https://classtranscribe.illinois.edu/video?id=46922639-dcfa-4b38-84fd-3d29ba070c2a) |  |
+| Raytracing many bounces | [CT](https://classtranscribe.illinois.edu/video?id=a0ebd5bc-611d-4230-9df0-36cb541ee4ba) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_8x8vvy6q/1_6w3bqbuy | [Integrating incident light](text/integration.html){title="Integrating incident light: including physically-based rendering, secondary ray generation as numerical integration, and importance sampling"} |
+| Raytracing acceleration | [CT](https://classtranscribe.illinois.edu/video?id=e9eb17aa-b625-47c3-b91d-c61a068e4b39) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_8x8vvy6q/1_b3ofme7v) |  |
+| Q&A on raytracing on GPU | [CT](https://classtranscribe.illinois.edu/video?id=f0422136-cff4-4496-bebf-fc4623c1637e) |  |
+| Q&A on raytracing in context | [CT](https://classtranscribe.illinois.edu/video?id=8861de00-f283-43bc-bd78-10a00ffe5b30) |  |
+
+:::
+
+How things appear: Peach fuzz [CT](https://classtranscribe.illinois.edu/video?id=2af31613-9e57-46fd-b55d-d0b0e5e0bd4b) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_8x8vvy6q/1_i37qa3vs)
 
 # Simulating dynamics {#dynamics}
 
+:::wide
+
 | Topic | Video | Notes |
 | ----- | ----- | ----- |
-| Simulation-generated motion | [CT](https://classtranscribe.illinois.edu/video?id=20c33d3e-f8d4-4428-b4d5-d6ec0a9d3575) | [Visual Simulation](text/simulation.html){title="Visual Simulation: an overview good-enough simulation techniques, including Eulerian and Lagrangian methods"} |
-| Particle dynamics | [CT](https://classtranscribe.illinois.edu/video?id=9b313d02-6308-4cca-8205-4298bfcd88c6) | [Euler, RK, and PBD](text/kinetics.html){title="Euler, RK, and PBD: common approaches to simulating kinetic motion of particles"} |
-| Resolving collisions of rigid spheres | [CT](https://classtranscribe.illinois.edu/video?id=02349ea6-e8b8-4ab7-bc50-f3fa3313104d) | [Euler, RK, and PBD](text/kinetics.html){title="Euler, RK, and PBD: common approaches to simulating kinetic motion of particles"} |
-| Rendering particles | [CT](https://classtranscribe.illinois.edu/video?id=1f2ecac5-2124-4d9e-afdd-afaef11bb6fc) | [Particle Effects](text/particles.html){title="Particle Effects: simple heuristic-based visual effects"} |
-| Instability and the CFL conditions | [CT](https://classtranscribe.illinois.edu/video?id=0ba68e50-ab08-4c50-a23c-982df64d146c) | [The CFL Conditions](text/cfl.html){title="The CFL Conditions: why large time-steps can make simulations blow up"} |
-| Particle-based soft bodies and fluids | [CT](https://classtranscribe.illinois.edu/video?id=651f2195-8c6b-457f-a653-779d3d21555b) | [Smoothed Particle Hydrodynamics](text/sph.html){title="Smoothed Particle Hydrodynamics: simplified to have as little math as I can get it"} |
-| Divergence-free grid-based fluids  | [CT](https://classtranscribe.illinois.edu/video?id=c7220480-5da5-4ab5-90fd-95dc0bbb213e) | [Fluids on a Grid](text/grid-fluids.html){title="Fluids on a Grid: the core ideas behind Eulerian fluid simulation"} |
-| Self-advecting grid-based fluids | [CT](https://classtranscribe.illinois.edu/video?id=246a9b39-fedd-4401-9871-fb0232454337) | [Fluids on a Grid](text/grid-fluids.html){title="Fluids on a Grid: the core ideas behind Eulerian fluid simulation"} |
-| In-class Q&A on fluids | [CT](https://classtranscribe.illinois.edu/video?id=4bc19fdd-2c64-4b8a-8adf-01d2d6378a48) |  |
-| In-class Q&A on graphics publication | [CT](https://classtranscribe.illinois.edu/video?id=7c23dc23-508f-4945-a1d1-6fe80611b92d) |  |
+| Simulation-generated motion | [CT](https://classtranscribe.illinois.edu/video?id=20c33d3e-f8d4-4428-b4d5-d6ec0a9d3575) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_xlpjnd3l/1_g23otjtq) | [Visual Simulation](text/simulation.html){title="Visual Simulation: an overview good-enough simulation techniques, including Eulerian and Lagrangian methods"} |
+| Particle dynamics | [CT](https://classtranscribe.illinois.edu/video?id=9b313d02-6308-4cca-8205-4298bfcd88c6) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_xlpjnd3l/1_7vvsehnm) | [Euler, RK, and PBD](text/kinetics.html){title="Euler, RK, and PBD: common approaches to simulating kinetic motion of particles"} |
+| Resolving collisions of rigid spheres | [CT](https://classtranscribe.illinois.edu/video?id=02349ea6-e8b8-4ab7-bc50-f3fa3313104d) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_xlpjnd3l/1_uwph0duq) | [Euler, RK, and PBD](text/kinetics.html){title="Euler, RK, and PBD: common approaches to simulating kinetic motion of particles"} |
+| Rendering particles | [CT](https://classtranscribe.illinois.edu/video?id=1f2ecac5-2124-4d9e-afdd-afaef11bb6fc) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_xlpjnd3l/1_6z63az81) | [Particle Effects](text/particles.html){title="Particle Effects: simple heuristic-based visual effects"} |
+| Instability and the CFL conditions | [CT](https://classtranscribe.illinois.edu/video?id=0ba68e50-ab08-4c50-a23c-982df64d146c) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_xlpjnd3l/1_8xje77s2) | [The CFL Conditions](text/cfl.html){title="The CFL Conditions: why large time-steps can make simulations blow up"} |
+| Particle-based soft bodies and fluids | [CT](https://classtranscribe.illinois.edu/video?id=651f2195-8c6b-457f-a653-779d3d21555b) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_xlpjnd3l/1_uq8ge57m) | [Smoothed Particle Hydrodynamics](text/sph.html){title="Smoothed Particle Hydrodynamics: simplified to have as little math as I can get it"} |
+| Divergence-free grid-based fluids  | [CT](https://classtranscribe.illinois.edu/video?id=c7220480-5da5-4ab5-90fd-95dc0bbb213e) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_xlpjnd3l/1_kdj8dz93) | [Fluids on a Grid](text/grid-fluids.html){title="Fluids on a Grid: the core ideas behind Eulerian fluid simulation"} |
+| Self-advecting grid-based fluids | [CT](https://classtranscribe.illinois.edu/video?id=246a9b39-fedd-4401-9871-fb0232454337) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_xlpjnd3l/1_poqt80ue) | [Fluids on a Grid](text/grid-fluids.html){title="Fluids on a Grid: the core ideas behind Eulerian fluid simulation"} |
+| Q&A on fluids | [CT](https://classtranscribe.illinois.edu/video?id=4bc19fdd-2c64-4b8a-8adf-01d2d6378a48) |  |
+| Q&A on graphics publication | [CT](https://classtranscribe.illinois.edu/video?id=7c23dc23-508f-4945-a1d1-6fe80611b92d) |  |
 
+:::
 
-How things appear: [Optical illusions from relative color perception](https://classtranscribe.illinois.edu/video?id=bd83c5cf-bcf1-4f9f-ba1f-a9efc30fb3c7)
+How things appear: Optical illusions from relative color perception [CT](https://classtranscribe.illinois.edu/video?id=bd83c5cf-bcf1-4f9f-ba1f-a9efc30fb3c7) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_xlpjnd3l/1_bawt8cto)
 
 # Faster and prettier rasterization {#pretty}
 
+:::wide
+
 | Topic | Video | Notes |
 | ----- | ----- | ----- |
-| In-class Q&A on MP5 | [CT](https://classtranscribe.illinois.edu/video?id=61fbc44b-52c0-4ca2-b390-2ab7519d7ea7) |  |
-| In-class Q&A on shadows, deferred shading | [CT](https://classtranscribe.illinois.edu/video?id=51785f27-bb99-4e60-9d24-60940802b3cc) |  |
-| Shadow maps and shadow acne | [CT](https://classtranscribe.illinois.edu/video?id=5d9b5f63-c590-433d-a43b-41d0798f11b2) | [Shadow maps](text/shadowmap.html){title="Shadow maps: implementation guides for the most common approach to adding shadows to interactive graphics"} |
-| Visibility and occlusion culling | [CT](https://classtranscribe.illinois.edu/video?id=7ba59f77-6faa-4789-8b2e-f74eb54a4403) |  |
-| Deferred shading | [CT](https://classtranscribe.illinois.edu/video?id=733edd7e-6510-4e24-a6f9-00086d40532c) | [Deferred Shading](text/deferred.html){title="Deferred Shading: using more memory to reduce time needed for fancy lighting effects"} |
-| Inverse Kinematics | [CT](https://classtranscribe.illinois.edu/video?id=bf777d66-4024-4b7e-abf7-eeee9f5e78cb) | [IK_survey.pdf](http://andreasaristidou.com/publications/papers/IK_survey.pdf) |
+| Q&A on shadows, deferred shading | [CT](https://classtranscribe.illinois.edu/video?id=51785f27-bb99-4e60-9d24-60940802b3cc) |  |
+| Shadow maps and shadow acne | [CT](https://classtranscribe.illinois.edu/video?id=5d9b5f63-c590-433d-a43b-41d0798f11b2) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_610cubtf/1_n3qabkbx) | [Shadow maps](text/shadowmap.html){title="Shadow maps: implementation guides for the most common approach to adding shadows to interactive graphics"} |
+| Visibility and occlusion culling | [CT](https://classtranscribe.illinois.edu/video?id=7ba59f77-6faa-4789-8b2e-f74eb54a4403) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_610cubtf/1_5oeaosnp) |  |
+| Deferred shading | [CT](https://classtranscribe.illinois.edu/video?id=733edd7e-6510-4e24-a6f9-00086d40532c) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_610cubtf/1_g4u3zlzp) | [Deferred Shading](text/deferred.html){title="Deferred Shading: using more memory to reduce time needed for fancy lighting effects"} |
+| Inverse Kinematics | [CT](https://classtranscribe.illinois.edu/video?id=bf777d66-4024-4b7e-abf7-eeee9f5e78cb) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_610cubtf/1_r6u8ecde) | [IK_survey.pdf](http://andreasaristidou.com/publications/papers/IK_survey.pdf) |
 | In-class Q&A on rasterized global illumination | [CT](https://classtranscribe.illinois.edu/video?id=598990a0-6d16-4be1-88dc-0b58cbf9a199) |  |
 
+:::
 
-How things appear: [Sunbeams](https://classtranscribe.illinois.edu/video?id=ac3f38d4-cc6e-4516-be8a-3ca303fe7346)
+How things appear: Sunbeams [CT](https://classtranscribe.illinois.edu/video?id=ac3f38d4-cc6e-4516-be8a-3ca303fe7346) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_610cubtf/1_5fmuj0ia)
 
 ## Optional deep-dive content
 
+:::wide
+
 | Topic | Video | Notes |
 | ----- | ----- | ----- |
-| In-class Q&A setting up Nanite | [CT](https://classtranscribe.illinois.edu/video?id=772a45b0-d2a1-4945-a43f-e4de8137da20) |  |
-| Nanite 1 Highly Detailed Scenes | [CT](https://classtranscribe.illinois.edu/video?id=52661a28-46ea-4251-8dd4-3d3ba9a563ff) | [Streaming, Level of Detail, and Occlusion](text/nanite.html){title="Streaming, Level of Detail, and Occlusion: the quest for complexity-independent render times with constant visual quality"} |
-| Nanite 2 LOD | [CT](https://classtranscribe.illinois.edu/video?id=086ed16b-ed55-4813-8854-655b1bc0dc89) | [Streaming, Level of Detail, and Occlusion](text/nanite.html){title="Streaming, Level of Detail, and Occlusion: the quest for complexity-independent render times with constant visual quality"} |
-| Nanite 3 Occlusion | [CT](https://classtranscribe.illinois.edu/video?id=7bca6faf-e9d5-4f5d-9046-7271bedb99e4) | [Streaming, Level of Detail, and Occlusion](text/nanite.html){title="Streaming, Level of Detail, and Occlusion: the quest for complexity-independent render times with constant visual quality"} |
-| Nanite 4 Streaming | [CT](https://classtranscribe.illinois.edu/video?id=d9622985-0edc-4a15-8ef9-0be0585b5856) | [Streaming, Level of Detail, and Occlusion](text/nanite.html){title="Streaming, Level of Detail, and Occlusion: the quest for complexity-independent render times with constant visual quality"} |
-| Nanite 5 Other | [CT](https://classtranscribe.illinois.edu/video?id=754c2612-e294-4041-a9e1-034aae4deb9a) | [Streaming, Level of Detail, and Occlusion](text/nanite.html){title="Streaming, Level of Detail, and Occlusion: the quest for complexity-independent render times with constant visual quality"} |
+| Q&A setting up Nanite | [CT](https://classtranscribe.illinois.edu/video?id=772a45b0-d2a1-4945-a43f-e4de8137da20) |  |
+| Nanite 1 Highly Detailed Scenes | [CT](https://classtranscribe.illinois.edu/video?id=52661a28-46ea-4251-8dd4-3d3ba9a563ff) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_36t8af0s/1_uvnziuem) | [Streaming, Level of Detail, and Occlusion](text/nanite.html){title="Streaming, Level of Detail, and Occlusion: the quest for complexity-independent render times with constant visual quality"} |
+| Nanite 2 LOD | [CT](https://classtranscribe.illinois.edu/video?id=086ed16b-ed55-4813-8854-655b1bc0dc89) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_36t8af0s/1_a16koy5b) | [Streaming, Level of Detail, and Occlusion](text/nanite.html){title="Streaming, Level of Detail, and Occlusion: the quest for complexity-independent render times with constant visual quality"} |
+| Nanite 3 Occlusion | [CT](https://classtranscribe.illinois.edu/video?id=7bca6faf-e9d5-4f5d-9046-7271bedb99e4) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_36t8af0s/1_tutpptqa) | [Streaming, Level of Detail, and Occlusion](text/nanite.html){title="Streaming, Level of Detail, and Occlusion: the quest for complexity-independent render times with constant visual quality"} |
+| Nanite 4 Streaming | [CT](https://classtranscribe.illinois.edu/video?id=d9622985-0edc-4a15-8ef9-0be0585b5856) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_36t8af0s/1_1dzl2ubr) | [Streaming, Level of Detail, and Occlusion](text/nanite.html){title="Streaming, Level of Detail, and Occlusion: the quest for complexity-independent render times with constant visual quality"} |
+| Nanite 5 Other | [CT](https://classtranscribe.illinois.edu/video?id=754c2612-e294-4041-a9e1-034aae4deb9a) [MS](https://mediaspace.illinois.edu/playlist/dedicated/379538012/1_36t8af0s/1_eiaxkpbu) | [Streaming, Level of Detail, and Occlusion](text/nanite.html){title="Streaming, Level of Detail, and Occlusion: the quest for complexity-independent render times with constant visual quality"} |
+
+:::
