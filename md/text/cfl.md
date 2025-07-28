@@ -29,8 +29,9 @@ From here we consider two possible time steps
 
 ## Good time step
 
-Applying that acceleration and the resulting velocity with an Euler time step
-puts the ball inside the ground
+Applying that acceleration and the resulting velocity with a Euler time step
+large enough to move the ball to the bottom of the ripple it is sitting in
+also puts the ball inside the ground because the straight velocity does not follow the curved shape of the valley.
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -10 150 25">
 <defs>
@@ -54,7 +55,11 @@ Correcting that penetration we now have a ball moving to the right in the bottom
 <path marker-end="url(#arrow)" fill="none" stroke="#000" stroke-width="0.5" d="M 45,0.5 l 5,2.75" opacity="0.25"/>
 </svg>
 
-Here gravity and the ground fully cancel each other out, so next step only momenum moves the ball, again into the ground which we correct
+At the bottom of the vally the ground is level, so gravity and the pressure from the ground fully cancel each other out.
+Because of this, in the next time step only momenum moves the ball:
+horizontally to the middle of the slope rising out of the valley,
+and again into the ground because momentum is not yet pointing up the side of the valley.
+We correct that incorrect vertical offset.
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -15 150 25">
 <defs>
@@ -66,12 +71,15 @@ Here gravity and the ground fully cancel each other out, so next step only momen
 <path marker-end="url(#arrow)" fill="none" stroke="#000" stroke-width="0.5" d="M 55,-5 l 5,-2.75" opacity="0.25"/>
 </svg>
 
-From here gravity will pull it back down, oscillating back and forth across the valley until friction stops it.
+The ball is now on the other side of the valley, with momenum rolling it up the hill.
+Gavity pulling it down will be countered by the ground pushing it up and to the left, cancelling out the momenum.
+Later, gravity will pull it back down the valley, oscillating back and forth across the valley until friction stops it.
 
 ## Bad time step
 
-Applying that acceleration and the resulting velocity with an Euler time step
-puts the ball inside the ground
+Applying that acceleration and the resulting velocity with a Euler time step
+large enough to move the ball all the way to the left slope of the next valley over
+also puts the ball inside the ground because the straight velocity does not follow the curved shape of the valley.
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -10 150 75">
 <defs>
@@ -83,7 +91,7 @@ puts the ball inside the ground
 <path marker-end="url(#arrow)" fill="none" stroke="#000" stroke-width="0.5" d="M 95,55 l 5,5" opacity="0.25"/>
 </svg>
 
-Correcting that penetration we now have a ball moving to the right and, because of the large time step, having jumped over to the next hill.
+Correcting that penetration we now have a ball moving to the right and, because of the large time step, having jumped over to the next hill and sitting on another slope of the same direction as the first..
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -15 150 75">
 <defs>
