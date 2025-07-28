@@ -37,9 +37,9 @@ See the [MPs page](mp/) for more.
 
 | Week | Content | Core MPs | Elective MPs | Quiz |
 |:-----|:--------|:---------|--------------|------|
-| Aug 25–31     | [Preliminaries](#prelim)                         | [WebGL2 warmup](mp/warmup-webgl2.html)   | [Q01](https://us.prairielearn.com/pl/course_instance/182443/assessment/2546495) |
-| Sep 01–07     | [DDA](#dda)                                      | [AnyLang warmup](mp/warmup-anylang.html) | [Q02](https://us.prairielearn.com/pl/course_instance/182443/assessment/2546833) |
-| Sep 08–14     | [Depth](#depth) and [related concepts](#rastetc) | [Rasterizer](mp/rasterizer.html)         | [Q03](https://us.prairielearn.com/pl/course_instance/182443/assessment/2547951) |
+| Aug 25–31     | [Preliminaries](#prelim)                         | [WebGL2 warmup](mp/warmup-webgl2.html)   | | [Q01](https://us.prairielearn.com/pl/course_instance/182443/assessment/2546495) |
+| Sep 01–07     | [DDA](#dda)                                      | [AnyLang warmup](mp/warmup-anylang.html) | | [Q02](https://us.prairielearn.com/pl/course_instance/182443/assessment/2546833) |
+| Sep 08–14     | [Depth](#depth) and [related concepts](#rastetc) | [Rasterizer](mp/rasterizer.html)         | | [Q03](https://us.prairielearn.com/pl/course_instance/182443/assessment/2547951) |
 | Sep 15–21     | [Javascript](#js)                                | | Rasterizer electives                   | [Q04](https://us.prairielearn.com/pl/course_instance/182443/assessment/2553128) |
 | Sep 22–28     | [WebGL2](#webgl)                                 | | Psychedelic                            | [Q05](https://us.prairielearn.com/pl/course_instance/182443/assessment/2553689) |
 | Sep 29–Oct 05 | [3D Math](#math)                                 | [Logo](mp/logo.html) | GPU jitter, CPU jitter | [Q06](https://us.prairielearn.com/pl/course_instance/182443/assessment/2554349) |
@@ -47,9 +47,9 @@ See the [MPs page](mp/) for more.
 | Oct 13–19     | [Fractals](#fract)                               | [Terrain](mp/terrain.html) | Cliffs, Weathering, Height map, Parametric | [Q08](https://us.prairielearn.com/pl/course_instance/182443/assessment/2564526) |
 | Oct 20–26     | [Animation](#anim) and [Code example](#geomcode) | [Flight](mp/flight.html) |               | [Q09](https://us.prairielearn.com/pl/course_instance/182443/assessment/2564527) |
 | Oct 27–Nov 02 | [Textures](#texture)                             | [Textures](mp/textures.html) | Drive, Fog, OBJ, Subdivision | [Q10](https://us.prairielearn.com/pl/course_instance/182443/assessment/2564546) |
-| Nov 03–09     | [Raytracing](#ray)                               | [Raytracer](mp/raytracer.html) |         | [Q12](https://us.prairielearn.com/pl/course_instance/182443/assessment/2564612) |
-| Nov 10–16     | [Raytracing](#ray)                               | | Raytracer electives                    | [Q13](https://us.prairielearn.com/pl/course_instance/182443/assessment/2565206) |
-| Nov 17–21     | [Dynamics](#dynamics)                            | [Spheres](mp/spheres.html) | Many Spheres, Goop | [Quiz](https://us.prairielearn.com/pl/course_instance/182443/assessment/2565239) |
+| Nov 03–09     | [Raytracing](#ray)                               | [Raytracer](mp/raytracer.html) |         | [Q11](https://us.prairielearn.com/pl/course_instance/182443/assessment/2564612) |
+| Nov 10–16     | [Raytracing](#ray)                               | | Raytracer electives                    | [Q12](https://us.prairielearn.com/pl/course_instance/182443/assessment/2565206) |
+| Nov 17–21     | [Dynamics](#dynamics)                            | [Spheres](mp/spheres.html) | Many Spheres, Goop | [Q13](https://us.prairielearn.com/pl/course_instance/182443/assessment/2565239) |
 | | Fall Break | | | |
 | Dec 01–07     | [Better rasterization](#pretty)                  | |                                        | [Q14](https://us.prairielearn.com/pl/course_instance/182443/assessment/2565241) |
 | Dec 08–10     | Review and finish coding                         | | | |
