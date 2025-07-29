@@ -246,8 +246,8 @@ Office Hours
 :   ---------   -----------------------------------------------------------------------------------
     Schedule    <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=America%2FChicago&mode=WEEK&showCalendars=0&showTabs=1&showPrint=0&showTitle=1&title=CS%20418%20Office%20hours&src=Y19iZTA5MjdlYmRmZGYxZmM1YjZmOWY1M2M5YWVmOGM5YTQwOTY4OWQ1MzUyMTFhNzNlMTc2NDljMmQ3YTg5NTczQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23A79B8E" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
     
-    Location    [Zoom](https://illinois.zoom.us/j/85360858537?pwd=WDGasda1vmfCb2KdUC0jBbk3aMROVk.1)
-                meeting  853 6085 8537  passcode  418
+    Location    [Zoom](https://illinois.zoom.us/j/84809048462?pwd=KxbKMbJBIH04pcD3jgPZ7ZjHqSZLNr.1)
+                meeting 848 0904 8462   passcode 418
     ---------   -----------------------------------------------------------------------------------
 
 # Textbook
