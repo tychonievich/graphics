@@ -297,9 +297,9 @@ import (
 )
 func main() {
     // ...
-    img := image.NewRGBA(image.Rect(0, 0, width, height))
+    img := image.NewNRGBA(image.Rect(0, 0, width, height))
     // ...
-    img.Set(x, y, color.RGBA{red, green, blue, alpha})
+    img.Set(x, y, color.NRGBA{red, green, blue, alpha})
     // ...
     w, err := os.Create(img.filename)
     png.Encode(w, img)
