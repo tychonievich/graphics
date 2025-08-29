@@ -233,7 +233,7 @@ Instructor
     ---------   -------------------------------------------------
 
 Assistants
-:   TBD
+:   Emilia, Jianyuan, You
     
     This is a smaller staff of assistants than I've had in the past.
     As such, there may be fewer help hours than you'd otherwise hope; if you generally use instructor or assistant help in most programming assignments, this course may not be ideal for you this semester.
