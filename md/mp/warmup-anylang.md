@@ -659,7 +659,7 @@ For example, consider this image:
 <div style="display:grid; grid-template-columns: repeat(5, 1fr); width:100%">
 <img style="grid-column-end: span 5; width:100%" class="demo" src="files/comparison.png"/>
 <center>Reference</center><center>Student</center><center>Differing pixels</center><center>Subtraction</center><center>Brighter subtraction</center>
-</center>
+</div>
 <figcaption>An example output image from ImageMagick</figcaption>
 </figure>
 
