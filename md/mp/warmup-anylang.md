@@ -663,6 +663,6 @@ For example, consider this image:
 <figcaption>An example output image from ImageMagick</figcaption>
 </figure>
 
-It is similar to its reference image, but the outline is not the same (a few missing pixels along the left edge, touching in the middle) and there's visible horizontal banding in the color error.
+The student image is similar to its reference image, but the outline is not the same (a few missing pixels along the left edge, touching in the middle) and there's visible horizontal banding in the color error.
 If this input was meant to test shading and overlap, those would result in lost points.
 It it were meant to measure positioning and perspective, they'd not be a concern.
