@@ -658,7 +658,7 @@ For example, consider this image:
 <figure>
 <div style="display:grid; grid-template-columns: repeat(5, 1fr); width:100%">
 <img style="grid-column-start:1; grid-column-end:5;" class="demo" src="files/comparison.png"/>
-<span>Reference</span><span>Student</span><span>Differing pixels</span><span>Subtraction</span><span>Brighter subtraction</span>
+<div>Reference</div><div>Student</div><div>Differing pixels</div><div>Subtraction</div><div>Brighter subtraction</div>
 </div>
 <figcaption>An example output image from ImageMagick</figcaption>
 </figure>
