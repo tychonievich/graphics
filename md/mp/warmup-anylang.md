@@ -655,7 +655,13 @@ convert +append ref.png student.png ae.png rawdiff.png diff.png look_at_this.png
 Note that some tasks are permissive of some differences while others will be more strict.
 For example, consider this image:
 
-<img style="width:100%" class="demo" src="files/comparison.png"/>
+<figure>
+<div style="display:grid; grid-template-columns: repeat(5, 1fr); width:100%">
+<img style="grid-column-start:1; grid-column-end:5;" class="demo" src="files/comparison.png"/>
+<span>Reference</span><span>Student</span><span>Differing pixels</span><span>Subtraction</span><span>Brighter subtraction</span>
+</div>
+<figcaption>An example output image from ImageMagick</figcaption>
+</figure>
 
 It is similar to its reference image, but the outline is not the same (a few missing pixels along the left edge, touching in the middle) and there's visible horizontal banding in the color error.
 If this input was meant to test shading and overlap, those would result in lost points.
