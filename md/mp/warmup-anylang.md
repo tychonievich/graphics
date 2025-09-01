@@ -598,6 +598,12 @@ build:
 run:
 	cargo run $(file)
 ```
+
+Note: some students have seen cargo insert network access into the `cargo run` command,
+but network access is not permitted during `make run` on the testing server.
+`cargo build` will have created an executable in a path like `./target/debug/somename`
+which can replace `cargo run` in the last line;
+see <https://campuswire.com/c/GC178AE4D/feed/29> for how to use that.
 </details>
 
 <details><summary>Typescript Makefile</summary>
