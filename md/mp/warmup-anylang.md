@@ -410,14 +410,14 @@ fn main() {
 The relevant library is `jimp`.
 
 ```typescript
-import Jimp from 'jimp';
+import { Jimp } from 'jimp';
 const run = async () => {
     const image = new Jimp(width, height);
     // ...
     // make rgba a 32-bit integer of the form 0xRRGGBBAA
     image.setPixelColor(rgba, x, y);
     // ...
-    await image.writeAsync(filename);
+    await image.write(filename);
 };
 run().catch(console.error);
 ```
