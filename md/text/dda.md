@@ -332,7 +332,7 @@ Division by $w$ gives $(4,0,2,\mathbf{\frac{1}{3}}, 50, 10, 0)$ and $(2,0,-6,\ma
 
 Interpolation to the midpoint gives $(3,0,-2,\mathbf{\frac{2}{3}}, 25, 20, 75)$.
 
-Divistion of the post-$w$ coordinated by the interpolated $w'$ and inversion of $w'$ gives $(3,0,-2,\mathbf{1.5},37.5,30,112.5)$.
+Division of the post-$w$ coordinated by the interpolated $w'$ and inversion of $w'$ gives $(3,0,-2,\mathbf{1.5},37.5,30,112.5)$.
 :::
 
 When integrated with DDA, this means we
