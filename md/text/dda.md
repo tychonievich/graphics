@@ -308,7 +308,7 @@ all graphics hardware now uses his approach.
 Hyperbolic interpolation assumes that three components of the vector of values at each vertex of a triangle are special.
 $x$ and $y$ are special because they correspond to pixel locations;
 and $w$ is special because in homogeneous coordinates they are used to create frustums and perspective projection.
-It is traditional to also treat $z$ as special because it gives better [depth buffer] precision for up-close objects where errors would be more visible.
+It is traditional to also treat $z$ as special because it gives better [depth buffer](other-rasterization.html#depth-buffer) precision for up-close objects where errors would be more visible.
 
 Suppose we have a supplied vertex coordinate $(x,y,z,w,r,g,b,s,t)$.
 We first perform perspective projection in $x$ and $y$ by dividing by $w$;
