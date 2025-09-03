@@ -721,9 +721,9 @@ For triangles that small, most of the work done by the GPU's built-in rasterizer
 the three-part deferred pipeline further removes the need for some of the GPU's work.
 For example, the following are sometimes implemented and not needed by pixel-sized triangles:
 
-- [Bresenham, like DDA](dda.html#bresenham-current) performs some per-triangle work in order to make the per-fragment work as low as possible. When a triangle has only a few fragments, this is not the most optimal decision.
+- [Bresenham, like DDA](dda.html#bresenham-hardware) performs some per-triangle work in order to make the per-fragment work as low as possible. When a triangle has only a few fragments, this is not the most optimal decision.
 
-- [Hyperbolic interpolation](dda.html#hyperbolic-current) is unnecessary because the difference between linear and hyperbolic interpolation is only visible when triangle $w$ values differ by a significant ratio, which they don't for pixel-scale triangles.
+- [Hyperbolic interpolation](dda.html#hyperbolic-more-accurate) is unnecessary because the difference between linear and hyperbolic interpolation is only visible when triangle $w$ values differ by a significant ratio, which they don't for pixel-scale triangles.
 
 - [Frustum clipping](clipping.html) is important for large triangles, but pixel clipping is much faster if the triangles only have a few off-screen pixels.
 
