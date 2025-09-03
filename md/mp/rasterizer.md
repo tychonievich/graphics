@@ -41,7 +41,7 @@ In particular,
 3. Implement the DDA algorithm, and the scanline algorithm which consists of repeated invocations of DDA.
 	These algorithms are defined down to the pixel in almost all contexts,
 	and should match [the provided input files and their outputs](#test-files) very closely.
-	Almost all successful submissions follow [our DDA pseudocode and scanline diagram](../text/dda.html#dda-obsolete) closely.
+	Almost all successful submissions follow [our DDA pseudocode and scanline diagram](../text/dda.html#dda-software) closely.
 
 4. Implement division by $w$ and viewport transformations.
 	See our [notes on algorithms](#algorithm) for tips on doing this well.

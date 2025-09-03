@@ -269,7 +269,7 @@ Jack Elton Bresenham derived this algorithm not as a form of DDA, but rather by 
 and also showed how it could draw other polynomial curves such as circles.
 The polynomial generalizations are suitable for hardware implementation, but are not commonly implemented in hardware today.
 
-# Linear (Obsolete)
+# Linear (Simpler)
 
 A naive implementation of DDA or Bresenham performs linear interpolation of values across a line or triangle. That means in particular that if one end of a line is at $x=0$ and has a red value of $r=0$ and the other end is at $x=100$ and has $r=1$ then at $x=50$ the interpolated $r$ will be $0.5$.
 
@@ -300,7 +300,7 @@ On the right is a rectangle seen in perspective, divided at equally-spaced point
 If we use linear interpolation in 2D screen space, everything looking 2D and flat.
 This can be fixed by interpolating in hyperbolic coordinates instead.
 
-# Hyperbolic (Current)
+# Hyperbolic (More accurate)
 
 In 1992 Jim Blinn wrote [a paper](https://doi.org/10.1109/MCG.1992.10028) explaining how interpolation could be made perspective-correct using something called **hyperbolic interpolation**;
 all graphics hardware now uses his approach.
