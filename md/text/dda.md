@@ -228,7 +228,7 @@ Discussion
     We'll use this order to consider the triangle in two parts:
     the pixels that lie above the middle point
     and thus between the top-to-middle edge and the top-to-bottom edge;
-    and those that lie below it the middle point.
+    and those that lie below it the middle point
     and thus between the middle-to-bottom edge and the top-to-bottom edge.
     
     Because the top-to-bottom edge is needed for both parts, we set up DDA for that edge (4).
