@@ -157,7 +157,7 @@ Smoke should partially occlude sight of what is behind it.
 If the smoke is purely black, that can be accomplished by using subtractive blending (the counterpart of additive blending mentioned for glowing), but for more reflective smoke that is not sufficient.
 Instead, we'll need the following two parts.
 
-1. Use [over-operator blending](fixed-functionality.html#blending).
+1. Use [over-operator blending](other-rasterization.html#blending).
 
 2. Because over-operator blending is order-dependent,
     sort the particles by distance from the viewer before rendering.

@@ -25,7 +25,7 @@ This use dates back at almost to the very beginning of computer graphics^[<https
 
 # Decals
 
-When the texture contains an alpha channel, it can be composited on top of another color using [the over operator](fixed-functionality.html#blending).
+When the texture contains an alpha channel, it can be composited on top of another color using [the over operator](other-rasterization.html#blending).
 The color underneath can be fixed for the model, interpolated between vertices, or looked up in another texture.
 Regardless of how the underlying color is selected, alpha-blended texture colors are commonly called "decals".
 Decals also are often smaller than a full-object texture
