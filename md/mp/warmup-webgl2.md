@@ -21,13 +21,7 @@ You will submit four files:
 You may also submit `.css` files if you wish.
 Do not include spaces in file names as the submission server does not process them well.
 
-If you need a specific directory structure, upload a `.zip` or `.tar` that contains those files.
-The logic for handling submissions is
-
-a. If you submitted a `zip` or `tar`, we extract it
-    i. While it contains exactly one directory and no `.html` files, we remove the outer directory
-a. If there's exactly one `.html` file, we use that
-a. Otherwise, report an upload format error
+If you need a specific directory structure, upload a `.zip` that contains those files.
 
 Before submitting, you should verify that you can run your code on your development machine.
 You'll likely need to [run a local server to bypass CORS limitations](../text/cors.html) to get that to work.

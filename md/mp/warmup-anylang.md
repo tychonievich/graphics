@@ -36,16 +36,6 @@ You do *not* need to submit the example input or output files: just your code an
 If all of your files are in the same directory, you can submit them as-is (but must submit all of them in one go; piecemeal uploads will not work).
 
 If you need a specific directory structure, upload a `.zip` that contains those files.
-The logic for handling submissions is
-
-a. If you submitted a `Makefile` (and other files) directly, we use that
-a. Otherwise if you submitted a tarball or zip archive, we extract that and
-    i. If extracting it provides a `Makefile`, we use that
-    i. Otherwise if extracting it created exactly one directory, we enter that and
-        1. If there's a `Makefile` in that directory, we use that
-        1. Otherwise, report an upload format error
-    i. Otherwise, report an upload format error
-a. Otherwise, report an upload format error
 
 The input files your code will read are ASCII text files;
 after processing an input file, your code will produce one or more RGBA PNG files.
