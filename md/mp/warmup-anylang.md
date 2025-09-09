@@ -425,6 +425,8 @@ Zig is still in beta and is not recommended for those who are not interested in 
 In earlier semesters we've also had students use D, Kotlin, Lua, and Scala.
 In principle I am open to any language I can get to work on the testing server; just let me know what you'd like.
 
+We generally only support stable releases of languages that were available before the semester began.
+If you wish to use an unstable pre-release language, contact us to find out which snapshot of the language is available.
 
 ## Makefile
 
