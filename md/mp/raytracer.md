@@ -68,7 +68,7 @@ and getting 0 electives here is fine if you do extra electives elsewhere.
 |2 | antialias	|					|`aa`| ray-aa.txt |
 |1 | focus			|antialias|`dof`| ray-dof.txt |
 |3 | global			|antialias, triangle|`gi` | ray-gi.txt |
-|3 | BVH				|	suns    | |render ray-many.txt in under 1 second on our testing server (a 7GHz AMD processor) by using a [bounding volume hierarchy](../text/bvh.html), a fast-to-run programming language, and general code optimization |
+|3 | BVH				|	suns    | |render ray-many.txt in under 5 seconds on our testing server (a 2.4GHz Intel Xeon processor with two cores allocated to testing) by using a [bounding volume hierarchy](../text/bvh.html), a fast-to-run programming language, and general code optimization |
 
 It is tedious to grade output files for inputs you haven't implemented.
 When you upload, you will be asked to select which electives (if any) you've implemented and we should grade.
