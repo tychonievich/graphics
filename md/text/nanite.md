@@ -154,10 +154,10 @@ the borders of that level-2 cluster will still be the borders of the level-1 and
 The more steps we do, the more the clusters will be dominated by their super-dense borders.
 
 <figure style="width:100%">
-<img src="../files/tree-0.svg" style="width: 45%"/>
-<img src="../files/tree-1.svg" style="width: 45%"/>
-<img src="../files/tree-2.svg" style="width: 45%"/>
-<img src="../files/tree-3.svg" style="width: 45%"/>
+<img src="../files/tree-0.svg" style="width: 45%" alt="16 clusters"/>
+<img src="../files/tree-1.svg" style="width: 45%" alt="8 clusters"/>
+<img src="../files/tree-2.svg" style="width: 45%" alt="4 clusters"/>
+<img src="../files/tree-3.svg" style="width: 45%" alt="2 clusters"/>
 <figcaption>Naïve recursive cluster-based decimation.
 Each figure merges two clusters from the previous figure
 and decimates them to half as many triangles.
@@ -199,10 +199,10 @@ Because graph partitions are NP-hard^[General graph partitions are NP-hard, but 
 Unreal 5's release of Nanite performs the graph partition computation using [a third-party open-source library](http://glaros.dtc.umn.edu/gkhome/metis/metis/overview).
 
 <figure style="width:100%">
-<img src="../files/metis-0.svg" style="width: 45%"/>
-<img src="../files/metis-1.svg" style="width: 45%"/>
-<img src="../files/metis-2.svg" style="width: 45%"/>
-<img src="../files/metis-3.svg" style="width: 45%"/>
+<img src="../files/metis-0.svg" style="width: 45%" alt="16 clusters"/>
+<img src="../files/metis-1.svg" style="width: 45%" alt="8 clusters"/>
+<img src="../files/metis-2.svg" style="width: 45%" alt="4 clusters"/>
+<img src="../files/metis-3.svg" style="width: 45%" alt="2 clusters"/>
 <figcaption>Group-and-split-based decimation.
 Each figure merges four clusters from the previous figure
 and decimates them to half as many triangles,
