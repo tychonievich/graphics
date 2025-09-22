@@ -71,7 +71,7 @@ div.up { margin: 1em 0; }
 
 .header-section-number, .toc-section-number {
   user-select: none;
-  opacity: 0.5;
+  opacity: 0.75;
 }
 .header-section-number:after , .toc-section-number:after { content: ". "; }
 
