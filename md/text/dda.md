@@ -26,8 +26,12 @@ As both are similar and you're likely more familiar with working in real numbers
 [^abut]:
     Because abutting triangles are often used to represent more complicated shapes,
     special care is taken to insure abutting triangles draw each pixel exactly once.
-    In particular, if an edge passes through an integer coordinate point $(x,y)$,
-    the point is considered "inside" the triangle if either $(x+\epsilon,y)$ is inside and not on an edge or if $(x+\epsilon,y)$ is inside on an edge and $(x+\epsilon,y+\epsilon)$ is inside and not on an edge, for infinitesimally small positive $\epsilon$.
+    In particular, a vertex has an integer coordinate point $(x,y)$
+    or if an edge passes through an integer coordinate point $(x,y)$,
+    exactly one of the triangles sharing that vertex or edge should draw that pixel.
+    
+    The rule we use is an on-edge or on-vertex pixel is owned by the triangle that extends a non-zero distances to the right of that pixel;
+    if directly to the right is the edge between two triangles, we use the one below the edge.
     
     In the DDA algorithm, this abutment-handling rule
     informs the $<$ (instead of $\le$) condition of the loop,
