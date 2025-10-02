@@ -123,7 +123,7 @@ A recommended code organization is
 
 ## Near-resting-energy initialization
 
-The initial separation of particles matters hugely in the resulting simulation because SPH is trying to simulation nearly-incompressible fluids; put them too close together and they'll explode.
+The initial separation of particles matters hugely in the resulting simulation because SPH is trying to simulate nearly-incompressible fluids; put them too close together and they'll explode.
 Additionally, if they are too perfectly aligned they have difficulty entering a stable fluid arrangement.
 
 Use the following method to arrange particles in a well-spaced near-grid on the left side of the screen:
@@ -143,7 +143,7 @@ for(let s of spheres) {
 
 ## Walls, grid, and input
 
-Use an elasticity of 1 for the walls: fluid does not lose energy when colliding with an rigid obstacle.
+Use an elasticity of 1 for the walls: fluid does not lose energy when colliding with a rigid obstacle.
 
 Use the same kind of grid-based optimization in picking which particles interact as you did in the Many Spheres MP.
 Use $2h$ as the grid cell size.
@@ -184,7 +184,7 @@ and need to change the scalars in the kernels to their 3D forms
 but other than that it should work.
 
 We didn't do that because you'll need *many* more particles;
-the quiality of the fluid behavior is proportional to the depth of particles;
+the quality of the fluid behavior is proportional to the depth of particles;
 thus the visual quality we get with $n$ particles in 2D takes $n^{3/2}$ in 3D:
 8000 instead of 400 for a basic splash,
 30,000 instead of 1000 for elementary waves, and so on.

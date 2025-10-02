@@ -102,7 +102,7 @@ When the button is clicked,
     We will check that it has exactly `gridsize*gridsize` vertices
     and `(gridsize-1)*(gridsize-1)*2` triangles.
     
-    Your code should wok for any integer `gridsize` between 2 and 255, inclusive.
+    Your code should work for any integer `gridsize` between 2 and 255, inclusive.
     
     <div class="note">
     Most students find it easier to make the grid occupy the same range of $x$ values regardless of the `gridsize`,
@@ -113,7 +113,7 @@ When the button is clicked,
     Larger `gridsize` should result in higher-resolution terrain,
     but not otherwise change the visual appearance;
     for example, the terrain should occupy the same part of the field of view,
-    have the same ratio of height to width, etc,
+    have the same ratio of height to width, etc.,
     at all `gridsize`s.
 
 2. Displace the vertices in the grid with `faults` faults.
@@ -121,7 +121,7 @@ When the button is clicked,
     For 0 faults, the result should be perfectly flat.
     For more faults it should approach a fractal bumpy terrain.
     
-    Your code should wok for any non-negative integer `faults`; there is no upper limit to what we might provide.
+    Your code should work for any non-negative integer `faults`; there is no upper limit to what we might provide.
     
     Faults should be distributed uniformly on average,
     with no bias towards particular fault directions
@@ -180,7 +180,7 @@ In all cases we could [change between view and world coordinates](../text/lighti
 The monkey example used view coordinates, but could use world coordinates instead;
 the way I described the terrain sounds like world coordinates, but could be transformed into view coordinates instead.
 Which one you pick is up to you, but you must be consistent:
-if the vector to the eye is in view coordinates, the normal vector and and vector to the light must also be in 
+if the vector to the eye is in view coordinates, the normal vector and any vector to the light must also be in 
 
 </details>
 

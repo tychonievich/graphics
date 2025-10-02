@@ -2,7 +2,7 @@
 title: "GPU Jitter MP"
 ...
 
-In this MP you will write a simple vertex shader that moves each vertex of a logo independantly.
+In this MP you will write a simple vertex shader that moves each vertex of a logo independently.
 
 This MP is elective, with no code components.
 It assumes you have already completed the [Logo MP](logo.html).

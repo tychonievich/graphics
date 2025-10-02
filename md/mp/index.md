@@ -218,7 +218,7 @@ build:
 	 
 ```
 
-There's no dependencies and no commands, so running `make build` does nothing.
+There are no dependencies and no commands, so running `make build` does nothing.
 This is common for interpreted languages like Python.
 :::
 
@@ -244,7 +244,7 @@ We will impose a variety of limitations on these MPs beyond what the WebGL2 api 
 - Various "do it this way" rules for things WebGL2 lets you do several ways.
 
   These serve two purposes.
-  First, they help protect you from practices that we've notices tend to work at first but then lead to tricky-to-diagnose errors later on.
+  First, they help protect you from practices that we've noticed tend to work at first but then lead to tricky-to-diagnose errors later on.
   Second, they help the course staff understand your code.
   
   We have a [separate page describing the specific rules](../text/dialect.html)

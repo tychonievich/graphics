@@ -39,7 +39,7 @@ This MP assumes you used the nice approach to flying and have the camera positio
 ## Drive, not fly
 
 The camera should be kept a fixed height above the terrain,
-close enough that nearby  triangles take up a significant part of the field of view.
+close enough that nearby triangles take up a significant part of the field of view.
 It should also translate slowly enough that it takes several frames to move from one vertex of the terrain to another.
 
 The recommend approach to this is to do the following every frame:

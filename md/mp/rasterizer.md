@@ -83,7 +83,7 @@ When you upload, you will be asked to select which electives (if any) you've imp
 
 # What you submit
 
-For this MP you submit one program, in any language of your choosing, that implements all of the core and any elective functionality you choose.
+For this MP you submit one program, in any language of your choosing, that implements all the core and any elective functionality you choose.
 The program will be executed as follows:
 
 ```sh
@@ -108,7 +108,7 @@ All test input files, reference output files, and supporting files can be downlo
 | [rast-gray.txt](files/rast-gray.txt) | [<img class="demo big" src="files/rast-gray.png"/>](files/rast-gray.png) | Comments inside input file give intermediate computation results. |
 | [rast-smallgap.txt](files/rast-smallgap.txt) | [<img class="demo big" src="files/rast-smallgap.png"/>](files/rast-smallgap.png) | Checks especially for boundary via the gap between triangles and the initial offsets via the lack of horizontal bands in the color of the left triangle. |
 | [rast-smoothcolor.txt](files/rast-smoothcolor.txt) | [<img class="demo big" src="files/rast-smoothcolor.png"/>](files/rast-smoothcolor.png) | Various interpolation errors can be detected because in this image they'll create a color difference on the front triangle. |
-| [rast-checkers.txt](files/rast-checkers.txt) | [<img class="demo big" src="files/rast-checkers.png"/>](files/rast-checkers.png) | More than a hundred adjacent 1-pixel-wide triangles to test alignment. Note especially the white row on the top.<br/>Some pixels DDA generates will be off-screen. You can simply ignore (not draw) those pixels.<br/>You may wish to try this with a higher-res output (up the `png` size several fold on the first line) to see how triangles make this image. |
+| [rast-checkers.txt](files/rast-checkers.txt) | [<img class="demo big" src="files/rast-checkers.png"/>](files/rast-checkers.png) | More than a hundred adjacent 1-pixel-wide triangles to test alignment. Note especially the white row on the top.<br/>Some pixels DDA generates will be off-screen. You can simply ignore (not draw) those pixels.<br/>You may wish to try this with a higher-res output (up the `png` size severalfold on the first line) to see how triangles make this image. |
 
 
 ## Elective but regularly used by WebGL2 programmers
@@ -202,7 +202,7 @@ but you're writing code to run on the CPU with full floating-point support so we
 We also don't recommend adding any of the hardware-oriented optimizations.
 
 DDA works on vectors.
-You should definitely code it with vectors, probably with long vectors including all of the attribute values at a point together in one (i.e. $(x,y,z,w,r,g,b,a,s,t)$ if you implement all the elective parts).
+You should definitely code it with vectors, probably with long vectors including all the attribute values at a point together in one (i.e. $(x,y,z,w,r,g,b,a,s,t)$ if you implement all the elective parts).
 The only non-vector operations are:
 
 - Viewport transformation does different things for $x$ and $y$
@@ -284,7 +284,7 @@ and rendering based on the current state for each draw command.
 
 `fsaa` *level*
 : - enables full-screen anti-aliasing, also called multisampling
-	- *level* is a small positive integers (between 1 and 8)
+	- *level* is a small positive integer (between 1 and 8)
 	- implement by rendering in a framebuffer and depth buffer with *level*×*level* subpixels per final PNG pixel
 	
 	:::note
@@ -352,7 +352,7 @@ and rendering based on the current state for each draw command.
 	</details>
 
 `uniformMatrix` *n0* *n1* *n2* ... *n14* *n15*
-:	- When drawing, multiply the xyzw coordiantes by the following matrix before other operations:
+:	- When drawing, multiply the xyzw coordinates by the following matrix before other operations:
 		$$\begin{bmatrix}n_0&n_4&n_8&n_{12}\\n_1&n_5&n_9&n_{13}\\n_2&n_6&n_{10}&n_{14}\\n_3&n_7&n_{11}&n_{15}\end{bmatrix} \begin{bmatrix}x\\y\\z\\w\end{bmatrix}$$
 	
 	<details class="note"><summary>similar to the `gl.uniformMatrix4fv(m, false, new Gloat32Array([n0, n0, ... n14, n15])`{.js} in WebGL2 where the vertex shader includes:</summary>

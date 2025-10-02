@@ -75,7 +75,7 @@ When you upload, you will be asked to select which electives (if any) you've imp
 
 # What you submit
 
-For this MP you submit one program, in any language of your choosing, that implements all of the core and any elective functionality you choose.
+For this MP you submit one program, in any language of your choosing, that implements all the core and any elective functionality you choose.
 The program will be executed as follows:
 
 ```sh
@@ -282,7 +282,7 @@ No drawing happens until after the entire file is read.
 	:::
 
 `dof` *focus* *lens*
-:	- apply depth-of-field using a lens of radius *lens* and a focual depth of *focus*
+:	- apply depth-of-field using a lens of radius *lens* and a focal depth of *focus*
 	- this is done by randomly perturbing each primary ray's origin and direction
 	- new origin should be a random location on a disk with radius *lens* and center `eye` which is perpendicular to the forward vector $\vec f$
 	- new direction should be picked such that $\mathbf{o}_\text{old} + t \vec d_\text{old} = \mathbf{o}_\text{new} + t \vec d_\text{new}$ where $t$ is the focal depth
@@ -307,7 +307,7 @@ No drawing happens until after the entire file is read.
 `gi` *d*
 :	- render the scene with global illumination with depth *d*
 	- when lighting any point, include as an additional light the illuminated color of a random ray shot from that point
-	- secondary rays can shoot more secondary rays, with a maximum depth *d*; this is tracked separatel from, but similarly to, the reflection/refection depth from the `bounces` keyword
+	- secondary rays can shoot more secondary rays, with a maximum depth *d*; this is tracked separately from, but similarly to, the reflection/refection depth from the `bounces` keyword
 	- distribute the random rays to reflect Lambert’s law by picking the ray direction to pass through a randomly selected point inside a sphere that is tangent to the surface at the ray's origin
 
 
@@ -409,7 +409,7 @@ No drawing happens until after the entire file is read.
 	- store this in a list separate from other geometry; it will be index by later `tri`
 
 `tri` $i_1$ $i_2$ $i_3$
-:	- defines a triangle connecting three vertice from previous `xyz` commands
+:	- defines a triangle connecting three vertices from previous `xyz` commands
 	- indices are 1-based; negative indices count from the back of the current vertex list
 	- capture any current state as part of the triangle's material
 

@@ -53,7 +53,7 @@ We also provide a [guide to reading OBJ files](../text/obj.html).
 
 Once loaded, you should display the model with the following criteria:
 
-- It should be lit with both diffuse and specular illumination, meaning you'll need to generate surface normals if none are provide.
+- It should be lit with both diffuse and specular illumination, meaning you'll need to generate surface normals if none are provided.
 - It should be centered and scaled to fit on the screen and not be too small on the screen.
 - It should be rotating under a fixed light source. This is most easily done by rotating the normals in the vertex shader.
 - If there are no vertex colors, it should be a light gray color
@@ -69,7 +69,7 @@ We provide two example files for this:
 - [`bevel.obj`](files/bevel.obj) has surface normals that are not the ones you'd compute
 - [`suzanne.obj`](files/suzanne.obj) has texture coordinates and normals
 
-Additionally, you should allow a the user to provide an image to use as a texture map.
+Additionally, you should allow the user to provide an image to use as a texture map.
 If an image is provided (i.e. isn't the empty string) you should use a vertex shader that uses the texture to pick the diffuse color of the model.
 If there are no texture coordinates the shader will default to using the top-left pixel as the object's color -- this will probably happen automatically, no special effort needed by you.
 If no image is provided, use the non-texture shader like usual.

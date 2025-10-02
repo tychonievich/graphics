@@ -94,7 +94,7 @@ See [the 3D example code](../code/3d-webgl/) for examples of how to do this (not
         - orbiting Mars only a little faster than Mars spins
         - always presenting the same side of itself to Mars
     
-    Handle all of the motion described above
+    Handle the motion described above
     by computing a model matrix for each body each frame in JavaScript
     and sending that single model matrix (possibly combined with a view and/or projection marix) to the GPU as a uniform.
     

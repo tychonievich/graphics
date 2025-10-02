@@ -89,7 +89,7 @@ Thus, this second approach can implement the flight required of this task.
 
 This is easy, but not very nice because it looses track of the fact that humans always want "down" to point in roughly the same direction.
 With this approach that is not done;
-if look down, then left, then up, then right
+if we look down, then left, then up, then right
 you can end up pointing in the same direction as before
 but with the camera no longer right-side-up.
 

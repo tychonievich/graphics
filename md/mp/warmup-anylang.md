@@ -148,7 +148,7 @@ All test input files, with their reference output files, can be downloaded [as a
 This warmup is not graded by a human.
 Rather, each time you submit your code to [submission site](https://cs418.cs.illinois.edu/submit/)
 it will run automated tests and add information about their outcomes to that site.
-There will be a delay of up to an hours before that information is visible.
+There will be a delay^[usually short, unless many people submit code at the same time and the server has to work through each one individually] before that information is visible.
 
 Feel free to re-submit until you get positive status results.
 Please refer questions to the campus forum or office hours.
@@ -175,8 +175,8 @@ I don't claim they are optimal, but they did work.
 
 There are many image libraries for C, but students have had issues with most of the most popular ones.
 We recommend using a light-weight wrapper around `libpng`:
-`libpng` is by far the best-tested and most-rubust library but somewhat esoteric to use,
-so we've created a 100-line wrapper [`uselibpng.c`](../files/uselibpng.c) and its header and documentation file  [`uselibpng.h`](../files/uselibpng.h) to give easy access to the most common use-cases.
+`libpng` is by far the best-tested and most robust library but somewhat esoteric to use,
+so we've created a 100-line wrapper [`uselibpng.c`](../files/uselibpng.c) and its header and documentation file [`uselibpng.h`](../files/uselibpng.h) to give easy access to the most common use-cases.
 
 ```c
 #include "uselibpng.h"
@@ -208,7 +208,7 @@ You may also use a different library (miniz and LodePNG have been used by past s
 There are many image libraries for C++, but students have had issues with most of the most popular ones.
 We recommend using a light-weight wrapper around `libpng`:
 `libpng` is by far the best-tested and most-rubust library but somewhat esoteric to use,
-so we've created a 100-line wrapper [`uselibpng.c`](../files/uselibpng.c) and its header, documentation, and C++ wrapper file  [`uselibpng.h`](../files/uselibpng.h) to give easy access to the most common use-cases.
+so we've created a 100-line wrapper [`uselibpng.c`](../files/uselibpng.c) and its header, documentation, and C++ wrapper file [`uselibpng.h`](../files/uselibpng.h) to give easy access to the most common use-cases.
 
 ```cpp
 #include "uselibpng.h"
@@ -663,4 +663,4 @@ For example, consider this image:
 
 The student image is similar to its reference image, but the outline is not the same (a few missing pixels along the left edge, touching in the middle) and there's visible horizontal banding in the color error.
 If this input was meant to test shading and overlap, those would result in lost points.
-It it were meant to measure positioning and perspective, they'd not be a concern.
+If it were meant to measure positioning and perspective, they'd not be a concern.

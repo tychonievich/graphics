@@ -5,7 +5,7 @@ title: "Subdivision Surface MP"
 In this MP you will
 
 1. Import an OBJ (see [the OBJ MP](obj.html))
-2. Render it with flat shading based on polygon geometery
+2. Render it with flat shading based on polygon geometry
 3. Apply Catmull-Clark subdivision to the imported mesh
 
 This MP is elective, with no core components.

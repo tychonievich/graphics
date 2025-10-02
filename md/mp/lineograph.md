@@ -32,7 +32,7 @@ as that will provide you with a resizing canvas, 3D view, and octahedron geometr
 Make a 3D scene with a depth buffer, but never clear anything.
 This means at least
 
-- Pass `{preserveDrawingBuffer:true}`{.js} as the second argument of `getContext` to tell the browser not to clear the scene  for you. You're welcome to add other configuration options to that object too.
+- Pass `{preserveDrawingBuffer:true}`{.js} as the second argument of `getContext` to tell the browser not to clear the scene for you. You're welcome to add other configuration options to that object too.
 
 - Enable `gl.DEPTH_TEST`.
 
@@ -75,7 +75,7 @@ as the distance to move the octahedron in the given direction.
 That will keep the motion smooth even if the browser skips frames, etc.
 -->
 
-Motion should be implemented by storing a gobal position
+Motion should be implemented by storing a global position
 and using it each frame to generate a translation matrix.
 
 

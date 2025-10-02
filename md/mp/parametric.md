@@ -116,5 +116,5 @@ A video of an example result.
 </figcaption>
 </figure>
 
-If your submission only generates spheres, or only toruses, you'll get half the points.
+If your submission only generates spheres, or only tori, you'll get half the points.
 Points will be deducted if you generate more vertices or triangles than the shape being generated requires.
