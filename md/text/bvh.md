@@ -13,10 +13,10 @@ As a pre-processing step, most raytracers will create a BVH for the geometry in 
 The BVH is a tree-like structure
 with scene geometry as the leaf nodes
 and special non-rendered geometry on the internal and root notes.
-Each such non-rendered object is referred to as a "bounding volume" and is designed such that it encloses all of the geometry of its children nodes.
+Each such non-rendered object is referred to as a "bounding volume" and is designed such that it encloses all the geometry of its children nodes.
 
 Given a BVH, raytracing becomes a recursive process checking the bounding volume of a node and only checking its children if the ray intersects the bounding volume.
-Conceptually, that may looks something like the following:
+Conceptually, that may look something like the following:
 
 ```js
 function raytrace(ray, nodeInBVH) {
@@ -83,7 +83,7 @@ Continuing our previous example,
 :::
 
 When bounding volumes do not overlap they often instead have shared AABB faces,
-meaning they can share some of the  computation of AABB intersection tests between AABBs, reducing the overall computation needed to navigate the BVH.
+meaning they can share some of the computation of AABB intersection tests between AABBs, reducing the overall computation needed to navigate the BVH.
 
 ## Cluster or Divide
 

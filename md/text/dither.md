@@ -3,7 +3,7 @@ title: Dithering
 summary: Fooling the eye into thinking we have more colors displayed than we do.
 ...
 
-We have finite number of bits to store color with,
+We have a finite number of bits to store color with,
 but want more color detail in the image.
 Dithering solves this problem
 but ensuring that if we blur the image we'll get more accurate colors.
@@ -11,7 +11,7 @@ There are three classes of ways to do this.
 
 - Stochastic dithering uses randomized rounding.
     
-    If a pixel's red channel is computed as 121.85, dithering will randomly pick wither 121 (15% chance) or 122 (85% chance) as the number to store.
+    If a pixel's red channel is computed as 121.85, dithering will randomly pick either 121 (15% chance) or 122 (85% chance) as the number to store.
 
 - Error diffusion detects the error introduced by quantizing one pixel and distributes it to the neighboring pixels.
     
@@ -22,5 +22,5 @@ There are three classes of ways to do this.
 
 Dithering is used to avoid the eye noticing transitions between the finite set of available colors
 and is implemented automatically by most GPUs.
-For very limited color pallettes dithering can also simulate more colors ar the cost of making the scene look noisy.
+For very limited color pallettes dithering can also simulate more colors at the cost of making the scene look noisy.
 

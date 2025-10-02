@@ -43,7 +43,7 @@ as each time step length approaches zero, the linear solution approaches the cor
 
 This section presents the conjugate gradient method.
 It is generally the fastest class of solvers for the kinds of differential equations we encounter in graphics.
-It's general process runs as follows:
+Its general process runs as follows:
 
 a. Given an initial "solution" of the equation "$A \vec x = \vec b$".
 a. Find the gradient (i.e. direction of maximal change) of the error (i.e. absolute magnitude of "$A \vec x - \vec b$").

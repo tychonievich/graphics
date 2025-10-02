@@ -14,7 +14,7 @@ The first token is an indicator of what kind of line it is.
 
 Number in OBJ are stored in any format most programming languages can handle,
 such as `-2`, `3.45`, or `7.8849e-05`.
-In Javascript, these can be parsed using the built-in `Number` function.
+In JavaScript, these can be parsed using the built-in `Number` function.
 
 ## Line types
 
@@ -151,8 +151,8 @@ It is common to find OBJ where
 
 Other orientations are also possible.
 
-There is no easy way to tell what orientation a given file has.
-Typically it requires a user to look at the data rendered in one orientation and say "that's not right."
+There is no easy way to tell what orientation a given file has
+except by having a user to look at the data rendered in one orientation and say "that's not right."
 
 ## Scaling
 
@@ -168,7 +168,7 @@ and then multiply every point by $t/s$ where $t$ is your desired maximum separat
 
 ## Centering
 
-Vertex positions may be any number, and there is not requirement they be centered around any particular point.
+Vertex positions may be any number, and there is no requirement that they be centered around any particular point.
 It is relatively common to find
 
 - All coordinates positive, putting the model in the first octant

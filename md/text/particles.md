@@ -26,8 +26,8 @@ Fluids
     *Viscous* fluids diffuse internal velocities, settling over time to all parts of the fluid having the same velocity;
     as viscosity increases they act more like rigid bodies.
     *Visco-Elastic* fluids exhibit both viscosity and internal forces that attempt to counter strain; as elasticity increases they act more like soft bodies.
-    *Stress-thinning* fluids have viscosity that decreases as more pressure is applied and include anything spreadable, like paint and mayonnaise.
-    *Stress-thickening* fluids have viscosity the increases as more pressure is applied and include materials like oobleck, silly putty, and gak.
+    *Sheer-thinning* fluids have viscosity that decreases as more pressure is applied and include anything spreadable, like paint and mayonnaise.
+    *Sheer-thickening* fluids have viscosity the increases as more pressure is applied and include materials like oobleck, silly putty, and gak.
 
 This page discusses some topics related to particle effects.
 
@@ -138,7 +138,7 @@ To make fire appear to glow, three considerations are useful.
     We want fire to be able to be occluded by other things,
     but we don't want other things to be occluded by it.
     The easiest way to achieve this is to first render all the non-fire,
-    then diable depth buffer writing but keep depth-buffer checking and render the fire particles.
+    then disable depth buffer writing but keep depth-buffer checking and render the fire particles.
 
     Depth is controlled by three parameters.
     
@@ -163,13 +163,13 @@ Instead, we'll need the following two parts.
     sort the particles by distance from the viewer before rendering.
     Sorting needs to be done on the CPU, not GPU.
     
-    Because the primitives of a single draw call may all be rendered in parallel, it common to render particles one at a time with a separate invocation of `gl.drawElements` or `gl.drawArrays` for each particle.
+    Because the primitives of a single draw call may all be rendered in parallel, it is uncommon to render particles one at a time with a separate invocation of `gl.drawElements` or `gl.drawArrays` for each particle.
     
     It is also possible to sort the particle values in a `gl.DYNAMIC_DRAW` array buffer and render them all at once.
     This approach is defined to work (per the spec, "one primitive must be drawn completely before any subsequent one can affect the framebuffer")
     though anecdotally some older graphics cards may not correctly implement this feature.
 
-Smoke should should also partially shadow both itself and the scene behind it, a topic that is beyond the scope of this page.
+Smoke should also partially shadow both itself and the scene behind it, a topic that is beyond the scope of this page.
 
 ## Particles driving animations
 

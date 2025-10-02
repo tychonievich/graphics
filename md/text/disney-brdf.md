@@ -17,7 +17,7 @@ ignoring many of the parameters.
 # Variables
 
 There are many variables used in the model.
-These can be split into geometric variables
+These can be split into geometric variables 
 and material parameters.
 
 : Geometric variables
@@ -34,14 +34,14 @@ and material parameters.
 |$\theta_d$|`float`|angle between $\vec l$ and $\vec h$ = angle between $\vec v$ and $\vec h$; $\cos(\theta_d) = \vec l \cdot \vec h = \vec v \cdot \vec h$|
 
 Note that we'll generally try to write formulas in terms of the cosines of angles instead of the angles themselves for efficiency.
-Fortunately, many materials naturally have cosines of the angles in their fomulation.
+Fortunately, many materials naturally have cosines of the angles in their formulation.
 
 : Parameters
 
 | Name | GLSL type | Meaning |
 |:-----|-----------|---------|
 |*baseColor*|`vec3`|RGB color; generally should be dark (under 0.5 in all components)|
-|*metalic*|`float`|0 means "use the dielectric BRDF"; 1 means "use the metalic BRDF"; intermediate values for sub-pixel mixing like slighly rusted metal|
+|*metallic*|`float`|0 means "use the dielectric BRDF"; 1 means "use the metallic BRDF"; intermediate values for sub-pixel mixing like slightly rusted metal|
 |*specular*|`float`|artist-friendly measure of shininess if polished; correlated to optical density, with 0.5 being like plastics and other oils and 1 being like glass|
 |*roughness*|`float`|0 for highly polished, 1 for matte and diffuse-looking|
 |*sheen*|`float`|the pale halo seen with peach fuzz and some cloth; should be 0 for most substances|

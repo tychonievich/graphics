@@ -101,7 +101,7 @@ Because the compilation happens in the browser on every page load, compiling wil
 - Compile to a binary format specific to the host hardware
 
 You *cannot* save the result of compilation as a file.
-Instead, compilation returns an opaque Javascript object you can use to refer to the compiled shader within the given browser session only.
+Instead, compilation returns an opaque JavaScript object you can use to refer to the compiled shader within the given browser session only.
 
 Compiling in WebGL is performed four parts:
 
@@ -200,14 +200,14 @@ Compiling and linking are relatively resource-intensive, and are generally done 
 Loading much less expensive and can be done several times every frame if desired.
 
 
-# HTML and Javascript
+# HTML and JavaScript
 
 WebGL is used to render parts of a webpage, to be viewed in a web browser.
 Thus, to use it we need to embed it in a webpage.
 
 Browsers expect web pages to be defined in HTML,
 optionally styled with CSS,
-and to have code written in Javascript.
+and to have code written in JavaScript.
 
 ## HTML
 
@@ -218,7 +218,7 @@ containing (1) a `head` containing a `title` and (2) a `body`.
 WebGL renders into a `canvas` in the `body`,
 which should be given a `width` and `height` (measured in pixels). 
 
-We'll also need a `script` to store Javascript in.
+We'll also need a `script` to store JavaScript in.
 Technically that can go anywhere, but it is traditional to put it in the `head`.
 
 ```html
@@ -227,7 +227,7 @@ Technically that can go anywhere, but it is traditional to put it in the `head`.
 <head>
 <title>Minimal HTML to support WebGL</title>
 <script>
-// to do: add Javascript here
+// to do: add JavaScript here
 </script>
 </head>
 <body>
@@ -248,11 +248,11 @@ but for most WebGL programs you'll need to run a local webserver
 in order to successfully view your WebGL program on your computer.
 :::
 
-## Javascript
+## JavaScript
 
 ### Code structure
 
-Javascript may begin running before your webpage is fully loaded.
+JavaScript may begin running before your webpage is fully loaded.
 In particular, that means that the `canvas` element might not yet exist,
 and thus that we might not be able to do any WebGL processing up front.
 
@@ -278,7 +278,7 @@ Note that the `window.` prefix on an the `gl` assignment makes the `gl` variable
 ### Setup
 
 To `compileAndLinkGLSL` we'll need our shader code as strings;
-there are many ways to do this but one way is to use backtick-delimited strings.
+there are many ways to do this, but one way is to use backtick-delimited strings.
 
 ```js
 function compileAndLinkGLSL() {

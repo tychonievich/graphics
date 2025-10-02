@@ -204,7 +204,7 @@ The idea runs as follows:
 
 1. Store the full image. When texels are covering multiple pixels, use it.
 2. Also store a half-size copy of the image, and a quarter-size copy, and so on down to a one-texel copy.
-3. When a pixel is about big enough to cover 16 texels, use the quater-size copy (because there are $\frac{1^2}{4^2} = \frac{1}{16}$ as many texels in that copy so it gets to roughly one pixel per texel)
+3. When a pixel is about big enough to cover 16 texels, use the quarter-size copy (because there are $\frac{1^2}{4^2} = \frac{1}{16}$ as many texels in that copy so it gets to roughly one pixel per texel)
 3. If a pixel would cover a non-power-of-two number of texels,
     we can either pick the nearest-scale level
     (`gl.NEAREST_MIPMAP_`*y* is either `LINEAR` or `NEAREST`)
@@ -267,7 +267,7 @@ That is a problem best studied in terms of [map projections](https://en.wikipedi
     
     Latitude and longitude textures have much more detail near the poles than near the equator, which is often not a wise use of memory.
 
-- The **Equiareal Circular Projection** is a less-common but less-expensive way to turn turn a point on the surface of a sphere into a 2D coordinate.
+- The **Equiareal Circular Projection** is a less-common but less-expensive way to turn a point on the surface of a sphere into a 2D coordinate.
     In GLSL, we can compute it with a few vector normalizations:
     
     <div class="example">

@@ -59,7 +59,7 @@ However, $q x q^{*}$ will always be a point if $x$ is a point.
 # To rotation matrix
 
 To rotate point $x$ by unit-length quaternion $q$ we use $q x q^{*}$.
-But we generally will want to convert the quaternion to a matrix intead.
+But we generally will want to convert the quaternion to a matrix instead.
 
 The 3×3 rotation matrix of an arbitrary (non-normalized) quaternion can be found using the following three equations:
 $$n = w^2 + x^2 + y^2 + z^2$$
@@ -178,7 +178,7 @@ results in
 - $\langle 0;0,0,0 \rangle$
 - $\langle 0;0,0,4 \rangle$
 
-In general we must check all four options as any three of them may give zero quaternions.
+In general, we must check all four options as any three of them may give zero quaternions.
 Because of the way we constructed these equations,
 it is sufficient to check the four-term sum alone.
 :::

@@ -3,7 +3,7 @@ title: Types of Graphics APIs
 summary: Common API designs; with names for these designs, some common and some invented for the purpose of this text.
 ...
 
-In order to teach a topic, it is necessary to impose structure on it, breaking it into small enough pieces that each can be individually comprehended and ordering them in some kind of linear order. Some fields have agreed on a common decomposition and ordering, while others have not. Computer Graphics is one of the ones that has not, so it falls on me, as an instructor of computer graphics, to either create an decomposition and ordering of my own or find one someone else has created to use. This text is a bit of each.
+In order to teach a topic, it is necessary to impose structure on it, breaking it into small enough pieces that each can be individually comprehended and ordering them in some kind of linear order. Some fields have agreed on a common decomposition and ordering, while others have not. Computer Graphics is one of the ones that has not, so it falls on me, as an instructor of computer graphics, to either create a decomposition and ordering of my own or find one someone else has created to use. This text is a bit of each.
 
 Computer Graphics deals with software that generates visual media, typically either images or animation.
 This is distinct from Computer Vision, which deals with software that generates information from visual media.
@@ -38,7 +38,7 @@ These inherit the linear runtime performance of their underlying canvas.
 Some scene graph systems have their own drawing algorithms instead of using a canvas API;
 by far the most common of these algorithms is raytracing.
 Because they have the full scene data, full-scene algorithms can create visual phenomena that rely on the relative positioning of multiple scene components, such as shadows and reflections.
-Modeling visual interactions between objects means full-scene drawing alorithms have nonlinear runtime performance in the number and size of objects in the scene.
+Modeling visual interactions between objects means full-scene drawing algorithms have nonlinear runtime performance in the number and size of objects in the scene.
 Examples of raytracers include standalone systems like POVRay and LuxRender
 and those integrated with design, editing, and animation software like Maya, Blender, and Houdini.
 
@@ -83,7 +83,7 @@ Because the scope of simulations is so broad, it is hard to generalize in how th
 - They solve a differential equation by making a linear approximation of it using a sparse matrix solver, often a conjugate gradient method.
 - They split the simulation into two parts: the first applies several simple rules independently and the second tries to rectify the errors introduced by that simplistic approach.
 - They pick an approximation that errs on the side of too-simple-looking results because erring on the side of too-complicated-looking-results is visually jarring or numerically unstable.
-- They measure some global property that the science says is conserved but their approximation failed to conserve and adjust it globally to "fix" that.
+- They measure some global property that the science says is conserved, but their approximation failed to conserve and adjust it globally to "fix" that.
 
 # Image-input
 
@@ -94,8 +94,8 @@ Like the other APIs discussed here, image-input APIs produce images, but unlike 
 Increasingly, image-input algorithms are being used in conjunction with canvas and scene graph APIs to create approximations of visual phenomena more quickly than could be done directly.
 In these hybrid approaches, the image-input part is often identified with the qualifier "screen-space".
 
-Screen-space additions to scene rendering APIs can often benefit from more information than could a purely image-input API. Rendering APIs can easily provide screen-space algorithms with per-pixel evaluations of all the information they new about the objects being displayed there: object identifiers, depth, and surface normal, material type, instantaneous velocity, and so on. Some hybrid APIs even run extra rendering passes to provide the screen-space algorithm with information such as object thickness and other properties not immediately visible in a rendered scene.
+Screen-space additions to scene rendering APIs can often benefit from more information than could a purely image-input API. Rendering APIs can easily provide screen-space algorithms with per-pixel evaluations of all the information they knew about the objects being displayed there: object identifiers, depth, and surface normal, material type, instantaneous velocity, and so on. Some hybrid APIs even run extra rendering passes to provide the screen-space algorithm with information such as object thickness and other properties not immediately visible in a rendered scene.
 
 Screen-space additions can allow canvas-based renders to add approximations of full-scene phenomena such as reflections, subsurface scattering, motion blur, and depth-of-field.
-They can de-noise raytracing, allowing better visual quality with fewer rays cast.
+They can denoise raytracing, allowing better visual quality with fewer rays cast.
 And they can add camera- and eye-based phenomena like bloom, lens flare, and spatially-adaptive exposure that are difficult or impossible to correctly simulate during rendering.

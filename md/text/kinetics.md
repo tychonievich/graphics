@@ -129,7 +129,7 @@ and $\Delta t_{i}$ be the time step between $\mathbf{p}_i$ and $\mathbf{p}_{i+1}
     Note that for simple forces like gravity this is just a constant vector addition each frame.
     The cumulative acceleration emerges from the combination of this addition and momentum.
 
-Position based dynamics is simple and versatile, with a similar error accumulation as Euler' method.
+Position based dynamics is simple and versatile, with a similar error accumulation as Euler's method.
 It also has a similar space requirement as Euler's method:
 Euler stores position and velocity per particle,
 PBD stores current and past position instead.

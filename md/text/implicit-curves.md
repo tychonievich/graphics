@@ -140,7 +140,7 @@ Suppose I am given an arbitrary implicit polynomial curve (of known degree) and 
 
 First, we need some point on the edge of the polynomial.
 This might be explicitly derivable (e.g., we can find a point on the edge of a circle by adding its radius in $x$ to its center)
-or might be provided (e.g., we might be asked to draw a curve conencting two points);
+or might be provided (e.g., we might be asked to draw a curve connecting two points);
 if neither of those is the case we'll have to search for a starting point.
 
 Given a point on the border, use finite differences to evaluate a 2×2 square of function values.

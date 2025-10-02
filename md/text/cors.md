@@ -81,9 +81,9 @@ This involves two parts:
 
 # Servers might not share images
 
-Servers can be configured to refuse javascript-based requests to load files.
+Servers can be configured to refuse JavaScript-based requests to load files.
 For example, the images on the <https://illinois.edu> homepage are set up this way;
 if you try to load them as a texture map of the like you'll get a CORS error.
 
 Because this is a configuration setting of the server, you can't directly bypass it.
-Instead you'll have to work around it, e.g. by loading the image in the HTML of the page or copying the image to a directory you control.
+Instead, you'll have to work around it, e.g. by loading the image in the HTML of the page or copying the image to a directory you control.

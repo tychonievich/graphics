@@ -8,7 +8,7 @@ In many areas of computer graphics we find approaches that arose from two differ
 
 # Heuristics
 
-In computer science^[But not in other fields. The word "heuristic" derives from the Greek adjective *heuretikos* "inventive" and Greek noun *heurema* "an invention or discovery*, neither of which suggest its meaning in computing], a **heuristic** is a a method that seems to work but is not backed by theory or proof.
+In computer science^[But not in other fields. The word "heuristic" derives from the Greek adjective *heuretikos* "inventive" and Greek noun *heurema* "an invention or discovery*, neither of which suggest its meaning in computing], a **heuristic** is a method that seems to work but is not backed by theory or proof.
 
 Many computer graphics algorithms are essentially heuristic in nature:
 we notice some visual phenomenon, observe it is somewhat related to something we know how to compute, and then use that computable thing to make pictures.

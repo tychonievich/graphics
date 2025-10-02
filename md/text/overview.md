@@ -22,9 +22,9 @@ and the graphics are handled on another.
 
 </details>
 
-CPUs and their associated memory systems, busses, and peripherals are very efficient at running code involving millions of instructions, most running conditionally in response to some external input or some characteristic of data. When a better system for this kind of work come along, it replaces the current CPU as the next generation of CPU.
+CPUs and their associated memory systems, buses, and peripherals are very efficient at running code involving millions of instructions, most running conditionally in response to some external input or some characteristic of data. When a better system for this kind of work come along, it replaces the current CPU as the next generation of CPU.
 
-GPUs and their associated memory systems are very efficient at running the same few pieces of code millions of times a second with slightly different data each time. They can do this much faster than a CPU can provided that the code runs without and branches and that each iteration is interdependent of other iterations.
+GPUs and their associated memory systems are very efficient at running the same few pieces of code millions of times a second with slightly different data each time. They can do this much faster than a CPU can, provided that the code runs without and branches and that each iteration is interdependent of other iterations.
 
 Almost all interesting work involves some conditional behavior.
 Some of that can be removed via clever coding tricks like masking.
@@ -58,7 +58,7 @@ The result is a pipeline-oriented architecture.
 Data flows through a fixed sequence of hardware pipeline stages.
 Some of these execute arbitrary branch-free code a programmer has provided.
 Some do a single fixed task built into the hardware itself.
-Most do a fixed task in one of fixed set of ways, with the specific way from that set chosen by a the programmer-specified parameter.
+Most do a fixed task in one of fixed set of ways, with the specific way from that set chosen by a programmer-specified parameter.
 
 The end result: there are many different pieces to understand, so many that you'll likely spend months forgetting some and feeling a bit confused.^[I've been programming GPUs for almost 20 years and I still sometimes feel that way, in part because many of the stages today didn't exist 20 years ago.]. There are too many pieces to hold in your mind all at once, so expect to occasionally consult a reference
 
@@ -72,11 +72,11 @@ The end result: there are many different pieces to understand, so many that you'
 APIs to move data from main memory to graphics memory use a state-machine model for efficiency and flexibility, but that also makes them verbose and picky.
 </details>
 
-Main memory and its associated cache hierarchy is designed to to operate well with a CPU.
-The number of memory accesses that arrive at any given moment is small, bounded by the number of cores in the CPU, and the main design goal is low latency: every nanosecond it takes to complete an access is several lost cycles of productivity on the CPU.
+Main memory and its associated cache hierarchy is designed to operate well with a CPU.
+The number of memory accesses that arrive at any given moment is small, bounded by the number of cores in the CPU, and the main design goal is low latency: every nanosecond it takes to complete a memory access is several lost cycles of productivity on the CPU.
 
 Graphics memory has a very different design space.
-GPUs get much of their speed by running the same code on thousands of different input data in parallel, meaning when a the code has a memory access the memory syytem gets thousands of addresses to handle all at the same time.
+GPUs get much of their speed by running the same code on thousands of different input data in parallel, meaning when the code has a memory access the memory system gets thousands of addresses to handle all at the same time.
 Throughput thus becomes a more important part of memory performance,
 and is achieved in part through throughput-oriented memory access hardware
 and in part through carefully controlled layout of data in memory.
@@ -119,7 +119,7 @@ Each fragment has all of the same information as each vertex, but interpolated f
 
 ## Before rasterization
 
-The pipeline stages before the rasterizer convert from the information provided by the CPU---commonly 3D object geometry and positions and 3D viewpoint location and orientation---into the screen-space vertices needed by the radterizer.
+The pipeline stages before the rasterizer convert from the information provided by the CPU---commonly 3D object geometry and positions and 3D viewpoint location and orientation---into the screen-space vertices needed by the rasterizer.
 The most important of these are:
 
 * A user-specified GPU-executed **vertex shader**

@@ -272,7 +272,7 @@ const m4view = (eye, center, up) => m4mul(m4fixAxes(sub(center,eye), up), m4tran
 
 ## Division
 
-Notice that all of the matrices given above have the same last row, $\begin{bmatrix}0&0&0&1\end{bmatrix}$.
+Notice that all the matrices given above have the same last row, $\begin{bmatrix}0&0&0&1\end{bmatrix}$.
 Matrices with that property are called affine matrices, and the transformations they encode are called affine transformations.
 All affine transformations can be represented by a combination of translation, rotation, and scaling.
 
@@ -312,8 +312,8 @@ the impact on surface normal $\vec n$ is (from a graphics perspective) destructi
 We never multiply surface normals (nor other offsets or directions) by a perspective matrix.
 
 We also don't adjust normals to handle display aspect ratios, which are handled by scaling $x$ and $y$.
-Additionally, the simple $z$-to-$w$ rule means we ave a 90° field of view in both $x$ and $y$, which is rarely what we want.
-Because of that, it is common to see a single matrix applied to positions but not normals which has the the form
+Additionally, the simple $z$-to-$w$ rule means we have a 90° field of view in both $x$ and $y$, which is rarely what we want.
+Because of that, it is common to see a single matrix applied to positions but not normals which has the form
 
 $$
 \begin{bmatrix}

@@ -21,7 +21,7 @@ Iterative approaches work as follows:
 2. Tweak the guess to come closer to satisfying the constraints
 3. Repeat until the constraints are close enough to being satisfied
 
-The variation in iterative approaches comes in how the compute the tweak to apply in step 2.
+The variation in iterative approaches comes in how they compute the tweak to apply in step 2.
 There are three common ways to do this:
 
 Gauss-Sidel

@@ -10,7 +10,7 @@ Many basic terrain modeling algorithms employ something called *Perlin noise* to
 
 Realistic terrain generation in modern games require tools that do more than just model the basic underlying terrain...these tools support operations like creation of vegetation and roads and erosion. See [this talk by Ubisoft developer Etienne Carrier](https://www.youtube.com/watch?v=NfizT369g60) if you are interested in seeing the tools technical artists use these days. 
 
-![Example terrain created with Perlin noise and various additional steps afterwards](https://illinois-cs418.github.io/img/perlin1.jpg)
+![Example terrain created with Perlin noise and various additional steps afterward](https://illinois-cs418.github.io/img/perlin1.jpg)
 
 
 # The Faulting Method

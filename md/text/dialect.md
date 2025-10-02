@@ -11,16 +11,16 @@ header-includes:
 
 Over time, graphics APIs have become more flexible and more complicated.
 What was a 10-line program in OpenGL1 might take 500 lines in Vulkan,
-but OpenGL1 was limited to just a few kind s of images
+but OpenGL1 was limited to just a few kinds of images
 while Vulkan can create myriad visual effects and do considerable computation too.
 
 WebGL2 is somewhere in the middle of this spectrum.
 It is designed to render images only, with little to no support for non-graphics computation,
-but within that limitation is has considerable flexibility.
+but within that limitation it has considerable flexibility.
 
 In any sufficiently complicated language, programmers naturally pick a dialect to program in,
 intentionally picking a subset of its options to keep the code readable and maintainable.
-For example, C++ can allocate memory using `new`, `malloc`, `mmap`, `shm_open`, or several other methods
+For example, C++ can allocate memory using `new`, `malloc`, `mmap`, `sbrk`, `shm_open`, or several other methods,
 but it would be quite unusual to try to use more than one or two of these in a single programming project.
 The remainder of this page describes several dialect choices CS 418 requires.
 
@@ -237,7 +237,7 @@ or invokes WebGL2 functions in ways that produce a `null` return value.
 # requestAnimationFrame
 
 Not really WebGL but related to creating animations:
-Javascript provides multiple animation-creating functions,
+JavaScript provides multiple animation-creating functions,
 including `setTimeout`, `setInterval`, and `requestAnimationFrame`.
 Each of these has different properties, and each can be used in several ways to create various animated and time-delayed behaviors.
 

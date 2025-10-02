@@ -17,10 +17,10 @@ summary: Implementing the rasterization of lines and triangles.
 
 # DDA (Software)
 
-Triangles are rasterized by finding all of the integer-coordinate points inside the three edges of the triangle[^abut].
+Triangles are rasterized by finding all the integer-coordinate points inside the three edges of the triangle[^abut].
 For each such point, we also wish to interpolate an arbitrary number of other values to that point.
 We can both find these points and interpolate to them very efficiently using either the **DDA** algorithm or its rational-number cousin the **Bresenham** algorithm.
-As both are similar and you're likely more familiar with working in real numbers than in rational numbers, we'll discuss DDA here.
+As both are similar and as you're likely more familiar with working in real numbers than in rational numbers, we'll discuss DDA here.
 
 
 [^abut]:
@@ -187,7 +187,7 @@ Process
     1. Let $\vec t$ be the top point of $\{\vec p, \vec q, \vec r\}$ (i.e. with the smallest $y$ value)
     2. Let $\vec b$ be the bottom point of $\{\vec p, \vec q, \vec r\}$ (i.e. with the biggest $y$ value)
     3. Let $\vec m$ be the remaining point of $\{\vec p, \vec q, \vec r\}$ (i.e. with the middle $y$ value)
-    4. Run DDA steps 1--7 to setup for the line $\vec t$ to $\vec b$ with $d$ being the $y$ axis.
+    4. Run DDA steps 1--7 to set up for the line $\vec t$ to $\vec b$ with $d$ being the $y$ axis.
         This is for the long edge ($\vec t$ to $\vec b$) so we'll label its vectors
         $\vec p_\text{long}$ and $\vec s_\text{long}$.
         
@@ -195,7 +195,7 @@ Process
     
     *Find points in the top half of the triangle:*
 
-    5. Run DDA steps 1--7 to setup for the line $\vec t$ to $\vec m$ with $d$ being the $y$ axis
+    5. Run DDA steps 1--7 to set up for the line $\vec t$ to $\vec m$ with $d$ being the $y$ axis
         to find $\vec p$ and $\vec s$ for one edge of the top-half triangle.
     6. *Do the DDA loop (DDA step 8) for both $\vec p$ and $\vec p_\text{long}$ at the same time:*
     
@@ -207,7 +207,7 @@ Process
 
     *Find points in the bottom half of the triangle:*
 
-    7. Run DDA steps 1--7 to setup for the line $\vec m$ to $\vec b$ with $d$ being the $y$ axis
+    7. Run DDA steps 1--7 to set up for the line $\vec m$ to $\vec b$ with $d$ being the $y$ axis
         to find $\vec p$ and $\vec s$ for one edge of the bottom-half triangle.
     8. *Do the DDA loop (DDA step 8) for both $\vec p$ and $\vec p_\text{long}$ at the same time:*
     

@@ -17,7 +17,7 @@ This is a function with the following properties:
 - If $t=0$, the lerp gives $\vec p_0$
 - If $t=1$, the lerp gives $\vec p_1$
 - For $0 < t < 1$, the lerp gives points along the line between $\vec p_0$ and $\vec p_1$
-- The function is linear, meaning it is easy to compute and invertable
+- The function is linear, meaning it is easy to compute and invertible
 
 ## Inverse lerp
 
@@ -92,7 +92,7 @@ The basic process runs as follows:
 Trilinear interpolation is a 3D version of a lerp,
 with eight control points and three parameters.
 One use of this is with mipmapping textures:
-the `gl.LINEAR_MIPMAP_LINEAR` performs a trilinar interpolation
+the `gl.LINEAR_MIPMAP_LINEAR` performs a trilinear interpolation
 using the 2 nearest mipmap levels
 along with the grid on each level.
 
@@ -109,7 +109,7 @@ For a triangle, we have three input points $\vec p_0$, $\vec p_1$, and $\vec p_2
 and three parameters $w_0$, $w_1$, and $w_2$ such that $w_1 + w_2 + w_3 = 1$
 giving us two degrees of freedom (we can solve for any one $w$ given the other two as $w_i = 1 - \sum_{j\ne i} w_j$).
 
-For a tetrahedron, we have four input points and four parameters, again summing to  for 3 degrees of freedom.
+For a tetrahedron, we have four input points and four parameters, again summing to 1 for 3 degrees of freedom.
 
 When rasterizing a triangle we are finding the triangular simplex lerp at every pixel for every per-vertex attribute.
 Finding the [barycentric coordinate](rays.html#inverse-mapping-and-barycentric-coordinates) of a ray-triangle intersection is computing an inverse simplex lerp and using the barycentric coordinate to interpolate per-vertex attributes to the intersection point is simplex lerping.

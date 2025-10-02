@@ -7,7 +7,7 @@ see also: 'https://webgl.brown37.net/'
 summary: WebGL 2's fixed functionality, including the DDA algorithm and common blending functions.
 ...
 
-The purpose of this text is to describe the algorithms in the non-programmable part of GPUs circa 2020. These can be catagorized into two board categories:
+The purpose of this text is to describe the algorithms in the non-programmable part of GPUs circa 2020. These can be categorized into two board categories:
 
 1. Rasterization, which turns primitives into fragments and interpolates values to those fragments.
 2. Blending and Masking, which takes many fragments and reduces them into a single pixel.
@@ -168,7 +168,7 @@ x_{\text{screen}} &= \dfrac{x_{\texttt{input}} + 1}{2}(\text{width in pixels})\\
 y_{\text{screen}} &= \dfrac{y_{\texttt{input}} + 1}{2}(\text{height in pixels})\\
 \end{split}$$
 
-Note that this *always* maps the coordiante range $-1$ to $+1$ to the viewport in both dimensions, even if the viewport is rectangular instead of square.
+Note that this *always* maps the coordinate range $-1$ to $+1$ to the viewport in both dimensions, even if the viewport is rectangular instead of square.
 It is common to apply a scaling to the scene data to make sure this does not squish content.
 
 ## Interpolation
@@ -382,7 +382,7 @@ It is traditional to also treat $z$ as special because it gives better [depth bu
 
 Suppose we have a supplied vertex coordinate $(x,y,z,w,r,g,b,s,t)$.
 We first perform perspective projection in $x$ and $y$ by dividing by $w$;
-we also divide everyithing else by $w$ while we're at it, getting
+we also divide everything else by $w$ while we're at it, getting
 $\left(\dfrac{x}{w},\dfrac{y}{w},\dfrac{z}{w},\dfrac{1}{w},\dfrac{r}{w},\dfrac{g}{w},\dfrac{b}{w},\dfrac{s}{w},\dfrac{t}{w}\right)$.
 Note that $w$ is replaced by $1 \div w$ not $w \div w$.
 We use these divided coordinates in DDA to get a pixel coordinate

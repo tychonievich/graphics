@@ -131,7 +131,7 @@ Tell the GPU how to parse the buffer
             gl.vertexAttribPointer(pos_loc,
             ````
         
-        14. Pass in how many number are used per vertex for that attribute.
+        14. Pass in how many numbers are used per vertex for that attribute.
             
             ````js
             gl.vertexAttribPointer(pos_loc,

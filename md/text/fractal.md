@@ -5,13 +5,13 @@ summary: A class of mathematically-defined geometries that look more "natural" t
 
 # Fractional Dimension
 
-We often speak of "two dimensional" or 2D and "three-dimensional" or 3D. There are several equivalent ways of defining these ideas; let's consider a specific one: cube counting.
+We often speak of "two-dimensional" or 2D and "three-dimensional" or 3D. There are several equivalent ways of defining these ideas; let's consider a specific one: cube counting.
 
 Consider a chunk of some shape that passes though a cube.
 Subdivide that cube evenly into $n$ divisions along each axis to make a grid of $n^3$ smaller cubes.
 How many of those smaller cubes does the shape pass through?
 
-The exact answer to this question is overly dependent on the specifics of the case^[Some definitions of fractal dimension use spheres instead of cubes, which removes some of these challenges but adds others because [sphere packing](https://en.wikipedia.org/wiki/Sphere_packing) is a nontrivial topic in its own right.]. For example, an axis-aligned straight line passes through $n$ cubes while a straight line between opposite cube corners may passe through as many as $3n$.
+The exact answer to this question is overly dependent on the specifics of the case^[Some definitions of fractal dimension use spheres instead of cubes, which removes some of these challenges but adds others because [sphere packing](https://en.wikipedia.org/wiki/Sphere_packing) is a nontrivial topic in its own right.]. For example, an axis-aligned straight line passes through $n$ cubes while a straight line between opposite cube corners may pass through as many as $3n$.
 In computing we know how to handle such constants: big-O.
 Any straight line passes through $\Theta(n^1)$ cubes.
 Any flat plane passes through $\Theta(n^2)$ cubes.
@@ -61,7 +61,7 @@ we'll replace each of the four straight segments with a ⅓-scale copy of the en
 <figcaption>An intermediate Koch curve, made by replacing each straight segment of the starting Koch curve with a complete copy of the starting Koch curve at ⅓ scale. The result has the same start and end point but travels 4/3 as far to get there (using 4× as many segments each ⅓× as long).</figcaption>
 </figure>
 
-That gives us one more scale where the circles works, but still has straight lines.
+That gives us one more scale where the circles work, but still has straight lines.
 However, we can continue the process of replacing line segments with scaled-down copies of the starting shape *ad infinitum* to get
 
 <figure>
@@ -286,7 +286,7 @@ That means that $(3n)^d = 4(n^d)$; solving for $d$ we get $d = \frac{\log 4}{\lo
 
 # Fractals in Graphics
 
-Nothing in nature exhibits a true mathematical fractal: zoom in enough and you find  3D cells or 1D elementary particles.
+Nothing in nature exhibits a true mathematical fractal: zoom in enough and you find 3D cells or 1D elementary particles.
 But many things in nature are visually more fractal than they are Platonic.
 Many mountains look more like fractals than they look like spheres,
 many trees look more like fractals than they look like cylinders,
@@ -373,7 +373,7 @@ and is sometimes used as a basis for fractals.
 Brownian motion refers to the trajectory followed by a particle that randomly changes direction.
 The most common formulation of **fractal Brownian motion** (abbreviated fBm) is a 1.x-dimensional fractal created by the position of a 1D Brownian motion on one axis and time on the other.
 
-Many other fBm formulations also exist; for example, any finite approximation^[The approximation is ncessary because white noise is discontinuous everywhere and thus not integrable.] of fBm noise is the integral of a same-resolution approximation of white noise.
+Many other fBm formulations also exist; for example, any finite approximation^[The approximation is necessary because white noise is discontinuous everywhere and thus not integrable.] of fBm noise is the integral of a same-resolution approximation of white noise.
 
 <figure>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -21 122 42" style="max-width:30em" fill="none" stroke="#000" stroke-linejoin="round">

@@ -14,11 +14,11 @@ Rasterization and Raytracing.
 # Rasterize
 
 Rasterizers render the scene one object at a time,
-limiting the interaction between objects to just what what is in front of what.
+limiting the interaction between objects to just what is in front of what.
 Unlike the real world, light is not modeled bouncing between several objects before it reaches the eye.
 That limits the visual accuracy of rasterizing, but also means
 
-- Algorithms can can take advantage of the structure of the raster to find the pixels a given object covers very efficiently.
+- Algorithms can take advantage of the structure of the raster to find the pixels a given object covers very efficiently.
 - Rasterizers can be run on all scene objects in parallel.
 - Each thread of rasterization parallel execution runs the same instructions in the same order, just with different data.
 - Rasterizers can be run in a "streaming" way, with scenes too large to fit in memory being loaded into memory in chunks, rendered, and then removed from memory to make room for the next chunk all as part of a single scene.

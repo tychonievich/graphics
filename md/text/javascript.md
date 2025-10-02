@@ -38,7 +38,7 @@ There are five such methods, each with a different display mode.
 
 Example invocation      Displays as
 --------------------    -----------------------
-`console.error(0)`{.js} an error icon with redish background; also shows call stack
+`console.error(0)`{.js} an error icon with reddish background; also shows call stack
 `console.warn(0)`{.js}  a caution icon with yellowish background; may show call stack, depends on browser
 `console.log(0)`{.js}   no icon, no background
 `console.info(0)`{.js}  an info icon or no icon, no background
@@ -46,7 +46,7 @@ Example invocation      Displays as
 
 Consoles also let you pick which kind of messages you want to see, ranging from only errors to all five levels.
 
-All of the console functions are variadic, accepting as many arguments as you wish; for example
+All the console functions are variadic, accepting as many arguments as you wish; for example
 
 ```js
 console.log("text, number, array", 3+1+4+1+5, [3,1,4,1,5])
@@ -106,7 +106,7 @@ f()
 console.log(a,b,c,d) // shows `null null null null`
 ```
 
-Used outside of a function, `var` declares a variable and also puts them into the special "`window`" object.
+When used outside a function, `var` declares a variable and also puts them into the special "`window`" object.
 We can access and modify global variables inside a function using `window.variableName = value`{.js}.[^nuance1]
 `let` does not put its variables in the `window` object.
 
@@ -359,7 +359,7 @@ Every HTML file we write should have the following general structure
 - The `html` element should indicate the language any user-visible text is in to assist in language-specific functionality like hyphenation and screen reading.
 - The `head` element must come before the `body` element and should have
     - a `meta` element identifying the character set you write the file in. The correct value here might depend on your text editor, operating system, and locale settings. UTF-8 is recommended if you have the option of changing it.
-    - a `title` element to give the webpage a name to show on browser tabs, bookmarks, window title bars, etc
+    - a `title` element to give the webpage a name to show on browser tabs, bookmarks, window title bars, etc.
     - some JavaScript in `script` elements, either in-file or referencing a separate file
     - if you add CSS, it goes here too
 - The `body` element should have anything that is visible to the user;

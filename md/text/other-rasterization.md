@@ -15,7 +15,7 @@ x_{\text{screen}} &= \dfrac{x_{\texttt{input}} + 1}{2}(\text{width in pixels})\\
 y_{\text{screen}} &= \dfrac{y_{\texttt{input}} + 1}{2}(\text{height in pixels})\\
 \end{split}$$
 
-Note that this *always* maps the coordiante range $-1$ to $+1$ to the viewport in both dimensions, even if the viewport is rectangular instead of square.
+Note that this *always* maps the coordinate range $-1$ to $+1$ to the viewport in both dimensions, even if the viewport is rectangular instead of square.
 It is common to apply a scaling to the scene data to make sure this does not squish content.
 
 # Blending and Masking

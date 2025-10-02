@@ -24,12 +24,12 @@ Notes
     They are commonly used for matrices, textures, and some scene-wide constants like light locations.
     
     Each uniform is given a specific location, a small integer usually between 0 and 15.
-    The shader linker picks these location per program, and may pick different locations each compilation.
+    The shader linker picks these locations per program, and may pick different locations each compilation.
 
 Common errors
 :   Because the location is a small integer, using the wrong one
     (such as the location of a similarly-named uniform from a different shader program)
-    might works sometimes and then fail later.
+    might work sometimes and then fail later.
     Make sure you use the correct program and uniform name.
 
 
@@ -246,7 +246,7 @@ Notes
     all that is done by [`gl.compileShader`].
 
 Common errors
-:   To use WebGL2' shader language, the GLSL source must begin (not even a space or newline before it) with the exact string `#version 300 es`.
+:   To use WebGL2's shader language, the GLSL source must begin (not even a space or newline before it) with the exact string `#version 300 es`.
     Without that, the shader defaults to WebGL1's shader language which had various differences in syntax and semantics and might cause errors either at compile or run time.
 
 
@@ -372,7 +372,7 @@ Notes
     gl.vertexAttribPointer(normLoc, 3, gl.FLOAT, 0, 3*4, 3*4)
     ````
     
-    where the `*4` is is handling the bytes per value in a `Float32Array`.
+    where the `*4` is handling the bytes per value in a `Float32Array`.
     </div>
 
 Common errors

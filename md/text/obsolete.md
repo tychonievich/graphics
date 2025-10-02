@@ -66,11 +66,11 @@ Release guides
     learn the new version.
 
 Tutorials
-:   Tutorials help you get started without having to puzzle through official specs or re-tread three decades of history.
+:   Tutorials help you get started without having to puzzle through official specs or re-tread decades of history.
     They typically are organized around a series of example programs with some explanation.
     They are a great way to learn how to operate, but they tend to get stale:
     when new features are added it takes significant work to go back through a tutorial and change all the examples to use it,
-    and even when that work is done it often leads to code no professional would be proud of, archaic designs ported to use current tech.
+    and even when that work is done it often leads to code no professional would be proud of with archaic designs ported to use current tech.
     Many, though not all, tutorials also omit context, limiting learners' ability to go beyond the tutorials' scope
     and making future changes come as surprises.
 
@@ -100,7 +100,7 @@ At the time of writing (2025) we have
 - Engine competition (Unreal Engine, Unity, Gdot, and CryEngine in the lead, *many* others as well)
 - Application competition (far too many to list or tell what's in the lead)
 
-This diversity of options may seem annoying for someone having to chose between similar-sounding options, but it fosters a rapid growth in technology at all levels. Without competition development tends towards the "safe" options, favoring keeping current customers over attracting new ones. But with competition every company has a vested interest in getting something new out that can give them an advantage over others, resulting in a much more rapid pace of development.
+This diversity of options may seem annoying for someone having to choose between similar-sounding options, but it fosters a rapid growth in technology at all levels. Without competition development tends towards the "safe" options, favoring keeping current customers over attracting new ones. But with competition every company has a vested interest in getting something new out that can give them an advantage over others, resulting in a much more rapid pace of development.
 
 One result of this is that by the time you finish a multi-year development project (or multi-year degree program), odds are that even if you started working with the very latest tech available, something new has come along during the process and it is not longer the latest tech when you're done.
 

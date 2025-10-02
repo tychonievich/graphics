@@ -14,7 +14,7 @@ Common images have three or four channels,
 often interpreted as Red, Green, Blue, and Alpha.
 Inside the shaders of a WebGL application that interpretation is largely arbitrary:
 the fragment shader's `out vec4` uses that interpretation,
-but we can treat the a texture's channels any way we wish.
+but we can treat a texture's channels any way we wish.
 
 # "Standard" textures
 
@@ -222,7 +222,7 @@ Refraction simulation often assumes a simplified model such as "the exit surface
 Alternatively, depth peeling can be used to do multi-pass refraction.
 Depth peeling works by rendering the scene normally into one frame buffer,
 then rendering it again into another frame buffer but this time discarding any fragment that has a depth nearer than the first render's depth buffer.
-Thus the first render will get the entering surface, the second render the exiting surface,
+Thus, the first render will get the entering surface, the second render will get the exiting surface,
 and the pair of them can make a slightly better estimate of refraction.
 
 ## Full BRDF

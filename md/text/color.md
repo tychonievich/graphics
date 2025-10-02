@@ -20,7 +20,7 @@ Rods react to most of the visible spectrum and react very easily, so except in v
 
 The most direct way to model color perception would thus be as three durations: the average time between two firings of an L-cone, of an M-cone, and of an S-cone. Thus, we might say the cone response is (0.1s, 2.4s, 0.4s) to mean the L-cone is firing almost immediately after reset, the M-cone is almost idle, and the S-cone is somewhere in between.
 
-Seconds are awkward in this context in part because they are unbounded, approaching infinity in complete darkness; and because the difference in light intensity needed to go from 0.11s to 0.10s is much much larger than the difference needed to go from 11s to 10s. But the relaitonship between seconds and light intensity is a smooth and monotonic function so there is some normalizing function that would convert these seconds into a some kind of nicely-behaved range where 0 means "never firing" and 1 means "firing as often as possible". We'll skip the math and assume we have access to that normalized cone signaling numbers.
+Seconds are awkward in this context in part because they are unbounded, approaching infinity in complete darkness; and because the difference in light intensity needed to go from 0.11s to 0.10s is much much larger than the difference needed to go from 11s to 10s. But the relationship between seconds and light intensity is a smooth and monotonic function, so there is some normalizing function that would convert these seconds into a some kind of nicely-behaved range where 0 means "never firing" and 1 means "firing as often as possible". We'll skip the math and assume we have access to that normalized cone signaling numbers.
 
 # Cone chromaticity
 
@@ -64,7 +64,7 @@ In other words, only a subset of theoretical cone responses actually represent c
 
 It is worth noting that not every eye is the same. The exact ratios of pigments inside the cones vary by individual, meaning the exact same wavelengths of light might cause a response of (0.1, 0.4, 0.5) in one individual and (0.1, 0.45, 0.45) in another. The variations are typically fairly small, and when larger are called "color blindness" (a term that also refers to more extreme variations such as having only two types of working cones).
 
-Computer screens want to be able to show a lot of colors. But creating arbitrary sets of wavelengths is quite expensive, so we want to pick just a few wavelengths that we can combine to make most colors. Because the curve is roughly triangular, picking three such primary colors is a common choice. But getting a *single* wavelength is much harder than a narrow band of wavelengths and some wavelengths the eye hardly perceives at all so it would take too much energy to use them effectively in a display.
+Computer screens want to be able to show a lot of colors. But creating arbitrary sets of wavelengths is quite expensive, so we want to pick just a few wavelengths that we can combine to make most colors. Because the curve is roughly triangular, picking three such primary colors is a common choice. But getting a *single* wavelength is much harder than getting a narrow band of wavelengths and some wavelengths the eye hardly perceives at all so it would take too much energy to use them effectively in a display.
 
 ![Relative responsiveness of the S (blue), M (green), and L (red) cones to wavelengths from 390nm (on left) to 730nm (on right).](color-response.svg){style="max-width:24em"}
 
@@ -97,7 +97,7 @@ The formal term for this relative perception is "lightness".
 
 Given that we want to store a grid of millions of colors for every picture we store, we want the storage to be small, so we have an incentive to represent colors on a logarithmic scale instead of a linear scale to handle this relative comparison.
 But a pure logarithmic scale is not ideal:
-while the the eye is better at distinguishing dark colors than bright colors,
+while the eye is better at distinguishing dark colors than bright colors,
 that breaks down for the very darkest colors,
 making a logarithm not quite right.
 
@@ -162,7 +162,7 @@ Storage
 While higher-range images are starting to gain popularity, most displays and image formats use 8 bits each for Red, Green, and Blue.
 Web standards have popularized representing the result as three hexadecimal bytes, RGB, each written with two hex digits in a row with a hashtag in front, like `#e3b021` for this color: <span style="width:5em; height:5em; background: #e3b021; display: inline-block; vertical-align:middle;"></span>. Unless otherwise noted, it is safe to assume these are in the sRGB color space and stored post-gamma-correction, which means that most monitors can display them as-is but that arithmetic on the colors requires conversion to linear display intensities before it is accurate.
 
-Systems interested in optimal compression of information, ranging from the earliest color television broadcast signals to the most recent compression/decompression algorithms (also know as "codecs"), have observed that the eye perceives chromaticity at a coarser resolution than it perceives luminance. It is thus advantageous to decompose color using a different set of axes than RGB, using one axis for some form of brightness, lightness, luminance, or luminosity, so that we can easily transmit more bits of luminance than bit of chromaticity.
+Systems interested in optimal compression of information, ranging from the earliest color television broadcast signals to the most recent compression/decompression algorithms (also known as "codecs"), have observed that the eye perceives chromaticity at a coarser resolution than it perceives luminance. It is thus advantageous to decompose color using a different set of axes than RGB, using one axis for some form of brightness, lightness, luminance, or luminosity, so that we can easily transmit more bits of luminance than bit of chromaticity.
 
 [HSL](https://en.wikipedia.org/wiki/HSL_and_HSV) dates back to 1938, was designed for color television, and was the first separate-lightness model to be widely implemented in hardware. In it, <b>H</b>ue is an angle around the color wheel and <b>S</b>aturation is intensity of color (i.e., non-gray-ness).
 
@@ -234,15 +234,15 @@ This has encouraged some image files to be encoded in CIE color spaces, allowing
 Unfortunately, CIEXYZ is not perceptually uniform, meaning distance in the XYZ space is not a good predictor of quality of approximation; and CIELUV and related color spaces have various computational and perceptual challenges that make them suboptimal for this purpose.
 
 In 2020, Björn Ottosson use numerical optimization to find a mathematically-simple function that best fit several different CIELUV-like color models and posted the result [on his blog](https://bottosson.github.io/posts/oklab/).
-This model, which he called "Oklab" because it was an "OK" version inspired by CIELAB, rapidly gained traction, especially in 2D graphics applications such as computing color gradients and modelling perception, as well as as a convenient way to represent device-independant full-gamut colors.
+This model, which he called "Oklab" because it was an "OK" version inspired by CIELAB, rapidly gained traction, especially in 2D graphics applications such as computing color gradients and modelling perception, as well as as a convenient way to represent device-independent full-gamut colors.
 By 2023 Oklab was implemented by all major web browsers along with a variety of other applications.
 
 Overall, Oklab has a similar feel to Y'CbCr:
 one axis is luminance, others approximate "blueness" and "redness",
 and many (L,a,b) triples have no mapping to RGB (or even any possible color).
 However, where Y'CbCr is a single matrix multiply from sRGB,
-Oklab handles gamma, a matrix multiply, raises each channel to a power power, and then does another matrix multiply;
-the extra steps allow it to more accurately reflect human perception, at the expense of more comutational work.
+Oklab handles gamma, a matrix multiply, raises each channel to a power, and then does another matrix multiply;
+the extra steps allow it to more accurately reflect human perception, at the expense of more computational work.
 
 <figure>
 <div>L: <input type="range" id="l"

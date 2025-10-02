@@ -68,7 +68,7 @@ $$O(S + P R + R)$$
 Note the multiplicative term:
 this scales with the product of pixel count and number of primitives,
 not their sum like rasterization has.
-Using a bounding volume hierarchy (BVH) can cut that down to a logarithmic factor, at the const of additional setup time creating the BVH:
+Using a bounding volume hierarchy (BVH) can cut that down to a logarithmic factor, at the cost of additional setup time creating the BVH:
 $$O(S + P\log(P) + R\log(P) + R)$$
 Still much worse than rasterization, but much better than the cost without the BVH.
 

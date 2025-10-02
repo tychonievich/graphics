@@ -23,7 +23,7 @@ Occluded geometry
   
   - Being a "back face". In most scenes most triangles are part of the boundary between air and an opaque solid and are only ever visible from the air-facing side. Back-face culling can remove the roughly 50% of triangles that are back faces.
   
-  - Behind something else, or "occluded". As I write this in my office, all of the geometry of all the other offices in the building are occluded by the walls of my office and there's no reason to draw any of them. The larger the scene is, the more geometry will be occluded: in simple scenes most occluded geometry is also a back-face, but as the size of the scene increases there tends to be more and more occluded geometry.
+  - Behind something else, or "occluded". As I write this in my office, all the geometry of all the other offices in the building are occluded by the walls of my office and there's no reason to draw any of them. The larger the scene is, the more geometry will be occluded: in simple scenes most occluded geometry is also a back-face, but as the size of the scene increases there tends to be more and more occluded geometry.
 
 **Streaming** is a common term for dynamically keeping just a subset of visible geometry in memory, storing the rest of it in some larger but slower medium like disk or the cloud, and updating what's in memory as the scene changes. Streaming is primarily used to overcome video memory limitations.
 
@@ -46,7 +46,7 @@ Subdivision
   and an artist-supplied displacement map for deviating from the smooth surface.
 
 Decimation
-: The artists supplies the highest-resolution mesh.
+: The artist supplies the highest-resolution mesh.
     Algorithmic approaches are then used to identify ways to remove or merge vertices with the least geometric impact on the overall mesh.
     Applying that algorithm repeatedly can replace the entire mesh with a lower-res mesh of any desired detail.
     
@@ -69,13 +69,13 @@ Alternative modeling methods
 Artist-generate manual LOD
 : When automated LOD techniques fail artists can be tasked with making models at several different levels of detail.
   For example, a character's head might be modeled for close-ups with each hair its own little tube;
-  for full-body shots with the hair modeled as a few dozen overlapping triangle ribbons with a alpha texture to look like more hairs; and for long shots with a low-res blob of hair with an opaque picture-of-hair texture.
+  for full-body shots with the hair modeled as a few dozen overlapping triangle ribbons with an alpha texture to look like more hairs; and for long shots with a low-res blob of hair with an opaque picture-of-hair texture.
   Automated LOD methods are improving, but as of 2023 artist-generated LOD remains the only option in many cases.
 
 # Case study: Nanite's approach to LOD
 
 In 2020, Unreal Engine 5 was released with a feature called Nanite that provided one of the most complete approaches to LOD thus far.
-Nanite also include streaming and occlusion as well as various other features such as integrated shadow maps and multi-view rendering.
+Nanite also includes streaming and occlusion as well as various other features such as integrated shadow maps and multi-view rendering.
 Brian Karis, one of the engineers of Nanite, presented in [SIGGRAPH 2021](https://www.youtube.com/watch?v=eviSykqSUUw); much of this case study is informed by his presentation.
 
 LOD Family: Decimation. The artist supplies only the highest-res geometry; everything else is handled by the engine.
@@ -87,7 +87,7 @@ Novel contribution: a new approach to part-of-mesh decimation without cracks.
 Given a large mesh, part of which is much closer to the viewer than other parts, how can we use a high LOD close to the view and a low LOD farther away without any cracks?
 
 Almost all triangle-based LOD approaches have discrete levels of detail: either a vertex has been removed/added or it has not.
-That means that if a single mesh is being displayed at different LOD at at different parts of the mesh
+That means that if a single mesh is being displayed at different LOD at different parts of the mesh
 then there is a boundary somewhere on the mesh where the LOD is higher on one side of the boundary than the other.
 Because higher LOD means more vertices, there's a chance there'll be a vertex on the boundary of the high-res side that is not matched by a vertex on the low-res side, resulting in a crack on that boundary.
 
@@ -267,7 +267,7 @@ That simple approach can be improved on in various ways, for example
 considering normals as well as positions
 and being more forgiving of changes along the view direction than perpendicular to it.
 
-In general, finding the cut that meets these criteria requires an algorithm that considers all of the nodes of the DAG holistically;
+In general, finding the cut that meets these criteria requires an algorithm that considers all the nodes of the DAG holistically;
 that, in turn, means it cannot be efficiently for very large DAGs,
 rendering the general solution impractical for deployment.
 However, if the approximation errors are monotonic
@@ -275,7 +275,7 @@ However, if the approximation errors are monotonic
 then updating the cut can be a purely local process:
 a node is part of the cut if both
 
-- it's error is small enough, and
+- its error is small enough, and
 - some member of its group's parent's error is too large.
 
 Nanite takes advantage of this by increasing child errors that are smaller than parent errors
@@ -293,7 +293,7 @@ Nanite assumes there are a very large number of clusters
 and that the vast majority of them not drawn because some ancestor is drawn.
 This assumption is justified because it is the goal of LOD:
 allow large scenes of very high-res geometry but only render as many triangles as there are pixels.
-Given a very large number of clusters, checking all of the clusters for appropriate level of detail, even in parallel, is inefficient.
+Given a very large number of clusters, checking all the clusters for appropriate level of detail, even in parallel, is inefficient.
 
 Enter "LOD culling".
 A cluster can be "LOD culled" if its parent's error is below threshold;
@@ -337,7 +337,7 @@ Comments
     - Can fall back on less efficient but more reliable depth-step tree traversal or non-hierarchical brute-force checks if needed.
 :::
 
-A few foreground objects at much higher LOD than most of scene can cause many passes through loop with fewer jobs in the queue than there are threads in the group.
+A few foreground objects at much higher LOD than most of the scene can cause many passes through loop with fewer jobs in the queue than there are threads in the group.
 Nanite uses the GPU more efficiently by combining LOD culling with occlusion culling in the same GPU dispatch.
 
 ## Limitations of Decimation
@@ -406,8 +406,8 @@ the $z$ values of the pixels on the near faces of a bounding box around the geom
 are compared to all the corresponding $z$ values in the z-buffer
 and if any of those $z$ are nearer than the z-buffer values the object is considered to be visible.
 
-Checking each pixel like this is time consuming, and even though GPU-resident software runs in parallel it cannot compete with the efficiency of the hardware occlusion test for large numbers of pixels.
-To bypass that slow-down Nanite uses a trick similar to mip-mapping, creating what they call a Hierarchical Z-Buffer or **HZB**.
+Checking each pixel like this is time-consuming, and even though GPU-resident software runs in parallel it cannot compete with the efficiency of the hardware occlusion test for large numbers of pixels.
+To bypass that slow-down Nanite uses a trick similar to mipmapping, creating what they call a Hierarchical Z-Buffer or **HZB**.
 
 The level-0 HZB is a standard z-buffer.
 As with mipmapping, each subsequent level is half as wide and tall as the level below it,
@@ -466,7 +466,7 @@ The initial release of Nanite chose the level where the bounding box filled ≤ 
 
 ## Assume few per-frame changes
 
-The HZB approach allows a single dispatch to check a large number of bounding boxes for occlusion, but it requires already knowing the depth buffer before beginning.
+The HZB approach allows a single dispatch to check many bounding boxes for occlusion, but it requires already knowing the depth buffer before beginning.
 That is a challenge it shares with other bounding-box methods, and two solutions to it are common:
 either sort objects by depth and render near-to-far in batches, using the depth from earlier batches to cull later patches;
 or assume that what was visible last frame will be visible this frame and use it to create a z buffer.
@@ -487,7 +487,7 @@ This outlines the spirit of Nanite's occlusion cull, but not its reality as we s
 
 Nanite's LOD system means that each frame the set of active clusters changes.
 Some of the clusters visible last frame will not be visible this frame.
-In principle the last-frame-visible clusters could still be rendered to initialize the HZB, but because of streaming  clusters they might not even be in memory anymore.
+In principle the last-frame-visible clusters could still be rendered to initialize the HZB, but because of streaming clusters they might not even be in memory anymore.
 If a cluster was removed as being the wrong LOD then some of its ancestors or descendants should be visible, but navigating the DAG every frame is cost-prohibitive and the LOD system makes all of its decisions locally without retaining exact "was replaced by" information.
 Nanite needs a way of using last-frame-visible information
 even when most of this frame's clusters didn't exist last frame.
@@ -500,7 +500,7 @@ Any approach based on the outline above needs to check for occlusion of the geom
 ## Two-pass HZB occlusion culling with LOD
 
 Nanite solves both challenges using a two-pass occlusion cull.
-The first pass uses the HZB from last frame, rather than last frame's visbility list; this frame's HZB is then initialized, used in the second pass, and then updated.
+The first pass uses the HZB from last frame, rather than last frame's visibility list; this frame's HZB is then initialized, used in the second pass, and then updated.
 Nanite also does two tiers of occlusion culling: first per object instance in the scene, then per visible cluster.
 The full process is
 
@@ -549,7 +549,7 @@ the combined LOD+occlusion is done only on the first pass; the second pass does 
 
 # Approaches to streaming
 
-Streaming dates back the the very beginning of graphics.
+Streaming dates back the very beginning of graphics.
 Computer graphics was invented when memory was still expensive enough that even the pixels of a single frame could not fit into memory and some form of streaming data from disk was all-but required.
 As such, the following list is far from complete, mentioning on a few ideas from the last few decades only.
 
@@ -557,8 +557,8 @@ Portals
 :   The simplest form of streaming breaks the entire environment into distinct regions, loading and rendering one at a time.
     When the viewer enters specific areas commonly known as "portals" a new region is loaded.
     The simplest form of portal-based streaming fetches the new data only when it would become visible, resulting in a pause-and-load dynamic.
-    It is also possible to pre-load, having the data of both the current region and the region behind the nearest portal in memory at the same time.
-    With pre-loading it is also possible to draw multiple regions each frame;
+    It is also possible to preload, having the data of both the current region and the region behind the nearest portal in memory at the same time.
+    With preloading it is also possible to draw multiple regions each frame;
     when used with a wall-heavy environment and a visibility map
     this can result in a seamless experience where the viewer is unaware the portals even exist.
     
@@ -599,7 +599,7 @@ Nanite uses virtual textures in the usual way.
 
 Nanite also stores clusters on disk and swaps them into GPU memory when they are requested by the LOD computation.
 The cluster hierarchy metadata needed to compute LOD selection is stored in memory, but the geometry in each cluster is stored on disk until the cluster is needed.
-Unlike virtual texture tiles, clusters are not guaranteed to have a fixed one-disk-page size so Nanite uses a separate paging system to manage the swapping, prioritizing keeping groups of clusters on as few pages as possible.
+Unlike virtual texture tiles, clusters are not guaranteed to have a fixed one-disk-page size; so Nanite uses a separate paging system to manage the swapping, prioritizing keeping groups of clusters on as few pages as possible.
 
 Conceptually, this means the LOD evaluation outputs both the set of resident clusters that best matches the desired LOD, to be used in rendering the current frame;
 and a list of better but not-in-memory clusters.
@@ -626,7 +626,7 @@ and the second pass processes materials to determine how those pixels should be 
 Nanite adds a third pass to this deferred pipeline.
 
 First Pass
-:   All of the LOD, occlusion, and cluster streaming discussed above.
+:   All the LOD, occlusion, and cluster streaming discussed above.
     Renders clusters to a raster.
     Stores only three values:
     depth, instance ID, and triangle ID within instance.
@@ -655,7 +655,7 @@ Second Pass
     This is significantly more work than the traditional rendering pipeline.
     Every vertex is transformed multiple times (at least during the first pass's vertex shader and the second pass's step 2, and likely multiple times in step 2 because most vertices are shared by several triangles that collectively cover many pixels).
     There's additional barycentric coordinate generation
-    and the lerp is more work to compute than a simple DDA or Bresnham offset step.
+    and the lerp is more work to compute than a simple DDA or Bresenham offset step.
     
     In his SIGGRAPH 2021 talk on this, Nanite developer Brian Karis said
     
@@ -733,7 +733,7 @@ For example, the following are sometimes implemented and not needed by pixel-siz
 
 - Various optimizations of the z-buffer try to take advantage of large triangles,
     for example by checking a triangles z range against a hierarchical z-buffer before rasterizing as a form of occlusion culling
-    or performing depth tests for groups of fragments in a single operation and only checking individual fragments if some but not all of the members of the group pass.
+    or performing depth tests for groups of fragments in a single operation and only checking individual fragments if some but not all the members of the group pass.
 
 - GPUs tend to organize their hardware to prioritize processing many fragments of a triangle in parallel over processing a few fragments each from many triangles in parallel.
     This manifests in them having the hardware to issue 4--8 triangle rasterizations per cycle
@@ -746,15 +746,15 @@ if that box is both (a) smaller than *x* pixels (where *x* was tuned by profilin
 and (b) fully within screen bounds, then it is rendered by software; otherwise it is sent through the usual hardware rasterizer.
 The software rasterizer uses a lightweight algorithm somewhere between linear DDA and loping over all pixels in the bounding box and checking if each is inside the triangle.
 
-To have software and hardware work together, neither uses the hardware-only z buffer or frame buffer.
+To have software and hardware work together, uses neither the hardware-only z buffer nor the frame buffer.
 Instead, both the software inner loop and the hardware fragment shader use a 64-bit atomic[^atomics]
 to store a bit-encoded (depth, instance ID, triangle ID) tuple in a frame-sized buffer
 if and only if the encode tuple has a smaller value (using unsigned integer comparisons) than whatever was in that buffer before.
 
 [^atomics]:
     Atomic operations are an important and ongoing development in computer hardware design, but not covered in any of this course's prerequisites.
-    In essence they define a tiny program that acts as if it runs in an instant with no other threads or processes able to see an intermediate state.
-    Typically these operations are so small you can write them in just a few characters of most programming languages,
+    In essence, they define a tiny program that acts as if it runs in an instant with no other threads or processes able to see an intermediate state.
+    Typically, these operations are so small you can write them in just a few characters of most programming languages,
     such as `x += y`{.js} or `if (x==y) x = z`{.js}.
     
     Atomic operations are often identified by their bit width:
@@ -782,7 +782,7 @@ and dynamic-priority LOD selection readily supports having more- and less-import
 Nanite takes advantage of these features to support rendering to an array of views in a single pass through the Nanite pipeline,
 including having different views have different LOD priorities
 and stopping at different steps through the pipeline;
-for example, shadow views are lower priority than the scene view they are shadowing and only ned the first stage of deferred rendering.
+for example, shadow views are lower priority than the scene view they are shadowing and only end the first stage of deferred rendering.
 
 ## Virtual shadow buffer
 

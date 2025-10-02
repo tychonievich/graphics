@@ -55,8 +55,8 @@ Correcting that penetration we now have a ball moving to the right in the bottom
 <path marker-end="url(#arrow)" fill="none" stroke="#000" stroke-width="0.5" d="M 45,0.5 l 5,2.75" opacity="0.25"/>
 </svg>
 
-At the bottom of the vally the ground is level, so gravity and the pressure from the ground fully cancel each other out.
-Because of this, in the next time step only momenum moves the ball:
+At the bottom of the valley the ground is level, so gravity and the pressure from the ground fully cancel each other out.
+Because of this, in the next time step only momentum moves the ball:
 horizontally to the middle of the slope rising out of the valley,
 and again into the ground because momentum is not yet pointing up the side of the valley.
 We correct that incorrect vertical offset.
@@ -71,8 +71,8 @@ We correct that incorrect vertical offset.
 <path marker-end="url(#arrow)" fill="none" stroke="#000" stroke-width="0.5" d="M 55,-5 l 5,-2.75" opacity="0.25"/>
 </svg>
 
-The ball is now on the other side of the valley, with momenum rolling it up the hill.
-Gavity pulling it down will be countered by the ground pushing it up and to the left, cancelling out the momenum.
+The ball is now on the other side of the valley, with momentum rolling it up the hill.
+Gravity pulling it down will be countered by the ground pushing it up and to the left, cancelling out the momentum.
 Later, gravity will pull it back down the valley, oscillating back and forth across the valley until friction stops it.
 
 ## Bad time step
@@ -91,7 +91,7 @@ also puts the ball inside the ground because the straight velocity does not foll
 <path marker-end="url(#arrow)" fill="none" stroke="#000" stroke-width="0.5" d="M 95,55 l 5,5" opacity="0.25"/>
 </svg>
 
-Correcting that penetration we now have a ball moving to the right and, because of the large time step, having jumped over to the next hill and sitting on another slope of the same direction as the first..
+Correcting that penetration we now have a ball moving to the right and, because of the large time step, having jumped over to the next hill and sitting on another slope of the same direction as the first.
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -15 150 75">
 <defs>
@@ -119,7 +119,7 @@ This will continue with the ball jumping ever further each new time step.
 
 # CFL conditions
 
-In most time-step simulations, there is a time step that is too large can causes instability.
+In most time-step simulations, there is a time step that is too large can cause instability.
 Courant, Friedrichs and Lewy introduced some criteria describing time steps that do not have that instability;
 it is not common to call whatever time step ensures stability "the CFL condition"
 even if the particular simulation does not fit their original discussion.
@@ -127,16 +127,16 @@ even if the particular simulation does not fit their original discussion.
 Common CFL conditions look something like
 "the time step has to be small enough that no particle can move further than *X* in a single time step."
 The specific *X*s vary, but may include simulation-specific features like "half of a particle diameter" and physically-defined features like "the speed of sound".
-Because CFL conditions are often defined base on the distance particles would move in a single time step the time steps they allow are generally different each frame,
-allowing large time steps when things are mostly still
-but requiring small time steps when things are moving quickly.
+Because CFL conditions are often defined based on the distance particles would move in a single time step, the time steps they allow are generally different each frame;
+they generally allow large time steps when things are mostly still
+but require small time steps when things are moving quickly.
 
 Details of how to compute CFL conditions for a specific simulation are beyond the scope of this page.
 A reasonable first step is
 
 1. Each frame, find the speed of the fastest-moving thing
 2. Divide the time from that frame to the next into a set of time steps
-    such that that fastest-moving thing only moves at most $x$ per step,
+    such that the fastest-moving thing only moves at most $x$ per step,
     where $x$ is a parameter you tuned via guess-and-check in advance.
     
     One particle radius is a good initial guess for $x$ because it will prevent particles from passing completely through one another in a single step.

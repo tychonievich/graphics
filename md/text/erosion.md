@@ -110,7 +110,7 @@ A simpler version works as follows:
         - if it has more sediment than it should, move $K_d$ of the difference from $s$ to the altitude of the terrain particle
             - $0 \le K_d \le 1$ is a deposition constant you pick
         - if it has less sediment than it should, move $K_s$ of the difference from the altitude of the terrain to $s$
-            - $0 \le K_s \le 1$ is an soil softness constant you pick
+            - $0 \le K_s \le 1$ is a soil softness constant you pick
     - reduce $w$ by some small fixed evaporation rate you pick
         - if $w \le 0$, stop working with this particle
 

@@ -285,8 +285,8 @@ Shadows, reflection, and transparency are easily achieved using secondary rays:
 Once you find an intersection point $\mathbf p$ you then generate a new ray
 with $\mathbf p$ as its origin and intersect that ray with the scene.
 
-Care should be taken that roundoff errors in storing $\mathbf p$ 
-do not cause the the secondary ray to intersect the object from which it originates.
+Care should be taken that rounding errors in storing $\mathbf p$ 
+do not cause the secondary ray to intersect the object from which it originates.
 This cannot be done simply by using more precise numbers;
 instead you'll need to do one of the following:
 
@@ -298,7 +298,7 @@ instead you'll need to do one of the following:
 - Ignore intersections with the (part of the) object that emitted the ray.
     For sphere reflections and shadows this means ignoring the sphere.
     For sphere transparency it means ignoring the same entering/exiting intersection of the sphere.
-    For triangle meshes is means ignoring the triangle and its immediate neighbors.
+    For triangle meshes it means ignoring the triangle and its immediate neighbors.
 
 - Require particular directional interfacing.
     If all of your geometry is in the form of non-intersecting closed surface meshes

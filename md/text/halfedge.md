@@ -27,7 +27,7 @@ A half-edge's `next` is never null, and walking `next`s always results in travel
 consisting of the edges of a single polygonal face in the mesh.
 Hence, each half-edge belongs to exactly one face,
 and each $n$-sided face consists of $n$ half-edges.
-To represent this, half-edges are often draw as if they were slightly inset into their face.
+To represent this, half-edges are often drawn as if they were slightly inset into their face.
 
 Each edge connects to vertices;
 its own `v` and the `v` of its `next` half-edge.
@@ -53,7 +53,7 @@ NV:     dot at 1.5 heading 30 from V
 NNV:    dot at 1.5 heading 90 from V
         text "this.next.next.v" small mono at 0.15 heading 180 from NNV
 
-This:   arrow thick  from 0.2 heading 50 from V to 0.2 heading 190 from NV "this" big bold mono aligned below
+This:   arrow thick from 0.2 heading 50 from V to 0.2 heading 190 from NV "this" big bold mono aligned below
 Twin:   arrow thin from 0.2 heading 10 from V to 0.2 heading -130 from NV <- "this.twin" mono aligned above
 Next:   arrow thin from 0.2 heading 170 from NV to 0.2 heading -50 from NNV "this.next" mono aligned below
 Nnxt:   arrow thin dashed from 0.2 heading 70 from V to 0.2 heading -70 from NNV <- "this.next.next" small mono aligned above

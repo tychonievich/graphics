@@ -90,7 +90,7 @@ When rendering scene graphs on a GPU
 it is typical to iterate through the nodes on the graph in the CPU,
 convert the interpolated positions and orientations into matrices,
 then send the resulting matrices to the GPU along with the geometry that uses it.
-Sending all of the matrices of a singe object and its geometry at once can also be done, provided that each vertex also has information identifying which matrices it should use.
+Sending all the matrices of a singe object and its geometry at once can also be done, provided that each vertex also has information identifying which matrices it should use.
 
 # Skinning
 

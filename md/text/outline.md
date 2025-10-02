@@ -20,7 +20,7 @@ title: Readings for CS 418
     - categorize graphics APIs by what they manage
     - identify problems with both point- and area-based pixels
     - list the 5 steps of the rasterizing graphics pipeline
-    - given a graphics task, identify which pipleine steps it would use
+    - given a graphics task, identify which pipeline steps it would use
     - describe the difference between LMS, RGB, and Y'CbCr color spaces
     - apply gamma correction in both directions, and identify when each direction should be applied
     

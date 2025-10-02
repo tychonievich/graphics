@@ -90,7 +90,7 @@ The divergence of a 3×2 grid:
 To remove divergence, we use the gradient of a pseudo-pressure field.
 
 Real pressure has the property that the force it applies is the gradient of a scalar field
-and, like all gradients, is a purely divergence field.
+and, like all gradients, is a purely divergent field.
 If we can subtract a purely-divergent flow from an existing flow we can make it divergence-free without changing any of the circulation that we want to keep.
 
 True pressure involves terms like the speed of sound and is more complicated than we want to handle.
@@ -178,14 +178,14 @@ removing energy along the way.
 When energy is removed because of how we discretize and solve a system, that energy loss is called "numerical damping."
 
 Many approaches have been proposed for removing numerical damping,
-generally either by taking some kind of measure of energy or vorticity prior to performing advection and divergence removal and then re-inserting a similar level afterwards
+generally either by taking some kind of measure of energy or vorticity prior to performing advection and divergence removal and then re-inserting a similar level afterward
 or by adding in some kind of particle-based vorticity tracker.
 There are also techniques that re-pose the entire fluid problem,
 for example in terms of [circulation](http://geometry.caltech.edu/pubs/ETKSD07.pdf) or [turbulence](http://geometry.caltech.edu/pubs/LCDZL20.pdf).
 
 # Advection
 
-All fluid properties (velocity, temperature, color, etc) move with the fluid.
+All fluid properties (velocity, temperature, color, etc.) move with the fluid.
 This is called "advection";
 the movement of momentum along the velocity field is called "self-advection".
 
@@ -228,9 +228,9 @@ Forward advection
 
     1. Zero out the back buffer
     2. For each cell in the front buffer,
-        a. Find the (front)  velocity $\vec v$ at the cell center $\vec c$ (via interpolation).
+        a. Find the (front) velocity $\vec v$ at the cell center $\vec c$ (via interpolation).
             Note this is the cell center for this grid, and is different for cell contents vs each axis of flux.
-        b. Find the point $\vec p = \vec c + \vec v \Delta t$ (assuming [Euler's method](kinetics.html#eulers-method);  [Runge-Kutta](kinetics.html#runge-kutta) can also work)
+        b. Find the point $\vec p = \vec c + \vec v \Delta t$ (assuming [Euler's method](kinetics.html#eulers-method); [Runge-Kutta](kinetics.html#runge-kutta) can also work)
         c. Add the (front) value from the cell to the (back) interpolated cells around $\vec p$
     
     Forward advection conserves a value:
@@ -244,7 +244,7 @@ Backward advection
     1. For each cell in the back buffer,
         a. Find the (front) velocity $\vec v$ at the cell center $\vec c$ (via interpolation)
             Note this is the cell center for this grid, and is different for cell contents vs each axis of flux.
-        b. Find the point $\vec p = \vec c - \vec v \Delta t$ (assuming [Euler's method](kinetics.html#eulers-method);  [Runge-Kutta](kinetics.html#runge-kutta) can also work)
+        b. Find the point $\vec p = \vec c - \vec v \Delta t$ (assuming [Euler's method](kinetics.html#eulers-method); [Runge-Kutta](kinetics.html#runge-kutta) can also work)
         c. Set the (back) value in the cell to be the (front) value at $\vec p$ (via interpolation)
     
     Backward advection is unconditionally stable:

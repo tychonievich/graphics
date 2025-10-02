@@ -61,7 +61,7 @@ conceptually something like
         drawStuff()
     }
 
-If you have a scene where different objects need different shaders this organizaton will become more complicated.
+If you have a scene where different objects need different shaders this organization will become more complicated.
 
 # Render depth to a texture
 
@@ -118,7 +118,7 @@ For the shadow map pass, we'll load a view and projection matrix for the light.
 For the scene pass, we'll load a view and projection matrix for the camera.
 We'll also presumably have various model matrices for different scene objects.
 
-In the scene pass's fragemnt shader, we'll have a fragment coordinate
+In the scene pass's fragment shader, we'll have a fragment coordinate
 and want to find which texel of the shadow map it corresponds to.
 There are multiple ways to do that, but the easiest to describe is this:
 

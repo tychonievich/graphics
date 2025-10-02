@@ -79,7 +79,7 @@ A matrix is a grid of numbers.
 They can be seen as a vector of vectors in two ways:
 either as a vector of columns or a vector of rows.
 
-The matrix transpose $A^T$ is computed by treating the rows of $A$ as columns and vice-versa.
+The matrix transpose $A^T$ is computed by treating the rows of $A$ as columns and vice versa.
 If $A = A^T$ we say $A$ is symmetric.
 If $A = -A^T$ we say $A$ is skew-symmetric or antisymmetric.
 

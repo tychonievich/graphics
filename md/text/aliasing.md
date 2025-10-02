@@ -263,25 +263,25 @@ If we use area-like pixels to draw a quadrilateral by splitting it into two tria
 pixels along the shared edge will be half-filled by the first triangle
 then half-filled again by the second
 resulting in only three-fourths-filled pixels along the line.
-As a result, area-like pixels will show a seam between the two trangles.
+As a result, area-like pixels will show a seam between the two triangles.
 
 ![Two touching black triangles rendered in anti-aliased mode. Note the pixel-width blurred edges that prevent stair-step aliasing and the visible boundary line even though there is no gap between the two triangles.](antialiased.png){style="image-rendering: pixelated; image-rendering: -moz-crisp-edges; -ms-interpolation-mode: nearest-neighbor; width:19em;"}
 
 By contrast, point-like pixels don't have this problem.
 Points don't have dimensions, so nothing can cover half of a point.
-Point-like pixels do tend to have strong aliasing artefacts,
+Point-like pixels do tend to have strong aliasing artifacts,
 but they also let us render a scene one object at a time.
 One-at-a-time rendering lets us use a very simple API---one simple enough to encode in hardware---*and* lets us process each object in the scene in parallel on a different processor, possibly even slicing the objects into smaller pieces for more parallelism, without any change in the resulting render.
 That simplicity and robustness has fueled the development of dedicated graphics hardware and has made point-like pixels the dominant assumption in canvas APIs today.
 
 But what about the aliasing?
-Canvas APIs generally offer various "anti-aliased" modes that implements (some approximation of) the square-like pixels, but without changing the simple point-like API design.
+Canvas APIs generally offer various "anti-aliased" modes that implement (some approximation of) the square-like pixels, but without changing the simple point-like API design.
 If these operate on a pixel basis they don't let 3D graphics work very well,
 but they can also be designed to operate on sub-pixel samples.
 Multisampling is often used to render the entire scene with point-like samples at a higher resolution that it will be displayed and then average groups of samples into the final displayed pixels.
 
 Because APIs designed for point-like pixels (or point-like multisamples) can operating by creating of rasterization of each element of the scene independently, it is common to refer to all systems that implement this approach as simply "**rasterization**"
-and to use a more specific term (raytracing, subdivision, etc) for every other method of filling a raster with a representation of a scene.
+and to use a more specific term (raytracing, subdivision, etc.) for every other method of filling a raster with a representation of a scene.
 In some situations, point-like pixel APIs are named after their most popular algorithms, such as "scan-converting", "Bresenham", or "DDA".
 
 There are several designs of APIs and algorithms that handle square-like pixels correctly; raytracing is definitely the most popular, albeit only for 3D graphics.
