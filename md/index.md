@@ -41,7 +41,7 @@ See [this guide](https://ws.engr.illinois.edu/sitemanager/getfile.asp?id=3552) f
 The course consists of the following components:
 
 Recorded lecture material
-:   Linked from the [course content site](content.html) and hosted on both [ClassTranscribe](https://classtranscribe.illinois.edu/offering/c7e741f2-d482-496e-ba57-0285d39ccedb) and [MediaSpace](https://mediaspace.illinois.edu/channel/CS+418+online+2023-2025/379538012), these are tend to be fairly dense videos; I regularly distilled 3 hours of class into 1 hour of video by removing the Q&A and other interactive content. Please make notes of questions as you watch them and post those questions on CampusWire. I may answer them there or record videos explaining the answers and post them as supplementary content.
+:   Linked from the [course content site](content.html) and hosted on both [ClassTranscribe](https://classtranscribe.illinois.edu/offering/c7e741f2-d482-496e-ba57-0285d39ccedb) and [MediaSpace](https://mediaspace.illinois.edu/channel/CS+418+online+2023-2025/379538012), these tend to be fairly dense videos; I regularly distilled 3 hours of class into 1 hour of video by removing the Q&A and other interactive content. Please make notes of questions as you watch them and post those questions on CampusWire. I may answer them there or record videos explaining the answers and post them as supplementary content.
     
 Written lecture notes
 :   Linked on the [course content site](content.html) and hosted on this site, these have roughly the same content as the videos, but often differ in level of detail.
@@ -53,7 +53,7 @@ Retakable quizzes
 :   Lecture material is split into modules, each with a quiz.
     These quizzes are intended primarily as a self-assessment of learning and may be retaken as often as desired.
     
-    I understand that some students find quizzes annoying, but experience has shown me they they do help students find and fix gaps in understanding.
+    I understand that some students find quizzes annoying, but experience has shown me that they do help students find and fix gaps in understanding.
     
     These quizzes are administered on [PrairieLearn](https://us.prairielearn.com/pl/course_instance/182443).
 
@@ -85,7 +85,7 @@ This course teaches the following in enough detail to implement them yourself:
 
 - How 3D computer graphics works, including both rasterization and raytracing.
 - How to use WebGL2, a popular GPU API, to create interactive 3D graphics.
-- How to generate your own 3D geometry, render it, texture map it, move it, and move the camera around it, with all of the underlying math and algorithms. 
+- How to generate your own 3D geometry, render it, texture map it, move it, and move the camera around it, with all the underlying math and algorithms. 
 - How to basic graphical motion simulation and particle effects.
 
 This course teaches various other topics at a lower level of detail, including:
@@ -120,7 +120,7 @@ This course does not teach
 - Computer vision
     - [CS 444](https://courses.illinois.edu/schedule/terms/CS/444) covers this topic
 - 2D graphics
-    - We'll mention some topics in passing, but  [CS 445](https://courses.illinois.edu/schedule/terms/CS/445) is more relevant
+    - We'll mention some topics in passing, but [CS 445](https://courses.illinois.edu/schedule/terms/CS/445) is more relevant
 - Advanced raytracing, path tracing, importance sampling, and other movie-quality graphics content
     - [CS 419](https://courses.illinois.edu/schedule/terms/CS/419) teaches this, but is offered infrequently.
 
@@ -188,7 +188,7 @@ CS 225 Data Structures
 
     - Experience with C or C++. We won't use those languages, but GLSL which we will use is based on them.
     - Comfort with the idea of pointers, binary encoding of data, and memory.
-    - At least three semester of programming experience.
+    - At least three semesters of programming experience.
         
     
 A linear algebra class
@@ -215,7 +215,7 @@ CS 340 Introduction to Computer Systems or CS 341 Systems Programming
     We also deal with how the CPU and GPU interact, a topic made much easier if you have had prior computer systems training.
 
 CS 357 Numerical Methods 1
-:   This course involves considerable mathematical reasoning; taking CS 357 before it increases increase your experience with mathematically-based programming and is recommended.
+:   This course involves considerable mathematical reasoning; taking CS 357 increases your experience with mathematically-based programming and is recommended.
 
 
 # Course Staff
