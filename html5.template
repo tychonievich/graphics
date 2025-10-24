@@ -22,7 +22,7 @@ $for(include-before)$$include-before$$endfor$
 $if(subtitle)$<div class="subtitle">$subtitle$</div>$endif$
 
 $if(toc)$
-<input type="checkbox" class="margin-toggle" checked>
+<input type="checkbox" class="margin-toggle" checked disabled aria-hidden="true">
 <nav class="sidenote" id="$idprefix$TOC" role="doc-toc">
 <details open=""><summary class="nav-header">Contents</summary>
 $table-of-contents$
