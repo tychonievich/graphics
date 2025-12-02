@@ -122,14 +122,37 @@ $$
 Matrix inverse is a tricky topic in general because of the possibility of singular matrices
 and the efficiency of complicated algorithms at scale,
 but for a 3×3 matrix there's a simple equation for it:
-
 $$
-M^{-1} = \begin{bmatrix}a&b&c\\d&e&f\\g&h&i\end{bmatrix}^{-1}
+M^{-1} = \begin{bmatrix}x_0&x_1&x_2\\y_0&y_1&y_2\\w_0&w_1&w_2\end{bmatrix}^{-1}
 =
 \frac{1}{\operatorname{det}(M)}
 \begin{bmatrix}
-ei-fh & ch-bi & bf-ce \\
-fg-di & ai-cg & cd-af \\
-dh-eg & bg-ah & ae-bd
+y_1 w_2 - y_2 w_1 & x_2 w_1 - x_1 w_2 & x_1 y_2 - x_2 y_1 \\
+y_2 w_0 - y_0 w_2 & x_0 w_2 - x_2 w_0 & x_2 y_0 - x_0 y_2 \\
+y_0 w_1 - y_1 w_0 & x_1 w_0 - x_0 w_1 & x_0 y_1 - x_1 y_0
 \end{bmatrix}
 $$
+Note that each row of $M^{-1}$ is the cross product of two columns of $M$.
+
+That $\frac{1}{\operatorname{det}(M)}$ term is a bit of an annoyance.
+We'd like to make $k = \operatorname{det}(M)$ to get rid of it,
+but $\operatorname{det}(M)$ could be 0 if the matrix is singular.
+
+The only way for the matrix to be singular for a triangle
+is if the triangle has zero area,
+and if that was the case the entire matrix would have 0 entries inside it.
+If all of our plane equations are zero
+then we'll never find any points where they are greater than 0,
+meaning we'll find no pixels in the triangle,
+which is the behavior we want anyway.
+
+The matrix we're left with
+is
+$$
+\begin{bmatrix}
+y_1 w_2 - y_2 w_1 & x_2 w_1 - x_1 w_2 & x_1 y_2 - x_2 y_1 \\
+y_2 w_0 - y_0 w_2 & x_0 w_2 - x_2 w_0 & x_2 y_0 - x_0 y_2 \\
+y_0 w_1 - y_1 w_0 & x_1 w_0 - x_0 w_1 & x_0 y_1 - x_1 y_0
+\end{bmatrix}
+$$
+which is formally called the adjoint matrix^[Or sometimes the transpose of the adjoint matrix; confusingly, whether the adjoint refers to this matrix or its transpose varies by between sources.].
