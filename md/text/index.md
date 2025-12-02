@@ -58,6 +58,7 @@ Those that are not listed from the [content page](../content.html) may be incomp
 - [ Particle Effects ](particles.html):  Simple heuristic-based visual effects..
 - [ WebGL's Graphics Pipeline ](pipeline.html):  A collapsible top-down view of how 3D graphics with WebGL2 works..
 - [ Projection ](projection.html):  Simulating depth and perspective using w and z..
+- [ Parallel Scan Conversion ](psc.html):  Rasterizing triangles without loop conditions.
 - [ Quaternions ](quaternions.html):  Their definition and use in defining rotations in graphics..
 - [ Raytracing ](rays.html):  Basic theory and algorithms of ray intersections and discussion of generating secondary rays..
 - [ Raytracers vs Rasterizers ](ray-vs-rast.html):  An analysis of speed and fitness to a purpose..
