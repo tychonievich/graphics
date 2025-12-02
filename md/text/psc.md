@@ -150,10 +150,15 @@ is called the "adjugate matrix"^[Or sometimes the transpose of the adjugate matr
 
 The pixels inside a triangle can be found as follows:
 
+:::algorithm
+Basic pixel coverage
+
 1. Find the adjugate matrix of the matrix $\mathbf{A}$ made from the $x$, $y$, and $w$ coordinates of the three vertices
 2. <mark>For every pixel</mark> coordinate $(x,y)$,
     a. Compute $\vec s = \mathbf{A} [x,y,1]^{T}$
     b. If all coordinates of $s$ are <mark>positive</mark>, the pixel is inside the triangle
+
+:::
 
 We still need to find the other coordinates of the points this discovers are inside the triangle,
 but there are two other issues (highlighted above) to resolve as well.
