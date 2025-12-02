@@ -29,7 +29,7 @@ There are two broad families of approaches to rasterizing triangles.
     which I've also seen replicated without citation
     in several other places.
 
-# Algorithm motivation
+# Motivation
 
 To know what pixels a triangle covers,
 three of the coordinates of the vertices are important:
@@ -123,9 +123,9 @@ Matrix inverse is a tricky topic in general because of the possibility of singul
 and the efficiency of complicated algorithms at scale,
 but for a 3×3 matrix there's a simple equation for it:
 $$
-M^{-1} = \begin{bmatrix}x_0&x_1&x_2\\y_0&y_1&y_2\\w_0&w_1&w_2\end{bmatrix}^{-1}
+\mathbf{M}^{-1} = \begin{bmatrix}x_0&x_1&x_2\\y_0&y_1&y_2\\w_0&w_1&w_2\end{bmatrix}^{-1}
 =
-\frac{1}{\operatorname{det}(M)}
+\frac{1}{\operatorname{det}(\mathbf{M})}
 \begin{bmatrix}
 y_1 w_2 - y_2 w_1 & x_2 w_1 - x_1 w_2 & x_1 y_2 - x_2 y_1 \\
 y_2 w_0 - y_0 w_2 & x_0 w_2 - x_2 w_0 & x_2 y_0 - x_0 y_2 \\
@@ -134,20 +134,9 @@ y_0 w_1 - y_1 w_0 & x_1 w_0 - x_0 w_1 & x_0 y_1 - x_1 y_0
 $$
 Note that each row of $M^{-1}$ is the cross product of two columns of $M$.
 
-That $\frac{1}{\operatorname{det}(M)}$ term is a bit of an annoyance.
-We'd like to make $k = \operatorname{det}(M)$ to get rid of it,
-but $\operatorname{det}(M)$ could be 0 if the matrix is singular.
-
-The only way for the matrix to be singular for a triangle
-is if the triangle has zero area,
-and if that was the case the entire matrix would have 0 entries inside it.
-If all of our plane equations are zero
-then we'll never find any points where they are greater than 0,
-meaning we'll find no pixels in the triangle,
-which is the behavior we want anyway.
-
-The matrix we're left with
-is
+That $\frac{1}{\operatorname{det}(\mathbf{M})}$ term is a bit of an annoyance,
+but if we make $k = \operatorname{det}(\mathbf{M})$ it conveniently vanishes^[If the three vertices are colinear, then $\mathbf{M}$ will be singular and $\operatorname{det}(\mathbf{M}) = 0$. In this case no pixels should be shown and the triangle skipped. Computing $\operatorname{det}(\mathbf{M})$ can be done by taking the dot product of the first column of $\mathbf{M}$ and the first row of the adjugate matrix.].
+The matrix we're left with,
 $$
 \begin{bmatrix}
 y_1 w_2 - y_2 w_1 & x_2 w_1 - x_1 w_2 & x_1 y_2 - x_2 y_1 \\
@@ -155,4 +144,31 @@ y_2 w_0 - y_0 w_2 & x_0 w_2 - x_2 w_0 & x_2 y_0 - x_0 y_2 \\
 y_0 w_1 - y_1 w_0 & x_1 w_0 - x_0 w_1 & x_0 y_1 - x_1 y_0
 \end{bmatrix}
 $$
-which is formally called the adjoint matrix^[Or sometimes the transpose of the adjoint matrix; confusingly, whether the adjoint refers to this matrix or its transpose varies by between sources.].
+is called the "adjugate matrix"^[Or sometimes the transpose of the adjugate matrix; confusingly, whether the adjugate refers to this matrix or its transpose varies by between sources.].
+
+# Finding pixels
+
+The pixels inside a triangle can be found as follows:
+
+1. Find the adjugate matrix of the matrix $\mathbf{A}$ made from the $x$, $y$, and $w$ coordinates of the three vertices
+2. <mark>For every pixel</mark> coordinate $(x,y)$,
+    a. Compute $\vec s = \mathbf{A} [x,y,1]^{T}$
+    b. If all coordinates of $s$ are <mark>positive</mark>, the pixel is inside the triangle
+
+We still need to find the other coordinates of the points this discovers are inside the triangle,
+but there are two other issues (highlighted above) to resolve as well.
+
+"For every pixel coordinate" is very inefficient:
+most triangles cover only a very small percentage of the screen.
+Taking a bounding box of the triangle
+(by finding the minimum and maximum of $x/w$ and $y/w$ for the three vertices)
+can save significant time, but still means that long thin diagonal slivers
+might have a very large bounding box but cover very few triangles.
+Recursive approaches
+that rasterize at a low resolution
+to find squares of pixels to rasterize at full resolution
+can make large diagonal slivers faster,
+at the expense of extra steps for every triangle.
+
+
+
