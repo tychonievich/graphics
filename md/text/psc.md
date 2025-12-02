@@ -77,14 +77,14 @@ This is three equations but has four unknowns because of that pesky $k > 0$.
 We can pick any positive $k$ we want;
 1 is a common choice, but not necessary.
 
-Re-writing with that $k$ and in matrix form gives us
+Re-writing in matrix form gives us
 $$
 \begin{bmatrix}A_0&B_0&C_0\end{bmatrix}
 \begin{bmatrix}x_0&x_1&x_2\\y_0&y_1&y_2\\w_0&w_1&w_2\end{bmatrix}
 =
 \begin{bmatrix}k\\0\\0\end{bmatrix}
 $$
-Repeating with the other edges and vertices gives us similar equations:
+Repeating with the other edges and vertices (and picking the same $k$ each time to make a future step simpler) gives us similar equations:
 $$
 \begin{bmatrix}A_1&B_1&C_1\end{bmatrix}
 \begin{bmatrix}x_0&x_1&x_2\\y_0&y_1&y_2\\w_0&w_1&w_2\end{bmatrix}
@@ -111,4 +111,25 @@ $$
 =
 \begin{bmatrix}x_0&x_1&x_2\\y_0&y_1&y_2\\w_0&w_1&w_2\end{bmatrix}^{-1}
 \qquad\text{if }k = 1
+$$
+Other $k$ would just make a scalar multiple of this equation, so
+$$
+\begin{bmatrix}A_0&B_0&C_0\\A_1&B_1&C_1\\A_2&B_2&C_2\end{bmatrix}
+=
+k \begin{bmatrix}x_0&x_1&x_2\\y_0&y_1&y_2\\w_0&w_1&w_2\end{bmatrix}^{-1}
+$$
+
+Matrix inverse is a tricky topic in general because of the possibility of singular matrices
+and the efficiency of complicated algorithms at scale,
+but for a 3×3 matrix there's a simple equation for it:
+
+$$
+M^{-1} = \begin{bmatrix}a&b&c\\d&e&f\\g&h&i\end{bmatrix}^{-1}
+=
+\frac{1}{\operatorname{det}(M)}
+\begin{bmatrix}
+ei-fh & ch-bi & bf-ce \\
+fg-di & ai-cg & cd-af \\
+dh-eg & bg-ah & ae-bd
+\end{bmatrix}
 $$
