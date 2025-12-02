@@ -29,7 +29,7 @@ There are two broad families of approaches to rasterizing triangles.
     which I've also seen replicated without citation
     in several other places.
 
-# Motivation
+# Motivation {#math}
 
 To know what pixels a triangle covers,
 three of the coordinates of the vertices are important:
@@ -100,6 +100,7 @@ $$
 $$
 Combining all of those together, we get
 $$
+\tag{1}
 \begin{bmatrix}A_0&B_0&C_0\\A_1&B_1&C_1\\A_2&B_2&C_2\end{bmatrix}
 \begin{bmatrix}x_0&x_1&x_2\\y_0&y_1&y_2\\w_0&w_1&w_2\end{bmatrix}
 =
@@ -146,24 +147,26 @@ y_0 w_1 - y_1 w_0 & x_1 w_0 - x_0 w_1 & x_0 y_1 - x_1 y_0
 $$
 is called the "adjugate matrix"^[Or sometimes the transpose of the adjugate matrix; confusingly, whether the adjugate refers to this matrix or its transpose varies by between sources.].
 
-# Finding pixels
+# Finding pixels {#basic}
 
 The pixels inside a triangle can be found as follows:
 
 :::algorithm
-Basic pixel coverage
+Pixel coverage
 
 1. Find the adjugate matrix of the matrix $\mathbf{A}$ made from the $x$, $y$, and $w$ coordinates of the three vertices
-2. <mark>For every pixel</mark> coordinate $(x,y)$,
+2. If the matrix is singular, there are no pixels in this triangle
+3. For <mark>every pixel</mark> $(x,y)$,
     a. Compute $\vec s = \mathbf{A} [x,y,1]^{T}$
     b. If all coordinates of $s$ are <mark>positive</mark>, the pixel is inside the triangle
 
+See notes for more on "every pixel" and "positive".
 :::
 
 We still need to find the other coordinates of the points this discovers are inside the triangle,
 but there are two other issues (highlighted above) to resolve as well.
 
-"For every pixel coordinate" is very inefficient:
+Checking *every pixel* coordinate is very inefficient:
 most triangles cover only a very small percentage of the screen.
 Taking a bounding box of the triangle
 (by finding the minimum and maximum of $x/w$ and $y/w$ for the three vertices)
@@ -176,4 +179,89 @@ can make large diagonal slivers faster,
 at the expense of extra steps for every triangle.
 
 
+Checking for coordinates that are *positive* checks finds pixels inside a triangle,
+but what about pixels exactly on a pixel edge
+where the coordinate will be 0?
+The common use-case of triangles is subdividing a curves surface into many adjoining triangles:
+if we leave out on-edge pixels then there will be some missing pixels between these triangles
+while if we include them then there will be some pixels draw twice, which will be visible if the triangles are translucent.
+We need a tie-breaker that will ensure each such pixel is drawn exactly once.
+A common tie-breaker is to consider a coodinate $s_i$ to mean the point is inside the triangle if
 
+- $s_i > 0$, or
+- $s_i = 0& and $A_i > 0$, or
+- $s_i = 0& and $A_i = 0$ and $B_i > 0$
+
+<details class="aside"><summary>Why this tie-breaker?</summary>
+
+Consider an pixel on an edge between two triangles.
+We want one triangle to draw that pixel and the other not to.
+
+Because the edge divides the two triangles, what is on the positive side for one will be on the negative side for the other.
+
+If $A_i$ is positive, that means that increasing $x$ makes the equation more positive
+meaning this edge is on the left side of the triangle, and hence must be on the right side of its adjoining triangle.
+
+If $A_i$ is zero, then the edge is perfectly horizontal,
+so we check $B_i$ to see if the edge is on the top or bottom side of the triangle for a similar final tie breaking.
+
+</details>
+
+# Finding other coordinates
+
+Every point on a triangle is a weighted average of its vertices,
+meaning
+$$\vec p = \lambda_0 \vec v_0 + \lambda_1 \vec v_1 + \lambda_2 \vec v_2$$
+where the $\lambda_i$ are called the **barycentric coordinates** of point $\vec p$
+and have the properties of all being non-negative and summing to 1.
+
+Because we used the same $k$ for all three plane equations in (1),
+the vector $\vec s$ found in [the pixel coverage algorithm](#basic)
+is a linear multiple of $\vec \lambda = (\lambda_0, \lambda_1, \lambda_2)$.
+However, because we are using homogeneous coordinates,
+what multiple of $\vec \lambda$ it is will vary from one pixel to another.
+Fortunately, we knew that $\vec lambda$ has to sum to 1,
+meaning find $\vec lambda = \vec s / \sum \vec s$.
+
+For the most coordinates, the $\lambda$-based average of the vertex coordinates
+gives exactly the perspective-correct interpolation of that coordinate that we want.
+However, for $z$ it does not.
+
+Projection matrices modify the $x$, $y$, $z$, and $w$ coordinates
+to provide a frustum of $\left({x \over w}, {y \over w}, {z \over w}\right)$.
+The use of homogeneous equations for the line equations
+has handled the $x \over w$ and $y \over w$ parts for us,
+but we still need ${z \over w}$ to complete the frustum.
+Fortunately, we can get both $z$ and $w$ using $\lambda$,
+so we can also get $z \over w$ with an additional division.
+
+<details class="aside"><summary>What if I don't divide $z$ by $w$?</summary>
+
+If you forget to divide $z$ by $w$, at first things will look correct.
+After all, $z$ doesn't impact where things appear on the screen
+and generally doesn't impact color either (unless you add something like fog).
+
+Not dividing $z$ by $w$ means that all shapes will be curved in 3D space:
+scaled to a frustum in $x$ and $y$ but not in $z$,
+making them into hyperbolic shapes.
+That will make the near and far clipping planes cut them on a curve, not on a straight line,
+and depending on the input can cause the depth buffer to put the wrong shape's pixels in front.
+
+Additionally, $z / w$ is important to create a visually-uniform depth buffer
+when the depth buffer is stored in a fixed-point way, as it is on graphics hardware.
+A floating-point depth buffer wont have that property,
+but it also uses a great deal more memory than a fixed-point one.
+
+</details>
+
+# Clipping
+
+The top, bottom, left, and right clipping planes are handled implicitly in this approach
+by only checking the plane equations for pixels that are on screen.
+
+The near and far clipping planes are handled per pixel
+by ensuring that $0 \le z \le 1$,
+rejecting any pixel for which that is not true.
+
+Other clipping planes can be handled on a per-pixel level similarly,
+checking the coordinates of the pixel against the equation of the plane. 
