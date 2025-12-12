@@ -35,6 +35,7 @@ Those that are not listed from the [content page](../content.html) may be incomp
 - [ Things your GPU doesn't let you program ](fixed-functionality.html):  WebGL 2's fixed functionality, including the DDA algorithm and common blending functions..
 - [ Fractals ](fractal.html):  A class of mathematically-defined geometries that look more "natural" than most others..
 - [ Commonly-used `gl.`functions ](gl-functions.html):  With an informal description of what each one does..
+- [ Physically-based Rendering ](gltf-pbr.html):  The most common parts of the Disney PBR model as documented by Khronos in the glTF specification.
 - [ Fluids on a Grid ](grid-fluids.html):  The core ideas behind Eulerian fluid simulation..
 - [ Half-edge data structure ](halfedge.html):  With notes on implementation and how to implement triangle subdivision using it..
 - [ Rasterizing Polynomial Curves ](implicit-curves.html):  How circles, parabolas, and so on can be drawn almost as easily as lines..
