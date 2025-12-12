@@ -95,6 +95,13 @@ The roughness of a material has more impact than just changing $\vec n$:
 a tiny bump on one part of the material might cast a shadow over another part (called "self shadowing"),
 and some light scattered off of a bump might hit another bump to add a kind of local light source called "multiscattering").
 
+Roughness is traditionally represented in equations with the symbol $\alpha^2$
+because early papers used a definition of roughness that was the square root of what was needed for the math.
+In 2012, Brent Burley at Walt Disney Animation Studios published [a whitepaper](https://media.disneyanimation.com/uploads/production/publication_asset/48/asset/s2012_pbs_disney_brdf_notes_v3.pdf) which included the recommendation that artists preferred a roughness parameter
+that was the square root of $\alpha$, and that has become mainstream since.
+This means that $\alpha^2 = \text{roughness}^4$, where $\text{roughness}$ is the value provided by artists, materials, and roughness textures.
+
+
 # Common approximations
 
 ## Fresnel
@@ -120,6 +127,13 @@ Note that roughness is not mentioned in this approximation.
 While roughness does have some impact on Fresnel,
 it is generally not considered to be visually important enough to be worth the extra computation.
 
+To fully preserve energy, light that is specularly reflected due to Fresnel
+should not be used to illuminate the material.
+However, that lighting reduction is often omitted for efficiency,
+meaning that objects may be a bit brighter than they should be.
+In 2017 Christopher Kulla and Alejandro Conty presented^[In a SIGGRAPH course (DOI [10.1145/3084873.3084893](https://doi.org/10.1145/3084873.3084893), which does not publish course content; one author has the [slides](https://fpsunflower.github.io/ckulla/data/s2017_pbs_imageworks_slides_v2.pdf) on his personal page.] their finding that the lighting loss did not seem to have a simple equation
+and when they wanted to add it they used an piecewise trilinear equation with 4096 terms.
+
 ## Reflection
 
 There are *many* models of reflection,
@@ -134,15 +148,15 @@ by T. S. Towbridge and Karl Reitz in 1975^[DOI [10.1364/JOSA.65.000531](https://
 The Towbridge-Reitz/GGX model is the product of two functions.
 One is a microfacet distribution function:
 $$
-D = \frac{\text{roughness}^4}{\big(1 + (\vec n \cdot \vec h)^2 (\text{roughness}^4 - 1)\big)^2 \pi}
+D = \frac{\alpha^2}{\big(1 + (\vec n \cdot \vec h)^2 (\alpha^2 - 1)\big)^2 \pi}
 $$
 The other is a self-shadowing/occluding function
 or visibility function^[This page has the visibility function. The self-shadowing/occluding function has an extra factor $4 |\vec n \cdot \vec l| \, |\vec n \cdot \vec v|$ in the numerator and is traditionally given the letter $G$ instead of $V$.],
 typically based on an derivation published by B. Smith in 1967^[DOI [10.1109/TAP.1967.1138991](https://doi.org/10.1109/TAP.1967.1138991)]:
 $$
 V = \frac{1}{
-\left(|\vec n \cdot \vec \ell| + \sqrt{\text{roughness}^4 + (1-\text{roughness}^4)(\vec n \cdot \vec \ell)^2}\right)
-\left(|\vec n \cdot \vec v| + \sqrt{\text{roughness}^4 + (1-\text{roughness}^4)(\vec n \cdot v)^2}\right)
+\left(|\vec n \cdot \vec \ell| + \sqrt{\alpha^2 + (1-\alpha^2)(\vec n \cdot \vec \ell)^2}\right)
+\left(|\vec n \cdot \vec v| + \sqrt{\alpha^2 + (1-\alpha^2)(\vec n \cdot v)^2}\right)
 }
 $$
 
@@ -154,7 +168,7 @@ Any remaining light ($1 - V D$) is still reflected, but towards other viewers.
 The common form of Towbridge-Reitz/GGX as given above
 is not fully energy-conserving because it lacks a term for multiscattering,
 meaning very rough surfaces come out darker than they should.
-In 2027 Christopher Kulla and Alejandro Conty presented^[In a SIGGRAPH course (DOI [10.1145/3084873.3084893](https://doi.org/10.1145/3084873.3084893), which does not publish course content; one author has the [slides](https://fpsunflower.github.io/ckulla/data/s2017_pbs_imageworks_slides_v2.pdf) on his personal page.] an additional multiscattering term,
+In 2017 Christopher Kulla and Alejandro Conty presented^[In a SIGGRAPH course (DOI [10.1145/3084873.3084893](https://doi.org/10.1145/3084873.3084893), which does not publish course content; one author has the [slides](https://fpsunflower.github.io/ckulla/data/s2017_pbs_imageworks_slides_v2.pdf) on his personal page.] an additional multiscattering term,
 based not on a function of any kind but rather on precomputing the multiscattering energy loss of the above formula
 on a grid of viewing angles and roughnesses
 and looking up the energy to add back in via a texture lookup in that grid.
