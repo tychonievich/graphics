@@ -207,18 +207,113 @@ The simplest case is when all light comes from a finite set of mathematical poin
 then we can simply run the equations with each light source
 and add their contributions to find the light visible in a pixel.
 
-More work is when all light comes from a finite set of finite areas.
+More work is required if light comes from a finite set of finite areas.
 Typically, this is handled by picking a sampling of points across the area
 and treating each one as a point light, as noted above.
 Often this is done using temporal antialiasing:
 we pick a different point in the area each frame
 and average the light found across multiple frames (unless the camera or object moves, in which case we reset).
 
-But one of the best-looking cases is when we have an environment map,
-indicating how much light comes from each direction across the entire surrounding sphere.
+Much better looking than even area lights
+(and often combined with some point and area lights in practice)
+is using an environment map
+which indicates how much light comes from each direction across the entire surrounding sphere.
 
-**FIX ME:** describe image-based lighting
+## Image-based lighting
+
+Environment maps are generally provided as **high dynamic range** (HDR) images
+with full 360°, $4\pi$ steradian coverage.
+There are multiple HDR image formats
+and multiple ways to project an entire surrounding sphere onto a rectangular image,
+but these are not generally used as-is:
+rather, they are first preprocessed into a few cubemaps.
+
+A cubemap is an set of 6 square images that together cover the surface of a cube.
+They are indexed by 3-vectors:
+the face to use is chosen by finding which component of the vector is largest
+and the texel on that face is chosen by dividing the other two components by that largest value.
+
+:::example
+The vector $(-0.36, -0.80, +0.48)$
+uses the negative-y face of the cube
+because its $y$ coordinate is the largest and is negative.
+
+Within that face, it picks a texel
+using $(-0.36, +0.48) / -0.80 = (+0.45, -0.6)$ in a ‒1-to-1 space,
+or $(1+0.45, 1-0.6)/2$ in a 0-to-1 space,
+meaning texel $(0.725 w, 0.2 h)$
+on a $w×h$ texture map.
+:::
+
+The pre-processing converts the environment map into more than one cube map:
+one for each major type of lighting.
+
+For diffuse lighting, the cube map is indexed by surface normal.
+To find the light intensity and color of a given diffuse cube map texel
+we iterate over the environment map and apply the diffuse lighting equation
+for the surface normal mapping to that cube map texel,
+adding the effect of all such lightings.
+An important consideration here is that in most environment maps,
+not all pixels represent the same solid angle
+and smaller pixels contribute less light to the diffuse cube map.
+
+For reflective lighting, the cube map is indexed by the reflection of the view vector over the surface normal,
+$\vec r = (2 \vec n \cdot \vec v) \vec n - \vec v$.
+For zero-roughness materials, each texel of the cube map
+is simply the environment map pixel.
+For higher roughness, the cube map needs to be blurred
+as specified in the Towbridge-Reitz/GGX distribution.
+Such bluring is computationally expensive
+and is done as part of the cube map creation,
+with higher roughnesses stored as smaller mip maps.
+Computing the blur needs to not only follow Towbridge-Reitz/GGX
+but also the non-uniform solid angles of pixels,
+and in practice is often done by using
+a Monte Carlo quasirandom sampling of the Towbridge-Reitz/GGX distribution at a given roughness.
+
+Once the cube maps are created, image-based lighting becomes
+
+1. Compute [Fresnel] the same as with point lights.
+2. For diffuse lighting, check the diffuse cube map instead of point light computation.
+3. For reflection, check the reflection cube map at a mip map level based on roughness instead of the point light computation.
+4. Combine those with absorbtion based on the fresnel, metalicity, and absorbtion color of the material.
+5. If there are also point or area lights, compute and add their contribution too.
 
 # Exposure Filtering
 
-**FIX ME:** describe exposure and image filtering
+Physics-based rendering uses physical units.
+In particular, light in each of the red, green, and blue channel is measured in nits^[1 nit = 1 candela / meter^2^<br/>1 candela = ${1 \over 683}$ watts of 550nm light per steradian ≈ the brightness of the flame of a wax candle.]
+These are convenient units for computing lighting,
+but are not very useful for sending to a display device.
+
+Display devices and image formats
+generally mimic analog photographs and other chemical imaging decides (like retnas)
+by doing the following:
+
+1. Optionally, filter the image to make very bright areas spill over into other regions,
+    creating "glow"-type effects.
+    
+    There are many sources of glows:
+    haze in the atmosphere,
+    imperfections in lens surfaces,
+    diffraction around lens aperture boundaries,
+    and chemical bloom inside light receptors
+    are some of the more common.
+    
+    Applying any of these filters requires non-local, and thus more expensive, computation,
+    but without them very bright areas will appear flat and uninteresting.
+
+2. Apply an exposure function that compressed bright colors and scales color overall.
+    
+    A simple exposure function is $\text{exposed} = c + k\log(\text{nits})$.
+    This kind of function is easy to derive and implement, but can change saturation of colors if applied to R, G, and B separately
+    and doesn't look as nice to many viewers as more complicated exposure functions do.
+
+3. Apply [gamma correction](color.html#non-linear-storage-gamma) to compress data into the most visually-important brightnesses.
+
+4. Digitize to just a few (often 8 or 10) bits per color channel.
+
+5. Send the resulting bytes to the display.
+
+6. Reverse the gamma correction and emit (backlit screens) or absorb (pigments) the corresponding amount of light.
+
