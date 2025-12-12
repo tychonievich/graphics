@@ -317,3 +317,20 @@ by doing the following:
 
 6. Reverse the gamma correction and emit (backlit screens) or absorb (pigments) the corresponding amount of light.
 
+:::note
+
+Exposure ≠ gamma correction
+
+Exposure models how light, which has no maximum brightness,
+is perceived by eyes and cameras, which do max out at some brightness.
+
+Gamma is used to compress light information in a way that minimizes viewer's perception of light transitions between adjacent discrete color values.
+
+Both tend to expand darker colors and compress brighter ones,
+but do so in different ways for different purposes.
+
+A display capable of being as bright as the sun would not need exposure, but would still benefit in efficiency from gamma.
+
+A display with unlimited storage and bandwidth would not need gamma, but would still benefit in human perception of light intensity from exposure.
+
+:::
