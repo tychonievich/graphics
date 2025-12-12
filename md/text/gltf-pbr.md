@@ -43,7 +43,7 @@ All reflectance is reversible: if you toggle the position
 of a light source and a light detector,
 the amount and color of light detected will never change.
 
-# Inputs
+# The metallic-roughness material model
 
 **Fresnel**'s equations are complicated, with different behaviors for different wavelengths and polarization of light.
 However, the biggest visual impact is, like with sheen, based on the viewing angle:
