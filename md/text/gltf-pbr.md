@@ -1,6 +1,6 @@
 ---
 title: Physically-based Rendering
-summary: The most common parts of the Disney PBR model as documented by Khronos in the glTF specification
+summary: The most common parts of PBR models, circa 2020, as documented by Khronos in the glTF specification
 ...
 
 
