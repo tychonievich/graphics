@@ -82,6 +82,8 @@ The relationship between incident angle and diffuse intensity is called **Lamber
 | Diffuse    | Yes                     |                    | Yes                  |
 +------------+-------------------------+--------------------+----------------------+
 
+## Roughness
+
 When considering the surface normal,
 it is common to model the "roughness" of the object,
 representing sub-pixel-scale geometry.
@@ -192,7 +194,7 @@ Note that roughness is not mentioned in this approximation.
 While roughness does have some impact on diffuse lighting,
 the normal distribution, self-shadowing, and multiscattering terms
 come close to cancelling one another out,
-leaving such minimal visual effect that it is generally not considered to be worth the extra computation.
+leaving a minor enough visual effect that it is generally not considered to be worth the extra computation.
 
 # Procedural and image lights
 
