@@ -14,9 +14,9 @@ There are two broad families of approaches to rasterizing triangles.
 
     We have a [separate text page](dda.html) about this approach.    
 
-- Create inequalities that are positive only inside the triangle, and evalaute them at every (plausible) pixel.
+- Create inequalities that are positive only inside the triangle, and evaluate them at every (plausible) pixel.
     
-    These approaches minimize up-front work per triangle at the cost of most work per pixel, making them preferable for small triangles.
+    These approaches minimize up-front work per triangle at the cost of more work per pixel, making them preferable for small triangles.
     They perform independent work at each pixel,
     making them easy to parallelize in hardware.
 
@@ -40,8 +40,10 @@ but we'll come back to them later on.
 Each edge of a triangle is a straight line on the 2D screen.
 In 2D, a straight line has the equation $Ax + By + C = 0$,
 or for homogeneous coordinates $Ax + By + Cw = 0$.
-Pints on difference sides of a 2D line have different signs in this equation,
-meaning $Ax + By + Cw > 0$ tells us all the points on one side.
+
+Points on difference sides of a 2D line have different signs in this equation:
+$Ax + By + Cw$ is positive on one side of the line and negative on the other side.
+
 The interior of a triangle is on the "inside" side of all three of the triangle's edges.
 We can set up the line equations to have either side be positive;
 let's arbitrarily pick the inside as positive and the outside as negative.
@@ -58,9 +60,10 @@ $$
 >
 \begin{bmatrix}0\\0\\0\end{bmatrix}
 $$
-If we could find the coefficients of these three line equations
+
+If we know the coefficients of these three line equations
 then telling if a pixel was inside of outside of a triangle
-would be as simple as a 3×3 matrix-vector multiply and checking three sign bits.
+is a 3×3 matrix-vector multiply and checking three sign bits.
 
 Consider one of the line equations,
 $A_0x + B_0 y + C_0 w > 0$.
@@ -74,10 +77,9 @@ A_0 x_1 + B_0 y_1 + C_0 w_1 &= 0\\
 A_0 x_2 + B_0 y_2 + C_0 w_2 &= 0\\
 \end{split}$$
 This is three equations but has four unknowns because of that pesky $k > 0$.
-We can pick any positive $k$ we want;
-1 is a common choice, but not necessary.
+We can pick any positive $k$ we want, and will just consider to be some positive constant for now.
 
-Re-writing in matrix form gives us
+Re-writing the system of equations in matrix form gives us
 $$
 \begin{bmatrix}A_0&B_0&C_0\end{bmatrix}
 \begin{bmatrix}x_0&x_1&x_2\\y_0&y_1&y_2\\w_0&w_1&w_2\end{bmatrix}
@@ -105,15 +107,10 @@ $$
 \begin{bmatrix}x_0&x_1&x_2\\y_0&y_1&y_2\\w_0&w_1&w_2\end{bmatrix}
 =
 \begin{bmatrix}k&0&0\\0&k&0\\0&0&k\end{bmatrix}
-$$
-If we picked $k=1$, this would be the defining equation for a matrix inverse; that is
-$$
-\begin{bmatrix}A_0&B_0&C_0\\A_1&B_1&C_1\\A_2&B_2&C_2\end{bmatrix}
 =
-\begin{bmatrix}x_0&x_1&x_2\\y_0&y_1&y_2\\w_0&w_1&w_2\end{bmatrix}^{-1}
-\qquad\text{if }k = 1
+k \begin{bmatrix}1&0&0\\0&1&0\\0&0&1\end{bmatrix}
 $$
-Other $k$ would just make a scalar multiple of this equation, so
+This looks like the definition of a matrix inverse:
 $$
 \begin{bmatrix}A_0&B_0&C_0\\A_1&B_1&C_1\\A_2&B_2&C_2\end{bmatrix}
 =
