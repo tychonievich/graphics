@@ -230,7 +230,7 @@ to map a frustum of $\left({x \over w}, {y \over w}, {z \over w}\right)$ into a 
 The use of homogeneous line equations
 has handled the $x \over w$ and $y \over w$ parts for us,
 but we still need ${z \over w}$ to complete the frustum.
-Fortunately, we can get both $z$ and $w$ using $\lambda$,
+Fortunately, we can get both $z$ and $w$ using $\vec \lambda$,
 so we can also get $z \over w$ with an additional division.
 
 <details class="aside"><summary>What if I don't divide $z$ by $w$?</summary>
