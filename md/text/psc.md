@@ -178,14 +178,14 @@ can make large diagonal slivers faster,
 at the expense of extra steps for every triangle.
 
 
-Checking for coordinates that are *positive* checks finds pixels inside a triangle,
+Checking for coordinates with *positive* coordinates finds pixels inside a triangle,
 but what about pixels exactly on a pixel edge
 where the coordinate will be 0?
-The common use-case of triangles is subdividing a curves surface into many adjoining triangles:
+The common use-case of triangles is subdividing a surface into many adjoining triangles:
 if we leave out on-edge pixels then there will be some missing pixels between these triangles
 while if we include them then there will be some pixels draw twice, which will be visible if the triangles are translucent.
 We need a tie-breaker that will ensure each such pixel is drawn exactly once.
-A common tie-breaker is to consider a coodinate $s_i$ to mean the point is inside the triangle if
+A common tie-breaker is to consider a coordinate $s_i$ to mean the point is inside the triangle if
 
 - $s_i > 0$, or
 - $s_i = 0$ and $A_i > 0$, or
