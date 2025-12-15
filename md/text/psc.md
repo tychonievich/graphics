@@ -219,8 +219,8 @@ the vector $\vec s$ found in [the pixel coverage algorithm](#basic)
 is a linear multiple of $\vec \lambda = (\lambda_0, \lambda_1, \lambda_2)$.
 However, because we are using homogeneous coordinates,
 what multiple of $\vec \lambda$ it is will vary from one pixel to another.
-Fortunately, we knew that $\vec lambda$ has to sum to 1,
-meaning find $\vec lambda = \vec s / \sum \vec s$.
+Fortunately, we knew that $\vec \lambda$ has to sum to 1,
+meaning find $\vec \lambda = \vec s / \sum \vec s$.
 
 For the most coordinates, the $\lambda$-based average of the vertex coordinates
 gives exactly the perspective-correct interpolation of that coordinate that we want.
