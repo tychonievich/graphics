@@ -130,7 +130,7 @@ y_2 w_0 - y_0 w_2 & x_0 w_2 - x_2 w_0 & x_2 y_0 - x_0 y_2 \\
 y_0 w_1 - y_1 w_0 & x_1 w_0 - x_0 w_1 & x_0 y_1 - x_1 y_0
 \end{bmatrix}
 $$
-Note that each row of $M^{-1}$ is the cross product of two columns of $M$.
+Note that each row of $\mathbf{M}^{-1}$ is the cross product of two columns of $\mathbf{M}$.
 
 That $\frac{1}{\operatorname{det}(\mathbf{M})}$ term is a bit of an annoyance,
 but if we make $k = \operatorname{det}(\mathbf{M})$ it conveniently vanishes^[If the three vertices are colinear, then $\mathbf{M}$ will be singular and $\operatorname{det}(\mathbf{M}) = 0$. In this case no pixels should be shown and the triangle skipped. Computing $\operatorname{det}(\mathbf{M})$ can be done by taking the dot product of the first column of $\mathbf{M}$ and the first row of the adjugate matrix.].
