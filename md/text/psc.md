@@ -223,12 +223,11 @@ Fortunately, we knew that $\vec \lambda$ has to sum to 1,
 so $\vec \lambda = \vec s / \sum \vec s$.
 
 For the most coordinates, the $\lambda$-based average of the vertex coordinates
-gives exactly the perspective-correct interpolation of that coordinate that we want.
-However, for $z$ it does not.
-
+gives exactly the perspective-correct interpolation of that coordinate that we want;
+however, for $z$ it does not.
 Projection matrices modify the $x$, $y$, $z$, and $w$ coordinates
-to provide a frustum of $\left({x \over w}, {y \over w}, {z \over w}\right)$.
-The use of homogeneous equations for the line equations
+to map a frustum of $\left({x \over w}, {y \over w}, {z \over w}\right)$ into a linear box.
+The use of homogeneous line equations
 has handled the $x \over w$ and $y \over w$ parts for us,
 but we still need ${z \over w}$ to complete the frustum.
 Fortunately, we can get both $z$ and $w$ using $\lambda$,
@@ -241,15 +240,12 @@ After all, $z$ doesn't impact where things appear on the screen
 and generally doesn't impact color either (unless you add something like fog).
 
 Not dividing $z$ by $w$ means that all shapes will be curved in 3D space:
-scaled to a frustum in $x$ and $y$ but not in $z$,
-making them into hyperbolic shapes.
+projecting from a frustum to a box in $x$ and $y$ but not in $z$ makes lines into hyperbolas.
 That will make the near and far clipping planes cut them on a curve, not on a straight line,
-and depending on the input can cause the depth buffer to put the wrong shape's pixels in front.
+and for some inputs can cause the depth buffer to put the wrong shape's pixels in front.
 
 Additionally, $z / w$ is important to create a visually-uniform depth buffer
-when the depth buffer is stored in a fixed-point way, as it is on graphics hardware.
-A floating-point depth buffer wont have that property,
-but it also uses a great deal more memory than a fixed-point one.
+when the depth buffer is made of fixed-point numbers, as it is on graphics hardware.
 
 </details>
 
