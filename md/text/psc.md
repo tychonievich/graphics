@@ -153,10 +153,10 @@ The pixels inside a triangle can be found as follows:
 :::algorithm
 Pixel coverage
 
-1. Find the adjugate matrix of the matrix $\mathbf{A}$ made from the $x$, $y$, and $w$ coordinates of the three vertices
+1. Find the adjugate matrix of the matrix $\mathbf{M}$ made from the $x$, $y$, and $w$ coordinates of the three vertices
 2. If the matrix is singular, there are no pixels in this triangle
 3. For <mark>every pixel</mark> $(x,y)$,
-    a. Compute $\vec s = \mathbf{A} [x,y,1]^{T}$
+    a. Compute $\vec s = \mathbf{M} [x,y,1]^{T}$
     b. If all coordinates of $s$ are <mark>positive</mark>, the pixel is inside the triangle
 
 See notes for more on "every pixel" and "positive".
@@ -188,8 +188,8 @@ We need a tie-breaker that will ensure each such pixel is drawn exactly once.
 A common tie-breaker is to consider a coodinate $s_i$ to mean the point is inside the triangle if
 
 - $s_i > 0$, or
-- $s_i = 0& and $A_i > 0$, or
-- $s_i = 0& and $A_i = 0$ and $B_i > 0$
+- $s_i = 0$ and $A_i > 0$, or
+- $s_i = 0$ and $A_i = 0$ and $B_i > 0$
 
 <details class="aside"><summary>Why this tie-breaker?</summary>
 
