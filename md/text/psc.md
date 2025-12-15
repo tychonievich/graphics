@@ -108,7 +108,7 @@ $$
 =
 \begin{bmatrix}k&0&0\\0&k&0\\0&0&k\end{bmatrix}
 =
-k \begin{bmatrix}1&0&0\\0&1&0\\0&0&1\end{bmatrix}
+k \mathbf{I}
 $$
 This looks like the definition of a matrix inverse:
 $$
