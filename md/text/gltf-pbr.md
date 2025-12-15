@@ -244,7 +244,7 @@ The vector $(-0.36, -0.80, +0.48)$
 
     - $(-0.36, +0.48) / -0.80$ dividing the other two by the biggest
     - $= (+0.45, -0.6)$ in a ‒1-to-1 space,
-    - $= $(1+0.45, 1-0.6)/2 = (0.725, 02)$ in a 0-to-1 space,
+    - $= (1+0.45, 1-0.6)/2 = (0.725, 02)$ in a 0-to-1 space,
     - meaning texel $(0.725 w, 0.2 h)$ on a $w×h$ texture map.
 :::
 
