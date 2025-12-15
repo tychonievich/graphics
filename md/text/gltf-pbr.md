@@ -329,15 +329,13 @@ Gamma is used to compress light information in a way that minimizes viewer's per
 Both tend to expand darker colors and compress brighter ones,
 but do so in different ways for different purposes.
 
-A display capable of being as bright as the sun would not need exposure, but would still benefit in efficiency from gamma.
-
-A display with unlimited storage and bandwidth would not need gamma, but would still benefit in human perception of light intensity from exposure.
-
-
 | Transformation | Function                        | Purpose                                |
 | -------------- | ------------------------------- | -------------------------------------- |
 | Exposure       | Unbounded light to finite range | Cope with limited displays             |
 | Gamma encode   | Linear light to nonlinear bytes | Maximize visual impact of limited bits |
 | Gamma decode   | Nonlinear bytes to linear light | Recover usable values from encoding    |
+
+A display capable of being as bright as the sun would not need exposure, but would still benefit in efficiency from gamma.
+A display with unlimited storage and bandwidth would not need gamma, but would still benefit in human perception of light intensity from exposure.
 
 :::
