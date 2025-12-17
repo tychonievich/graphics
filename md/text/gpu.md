@@ -390,8 +390,33 @@ we also need to modify each pixel to
 - Convert to the specific bytes (and byte order) expected by the image consumer.
 - Send the image to the consumer (a display device, an on-GPU texture, or CPU memory).
 
-## User-mode CPU code
+## User-mode CPU code (again)
 
 If your GPU code returned values to the CPU (rather than sending them directly to the screen),
 the schedule and user-mode drivers help it get to the right application in the requested format.
 
+# Compute Shaders
+
+GPUs are not limited to the steps outlined above.
+They may have additional steps within a graphics application
+(such as performing subdivision on a low-res input mesh to create a higher-res rendered mesh),
+and can also execute code that lies entirely outside of the usual graphics pipeline.
+It is this not-intrisically-graphics case that this section briefly outlines.
+
+Compute shaders are not part of a larger pipeline.
+Their basic operation looks like this:
+
+1. Copy inputs into GPU arays, indexed by thread id.
+
+    Many GPUs allow multi-dimenstional thread ids
+    so that you can conceptually run for every integer $(x,y,z)$ in a cube,
+    every integer $(x,y)$ on a rectangle,
+    or every integer $x$ in a line segment.
+
+2. Run compute shader code in SIMD.
+
+3. Copy output arrays to the CPU or to GPU textures.
+
+There is still some [user-mode cpu code] involved with a compute shader,
+focussed on getting the data and code you provide into the right format.
+There's also [kernel-mode cpu code] and [non-cpu non-gpu hardware] involved, in roughly the same was as for the rendering pipline.
