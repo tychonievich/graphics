@@ -408,7 +408,7 @@ Their basic operation looks like this:
 
 1. Copy inputs into GPU arays, indexed by thread id.
 
-    Many GPUs allow multi-dimenstional thread ids
+    Many GPUs allow multidimenstional thread ids
     so that you can conceptually run for every integer $(x,y,z)$ in a cube,
     every integer $(x,y)$ on a rectangle,
     or every integer $x$ in a line segment.
