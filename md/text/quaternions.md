@@ -82,7 +82,7 @@ A quick sanity check is that multiplying any rotation matrix (including the rota
 Note that all of the above quaternion rotation formulae only have pairs of terms from the quaternion, meaning if we replace $q$ with $-q$ we get the same rotation.
 
 <details class="example"><summary>JavaScript code to turn a quaternion into a matrix</summary>
-Assuming a column-major 4x4 matrix:
+Assuming a **column-major** 4x4 matrix:
 ```js
 const m4fromQ = (q) => { 
   let n = dot(q,q)
