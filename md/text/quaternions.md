@@ -219,7 +219,7 @@ With a little trigonometry we can derive an interpolation of unit vectors that p
 Instead of the lerp $(1-t)p_0 + (t)p_1$
 we use the slerp $$\frac{\sin\big((1-t)\Omega\big)}{\sin(\Omega)}p_0 + \frac{\sin\big((t)\Omega\big)}{\sin(\Omega)}p_1$$
 where $\Omega$ is the angle between $p_0$ and $p_1$: i.e. $\arccos(p_0 \cdot p_1)$.
-Clearly this is much more expensive to compute than the lerp, so we shouldn't use it on per-vertex computations, but for per-frame computations like interpolating bone orientations it works quite well.
+The trigonomgtry functions make this much more expensive to compute than the lerp, so we shouldn't use it on per-vertex computations, but for per-frame computations like interpolating bone orientations it works quite well.
 
 The slerp is numerically unstable for very small $\Omega$, but for very small $\Omega$ the slerp and lerp are effectively identical so we can default to a lerp for small angles instead.
 It is also unstable for $\Omega$ near $\pi$, but that is because interpolating between opposite orientations is intrinsically unstable: no numerical trick will make it less so.
