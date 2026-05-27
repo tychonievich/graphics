@@ -222,6 +222,9 @@ or need to save space.
 Matrices are faster to compute with, and can be combined with other operations,
 so they are preferred in other contexts.
 
+If it is necessary to identify a variable as referring to a quaternion,
+we indicate that with a fraktur variant of the variable, like $\frak q$.
+
 <details class="note"><summary>Rotation matrix or quaternion?</summary>
 
 Space
@@ -254,9 +257,6 @@ The most common approach I've seen is to
 animate a model using quaternions and offsets,
 then convert them to matrices before applying them to vertices as the first step in rendering.
 </details>
-
-If it is necessary to identify a variable as referring to a quaternion,
-we indicate that with a fraktur variant of the variable, like $\frak q$.
 
 # Approximating functions across spheres
 
