@@ -122,6 +122,7 @@ div.tag {
 }
 div.summary { padding-bottom: 1em; border-bottom: thin solid rgba(0,0,0,0.5); margin-bottom: 1em; }
 
+dfn { font-style: normal; font-weight: bold; }
 
 nav[role="doc-toc"] {
   float: right;

@@ -6,22 +6,51 @@ summary: A brief introduction to how to evaluate them using de Casteljau's algo
 This page is intended to be a brief reference on implementing Bézier curves.
 It is not intended to be a full discussion of the topic, only a reference.
 
-# Definition
+# Special polynomials
 
-A Bézier curve is stored as a sequence of control points on a parameter interval.
+Bézier curves are a specific way of representing a polynomial of one input variable,
+typically denoted with the parameter $t$.
+The polynomial is represented using a sequence of $n+1$ <dfn>control points</dfn>,
+where $n$ is the order of the polynomial.
+In graphics, cubic Bézier curves (meaning 4 control points) is by far the most common.
+The control points need not be points, <i lang="la">per se</i>:
+they are the same datatype as the output of the polynomial function, whatever that might be.
+The two most common uses are:
 
-The control points may be scalars or vectors, and there may be an number of them;
-we will denote the control points as $p_0, p_1, \dots, p_n$.
-The $n$ here is the <dfn>order</dfn> of the Bézier curve and is one less than the number of control points.
-In computer graphics, we almost always use third-order or cubic Bézier curves,
-though second-order quadratic curves are used in some 2D applications.
+- 2D or 3D points as control points; $t$ has not intrinsic meaning, it's just a tool used to represent a 2D or 3D curve.
+- $t$ representing time; control points are anything we want to animate (orientation, position, illumination, etc).
 
-We will refer to the parameter interval as going from $t_0$ to $t_n$.
-We assume $t_0 < t_n$.
+We will refer to the control points as $p_0, p_1, ..., p_n$.
+
+Bézier curves can be defined with any range of permitted $t$ values.
+We will refer to that range as going from $t_0$ to $t_n$, with $t_0 < t_n$.
 
 # de Casteljau's Algorithm
 
 To find the point on a Bézier curve at some parameter value $t'$, we proceed as follows.
+
+:::algorithm
+de Casteljau's algorithm
+
+Input
+:   - Control points $p_0, p_1, ..., p_n$
+    - Paramter interval $[t_0, t_n]$, with $t_0 < t_n$
+    - Paramter value of interest $t'$
+
+Output
+:   - The point on the curve at $t'$
+    - Optionally, the control points of the two Bézier curves that split the input curve at $t'$:
+        - $a_0$ through $a_n$ cover the interval $[t_0, t']$
+        - $b_0$ through $b_n$ cover the interval $[t', t_n]$
+
+Process
+:   If $n = 0$, then $p_0$ is the point on the curve at $t'$, and $a_n$, and $b_0$
+    
+    Otherwise,
+    
+    - Let $t$ be the relative parameter value defined by $t = \frac{t'-t_0}{t_n-t_0}$
+    - Find $q_0, q_1, ... q_{n-1}$ where $q_i = (1-t) p_i + (t) p_{i+1}$
+    
 
 Let $t$ be the relative parameter value defined by $t = \frac{t'-t_0}{t_n-t_0}$.
 
@@ -31,6 +60,7 @@ where the new $n$ is the old $n-1$
 and the new $p_i$ is the old $(1-t) p_i + (t) p_{i+1}$;
 repeat until the new $n$ is zero.
 The operation $(1-t) p_i + (t) p_{i+1}$ is called a <dfn>lerp</dfn> (short for **l**inear int**erp**olation).
+:::
 
 <details class="example"><summary>JavaScript code for basic de Casteljau</summary>
 ```js
