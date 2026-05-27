@@ -68,8 +68,8 @@ de Casteljau's algorithm
 - Let the list of control points for the second partial curve be $[p_n]$
 - Repeat while $n > 0$:
     - Replace the control points with new $p_i$ being old $(1-t) p_i + (t) p_{i+1}$ and reduce $n$ by 1
-    - append new $p_0$ to the list of control points for the first partial curve
-    - prepend new $p_n$ to the list of control points for the second partial curve
+    - append $p_0$ to the list of control points for the first partial curve
+    - prepend $p_n$ to the list of control points for the second partial curve
 :::
 
 
