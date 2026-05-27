@@ -224,7 +224,10 @@ The trigonomgtry functions make this much more expensive to compute than the ler
 The slerp is numerically unstable for very small $\Omega$, but for very small $\Omega$ the slerp and lerp are effectively identical so we can default to a lerp for small angles instead.
 It is also unstable for $\Omega$ near $\pi$, but that is because interpolating between opposite orientations is intrinsically unstable: no numerical trick will make it less so.
 
-Because $q$ and $-q$ represent the same orientation, we sometimes need to invert $q$ to get the best slerp.
+Because $\frak q$ and $-\frak q$ represent the same orientation
+but interpolate differently, we sometimes need to negate $\frak q$ to get the best slerp:
+both sign pairings will will interpolate along the same great circle,
+with one going the shortest distance and the other the longest.
 
 :::example
 Consider the quaternions representing the rotations of 0°, 120°, and 240° around the $z$ axis:
