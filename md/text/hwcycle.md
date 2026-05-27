@@ -115,6 +115,21 @@ A cross-product of 3-vectors is two vectorized `*+`.
 A division of a 4-vector by its largest value is one `?:`, one `1/`, and one vectorized `*+`.
 :::
 
+:::note
+It's more complicated than that...
+
+GPUs often include "shuffle" operations in their SIMD instruction set
+which create a different permuation of their input vector:
+for example, they might turn $(a,b,c,d)$ into $(d,b,a,c)$ or $(c,a,b,d)$.
+Shuffles involve no meaningful work, but still occupy a clock cycle --
+unless the hardware designers decided that a particular shuffle
+was paired with another operation often enough to combine those two into one operation,
+in which case the shuffle is free.
+
+That is but one of several examples of how cycle counting on a GPU can be tricky,
+and can depend on details of GPU architecture that are invisible to the programmer.
+:::
+
 ## SIMT
 
 <dfn>Single Instruction, Multiple Threads (<abbr>SIMT</abbr>)</dfn>
