@@ -250,7 +250,8 @@ Affine combination
 Interpolation
 :   Linear interpolation of rotation matrices create scaling artifacts which are visually jarring and computaitonaly expensive to remove.
     
-    Linear interpolation of quaternions works well.
+    Linear interpolation of quaternions works well,
+    and spherical linear interpolation is a bit more expensive but works even better.
 
 Put together, there's not a single clear winner.
 The most common approach I've seen is to
