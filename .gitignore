@@ -2,6 +2,10 @@ package-lock.json
 html
 pikchr
 pikchr.c
+pikchr.h
+VERSION.h
+lemon.c
+lempar.c
 node_modules
 .zip
 support/hidden/feedback
