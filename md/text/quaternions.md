@@ -200,7 +200,7 @@ const m4toQ = (m) => {
 
 # Relationship with axis-angle
 
-Rotating $\theta$ radians around the unit-vector axis of rotation $\vec r$
+Rotating $\theta$ radians around the unit-vector axis of rotation $\hat r$
 is represented by the quaternion
 $c \left\langle \cos\left(\frac{\theta}{2}\right) ; \sin\left(\frac{\theta}{2}\right) \vec r \right\rangle$
 where $\left\langle w; \vec v \right\rangle$ is shorthand for $\left\langle w; v_x, v_y, v_z \right\rangle$
