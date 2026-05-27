@@ -1,5 +1,5 @@
 ---
-title: WIP redo for WebGPU with AI tools
+title: WIP Graphics with WebGPU and AI tools
 ...
 
 I'm working on a redo of the course to
