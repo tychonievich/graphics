@@ -222,6 +222,17 @@ or need to save space.
 Matrices are faster to compute with, and can be combined with other operations,
 so they are preferred in other contexts.
 
+:::note
+Rotation matrix or quaternion?
+
+Space
+:   A rotation matrix is 9 numbers, a quaternion is only 4.
+
+Time
+:   Rotating a vector with a matrix is 
+
+:::
+
 If it is necessary to identify a variable as referring to a quaternion,
 we indicate that with a fraktur variant of the variable, like $\frak q$.
 
