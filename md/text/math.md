@@ -222,16 +222,38 @@ or need to save space.
 Matrices are faster to compute with, and can be combined with other operations,
 so they are preferred in other contexts.
 
-:::note
-Rotation matrix or quaternion?
+<details class="note"><summary>Rotation matrix or quaternion?</summary>
 
 Space
 :   A rotation matrix is 9 numbers, a quaternion is only 4.
 
 Time
-:   Rotating a vector with a matrix is 
+:   Rotating a vector with a matrix is 3 dot products (3 `*+` and 3 `+-`).
+    
+    Rotating a vector with a quaternion is 2 cross products and 2 fused multiply-adds (6 `*+`).
+    
+    There are tricks whereby rotating 4 vectors by the same quaternion can be the same cost as rotating just one (6 `*+`), but I've rarely seen it used in graphics..
 
-:::
+Combination
+:   Combining two rotation matrices into one is 9 dot products (9 `*+` and 9 `+-`).
+    
+    Combining two quaternions into one is 4 dot-product-like operations (4 `*+` and 4 `+-`).
+
+Affine combination
+:   Rotation, translation, and scale can all be combined into a single 4×4 matrix.
+    
+    With quaternions, the three operations must be kept separate, with the order of operations preserved.
+
+Interpolation
+:   Linear interpolation of rotation matrices create scaling artifacts which are visually jarring and computaitonaly expensive to remove.
+    
+    Linear interpolation of quaternions works well.
+
+Put together, there's not a single clear winner.
+The most common approach I've seen is to
+animate a model using quaternions and offsets,
+then convert them to matrices before applying them to vertices as the first step in rendering.
+</details>
 
 If it is necessary to identify a variable as referring to a quaternion,
 we indicate that with a fraktur variant of the variable, like $\frak q$.
