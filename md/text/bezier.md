@@ -8,11 +8,13 @@ It is not intended to be a full discussion of the topic, only a reference.
 
 # Definition
 
-A Bézier curve is a sequence of control points on a parameter interval.
+A Bézier curve is stored as a sequence of control points on a parameter interval.
 
 The control points may be scalars or vectors, and there may be an number of them;
 we will denote the control points as $p_0, p_1, \dots, p_n$.
-The $n$ here is the "order" of the Bézier curve and is one less than the number of control points.
+The $n$ here is the <dfn>order</dfn> of the Bézier curve and is one less than the number of control points.
+In computer graphics, we almost always use third-order or cubic Bézier curves,
+though second-order quadratic curves are used in some 2D applications.
 
 We will refer to the parameter interval as going from $t_0$ to $t_n$.
 We assume $t_0 < t_n$.
