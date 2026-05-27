@@ -25,61 +25,58 @@ We will refer to the control points as $p_0, p_1, ..., p_n$.
 Bézier curves can be defined with any range of permitted $t$ values.
 We will refer to that range as going from $t_0$ to $t_n$, with $t_0 < t_n$.
 
-# de Casteljau's Algorithm
+# Properties of Bézier curves
 
-To find the point on a Bézier curve at some parameter value $t'$, we proceed as follows.
+The curve with control points $p_0, p_1, ..., p_n$
+
+- Begins at $p_0$ and ends at $p_n$;
+    that is, $C(t_0) = p_0$ and $C(t_n) = p_n$.
+- Remains within the convex hull of the control points.
+- Applying any affine transformation to the control points applies the same affine transformation to the curve.
+
+They also roughly follow the polyline through the control points,
+more completely at the ends than the middle in order to be smooth.
+While this is harder to define formally,
+it is arguably the one that is of most interest to artists and animators.
+
+# De Casteljau's Algorithm
+
+To find the point on a Bézier curve at some parameter value $t'$, we use de Casteljau's algorithm.
+This algorithm actually splits the curve into two parts,
+one covering $[t_0, t']$ and the other covering $[t', t_n]$.
+Because the curves start and end at a control point,
+this finds the point at $t'$ as the last control point of the first curve
+and the first control point of the second curve.
+
+The core operation in de Casteljau's algorithm
+is the linear interpolation or <dfn>lerp</dfn>.
+Given some $t \in [0,1]$,
+the lerp from $A$ to $B$ is $(1-t) A + (t) B$:
+i.e., the point $t$ of the way along the line segment from $A$ to $B$.
+De Casteljau lerps every conseuctive pair of control points sing the same $t$,
+giving a new list of points one smaller than the list of control points;
+then treats those as the control points of a lower-order Bézier curve and repeats
+until only a single point remains.
+The first and last point of each order Bézier curve
+are the control points of the two split curves.
 
 :::algorithm
 de Casteljau's algorithm
 
-Input
-:   - Control points $p_0, p_1, ..., p_n$
-    - Paramter interval $[t_0, t_n]$, with $t_0 < t_n$
-    - Paramter value of interest $t'$
-
-Output
-:   - The point on the curve at $t'$
-    - Optionally, the control points of the two Bézier curves that split the input curve at $t'$:
-        - $a_0$ through $a_n$ cover the interval $[t_0, t']$
-        - $b_0$ through $b_n$ cover the interval $[t', t_n]$
-
-Process
-:   If $n = 0$, then $p_0$ is the point on the curve at $t'$, and $a_n$, and $b_0$
-    
-    Otherwise,
-    
-    - Let $t$ be the relative parameter value defined by $t = \frac{t'-t_0}{t_n-t_0}$
-    - Find $q_0, q_1, ... q_{n-1}$ where $q_i = (1-t) p_i + (t) p_{i+1}$
-    
-
-Let $t$ be the relative parameter value defined by $t = \frac{t'-t_0}{t_n-t_0}$.
-
-If $n=0$, return $p_0$.
-Otherwise, define a set of control points
-where the new $n$ is the old $n-1$
-and the new $p_i$ is the old $(1-t) p_i + (t) p_{i+1}$;
-repeat until the new $n$ is zero.
-The operation $(1-t) p_i + (t) p_{i+1}$ is called a <dfn>lerp</dfn> (short for **l**inear int**erp**olation).
+- Let $t$ be the relative parameter value defined by $t = \frac{t'-t_0}{t_n-t_0}$.
+- Let the list of control points for the first partial curve be $[p_0]$
+- Let the list of control points for the second partial curve be $[p_n]$
+- Repeat while $n > 0$:
+    - Replace the control points with new $p_i$ being old $(1-t) p_i + (t) p_{i+1}$ and reduce $n$ by 1
+    - append new $p_0$ to the list of control points for the first partial curve
+    - prepend new $p_n$ to the list of control points for the second partial curve
 :::
 
-<details class="example"><summary>JavaScript code for basic de Casteljau</summary>
+
+<details class="example"><summary>JavaScript code for de Casteljau's algorithm</summary>
 ```js
 const lerp = (t,p0,p1) => add(mul(p0,1-t), mul(p1,t))
-const lbez = (t, ...p) => {
-  while(p.length > 1) p = p.slice(1).map((e,i) => lerp(t,p[i],e))
-  return p[0]
-}
-```
-</details>
-
-In addition to providing the point on the curve at $t$,
-De Casteljau's algorithm also splits the original Bézier curve into two:
-the set of all $p_0$ (in the order created) define the portion of the Bézier curve in the interval $[t_0, t]$
-and the set of all $p_n$ (in the reverse order created) define the portion of the Bézier curve in the interval $[t, t_n]$
-
-<details class="example"><summary>JavaScript code for de Casteljau curve spliting</summary>
-```js
-const bezcut = (t, ...p) => {
+const decasteljau = (t, ...p) => {
   let front = [], back = []
   while(p.length > 0) {
     front.push(p[0])
@@ -90,7 +87,6 @@ const bezcut = (t, ...p) => {
 }
 ```
 </details>
-
 
 # Comments
 
