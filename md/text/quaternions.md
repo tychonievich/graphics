@@ -47,19 +47,18 @@ w_1z_2 + z_1w_2 + x_1y_2 - y_1x_2 \rangle
 Notice: the terms above are such that the $x$ coordinate multiplies $x$ and $w$ in both directions
 and multiplies the other two coordinates in both directions but puts a negative sign on the one that's out-of-order (xy, yz, and zx are in-order in a wrapping alphabet).
 
-The magnitude of a quaternion $q$ is $\sqrt{q^{*} q} = \sqrt{w^2 + x^2+y^2+z^2}$.
+The magnitude of a quaternion $\frak q$ is $\sqrt{\frak q^{*} \frak q} = \sqrt{w^2 + x^2+y^2+z^2}$.
 The magnitude is always a scalar (zero $x,y,z$).
 A normalized quaternion is one with a magnitude of $1$.
 
-To multiply a point $(x,y,z)$ by a quaternion, treat the point as $\langle 0;x,y,z \rangle$
-and use the quaternion product.
-Note that this will give a quaternion (non-zero $w$), not a point (zero $w$).
-However, $q x q^{*}$ will always be a point if $x$ is a point.
+To multiply a 3-vector $\vec x = (x,y,z)$ by a quaternion, treat the point as $\frak x = \langle 0;x,y,z \rangle$
+and use the quaternion product $\frak q \frak x \frak q^{*}$.
+While $\frak q \frak x$ will give a quaternion (non-zero $w$),
+$\frak q \frak x \frak q^{*}$ will always be a 3-vector ($w=0$) if $\frak x$ is a 3-vector.
 
 # To rotation matrix
 
-To rotate point $x$ by unit-length quaternion $q$ we use $q x q^{*}$.
-But we generally will want to convert the quaternion to a matrix instead.
+Rotations are often more convenient represented as matrices instead of quaterions.
 
 The 3×3 rotation matrix of an arbitrary (non-normalized) quaternion can be found using the following three equations:
 $$n = w^2 + x^2 + y^2 + z^2$$
@@ -104,7 +103,7 @@ const m4fromQ = (q) => {
 # From rotation matrix
 
 Given a rotation matrix, we can also derive a quaternion that represents it.
-Note that there are many such quaternions, as multiplying a quaternion by a scalar does not change the rotation it represents.
+There are many such quaternions because multiplying a quaternion by a scalar does not change the rotation it represents.
 
 The basic approach here is to add cells of the simpler unit-quaternion matrix together to cancel some terms.
 
@@ -184,7 +183,7 @@ it is sufficient to check the four-term sum alone.
 :::
 
 <details class="example"><summary>JavaScript code to turn a matrix into a quaternion</summary>
-Assuming a column-major 4x4 matrix:
+Assuming a **column-major** 4x4 matrix:
 ```js
 const m4toQ = (m) => {
   let a00 = m[0], a11 = m[5], a22 = m[10]
