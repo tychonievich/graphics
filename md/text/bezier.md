@@ -30,7 +30,7 @@ Otherwise, define a set of control points
 where the new $n$ is the old $n-1$
 and the new $p_i$ is the old $(1-t) p_i + (t) p_{i+1}$;
 repeat until the new $n$ is zero.
-The operation $(1-t) p_i + (t) p_{i+1}$ is called a "lerp" (short for **l**inear int**erp**olation).
+The operation $(1-t) p_i + (t) p_{i+1}$ is called a <dfn>lerp</dfn> (short for **l**inear int**erp**olation).
 
 <details class="example"><summary>JavaScript code for basic de Casteljau</summary>
 ```js
