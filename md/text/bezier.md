@@ -100,9 +100,9 @@ are the control points of the two split curves.
 <text text-anchor="start" x="385" y="15">D</text>
 <circle id="cbez_marker" cx="200" cy="100" fill="red" r="3"/>
 </svg>
-```{=html}
 <input type="range" id="cbez_t" min="0" max="1" step="0.01" value="0.5" oninput="redraw_cbez(Number(value))">
 <div>t = <output for="cbez_t">0.5</output></div>
+```{=html}
 <script>
 function redraw_cbez(t) {
   t = Math.round(t*100)/100;
