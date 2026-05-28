@@ -143,6 +143,7 @@ redraw_cbez(Number(document.getElementById('cbez_t').value));
 The original four control points are connected by a blue polyline;
 the three lerps of those points are connected by a grey polyline;
 and the two lerps of those are conencted by an orange polyline.
+The control points of the first partial curve are circled in green.
 </figcaption>
 </figure>
 
