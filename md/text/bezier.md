@@ -54,7 +54,7 @@ Given some $t \in [0,1]$,
 the lerp from $A$ to $B$ is the point $t$ of the way along the line segment from $A$ to $B$: $(1-t) A + (t) B$.
 
 <figure>
-<svg id="lerp" viewBox="0 0 400 190">
+<svg id="lerp" viewBox="-50 -10 500 200">
 <line x1="20" x2="380" y1="180" y2="20" fill="none" stroke="#07f"/>
 <text text-anchor="end" x="15" y="185">A</text>
 <text text-anchor="start" x="385" y="25">B</text>
@@ -92,7 +92,7 @@ are the control points of the two split curves.
 
 <figure>
 ```{=html}
-<svg id="cbez" viewBox="-50 -10 500 200">
+<svg id="cbez" viewBox="0 0 400 190">
 <path d="M 100,100 C 20,170 380,180 380,20" fill="none" stroke="#f007"/>
 <path d="M 100,100 20,170 380,180 380,20" fill="none" stroke="#07f"/>
 <path id="cbez_1" d="M 100,100 380,180 20,170 380,20" fill="none" stroke="#777"/>
