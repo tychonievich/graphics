@@ -91,6 +91,41 @@ until only a single point remains.
 The first and last point of each order Bézier curve
 are the control points of the two split curves.
 
+<figure>
+<svg id="cbez" viewBox="-50 -10 500 200">
+<path d"M 20,100 380,180 100,170 380,20" fill="none" stroke="#07f"/>
+<text text-anchor="end" x="15" y="95">A</text>
+<text text-anchor="start" x="385" y="175">B</text>
+<text text-anchor="end" x="95" y="165">C</text>
+<text text-anchor="start" x="385" y="15">D</text>
+<circle id="cbez_marker" cx="200" cy="100" fill="red" r="3"/>
+</svg>
+<input type="range" id="cbez_t" min="0" max="1" step="0.01" value="0.5" oninput="redraw_cbez(Number(value))">
+<div>t = <output for="cbez_t">0.5</output></div>
+```{=html}
+<script>
+function redraw_cbez(t) {
+  t = Math.round(t*100)/100;
+  const s = Math.round((1-t)*100)/100;
+  const x0 = [20,380,100,380];
+  const x1 = x0.slice(1).map((e,i)=>x0[i]*s+e);
+  const x2 = x1.slice(1).map((e,i)=>x1[i]*s+e);
+  const x3 = x2.slice(1).map((e,i)=>x2[i]*s+e);
+  const y0 = [100, 180, 170, 20];
+  const y1 = y0.slice(1).map((e,i)=>y0[i]*s+e);
+  const y2 = y1.slice(1).map((e,i)=>y1[i]*s+e);
+  const y3 = y2.slice(1).map((e,i)=>y2[i]*s+e);
+  document.getElementById('cbez_marker').setAttribute('cx',x3[0]);
+  document.getElementById('cbez_marker').setAttribute('cy',y3[0]);
+  document.querySelector('output[for="cbez_t"]').textContent = t;
+}
+redraw_cbez(Number(document.getElementById('cbez_t').value));
+</script>
+```
+<figcaption>An illustration of a cubic Bézier curve: given control points $\mathbf A, \mathbf B, \mathbf C, $\mathbf D$ and user-input $t \in [0,1]$, shows the point $t$ of the way along the curve which is close to $\mathbf A$ when $t$ is close to $0$ and close to $D$ when $t$ is close to $1$, diverting towards $B$ and $C$ in between.</figcaption>
+</figure>
+
+
 :::algorithm
 de Casteljau's algorithm
 
