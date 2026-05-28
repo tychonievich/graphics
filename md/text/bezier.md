@@ -70,6 +70,9 @@ function redraw_lerp(t) {
   const y = 180*(1-t) + 20*(t);
   document.getElementById('lerp_marker').setAttribute('cx',x);
   document.getElementById('lerp_marker').setAttribute('cy',y);
+  document.getElementById('lerp_label').setAttribute('x',x);
+  document.getElementById('lerp_label').setAttribute('y',y-5);
+  document.getElementById('lerp_label').textContent = `${1-t} A + ${t} B`;
 }
 redraw_lerp(Number(document.getElementById('lerp_t').value));
 </script>
