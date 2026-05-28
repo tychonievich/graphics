@@ -35,10 +35,10 @@ The curve with control points $p_0, p_1, ..., p_n$
 - Applying any affine transformation to the control points applies the same affine transformation to the curve.
 - Is perfeclty numerically stable: any point on the curve can be found with the same numerical precision as the control points.
 
-They also roughly follow the polyline through the control points,
+Bézier curves also roughly follow the polyline through the control points,
 more completely at the ends than the middle in order to be smooth.
-While this is harder to define formally,
-it is arguably the one that is of most interest to artists and animators.
+While this shaping is harder to define formally,
+it is arguably the property that is of most interest to artists and animators.
 
 # De Casteljau's Algorithm
 
