@@ -92,6 +92,7 @@ The first and last point of each order Bézier curve
 are the control points of the two split curves.
 
 <figure>
+```{=html}
 <svg id="cbez" viewBox="-50 -10 500 200">
 <path d"M 100,100 380,180 20,170 380,20" fill="none" stroke="#07f"/>
 <text text-anchor="end" x="95" y="95">A</text>
@@ -102,7 +103,6 @@ are the control points of the two split curves.
 </svg>
 <input type="range" id="cbez_t" min="0" max="1" step="0.01" value="0.5" oninput="redraw_cbez(Number(value))">
 <div>t = <output for="cbez_t">0.5</output></div>
-```{=html}
 <script>
 function redraw_cbez(t) {
   t = Math.round(t*100)/100;
