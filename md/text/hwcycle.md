@@ -107,7 +107,7 @@ or a sequence of four 2-cycle vector-matrix multiplies
 or a sequence of sixteen 2-cycle dot products.
 
 :::example
-A dot product $\vec p \cdot \vec q$ of 4-vectors is one vectorized `*+` and one `+-`.
+A dot product of 4-vectors is one vectorized `*+` and one `+-`.
 
 A cross-product of 3-vectors is two vectorized `*+`.
 
