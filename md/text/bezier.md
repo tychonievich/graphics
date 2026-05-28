@@ -98,8 +98,8 @@ are the control points of the two split curves.
 <path id="cbez_1" d="M 100,100 380,180 20,170 380,20" fill="none" stroke="#777"/>
 <path id="cbez_2" d="M 100,100 380,180 20,170 380,20" fill="none" stroke="#f70"/>
 <text text-anchor="end" x="95" y="95">A</text>
-<text text-anchor="end" x="15" y="165">B</text>
-<text text-anchor="start" x="385" y="175">C</text>
+<text text-anchor="end" x="15" y="175">B</text>
+<text text-anchor="start" x="385" y="185">C</text>
 <text text-anchor="start" x="385" y="15">D</text>
 <circle id="cbez_marker" cx="200" cy="100" fill="red" r="3"/>
 <circle id="cbez_front0" cx="200" cy="100" fill="none" stroke="green" r="5"/>
