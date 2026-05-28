@@ -81,7 +81,7 @@ function redraw_lerp(t) {
 redraw_lerp(Number(document.getElementById('lerp_t').value));
 </script>
 ```
-<figcaption>An illustration of a lerp: given points $\mathbf A$ and $\mathbf B$ and user-input $t \in [0,1]$, shows the point $(1-t) A + (t) B$ which is close to $\mathbf A$ when $t$ is close to $0$ and close to $B$ when $t$ is close to $1$.</figcaption>
+<figcaption>An illustration of a lerp: given points $\mathbf A$ and $\mathbf B$ and user-input $t \in [0,1]$, shows the point $(1-t) A + (t) B$ which is close to $\mathbf A$ when $t$ is close to $0$ and close to $\mathbf B$ when $t$ is close to $1$.</figcaption>
 </figure>
 
 De Casteljau lerps every conseuctive pair of control points using the same $t$,
@@ -102,6 +102,10 @@ are the control points of the two split curves.
 <text text-anchor="start" x="385" y="175">C</text>
 <text text-anchor="start" x="385" y="15">D</text>
 <circle id="cbez_marker" cx="200" cy="100" fill="red" r="3"/>
+<circle id="cbez_front0" cx="200" cy="100" fill="none" stroke="green" r="5"/>
+<circle id="cbez_front1" cx="200" cy="100" fill="none" stroke="green" r="5"/>
+<circle id="cbez_front2" cx="200" cy="100" fill="none" stroke="green" r="5"/>
+<circle id="cbez_front3" cx="200" cy="100" fill="none" stroke="green" r="5"/>
 </svg>
 <input type="range" id="cbez_t" min="0" max="1" step="0.01" value="0.5" oninput="redraw_cbez(Number(value))">
 <div>t = <output for="cbez_t">0.5</output></div>
@@ -122,11 +126,24 @@ function redraw_cbez(t) {
   document.getElementById('cbez_1').setAttribute('d','M' + [x1[0],y1[0],x1[1],y1[1],x1[2],y1[2]]);
   document.getElementById('cbez_2').setAttribute('d','M' + [x2[0],y2[0],x2[1],y2[1]]);
   document.querySelector('output[for="cbez_t"]').textContent = t;
+  document.getElementById('cbez_front0').setAttribute('cx',x0[0]);
+  document.getElementById('cbez_front0').setAttribute('cy',y0[0]);
+  document.getElementById('cbez_front1').setAttribute('cx',x1[0]);
+  document.getElementById('cbez_front1').setAttribute('cy',y1[0]);
+  document.getElementById('cbez_front2').setAttribute('cx',x2[0]);
+  document.getElementById('cbez_front2').setAttribute('cy',y2[0]);
+  document.getElementById('cbez_front3').setAttribute('cx',x3[0]);
+  document.getElementById('cbez_front3').setAttribute('cy',y3[0]);
 }
 redraw_cbez(Number(document.getElementById('cbez_t').value));
 </script>
 ```
-<figcaption>An illustration of a cubic Bézier curve: given control points $\mathbf A, \mathbf B, \mathbf C, $\mathbf D$ and user-input $t \in [0,1]$, shows the point $t$ of the way along the curve which is close to $\mathbf A$ when $t$ is close to $0$ and close to $D$ when $t$ is close to $1$, diverting towards $B$ and $C$ in between.</figcaption>
+<figcaption>An illustration of a cubic Bézier curve: given control points $\mathbf A, \mathbf B, \mathbf C, \mathbf D$ and user-input $t \in [0,1]$, shows the point $t$ of the way along the curve which is close to $\mathbf A$ when $t$ is close to $0$ and close to $\mathbf D$ when $t$ is close to $1$, diverting towards $\mathbf B$ and $\mathbf C$ in between.
+
+The original four control points are connected by a blue polyline;
+the three lerps of those points are connected by a grey polyline;
+and the two lerps of those are conencted by an orange polyline.
+</figcaption>
 </figure>
 
 
