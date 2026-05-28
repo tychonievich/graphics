@@ -89,7 +89,7 @@ For example,
 
 Because of SIMD, for common operations the interesting aspect for runtime
 is how deep, rather than how wide, the operation is.
-A matrix-matrix multiply takes the same time as a dot product,
+A matrix-matrix multiply has the same depth as a dot product,
 which we might generalize as 2 cycles: one that does 64 `*+` operations in parallel
 and one that does 16 `+-` operations in parallel.
 
