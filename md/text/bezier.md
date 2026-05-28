@@ -66,13 +66,15 @@ the lerp from $A$ to $B$ is the point $t$ of the way along the line segment from
 ```{=html}
 <script>
 function redraw_lerp(t) {
-  const x = 20*(1-t) + 380*(t);
-  const y = 180*(1-t) + 20*(t);
+  t = Math.round(t*100)/100;
+  const s = Math.round((1-t)*100)/100;
+  const x = 20*s + 380*t;
+  const y = 180*s + 20*t;
   document.getElementById('lerp_marker').setAttribute('cx',x);
   document.getElementById('lerp_marker').setAttribute('cy',y);
   document.getElementById('lerp_label').setAttribute('x',x);
   document.getElementById('lerp_label').setAttribute('y',y-5);
-  document.getElementById('lerp_label').textContent = `${1-t} A + ${t} B`;
+  document.getElementById('lerp_label').textContent = `${s} A + ${t} B`;
   document.querySelector('output[for="lerp_t"]').textContent = t;
 }
 redraw_lerp(Number(document.getElementById('lerp_t').value));
