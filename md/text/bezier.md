@@ -73,6 +73,7 @@ function redraw_lerp(t) {
   document.getElementById('lerp_label').setAttribute('x',x);
   document.getElementById('lerp_label').setAttribute('y',y-5);
   document.getElementById('lerp_label').textContent = `${1-t} A + ${t} B`;
+  document.querySelector('output[for="lerp_t"]').textContent = t;
 }
 redraw_lerp(Number(document.getElementById('lerp_t').value));
 </script>
