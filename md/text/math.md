@@ -74,6 +74,28 @@ and hence all three are sometimes called <dfn>vectors</dnf> or 3-vectors,
 but their meanings are distinct
 and not all vector operations make sense on all of them.
 
+<details class="aside"><summary>Vector math that changes datatype</summary>
+
+Point minus point creates an offset;
+offset plus point creates a point.
+
+Offset plus or minus offset creates an offset;
+offset times scalar creates an offset.
+
+Offset divided by its own length creates a direction;
+direction times scalar creates an offset.
+
+Offset dot direction creates a scalar, which is equal to the length of the offset in that direction.
+
+Offset cross offset creates an offset, which us perpendicular to both and as long as twice the area of a triangle with the offsets as two of its edges.
+
+Direction dot direction creates a scalar, which is the cosine of the angle between them.
+
+Direction cross direction creates a scalar, which is perpendicular and as long as the sine of the angle between them.
+
+</details>
+
+
 # Homogeneous vectors and matrices
 
 Homogeneous vectors are used to store 3D points and 3D directions
