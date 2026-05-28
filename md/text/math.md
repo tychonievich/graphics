@@ -70,7 +70,7 @@ where the Euclidean length of the numbers is $1$;
 that is, $\sqrt{d_x^2 + d_y^2 + d_z^2} = 1$.
 
 Note that all three can be stored as 3 numbers,
-and hence all three are sometimes called <dfn>vectors</dnf> or 3-vectors,
+and hence all three are sometimes called <dfn>vectors</dfn> or 3-vectors,
 but their meanings are distinct
 and not all vector operations make sense on all of them.
 
