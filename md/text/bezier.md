@@ -55,7 +55,7 @@ the lerp from $A$ to $B$ is the point $t$ of the way along the line segment from
 
 <figure>
 <svg id="lerp" viewBox="-50 -10 500 200">
-<line x1="20" x2="380" y1="180" y2="20" fill="none" stroke="black"/>
+<line x1="20" x2="380" y1="180" y2="20" fill="none" stroke="#07f"/>
 <text text-anchor="end" x="15" y="185">A</text>
 <text text-anchor="start" x="385" y="25">B</text>
 <circle id="lerp_marker" cx="200" cy="100" fill="red" r="3"/>
