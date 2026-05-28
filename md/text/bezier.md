@@ -93,13 +93,13 @@ are the control points of the two split curves.
 
 <figure>
 <svg id="cbez" viewBox="-50 -10 500 200">
-<path d"M 100,100 380,180 20,170 380,20" fill="none" stroke="#07f"/>
+`<path d"M 100,100 380,180 20,170 380,20" fill="none" stroke="#07f"/>`{=html}
 <text text-anchor="end" x="95" y="95">A</text>
 <text text-anchor="start" x="385" y="175">B</text>
 <text text-anchor="end" x="15" y="165">C</text>
 <text text-anchor="start" x="385" y="15">D</text>
 <circle id="cbez_marker" cx="200" cy="100" fill="red" r="3"/>
-</svg>
+`</svg>`{=html}
 <input type="range" id="cbez_t" min="0" max="1" step="0.01" value="0.5" oninput="redraw_cbez(Number(value))">
 <div>t = <output for="cbez_t">0.5</output></div>
 ```{=html}
