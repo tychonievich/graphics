@@ -184,7 +184,7 @@ it sends the requests from all of its threads to memory
 and then sets those threads aside.
 They sit in an out-of-the-way place^[If you're familiar with reservation stations from out-of-order processor architecture, threads waiting for memory to respond are stored in a similar structure. If you are familair with pipelined processors, you can think of these waiting threads as moving through a long sequence of pipeline registers with no work between them. If you don't know what either of those are, don't worry, this class is not about that level of hardware design.] in the GPU
 for a few hundred cycles, doing nothing while they wait for memory to repond.
-Only once data is retreived from memory for every thread in the group do they re-enter the rest of the GPU's work.
+Only once data is retreived from memory for every thread in the group do they resume their trip through the GPU.
 
 While one group of threads are waiting for memory,
 the processor starts working on another group of threads.
