@@ -93,10 +93,10 @@ are the control points of the two split curves.
 
 <figure>
 <svg id="cbez" viewBox="-50 -10 500 200">
-<path d"M 20,100 380,180 100,170 380,20" fill="none" stroke="#07f"/>
-<text text-anchor="end" x="15" y="95">A</text>
+<path d"M 100,100 380,180 20,170 380,20" fill="none" stroke="#07f"/>
+<text text-anchor="end" x="95" y="95">A</text>
 <text text-anchor="start" x="385" y="175">B</text>
-<text text-anchor="end" x="95" y="165">C</text>
+<text text-anchor="end" x="15" y="165">C</text>
 <text text-anchor="start" x="385" y="15">D</text>
 <circle id="cbez_marker" cx="200" cy="100" fill="red" r="3"/>
 </svg>
@@ -107,7 +107,7 @@ are the control points of the two split curves.
 function redraw_cbez(t) {
   t = Math.round(t*100)/100;
   const s = Math.round((1-t)*100)/100;
-  const x0 = [20,380,100,380];
+  const x0 = [100,380,20,380];
   const x1 = x0.slice(1).map((e,i)=>x0[i]*s+e*t);
   const x2 = x1.slice(1).map((e,i)=>x1[i]*s+e*t);
   const x3 = x2.slice(1).map((e,i)=>x2[i]*s+e*t);
