@@ -51,9 +51,31 @@ and the first control point of the second curve.
 The core operation in de Casteljau's algorithm
 is the linear interpolation or <dfn>lerp</dfn>.
 Given some $t \in [0,1]$,
-the lerp from $A$ to $B$ is $(1-t) A + (t) B$:
-i.e., the point $t$ of the way along the line segment from $A$ to $B$.
-De Casteljau lerps every conseuctive pair of control points sing the same $t$,
+the lerp from $A$ to $B$ is the point $t$ of the way along the line segment from $A$ to $B$: $(1-t) A + (t) B$.
+
+<figure>
+<svg id="lerp" viewBox="0 0 400 200">
+<line x1="20" x2="380" y1="180" y2="20" fill="none" stroke="black"/>
+<text text-anchor="end" x="15" y="185">A</text>
+<text text-anchor="start" x="385" y="25">B</text>
+<circle id="lerp_marker" cx="200" cy="100" fill="red" r="3"/>
+</svg>
+<input type="range" id="lerp_t" min="0" max="1" step="0.01" value="0.5" oninput="redraw_lerp(Number(value))">
+```{=html}
+<script>
+redraw_lerp(t) {
+  const x = 20*(1-t) + 380*(t);
+  const y = 180*(1-t) + 20*(t);
+  document.getElementById('lerp_marker').setAttribute('cx',x);
+  document.getElementById('lerp_marker').setAttribute('cy',y);
+}
+redraw_lerp(Number(document.getElementById('lerp_t').value));
+</script>
+```
+<figcaption></figcaption>
+</figure>
+
+De Casteljau lerps every conseuctive pair of control points using the same $t$,
 giving a new list of points one smaller than the list of control points;
 then treats those as the control points of a lower-order Bézier curve and repeats
 until only a single point remains.
