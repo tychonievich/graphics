@@ -63,7 +63,7 @@ the lerp from $A$ to $B$ is the point $t$ of the way along the line segment from
 <input type="range" id="lerp_t" min="0" max="1" step="0.01" value="0.5" oninput="redraw_lerp(Number(value))">
 ```{=html}
 <script>
-redraw_lerp(t) {
+function redraw_lerp(t) {
   const x = 20*(1-t) + 380*(t);
   const y = 180*(1-t) + 20*(t);
   document.getElementById('lerp_marker').setAttribute('cx',x);
