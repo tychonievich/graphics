@@ -27,7 +27,7 @@ I introduce two-character abbreviations for each;
 these abbreviations are not standard outside of this class,
 but I hope they will help remind you of the details of these operations.
 
-`+-`
+Adder `+-`
 :   Addition and subtraction of floating-point numbers differ only in a single bit
     and are both done by a functional unit commonly called an <dfn>adder</dfn>.
     
@@ -37,12 +37,12 @@ but I hope they will help remind you of the details of these operations.
     optionally flipping the sign of any subset of the numbers along the way to cover subtraction too.
     To compute `x + y`, this unit instead computes `x + y + 0 + 0`.
 
-`*+`
+FMA `*+`
 :   Multiplication is implemented in a way that allows a number to be added to the product with no extra work,
     creating functional units commonly called <dfn>fused multiply-adders (<abbr>fma</abbr>)</dfn>.
     To compute `x * y`, this unit instead computes `(x * y) + 0`.
 
-`1/`
+Inversion `1/`
 :   In GPUs, it is common for the same denominator to be used in many divisions.
     Because division is much more time consuming than multiplication,
     the functional unit of interest is actually a single-argument <dfn>inversion</dfn>
@@ -54,7 +54,7 @@ but I hope they will help remind you of the details of these operations.
     The exact time does vary by GPU and by the number of bits used to represent the number,
     but 10 cycles per inversion (compared to 1 for a `+-` or `*+`) is a good rule of thumb.
 
-`?:`
+Selection `?:`
 :   GPUs are very bad a branching.
     While they do support control constructs like `if` and `while`,
     using them in ways that do not impose a massive performance penalty is tricky,
@@ -80,8 +80,7 @@ GPUs use two forms of parallelism extensively.
 <dfn>Single Instruction, Multiple Data (<abbr>SIMD</abbr>)</dfn>
 is implemented in hardware by lining up several identical functional units
 and having them operate in lockstep on lists of inputs to produce list of outputs.
-SIMD is primarily exposed by GPUs' graphics APIs in the form of operations of 4-element vectors and 4×4 matrices,
-with similar operations with more but smaller arguments being common in more approximate computations used in machine learning.
+SIMD is primarily exposed by GPUs' graphics APIs in the form of operations of 4-element vectors and 4×4 matrices^[The elements of 4-vectors are 32-bit floats, meaking the vector overall 128 bits (16 bytes). In AI, vectors of the same size in bytes made of a larger number of smaller elements are also common, but I've rarely seen them used in graphics.].
 For example,
 
 - A dot product of 4-vectors is 4 `*+` operating in parallel followed by one `+-`: `a*x + b*y + c*z + d*w`.
