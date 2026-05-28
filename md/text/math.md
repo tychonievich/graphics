@@ -55,15 +55,15 @@ Major topics on this page
 
 # Points, directions, and offsets
 
-A 3D point exists at a specific location in space.
+A 3D <dfn>point</dfn> exists at a specific location in space.
 We show them with bold-face variables like $\mathbf p$
 and can store them as 3 numbers, $(p_x, p_y, p_z)$.
 
-A 3D offset is the difference between two 2D points.
+A 3D <dfn>offset</dfn> is the difference between two 3D points.
 We show them with an arrow over the variable $\vec o$
 and can store them as 3 numbers, $(o_x, o_y, o_z)$.
 
-A 3D direction is an offset without the offset's length.
+A 3D <dfn>direction</dfn> is an offset without a specific length.
 We show them with an circumflex over the variable $\hat d$
 and can store them as 3 numbers, $(d_x, d_y, d_z)$,
 where the Euclidean length of the numbers is $1$;
