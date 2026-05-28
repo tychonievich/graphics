@@ -59,8 +59,10 @@ the lerp from $A$ to $B$ is the point $t$ of the way along the line segment from
 <text text-anchor="end" x="15" y="185">A</text>
 <text text-anchor="start" x="385" y="25">B</text>
 <circle id="lerp_marker" cx="200" cy="100" fill="red" r="3"/>
+<text id="lerp_label" text-anchor="mid" cx="200" cy="95">0.5 A + 0.5 B</text>
 </svg>
 <input type="range" id="lerp_t" min="0" max="1" step="0.01" value="0.5" oninput="redraw_lerp(Number(value))">
+<div>t = <output for="lerp_t">0.5</output></div>
 ```{=html}
 <script>
 function redraw_lerp(t) {
@@ -72,7 +74,7 @@ function redraw_lerp(t) {
 redraw_lerp(Number(document.getElementById('lerp_t').value));
 </script>
 ```
-<figcaption></figcaption>
+<figcaption>An illustration of a lerp: </figcaption>
 </figure>
 
 De Casteljau lerps every conseuctive pair of control points using the same $t$,
