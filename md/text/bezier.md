@@ -94,6 +94,7 @@ are the control points of the two split curves.
 <figure>
 ```{=html}
 <svg id="cbez" viewBox="-50 -10 500 200">
+<path d="M 100,100 C 20,170 380,180 380,20" fill="none" stroke="#f007"/>
 <path d="M 100,100 20,170 380,180 380,20" fill="none" stroke="#07f"/>
 <path id="cbez_1" d="M 100,100 380,180 20,170 380,20" fill="none" stroke="#777"/>
 <path id="cbez_2" d="M 100,100 380,180 20,170 380,20" fill="none" stroke="#f70"/>
@@ -157,6 +158,7 @@ the three lerps of those points are connected by a grey polyline;
 and the two lerps of those are conencted by an orange polyline.
 The control points of the first partial curve are circled in green
 and those of the second partial curve are circles in purple.
+The full curve is drawn in pink.
 </figcaption>
 </figure>
 
