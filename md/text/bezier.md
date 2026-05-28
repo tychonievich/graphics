@@ -163,6 +163,9 @@ The full curve is drawn in pink.
 
 
 :::algorithm
+
+_Finds the point on the Bézier curve with control points $p_0, p_1, ... p_n$ for parameter value $t'$ by splitting the curve into two partial curves meeting at that point._
+
 de Casteljau's algorithm
 
 - Let $t$ be the relative parameter value defined by $t = \frac{t'-t_0}{t_n-t_0}$.
