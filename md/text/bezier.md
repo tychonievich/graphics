@@ -95,6 +95,8 @@ are the control points of the two split curves.
 ```{=html}
 <svg id="cbez" viewBox="-50 -10 500 200">
 <path d="M 100,100 380,180 20,170 380,20" fill="none" stroke="#07f"/>
+<path id="cbez_1" d="M 100,100 380,180 20,170 380,20" fill="none" stroke="#777"/>
+<path id="cbez_2" d="M 100,100 380,180 20,170 380,20" fill="none" stroke="#f70"/>
 <text text-anchor="end" x="95" y="95">A</text>
 <text text-anchor="start" x="385" y="175">B</text>
 <text text-anchor="end" x="15" y="165">C</text>
@@ -117,6 +119,8 @@ function redraw_cbez(t) {
   const y3 = y2.slice(1).map((e,i)=>y2[i]*s+e*t);
   document.getElementById('cbez_marker').setAttribute('cx',x3[0]);
   document.getElementById('cbez_marker').setAttribute('cy',y3[0]);
+  document.getElementById('cbez_1').setAttribute('d','M' + [x1[0],y1[0],x1[1],y1[1],x1[2],y1[2]]);
+  document.getElementById('cbez_2').setAttribute('d','M' + [x2[0],y2[0],x2[1],y2[1]]);
   document.querySelector('output[for="cbez_t"]').textContent = t;
 }
 redraw_cbez(Number(document.getElementById('cbez_t').value));
