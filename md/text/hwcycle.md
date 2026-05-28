@@ -204,8 +204,7 @@ can take advantage of that high throughput without sitting idle while waiting on
 
 Part of how memory gets such high throughput is by providing large blocks of contiguous memory addresses in a single operation.
 Because of this, memory accesses where all of the threads in a group
-requested addresses that were close together get handled much more quickly than those that scatter their addresses across memory may need several rounds
-to give memory time to collect all the relevant data together.
+requested addresses that were close together get handled much more quickly than those that scatter their addresses across memory.
 
 This leads to two guiding principles:
 
