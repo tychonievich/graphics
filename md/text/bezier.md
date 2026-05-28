@@ -106,6 +106,10 @@ are the control points of the two split curves.
 <circle id="cbez_front1" cx="200" cy="100" fill="none" stroke="green" r="5"/>
 <circle id="cbez_front2" cx="200" cy="100" fill="none" stroke="green" r="5"/>
 <circle id="cbez_front3" cx="200" cy="100" fill="none" stroke="green" r="5"/>
+<circle id="cbez_back0" cx="200" cy="100" fill="none" stroke="purple" r="4"/>
+<circle id="cbez_back1" cx="200" cy="100" fill="none" stroke="purple" r="4"/>
+<circle id="cbez_back2" cx="200" cy="100" fill="none" stroke="purple" r="4"/>
+<circle id="cbez_back3" cx="200" cy="100" fill="none" stroke="purple" r="4"/>
 </svg>
 <input type="range" id="cbez_t" min="0" max="1" step="0.01" value="0.5" oninput="redraw_cbez(Number(value))">
 <div>t = <output for="cbez_t">0.5</output></div>
@@ -134,6 +138,14 @@ function redraw_cbez(t) {
   document.getElementById('cbez_front2').setAttribute('cy',y2[0]);
   document.getElementById('cbez_front3').setAttribute('cx',x3[0]);
   document.getElementById('cbez_front3').setAttribute('cy',y3[0]);
+  document.getElementById('cbez_back0').setAttribute('cx',x0[3]);
+  document.getElementById('cbez_back0').setAttribute('cy',y0[3]);
+  document.getElementById('cbez_back1').setAttribute('cx',x1[2]);
+  document.getElementById('cbez_back1').setAttribute('cy',y1[2]);
+  document.getElementById('cbez_back2').setAttribute('cx',x2[1]);
+  document.getElementById('cbez_back2').setAttribute('cy',y2[1]);
+  document.getElementById('cbez_back3').setAttribute('cx',x3[0]);
+  document.getElementById('cbez_back3').setAttribute('cy',y3[0]);
 }
 redraw_cbez(Number(document.getElementById('cbez_t').value));
 </script>
@@ -143,7 +155,8 @@ redraw_cbez(Number(document.getElementById('cbez_t').value));
 The original four control points are connected by a blue polyline;
 the three lerps of those points are connected by a grey polyline;
 and the two lerps of those are conencted by an orange polyline.
-The control points of the first partial curve are circled in green.
+The control points of the first partial curve are circled in green
+and those of the second partial curve are circles in purple.
 </figcaption>
 </figure>
 
