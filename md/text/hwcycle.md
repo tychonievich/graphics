@@ -220,7 +220,7 @@ To make 2D-adjacent memory access work well with the 1D layout of memory address
 GPUs often reorder texture maps, converting from how they are stored row by row in CPU memory
 into a more block-based order.
 If you use built-in texture operations this works automatically behind the scenes,
-but if you decide you want to directly manage the details of memory it becomes something you need to manage yourself.
+but if you bypass that to directly manage the details of memory it becomes something you need to manage yourself.
 
 
 
