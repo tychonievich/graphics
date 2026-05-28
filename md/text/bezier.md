@@ -80,7 +80,7 @@ function redraw_lerp(t) {
 redraw_lerp(Number(document.getElementById('lerp_t').value));
 </script>
 ```
-<figcaption>An illustration of a lerp: </figcaption>
+<figcaption>An illustration of a lerp: given points $\mathbf A$ and $\mathbf B$ and user-input $t \in [0,1]$, shows the point $(1-t) A + (t) B$ which is close to $\mathbf A$ when $t$ is close to $0$ and close to $B$ when $t$ is close to $1$.</figcaption>
 </figure>
 
 De Casteljau lerps every conseuctive pair of control points using the same $t$,
