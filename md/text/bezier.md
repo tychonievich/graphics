@@ -33,6 +33,7 @@ The curve with control points $p_0, p_1, ..., p_n$
     that is, $C(t_0) = p_0$ and $C(t_n) = p_n$.
 - Remains within the convex hull of the control points.
 - Applying any affine transformation to the control points applies the same affine transformation to the curve.
+- Is perfeclty numerically stable: any point on the curve can be found with the same numerical precision as the control points.
 
 They also roughly follow the polyline through the control points,
 more completely at the ends than the middle in order to be smooth.
