@@ -94,7 +94,7 @@ are the control points of the two split curves.
 <figure>
 ```{=html}
 <svg id="cbez" viewBox="-50 -10 500 200">
-<path d="M 100,100 380,180 20,170 380,20"/>
+<path d="M 100,100 380,180 20,170 380,20" fill="none" stroke="#07f"/>
 <text text-anchor="end" x="95" y="95">A</text>
 <text text-anchor="start" x="385" y="175">B</text>
 <text text-anchor="end" x="15" y="165">C</text>
