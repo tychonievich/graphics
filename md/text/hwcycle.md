@@ -192,7 +192,7 @@ It is quite likely that that next group will also access memory
 and also be routed into the memory waiting area.
 If all of the threads access memory as their first operation,
 it is quite possible to have the waiting area entirely full,
-forcing the GPU to pause operatation until at least one of them gets its results from memory.
+forcing the GPU to pause operatation until at least one group gets its results from memory.
 
 This design may seem strange, but it is based on a property of how memory works.
 Memory (especially memory designed specifically for a GPU)
