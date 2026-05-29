@@ -175,7 +175,7 @@ It causes the coordinates with non-zero values added to their row
 to translate an amount based on the coordinate of that column.
 
 This same result can be created with a rotation, non-uniform scaling, and a second rotation,
-and in most 3D contexts they two cannot be distinguished because the cardinal axes that make sheering matrices look special do not generally have clear 3D meaning.
+and in most 3D contexts the two cannot be distinguished because the cardinal axes that make sheering matrices look special do not generally have clear 3D meaning.
 
 Translations are a 4D sheer using the $w$ column.
 They're the only kind of sheer I've seen used in 3D graphics,
@@ -203,8 +203,8 @@ We have special names for some classes of transformations:
 |------------|:-:|:-:|:-:|:-:|:-:|
 | Projective | ✔ | ✔ | ✔ | ✔ | ✔ |
 | Affine     | ✔ | ✔ | ✔ | ✔ |   |
-| Similarity | ✔ | ✔ |   | ✔ |   |
 | Linear     | ✔ | ✔ | ✔ |   |   |
+| Similarity | ✔ | ✔ |   | ✔ |   |
 | Rigid      | ✔ |   |   | ✔ |   |
 
 Projective transformations keep straight lines straight.
