@@ -266,6 +266,13 @@ details > summary > p:first-child { display: inline; }
     content: "Note \2014\00A0 ";
     font-style: italic;
 }
+
+.option {
+    margin: 1em;
+    background: linear-gradient(to right, #0001, #0000);
+    border-left: rgba(0,0,0,0.1225) solid 0.5ex;
+    padding: 0.5em 1em;
+}
 .option > :first-child:before {
     content: "Option \2014\00A0 ";
     font-style: italic;
