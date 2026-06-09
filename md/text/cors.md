@@ -17,7 +17,7 @@ meaning that edits you make to files will seem not to have happened.
 
 We have multiple possible solutions, using different local server tools.
 
-<details class="option"><summary>Python</summary>
+<details class="option"><summary>Python local server</summary>
 
 Make a file `webserver.py` with the following contents:
 
@@ -51,14 +51,14 @@ from the directory containing your HTML file, and then open <http://localhost:80
 
 </details>
 
-<details class="option"><summary>Node, full developer control</summary>
+<details class="option"><summary>Node local server</summary>
 
 Run `npx http-server -c-1` 
 from the directory containing your HTML file, and then open <http://localhost:8080>.
 
 </details>
 
-<details class="option"><summary>Node, more features</summary>
+<details class="option"><summary>Node local server with hot reloading</summary>
 
 Run `npx live-server` 
 from the directory containing your HTML file, and then open <http://localhost:8080>.
@@ -68,7 +68,7 @@ That can be convenient, but can also be confusing to debug if you try to trace e
 
 </details>
 
-<details class="option"><summary>VS Code extension </summary>
+<details class="option"><summary>VS Code extension</summary>
 
 Install the "Live server" extension by Ritwick Dey in VS Code and use its "Go Live" button.
 This inserts JavaScript into your HTML files to automatically reload the page when a file is edited.
