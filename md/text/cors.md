@@ -17,7 +17,7 @@ meaning that edits you make to files will seem not to have happened.
 
 We have multiple possible solutions, using different local server tools.
 
-<details><summary>Python</summary>
+<details class="option"><summary>Python</summary>
 
 Make a file `webserver.py` with the following contents:
 
@@ -51,14 +51,14 @@ from the directory containing your HTML file, and then open <http://localhost:80
 
 </details>
 
-<details><summary>Node, full developer control</summary>
+<details class="option"><summary>Node, full developer control</summary>
 
 Run `npx http-server -c-1` 
 from the directory containing your HTML file, and then open <http://localhost:8080>.
 
 </details>
 
-<details><summary>Node, more features</summary>
+<details class="option"><summary>Node, more features</summary>
 
 Run `npx live-server` 
 from the directory containing your HTML file, and then open <http://localhost:8080>.
@@ -68,7 +68,7 @@ That can be convenient, but can also be confusing to debug if you try to trace e
 
 </details>
 
-<details><summary>VS Code extension </summary>
+<details class="option"><summary>VS Code extension </summary>
 
 Install the "Live server" extension by Ritwick Dey in VS Code and use its "Go Live" button.
 This inserts JavaScript into your HTML files to automatically reload the page when a file is edited.
@@ -76,19 +76,26 @@ That can be convenient, but can also be confusing to debug if you try to trace e
 
 </details>
 
-If you want to use a server that lacks a cache disable feature, you can also bypass caching in either of two ways:
+<details class="option"><summary>Browser developer tools</summary>
 
-- If you run your code with your browser's developer tools open (F12)
-    and in those tools' Networks tab check the "Disable Cache" button,
-    then your browser will ignore all caches while the developer tools are open.
+Run any local server you know how to run. To bypass caching,
 
-- For `fetch` calls, use `fetch(myFileName, {cache:"no-store"})`{.js} to bypass the cache.
-    For `<script>` tags, they can be forcibly reloaded in a platform-specific way:
+1. run your code with your browser's developer tools open (F12)
+2. in those tools' Networks tab check the "Disable Cache" button
+
+</details>
+
+<details class="option"><summary>Reload and fetch without caching</summary>
+
+For `fetch` calls, use `fetch(myFileName, {cache:"no-store"})`{.js} to bypass the cache.
+
+For `<script>` tags, they can be forcibly reloaded despite caching in a platform-specific way:
     
-    - Most OSes and browsers: Ctrl+F5 or Ctrl+Shift+R or Ctrl+(refresh button)
-    - MacOS and most browsers: Cmd+Shift+R or Shift+(refresh button)
-    - MacOS and Safari: Cmd+Shift+E followed by Cmd+R
+- Most OSes and browsers: Ctrl+F5 or Ctrl+Shift+R or Ctrl+(refresh button)
+- MacOS and most browsers: Cmd+Shift+R or Shift+(refresh button)
+- MacOS and Safari: Cmd+Shift+E followed by Cmd+R
 
+</details>
 
 # Servers might not share images
 
