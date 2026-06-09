@@ -87,13 +87,13 @@ Run any local server you know how to run. To bypass caching,
 
 <details class="option"><summary>Reload and fetch without caching</summary>
 
-For `fetch` calls, use `fetch(myFileName, {cache:"no-store"})`{.js} to bypass the cache.
+Run any local server you know how to run. To bypass caching,
 
-For `<script>` tags, they can be forcibly reloaded despite caching in a platform-specific way:
-    
-- Most OSes and browsers: Ctrl+F5 or Ctrl+Shift+R or Ctrl+(refresh button)
-- MacOS and most browsers: Cmd+Shift+R or Shift+(refresh button)
-- MacOS and Safari: Cmd+Shift+E followed by Cmd+R
+- For `fetch` calls, use `fetch(myFileName, {cache:"no-store"})`{.js} to bypass the cache.
+- For `<script>` tags, they can be forcibly reloaded despite caching in a platform-specific way:
+    - Most OSes and browsers: Ctrl+F5 or Ctrl+Shift+R or Ctrl+(refresh button)
+    - MacOS and most browsers: Cmd+Shift+R or Shift+(refresh button)
+    - MacOS and Safari: Cmd+Shift+E followed by Cmd+R
 
 </details>
 
