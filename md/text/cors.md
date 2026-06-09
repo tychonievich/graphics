@@ -17,7 +17,6 @@ meaning that edits you make to files will seem not to have happened.
 
 We have multiple possible solutions, using different local server tools.
 
-<ul><li>
 <details><summary>Python</summary>
 
 Make a file `webserver.py` with the following contents:
@@ -50,16 +49,16 @@ with socketserver.TCPServer(("", PORT), NoCacheHTTPRequestHandler) as httpd:
 Run `python webserver.py` (or `python3` or `py3` or whatever your Python executable is called)
 from the directory containing your HTML file, and then open <http://localhost:8080>
 
-</details></li>
+</details>
 
-<li><details><summary>Node, full developer control</summary>
+<details><summary>Node, full developer control</summary>
 
 Run `npx http-server -c-1` 
 from the directory containing your HTML file, and then open <http://localhost:8080>.
 
-</details></li>
+</details>
 
-<li><details><summary>Node, more features</summary>
+<details><summary>Node, more features</summary>
 
 Run `npx live-server` 
 from the directory containing your HTML file, and then open <http://localhost:8080>.
@@ -67,15 +66,15 @@ from the directory containing your HTML file, and then open <http://localhost:80
 This inserts JavaScript into your HTML files to automatically reload the page when a file is edited.
 That can be convenient, but can also be confusing to debug if you try to trace everything the page is doing.
 
-</details></li>
+</details>
 
-<li><details><summary>VS Code extension </summary>
+<details><summary>VS Code extension </summary>
 
 Install the "Live server" extension by Ritwick Dey in VS Code and use its "Go Live" button.
 This inserts JavaScript into your HTML files to automatically reload the page when a file is edited.
 That can be convenient, but can also be confusing to debug if you try to trace everything the page is doing.
 
-</details></li></ul>
+</details>
 
 If you want to use a server that lacks a cache disable feature, you can also bypass caching in either of two ways:
 
