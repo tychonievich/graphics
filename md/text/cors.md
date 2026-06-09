@@ -12,72 +12,84 @@ For our purposes there are two broad ideas to consider here.
 
 If you run your page using the `file://` scheme, `fetch` and its friends are unlikely to work.
 Instead, you'll need to run a local webserver.
+But many local webservers encourage browsers to cache files,
+meaning that edits you make to files will seem not to have happened.
 
-This involves two parts:
+We have multiple possible solutions, using different local server tools.
 
-1. Run a local webserver.
-    You'll need to do this from the command line from directory that contains your HTML file.
+<ul><li>
+<details><summary>Python</summary>
+
+Make a file `webserver.py` with the following contents:
+
+```py
+import http.server
+import socketserver
+
+PORT = 8080
+
+class NoCacheHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
+    def end_headers(self):
+        # Send headers to prevent the browser from caching anything
+        self.send_header("Cache-Control", "no-cache, no-store, must-revalidate")
+        self.send_header("Pragma", "no-cache")
+        self.send_header("Expires", "0")
+        super().end_headers()
+
+# Allow restarting the server immediately without "Address already in use" errors
+socketserver.TCPServer.allow_reuse_address = True
+
+with socketserver.TCPServer(("", PORT), NoCacheHTTPRequestHandler) as httpd:
+    print(self_address := f"Server running at http://localhost:{PORT}/")
+    try:
+        httpd.serve_forever()
+    except KeyboardInterrupt:
+        print("\nServer stopped.")
+```
+
+Run `python webserver.py` (or `python3` or `py3` or whatever your Python executable is called)
+from the directory containing your HTML file, and then open <http://localhost:8080>
+
+</details></li>
+
+<li><details><summary>Node, full developer control</summary>
+
+Run `npx http-server -c-1` 
+from the directory containing your HTML file, and then open <http://localhost:8080>.
+
+</details></li>
+
+<li><details><summary>Node, more features</summary>
+
+Run `npx live-server` 
+from the directory containing your HTML file, and then open <http://localhost:8080>.
+
+This inserts JavaScript into your HTML files to automatically reload the page when a file is edited.
+That can be convenient, but can also be confusing to debug if you try to trace everything the page is doing.
+
+</details></li>
+
+<li><details><summary>VS Code extension </summary>
+
+Install the "Live server" extension by Ritwick Dey in VS Code and use its "Go Live" button.
+This inserts JavaScript into your HTML files to automatically reload the page when a file is edited.
+That can be convenient, but can also be confusing to debug if you try to trace everything the page is doing.
+
+</details></li></ul>
+
+If you want to use a server that lacks a cache disable feature, you can also bypass caching in either of two ways:
+
+- If you run your code with your browser's developer tools open (F12)
+    and in those tools' Networks tab check the "Disable Cache" button,
+    then your browser will ignore all caches while the developer tools are open.
+
+- For `fetch` calls, use `fetch(myFileName, {cache:"no-store"})`{.js} to bypass the cache.
+    For `<script>` tags, they can be forcibly reloaded in a platform-specific way:
     
-    Pick one of the following:
-    
-    -  <details><summary>With Python 3</summary>
-        
-        ````sh
-        python -m http.server
-        ````
-        
-        </details>
-    
-    -   <details><summary>With Python 2</summary>
-        
-        ````sh
-        python -m SimpleHTTPServer
-        ````
-        
-        </details>
+    - Most OSes and browsers: Ctrl+F5 or Ctrl+Shift+R or Ctrl+(refresh button)
+    - MacOS and most browsers: Cmd+Shift+R or Shift+(refresh button)
+    - MacOS and Safari: Cmd+Shift+E followed by Cmd+R
 
-    -   <details><summary>With PHP</summary>
-        
-        ````sh
-        php -S [::1]:8080
-        ````
-        
-        </details>
-
-    -   <details><summary>With Node.js</summary>
-        Install once with `npm install -g httpserver`{.sh}.
-        
-        Once installed, run
-
-        ````sh
-        httpserver 8000 localhost
-        ````
-        
-        </details>
-
-2. Use the local server to view your files.
-
-    For example, if your file is named `myfile.html`, in your browser go to one of the following:
-    
-    - <http://localhost:8000/myfile.html>
-    - <http://127.0.0.1:8000/myfile.html>
-    - <http://[::1]:8000/myfile.html>
-    
-    Depending on your OS and browser and which tool you used to start the server, it may be that only one of the above URLs works.
-
-3. If needed, test in private/incognito mode and force-refresh
-
-    Some combinations of operating system, browser, and server may result in excessive caching.
-    This results in edits you make to local files not being visible in the browser: the old versions of the files are still served.
-    
-    For `fetch`, caching can be avoided by adding the `{cache:"no-store"}`{.js} configuration to the `fetch` call,
-    as in `fetch(myFileName, {cache:"no-store"}).then(/*...*/)`{.js}.
-
-    Opening the page in a private/incognito browser window bypasses most caching and may also assist in not caching files you've edited.
-
-    If the browser still caches, there is a "forced reload" option that bypasses the cache;
-    on Windows and most Linux installs this is achieved with Ctrl+F5; on MacOS Opt+R is more common.
-    Holding Shift while pressing the reload button may also work.
 
 # Servers might not share images
 
@@ -86,4 +98,4 @@ For example, the images on the <https://illinois.edu> homepage are set up this w
 if you try to load them as a texture map of the like you'll get a CORS error.
 
 Because this is a configuration setting of the server, you can't directly bypass it.
-Instead, you'll have to work around it, e.g. by loading the image in the HTML of the page or copying the image to a directory you control.
+Instead, you'll have to work around it, e.g. by loading the image in the HTML (instead of JavaScript) of your page or downloading a local copy of the image.
