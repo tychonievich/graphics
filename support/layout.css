@@ -252,7 +252,7 @@ details > summary > p:first-child { display: inline; }
 }
 
 
-.aside, .note, .tldr, .option {
+.aside, .note, .tldr {
     margin: 1em;
     background: rgba(0,0,0,0.0625);
     border-left: rgba(0,0,0,0.1225) solid 0.5ex;
