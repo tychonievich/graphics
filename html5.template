@@ -10,7 +10,6 @@ $if(keywords)$<meta name="keywords" content="$for(keywords)$$keywords$$sep$, $en
 $if(inlinstyle)$<style>$styles.html()$$inlinestyle$</style>$else$<link rel="stylesheet" href="$basedir$codeformat.css" />$endif$
 $for(css)$<link rel="stylesheet" href="$css$" />$endfor$
 <script src="$basedir$customize.js"></script>
-<script src="$basedir$manlink.js"></script>
 $for(header-includes)$$header-includes$$endfor$
 </head>
 <body>

@@ -54,6 +54,7 @@ html/%.html: md/%.md sstemml.js sidenotes.lua html5.template pikchr breadcrumber
 		--number-sections \
 		--table-of-contents --toc-depth=2 \
 		--strip-comments \
+		--syntax-definition=wgsl.xml \
 		--filter ./sstemml.js \
 		--lua-filter=sidenotes.lua \
 		--lua-filter=pikchr.lua \
