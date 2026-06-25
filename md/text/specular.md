@@ -169,7 +169,7 @@ fn sampleGGX(normal: vec3<f32>, roughness: f32, randomVal: vec2<f32>) -> vec3<f3
 
 # Putting it together
 
-In <dfn>direct lighting</dfn>
+In direct lighting
 we know the view direction and the light direction
 and what to know how much light makes it to the viewer.
 That is the product of how much light is reflected specularly,
@@ -177,7 +177,7 @@ how much is not self-shadowed,
 and how much is reflected between those directions:
 `fresnelSchlick` × `geometrySmith` × $D(\hat h)$.
 
-In <dfn>ray tracing</dfn> (and other importance sampling techniques)
+In ray tracing (and other importance sampling techniques)
 we use `sampleGGX` to sample a reflection ray direction
 and `fresnelSchlick` × `geometrySmith` to compute how much the light found in the reflected direction should influence the final color.
 
