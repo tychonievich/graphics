@@ -167,6 +167,8 @@ fn sampleGGX(normal: vec3<f32>, roughness: f32, randomVal: vec2<f32>) -> vec3<f3
 }
 ```
 
+For creating the `randomVal`s, see the page on [quasi-random numbers](quasi.html).
+
 # Putting it together
 
 In direct lighting
@@ -183,7 +185,10 @@ and `fresnelSchlick` × `geometrySmith` to compute how much the light found in t
 
 With a precomputed specularity environment map,
 we use the reflection of the viewer direction over the normal
-to look up an entry in the map,
-then multiply the result by `fresnelSchlick` × `geometrySmith`.
-Roughness is handled during the creation of the map, not its use for lighting.
+to look up an entry in the map
+and we multiply the result by `fresnelSchlick`.
+But self-shadowing is more complicated and more expensive to compute,
+so it is generally pre-computed and stored as a look-up texture
+with $\hat n \cdot \hat v$ as one axis
+and $\text{roughness}$ as the other.
 
