@@ -11,8 +11,8 @@ The "where within the triangle" part is often represented using <dfn>barycentric
 which are three numbers (one per triangle vertex) that sum to 1.
 Given a triangle with vertices $(\mathbf v_1, \mathbf v_2, \mathbf v_3)$,
 each point $\mathbf p$ in the triangle
-has unique barycentric coordinates $(w_1, w_2, w_3)$
-such that $\mathbf p = w_1 \mathbf v_1 + w_2 \mathbf v_2 + w_3 \mathbf v_3$.
+has unique barycentric coordinates $(a_1, a_2, a_3)$
+such that $a_1+a_2+a_3 = 1$ and $\mathbf p = a_1 \mathbf v_1 + a_2 \mathbf v_2 + a_3 \mathbf v_3$.
 This applies no matter the dimensionality of $\mathbf p$:
 if $\mathbf p = (x,y,z)$ the barycentric coordinates tell its location in 3D space,
 while if $\mathbf p = (x,y,z, s,t, r,g,b,a)$
@@ -23,7 +23,7 @@ Before explaining each method in depth, here is a brief summary of how they work
 Ray casting
 :   1. Find a line through the eye and the pixel.
     2. Find the intersection of that line and the plane containing the triangle.
-    3. Find the barycentric coordinates of that point.
+    3. Find the barycentric coordinates of that intersection point.
     4. If all barycentric coordinates are positive, the pixel is part of the triangle.
     
     Ray casting is optimal if we are checking just a single pixel,
@@ -48,7 +48,7 @@ Scan conversion
     
     Bresenham
     :   1. Find the rise (extent in $y$) and run (extent in $x$) of the line.
-        2. Starting from one endpoint, represent its $x$ location using mixed number where the fractional part'd demoninator is the rise.
+        2. Starting from one endpoint, represent its $x$ location using mixed number where the fractional part's denominator is the rise.
         3. Repeatedly add 1 to $y$ and the run to the numerator of the mixed-number; if the numerator exceeds the denominator, modify the integer point to make that no longer true.
         
         Bresenham uses only integer math, meaning it has no numerical error.
@@ -90,8 +90,8 @@ When many rays would come from a single origin, [scan conversion] and [edge func
 The primary work needed for rendering using ray casting
 is computing ray-object intersections.
 When the objects are triangles,
-each such intersection will produce a $t$ value (needed to find the nearest intersection)
-and the barycentric coordinates of the intersection point.
+each such intersection will produce a $t$ value (needed to know which intersection is nearest)
+and the barycentric coordinates of the intersection point (needed to shade the pixel).
 
 Ray-triangle intersection works as follows.
 
@@ -110,7 +110,7 @@ Ray-triangle intersection works as follows.
 ## Finding $t$
 
 Finding $t$ can be done using an arbitrary vertex of the triangle $\mathbf v_i$
-and the triangle's geometric^[By "geometric normal vector" I mean the one that is perpendicular to every vector contained within the triangle's plane. It is common to use different visual normal vectors defined at each vertex and interpolated across the triangle using barycentric coordinates to create the illusion of smoothly curved surfaces, but those visual normal vectors are not used when finding ray-triangle intersections.] normal vector $\hat n$.
+and the triangle's geometric normal vector^[By "geometric normal vector" I mean the one that is perpendicular to every vector contained within the triangle's plane. It is common to use different visual normal vectors defined at each vertex and interpolated across the triangle using barycentric coordinates to create the illusion of smoothly curved surfaces, but those visual normal vectors are not used when finding ray-triangle intersections.] $\hat n$.
 
 The $t$ we want places the intersection point within the plane,
 meaning a vector between that point and any point in the plane (such as $\mathbf v_i$)
