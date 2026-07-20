@@ -531,7 +531,8 @@ If we scan convert with DDA, this division is performed directly on the floating
 If we scan convert with Bresenham, the division can be incorporated into the overall integer division with remainder approach.
 
 This division-based approach to perspective-correct scan conversation
-was introduced by Jim Blinn in 1992^[James F. Blinn, "Hyperbolic Interpolation," in *IEEE Computer Graphics and Applications*, vol. 12, no. 4, pp. 89-94, July 1992. DOI: [10.1109/MCG.1992.10028](https://doi.org/10.1109/MCG.1992.10028).] under the name **hyperbolic interpolation**, based on the correlation between division by $w$ and hyperbolic geometry.
+was introduced by Jim Blinn in 1992^[James F. Blinn, "Hyperbolic Interpolation," in *IEEE Computer Graphics and Applications*, vol. 12, no. 4, pp. 89-94, July 1992. DOI: [10.1109/MCG.1992.10028](https://doi.org/10.1109/MCG.1992.10028).].
+Prior to that, approximate and less efficient methods based on subdivision were used instead.
 
 
 
@@ -589,7 +590,7 @@ they're either exactly zero or they're large enough to compute safely.
 Because all of this work was done in homogeneous coordinates,
 the result is perspective-correct but may not be correctly scaled;
 recall that by definition, homogeneous vectors may be multiplied by any scalar without changing their meaning,
-and this process ends up applying differentsuch scalars to different pixels.
+and this process ends up applying different such scalars to different pixels.
 To correct for that, we must do two things:
 
 - After finding the barycentric coordinates of a pixel, normalize the result by dividing by the sum of the three barycentric coordinates.
@@ -682,7 +683,7 @@ Arguably, nothing in this bound and check model is novel;
 the simplified edge functions and iterative updates were proposed by Juan Pineda in 1988^[Juan Pineda. 1988. "A parallel algorithm for polygon rasterization." In *Proceedings of the 15th annual conference on Computer graphics and interactive techniques (SIGGRAPH '88)*. Association for Computing Machinery, New York, NY, USA, 17–20. DOI: [10.1145/54852.378457](https://doi.org/10.1145/54852.378457)]
 and were a direct predecessor to the homogeneous version Olano and Greer published nine years later,
 and the idea of checking pixels in bounding boxes is as old as raster computer graphics.
-What was surprising was that handling small triangles this way in software
+What was surprising was that handling small triangles this way in (GPU) software
 provided several-fold speedups for their scenes over using dedicated hardware rasterizers.
 
 
