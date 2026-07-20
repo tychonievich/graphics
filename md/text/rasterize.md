@@ -202,7 +202,8 @@ There are three common choices:
 
     This costs two `?:` to pick the axis; there is no other computation needed.
 
-The three plane equations can then be put together into a matrix
+Regardless of how the plan equations are selected,
+the three plane equations can be put together into a matrix
 that yields all three barycentric coordinates, $(a_1, a_2, a_3)$:
 $$
 \begin{bmatrix}a_1\\a_2\\a_3\end{bmatrix} =
@@ -301,7 +302,7 @@ and being ported to software not long afterward.
 
 As a line-drawing algorithm, DDA in $x$ runs as follows:
 
-1. Let $\mathbf p$ be the endpoint of the segment with smaller $x$ and $\mathf q$ be the other endpoint.
+1. Let $\mathbf p$ be the endpoint of the segment with smaller $x$ and $\mathbf q$ be the other endpoint.
 2. Find a vector parallel to the line segment that has $1$ in its $x$ coordinate.
 3. Find the point on the line segment with $x = \lceil p_x\rceil$.
 4. Repeatedly add the vector to the point until the point's $x$ reaches or passes $q_x$.
@@ -345,7 +346,7 @@ from $(1.1, 1.8)$ to $(5, 12.2)$.
 
 DDA is easy to implement and extends naturally to any number of dimensions.
 It can also step in any axis by picking a different coordinate instead of $x$.
-However, it involves a division operation, which approximate when using floating-point numbers,
+However, it involves a division operation, which is approximate when using floating-point numbers,
 and that approximation is compounded as the loop iterates,
 which means that DDA is not ideal for precise rendering.
 
@@ -367,7 +368,7 @@ as they were in early memory-constrained 2D graphics.
 
 The integer version of the algorithm stepping in $x$ runs as follows:
 
-1. Let $\mathbf p$ be the endpoint of the segment with smaller $x$ and $\mathf q$ be the other endpoint.
+1. Let $\mathbf p$ be the endpoint of the segment with smaller $x$ and $\mathbf q$ be the other endpoint.
 
 2. Compute the displacement vector $\vec d = \mathbf q - \mathbf p$
 
@@ -376,7 +377,7 @@ The integer version of the algorithm stepping in $x$ runs as follows:
     This should be flooring division, so that $\vec r$ contains only positive numbers.
     Thus $5 \div 3$ is $1$ remainder $2$, while $-5 / 3$ is $-2$ remainder $1$.
 
-4. Initialize the accumulated error vector $\vec e = (0, 0, ... 0)$^[Some sources use $\vec r / 2$ instead, which saves work if the pixels found were to be later rounded to integer values in all coordinates but is less helpful for scan conversion.] and the pixel $\mathbf a = \mathbf p$
+4. Initialize the accumulated error vector $\vec e = (0, 0, ... 0)$^[Some sources initialize $\vec e = \vec r / 2$ instead, which saves work if the pixels found were to be later rounded to integer values in all coordinates but is less helpful for scan conversion.] and the pixel $\mathbf a = \mathbf p$
 
 5. Repeatedly
     a. add $\vec i$ to $\mathbf a$
@@ -386,10 +387,10 @@ The integer version of the algorithm stepping in $x$ runs as follows:
     d. the point $\vec i + \dfrac{\vec r}{d_x}$ is on the line
 
 Extending Bresenham to work with fixed-point numbers
-is equivalent to taking steps integer steps larger than 1,
+is equivalent to taking integer steps larger than 1,
 effectively by computing $\vec i$ and $\vec r$ as $k \vec d \div d_x$ in step 3 above
 where $k$ is the multiplier needed to turn a fixed-point number into an integer.
-There may also be an initial offset set to reach an integer value, just as there is with DDA,
+There may also be an initial offset to reach an integer value, just as there is with DDA,
 which can be found by using a similar computation as with $\vec i$ and $\vec a$
 but using the offset needed to reach an integer instead of $k$.
 
@@ -467,13 +468,13 @@ while GPUs added SIMT and switched to edge-function rasterization,
 meaning Bresenham's main advantage over DDA today is its lack of rounding errors.
 
 
-## Perspective-correct
+## Hyperbolic interpolation
 
 Both DDA and Bresenham are optimized based on the regular spacing of pixels in 2D.
 That regularity does not apply directly to interpolating values over the 2D projection of 3D surfaces.
 
 To understand why simple interpolation does not work, recall that perspective causes more distant things to be smaller in their projection.
-This includes the more distance parts of a single object:
+This includes the more distant parts of a single object:
 if you view a wall from near one end of the wall,
 the more distant half of the wall looks much smaller than the closer part,
 meaning the middle of the wall in 3D space
@@ -493,10 +494,12 @@ while the middle of the trapezoid does not have that property.
 
 The scanline rasterization algorithm achieves perspective
 by first dividing $x$ and $y$ coordinates by the depth coordinate $w$.
-To achieve correct 3D interpolation, we have to divide everything else by $w$ too,
+Division like this formally moves $x$ and $y$ from a linear to a hyperbolic geometry;
+for achieve correct 3D interpolation, we move the other coordinates to that same hyperbolic geometry
+by dividing them by $w$ too,
 even things like color that don't reduce with distance.
 After interpolating these other properties down to their final pixel coordinates
-we then undo the division by $w$ by dividing again, this time by an interpolated $1 / w$.
+we then move the non-spatial coordinates back to a linear geometry by dividing again, this time by an interpolated $1 / w$.
 
 In practice, we often have a supplied vertex coordinate $(x,y,z,w,a_1,a_2,a_3)$
 where the $a$ values are barycentric coordinates.
