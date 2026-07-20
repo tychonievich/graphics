@@ -187,6 +187,8 @@ figcaption:before { content: "Figure " counter(fig) ". "; font-weight: bold; }
 figcaption { text-align: left; font-style: italic; }
 
 
+dfn { font-style: normal; font-weight: bold; }
+
 details > summary > p:first-child { display: inline; }
 
 .algorithm {

@@ -147,7 +147,7 @@ Be definition, barycentric coordinate $a_i$ is 1 at $v_i$ and 0 at the other two
 varying linearly between these.
 Because it varies linearly, it can be found as an affine function of the point:
 $a_i = A_i p_x + B_i p_y + C_i p_z + D_i$.
-Affine functions like this are also called <dfn>plane equations</dfn>.
+Affine functions of this form are also called <dfn>plane equations</dfn>.
 
 Finding a plane equation that gives the barycentric coordinates for a given vertex
 is typically done in three steps:
