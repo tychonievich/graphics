@@ -232,7 +232,7 @@ It remains the most efficient way for a CPU to do basic rasterization today.
 Scan conversion is generally presented assuming 2D pixel coordinate inputs.
 Getting those inputs from 3D geometry involves multiplying by a view and projection matrix
 and dividing by $w$.
-Some nuances related to division by $w$ are discussed in the section "[hyberbolic interpolation]" below.
+Some nuances related to division by $w$ are discussed in the section "[Hyperbolic interpolation]" below.
 
 Scan converting is based on a line rasterizing algorithm.
 These algorithms take a line segment,
