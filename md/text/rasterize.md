@@ -171,7 +171,7 @@ There are three common choices:
     if the ray origin is fixed, scan conversion or edge function rasterization will be faster
     and if it changes, the inability to precompute and store these barycentric coordinates
     makes this method much more computationally expensive than the other options here.
-    However, it the ray origins are fixed but the other assumptions of scanline or edge function rasterizing aren't met (for example when rasterizing with a fisheye lens) this choice can be optimal.
+    However, if the ray origins are fixed but the other assumptions of scanline or edge function rasterizing aren't met (for example when rasterizing with a fisheye lens) this choice can be optimal.
 
 1.  Make the plane perpendicular to the triangle.
 
@@ -566,9 +566,8 @@ This means that $M$ is the inverse of a matrix
 made from the three vertices of the triangle.
 
 3×3 matrix inverses are readily computed directly using a formula based on the adjugate matrix and determinant.
-However, not all matrices are invertible.
-For triangle edge functions, the matrix is invertible if and only if
-the triangle has non-zero area when rendered,
+However, not all matrices are invertible;
+given how we constructed the matrix, it is is invertible if and only if the triangle has non-zero area when rendered,
 so we can check for singular matrices and simply not draw those triangles.
 
 Matrix inverses may not be numerically stable:
@@ -592,7 +591,7 @@ Because the input matrix is normalized,
 we actually find the inverse of $$\begin{bmatrix}v_{1 x}&v_{2 x}&v_{3 x}\\v_{1 y}&v_{2 y}&v_{3 y}\\1&1&1\end{bmatrix}$$
 and those known $1$ values can simplify the inverse computation.
 Because we will normalize the scale of each resulting barycentric coordinate,
-we also don't need to do the normalizing division by the matrix's determinant that is typically part of creating the adjugate matrix.
+we also don't need to do the normalizing division by the matrix's determinant that is typically part of creating and inverse from an adjugate matrix.
 Combining these optimizations, we have
 $$
 \begin{bmatrix}v_{1 x}&v_{2 x}&v_{3 x}\\v_{1 y}&v_{2 y}&v_{3 y}\\1&1&1\end{bmatrix}^{-1} =
@@ -611,7 +610,7 @@ Overall, the cost of this approach is
 |-----|------------|
 | Vertex | one 4×4 matrix by 4-vector multiply (4 `*+` and 4 `+-`) |
 | Triangle | one simplified adjugate (2 `*+` and 2 `+-`) |
-| Pixel | one 3×3 matrix by 3-vector multiply (3 `*+` and 3 `+-` <br> 3 sign checks (3 `?:`) |
+| Pixel | one 3×3 matrix by 3-vector multiply (3 `*+` and 3 `+-`) <br> 3 sign checks (3 `?:`) |
 | Fragment | one barycenter normalization (1 `1/` and 1 `+-`) <br> one weighted sum per interpolated value (1 `*+` and 1 `+-` per value) |
 
 The per-pixel cost above is per pixel checked, not per resulting fragment.
@@ -621,7 +620,7 @@ but this can be avoided by applying the algorithm hierarchically.
 The details of this hierarchical check vary, but a common model is
 
 - Build an hardware array that checks a 16×16 grid of pixels in parallel.
-- Render a slightly larger triangle to a temporary image with pixels 16× as large as the final image (1/256 as may pixels overall).
+- Render a slightly larger triangle to a temporary image with pixels 16× as large as the final image (1/256 as many pixels overall).
 - Check the 16×16 block of full-resolution pixels that correspond to each pixel found in the temporary image.
  
 The "slightly larger" detail is to ensure that a block of pixels that the triangle just grazes
@@ -630,7 +629,8 @@ Algorithms that guarantee this are called <dfn>conservative</dfn>,
 and conservative versions of both scanline and edge function algorithms exist,
 based on computing both $x$ and $y$ steps separately (for Bresenham)
 or offsetting the edge functions by a pixel radius (for edge functions).
-Conservative rasterization algorithms typically do not provide correct barycentric coordinates.
+Conservative rasterization algorithms typically do not provide correct barycentric coordinates,
+but that is OK since they are used only to decide which blocks of pixels to re-render at full resolution.
 
 <details class="aside"><summary>The origins of conservative edge functions</summary>
 
