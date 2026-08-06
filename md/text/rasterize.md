@@ -76,7 +76,7 @@ Ray casting seeks to find the smallest positive $t$
 where the ray intersects with some object in the scene.
 
 Ray casting is generally used in cases where each ray's origin will be different.
-When many rays would come from a single origin, [scan conversion] and [edge function rasterization] are better able to take advantage of that shared origin for faster processing.
+When many rays would come from a single origin, [scan converting] and [edge-function rasterization] are better able to take advantage of that shared origin for faster processing.
 
 The primary work needed for rendering using ray casting
 is computing ray-object intersections.
