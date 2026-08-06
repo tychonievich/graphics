@@ -237,7 +237,7 @@ Some nuances related to division by $w$ are discussed in the section "[Hyperboli
 Scan converting is based on a line rasterizing algorithm.
 These algorithms take a line segment,
 defined by its two endpoints,
-and finds all points on that segment that have an integer value for a particular component.
+and find all points on that segment that have an integer value for a particular coordinate.
 
 :::example
 The line segment between $(1.5,2.5)$ and $(5.5, 7.3)$ has integer $x$ coordinates at the points
