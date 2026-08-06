@@ -7,16 +7,7 @@ There are three common algorithms used to find which pixels a triangle covers,
 and where within the triangle each such pixel is.
 Each has pros and cons, so this page overviews all them all.
 
-The "where within the triangle" part is often represented using <dfn>barycentric coordinates</dfn>,
-which are three numbers (one per triangle vertex) that sum to 1.
-Given a triangle with vertices $(\mathbf v_1, \mathbf v_2, \mathbf v_3)$,
-each point $\mathbf p$ in the triangle
-has unique barycentric coordinates $(a_1, a_2, a_3)$
-such that $a_1+a_2+a_3 = 1$ and $\mathbf p = a_1 \mathbf v_1 + a_2 \mathbf v_2 + a_3 \mathbf v_3$.
-This applies no matter the dimensionality of $\mathbf p$:
-if $\mathbf p = (x,y,z)$ the barycentric coordinates tell its location in 3D space,
-while if $\mathbf p = (x,y,z, s,t, r,g,b,a)$
-the barycentric coordinates tell its location in 3D space, its texture coordinates, its color, and its opacity.
+The "where within the triangle" part is often represented using barycentric coordinates $(a_1, a_2, a_3)$ as described on the page [Barycentric coordinates](barycentric.html).
 
 Before explaining each method in depth, here is a brief summary of how they work:
 
