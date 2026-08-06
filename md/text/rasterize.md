@@ -81,16 +81,16 @@ When many rays would come from a single origin, [scan converting] and [edge-func
 The primary work needed for rendering using ray casting
 is computing ray-object intersections.
 When the objects are triangles,
-each such intersection will produce a $t$ value (needed to know which intersection is nearest)
+each such intersection will produce a $t$ value (required to know which intersection is nearest)
 and the barycentric coordinates of the intersection point (needed to shade the pixel).
 
 Ray-triangle intersection works as follows.
 
 1. Find the $t$ where the ray intersects the plane that contains the triangle.
 
-    If $t$ is negative, there is no intersection: the plane is behind, not in front of, the ray.
+    If $t$ is negative, there is no intersection: the plane is behind, not in front of, the ray origin.
 
-    If $t$ is larger than a $t$ found earlier, this is not the nearest intersection.
+    If $t$ is larger than a positive $t$ found earlier, this is not the nearest intersection.
 
 2. Find the point at that $t$ using $\mathbf p = \mathbf o + t \hat d$.
 
@@ -121,7 +121,7 @@ t = \frac{(\mathbf v_i - \mathbf o) \cdot \hat n}{\hat d \cdot \hat n}
 This has a total cost of one `1/`, three `*+`, and three `+-`.
 
 :::aside
-It is tempting to precompute $k = \mathbf v_i \cdot \hat n$ for each triangle
+It is tempting to precompute and store $k = \mathbf v_i \cdot \hat n$ for each triangle
 to have a scalar instead of vector subtraction:
 $$
 t = \frac{k - (\mathbf o \cdot \hat n)}{\hat d \cdot \hat n}
@@ -140,16 +140,16 @@ Because it varies linearly, it can be found as an affine function of the point:
 $a_i = A_i p_x + B_i p_y + C_i p_z + D_i$.
 Affine functions of this form are also called <dfn>plane equations</dfn>.
 
-Finding a plane equation that gives the barycentric coordinates for a given vertex
+Finding a plane equation that gives barycentric coordinate $a_i$ for a given vertex
 is typically done in three steps:
 
 1. A vector $(A',B',C')$ is chosen which is perpendicular to the edge $(\mathbf v_j - \mathbf v_k)$.
 
-2. The vector is scaled to $(A_i,B_i,C_i) = \dfrac{1}{(A', B', C') \cdot (\mathbf v_i - \mathbf v_j)}(A', B', C')$; using $v_j$ in that equation is arbitrary, $v_k$ works too.
+2. The vector is scaled to $(A_i,B_i,C_i) = \dfrac{1}{(A', B', C') \cdot (\mathbf v_i - \mathbf v_j)}(A', B', C')$^[using $v_j$ in that equation is arbitrary, $v_k$ works too].
 
     This costs one `1/`, two `*+`, and one `+-` per plane equation.
 
-3. The affine coordinate is found to make the equation 0 at $v_j$ and $v_k$: $D_i = - \mathbf v_j \cdot (A_i,B_i,C_i)$; again, using $v_k$ instead of $v_j$ works too.
+3. The affine coordinate is found to make the equation 0 at $v_j$ and $v_k$: $D_i = - \mathbf v_j \cdot (A_i,B_i,C_i)$^[again, using $v_k$ instead of $v_j$ works too].
 
     This costs one `*+` and one `+-` per plane equation.
 
@@ -158,7 +158,7 @@ There are three common choices:
 
 1.  Make the plane pass through the ray origin.
 
-    $(A', B', C') = (\mathbf v_j - \mathbf o) \times (\mathbf v_k - \mathbf o)$; the other order of cross product works too.
+    $(A', B', C') = (\mathbf v_j - \mathbf o) \times (\mathbf v_k - \mathbf o)$^[the other order of cross product works too].
 
     This costs two `*+` per plane equation
     and one `+-` per triangle vertex.
@@ -183,9 +183,9 @@ There are three common choices:
 
 1.  Pick a plane where one of $A$, $B$, or $C$ is 0 to simplify other computations.
     It's important not to pick a coordinate that makes the barycentric plane coplanar with the triangle,
-    so this process begins by picking an axis.
+    so this process begins by picking a safe-to-use axis.
 
-    a. Pick the axis where $\hat n$ has the largest magnitude. Below we assume that was $z$.
+    a. Pick the axis where $\hat n$ has the largest^[Or at least is not too close to $0$; being maximal is not required, but being non-zero is.] magnitude. Below we assume that axis was $z$.
 
     b. Discard that coordinate from the edge $(\mathbf v_j - \mathbf v_k)$, resulting in $(e_x, e_y)$.
 
@@ -226,13 +226,13 @@ Scan converting was one of the first 3D graphics algorithms
 and was particularly suited for early CRT displays
 which fundamentally drew lines,
 passing a narrow beam of electrons over a screen covered in phosphors to make the phosphors glow.
-Because it uses lines, scan conversion is also sometimes called the scanline algorithm.
+Because it uses lines, scan conversion is also sometimes called "the scanline algorithm".
 It remains the most efficient way for a CPU to do basic rasterization today.
 
 Scan conversion is generally presented assuming 2D pixel coordinate inputs.
 Getting those inputs from 3D geometry involves multiplying by a view and projection matrix
 and dividing by $w$.
-Some nuances related to division by $w$ are discussed in the section "[perspective-correct]" below.
+Some nuances related to division by $w$ are discussed in the section "[hyberbolic interpolation]" below.
 
 Scan converting is based on a line rasterizing algorithm.
 These algorithms take a line segment,
