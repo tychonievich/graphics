@@ -245,7 +245,7 @@ Matrices are faster to compute with, and can be combined with other operations,
 so they are preferred in other contexts.
 
 If it is necessary to identify a variable as referring to a quaternion,
-we indicate that with a fraktur variant of the variable, like $\frak q$.
+we indicate that with a Fraktur variant of the variable, like $\frak q$.
 
 <details class="note"><summary>Rotation matrix or quaternion?</summary>
 
@@ -270,7 +270,7 @@ Affine combination
     With quaternions, the three operations must be kept separate, with the order of operations preserved.
 
 Interpolation
-:   Linear interpolation of rotation matrices create scaling artifacts which are visually jarring and computaitonaly expensive to remove.
+:   Linear interpolation of rotation matrices create scaling artifacts which are visually jarring and computationaly expensive to remove.
     
     Linear interpolation of quaternions works well,
     and spherical linear interpolation is a bit more expensive but works even better.
@@ -292,11 +292,11 @@ There are two broad ways these sampled functions are commonly defined:
 
 - <dfn>Textures</dfn> sample a function at a set of regularly-spaced points called <dfn>texels</dfn>
     and interpolates between the nearest texels to cover the rest of the surface.
-    For the surface of a sphere, there are two ways of distrbuting the points in common use:
+    For the surface of a sphere, there are two ways of distributing the points in common use:
     cube maps and the octahedral maps.
     But data is usually provided in an equirectangular projection instead of either of those maps.
 
-- <dfn>Spherical harmonics</dfn> approximate a function as the weighted sum of a set of simpler fenctions defined across the sphere.
+- <dfn>Spherical harmonics</dfn> approximate a function as the weighted sum of a set of simpler functions defined across the sphere.
     While conceptually more complicated than textures,
     these can represent smooth functions with many fewer numbers than textures
     and can be rotated arbitrarily with no loss of precision.
@@ -304,7 +304,7 @@ There are two broad ways these sampled functions are commonly defined:
 
 ## Equirectangular projections
 
-The challenges of representing the sufrace of a sphere in 2D has been long studied in cartography,
+The challenges of representing the surface of a sphere in 2D has been long studied in cartography,
 and many map projections are known.
 The one most often used to provide environment map texture files
 is called the "equirectangular" projection.
@@ -522,7 +522,7 @@ To find the value of the function at a given $(x,y,z)$ direction, assuming the c
 
 3. Shift and scale those coordinates so that ‒1 to +1 becomes the full size of the square texture.
     
-    If the octohedral map was 16×16 texels, that would be achieved through $\left(8 + 8u, 8 + 8v\right)$
+    If the octahedral map was 16×16 texels, that would be achieved through $\left(8 + 8u, 8 + 8v\right)$
 
 4. Collect and combine the nearest texel values to that point.
 
@@ -553,7 +553,7 @@ sometimes referring to the basis functions,
 sometimes to the coefficients used to combine them into other functions on a sphere,
 and sometimes to the broad idea of storing and using functions in this way.
 
-The spherical harmonic basis functions are often described in terms of trignometry functions in spherical coordinates,
+The spherical harmonic basis functions are often described in terms of trigonometry functions in spherical coordinates,
 but can also be presented as polynomials of the coordinates of the unit-length direction vector.
 That polynomial version is used almost exclusively in computer graphics
 because it is much more efficient to compute.
@@ -567,18 +567,18 @@ we simply look them up in a list created by mathematicians.
 
 To represent arbitrary functions on the sphere, we'd need an infinite number of spherical harmonics basis functions.
 But in practice we almost never go beyond polynomials of the 4^th^ power^[In spherical harmonics literature there are many names for this polynomial power. "Band" is often used in graphics context, with "multiplet", "subspace", and "shell" used more often in other domains. The power of polynomials in a given bad is denoted using the variable $\ell$, so the cubic polynomial basis functions are denoted as $\ell=3$.] (like $xy^2z$)
-because the time complexity of computing higher-order polynomials makes them less arractive than environment maps if higher detail is needed.
+because the time complexity of computing higher-order polynomials makes them less attractive than environment maps if higher detail is needed.
 For illumination, just using linear and quadratic terms is often sufficient.
 Because the number of basis functions of order $n$ and below is $(n+1)^2$,
-that means that a spherical harmonic terms in graphics vary between 9 (for quadratic functions)
+that means that the spherical harmonic terms used in graphics vary from 9 (for quadratic functions)
 and 25 (above which they become too slow for many applications).
 For contrast, the smallest octahedral map I've seen in use was 8×8 = 64 terms
 and many are at least an order of magnitude larger than that.
 
 Low-order spherical harmonics are a great way to represent smooth and blurry functions of direction,
 such as diffuse illumination as a function of surface normal.
-Unlike low-resolution textures, they have no aliasing or other visual artefacts caused when some feature fails to align with any texel sample.
-Indeed, spherical harmonics are closed under rotation,
+Unlike low-resolution textures, they do not suffer from aliasing when some feature fails to align with any texel sample.
+Spherical harmonics are closed under rotation,
 though that is not widely used in graphics because it is often cheaper to rotate the input direction than it is to compute the rotated function's coefficients.
 
 <figure>

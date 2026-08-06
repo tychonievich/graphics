@@ -171,7 +171,7 @@ There are three common choices:
     if the ray origin is fixed, scan conversion or edge function rasterization will be faster
     and if it changes, the inability to precompute and store these barycentric coordinates
     makes this method much more computationally expensive than the other options here.
-    However, if the ray origins are fixed but the other assumptions of scanline or edge function rasterizing aren't met (for example when rasterizing with a fisheye lens) this choice can be optimal.
+    However, if the ray origins are fixed but the other assumptions of scan conversion or edge function rasterizing aren't met (for example when rasterizing with a fisheye lens) this choice can be optimal.
 
 1.  Make the plane perpendicular to the triangle.
 
@@ -281,7 +281,7 @@ Traditionally, we do that by
 including the small-number endpoint:
 a line rasterizer going between $(2,5)$ and $(7,-3)$ finding integer $x$s will include $(2,5)$ but not $(7,-3)$;
 finding integer $y$'s the same algorithm will include $(7,-3)$ but not $(2,5)$.
-If the endpoint are not integers, this special small-but-not-big rule doesn't arise.
+If the endpoints are not integers, this special small-but-not-big rule doesn't arise.
 
 ## DDA
 
@@ -483,7 +483,7 @@ while the middle of the trapezoid does not have that property.
 </figcaption>
 </figure>
 
-The scanline rasterization algorithm achieves perspective
+Scan conversion rasterization algorithms achieve perspective
 by first dividing $x$ and $y$ coordinates by the depth coordinate $w$.
 Division like this formally moves $x$ and $y$ from a linear to a hyperbolic geometry;
 for achieve correct 3D interpolation, we move the other coordinates to that same hyperbolic geometry
@@ -531,7 +531,7 @@ Prior to that, approximate and less efficient methods based on subdivision were 
 
 Unlike scan converting, edge-function rasterization is designed with GPUs in mind.
 In particular, it works well with SIMT:
-it sets up a large number of computations and executes them in parallel with a single control unit.
+it sets up many computations and executes them in parallel with a single control unit.
 
 The core of all edge-function rasterization approaches
 is the creation of three functions, one for each edge of the triangle.
@@ -567,14 +567,14 @@ made from the three vertices of the triangle.
 
 3×3 matrix inverses are readily computed directly using a formula based on the adjugate matrix and determinant.
 However, not all matrices are invertible;
-given how we constructed the matrix, it is is invertible if and only if the triangle has non-zero area when rendered,
+given how we constructed the matrix, it is invertible if and only if the triangle has non-zero area when rendered,
 so we can check for singular matrices and simply not draw those triangles.
 
 Matrix inverses may not be numerically stable:
 triangles with a very small but non-zero rendered area can create significant errors in computation.
 To avoid this, it is common to round the vertex $(x,y,w)$ coordinates
 to some sub-pixel but still fairly course resolution.
-This rounding ensures that triangles cannot have super small areas:
+This rounding ensures that triangles cannot have very small areas:
 they're either exactly zero or they're large enough to compute safely.
 
 Because all of this work was done in homogeneous coordinates,
@@ -626,7 +626,7 @@ The details of this hierarchical check vary, but a common model is
 The "slightly larger" detail is to ensure that a block of pixels that the triangle just grazes
 is detected and rendered at higher resolution.
 Algorithms that guarantee this are called <dfn>conservative</dfn>,
-and conservative versions of both scanline and edge function algorithms exist,
+and conservative versions of both scan conversion and edge function algorithms exist,
 based on computing both $x$ and $y$ steps separately (for Bresenham)
 or offsetting the edge functions by a pixel radius (for edge functions).
 Conservative rasterization algorithms typically do not provide correct barycentric coordinates,
@@ -655,7 +655,7 @@ and has been incorporated into every GPU whose rasterization process I've found 
 
 ## Bound and Check
 
-All of the methods above are optimized for large triangles.
+All the methods above are optimized for large triangles.
 Even though many scenes contain many small triangles,
 they also tend to contain many large triangles
 and that optimization generally makes sense.

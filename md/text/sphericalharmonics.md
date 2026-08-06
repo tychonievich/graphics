@@ -30,7 +30,7 @@ By definition, the surface of a unit sphere are the points where
 $x^2 + y^2 + z^2 = 1$.
 That could let us express any polynomial that has $x$ using $\sqrt{1-y^2-z^2}$ instead,
 or any polynomial that has $y$ using $\sqrt{1-x^2-z^2}$ instead,
-or several other substutions as well.
+or several other substitutions as well.
 :::
 
 The specific set of basis functions we want should be orthogonal, meaning the integral of the product of any two of the functions over the entire sphere is 0.
@@ -119,7 +119,7 @@ to rotate the direction vector before computing the function value instead.
 
 That said, the *fact* that spherical harmonics can be rotated is an important and valuable reason for using them in graphics.
 It means that there is no "best" coordinate system:
-unlike texture maps, spherical harmonics can represent any oritentation of data equally well.
+unlike texture maps, spherical harmonics can represent any orientation of data equally well.
 
 **TO DO**: explain the recursive Ivanic & Rudenberg matrix construction algorithm.
 
@@ -138,7 +138,7 @@ The basic process is:
 
 The trickiest part is computing the solid angle covered by each sample.
 
-- For raytracing, if ray directions are sampled uniformly each has an expected solid angle of $\frac{4\pi}{N}$ where $N$ is the number of rays cast.
+- For ray tracing, if ray directions are sampled uniformly each has an expected solid angle of $\frac{4\pi}{N}$ where $N$ is the number of rays cast.
 
 - For a $W$-by-$H$ pixel latitude-longitude environment map, pixel solid angle depends on $y$ as $\sin{\pi \frac{y}{H}} \frac{2\pi^2}{W H}$ where $y$, $W$, and $H$ are all measured in pixels.
 

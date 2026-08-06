@@ -57,7 +57,7 @@ For metals, all light that is not absorbed is reflected:
 we first apply object color to absorb some light,
 then reflect everything else.
 
-For dielectric materials, how much is reflected is dependant on the object's index of refraction and the incident angle:
+For dielectric materials, how much is reflected is dependent on the object's index of refraction and the incident angle:
 we first apply Schlick's approximation of the Fresnel equations,
 and only the light that is not reflected in that way proceeds into the material and interacts with the objects' underlying color.
 
@@ -102,11 +102,11 @@ fn geometrySmith(NdV: f32, NdL: f32, roughness: f32) -> f32 {
 
 # Determine in which direction light is reflected
 
-On a perfect smooth material, specular reflections are computed by reflecting the the incident direction across the surface normal:
+On a perfect smooth material, specular reflections are computed by reflecting the incident direction across the surface normal:
 $\hat d - 2(\hat d \cdot \hat n) \hat n$,
 or `reflect(v, n)`{.wgsl} in WGSL.
 
-But materials are rough, so the the visual normal (the one the photon encounters)
+But materials are rough, so the visual normal (the one the photon encounters)
 and the geometric normal (the one we use when modeling objects)
 are generally not the same.
 
@@ -128,7 +128,7 @@ we can sample a distribution over the other
 by sampling a distribution over microfacet normals
 and reflecting the vector we know over that sampled direction.
 This is done in several steps:
-we create a 2 random numbers between 0 and 1,
+we create 2 random numbers between 0 and 1,
 turn them into spherical coordinate $\theta$ and $\phi$,
 modify $\theta$ based on the GGX distribution and surface roughness,
 compute the normal-space perturbed normal,
@@ -185,10 +185,10 @@ and `fresnelSchlick` × `geometrySmith` to compute how much the light found in t
 
 With a precomputed specularity environment map,
 we use the reflection of the viewer direction over the normal
-to look up an entry in the map
+to look up an entry in the map,
 and we multiply the result by `fresnelSchlick`.
 But self-shadowing is more complicated and more expensive to compute,
-so it is generally pre-computed and stored as a look-up texture
+so it is generally precomputed and stored as a look-up texture
 with $\hat n \cdot \hat v$ as one axis
 and $\text{roughness}$ as the other.
 

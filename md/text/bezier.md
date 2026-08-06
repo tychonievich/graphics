@@ -83,7 +83,7 @@ redraw_lerp(Number(document.getElementById('lerp_t').value));
 <figcaption>An illustration of a lerp: given points $\mathbf A$ and $\mathbf B$ and user-input $t \in [0,1]$, shows the point $(1-t) A + (t) B$ which is close to $\mathbf A$ when $t$ is close to $0$ and close to $\mathbf B$ when $t$ is close to $1$.</figcaption>
 </figure>
 
-De Casteljau lerps every conseuctive pair of control points using the same $t$,
+De Casteljau lerps every consecutive pair of control points using the same $t$,
 giving a new list of points one smaller than the list of control points;
 then treats those as the control points of a lower-order Bézier curve and repeats
 until only a single point remains.
@@ -153,8 +153,8 @@ redraw_cbez(Number(document.getElementById('cbez_t').value));
 <figcaption>An illustration of a cubic Bézier curve: given control points $\mathbf A, \mathbf B, \mathbf C, \mathbf D$ and user-input $t \in [0,1]$, shows the point $t$ of the way along the curve which is close to $\mathbf A$ when $t$ is close to $0$ and close to $\mathbf D$ when $t$ is close to $1$, diverting towards $\mathbf B$ and $\mathbf C$ in between.
 
 The original four control points are connected by a blue polyline;
-the three lerps of those points are connected by a grey polyline;
-and the two lerps of those are conencted by an orange polyline.
+the three lerps of those points are connected by a gray polyline;
+and the two lerps of those are connected by an orange polyline.
 The control points of the first partial curve are circled in green
 and those of the second partial curve are circles in purple.
 The full curve is drawn in pink.

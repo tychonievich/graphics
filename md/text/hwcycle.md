@@ -80,7 +80,7 @@ GPUs use two forms of parallelism extensively.
 <dfn>Single Instruction, Multiple Data (<abbr>SIMD</abbr>)</dfn>
 is implemented in hardware by lining up several identical functional units
 and having them operate in lockstep on lists of inputs to produce list of outputs.
-SIMD is primarily exposed by GPUs' graphics APIs in the form of operations of 4-element vectors and 4×4 matrices^[The elements of 4-vectors are 32-bit floats, meaking the vector overall 128 bits (16 bytes). In AI, vectors of the same size in bytes made of a larger number of smaller elements are also common, but I've rarely seen them used in graphics.].
+SIMD is primarily exposed by GPUs' graphics APIs in the form of operations of 4-element vectors and 4×4 matrices^[The elements of 4-vectors are 32-bit floats, making the vector overall 128 bits (16 bytes). In AI, vectors of the same size in bytes made of a larger number of smaller elements are also common, but I've rarely seen them used in graphics.].
 For example,
 
 - A dot product of 4-vectors is 4 `*+` operating in parallel followed by one `+-`: `a*x + b*y + c*z + d*w`.
@@ -118,7 +118,7 @@ A division of a 4-vector by its largest value is one `?:`, one `1/`, and one vec
 It's more complicated than that...
 
 GPUs often include "shuffle" operations in their SIMD instruction set
-which create a different permuation of their input vector:
+which create a different permutation of their input vector:
 for example, they might turn $(a,b,c,d)$ into $(d,b,a,c)$ or $(c,a,b,d)$.
 Shuffles involve no meaningful work, but still occupy a clock cycle --
 unless the hardware designers decided that a particular shuffle
@@ -134,9 +134,9 @@ and can depend on details of GPU architecture that are invisible to the programm
 <dfn>Single Instruction, Multiple Threads (<abbr>SIMT</abbr>)</dfn>
 is implemented in hardware by lining up several identical complete sets of functional units
 and attaching them all to just one control unit
-that reads instructions in the software we provide it and decides what all of the different functional units should do at once.
+that reads instructions in the software we provide it and decides what all functional units should do at once.
 
-A reasonable way of thinking about SIMT is to imagine your code was being run inside of a `for` loop,
+A reasonable way of thinking about SIMT is to imagine your code was being run inside a `for` loop,
 but instead of the loop running your code once, then running it again, then again,
 it instead runs it many times all at once.
 
@@ -182,28 +182,28 @@ this section gives just a few broad principles for GPU memory use.
 When the control unit managing a group of threads reaches a memory access instruction,
 it sends the requests from all of its threads to memory
 and then sets those threads aside.
-They sit in an out-of-the-way place^[If you're familiar with reservation stations from out-of-order processor architecture, threads waiting for memory to respond are stored in a similar structure. If you are familair with pipelined processors, you can think of these waiting threads as moving through a long sequence of pipeline registers with no work between them. If you don't know what either of those are, don't worry, this class is not about that level of hardware design.] in the GPU
-for a few hundred cycles, doing nothing while they wait for memory to repond.
-Only once data is retreived from memory for every thread in the group do they resume their trip through the GPU.
+They sit in an out-of-the-way place^[If you're familiar with reservation stations from out-of-order processor architecture, threads waiting for memory to respond are stored in a similar structure. If you are familiar with pipelined processors, you can think of these waiting threads as moving through a long sequence of pipeline registers with no work between them. If you don't know what either of those are, don't worry, this class is not about that level of hardware design.] in the GPU
+for a few hundred cycles, doing nothing while they wait for memory to respond.
+Only once data is retrieved from memory for every thread in the group do they resume their trip through the GPU.
 
 While one group of threads are waiting for memory,
 the processor starts working on another group of threads.
 It is quite likely that that next group will also access memory
 and also be routed into the memory waiting area.
-If all of the threads access memory as their first operation,
+If all the threads access memory as their first operation,
 it is quite possible to have the waiting area entirely full,
-forcing the GPU to pause operatation until at least one group gets its results from memory.
+forcing the GPU to pause operation until at least one group gets its results from memory.
 
 This design may seem strange, but it is based on a property of how memory works.
 Memory (especially memory designed specifically for a GPU)
-has high <dfn>throughput</dfn>, meaning it can deliver a large number of bytes per second,
+has high <dfn>throughput</dfn>, meaning it can deliver many bytes per second,
 but also high <dfn>latency</dfn>, meaning it takes hundreds of cycles to respond to a single request.
 Having a many groups of threads each issue their requests to memory
 and then each wait for the result
 can take advantage of that high throughput without sitting idle while waiting on the long latency.
 
 Part of how memory gets such high throughput is by providing large blocks of contiguous memory addresses in a single operation.
-Because of this, memory accesses where all of the threads in a group
+Because of this, memory accesses where all the threads in a group
 requested addresses that were close together get handled much more quickly than those that scatter their addresses across memory.
 
 This leads to two guiding principles:
@@ -214,7 +214,7 @@ This leads to two guiding principles:
 
 A common use of memory in graphics is a texture map,
 where a 2D array of data is mapped over the 2D surface of an object.
-That useage pattern means that nearby pixels often access nearby regions of memory,
+That usage pattern means that nearby pixels often access nearby regions of memory,
 but in a 2D instead of the 1D way memory addresses typically work.
 To make 2D-adjacent memory access work well with the 1D layout of memory addresses,
 GPUs often reorder texture maps, converting from how they are stored row by row in CPU memory

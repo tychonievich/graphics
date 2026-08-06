@@ -69,8 +69,8 @@ WebKit is the engine used by Safari, and by all iOS browsers, and by some old sm
 Microsoft has an extensive driver validation process,
 so Windows drivers are generally considered to be safe.
 
-Apple has a policy of only supporting a small number of hardware configurations with each OS version.
-Safe use with WebGPU was a criteria for the drivers included with
+Apple has a policy of only supporting a few hardware configurations with each OS version.
+Safe use with WebGPU was a criterion for the drivers included with
 version 26 of both of their operating systems (macOS 26 "Tahoe" and iOS 26).
 
 Android's official version from Google
@@ -83,7 +83,7 @@ including potentially having insecure graphics drivers.
 Linux supports more hardware than any other OS,
 and has a wide ecosystem of drivers.
 Many of these are secure and safe to use with WebGPU,
-but not all are so many browsers require Linux users to opt-in to WebGPU
+but not all are so many browsers require Linux users to opt in to WebGPU
 through a browser settings flag^[Flags are accessed with special URLs; Chrome uses `chrome://flags`, Firefox uses `about:config`].
 If you have an off-brand GPU or graphics driver,
 you might consider doing that in a browser that you don't usually use for browsing the web
@@ -190,7 +190,7 @@ That makes the code longer and less clear,
 but it also allows more efficient programs.
 
 Because the communication happens in bytes,
-the JavaScript will need to use special datatypes with defined byte-level layout,
+the JavaScript will need to use special data types with defined byte-level layout,
 most often [TypedArray](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) subclasses like `Float32Array` and `Uint16Array`.
 
 The GPU stores data in <dfn>buffers</dfn>.
@@ -222,7 +222,7 @@ A common way these buffers are used is:
 
 The actual copying here might be optimized as an index swap
 (e.g. we just swap the base address used by each operation
-instead of copying all of the bytes)
+instead of copying all the bytes)
 or involve some data being modified into a more cache- or processor-friendly format.
 The WebGPU API is designed so that these kinds of optimizations are left to the discretion of the GPU designer.
 
@@ -246,8 +246,8 @@ Anything with neither `MAP_READ` nor `MAP_WRITE`
 The use of "map" in the flags is based on how WebGPU ensures that data in a staging buffer
 is not changed or accessed by the GPU mid-communication.
 Each such buffer is in one of two states:
-it is either <dfn>mapped</dfn> and can be accessed by the CPU,
-it is is <dfn>unmapped</dfn> and it can be accessed by the GPU.
+either it is <dfn>mapped</dfn> and can be accessed by the CPU,
+or it is <dfn>unmapped</dfn> and can be accessed by the GPU.
 
 Mapped buffers are exposed to JavaScript as an [ArrayBuffer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer),
 meaning communication looks like byte-level memory access.
@@ -303,7 +303,7 @@ but can be much slower for larger buffers (a kilobyte or more).
 - <dnf>`QUERY_RESOLVE`</dfn> buffers
     store the results of certain queries the CPU might ask the GPU to answer
     such as how long some operation took
-    or whether a given point is occlused by some geometry.
+    or whether a given point is occluded by some geometry.
     
 :::example
 Simple graphics scenes have multiple artist-created objects
@@ -378,7 +378,7 @@ and how to store the results.
 
 ## Passes and command buffers and encoders
 
-The code and configuration represented by a shader module, render pipleine, and pass descriptor
+The code and configuration represented by a shader module, render pipeline, and pass descriptor
 still need to be executed,
 and generally executed along with several other activities
 like providing the vertex positions of geometry

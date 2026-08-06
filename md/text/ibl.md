@@ -32,7 +32,7 @@ Because of this, image formats are generally limited to 256 levels of light inte
 nonlinearly scaled to provide a dynamic range of about 3,300^[This dynamic range is what is provided by the sRGB gamma function on 8-bit encoded colors. The main exception to this is the rare but widely-supported 16-bit PNG, which has 65,536 levels of light intensity and a dynamic range of around 850,000].
 
 In a common outdoor scene,
-the sun is around $1.6×10^9  \frac{㏅}{m^2}$,
+the sun is around $1.6×10^9 \frac{㏅}{m^2}$,
 the sky is around $3×10^3 \frac{㏅}{m^2}$,
 and dark-pigmented objects in shadow are at least 100× darker than that.
 That's a dynamic range of over 500,000 just for the sky
@@ -42,7 +42,7 @@ which is *much* larger than any common image format can express.
 There are three common solutions to this:
 
 - Clip the sun out: store how bright everything else is and then add the sunlight back in as a separate (non-image-based) step. On a clear day outdoors this can work OK, but it fails to capture most lighting conditions correctly.
-- Clip everything else out: store only the brightest parts of the environment. This works OK for rough objects, but makes reflections on smooth objects look wrong an fails to capture outdoor lighting.
+- Clip everything else out: store only the brightest parts of the environment. This works OK for rough objects, but makes reflections on smooth objects look wrong and fails to capture outdoor lighting.
 - Use a special <dfn>high dynamic range (<abbr>HDR</abbr>)</dfn> image format.
 
 As of 2026, there are two common HDR image formats^[There are also a handful of uncommon HDR image formats]:
@@ -69,7 +69,7 @@ These files consist of:
     Treating those bytes as unsigned integers (0 through 255), 
     the meaning of the pixel is:
     
-    - $(255, 255, 255, E)$ means $E$ additional copies of the last color.
+    - $(255, 255, 255, E)$ means $E$ additional copies of the previous color.
         
         I've never seen this used, and most HDR parsers I've looked at assume it will never happen.
     
@@ -117,7 +117,7 @@ Generally, it is preferable to use every pixel.
 
 The result of diffuse lighting is quite smooth, with no high-frequency information,
 so it is effective to store the results using [spherical harmonics](sphericalharmonics.html).
-Because spherical harmonics just have a few terms, each linearly independent from the others,
+Because spherical harmonics just have a few terms, each linearly independant from the others,
 we can loop over each pixel in the map and add its contribution to each spherical harmonic
 to get the final IBL diffuse lighting function.
 
