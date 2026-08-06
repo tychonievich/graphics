@@ -13,7 +13,7 @@ summary: |
   [MPs](mp/)  
   [Submit](https://cs418.cs.illinois.edu/submit/)  
   [Text](text/)  
-  Video: [CT](https://classtranscribe.illinois.edu/offering/c7e741f2-d482-496e-ba57-0285d39ccedb) [MS](https://mediaspace.illinois.edu/channel/CS+418+online+2023-2025/379538012)
+  Video: [CT](https://classtranscribe.illinois.edu/offering/c7e741f2-d482-496e-ba57-0285d39ccedb) [MS](https://mediaspace.illinois.edu/channel/CS+418+online+2023-2026/379538012)
   </center>
 ...
 
@@ -41,7 +41,7 @@ See [this guide](https://ws.engr.illinois.edu/sitemanager/getfile.asp?id=3552) f
 The course consists of the following components:
 
 Recorded lecture material
-:   Linked from the [course content site](content.html) and hosted on both [ClassTranscribe](https://classtranscribe.illinois.edu/offering/c7e741f2-d482-496e-ba57-0285d39ccedb) and [MediaSpace](https://mediaspace.illinois.edu/channel/CS+418+online+2023-2025/379538012), these tend to be fairly dense videos; I regularly distilled 3 hours of class into 1 hour of video by removing the Q&A and other interactive content. Please make notes of questions as you watch them and post those questions on CampusWire. I may answer them there or record videos explaining the answers and post them as supplementary content.
+:   Linked from the [course content site](content.html) and hosted on both [ClassTranscribe](https://classtranscribe.illinois.edu/offering/c7e741f2-d482-496e-ba57-0285d39ccedb) and [MediaSpace](https://mediaspace.illinois.edu/channel/CS+418+online+2023-2026/379538012), these tend to be fairly dense videos; I regularly distilled 3 hours of class into 1 hour of video by removing the Q&A and other interactive content. Please make notes of questions as you watch them and post those questions on CampusWire. I may answer them there or record videos explaining the answers and post them as supplementary content.
     
 Written lecture notes
 :   Linked on the [course content site](content.html) and hosted on this site, these have roughly the same content as the videos, but often differ in level of detail.

@@ -46,9 +46,9 @@ Thus, one reason we're teaching older tech is that it's the newest tech that we 
     provide assurance that the underlying tech as robust in practice,
     and allowed user experience to guide what parts of the previous tech to include and what to exclude.
     
-    WebGPU, a probable successor to WebGL based on Vulkan, is <time datetime="2025-06-01" title="June 2025">currently</time> in a usable but still developing state with [limited implementation](https://github.com/gpuweb/gpuweb/wiki/Implementation-Status) and several important [milestones still pending](https://github.com/gpuweb/gpuweb/milestones).
-    At some point it will become a stable standard fully implemented by multiple web rendering engines.
-    Once it is widely supported we expect the curriculum of this course to be updated to use it.
+    WebGPU, a successor to WebGL based on Vulkan, is <time datetime="2026-08-06" title="August 2026">currently</time> usable on [most but not all systems](https://github.com/gpuweb/gpuweb/wiki/Implementation-Status) and several important [milestones are still pending](https://github.com/gpuweb/gpuweb/milestones).
+    There are also several implementations that work but are less performant than WebGL 2.0, despite an architecture that should be more performant.
+    I had hopes of using it as the default in Fall 2026, there are still enough pain points that I decided not to adopt it yet.
     
     
 
@@ -88,12 +88,12 @@ However, their duration of usefulness follows a similar trend:
 old specs are rapidly obsolescent,
 old release guides remain useful for a year or two,
 old tutorials remain useful for several years,
-and old courses can remain useful for decades^[I took computer graphics in college in 2004; roughly ⅔ of that content is still relevant in 2025.]
+and old courses can remain useful for decades^[I took computer graphics in college in 2004; roughly ⅔ of that content is still relevant in 2026.]
 
 # Change
 
 Computer graphics is fortunately still in a space with strong competition.
-At the time of writing (2025) we have
+At the time of writing (2026) we have
 
 - API competition (Vulkan, DX12, and Metal in the lead, others as well)
 - Hardware competition (Nvidia, AMD, and Intel in the lead, others as well)
