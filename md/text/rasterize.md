@@ -363,12 +363,12 @@ The integer version of the algorithm stepping in $x$ runs as follows:
 
 2. Compute the displacement vector $\vec d = \mathbf q - \mathbf p$
 
-3. Divide each coordinate of $d$ by $d_x$, keeping the integer quotients in $\vec i$ and the remainders in $\vec r$.
+3. Divide each coordinate of $\vec d$ by $d_x$, keeping the integer quotients in $\vec i$ and the remainders in $\vec r$.
 
-    This should be flooring division, so that $\vec r$ contains only positive numbers.
+    This should be flooring division, so that $\vec r$ contains only non-negative numbers.
     Thus $5 \div 3$ is $1$ remainder $2$, while $-5 / 3$ is $-2$ remainder $1$.
 
-4. Initialize the accumulated error vector $\vec e = (0, 0, ... 0)$^[Some sources initialize $\vec e = \vec r / 2$ instead, which saves work if the pixels found were to be later rounded to integer values in all coordinates but is less helpful for scan conversion.] and the pixel $\mathbf a = \mathbf p$
+4. Initialize the accumulated error vector $\vec e = (0, 0, ... 0)$^[Some sources initialize $\vec e = \vec r / 2$ instead, which saves work if the pixels found were to be later rounded to integer values in all coordinates, sometimes used in pixelated line drawing algorithms, but is less helpful for scan conversion.] and the pixel $\mathbf a = \mathbf p$
 
 5. Repeatedly
     a. add $\vec i$ to $\mathbf a$
@@ -464,7 +464,7 @@ meaning Bresenham's main advantage over DDA today is its lack of rounding errors
 Both DDA and Bresenham are optimized based on the regular spacing of pixels in 2D.
 That regularity does not apply directly to interpolating values over the 2D projection of 3D surfaces.
 
-To understand why simple interpolation does not work, recall that perspective causes more distant things to be smaller in their projection.
+To understand why simple interpolation does not work, consider how perspective causes more distant things to be smaller in their projection.
 This includes the more distant parts of a single object:
 if you view a wall from near one end of the wall,
 the more distant half of the wall looks much smaller than the closer part,
@@ -488,7 +488,7 @@ by first dividing $x$ and $y$ coordinates by the depth coordinate $w$.
 Division like this formally moves $x$ and $y$ from a linear to a hyperbolic geometry;
 for achieve correct 3D interpolation, we move the other coordinates to that same hyperbolic geometry
 by dividing them by $w$ too,
-even things like color that don't reduce with distance.
+even things like barycentric coordinates that don't reduce with distance.
 After interpolating these other properties down to their final pixel coordinates
 we then move the non-spatial coordinates back to a linear geometry by dividing again, this time by an interpolated $1 / w$.
 
@@ -497,12 +497,12 @@ where the $a$ values are barycentric coordinates.
 We first perform perspective projection in $x$ and $y$ by dividing by $w$;
 we also divide everything else by $w$ while we're at it, getting
 $\left(\dfrac{x}{w},\dfrac{y}{w},\dfrac{z}{w},\dfrac{1}{w},\dfrac{a_1}{w},\dfrac{a_2}{w},\dfrac{a_3}{w}\right)$.
-Note that $w$ is replaced by $1 \div w$ not $w \div w$.
+Note that $w$ is replaced by $1 \div w$ not $w \div w$ so that we have an interpolated $\frac{1}{w}$ to use in converting back ti linear coordinates later.
 We use these divided coordinates in DDA to get a pixel coordinate
 $(x',y',z',w',a_1',a_2',a_3')$.
 The $x'$ and $y'$ are the correct pixel $x$ and $y$
 and the $z'$, also being a spatial coordinate, is the depth we use in the depth buffer,
-but the rest of the coordinates had a spurious division by $w$ which we now undo
+but the rest of the coordinates we convert back to linear coordinates
 to get
 $\left(x',y',z',\dfrac{1}{w'},\dfrac{a_1'}{w'},\dfrac{a_2'}{w'},\dfrac{a_3'}{w'}\right)$.
 
