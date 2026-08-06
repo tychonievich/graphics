@@ -4,7 +4,7 @@ SRCDIR := $(shell find md/ -type d)
 DSTDIR := $(patsubst md/%,html/%, $(SRCDIR))
 TEXT_SRC := $(shell find md/text/ -type f -name '*.md' | grep -v index.md)
 COURSE := cs418
-TERM := fa2025
+TERM := fa2026
 REMOTE := 
 
 .PHONY: all clean html post
