@@ -9,7 +9,7 @@ summary: |
   
   <center>
   [Content](content.html#recommended-schedule)  
-  [Quizzes](https://us.prairielearn.com/pl/course_instance/182443)  
+  [Quizzes](https://us.prairielearn.com/pl/course_instance/224749)  
   [MPs](mp/)  
   [Submit](https://cs418.cs.illinois.edu/submit/)  
   [Text](text/)  
@@ -55,7 +55,7 @@ Retakable quizzes
     
     I understand that some students find quizzes annoying, but experience has shown me that they do help students find and fix gaps in understanding.
     
-    These quizzes are administered on [PrairieLearn](https://us.prairielearn.com/pl/course_instance/182443).
+    These quizzes are administered on [PrairieLearn](https://us.prairielearn.com/pl/course_instance/224749).
 
 Machine problems (MPs)
 :   MPs are the primary driver of both learning and assessment.
