@@ -96,16 +96,16 @@ const padding = p.r.baseVal.value;
 
 function findBarycentric() {
     const verts = vertices.map(v => [v.cx.baseVal.value, v.cy.baseVal.value]);
-    const edges = verts.map((v,i) => [verts[(i+1)%3][0] - verts[(i+2)%3][0], verts[(i+1)%3][1] - verts[(i+2)%3][1]]);
+    const edges = verts.map((v,i) => [verts[i][0] - verts[(i+1)%3][0], verts[i][1] - verts[(i+1)%3][1]]);
     const ab_big = edges.map((e,i) => [edges[(i+1)%3][1], -edges[(i+1)%3][0]]);
     const ab_size = ab_big.map((vec,i) => vec[0]*edges[i][0] + vec[1]*edges[i][1]);
     const ab = ab_big.map((vec,i) => [vec[0]/ab_size[i], vec[1]/ab_size[i]]);
     const d = ab.map((vec, i) => -(vec[0]*verts[(i+1)%3][0] + vec[1]*verts[(i+1)%3][1]));
     const px = p.cx.baseVal.value, py = p.cy.baseVal.value;
     return [
-        1+ (ab[2][0]*px + ab[2][1]*py + d[2]),
-        1+ (ab[0][0]*px + ab[0][1]*py + d[0]),
-        1+ (ab[1][0]*px + ab[1][1]*py + d[1]),
+        ab[0][0]*px + ab[0][1]*py + d[0],
+        ab[1][0]*px + ab[1][1]*py + d[1],
+        ab[2][0]*px + ab[2][1]*py + d[2],
     ];
 }
 
