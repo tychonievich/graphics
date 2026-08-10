@@ -11,7 +11,7 @@ The "where within the triangle" part is often represented using barycentric coor
 
 Before explaining each method in depth, here is a brief summary of how they work:
 
-Ray casting^[The terms "ray tracing" and "ray casting" are often used interchangeably, but sometimes used with specific meanings. When used as distinct terms, <dfn>ray casting</dfn> (introduced by Scott Roth in 1980) means to find the intersection of one ray with the scene while <dfn>ray tracing</dfn> (which predates computers and was formerly computed by hand) means to follow a synthetic photon from one end of its travels to the other including any bounces and bends along the way.]
+Ray casting
 :   1. Find a line through the eye and the pixel.
     2. Find the intersection of that line and the plane containing the triangle.
     3. Find the barycentric coordinates of that intersection point.
@@ -74,6 +74,12 @@ allowing any point along the ray to be represented by its distance $t$ along the
 where the point at $t$ is $\mathbf o + t \hat d$.
 Ray casting seeks to find the smallest positive $t$
 where the ray intersects with some object in the scene.
+
+<details class="aside"><summary>Ray casting or ray tracing?</summary>
+
+The terms "ray tracing" and "ray casting" are often used interchangeably, but sometimes used with specific meanings. When used as distinct terms, <dfn>ray casting</dfn> (coined by Scott Roth in 1980) means to find the intersection of one ray with the scene. <dfn>Ray tracing</dfn> (which predates computers and was formerly computed by hand as part of lens design) means to follow a synthetic photon from one end of its travels to the other, including any bounces and bends along the way. Typically, ray tracing is implemented with multiple rounds of ray casting, one for each straight-line segment of the light's path.
+
+</details>
 
 Ray casting is generally used in cases where each ray's origin will be different.
 When many rays would come from a single origin, [scan converting] and [edge-function rasterization] are better able to take advantage of that shared origin for faster processing.
