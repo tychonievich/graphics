@@ -11,7 +11,7 @@ The "where within the triangle" part is often represented using barycentric coor
 
 Before explaining each method in depth, here is a brief summary of how they work:
 
-Ray casting
+Ray casting^[The terms "ray tracing" and "ray casting" are often used interchangeably, but sometimes used with specific meanings. When used as distinct terms, <dfn>ray casting</dfn> (introduced by Scott Roth in 1980) means to find the intersection of one ray with the scene while <dfn>ray tracing</dfn> (which predates computers and was formerly computed by hand) means to follow a synthetic photon from one end of its travels to the other including any bounces and bends along the way.]
 :   1. Find a line through the eye and the pixel.
     2. Find the intersection of that line and the plane containing the triangle.
     3. Find the barycentric coordinates of that intersection point.
