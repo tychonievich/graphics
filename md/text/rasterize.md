@@ -199,7 +199,7 @@ There are three common choices:
 
     This costs two `?:` to pick the axis; there is no other computation needed.
 
-Regardless of how the plan equations are selected,
+Regardless of how the plane equations are selected,
 the three plane equations can be put together into a matrix
 that yields all three barycentric coordinates, $(a_1, a_2, a_3)$:
 $$
