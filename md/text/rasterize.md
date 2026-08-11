@@ -64,6 +64,8 @@ by counting the number of operations performed,
 using the `1/`, `?:`, `*+`, and `+-` introduced for this class on the page [Understanding hardware performance](hwcycle.html)
 and assuming 4-wide SIMD.
 
+There are also two practical concerns that spans all methods: ensuring that every pixel covered by a polygonalized object is rasterized to exactly one of its triangles, and determining the screen-space derivative of interpolated values.
+
 # Ray casting
 
 A <dfn>ray</dfn> is a semi-infinite line:
@@ -685,5 +687,112 @@ provided several-fold speedups for their scenes over using dedicated hardware ra
 
 
 
+# No gaps, no overlaps
 
+3D models are almost always modeled as many triangles, with two triangles sharing each edge and many (on average six) sharing each vertex.
+It is thus important that when rasterizing there is never a missing pixel along one of those joins: each pixel along an edge needs to be rasterized.
+If the triangles are being rendered as transparent, it is also important that there is never a double-rendered pixel along one of those joins or else those pixels will appear to be overly opaque: each pixel must be rasterized once and only once.
 
+Most of the time, this once-and-only-once property is automatically provided by all the techniques listed.
+The exception is when an edge or vertex passes exactly through the location of a pixel.
+If triangles are rendered to include their edges, that pixel would be rendered twice;
+if they are rendered to exclude their edges, that pixel would not be rendered at all.
+
+:::example
+Consider the edge from (screen space) $(8.5, 2.7)$ to $(9.5, 9.3)$.
+Along most of this edge's length, it is clear which pixel is to the left and which to the right of the line:
+
+- on the left are $(8, 3)$, $(8,4)$, $(8,5)$, $(?,6)$, $(9,7)$, $(9,8)$, and $(9,9)$
+- on the right are $(9, 3)$, $(9,4)$, $(9,5)$, $(?,6)$, $(10,7)$, $(10,8)$, and $(10,9)$
+
+The pixel $(9,6)$ is exactly on the edge, neither on its left or right.
+If the triangles to the left and right of the edge draw up to and including their edges, $(9,6)$ will be drawn twice;
+if they draw up to but not including their edges, $(9,6)$ will not be drawn at all.
+:::
+
+The solution to this problem depends on how the rasterization is being used.
+
+- If all of the objects are being considered, then just the closest used for shading, then including the edges is sufficient.
+    This is usually the solution used with ray casting, but not with other techniques.
+
+- If the pixels of each triangle are being enumerated individually, then a screen-space rule is used:
+    typically, if the pixel is on a non-horizontal edge it is included if that is the left edge of the triangle
+    and if it is on a horizontal edge it is included if that is the top edge of the triangle.
+
+    For scan converting, this is implemented by having the line drawing algorithm include an integer start point and ecxlude an integer end point while always rendering from small to large coordinates.
+
+    For edge functions, this is implemented by checking the sign of the $x$ and $y$ coordinates of each of the three rows of the matrix;
+    if $x > 0$ or if $x==0$ and $y>0$ then that row represents a left or horizontal-top edge and a $0$ created by that row is included;
+    otherwise, a $0$ created by that row is excluded.
+
+# Screen-space derivatives
+
+When rendering any shape
+it is necessary to not only interpolate values to each pixel (which is done using barycentric coordinates)
+but also to compute approximate screen-space derivatives of some of those interpolated values.
+
+A <dfn>screen-space derivative</dfn> of a value is how much that value changes when moving one pixel in $x$ ($\frac{d}{dx}$) or $y$ ($\frac{d}{dy}$).
+Sometimes we need those values directly, but often we lump them together into the average magnitude of the two to provide just a single number.
+
+The most common motivation for screen-space derivatives is mipmapping.
+When applying a texture map to a rendered image, the highest visual quality and least aliasing occurs
+when each texel is around one pixel in rendered area.
+A mipmap is several copies of the same texture, each at a different scale;
+we pick which copy to sample from based on the magnitude of the derivative of the texture coordinates.
+If the derivative is high then the texture coordinate changes a lot from one pixel to another and we want a small texture;
+if the derivative is low then the texture coordinate change minially from one pixel to another and we want a large texture.
+
+Derivatives have both simple subtraction-based approximations (called <dfn>finite differences</dfn>) and closed-form analytical forms; these can be mixed and matched to create many different derivative computation approaches.
+The following are the approaches that I'm aware get used in practice.
+
+## Rasterizing quads
+
+Modern GPUs rasterize 2×2 blocks of pixels called quads.
+If any pixel in the quad would be generated by the edge function than all 4 are propogated through the rest of the rendering process together;
+any that are in the quad but not part of the triangle are called "helper fragments" and will be discarded instead of being placed in the resulting image.
+When a derivative of any value is needed, adjacent values within the quad are subtracted to get a finite difference approximation of the derivative.
+
+In hardware, this design has the benefit of being effectively free.
+The hardware to manage a quad is built to run in parallel as part of the larger SIMD/SIMT parallelism of a GPU,
+with just a 4-bit mask needed to pick which fragments should be committed to the resulting image.
+
+Some GPUs expose two versions of the derivative process.
+One (called the "course" derivative) computes one $x$ and one $y$ derivative and uses them for all pixels in the quad;
+the other (called the "fine" derivative) computes two $x$ and two $y$ derivatives and mixes them to get different derivatives for each pixel.
+I've seen course derivatives chosen for having less noise and fine derivatives chosen for being more precise,
+but have not seen consistent comparisons suggesting which is preferable in which situations.
+
+## Ray cones
+
+Efficiency-oriented ray tracers use the area covered by a ray along with the geometry of the intersected object to compute average screen-space derivative magnitude.
+
+The area covered by the ray is approximated using a cone.
+For initial rays, the radius of the cone is $t \alpha$ where $t$ is the distance along the ray
+and $\alpha$ is a spread angle equal to the field of view covered by a single pixel.
+If the ray bounced off an object and generates  a secondary ray, that secondary ray adds a starting code width that was the cone width at the generating intersection, resulting in $s + t \alpha$.
+If the curvature of the object generating the secondary ray can easily be determined it can also be used to modify $\alpha$, but I've not seen that done very often in practice.
+
+Given a cone size, it remains to determine how much texture coordinate that cone covers.
+This is the product of three factors:
+
+- The cone size.
+- The texture coordinate spread of the triangle divided by its world-space area (this can be precomputed and cached per triangle).
+- A foreshortening factor, computed as the dot product of the surface normal and the ray direction.
+
+The larger this product is, the more texels are covered by this ray.
+
+## Ray differentials
+
+Accuracy-oriented ray tracers compute analytical derivatives of each part of the ray.
+In addition to the ray's origin $\mathbf o$ and direction $\hat d$,
+they also create the partial derivatives of each of these in the $x$ and $y$ directions,
+$\frac{\partial\mathbf o}{\partial x}$, $\frac{\partial\mathbf o}{\partial y}$, $\frac{\partial\hat d}{\partial x}$, and $\frac{\partial\hat d}{\partial y}$.
+At each step along the ray's journey these derivatives are updated,
+including modeling reflection off of curved surfaces, refraction, and surface roughness.
+
+This technique is significantly more work that ray cones
+with relatively modest gains,
+and I've seen no suggestion that it is used in any kind of interactive graphics application.
+That said, when I took my first graphics class in 2004 the instructor said a similar thing about all of raytracing
+and by 2024 most new 3D games included some level of raytracing,
+so perhaps in another two decades ray differentials will be commonplace in interactive graphics.
