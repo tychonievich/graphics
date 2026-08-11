@@ -585,6 +585,37 @@ to some sub-pixel but still fairly course resolution.
 This rounding ensures that triangles cannot have very small areas:
 they're either exactly zero or they're large enough to compute safely.
 
+<details class="aide"><summary>Numerical instability explained</summary>
+
+Since no prerequisite of this course covers numerical stability, you might be unclear what that means.
+
+A matrix inverse has terms that contain (among other terms) ratios of differences, like $\frac{a-b}{c-d}$.
+The adjugate method we mention below doesn't have the denominators listed,
+but they appear during the normalization step to bring the sum up to 1.
+
+In a computer, real numbers are stored with a fixed number of significant bits;
+most often in a GPU, that's 23 significant bits,
+which is roughly 7 significant digits.
+For simplicity, we'll use exactly 7 digits here.
+This means that a computer stores numbers like $1.234567$ with only that much precision.
+
+If we subtract numbers of very similar magnitude, most of the precision is lost and the result is very close to zero.
+If that happens to both the numerator and the denominator,
+we can end up with a value close to 1 that has little to no precision to it.
+We call it "unstable" because tiny changes to the input can have huge changes to the output.
+
+:::example
+Using 7-digit arithmetic, $\frac{1.234567 - 1.234568}{9.876543 - 9.876542} = -1$.
+Adding one extra digit of precision, $\frac{1.2345666 - 1.2345679}{9.8765425 - 9.8765424} = -13$.
+:::
+
+There are many solutions to numerical instability possible,
+but the one we use here is to change the input so we have enough precision to compute the output.
+If the input is rounded to (say) 3 digits of precision, we can't get subtractions that get closer than 3 digits from 0,
+leaving plenty of room for computing and distinguishing outputs.
+
+</details>
+
 Because all of this work was done in homogeneous coordinates,
 the result is perspective-correct but may not be correctly scaled;
 recall that by definition, homogeneous vectors may be multiplied by any scalar without changing their meaning,
