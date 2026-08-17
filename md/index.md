@@ -178,6 +178,30 @@ As such, you may collaborate on MPs (with humans or AIs) but must obey the follo
 
 - If you use any source (preexisting or dynamic) that was not provided by this course to write your code, cite that source in a comment in your code.
 
+:::aside
+Observations about AI
+
+I spent many hours during the summer of 2026
+asking many different AIs many different questions related to this course,
+both conceptual and code-generative.
+At first I thought I'd be able to add much more graphics content
+by relegating the tedium to AI,
+but that was **not** my experience.
+Instead, I found that:
+
+- AIs made subtle mistakes in both concepts and code in roughly 10% of their responses (varying somewhat by LLM used and topic asked).
+- Once they made the mistake, they stuck with it, arguing that it was correct if I pointed it out and adding more errors to support it if pressed.
+- Using a RAG or referring a chat bot to this course website helped, but did not remove the problems.
+
+I have a deep understanding of graphics
+and I could use AIs to write MPs faster than writing them by hand;
+but when I attempted to act like a student and suppress my advanced knowledge
+using an AI often increased my work time and decreased the quality of my product.
+I thus recommend either not using AI at all (the course is calibrated for that case),
+or if you feel you must use it focus on concepts and algorithms before code
+and ask the same questions to multiple agents (or the same after erasing context) to sample the random space of responses and more often get at least one answer that is correct.
+:::
+
 
 # Prerequisites
 
