@@ -217,14 +217,17 @@ A common way these buffers are used is:
 1. The CPU sends data to a staging buffer on the GPU.
 2. The GPU copies the data from the staging buffer to a working input buffer.
 3. The GPU does work, filling up a working output buffer.
-4. The GPU copies the data from the working input buffer to a staging buffer.
+4. The GPU copies the data from the working output buffer to a staging buffer.
 5. The CPU retrieves data from the staging buffer on the GPU.
 
-The actual copying here might be optimized as an index swap
+The actual copying here might be direct byte copying,
+or optimized as an index swap
 (e.g. we just swap the base address used by each operation
-instead of copying all the bytes)
-or involve some data being modified into a more cache- or processor-friendly format.
-The WebGPU API is designed so that these kinds of optimizations are left to the discretion of the GPU designer.
+instead of copying all the bytes),
+or involve data being modified into a more cache- or processor-friendly format.
+The WebGPU API is designed so that these kinds of optimizations
+are invisible to the programmer
+and can be left to the discretion of the GPU designer.
 
 When you create a buffer in WebGPU, you specify how it will be used
 with a bitvector representing a set of flags.^[If bitvector sets of flags are new to you, you might want to consult a course that covers bitwise operations, such as the text page I created for [CS 340](https://courses.grainger.illinois.edu/cs340/sp2025/text/bitwise.html#flags-and-bitvectors-as-sets)]
@@ -240,7 +243,7 @@ Not all combinations are allowed.
 
 Anything with neither `MAP_READ` nor `MAP_WRITE`
 :   Creates a buffer that can be used inside GPU computations.
-    Each will also a role within the GPU indicated,
+    Each must include [the buffer's role within the GPU](#gpu-role-of-buffers),
     and may also contain `COPY_SRC` and/or `COPY_DST` if they will be used as the source and/or destination of GPU buffer copy operations.
 
 The use of "map" in the flags is based on how WebGPU ensures that data in a staging buffer
