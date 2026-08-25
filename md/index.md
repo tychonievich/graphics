@@ -257,11 +257,8 @@ Instructor
     ---------   -------------------------------------------------
 
 Assistants
-:   Emilia, Jianyuan, You
-    
-    This is a smaller staff of assistants than I've had in the past.
-    As such, there may be fewer help hours than you'd otherwise hope; if you generally use instructor or assistant help in most programming assignments, this course may not be ideal for you this semester.
-    
+:   Grace, Junlin
+        
 
 CampusWire
 :   By invitation only. I get daily roster change update digests and enter them into CampusWire when I do.
@@ -270,8 +267,8 @@ Office Hours
 :   ---------   -----------------------------------------------------------------------------------
     Schedule    <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=America%2FChicago&mode=WEEK&showCalendars=0&showTabs=1&showPrint=0&showTitle=1&title=CS%20418%20Office%20hours&src=Y19iZTA5MjdlYmRmZGYxZmM1YjZmOWY1M2M5YWVmOGM5YTQwOTY4OWQ1MzUyMTFhNzNlMTc2NDljMmQ3YTg5NTczQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23A79B8E" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
     
-    Location    [Zoom](https://illinois.zoom.us/j/84809048462?pwd=KxbKMbJBIH04pcD3jgPZ7ZjHqSZLNr.1)
-                meeting 848 0904 8462   passcode 418
+    Location    [Zoom](https://illinois.zoom.us/j/83111949960?pwd=2baWauuiv3LWFMDWhhwo77VeiERPk3.1)
+                meeting 831 1194 9960    passcode 418
     ---------   -----------------------------------------------------------------------------------
 
 # Textbook
