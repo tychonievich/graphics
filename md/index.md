@@ -56,6 +56,7 @@ Retakable quizzes
     I understand that some students find quizzes annoying, but experience has shown me that they do help students find and fix gaps in understanding.
     
     These quizzes are administered on [PrairieLearn](https://us.prairielearn.com/pl/course_instance/224749).
+    If it says "access denied" try first visiting <https://us.prairielearn.com/> and logging in, then retrying the [course-specific link](https://us.prairielearn.com/pl/course_instance/224749).
 
 Machine problems (MPs)
 :   MPs are the primary driver of both learning and assessment.
