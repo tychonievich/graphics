@@ -64,7 +64,7 @@ Much more significant, however, is the display of scene objects that are narrowe
     <path d="M 35,75 55,75 55,55 35,55 Z M 75,-5 55,-5 55,15 75,15 Z"/>
 </g>
 </svg>
-<figcaption>Two examples of point-like pixels causing aliasing. The outlines are the indended shapes. The circles show the pixel locations. The colored regions are the shapes the eye sees.</figcaption>
+<figcaption>Two examples of point-like pixels causing aliasing. The outlines are the intended shapes. The circles show the pixel locations. The colored regions are the shapes the eye sees.</figcaption>
 </figure>
 
 
