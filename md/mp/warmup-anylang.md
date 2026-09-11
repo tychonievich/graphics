@@ -14,7 +14,7 @@ In practice it will likely mean working around a few setup challenges.
 
 # Overview
 
-You will submit at least three files:
+You will submit at least two files:
 
 -   A `Makefile` with (at least) two targets:
     `build`, which accepts no arguments,
@@ -100,7 +100,7 @@ drawPixels *n*
     You may assume that this only comes after a `position` and `color` keyword
     and that *n* is a positive integer that does not exceed the number of position and color coordinates provided in them.
 
-# Get three files working
+# Get three input files working
 
 You should be able to pass all of the following.
 All test input files, with their reference output files, can be downloaded [as a zip](files/anylang-files.zip)
