@@ -231,6 +231,22 @@ and that the shine spot moves across the hill as the point of view changes, but 
 </figcaption>
 </figure>
 
+An example with grid size 6 and 0 faults might be:
+
+<figure>
+<video controls autoplay loop>
+<source src="vid/terrain-lowres.webm" type="video/webm"/>
+<source src="vid/terrain-lowres.mp4" type="video/mp4"/>
+</video>
+<figcaption>
+A video demonstrating **correct lighting** fixed relative to the terrain, not the viewer.
+Notice that despite the low resolution, the specular highlights move smoothly across the terrain.
+If yours instead stick to triangle boundaries, make sure you're normalizing the surface normals
+both before (javascript or vertex shader) and after (fragment shader) rasterization.
+</figcaption>
+</figure>
+
+
 The hemisphere created when faults is 0 is helpful in diagnosing common lighting errors.
 To help with such diagnoses, we show two of the most common **incorrectly** lit bad examples:
 <figure>
