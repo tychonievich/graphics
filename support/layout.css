@@ -181,7 +181,7 @@ tbody tr:nth-child(2n+1) { background: rgba(0,0,0,0.0625); }
 
 
 figure { counter-increment: fig; margin: 1ex; padding: 1ex; }
-figure > *:not(script) { display: table; margin: auto; }
+figure > *:not(script) { display: table; margin: auto; max-width: 100%; }
 figure > * + * { margin-top: 1em; }
 figcaption:before { content: "Figure " counter(fig) ". "; font-weight: bold; }
 figcaption { text-align: left; font-style: italic; }
