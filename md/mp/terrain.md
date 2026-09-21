@@ -240,7 +240,7 @@ An example with grid size 6 and 0 faults might be:
 </video>
 <figcaption>
 A video demonstrating **correct lighting** fixed relative to the terrain, not the viewer.
-Notice that despite the low resolution, the specular highlights move smoothly across the terrain.
+Notice that despite the low grid resolution, the specular highlights move smoothly across the terrain.
 If yours instead stick to triangle boundaries, make sure you're normalizing the surface normals
 both before (javascript or vertex shader) and after (fragment shader) rasterization.
 </figcaption>
