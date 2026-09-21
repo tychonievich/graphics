@@ -30,9 +30,18 @@ You are welcome to use a JavaScript math library, such as [the one used in in-cl
 
 HTML input elements, styling, and event handling are beyond the scope of this class, so we simply give you what you need here.
 
-Your HTML file should have the following after the various `<script` elements:
+Your HTML file should be the following, with various `<script` elements added by you:
 
 ```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'/>">
+    <title>Terrain</title>
+    
+    <!-- Add script elements here -->
+    
     <style>
     body {
         margin: 0; border: none; padding: 0;
