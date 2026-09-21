@@ -127,7 +127,12 @@ When the button is clicked,
 
 2. Displace the vertices in the grid with `faults` faults.
     
-    For 0 faults, the result should be perfectly flat.
+    For 0 faults, generate a hemisphere instead of doing any faulting.
+    If your grid radius is $r$ then elevation of a point $d$ away from the center of the grid
+    should be $\sqrt{r^2-d^2}$ if $d>r$ or $0$ if $d < r$.
+    This hemisphere will make it easier to debug lighting errors.
+    
+    For 1 fault, 1 cliff should cross an otherwise smooth terrain.
     For more faults it should approach a fractal bumpy terrain.
     
     Your code should work for any non-negative integer `faults`; there is no upper limit to what we might provide.
@@ -212,10 +217,7 @@ A video of an example result.
 </figcaption>
 </figure>
 
-To help with lighting we also share three videos where the terrain is set to look like a sphere;
-in particular, the terrain height is $\sqrt{1-r^2}$, where $r$ is the distance from the point and the center of the terrain divided by the radius of the terrain; if that square root is an imaginary number, the terrain height is $0$.
-
-First we show a correctly-lit example:
+An example with grid size 50 and 0 faults might be:
 
 <figure>
 <video controls autoplay loop>
@@ -229,7 +231,8 @@ and that the shine spot moves across the hill as the point of view changes, but 
 </figcaption>
 </figure>
 
-We also show two **incorrectly** lit bad examples:
+The hemisphere created when faults is 0 is helpful in diagnosing common lighting errors.
+To help with such diagnoses, we show two of the most common **incorrectly** lit bad examples:
 <figure>
 <video controls autoplay loop>
 <source src="vid/terrain-badshine.webm" type="video/webm"/>
@@ -237,7 +240,7 @@ We also show two **incorrectly** lit bad examples:
 </video>
 <figcaption>
 A video demonstrating **incorrect lighting** where specularity is not related to view direction.
-Notice that the "shine spots" is just a fixed splotch of white, not acting like specularity does.
+Notice that the "shine spot" is just a fixed splotch of white, not acting like specularity does.
 </figcaption>
 </figure>
 <figure>
