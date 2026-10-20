@@ -1,18 +1,37 @@
 :root {
   --outer: min(5vw, 1rem);
   --content: calc(100vw - 2 * var(--outer));
-  --ideal: 50rem;
-  
+  --ideal: 45rem;
+}
+
+@media screen {
+  :root {
+    --left1: calc((var(--content) - var(--ideal)) * 0.5 + var(--outer));
+    --left2: calc(var(--content) - 1.5 * var(--ideal));
+    --left3: var(--outer);
+    --leftnotes: max(var(--left3), min(var(--left1), var(--left2)));
+    --leftplain: max(var(--left3), var(--left1));
+
+    --mainplain: min(var(--ideal), var(--content));
+    --mainnotes: min(var(--ideal), max(0.6451 * var(--content), min(16em, var(--content))));
+  }
+}
+@media print {
+  :root {
+    --outer: min(5vw, 1rem);
+    --content: calc(100vw - 2 * var(--outer));
+    
+    --leftnotes: var(--outer);
+    --leftplain: var(--outer);
+
+    --mainplain: var(--content);
+    --mainnotes: calc(0.6451 * var(--content));
+  }
+}
+
+:root {
   --fontsize: 1rem;
 
-  --left1: calc((var(--content) - var(--ideal)) * 0.5 + var(--outer));
-  --left2: calc(var(--content) - 1.5 * var(--ideal));
-  --left3: var(--outer);
-  --leftnotes: max(var(--left3), min(var(--left1), var(--left2)));
-  --leftplain: max(var(--left3), var(--left1));
-
-  --mainplain: min(var(--ideal), var(--content));
-  --mainnotes: min(var(--ideal), max(0.6451 * var(--content), min(16em, var(--content))));
   --widenotes: calc(var(--mainnotes) * 1.5 + var(--outer));
   --wideplain: var(--mainplain);
 
@@ -21,6 +40,7 @@
   
   --fontfamily: Palatino, Palladio URW, P052, TeX Gyre Pagella, Palatino Linotype, Book Antiqua, serif;
 }
+
 
 body {
   margin-left: var(--leftplain);
