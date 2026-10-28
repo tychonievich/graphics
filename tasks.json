@@ -170,7 +170,7 @@
     , "fog controls are per-keypress not as-held-down": 0.25
     }
   }
-, "obj":    {"due":"2026-11-16","type":"elective","pt":4,"after":"textures"
+, "obj":    {"due":"2026-11-15","type":"elective","pt":4,"after":"textures"
   , "rubric":
     { "vertex positions and connectivity": 1
     , "colors, normals, and lighting": 1
