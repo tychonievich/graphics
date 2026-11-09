@@ -262,10 +262,14 @@ No drawing happens until after the entire file is read.
 	- do not normalize; if this vector is longer it will automatically result in a zoomed-in display
 	- fix the right and up vectors to be perpendicular to forward,
 		as $\vec r = \text{normalized}\big(\vec f \times \text{up}\big)$ and $\vec u = \text{normalized}\big(\vec r \times \vec f\big)$
-
+	- note: resolve this fully when it appears. If `forward` appears, it will change $\vec f$ and  $\vec u$;
+		if `up` later appears it will change $\vec u$ again to be perpendicular to this new $\vec f$; and so on for as many of these commands as appear in the file.
+	
 `up` $u_x$ $u_y$ $u_z$
 : - sets the target up vector, subject to being perpendicular to the forward vector
 	- see `forward` for how the real up vector is computed
+	- note: resolve this fully when it appears. If `up` appears, it will change the $\vec u$ to a vector perpendicular to $\vec f$;
+		if `forward` later appears it will change $\vec f$ and $\vec u$ again, using that new $\vec u$; and so on for as many of these commands as appear in the file.
 
 
 `eye` $e_x$ $e_y$ $e_z$

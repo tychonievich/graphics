@@ -129,7 +129,7 @@ When the button is clicked,
     
     For 0 faults, generate a hemisphere instead of doing any faulting.
     If your grid radius is $r$ then elevation of a point $d$ away from the center of the grid
-    should be $\sqrt{r^2-d^2}$ if $d \ge r$ or $0$ if $d < r$.
+    should be $\sqrt{r^2-d^2}$ if $r \ge d$ or $0$ if $r < d$.
     This hemisphere will make it easier to debug lighting errors.
     
     For 1 fault, 1 cliff should cross an otherwise smooth terrain.
