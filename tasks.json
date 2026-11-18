@@ -90,7 +90,7 @@
     }
   , "^":"ray-"
   }
-, "spheres":        {"due":"2026-11-20","type":"core",   "pt":4,"after":"logo"
+, "spheres":        {"due":"2026-11-22","type":"core",   "pt":4,"after":"logo"
   , "rubric":
     { "lit multicolored spheres sent to GPU just once": 1
     , "momentum and gravity": 1
